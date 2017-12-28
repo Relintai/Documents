@@ -1,0 +1,13 @@
+*.pdf
+*.aux
+*.log
+*.gz
+*.ini
+*.nav
+*.out
+*.toc
+*.synctex*
+*.bm
+*.snm
+
+

@@ -1,0 +1,509 @@
+% Compile twice!
+
+\documentclass{beamer}
+\usepackage{tikz}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\usetheme{boxes}
+
+
+\begin{document}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[overlay, remember picture]
+\node[anchor=center] at (current page.center) {
+\begin{beamercolorbox}[center]{title}
+    {\Huge Diszkrét Matematika}\\
+    {\Large Vizsgatételek}
+\end{beamercolorbox}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[overlay, remember picture]
+\node[anchor=center] at (current page.center) {
+\begin{beamercolorbox}[center]{title}
+    {\Huge Halmazok, Relációk}
+\end{beamercolorbox}};
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+
+\begin{block}{Tétel: Minden dolog halmaza}
+Nincs olyan halmaz, amelynek minden dolog eleme.
+\end{block}
+
+\begin{block}{Biz}
+rrrrrrrrrrrrrrrrrr
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Definíció: Unió}
+Ha A és B halmazok, akkor A és B unióján a következő halmazt értjük:\\
+$$A \cup B = \{x | x \in A \vee x \in B\}$$
+\end{block}
+
+\begin{block}{Tétel: Az unió tulajdonságai}
+Legyenek A, B, C tetszőleges halmazok. Ekkor:
+
+\begin{enumerate}
+\item $A \cup \emptyset = A$
+\item $A \cup B = B \cup A$ (Kommutativitás)
+\item $A \cup (B \cup C) = (A \cup B) \cup )$ (Asszociativitás)
+\item $A \cup A = A$ (Idempotencia)
+\item $A \subseteq B$ akkor, és csak akkor, ha $A \cup B = B$
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Definíció: Metszet}
+Ha A és B halmazok, akkor A és B metszetén a következő halmazt értjük:\\
+$$A \cap B = \{x \in A \wedge x \in B\}$$
+\end{block}
+
+\begin{block}{Tétel: A metszet tulajdonságai}
+Legyenek A, B, C tetszőleges halmazok. Ekkor:
+
+\begin{enumerate}
+\item $A \cap \emptyset = \emptyset$
+\item $A \cap B = B \cap A$ (Kommutativitás)
+\item $A \cap (B \cap C) = (A \cap B) \cap C$ (Asszociativitás)
+\item $A \cap A = A$ (Idempotencia)
+\item $A \subseteq B$ akkor, és csak akkor, ha $A \cap B = A$
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Unió és metszet disztributivitása}
+Legyenek A, B, C tetszőleges halmazok. Ekkor:
+
+\begin{enumerate}
+\item $A \cap (B \cup C) = (A \cap B) \cup (B \cap C)$ (A metszet disztributivitása az unióra nézve)
+
+\item $A \cup (B \cap C) = (A \cup B) \cap (B \cup C)$ (Az unió disztributivitása a metszetre nézve)
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Definíció: Komplementer}
+Ha X halmaz, A $\wedge$ X, akkor A halmaz X-re vonatkoztatott komplementere:\\
+$$A' = X \setminus A$$
+\end{block}
+
+\begin{block}{Tétel: A komplementer tulajdonságai}
+Legyenek A, B $\wedge$ X halmazok. Ekkor:
+
+\begin{enumerate}
+\item $(A')' = A$
+\item $\emptyset' = X$
+\item $A \cap A' = \emptyset$
+\item $A \cup A' = X$
+\item $A \subseteq B$ akkor, és csak akkor, ha $B' \subseteq A'$
+\item $(A \cap B)' = A' \cup B'$
+\item $(A \cup B)' = A' \cap B'$
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Definíció: Halmaz osztályfelbontása}
+A tetszőleges X halmazt \textbf{osztályozzuk (osztályokra bontjuk)}, ha páronként diszjunkt, nemüres részhalmazainak uniójaként állítjuk elő.
+\end{block}
+
+\begin{block}{Az X $\in$ X elem \textbf{ekvivalencia osztálya}:}
+$$\overline{x} = \{y \in X : y \sim x\}$$
+\end{block}
+
+\begin{block}{Tétel: Ekvivalenciareláció és osztályfelbontás kapcsolata}
+Valamely X halmazon értelmezett $\sim$ ekvivalenciareláció X-nek egy osztályfelbontását adja. Megfordítva, az X halmaz minden osztályfelbontása egy $\sim$ ekvivalenciarelációt hoz létre.
+\end{block}
+
+\begin{block}{Biz}
+asasdad
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tikzpicture}[overlay, remember picture]
+\node[anchor=center] at (current page.center) {
+\begin{beamercolorbox}[center]{title}
+    {\Huge Algebrai struktúrák, számhalmazok}
+\end{beamercolorbox}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Egységelem és inverz félcsoportban
+Félcsoportban legfeljebb egy egységelem létezik, és minden elemnek legfeljebb egy, az egységelemre vonatkozó inverze létezik.}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Észrevételek gyűrűkben}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Nullosztó és regularitás}
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Természetes számok}
+Halmaz, egy nullér, és egy injektív unér művelettel (rákövetkezés)
+
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: N rendezése}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Felső határ és arkhimédészi tulajdonság}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Q nem felső határ tulajdonságú}
+(12. dia lap alja)
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: $\sqrt{2}$ nem racionális}
+Nincs Q-ban olyan szám, amelynek négyzete 2.
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{block}{Tétel: Az algebra alaptétele}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[overlay, remember picture]
+\node[anchor=center] at (current page.center) {
+\begin{beamercolorbox}[center]{title}
+    {\Huge Számelmélet}
+\end{beamercolorbox}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Az oszthatóság tulajdonságai EIT-ban}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Prím és irreducibilis elem EIT-ban}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Maradékos osztás Z-ben}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Prím és irreducibilis elem Z-ben}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: A számelmélet alaptétele}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Eukleidész tétele}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Kongruencia tulajdonságai}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Omnibusz tétel}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Euler-Fermat tétel}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: (Kis) Fermat tétel}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: A diofantikus egyenlet megoldása}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Kínai maradéktétel}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Számelméleti függvények}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: fi multiplikativitása}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: fi(n) kiszámolása}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[overlay, remember picture]
+\node[anchor=center] at (current page.center) {
+\begin{beamercolorbox}[center]{title}
+    {\Huge Kombinatorika}
+\end{beamercolorbox}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Véges halmaz valódi részhalmaza}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Skatulya-elv}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Permutációk száma}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Variációk száma}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Ismétléses variációk száma}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Kombinációk száma}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Ismétléses kombinációk száma}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Ismétléses permutációk száma}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Binomiális tétel}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Logikai szita formula}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}
+
+\begin{block}{Tétel: Egységelem és inverz félcsoportban}
+\end{block}
+
+\begin{block}{Bizonyítás}
+\end{block}
+
+\end{frame}
+
+
+\end{document}
