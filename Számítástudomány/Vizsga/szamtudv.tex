@@ -2,6 +2,9 @@
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
 \documentclass{beamer}
+
+\geometry{paperwidth=160mm,paperheight=120mm}
+
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
 
@@ -13,8 +16,6 @@
 \usetheme{boxes}
 
 % tikz settings for the flowchart(s)
-
-% Define block styles
 
 \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!15]
 \tikzstyle{block} = [rectangle, draw, fill=blue!15, text width=20em, text centered, minimum height=1em]
@@ -332,6 +333,200 @@ Legyen $G = (V, E, fi , w)$ egy véges összefüggő gráf. A következő algori
 \begin{frame}
 
 \begin{block}{Tétel: Erős összefüggőség}
+Egy összefüggő gráf akkor, és csak akkor irányítható úgy, hogy erősen összefüggő legyen, ha minden \textbf{éléhez} tartozik rajta áthaladó kör.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Tétel: Euler formula}
+Egy összefüggő síkbeli gráf, amelynek $t$ tartománya van, (a külső tartományt is beleértve), eleget tesz az Euler-formulának:
+$$v(G) - e(G) + t = 2$$
+
+\end{block}
+
+\begin{block}{Bizonyítás (Sematikus)}
+Tekintsünk egy $k$ kört $G$-ben és egy $e \in E(K)$ élet.\\
+Mivel $e$ két tartomány határán van $\implies$ $e$ törlésével két szomszéd régió eggyé válik.
+
+(kép)
+
+$\implies$ az élek, és tartományok száma is eggyel csökken.\\
+A formula: $v(G) - e(G) + t = 2$ -> $e(G)$ Az $e(G)$ nél ha kivonunk 1-et: $-(-1) = +1$, A $t$-nél pedig -1 $\implies$ a formula értéke ugyan az marad.\\
+
+Az eltörléseket ismételve előbb-utóbb megkapjuk G egy feszítőfáját. (Tétel, feszítőfa létezése)
+
+Fánál $t = 1$ és az élek száma $v(G) - 1$. $\implies$
+$$\implies v(G) - e(G) + t = v(G) - (v(G) - 1) + 1 = 2$$
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Síkgráf élszáma}
+ Ha $G$ egyszerű, síkba rajzolható gráf, és $v(G) \geq 3$, akkor $$e(G) \leq 3v(G) - 6$$.
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+\textbf{1. Eset}\\
+TFH $G$ összefüggő.\\
+Mivel $v(G) = 3$-ra igaz, ezért tfh (legyen) v(G) > 3.\\
+Mivel G egyszeű $\implies$ minden tartományát legalább 3 él határolja. $\implies$\\
+$\implies$ legalább 3t élet számoltunk.\\
+Mivel az elvágó éleket egyszer számoltuk, a többit kétszer $\implies$ $3t \leq 2e(G)$.\\
+Az Euler formulából következik, hogy $$3(e(G) - v(G) + 2) \leq 2e(G) \implies e(G) \leq 3v(G) - 6$$\\
+\smallskip
+\textbf{2. Eset}\\
+TFH $G$ nem összefüggő.\\
+Ekkor visszavezetjük az első esetre, élek hozzáadásával.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Minimális fokszáma síkgráfban.}
+Ha $G$ egyszerű, síkba rajzolható gráf, akkor $$\delta = \min_{{q \in V(G)}} d(a) \leq 5$$
+
+\end{block}
+
+\begin{block}{Bizonyítás (Indirekt)}
+TFH $\delta \geq 6$.
+Az általánosság megsértése nélkül feltehetjük, hogy $v(G) \geq 3$.\\
+$\sum_{{a \in V(G)}} d(a) = 2e(G)$ (fokok száma = 2 x az élek száma)\\
+Mivel $\delta \geq 6 \implies 6v(G) \leq 2e(G)$\\
+A síkgráf élszáma tételből következik, hogy:\\
+$2e(G) \leq 6v(G) - 12   / *2$\\
+$6v(G) \leq 6v(G) - 12$ $\rightarrow$ Ellentmondás!
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Kuratovszki gráfok}
+A Kuratovszki gráfok ($K_5$ és $K_{3,3}$) Nem rajzolhatók síkba.\\
+TODO: kép
+
+\end{block}
+
+\begin{block}{Bizonyítás (Indirekt)}
+TFH $K_5$ és $K_{3,3}$ síkbarajzolható.\\
+\smallskip
+\textbf{$K_{3,3}$ esetén}:\\
+$v(G) = 6$, és $e(G) = 9$\\
+Euler forumlából következik, hogy $t = 5$.\\
+Viszont $K_{3,3}$ nem tartalmaz háromszöget, és nincs szeparáló éle. $\implies$\\
+$\implies$ $4t \leq 2e(G) \implies 20 \leq 18$. $\rightarrow$ Ellentmondás!\\
+\smallskip
+\textbf{$K_5$ esetén}:\\
+$v(G) = 5$ és $e(G) = 10$\\
+Alkalmazzuk a síkgráf élszáma tételt ($e(G) \leq 3v(G) - 6$), ekkor\\
+$10 \leq 9$ $\rightarrow$ Ellentmondás!
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Kuratovszki tétel}
+Egy egyszerű véges gráf \textbf{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratovszki gráfok valamelyikével topologikusan izomorf részgráfot.
+
+\end{block}
+
+\end{frame}
+
+% --------------------  FORÁLIS NYELVEK, ÉS AUTOMATÁK --------------------
+
+\begin{frame}[plain]
+\begin{tikzpicture}[overlay, remember picture]
+\node[anchor=center] at (current page.center) {
+\begin{beamercolorbox}[center]{title}
+    {\Huge Formális nyelvek, és Automaták}
+\end{beamercolorbox}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Kleene tétel}
+Egy nyelv akkor, és csak akkor felismerhető, ha reguláris.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Felismerhető nyelvek komplementere}
+$L$ Felismerhető $\implies$ $\overline{L}$
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+Legyen $M = (Q, \Sigma , \delta , q_0, F)$ véges automata és $L = L(M)$ (M automata felismeri az L nyelvet).\\
+Tekintsük a következő konstrukciót:\\
+Legyen $\overline{M} = (Q, \Sigma , \delta, q_0, F)$, ahol $\overline{F} = Q - F$.\\
+Ekkor  $L(\overline{M}) = \overline{L}$. (Azaz az $\overline{M}$ automata biztosan felismeri az $\overline{L}$ nyelvet.\\ 
+(Triviális, mert amit $L$ nem ismer fel, azt ez biztosan, amit $\overline{L}$ felismer, azt pedig ez nem ismeri fel biztosan.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Felismerhető nyelvek komplementere}
+$L_1, L_2$ felismerhető $\implies$ $L_1 \cap L_2$
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
+Legyen: $M_1 = (Q_1, \Sigma , {\delta}_1, q_1, F_1), M_2 = (Q_2, \Sigma , {\delta}_2, q_2, F_2)$.\\
+Legyen: $Q = Q_1 x Q_2$
+Legyen: $\delta = Q x \Sigma \rightarrow Q$ (Párok lesznek).\\
+Legyen: $\delta((s_1, s_2), a) = ({\delta}_1(s_1, a), {\delta}_2(s_2, a))$, $s_1 \in Q_1, s_2 \in Q_2, a \in \Sigma$\\
+\smallskip
+Legyen: $q_0 = (q_1, q_2)$\\
+Legyen: \textbf{$F_{\cap} = F_1 x F_2$}\\
+\smallskip
+Legyen: $M_{\cap} = (Q, \Sigma , \delta , q_0, F_{\cap})$\\
+\smallskip
+Ekkor: $L(M_{\cap}) = L_1 \cap L_2$\\
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Felismerhető nyelvek egyesítése}
+$L_1, L_2$ felismerhető $\implies$ $L_1 \cup L_2$
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
+Legyen: $M_1 = (Q_1, \Sigma , {\delta}_1, q_1, F_1), M_2 = (Q_2, \Sigma , {\delta}_2, q_2, F_2)$.\\
+Legyen: $Q = Q_1 x Q_2$
+Legyen: $\delta = Q x \Sigma \rightarrow Q$ (Párok lesznek).\\
+Legyen: $\delta((s_1, s_2), a) = ({\delta}_1(s_1, a), {\delta}_2(s_2, a))$, $s_1 \in Q_1, s_2 \in Q_2, a \in \Sigma$\\
+\smallskip
+Legyen: $q_0 = (q_1, q_2)$\\
+Legyen: \textbf{$F_{\cup} = F_1 x F_2$}\\
+\smallskip
+Legyen: $M_{\cup} = (Q, \Sigma , \delta , q_0, F_{\cup})$\\
+\smallskip
+Ekkor: $L(M_{\cup}) = L_1 \cup L_2$\\
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Nemdeterminisztikus automata}
+Minden $M = (Q, \Sigma , \delta , q_0, F)$ véges nemdeterminisztikus automatával felismerhető nyelv, felismerhető véges automatával.
+
+\end{block}
+
+\begin{block}{Bizonyítás}
 
 \end{block}
 
