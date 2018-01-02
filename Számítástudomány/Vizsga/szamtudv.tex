@@ -3,7 +3,7 @@
 
 \documentclass{beamer}
 
-\geometry{paperwidth=160mm,paperheight=120mm}
+\geometry{paperwidth=160mm,paperheight=160mm}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
@@ -527,6 +527,150 @@ Minden $M = (Q, \Sigma , \delta , q_0, F)$ véges nemdeterminisztikus automatáv
 \end{block}
 
 \begin{block}{Bizonyítás}
+Tekintsük az $M' = (Q', \Sigma , {\delta}', Q_0, F')$ véges automatát, ahol\\
+$Q' = p(Q)$ ($P(Q)$ $\rightarrow$ hatványhalmaz)\\
+${\delta}' : p(Q) x \Sigma \rightarrow p(Q)$ (Az állapotok is halmazok!)\\
+${\delta}'(X, a) = \widehat{Y}$, $Y = U_{q \in X} \delta(q, a)$\\
+$Q_0 = \widehat{\{q_0\}}$\\
+$F' = \{X \supseteq Q : X \cap F \neq \emptyset \}$.\\
+Ekkor nyilvánvaló, hogy $L(M') = L(M)$.\\
+Megjegyzés: Elég lenne $p(Q)$ azon elemeivel számolni, amelyek elérhetők $Q_0$-ból.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Felismerhető nyelvek szorzata}
+$L_1, L_2$ felismerhető $\implies$ $L_1 * L_2$
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
+Legyen: $M_1 = (Q_1, \Sigma , {\delta}_1, q_1, F_1), M_2 = (Q_2, \Sigma , {\delta}_2, q_2, F_2)$.\\
+Legyen: $Q_1 \cap Q_2 = \emptyset$, $L(M_1) = L_1, L(M_2) = L_2$.\\
+\bigskip
+Legyen: ${\delta}(q, a) = $
+$
+\begin{cases}
+{\delta}_1(q, a) & q \in Q_1 - F_1\\
+{\delta}_1(q, a) & q \in F_1, a \neq \epsilon \\
+{\delta}_1(q, a) \cup \{q_2\} & q \in F_1, a = \epsilon \\
+{\delta}_1(q, a) & q \in Q_2 \\
+\end{cases}
+$\\
+\bigskip
+Legyen: $M_1 * M_2 = (Q_1 \cup Q_2, \Sigma , \delta , q_1, F_2)$\\
+\bigskip
+Ekkor: \textbf{$L(M_1 * M_2) = L_1 * L_2$}\\
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Felismerhető nyelvek iterációja}
+$L$ felismerhető $\implies$ $L*$ is felismerhető.
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+Legyen: $M = (Q, \Sigma , {\delta}, q_0, F)$.\\
+Legyen: $M* = (Q \cup \{s_0\}, \Sigma , {\delta}_*, s_0, F \cup \{s_0\})$.\\
+\bigskip
+Legyen: ${\delta}(q, a) = $
+$
+\begin{cases}
+{\delta}(q, a) & q \in Q $ és $q \notin F\\
+{\delta}(q, a) & q \in F$ és $a \neq \epsilon \\
+{\delta}(q, a) \cup \{q0\} & q \in F$ és $a = \epsilon \\
+\{q_0\} & q = s_0$ és $a = \epsilon \\
+\emptyset & q = s_0$ és $a \neq \epsilon \\
+\end{cases}
+$\\
+\bigskip
+\textbf{Ekkor: $L(M*) = L*$}\\
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Pumpáló lemma reguláris nyelvre}
+Minden $L \subseteq {\Sigma}*$ reguláris nyelvhez létezik olyan $p$ természetes szám, amelyre L minden legalább $p$ hosszúságó $u$ szava felírható $$u = xyz$$\\
+alakban úgy, hogy\\
+\begin{enumerate}
+\item $|y| > 0$
+\item $|xy| \leq p$
+\item $xy'z \in L$ minden $i \geq 0$ egészre.
+\end{enumerate}
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+Az L reguláris nyelvhez konstruáljuk meg az $M = (Q, {\Sigma}, {\delta}, q_0, F)$ véges automatát úgy, hogy legyen $p = |Q|$.\\
+Ha $u \in L$ és $|u| \geq p \implies$ a $q_0, q_1, ...,q_n (q_i \in Q, i = 0, ..., n)$\\
+számítási sorozatra az $u$ szón teljesüljön, hogy\\
+\begin{enumerate}
+\item $n = |u| \geq p$
+\item $q_n \in F$
+\item ${\exists}i, j : 0 \leq i < j \leq p$ és $q_i = q_j$
+\end{enumerate}
+\bigskip
+Legyen továbbá:
+\begin{itemize}
+\item $x$ az $u$ szó $i$ hosszú kezdőszelete
+\item $y$ az $x$-et követő $j - i$ hosszú rész-szó
+\item $z$ az $u n - j$ hosszú zárószelete 
+\end{itemize}
+\bigskip
+\textbf{Ekkor az $u = xyz$ felbontásra teljesülnek a lemma állításai.}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Példa nemreguláris nyelvre}
+Az $L = \{0^n1^n : n \geq 0\} \subseteq \{0, 1\}^*$ nyelv nem reguláris.
+\end{block}
+
+\begin{block}{Bizonyítás}
+Legyen $p$  tetszőleges, ekkor $u = 0^p1^p$.\\
+Tfh $x, y, z$ olyan szavak, amelyekre:\\
+$u = xyz, |xy| \leq p, |y| > 0$.\\
+Ekkor $xy$ csupa 0-ból áll és $y$ tartalmaz legalább egy 0-t. $\implies$\\
+$\implies$ $i \neq 1$ esetén $xy'z \notin L$, mert több 0 lessz benne, mint 1-es! $\implies$\\
+$\implies$ Sosem találunk megfelelő $p$-t $\implies$ \textbf{A nyelv nem reguláris.}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{block}{Tétel: Derivációs fák}
+Egy $X \in (V \cup {\Sigma}_{\epsilon})$-ből induló derivációs fa, amelynek határa az $u \in {\Sigma}^*$ szó, ami akkor és csak akkor létezik, ha $X {\implies}^* u \in {\Sigma}^*$.
+\end{block}
+
+\begin{block}{Tétel: Ekvivalens állítások derivációs fákra}
+Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a következők ekvivalensek az $u \in {\Sigma}^*$ szóra:\\
+\begin{enumerate}
+\item $u \in L(G)$
+\item $S {\implies}^*_l u$
+\item Létezik olyan $S$-ből induló derivációs fa, amelynek határa $u$.
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Reguláris nyelv környezetfüggetlen}
+Minden reguláris nyelv környezetfüggetlen.
+
+\end{block}
+
+\begin{block}{Bizonyítás}
+
+\end{enumerate}
 
 \end{block}
 
