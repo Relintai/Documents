@@ -667,10 +667,91 @@ Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a követke
 Minden reguláris nyelv környezetfüggetlen.
 \end{block}
 
-\begin{block}{Bizonyítás}
-
+\begin{block}{Bizonyítás (Kontrapozíció)}
+Legyen $L \in {\Sigma}^*, L = L(M)$, és\\
+$M = (Q, {\Sigma}, {\delta}, q_0, F)$ nemdeterminisztikus véges automata.\\
+\smallskip
+Megkonstruáljuk a $G = (Q, {\Sigma}, R, q_09$ nyelvtant, ahol,\\
+$R = \{q \rightarrow aq' : q' \in {\delta}(q, a)\} \cup \{q \rightarrow \sigma : q \in F \}$.\\
+Ekkor az $u \in  L(G) \iff \exists u$ szóra $q_0$-ból $q$-ba vezető számítási sorozat.\\
+(triviális, a vizygán is lehet mondani).
 \end{block}
 
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Környezetfüggetlen nyelvek műveleti zártsága}
+A környezetfüggetlen nyelvek zártak a reguláris műveletekre.
+\end{block}
+
+\begin{block}{Bizonyítás (Kontrapozíció)}
+A módszer: adott $E$ reguláris kifejezéshez megadjuk a\\
+$G_E = (V_E, {\Sigma}, R_E, S_E)$\\
+nyelvtant, amely az $E$ által jelölt nyelvet generálja.\\
+\bigskip
+Ha $E = \emptyset$:\\
+Akkor $G_{\emptyset} = ({S}, {\Sigma}, \emptyset, S)$.\\
+\bigskip
+Ha $E = a \in {\Sigma}$:\\ű
+Akkor $G_a = (\{S\}, {\Sigma}, \{S \rightarrow a\}, S)$.\\
+\bigskip
+Ha $E = (E_1 + E_2)$:\\
+Akkor $G_E = (V_{E_1} \cup V_{E_2} \cup \{S\}, \Sigma, R_{E_1} \cup R_{E_2} \cup \{S \rightarrow S_{E_1}, S \rightarrow S_{E_2}\}, S)$,\\
+és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cap V_{E_2}$.\\
+\bigskip
+Ha $E = (E_1 * E_2)$:\\
+Akkor $G_E = (V_{E_1} \cup V_{E_2} \cup \{S\}, \Sigma, R_{E_1} \cup R_{E_2} \cup \{S \rightarrow S_{E_1}S_{E_2}\}, S)$,\\
+és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cap V_{E_2}$.\\
+\bigskip
+Ha $E = (E_1)^*$:\\
+Akkor $G_E = (V_{E_1} \cup \{S\}, \Sigma, R_{E_1} \cup \{S \rightarrow SS_{E_1}, S \rightarrow \epsilon \}, S)$,\\
+és feltesszük, hogy $S \notin V_{E_1}$.\\
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Környezetfüggetlen nyelv és veremautomata}
+Minden környezetfüggetlen nyelv felismerhető veremautomatával és minden veremautomatával felismerhető nyelv környezetfüggetlen.
+\end{block}
+
+\begin{block}{Tétel: Pumpáló lemma környezetfüggetlen nyelvre}
+Minden $L \subseteq {\Sigma}*$ környezetfüggetlen nyelvhez létezik olyan $p > 0$ természetes szám, amelyre L minden legalább $p$ hosszúságó $w$ szava felírható $$w = uvxyz$$\\
+alakban úgy, hogy\\
+\begin{enumerate}
+\item $|vy| > 0$
+\item $|vxy| \leq p$
+\item $uv'xy'z \in L$ minden $i \geq 0$ egészre.
+\end{enumerate}
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Példa nem környezetfüggetlen nyelvre 1}
+Az $L = \{a^nb^nc^n : n \geq 0 \} \subseteq {a, b, c}^*$ nyelv nem környezetfüggetlen.
+\end{block}
+
+\begin{block}{Bizonyítás}
+Belátjuk, hogy ${\forall}p > 0$ egészhez ${\exists}w \in L, |w| \geq p$ úgy, hogy\\
+a $w$ tetszőleges olyan $w = uvxyz$ felbontására, ahol $|vy| > 0, |vxy| < p$,\\
+létezik olyan i, amelyre $uv^ixy^iz \notin L$.\\
+Tetszőleges $p$-hez legyen $w = a^pb^pc^p$. Ekkor bárhogyan is írjuk fel a $w$-t úgy, hogy $w = uvxyz$ felbontásra $|vy| > 0, |vxy| < p$, mindíg lesz olyan betű, amely nincs benne $vy$-ban, viszont ekkor $uxz \notin L$.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Példa nem környezetfüggetlen nyelvre 2}
+Az $L = \{w\#w : w \in \{0, 1\}^* \}$ nyelv nem környezetfüggetlen.
+\end{block}
+
+\begin{block}{Bizonyítás}
+Tetszőleges $p$-hez legyen $w = 0^p1^p\#0^p1^p$, és tekintsük $w$ egy tetszőleges olyan $w = uvxyz$ felbontását, ahol $|vy| > 0, |vxy| < p$.\\
+\bigskip
+1. eset: Ha $\# \notin x$ $\rightarrow$ $uv^2xy^2z \notin L$.
+\bigskip
+2. eset: Ha $\# |in x$ $\rightarrow$ Ekkor $u$-ban csak az $1, y$-ban csak $0$ szerepelhet. $\rightarrow$ Mivel $vy \neq \sigma \implies uxz \notin L$.
+\end{block}
 \end{frame}
 
 \end{document}
