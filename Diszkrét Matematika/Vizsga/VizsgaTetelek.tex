@@ -7,6 +7,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
+\usepackage[makeroom]{cancel}
 
 \usetheme{boxes}
 
@@ -389,8 +390,12 @@ $n_1 < n$ és van két lényegesen különböző felbontása!
 Végetlen sok prímszám van.
 \end{block}
 
-\begin{block}{Bizonyítás}
-
+\begin{block}{Bizonyítás (Indirekt)}
+Tfh véges sok van:\\
+$p_1, p_2, ... ,p_k$.\\
+Legyen $n = p_1p_2...p_k$.\\
+Számelmélet alaptételéből következik hogy létezik $p_j : p_j | n + 1$\\
+$p_j : p_j | n + 1 \implies p_j | 1$ Ellentmondás!
 \end{block}
 
 \end{frame}
@@ -398,6 +403,13 @@ Végetlen sok prímszám van.
 \begin{frame}
 
 \begin{block}{Tétel: Kongruencia tulajdonságai}
+\begin{enumerate}
+\item Ekvivalencia reláció
+\item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$a + c \equiv b + d \pmod{m}$}
+\item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$ac \equiv bd \pmod{m}$}
+\item $a \equiv b \pmod{m} \land f(x) \in z[x] \implies$ \textbf{$f(a) \equiv f(b) \pmod{m}$}
+\item Ha $(c, m) = d$, $ac \equiv bc \pmod{m} \iff a \equiv b \pmod{\frac{m}{d}}$
+\end{enumerate}
 \end{block}
 
 \end{frame}
@@ -405,9 +417,20 @@ Végetlen sok prímszám van.
 \begin{frame}
 
 \begin{block}{Tétel: Omnibusz tétel}
+Legyen: $m > 1$ egész, $\{a_1, ..., a_m\}$ TMR modulo $m$, $\{b_1, ..., b_{{\phi}(m)}\}$ RMR modulo $m$, $c, d \in \mathbb{Z}$, és $(c,m) = 1$.\\
+\smallskip
+Ekkor:\\
+\smallskip
+$\{ ca_1 + d, ..., ca_m + d \}$ TMR modulo $m$\\
+$\{ cb_1, ..., cb{{\phi}(m)}\}$ RMR modulo $m$
 \end{block}
 
-\begin{block}{Bizonyítás}
+\begin{block}{Bizonyítás (Indirekt)}
+Tfh van két nem inkongruens elem\\
+$ca_i + d = ca_i + d$\\
+${\cancel{c}}a_i + {\cancel{d}} = {\cancel{c}}a_i + {\cancel{d}}$ $(c, m) = 1$, és pontosan $m$ db elem!\\
+$(c, m) = 1$ és $(b_j,m) = 1$ $\implies$ $(cb_j, m) = 1$
+
 \end{block}
 
 \end{frame}
@@ -415,9 +438,17 @@ Végetlen sok prímszám van.
 \begin{frame}
 
 \begin{block}{Tétel: Euler-Fermat tétel}
+Legyen $m > 1$ egész és $a$ relatív prím $m$-hez. Ekkor $a^{{\phi}(m)} \equiv 1 \pmod{m}$
 \end{block}
 
 \begin{block}{Bizonyítás}
+Legyen $\{ r_1, ..., r_{{\phi}(m)}\}$ RMR modulo $m$, $(a, m) = 1$.\\
+Az omnibusz tétel miatt, ekkor $\{ ar_1, ..., ar_{{\phi}(m)}\}$ is RMR modulo $m$.\\
+Megfelelő párosítás $\implies$ $r_i \equiv ar_j \pmod{m}$.\\
+Összehozva: $(r_i, m) = 1$\\
+\smallskip
+$$a^{{\phi}(m)} \prod^{{\phi}(m)}_{i=1} r_i \equiv \prod^{{\phi}(m)}_{i=1} r_i \pmod{m}$$
+
 \end{block}
 
 \end{frame}
@@ -425,9 +456,19 @@ Végetlen sok prímszám van.
 \begin{frame}
 
 \begin{block}{Tétel: (Kis) Fermat tétel}
+Legyen $p$ prím és $a \in \mathbb{Z}$. Ekkor\\
+(első alak) ha $p \nmid a$, akkor $a^{p-1} \equiv 1 \pmod{p}$.\\
+(második alak) ha $a$ tetszőleges, akkor $a^p \equiv a \pmod{p}$.
+
 \end{block}
 
 \begin{block}{Bizonyítás}
+Első alak: ${\phi}(p) \equiv p - 1$ $\rightarrow$ előző tétel miatt kész.\\
+\bigskip
+Második alak:\\
+Ha $p|a$ $\rightarrow$ $0 \equiv 0$ $\rightarrow$ kész.\\
+Ha $p{\nmid}a$ $\rightarrow$ ekkor ez az első alak $\rightarrow$ kész.
+
 \end{block}
 
 \end{frame}
@@ -435,9 +476,24 @@ Végetlen sok prímszám van.
 \begin{frame}
 
 \begin{block}{Tétel: A diofantikus egyenlet megoldása}
+Rögzített $a, b, c$ egész számok esetén az \textbf{$ax + by = c$} diofantikus egyenletnek akkor, és csak akkor van megoldása, ha $(a, b)|c$.
 \end{block}
 
 \begin{block}{Bizonyítás}
+Tfh $ax + by = c$ egyenletnek van megoldása.\\
+\textbf{1. Rész ($\implies$)}\\
+\smallskip
+Tfh $x_0, y_0$ megoldás. $\implies$ $(a, b)|a \land (a, b)|b$ $\implies$ lin. kombinációs tul. $\implies$\\
+$\implies$ $(a, b)|ax_0 + by_0 = c$ (Igaz, mert az a, b osztója az $ax_0 + by_0$-nak.)\\
+\bigskip
+\textbf{2.Rész ($\Longleftarrow$)}\\
+\smallskip
+Tfh (a, b)|c. Ekkor:\\
+$c = (a, b)q$\\
+$c = (au + bv)q$\\
+$c = a(uq) + b(vq)$\\
+$c = a(uq) + b(vq)$ $\implies$ egy megoldás: $x = uq, y = vq$.\\
+
 \end{block}
 
 \end{frame}
@@ -445,6 +501,20 @@ Végetlen sok prímszám van.
 \begin{frame}
 
 \begin{block}{Tétel: Kínai maradéktétel}
+Legyen $n \in \mathbb{N}^+, m_1, m_2, ..., m_n \in \mathbb{N}^+, a_i, b_i \in \mathbb{Z} (1 <leq i \leq n)$, ahol
+\begin{enumerate}
+\item $m_i, m_j$ páronként relatív prímek.
+\item $(m_i, a_i) = 1$, minden $1 \leq i \leq n$ esetén.
+\end{enumerate}
+Ekkor az\\
+\bigskip
+	$a_1x \equiv b_1 \pmod{m_1}$\\
+	$a_2x \equiv b_2 \pmod{m_2}$\\
+	...\\
+	$a_nx \equiv b_n \pmod{m_n}$\\
+\bigskip
+Kongruenciarendszer megoldható és bármely két megoldása kongruens modulo $m_1m_2...m_n$.
+
 \end{block}
 
 \end{frame}
@@ -452,26 +522,65 @@ Végetlen sok prímszám van.
 \begin{frame}
 
 \begin{block}{Tétel: Számelméleti függvények}
+Legyen $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$. Ekkor:\\
+\begin{enumerate}
+\item Ha $f$ additív számelméleti függvény, akkor $$f(n) = f(p_1^{{\alpha}_1}) + ... + f(p_k^{{\alpha}_k})$$
+\item Ha $f$ multiplikatív számelméleti függvény, akkor $$f(n) = f(p_1^{{\alpha}_1})...f(p_k^{{\alpha}_k})$$
+\item Ha $f$ teljesen additív számelméleti függvény, akkor $$f(n) = {\alpha}_1f(p_1) + ... + {\alpha}_kf(p_k)$$
+\item Ha $f$ teljesen multiplikatív számelméleti függvény, akkor $$f(n) = f(p_1)^{{\alpha}_1}...f(p_k)^{{\alpha}_k}$$
+\end{enumerate}
+
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: fi multiplikativitása}
+\begin{block}{Tétel: $\phi$ multiplikativitása}
+$\phi$ multiplikatív.
 \end{block}
 
 \begin{block}{Bizonyítás}
+\smallskip
+\begin{tabular}{c c c c}
+1 & 2 & ... & a \\
+a + 1 & a + 2 & ... & 2a\\
+ &  & ... &  \\
+(b - 1)a + 1 & (b - 1)a + 2 & ... & ba
+\end{tabular}
+\smallskip
+Számoljuk meg, hogy a táblázatban hány relatív prím van $ab$-hez: ennyi lesz ${\phi}(ab)$ értéke.\\
+(Ha $a$ is $b$ is relatív prím $c$-hez, akkor $ab$ is. $\implies$ azokat kell számolni, amelyek $a$-hoz és $b$-hez is rel. prímek)\\
+\smallskip
+AZ Omnibusz tételből következik hogy minden oszlop TMR mod $b$, ha $(a, b) = 1$ $\implies$\\
+$\implies$ minden oszlopban ${\phi}(b)$ rel. prím $b$-hez.\\
+\smallskip
+| Minden oszlom kongruens elemeket tart mod $a$.\\
+| Minden sor egy TMR mod $a$ $\implies$ minden sorban ${\phi}(a)$ db elem relatív prím $a$-hoz.\\
+$\implies$ ${\phi}(a)$ db oszlopnak rel prímek az elemei $a$-hoz. $\implies$ összesen ${\phi}(a){\phi}(b)$ rel. prím van $ab$-hez.
+
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: fi(n) kiszámolása}
+\begin{block}{Tétel: ${\phi}$(n) kiszámolása}
+Ha $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$, akkor\\
+$${\phi}(n) = \prod^k_{j=1} (p_j^{{\alpha}_j} - p_j^{{\alpha}_j - 1}) = n \prod^k_{j=1} (1 - \frac{1}{p_j}).$$
 \end{block}
 
 \begin{block}{Bizonyítás}
+$\phi$ multiplikatív\\
+Kiszámoljuk az értékeket prímhatványhelyeken, majd összeszorozzuk az értékeket.\\
+${\phi}(p^{\alpha}) = ?$\\
+$1, 2, ..., p, ..., 2p, ..., 3p, ..., (p-1)p, ..., p^2, ..., (p+1)p, ..., (p-1)p^{{\alpha}-1}, ..., p^{\alpha}$\\
+Melyek nem relatív prímek $p$-hez?\\
+\smallskip
+$p^2$-ig $p - 1$ db van + maga $p^2$, azaz ${\phi}(p^2) = p^2 - p^1$.\\
+Tovább számolva:\\
+${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
+
 \end{block}
 
 \end{frame}
