@@ -10,6 +10,7 @@
 
 \usetheme{boxes}
 
+\geometry{paperwidth=160mm,paperheight=160mm}
 
 \begin{document}
 
@@ -157,38 +158,69 @@ asasdad
 
 \begin{frame}
 
-\begin{block}{Tétel: Egységelem és inverz félcsoportban
-Félcsoportban legfeljebb egy egységelem létezik, és minden elemnek legfeljebb egy, az egységelemre vonatkozó inverze létezik.}
+\begin{block}{Tétel: Egységelem és inverz félcsoportban}
+Félcsoportban legfeljebb egy egységelem létezik, és minden elemnek legfeljebb egy, az egységelemre vonatkozó inverze létezik.
 \end{block}
 
 \begin{block}{Bizonyítás}
+Legyen $(G, *)$ félcsoport, $e_b$ bal oldali, $e_j$ pedig jobb oldali egységelem $G$-ben.\\
+Ekkor $e_b = e_j$, hiszen:\\
+$e_be_j = e_j$ és $e_be_j = e_b$, (nyíl éshez $\rightarrow$ a függvény egyértelmű!)\\
+mert $e_b$ bal, $e_j$ jobb oldali egységelem.\\
+Ha az $a \in G$ elemnek $a_b$ balinverze, $a_j$ pedig jobbinverze, akkor $a_b = a_j$.
+$a_baa_j = a_b(aa_j) = a_be = a_b$ és $a_baa_j = (a_ba)a_j = ea_j = a_j$. (Asszociatív tulajdonság) (nyíl éshez ide is $\rightarrow$ a függvény egyértelmű!).d
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Észrevételek gyűrűkben}
+\begin{block}{Lemma: Észrevételek gyűrűkben}
+\begin{enumerate}
+\item \textbf{Szorzás nullelemmel:} Legyen 0 az R gyűrű nulleleme. Ekkor $a0 = 0a = 0$, minden $a \in R$ esetén.
+\item \textbf{Előjelszabály:} Legyen R gyűrű, és $a, b \in R$. Az $a$ elem additív inverzés jelöljük $-a$-val. Ekkor $-(ab) = (-a)b = a(-b)$, tobábbá $(-a)(-b) = ab$.
+\item \textbf{Véges integritási tartomány test.}
+\item \textbf{Testben nincs nullosztó.}
+\end{enumerate}
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Nullosztó és regularitás}
-
+\begin{block}{Lemma: Nullosztó és regularitás}
+R gyűrűben a multiplikatív művelet akkor, és csak akkor reguláris, ha R zérusosztómentes.
 \end{block}
 
 \begin{block}{Bizonyítás}
+\textbf{1. Rész}\\
+Tfh $a \neq 0$, a nem bal oldali nullosztó és $ab = ac$.\\
+$ab = ac  / -(ac)$ (+ additív inverz)\\
+$ab + (-(ac)) = 0$. Előjel szabály + disztri.\\
+$ab + (a(-c)) = a(b+(-c)) = 0$ (Kiemeljük, csak akkor lehet, ha $(b + -1 = 0) \implies (b = c)$)\\
+A feltételből ($a$ nem baloldali nullosztó) következik, hogy $b + (-c) = 0)$ $\implies$\\
+$\implies$ b = c.\\
+\bigskip
+\textbf{2. Rész}\\
+Tfh $a$ bal oldali nullosztó, tehát $a \neq 0$ és létezik $b \neq 0\: ab = 0$.\\
+tetszőleges $c \in R$-re: $ac = ac$.\\
+$ac = ac / +0 (0 = ab)$\\
+$ac = ac + ab$ /(Disztributivitás)\\
+$ac = a(c + b)$ Ellentmondás!\\
+Mivel $(b \neq 0) \implies (c \neq (c + b))$ (A b nem additív egységelem).
+
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Természetes számok}
-Halmaz, egy nullér, és egy injektív unér művelettel (rákövetkezés)
-
+\begin{block}{Tétel: Természetes számok}
+A $(N, +, *)$ struktúrában mindkét művelet asszociatív, kommutatív, reguláris.\\
+Nullelem (additív egységelem): 0.\\
+Multiplikatív egységelem: 1.\\
+A szorzat mindkét oldalról disztributív az összeadásra.\\
+${\forall}m \in N : 0 * m = m * 0 = 0$.
 
 \end{block}
 
@@ -197,6 +229,7 @@ Halmaz, egy nullér, és egy injektív unér művelettel (rákövetkezés)
 \begin{frame}
 
 \begin{block}{Tétel: N rendezése}
+A természetes számok halmaza a $\leq$ relációval jólrendezett.
 \end{block}
 
 \end{frame}
@@ -204,9 +237,16 @@ Halmaz, egy nullér, és egy injektív unér művelettel (rákövetkezés)
 \begin{frame}
 
 \begin{block}{Tétel: Felső határ és arkhimédészi tulajdonság}
+$T$ felső határ tulajdonságú test, $\implies$ $T$ arkhimédészi tulajdonságú.
 \end{block}
 
-\begin{block}{Bizonyítás}
+\begin{block}{Bizonyítás (Indirekt)}
+Tfh $T$ felső határ tulajdonságú rendezett test, de nem arkhimédészi tulajdonságú.\\
+$\implies : {\nexists}n \in \mathbb{N} : nx \geq y$.\\
+Azaz y felső korlátja az $A = \{ nx | n \in \mathbb{N} \}$ halmaznak.\\
+Ekkor viszont létezik $z = sup A$ $\implies$ $z - x < z$ nem felső korlát. $\implies$\\
+$implies$ ${\exists}n : nx > z - x \implies (n + 1)x > z$. ($(n + 1)x \in A$).\\
+Ellentmondás, mivel ha $n \in \mathbb{N}$, akkor $n^+ \in \mathbb{N}$ $\rightarrow$ Peano axióma!
 \end{block}
 
 \end{frame}
@@ -214,26 +254,35 @@ Halmaz, egy nullér, és egy injektív unér művelettel (rákövetkezés)
 \begin{frame}
 
 \begin{block}{Tétel: Q nem felső határ tulajdonságú}
-(12. dia lap alja)
+$\mathbb{Q}$ arkhimédészi tulajdonságú, de nem felső határ tulajdonságú.
 \end{block}
 
 \end{frame}
+
 
 \begin{frame}
 
 \begin{block}{Tétel: $\sqrt{2}$ nem racionális}
-Nincs Q-ban olyan szám, amelynek négyzete 2.
+Nincs $\mathbb{Q}$-ban olyan szám, amelynek négyzete 2.
 \end{block}
 
-\begin{block}{Bizonyítás}
-\end{block}
+\begin{block}{Bizonyítás (Indirekt)}
+Tfh van, és ez $x$.\\
+$x = \frac{m}{n}, m,n \in \mathbb{N}^+$, és az $m$ minimális.\\
+$2 = x^2 = \frac{m^2}{n^2} \implies m^2 = 2n^2$\\
+Ebből következik, hogy $m$ páros. $\implies$ $m = 2k, k \in \mathbb{N}^+$\\
+Ebből következik, hogy $n$ is páros: $n = 2j, j \in \mathbb{N}^+$\\
+Ekkor viszont $\frac{m}{n} = \frac{2k}{2j} = \frac{k}{j}$.\\
+Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
 
+\end{block}
 \end{frame}
-
 
 \begin{frame}
 
 \begin{block}{Tétel: Az algebra alaptétele}
+Ha $n \in \mathbb{N}^+$, valamint $c_0, c_1, ... c_n$ komplex számok, $c_n \neq 0$, akkor van olyan $u$ komplex szám, amelyre:\\
+$$\sum_{k = 0}^n c_kz^k = 0$$
 \end{block}
 
 \end{frame}
@@ -250,6 +299,16 @@ Nincs Q-ban olyan szám, amelynek négyzete 2.
 \begin{frame}
 
 \begin{block}{Tétel: Az oszthatóság tulajdonságai EIT-ban}
+\begin{enumerate}
+\item Ha $b|a$ és $b'|a'$, akkor $bb'|aa'$.
+\item A nullának minden elem osztója.
+\item A nulla csak saját magának osztója.
+\item Az 1 egységelem minden elemnek osztója.
+\item Ha $b|a$, akkor $bc|ac$ minden $c \in R$-re.
+\item Ha $bc|ac$ és $c \neq 0$, akkor $b|a$.
+\item Ha $b|a_i$ és $c_i \in R, (i = 1, 2, ..., j)$, akkor $b|\sum^j_{i=1} c_ia_i$.
+\item Az $|$ reláció reflexív, és tranzitív.
+\end{enumerate}
 \end{block}
 
 \end{frame}
@@ -257,26 +316,42 @@ Nincs Q-ban olyan szám, amelynek négyzete 2.
 \begin{frame}
 
 \begin{block}{Tétel: Prím és irreducibilis elem EIT-ban}
+Tetszőleges $R$ egységelemes integritási tartományban minden $p$ elemre:\\
+Ha $p$ prím $\implies$ $p$ felbonthatatlan.
 \end{block}
 
 \begin{block}{Bizonyítás}
+Tfh $p$ prím, és, $p = bc$\\
+Ekkor vagy $p|b$, vagy $p|c$\\
+$b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
+
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Maradékos osztás Z-ben}
+\begin{block}{Tétel: Maradékos osztás $\mathbb{Z}$-ben}
+${\exists}a, b({\neq}0) \in \mathbb{Z}$ számhoz egyértelműen létezik olyan $q, r \in \mathbb{Z}$, hogy\\
+$a = qb + r \land 0 \leq r < |b|$.
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Prím és irreducibilis elem Z-ben}
+\begin{block}{Tétel: Prím és irreducibilis elem $\mathbb{Z}$-ben}
+Az egész számok körében $p$ prím $\iff$ $p$ felbonthatatlan.
 \end{block}
 
 \begin{block}{Bizonyítás}
+Már láttuk, hogy prím felbonthatatlan!\\
+Tfh p felbonthatatlan\\
+Legyen $p|bc$, ekkor vagy $p | b$-nek, ekkor ksz vagyunk.
+Vagy $p \nmid b$ ekkor $(p,b) = 1$.\\
+$c = pcx +bcx \implies 0 mod p \implies p | c$.\\
+(Észrevétel: $(a, b) = 1 \land a | bc \implies a | c$
+
 \end{block}
 
 \end{frame}
@@ -284,9 +359,26 @@ Nincs Q-ban olyan szám, amelynek négyzete 2.
 \begin{frame}
 
 \begin{block}{Tétel: A számelmélet alaptétele}
+Minden $m$ nemnulla, nemegység, egész szám sorrendre és asszociáltásgra való tekintet nélkül egyértelműen bontható fel felbonthatatlanok szorzatára.
 \end{block}
 
-\begin{block}{Bizonyítás}
+\begin{block}{Bizonyítás (Pozitívakra)}
+\textbf{(egzisztencia)}\\
+Tfh $n > 1$\\
+Teljes indukció: $n = 2$ kész, tfk $n - 1$-ig kész.\\
+Ha $n$ felbonthatatlan $\rightarrow$ kész.\\
+Ha $n$ nem felbonthatatlan $\rightarrow$ $n = ab \land a, b$ (a, b nem egység!), $a, b < n$ $\implies$ igaz rájuk az ind. feltétel.\\
+$n$ felbontása $=$ $a$ felbontása szor $b$ felbontása.\\
+\bigskip
+\textbf{(unicitás) (Indirekt)}\\
+Tfh $n$ a legkisebb olyan szám, amely felbontása nem egyértelmű.\\
+$n = p_1 ... p_k = q_1 ... q_r$ $\implies$\\
+$p_j|n \implies p_1|q_1 ... q_r$\\
+$p_1|q_1$, $p_1|q_2 ... q_r$\\
+           $p_1|q_2   p_1|q_3 ... q_r$\\
+                      $p_1|q_i  \implies p_1 = q_i \implies$\\
+$\implies$ $n_1 = \frac{n}{p_1} = p_2 ... p_k = q_1 ... q_{i-1}q_{i+1} ... q_r$\\
+$n_1 < n$ és van két lényegesen különböző felbontása!
 \end{block}
 
 \end{frame}
@@ -294,9 +386,11 @@ Nincs Q-ban olyan szám, amelynek négyzete 2.
 \begin{frame}
 
 \begin{block}{Tétel: Eukleidész tétele}
+Végetlen sok prímszám van.
 \end{block}
 
 \begin{block}{Bizonyítás}
+
 \end{block}
 
 \end{frame}
