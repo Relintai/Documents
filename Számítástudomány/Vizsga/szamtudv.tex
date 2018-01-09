@@ -48,6 +48,38 @@
 \end{tikzpicture}
 \end{frame}
 
+\begin{frame}
+
+\begin{block}{(Ítélet) változók, Logikai szimbólumok, Elválasztó szimbólumok, Logikai formula}
+\bigskip
+\textbf{(Ítélet) változók:} $p_1, p_2, ...$\\
+\hspace{1ex} \textbf{Jel: } $Var = \{p_1, p_2, ...\}$\\
+\bigskip
+\textbf{Logikai szimbólumok:} ${\neg}, {\land}, {\lor}, {\Rightarrow}, {\iff}.$\\
+\bigskip
+\textbf{Elválasztó szimbólumok:} $(, )$\\
+\bigskip
+\textbf{Logikai Formula:} Minden változó formula, továbbá ha $A, B$ formula, akkor:\\
+\textbf{${\neg}A, (A \land B), (A \lor B), (A \Rightarrow B), (A \iff B)$} is formula.\\
+\bigskip
+Legyen $Form$ az összes formula halmaza.
+
+\end{block}
+
+\begin{block}{Megj}
+\textbf{Precedencia:}\\ 
+\bigskip
+$1. {\neg}, 2. {\land}, 3. {\lor}$\\
+\bigskip
+$A \Rightarrow B \equiv {\neg}A \lor B$\\
+$(A \iff B) \equiv (A \Rightarrow B) \land (B \Rightarrow A) \equiv ({\neg}A \lor B) \land ({\neg}B \lor A)$\\
+\bigskip
+(Az $\equiv$ jel itt a jobb elválasztást szolgálja, de egyébként alapból használható ugyanarra mint az $\iff$ jel!)
+
+\end{block}
+
+\end{frame}
+
 
 \begin{frame}
 
@@ -65,6 +97,41 @@ F formulára a következő állítások közül pontosan egy teljesül:
 
 \end{frame}
 
+\begin{frame}
+
+\begin{block}{Részformula, Közvetlen részformula}
+Ha $F$ és formulákra  $f = G_1GG_2$, alkalmas $G_1, G_2, E(G)$ szavakra, ($G_1, G_2$ üres szavak is lehetnek!)\\
+akkor $G$ \textbf{részformulája} $F$-nek.\\
+\bigskip
+A tétel 2-4 pontjában szereplő $G$ és $H$ \textbf{közvetlen részformulái} $F$-nek.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Hozzárendelés}
+Egy $A : Var \rightarrow \{0, 1\}$ leképzést \textbf{hozzárendelésnek} nevezünk.\\
+\bigskip
+$A : Form \rightarrow \{0, 1\}$ kiterjesztéshez legyen $F$ formula.\\
+\begin{enumerate}
+\item Ha $F = p$ valamely $p \in Var$ esetén, akkor $A(F) = A(p)$.
+\item Ha $F = {\neg}G$ akkor $
+\begin{cases}
+{\delta}(q, a) & q \in Q $ és $q \notin F\\
+{\delta}(q, a) & q \in F$ és $a \neq \epsilon \\
+{\delta}(q, a) \cup \{q0\} & q \in F$ és $a = \epsilon \\
+\{q_0\} & q = s_0$ és $a = \epsilon \\
+\emptyset & q = s_0$ és $a \neq \epsilon \\
+\end{cases}
+$
+\end{enumerate}
+
+
+\end{block}
+
+\end{frame}
 
 \begin{frame}
 
@@ -88,7 +155,7 @@ Legyenek $F, F_1, ... , F_n$ tetszőleges formulák, ekkor a következő állít
 
 \begin{enumerate}
 \item $\{F_1, ... , F_n\} \models F$
-\item $F_1 \land ... \land F_n \implies F$ tautológia
+\item $F_1 \land ... \land F_n \rightarrow F$ tautológia
 \item $F_1 \land ... \land F_n \land \neg F$ kielégíthetetlen.
 \end{enumerate}
 
@@ -197,7 +264,7 @@ Legyen $G = (V, E)$ (Gráf). Ekkor $G$-ben a páratlan fokú csúcsok száma pá
 \end{block}
 
 \begin{block}{Bizonyítás}
-$$\sum_{a \in V} d(a) = \sum_{d(a) \equiv 0 (mod 2)} d(a) + \sum_{d(a) \equiv 1 (mod 2)} \equiv 0 (mod 2)$$
+$$\sum_{a \in V} d(a) = \sum_{d(a) \equiv 0 (mod 2)} d(a) + \sum_{d(a) \equiv 1 (mod 2)} d(a) \equiv 0 (mod 2)$$
 amiből kapjuk, hogy $$\sum_{d(a) \equiv 1 (mod 2)} d(a) \equiv 0 (mod 2)$$.
 
 \end{block}
@@ -271,7 +338,7 @@ Egy véges összefüggő $G = (V, E)$ gráfban létezik legalább $v(G) - 1$ vá
 \begin{block}{Bizonyítás}
 $T$ Feszítőfa összefüggő.\\
 $\Rightarrow$ $T_G$ komplementer nem vágás.\\
-Ha $T_G$ komplementerhez hozzáveszünk egy élt $T$-ből, akkor elvágó élhalmazt kapunk, amely tartalmaz egy vágást.\\
+Ha $T_G$ komplementerhez hozzáveszünk egy $e$ élt $T$-ből, akkor elvágó élhalmazt kapunk, amely tartalmaz egy vágást.\\
 Ez a vágás tartalmazza $e$ élt, de másikat nem $T$ből.\\
 Mivel $T$-nek $v(G) - 1$ éle van $\Rightarrow$ legalább ennyi különböző vágást kapunk.
 
@@ -309,14 +376,14 @@ Legyen $G$ egy $n \geq 3$ pontú egyszerű véges gráf. Ha $$d(v) \geq \frac{n}
 \begin{frame}
 
 \begin{block}{Tétel: Kruskal algoritmus}
-Legyen $G = (V, E, fi , w)$ egy véges összefüggő gráf. A következő algoritmus megtalál egy minimális súlyú feszítőfát $G$-ben.
+Legyen $G = (V, E, {\phi}, w)$ egy véges összefüggő gráf. A következő algoritmus megtalál egy minimális súlyú feszítőfát $G$-ben.
     
 \end{block}
 
 \begin{tikzpicture}[node distance = 2cm, auto]
     % Place nodes
     \node [block] (step1) {\tiny{$V(F)=V(G)$ és $E(F) = \emptyset$.}};
-    \node [block, below of=step1] (step2) {\tiny{Bővítsük $F$-et egy $e$ éllel, amely minimális súlyú azon élek közül, amelyek F-hez adva még nem eredményeznek kört.}};
+    \node [block, below of=step1] (step2) {\tiny{Bővítsük $F$-et egy $e \in G$ éllel, amely minimális súlyú azon élek közül, amelyek F-hez adva még nem eredményeznek kört.}};
     \node [decision, below of=step2] (step3) {\tiny{Van még ilyen él?}};
     \node [block, below of=step3] (step4) {\tiny{STOP}};
 
@@ -339,6 +406,60 @@ Egy összefüggő gráf akkor, és csak akkor irányítható úgy, hogy erősen 
 \end{frame}
 
 \begin{frame}
+\begin{block}{Tétel: Minimális fokszáma síkgráfban.}
+Ha $G$ egyszerű, síkba rajzolható gráf, akkor $$\delta = \min_{{q \in V(G)}} d(a) \leq 5$$
+
+\end{block}
+
+\begin{block}{Bizonyítás (Indirekt)}
+TFH $\delta \geq 6$.
+Az általánosság megsértése nélkül feltehetjük, hogy $v(G) \geq 3$.\\
+$\sum_{{a \in V(G)}} d(a) = 2e(G)$ (fokok száma = 2 x az élek száma)\\
+Mivel $\delta \geq 6 \implies 6v(G) \leq 2e(G)$\\
+A síkgráf élszáma tételből következik, hogy:\\
+$2e(G) \leq 6v(G) - 12.$\\
+\bigskip
+$2e(G) \leq 6v(G) - 12$ \hspace{1ex} $/*2$\\
+$6v(G) \leq 6v(G) - 12$ $\rightarrow$ Ellentmondás!
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Kuratovski gráfok}
+A Kuratovski gráfok ($K_5$ és $K_{3,3}$) Nem rajzolhatók síkba.\\
+TODO: kép
+
+\end{block}
+
+\begin{block}{Bizonyítás (Indirekt)}
+TFH $K_5$ és $K_{3,3}$ síkbarajzolható.\\
+\smallskip
+\textbf{$K_{3,3}$ esetén}:\\
+$v(G) = 6$, és $e(G) = 9$\\
+Euler forumlából következik, hogy $t = 5$.\\
+Viszont $K_{3,3}$ nem tartalmaz háromszöget, és nincs szeparáló éle. $\implies$\\
+$\implies$ $4t \leq 2e(G) \implies 20 \leq 18$. $\rightarrow$ Ellentmondás!\\
+\smallskip
+\textbf{$K_5$ esetén}:\\
+$v(G) = 5$ és $e(G) = 10$\\
+Alkalmazzuk a síkgráf élszáma tételt ($e(G) \leq 3v(G) - 6$), ekkor\\
+$10 \leq 9$ $\rightarrow$ Ellentmondás!
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Tétel: Kuratovski tétel}
+Egy egyszerű véges gráf \textbf{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratovski gráfok valamelyikével topologikusan izomorf részgráfot.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
 
 \begin{block}{Tétel: Euler formula}
 Egy összefüggő síkbeli gráf, amelynek $t$ tartománya van, (a külső tartományt is beleértve), eleget tesz az Euler-formulának:
@@ -347,13 +468,13 @@ $$v(G) - e(G) + t = 2$$
 \end{block}
 
 \begin{block}{Bizonyítás (Sematikus)}
-Tekintsünk egy $k$ kört $G$-ben és egy $e \in E(K)$ élet.\\
+Tekintsünk egy $K$ kört $G$-ben és egy $e \in E(K)$ élet.\\
 Mivel $e$ két tartomány határán van $\implies$ $e$ törlésével két szomszéd régió eggyé válik.
 
 (kép)
 
 $\implies$ az élek, és tartományok száma is eggyel csökken.\\
-A formula: $v(G) - e(G) + t = 2$ -> $e(G)$ Az $e(G)$ nél ha kivonunk 1-et: $-(-1) = +1$, A $t$-nél pedig -1 $\implies$ a formula értéke ugyan az marad.\\
+A formula: $v(G) - e(G) + t = 2$ $\rightarrow$ $e(G)$ Az $e(G)$ nél ha kivonunk 1-et: $-(-1) = +1$, A $t$-nél pedig -1 $\implies$ a formula értéke ugyan az marad.\\
 
 Az eltörléseket ismételve előbb-utóbb megkapjuk G egy feszítőfáját. (Tétel, feszítőfa létezése)
 
@@ -386,57 +507,6 @@ Ekkor visszavezetjük az első esetre, élek hozzáadásával.
 
 \end{frame}
 
-\begin{frame}
-\begin{block}{Tétel: Minimális fokszáma síkgráfban.}
-Ha $G$ egyszerű, síkba rajzolható gráf, akkor $$\delta = \min_{{q \in V(G)}} d(a) \leq 5$$
-
-\end{block}
-
-\begin{block}{Bizonyítás (Indirekt)}
-TFH $\delta \geq 6$.
-Az általánosság megsértése nélkül feltehetjük, hogy $v(G) \geq 3$.\\
-$\sum_{{a \in V(G)}} d(a) = 2e(G)$ (fokok száma = 2 x az élek száma)\\
-Mivel $\delta \geq 6 \implies 6v(G) \leq 2e(G)$\\
-A síkgráf élszáma tételből következik, hogy:\\
-$2e(G) \leq 6v(G) - 12   / *2$\\
-$6v(G) \leq 6v(G) - 12$ $\rightarrow$ Ellentmondás!
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}
-\begin{block}{Tétel: Kuratovszki gráfok}
-A Kuratovszki gráfok ($K_5$ és $K_{3,3}$) Nem rajzolhatók síkba.\\
-TODO: kép
-
-\end{block}
-
-\begin{block}{Bizonyítás (Indirekt)}
-TFH $K_5$ és $K_{3,3}$ síkbarajzolható.\\
-\smallskip
-\textbf{$K_{3,3}$ esetén}:\\
-$v(G) = 6$, és $e(G) = 9$\\
-Euler forumlából következik, hogy $t = 5$.\\
-Viszont $K_{3,3}$ nem tartalmaz háromszöget, és nincs szeparáló éle. $\implies$\\
-$\implies$ $4t \leq 2e(G) \implies 20 \leq 18$. $\rightarrow$ Ellentmondás!\\
-\smallskip
-\textbf{$K_5$ esetén}:\\
-$v(G) = 5$ és $e(G) = 10$\\
-Alkalmazzuk a síkgráf élszáma tételt ($e(G) \leq 3v(G) - 6$), ekkor\\
-$10 \leq 9$ $\rightarrow$ Ellentmondás!
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}
-\begin{block}{Tétel: Kuratovszki tétel}
-Egy egyszerű véges gráf \textbf{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratovszki gráfok valamelyikével topologikusan izomorf részgráfot.
-
-\end{block}
-
-\end{frame}
 
 % --------------------  FORÁLIS NYELVEK, ÉS AUTOMATÁK --------------------
 
@@ -466,7 +536,7 @@ $L$ Felismerhető $\implies$ $\overline{L}$
 \begin{block}{Bizonyítás}
 Legyen $M = (Q, \Sigma , \delta , q_0, F)$ véges automata és $L = L(M)$ (M automata felismeri az L nyelvet).\\
 Tekintsük a következő konstrukciót:\\
-Legyen $\overline{M} = (Q, \Sigma , \delta, q_0, F)$, ahol $\overline{F} = Q - F$.\\
+Legyen $\overline{M} = (Q, \Sigma , \delta, q_0, \overline{L})$, ahol $\overline{F} = Q - F$.\\
 Ekkor  $L(\overline{M}) = \overline{L}$. (Azaz az $\overline{M}$ automata biztosan felismeri az $\overline{L}$ nyelvet.\\ 
 (Triviális, mert amit $L$ nem ismer fel, azt ez biztosan, amit $\overline{L}$ felismer, azt pedig ez nem ismeri fel biztosan.
 
@@ -475,7 +545,7 @@ Ekkor  $L(\overline{M}) = \overline{L}$. (Azaz az $\overline{M}$ automata biztos
 \end{frame}
 
 \begin{frame}
-\begin{block}{Tétel: Felismerhető nyelvek komplementere}
+\begin{block}{Tétel: Felismerhető nyelvek metszete}
 $L_1, L_2$ felismerhető $\implies$ $L_1 \cap L_2$
 
 \end{block}
@@ -483,16 +553,16 @@ $L_1, L_2$ felismerhető $\implies$ $L_1 \cap L_2$
 \begin{block}{Bizonyítás}
 Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
 Legyen: $M_1 = (Q_1, \Sigma , {\delta}_1, q_1, F_1), M_2 = (Q_2, \Sigma , {\delta}_2, q_2, F_2)$.\\
-Legyen: $Q = Q_1 x Q_2$
+Legyen: $Q = Q_1 x Q_2$ (Párokból áll, ha pl $Q_1$ 2 elemű, $Q_2$ 3 elemű, akkor $Q$ 6 elemből fog állni.)\\
 Legyen: $\delta = Q x \Sigma \rightarrow Q$ (Párok lesznek).\\
-Legyen: $\delta((s_1, s_2), a) = ({\delta}_1(s_1, a), {\delta}_2(s_2, a))$, $s_1 \in Q_1, s_2 \in Q_2, a \in \Sigma$\\
-\smallskip
+Legyen: $\delta(s, a), s \in Q = \delta((s_1, s_2), a) = ({\delta}_1(s_1, a), {\delta}_2(s_2, a))$, $s_1 \in Q_1, s_2 \in Q_2, a \in \Sigma$\\
+\bigskip
 Legyen: $q_0 = (q_1, q_2)$\\
-Legyen: \textbf{$F_{\cap} = F_1 x F_2$}\\
+Legyen: \underline{\textbf{$F_{\cap} = F_1 x F_2$}} (Az összes lehetséges módon párokat képzünk mindkét alap automata végállapot halmazaiból) $\implies$ csak akkor fog egy nyelvet felismerni, a "nagy" automata, ha mindkét "kis" automata az egyik eredeti végállapotában áll.)\\
 \smallskip
 Legyen: $M_{\cap} = (Q, \Sigma , \delta , q_0, F_{\cap})$\\
-\smallskip
-Ekkor: $L(M_{\cap}) = L_1 \cap L_2$\\
+\bigskip
+Ekkor: \underline{$L(M_{\cap}) = L_1 \cap L_2$}\\
 \end{block}
 
 \end{frame}
@@ -509,13 +579,13 @@ Legyen: $M_1 = (Q_1, \Sigma , {\delta}_1, q_1, F_1), M_2 = (Q_2, \Sigma , {\delt
 Legyen: $Q = Q_1 x Q_2$
 Legyen: $\delta = Q x \Sigma \rightarrow Q$ (Párok lesznek).\\
 Legyen: $\delta((s_1, s_2), a) = ({\delta}_1(s_1, a), {\delta}_2(s_2, a))$, $s_1 \in Q_1, s_2 \in Q_2, a \in \Sigma$\\
-\smallskip
+\bigskip
 Legyen: $q_0 = (q_1, q_2)$\\
-Legyen: \textbf{$F_{\cup} = F_1 x F_2$}\\
+Legyen: \underline{\textbf{$F_{\cup} = F_1 x Q_2 \cup F_2 x Q_1$}} (Az \textbf{első} "kicsi" automata összes \textbf{végállapotát} párba vesszük a \textbf{második} "kicsi" automata összes \textbf{állapotával}, unió a \textbf{második} "kicsi" automata összes végállapota az első "kicsi" automata \textbf{állapotával} $\implies$ bármelyik "kicsi" automata végállapotba kerül, az a másiknak is végállapota lesz a pár másik felén. (Mivel pároknál számít az elemek sorrendje))\\
 \smallskip
 Legyen: $M_{\cup} = (Q, \Sigma , \delta , q_0, F_{\cup})$\\
-\smallskip
-Ekkor: $L(M_{\cup}) = L_1 \cup L_2$\\
+\bigskip
+Ekkor: \underline{$L(M_{\cup}) = L_1 \cup L_2$}\\
 \end{block}
 
 \end{frame}
@@ -527,12 +597,12 @@ Minden $M = (Q, \Sigma , \delta , q_0, F)$ véges nemdeterminisztikus automatáv
 \end{block}
 
 \begin{block}{Bizonyítás}
-Tekintsük az $M' = (Q', \Sigma , {\delta}', Q_0, F')$ véges automatát, ahol\\
-$Q' = p(Q)$ ($P(Q)$ $\rightarrow$ hatványhalmaz)\\
+Tekintsük az $M' = (Q', \Sigma , {\delta}', Q_0, F')$ véges automatát ($Q_0$ halmaz!), ahol\\
+$Q' = p(Q)$ ($p(Q)$ $\rightarrow$ hatványhalmaz)\\
 ${\delta}' : p(Q) x \Sigma \rightarrow p(Q)$ (Az állapotok is halmazok!)\\
-${\delta}'(X, a) = \widehat{Y}$, $Y = U_{q \in X} \delta(q, a)$\\
+${\delta}'(X, a) = \widehat{Y}$ (Y lezártja!), $Y = U_{q \in X} \delta(q, a)$\\
 $Q_0 = \widehat{\{q_0\}}$\\
-$F' = \{X \supseteq Q : X \cap F \neq \emptyset \}$.\\
+$F' = \{X \subseteq Q : X \cap F \neq \emptyset \}$.\\
 Ekkor nyilvánvaló, hogy $L(M') = L(M)$.\\
 Megjegyzés: Elég lenne $p(Q)$ azon elemeivel számolni, amelyek elérhetők $Q_0$-ból.
 
@@ -549,15 +619,17 @@ $L_1, L_2$ felismerhető $\implies$ $L_1 * L_2$
 \begin{block}{Bizonyítás}
 Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
 Legyen: $M_1 = (Q_1, \Sigma , {\delta}_1, q_1, F_1), M_2 = (Q_2, \Sigma , {\delta}_2, q_2, F_2)$.\\
-Legyen: $Q_1 \cap Q_2 = \emptyset$, $L(M_1) = L_1, L(M_2) = L_2$.\\
+Legyen: $Q_1 \cap Q_2 = \emptyset$\\
+Legyen: $L(M_1) = L_1, L(M_2) = L_2$.\\
 \bigskip
 Legyen: ${\delta}(q, a) = $
 $
 \begin{cases}
 {\delta}_1(q, a) & q \in Q_1 - F_1\\
-{\delta}_1(q, a) & q \in F_1, a \neq \epsilon \\
-{\delta}_1(q, a) \cup \{q_2\} & q \in F_1, a = \epsilon \\
-{\delta}_1(q, a) & q \in Q_2 \\
+{\delta}_1(q, a) & q \in F_1, a \neq \epsilon $ (Végállapot) $\\
+{\delta}_1(q, a) \cup \{q_2\} & q \in F_1, a = \epsilon $ (Végállapot) $\rightarrow \\
+ & \rightarrow$ Ha üres betű, akkor átugrunk a második automata kezdőállapotába. $ \\
+{\delta}_2(q, a) & q \in Q_2 $ A második automata $ \\
 \end{cases}
 $\\
 \bigskip
@@ -570,15 +642,15 @@ Ekkor: \textbf{$L(M_1 * M_2) = L_1 * L_2$}\\
 
 \begin{frame}
 \begin{block}{Tétel: Felismerhető nyelvek iterációja}
-$L$ felismerhető $\implies$ $L*$ is felismerhető.
+$L$ felismerhető $\implies$ $L^*$ is felismerhető.
 
 \end{block}
 
 \begin{block}{Bizonyítás}
 Legyen: $M = (Q, \Sigma , {\delta}, q_0, F)$.\\
-Legyen: $M* = (Q \cup \{s_0\}, \Sigma , {\delta}_*, s_0, F \cup \{s_0\})$.\\
+Legyen: $M^* = (Q \cup \{s_0\}, \Sigma , {\delta}_*, s_0, F \cup \{s_0\})$.\\
 \bigskip
-Legyen: ${\delta}(q, a) = $
+Legyen: ${\delta}(q, a)_* = $
 $
 \begin{cases}
 {\delta}(q, a) & q \in Q $ és $q \notin F\\
@@ -589,14 +661,14 @@ $
 \end{cases}
 $\\
 \bigskip
-\textbf{Ekkor: $L(M*) = L*$}\\
+\textbf{Ekkor: $L(M^*) = L^*$}\\
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 \begin{block}{Tétel: Pumpáló lemma reguláris nyelvre}
-Minden $L \subseteq {\Sigma}*$ reguláris nyelvhez létezik olyan $p$ természetes szám, amelyre L minden legalább $p$ hosszúságó $u$ szava felírható $$u = xyz$$\\
+Minden $L \subseteq {\Sigma}^*$ reguláris nyelvhez létezik olyan $p$ természetes szám, amelyre L minden legalább $p$ hosszúságú $u$ szava felírható $$u = xyz$$\\
 alakban úgy, hogy\\
 \begin{enumerate}
 \item $|y| > 0$
@@ -620,7 +692,7 @@ Legyen továbbá:
 \begin{itemize}
 \item $x$ az $u$ szó $i$ hosszú kezdőszelete
 \item $y$ az $x$-et követő $j - i$ hosszú rész-szó
-\item $z$ az $u n - j$ hosszú zárószelete 
+\item $z$ az $u$-nak az $n - j$ hosszú zárószelete 
 \end{itemize}
 \bigskip
 \textbf{Ekkor az $u = xyz$ felbontásra teljesülnek a lemma állításai.}
@@ -634,12 +706,15 @@ Az $L = \{0^n1^n : n \geq 0\} \subseteq \{0, 1\}^*$ nyelv nem reguláris.
 \end{block}
 
 \begin{block}{Bizonyítás}
-Legyen $p$  tetszőleges, ekkor $u = 0^p1^p$.\\
+Legyen $p$  tetszőleges, ekkor $u$ (szó) $ = 0^p1^p$.\\
 Tfh $x, y, z$ olyan szavak, amelyekre:\\
 $u = xyz, |xy| \leq p, |y| > 0$.\\
+\bigskip
 Ekkor $xy$ csupa 0-ból áll és $y$ tartalmaz legalább egy 0-t. $\implies$\\
 $\implies$ $i \neq 1$ esetén $xy'z \notin L$, mert több 0 lessz benne, mint 1-es! $\implies$\\
-$\implies$ Sosem találunk megfelelő $p$-t $\implies$ \textbf{A nyelv nem reguláris.}
+$\implies$ Sosem találunk megfelelő $p$-t $\implies$ \textbf{A nyelv nem reguláris.}\\
+\bigskip
+TODO: Példa értékek
 \end{block}
 
 \end{frame}
@@ -647,14 +722,14 @@ $\implies$ Sosem találunk megfelelő $p$-t $\implies$ \textbf{A nyelv nem regul
 
 \begin{frame}
 \begin{block}{Tétel: Derivációs fák}
-Egy $X \in (V \cup {\Sigma}_{\epsilon})$-ből induló derivációs fa, amelynek határa az $u \in {\Sigma}^*$ szó, ami akkor és csak akkor létezik, ha $X {\implies}^* u \in {\Sigma}^*$.
+Egy $X \in (V \cup {\Sigma}_{\epsilon})$-ből induló derivációs fa, amelynek határa az $u \in {\Sigma}^*$ szó, ami akkor és csak akkor létezik, ha $X {\Rightarrow}^* u \in {\Sigma}^*$.
 \end{block}
 
 \begin{block}{Tétel: Ekvivalens állítások derivációs fákra}
 Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a következők ekvivalensek az $u \in {\Sigma}^*$ szóra:\\
 \begin{enumerate}
 \item $u \in L(G)$
-\item $S {\implies}^*_l u$
+\item $S {{\Rightarrow}^*}_l u$
 \item Létezik olyan $S$-ből induló derivációs fa, amelynek határa $u$.
 \end{enumerate}
 
@@ -667,14 +742,14 @@ Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a követke
 Minden reguláris nyelv környezetfüggetlen.
 \end{block}
 
-\begin{block}{Bizonyítás (Kontrapozíció)}
+\begin{block}{Bizonyítás (Konstr)}
 Legyen $L \in {\Sigma}^*, L = L(M)$, és\\
 $M = (Q, {\Sigma}, {\delta}, q_0, F)$ nemdeterminisztikus véges automata.\\
-\smallskip
-Megkonstruáljuk a $G = (Q, {\Sigma}, R, q_09$ nyelvtant, ahol,\\
-$R = \{q \rightarrow aq' : q' \in {\delta}(q, a)\} \cup \{q \rightarrow \sigma : q \in F \}$.\\
+\bigskip
+Megkonstruáljuk a $G = (Q, {\Sigma}, R, q_0)$ nyelvtant, ahol,\\
+$R = \{q \rightarrow aq' : q' \in {\delta}(q, a)\} \cup \{q \rightarrow \epsilon : q \in F \}$.\\
 Ekkor az $u \in  L(G) \iff \exists u$ szóra $q_0$-ból $q$-ba vezető számítási sorozat.\\
-(triviális, a vizygán is lehet mondani).
+(triviális, a vizsgán is lehet mondani).
 \end{block}
 
 \end{frame}
@@ -689,19 +764,19 @@ A módszer: adott $E$ reguláris kifejezéshez megadjuk a\\
 $G_E = (V_E, {\Sigma}, R_E, S_E)$\\
 nyelvtant, amely az $E$ által jelölt nyelvet generálja.\\
 \bigskip
-Ha $E = \emptyset$:\\
-Akkor $G_{\emptyset} = ({S}, {\Sigma}, \emptyset, S)$.\\
+Legyen először $E = \emptyset$:\\
+Akkor $G_{\emptyset} = (\{S\}, {\Sigma}, \emptyset, S)$.\\
 \bigskip
-Ha $E = a \in {\Sigma}$:\\ű
+Ha $E = a \in {\Sigma}$:\\
 Akkor $G_a = (\{S\}, {\Sigma}, \{S \rightarrow a\}, S)$.\\
 \bigskip
 Ha $E = (E_1 + E_2)$:\\
 Akkor $G_E = (V_{E_1} \cup V_{E_2} \cup \{S\}, \Sigma, R_{E_1} \cup R_{E_2} \cup \{S \rightarrow S_{E_1}, S \rightarrow S_{E_2}\}, S)$,\\
-és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cap V_{E_2}$.\\
+és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cup V_{E_2}$.\\
 \bigskip
 Ha $E = (E_1 * E_2)$:\\
 Akkor $G_E = (V_{E_1} \cup V_{E_2} \cup \{S\}, \Sigma, R_{E_1} \cup R_{E_2} \cup \{S \rightarrow S_{E_1}S_{E_2}\}, S)$,\\
-és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cap V_{E_2}$.\\
+és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cup V_{E_2}$.\\
 \bigskip
 Ha $E = (E_1)^*$:\\
 Akkor $G_E = (V_{E_1} \cup \{S\}, \Sigma, R_{E_1} \cup \{S \rightarrow SS_{E_1}, S \rightarrow \epsilon \}, S)$,\\
@@ -716,11 +791,11 @@ Minden környezetfüggetlen nyelv felismerhető veremautomatával és minden ver
 \end{block}
 
 \begin{block}{Tétel: Pumpáló lemma környezetfüggetlen nyelvre}
-Minden $L \subseteq {\Sigma}*$ környezetfüggetlen nyelvhez létezik olyan $p > 0$ természetes szám, amelyre L minden legalább $p$ hosszúságó $w$ szava felírható $$w = uvxyz$$\\
+Minden $L \subseteq {\Sigma}^*$ környezetfüggetlen nyelvhez létezik olyan $p > 0$ természetes szám, amelyre L minden legalább $p$ hosszúságó $w$ szava felírható $$w = uvxyz$$\\
 alakban úgy, hogy\\
 \begin{enumerate}
 \item $|vy| > 0$
-\item $|vxy| \leq p$
+\item $|vxy| < p$
 \item $uv'xy'z \in L$ minden $i \geq 0$ egészre.
 \end{enumerate}
 
@@ -729,13 +804,14 @@ alakban úgy, hogy\\
 
 \begin{frame}
 \begin{block}{Tétel: Példa nem környezetfüggetlen nyelvre 1}
-Az $L = \{a^nb^nc^n : n \geq 0 \} \subseteq {a, b, c}^*$ nyelv nem környezetfüggetlen.
+Az $L = \{a^nb^nc^n : n \geq 0 \} \subseteq \{a, b, c\}^*$ nyelv nem környezetfüggetlen.
 \end{block}
 
 \begin{block}{Bizonyítás}
 Belátjuk, hogy ${\forall}p > 0$ egészhez ${\exists}w \in L, |w| \geq p$ úgy, hogy\\
 a $w$ tetszőleges olyan $w = uvxyz$ felbontására, ahol $|vy| > 0, |vxy| < p$,\\
 létezik olyan i, amelyre $uv^ixy^iz \notin L$.\\
+\bigskip
 Tetszőleges $p$-hez legyen $w = a^pb^pc^p$. Ekkor bárhogyan is írjuk fel a $w$-t úgy, hogy $w = uvxyz$ felbontásra $|vy| > 0, |vxy| < p$, mindíg lesz olyan betű, amely nincs benne $vy$-ban, viszont ekkor $uxz \notin L$.
 \end{block}
 \end{frame}
@@ -748,9 +824,9 @@ Az $L = \{w\#w : w \in \{0, 1\}^* \}$ nyelv nem környezetfüggetlen.
 \begin{block}{Bizonyítás}
 Tetszőleges $p$-hez legyen $w = 0^p1^p\#0^p1^p$, és tekintsük $w$ egy tetszőleges olyan $w = uvxyz$ felbontását, ahol $|vy| > 0, |vxy| < p$.\\
 \bigskip
-1. eset: Ha $\# \notin x$ $\rightarrow$ $uv^2xy^2z \notin L$.
+1. eset: Ha $\# \notin x$ $\rightarrow$ $uv^2xy^2z \notin L$.\\
 \bigskip
-2. eset: Ha $\# |in x$ $\rightarrow$ Ekkor $u$-ban csak az $1, y$-ban csak $0$ szerepelhet. $\rightarrow$ Mivel $vy \neq \sigma \implies uxz \notin L$.
+2. eset: Ha $\# \in x$ $\rightarrow$ Ekkor $u$-ban csak az $1, y$-ban csak $0$ szerepelhet. $\rightarrow$ Mivel $vy \neq \epsilon \Rightarrow uxz \notin L$.
 \end{block}
 \end{frame}
 
