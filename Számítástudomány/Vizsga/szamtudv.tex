@@ -12,6 +12,9 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{arydshln}
 
 \usetheme{boxes}
 
@@ -24,6 +27,13 @@
 \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
     minimum height=2em]
 \tikzstyle{arrow} = [thick,->,>=stealth]
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\arraystretch}{1.2}
+
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
 
 \begin{document}
 
@@ -115,20 +125,59 @@ A tétel 2-4 pontjában szereplő $G$ és $H$ \textbf{közvetlen részformulái}
 Egy $A : Var \rightarrow \{0, 1\}$ leképzést \textbf{hozzárendelésnek} nevezünk.\\
 \bigskip
 $A : Form \rightarrow \{0, 1\}$ kiterjesztéshez legyen $F$ formula.\\
+\bigskip
 \begin{enumerate}
 \item Ha $F = p$ valamely $p \in Var$ esetén, akkor $A(F) = A(p)$.
-\item Ha $F = {\neg}G$ akkor $
+\bigskip
+\item Ha $F = {\neg}G$ akkor:\\
+\medskip
+$A(F)$ = $
 \begin{cases}
-{\delta}(q, a) & q \in Q $ és $q \notin F\\
-{\delta}(q, a) & q \in F$ és $a \neq \epsilon \\
-{\delta}(q, a) \cup \{q0\} & q \in F$ és $a = \epsilon \\
-\{q_0\} & q = s_0$ és $a = \epsilon \\
-\emptyset & q = s_0$ és $a \neq \epsilon \\
+1 & ha A(G) = 0\\
+0 & ha A(G) = 1\\
+\end{cases}
+$
+\bigskip
+\item Ha $F = G \lor H$ akkor:\\ 
+\medskip
+$A(F)$ = $
+\begin{cases}
+1 & ha A(G) = 1$ vagy $A(H) = 1\\
+0 &$ különben$\\
+\end{cases}
+$
+\bigskip
+\item Ha $F = G \land H$ akkor:\\
+\medskip
+$A(F)$ = $
+\begin{cases}
+1 & ha A(G) = 1$ és $A(H) = 1\\
+0 &$ különben$\\
 \end{cases}
 $
 \end{enumerate}
 
+\end{block}
 
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Formula modellje, Kielégíthető, Tautológia, Kielégíthetetlen}
+Legyen $F$ formula. Ekkor\\
+\bigskip
+Legyen $A$ egy hozzárendelés. Ha $A(F) = 1$, akkor ezt a tényt $A \models F$-fel jelöljük, és azt mondjuk, hogy $A$ \textbf{kielégíti} $F$-et, vagy hogy $A$ \underline{\textbf{modellje}} $F$-nek.\\
+\bigskip
+Ha $F$-nek van modellje, akkor azt mondjuk, hogy $F$ \underline{\textbf{kielégíthető}}.\\
+\bigskip
+Ha minden $A$ hozzárendelés esetén $A \models F$, akkor $F$ \underline{\textbf{tautológia}} (vagy másképpen érvényes).\\
+Jele: $\models F$.\\
+\bigskip
+Ha $F$-nek nincs modellje, akkor azt mondjuk, hogy $F$ \underline{\textbf{kielégíthetetlen}}.\\
+\bigskip
+Legyen $\Sigma$ formulák egy halmaza. Ha valamely $A$ hozzárendelés esetén minden $F \in \Sigma$-re $A \models F$, akkor ezen tényt $A \models \Sigma$-val jelöljük, és azt mondjuk, hogy $A$ kielégíti $\Sigma$-t vagy, hogy $A$ modellje $\Sigma$-nak.\\
+\bigskip
+Ha $\Sigma$-nak van modellje, akkor azt mondjuk, hogy $\Sigma$ kielégíthető.
 \end{block}
 
 \end{frame}
@@ -140,25 +189,155 @@ Egy formulahalmaz akkor és csak akkor elégíthető ki, ha minden véges részh
 
 \end{block}
 
-\begin{block}{Tétel: Adekvát halmazok}
-$\{\neg, \lor, \land\}, \{\neg, \lor\}, \{\neg, \land\}$ adekvát (azaz bármilyen formula leírható ezekkel), $\{\lor, \land\}$ nem adekvát.
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{K változós igazságtábla}
+Tetszőleges $k \in \mathbb{N}$ esetén az IT: $\{0, 1\}^k \rightarrow \{0, 1\}$ leképzést \textbf{$k$ változós igazságtáblának (Boole függvény)} nevezzük.
+\end{block}
+
+\begin{block}{Igazságtáblák:}
+\begin{table}[h!]
+\centering
+Negáció (unér művelet)\\
+\bigskip
+\begin{tabular}{@{}C{3em}C{3em}@{}}
+\toprule
+\textbf{$A$} & \textbf{${\neg}A$} \\
+\hline
+i & h\\
+\hdashline
+h & i\\
+\toprule
+\end{tabular}
+\end{table}
+\bigskip
+
+\begin{table}[h!]
+\centering
+A többi művelet\\
+\bigskip
+\begin{tabular}{C{1em}C{1em}rC{4.4em}C{4.4em}C{4.4em}C{4.4em}}
+\toprule
+\textbf{$A$} & \textbf{$B$} & \textbf{$|$} & \textbf{$A \land B$} & \textbf{$A \lor B$} & \textbf{$A \Rightarrow B$} & \textbf{$A \iff B$} \\
+\hline
+i & i & | & i & i & i & i\\
+\hdashline
+i & h & | & h & i & h & h\\
+\hdashline
+h & i & | & h & i & i & h\\
+\hdashline
+h & h & | & h & h & i & i\\
+\toprule
+\end{tabular}
+\end{table}
 
 \end{block}
 
 \end{frame}
 
+%\begin{frame}
+%\begin{block}{Def: {Az $F$ formula által meghatározott Igazság tábla}
+%\textbf{Az $F$ formula által meghatározott $IT_F$ igazságtábla:}\\
+%ha $p_1, ..., p_n$ az $F$ változói és $x_1, ..., x_n \in \{0, 1\}$, akkor\\
+%$IT_F(x_1, ..., x_n) = A(F)$, ahol $A(p_j) = x_j, 1 \leq j \leq n$.
+%\end{block}
+%\end{frame}
 
 \begin{frame}
 
-\begin{block}{tétel: Equivalens állítások formulákra}
-Legyenek $F, F_1, ... , F_n$ tetszőleges formulák, ekkor a következő állítások equivalensek:
+\begin{block}{Def: Adekvát halmaz}
+A ${\neg}, {\land}, {\lor}, \rightarrow$ műveleti jelek C halmaza \textbf{adekvát}, ha\\
+$IT: \{0, 1\}^k \rightarrow \{0, 1\}, k \geq 1$ igazságtábla esetén van olyan $F \in Form$, hogy\\
+\begin{enumerate}
+\item $F$-ben csak $C$-beli műveletei jelek szerepelhetnek,
+\item $IT = IT_F$.
+\end{enumerate} 
+\end{block}
+\bigskip
 
+\begin{block}{Tétel: Adekvát halmazok}
+$\{\neg, \lor, \land\}, \{\neg, \lor\}, \{\neg, \land\}$ adekvát (azaz bármilyen formula leírható ezekkel), $\{\lor, \land\}$ nem adekvát.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Logikai következmény}
+Legyen $\Sigma \subseteq Form$ és $F \in Form$.\\
+Azt mondjuk, hogy $F$ \underline{\textbf{logikai következménye}} $\Sigma$-nak, (jele: $\Sigma \models F$),\\
+ha minden $A$ hozzárendelés esetén valahányszor $A \models \Sigma$, mindannyiszor $A \models F$ is teljesül.
+\end{block}
+\bigskip
+\begin{block}{Ész}
+\begin{enumerate}
+\item $F$ akkor és csak akkor érvényes (tautológia), ha $\emptyset \models F$. Tehát $\models F$. és $\emptyset \models F$ ugyanazt jelenti.
+\item Ha $F$ érvényes, akkor minden $\Sigma$-ra $\Sigma \models F$
+\item Ha $F \in \Sigma$, akkor $\Sigma \models F$
+\item Minden $F$-re $\downarrow \models F$.
+\item Minden $F$-re és $G$-re $F \models G$ akkor és csak akkor teljesül, ha $F \rightarrow G$ érvényes.
+\item (Modus Ponens, röviden MP) Minden $\Sigma$-ra, $F$-re és $G$-re $\Sigma \cup \{F, F \rightarrow G\} \models \Sigma \cup \{G\}$
+\item (Monotonitás) Ha $\Sigma \subseteq {\Sigma}_1$, akkor minden $F$-re, ha $\Sigma \models F$, akkor ${\Sigma}_1 \models F$.
+\item (Következmény) Minden $\Sigma$-ra, F-re, G-re $\Sigma \models F \rightarrow G$ akkor és csak akkor teljesül, ha $\Sigma \cup \{F\} \models G$.
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{tétel: Ekvivalens állítások formulákra}
+Legyenek $F, F_1, ... , F_n$ tetszőleges formulák, ekkor a következő állítások equivalensek:
 \begin{enumerate}
 \item $\{F_1, ... , F_n\} \models F$
 \item $F_1 \land ... \land F_n \rightarrow F$ tautológia
 \item $F_1 \land ... \land F_n \land \neg F$ kielégíthetetlen.
 \end{enumerate}
+\end{block}
 
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Ekvivalens formulák}
+Az igaz és hamis szabályok:\\
+${\neg}\downarrow \equiv \uparrow$\\
+${\neg}\uparrow \equiv \downarrow$\\
+$F \land \downarrow \equiv \downarrow$, és $\downarrow \land F \equiv \downarrow$\\
+$F \land \uparrow \equiv F$, és $\uparrow \land F \equiv F$\\
+$F \lor \uparrow \equiv \uparrow$, és $\uparrow \lor F \equiv \uparrow$\\
+$F \lor \downarrow \equiv F$, és $\downarrow \lor F \equiv F$\\
+\smallskip
+Kontrapozíció (Modus Tollens):\\
+$A \Rightarrow B \iff {\neg}B \Rightarrow {\neg}A$\\
+\smallskip
+A de Morgan szabályok:\\
+${\neg}(F \land G) \equiv {\neg}F \lor {\neg}G$\\
+${\neg}(F \lor G) \equiv {\neg}F \land {\neg}G$\\
+\smallskip
+Az idempotencia szabályai:\\
+$F \land F \equiv F$\\
+$F \lor F \equiv F$\\
+\smallskip
+A kommutativitás szabályai:\\
+$F \land G \equiv G \land F$\\
+$F \lor G \equiv G \lor F$\\
+\smallskip
+Az asszociativitás szabályai:\\
+$(F \land G) \land H \equiv F \land (G \land H)$\\
+$(F \lor G) \lor H \equiv F \lor (G \lor H)$\\
+\smallskip
+Az adszorpció szabályai:\\
+$F \land (F \lor G) \equiv F$\\
+$F \lor (F \land G) \equiv F$\\
+\smallskip
+A disztributivitás szabályai:\\
+$F \land (G \lor H) \equiv (F \land G) \lor (F \land H)$\\
+$F \lor (G \land H) \equiv (F \lor G) \land (F \lor H)$\\
+\smallskip
+A dupla negáció szabálya:\\
+${\neg}{\neg}F \equiv F$
 \end{block}
 
 \end{frame}
@@ -169,17 +348,30 @@ Legyenek $F, F_1, ... , F_n$ tetszőleges formulák, ekkor a következő állít
 Legyenek $F, G, H$ formulák úgy, hogy $F \equiv G$ és $F$ a $H$ részformulája.\\
 Ha $H[F/G]$ azt a formulát jelöli, amelyben $F$ valamely előfordulását helyettesítettük $G$-vel, akkor
 $$H \equiv H[F/G]$$
-
 \end{block}
 
 \end{frame}
 
+\begin{frame}
+
+\begin{block}{Def.: Literál}
+Egy $F$ formulát \textbf{pozitíb literálnak} nevezünk, ha $F = p$, és \textbf{negatív literálnak}, ha $F = {\neg}o$, ahol $p$ változó.
+\end{block}
+
+\begin{block}{Def.: Konjunktív, diszjunktív normálforma}
+Egy $F$ formula \textbf{Konjunktív normálforma}, ha:\\
+$$F = \bigwedge_{i = 1}^n (\bigvee_{j = 1}^{m_i} l_{i, j}))$$\\
+Egy $F$ formula \textbf{Diszjunktív normálforma}, ha:\\
+$$F = \bigvee_{i = 1}^n (\bigwedge_{j = 1}^{m_i} l_{i, j}))$$\\
+ahol $l_{i, j}$-k literálok.
+\end{block}
+
+\end{frame}
 
 \begin{frame}
 
 \begin{block}{Tétel: Konjunktív és diszjunktív normálforma létezése}
 Minden $F$ Formulához létezik vele logikailag ekvivalens konjunktív és diszjunktív normálforma.
-
 \end{block}
 
 \begin{block}{Bizonyítás}
@@ -197,7 +389,7 @@ Konjunktív:
 		\item $(F \land G) \lor H$ alakú részformulákat $(F \lor H) \land (G \lor H)$-val.
 	\end{itemize}
 \end{enumerate}
-
+\bigskip
 Diszjunktív:
 \begin{enumerate}
 	\item Ugyanaz mint a konjunktív normálforma esetén.
@@ -213,33 +405,106 @@ Diszjunktív:
 
 \begin{frame}
 
+\begin{block}{Def.: Elmélet}
+Legyen $\Sigma$ egy formulahalmaz, ekkor:\\
+\smallskip
+$Th({\Sigma}) = \{F | \Sigma \models F\}$ a \textbf{$\Sigma$ által generált elmélet}.\\
+($Th({\Sigma})$ a $\Sigma$ összes logikai következménye).
+\end{block}
+
+\begin{block}{Def.: Levezetés, bizonyítható formula}
+Ha $\Sigma$ formulák egy halmaza, akkor az $F_1, ... F_n$ formulák sorozatát a \textbf{$\Sigma$-ból történő ($\Sigma$ feletti) bizonyításnak levezetésnek)} nevezünk, ha minden $1 \leq i \leq n$ esetén az aláőbbi feltételek valamelyike teljesül:\\
+\begin{enumerate}
+\item $F_i \in \Sigma$
+\item $F_i$ tautológia
+\item van olyan $k, l < i$, hogy $F_l = F_k \rightarrow F_i$
+\end{enumerate}
+\bigskip
+Egy $F$ formula \textbf{bizonyítható (levezethető)} $\Sigma$-ból, ha van olyan $\Sigma$ feletti $F_1, ..., F_n$ bizonyítás, hogy $F_n = F$.\\
+\bigskip
+\textbf{Jel.: $\Sigma \vdash F$}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Def.: Modus Ponens}
+Ha valamely $A$ hozzáredelésre teljesül, hogy:\\
+$A \models F$ és $A \models F \rightarrow G$, akkor $A \models G$.
+\end{block}
+
+\begin{block}{Def.: Modus Tollens (Kontrapozíció)}
+$A \Rightarrow B \iff {\neg}B \Rightarrow {\neg}A$.
+\end{block}
+
+\begin{block}{Def.: Indirekt Bizonyítás}
+Tetszőleges $\Sigma$ formulahalmaz esetén $\Sigma \vdash F \rightarrow G$ akkor és csak akkor teljesül, ha:\\
+$\Sigma \cup \{F\} \vdash G$.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
 \begin{block}{Tétel: Dedukció tétel}
 Tetszőleges $\Sigma$ formulahalmaz esetén $\Sigma \vdash F \rightarrow G$ akkor és csak akkor teljesül, ha $\Sigma \cup \{F\} \vdash G$.
-
 \end{block}
 
 \begin{block}{Tétel: Dichotómia tétel}
 Tetszőleges $\Sigma$ formulahalmaz esetén, ha $\Sigma \cup \{F\} \vdash$ (levezethető) $G$ és $\Sigma \cup \{\neg F\} \vdash G$, akkor $\Sigma \vdash G$.\\
 ("Az $F$ Formula nem szól bele").
-
 \end{block}
 
 \begin{block}{Tétel: Helyességi tétel}
 Tetszőleges $\Sigma$ és $F$ esetén, ha $\Sigma \vdash F$, akkor $\Sigma \models F$.\\
 (Helyes, ha csak az elélethez tartozó formulákat lehet bizonyítani.)
-
 \end{block}
 
 \begin{block}{Tétel: Teljességi tétel}
 Minden $\Sigma$-ra és $F$-re, ha $\Sigma \models F$, akkor $\Sigma \vdash F$.\\
 (Teljes, ha minden, az elmélethez tartozó formulát be lehet bizonyítani.)
-
 \end{block}
 
 \begin{block}{Tétel: Konzisztencia tétel}
 Tetszőleges formulahalmaz, akkor és csak akkor konzisztens, ha kielégíthető.\\
 (Konzisztens, ha nem vezethető le belőle a $\downarrow$.)
+\end{block}
 
+\end{frame}
+
+% --------------------  PREDIKÁTUMKALKULUS (1-RENDŰ LOGIKA) --------------------
+
+\begin{frame}[plain]
+\begin{tikzpicture}[overlay, remember picture]
+\node[anchor=center] at (current page.center) {
+\begin{beamercolorbox}[center]{title}
+    {\Huge Predikátumkalkulus (1-Rendű Logika)}
+\end{beamercolorbox}};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{$A$ feletti n változó predikátum}
+\textbf{$A$ feletti n változó predikátum} a következő függvény:\\
+$p \rightarrow A^n \rightarrow \{0, 1\}$
+\end{block}
+
+\begin{block}{Az $L$ elsőrendű nyelv szimbólumai}
+TODO
+\end{block}
+
+\begin{block}{Az $L$ elsőrendű nyelv formulái}
+TODO
+\end{block}
+
+\begin{block}{Kötött, szabad változó, nyílt, zárt formula}
+TODO
+\end{block}
+
+\begin{block}{Az elsőrendű nyelv szemantikája}
+TODO
 \end{block}
 
 \end{frame}
@@ -258,6 +523,50 @@ Tetszőleges formulahalmaz, akkor és csak akkor konzisztens, ha kielégíthető
 
 \begin{frame}
 
+\begin{block}{Gráf}
+A $G = (V, E, {\phi})$ hármast \textbf{(irányítatlan) gráfnak} nevezzük, ha $V, E$ halmazok, $V \neq \emptyset, V \cap E = \emptyset$, és $\phi : E \rightarrow [V]^2$.\\
+\bigskip
+$[V]^2 = \{ [a, b] | a, b \in V \}$, ahol $[a, b] = [b, a]$\\
+\bigskip
+\textbf{V}: pont-, csúcshalmaz. $V(G)$ $G$ pontjai, $v(G) = |V(G)| = \#V$ G pontjainak száma.\\
+\bigskip
+\textbf{E}: élhalmaz. $E(G)$ $G$ élei, $e(G) = |E(G)| = \#E$ G éleinek száma.\\
+\bigskip
+(E = Edge, V = Vertex)
+\end{block}
+
+\begin{block}{Ész}
+\begin{enumerate}
+\item $E = dmn({\phi})$
+\item ${\phi}(e) = \{v_1, v_2\} \subseteq V$ minden $e \in E$-re.
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{block}{Egyéb definíciók}
+\begin{itemize}
+\item \textbf{Véges gráf:} Ha $V(G)$ és $E(G)$ is véges.
+\item \textbf{Él végpontjai / él illeszkedése:}\\
+$e \in E$ él végpontjai ($e$ illeszkedik $ä$-ra, és $b$-re) ha $a, b \in V$ esetén ${\phi}(e) = [a, b]$
+\item \textbf{Hurokél:} Ha a = b.
+\item \textbf{Párhuzamos (többszörös él):} Ha $e, f \in E$, és ${\phi}(e) = {\phi}(f)$
+\item \textbf{Szomszédos él:} Ha $e, f \in E$ és ${\phi}(e) = [a_1, a_2], {\phi}(f) = [b_1, b_2]$ esetén $\{a_1, a_2\} \cap \{b_1, b_2\} \neq \emptyset$
+\item \textbf{Szomszédos csúcsok:} Ha $a_1, a_2 \in V$, és $a_1 \neq a_2$, és ${\exists}e \in E$, amire ${\phi}(e) = [a_1, a_2]$
+\item \textbf{Csúcs foka:} A rá illeszkedő élek száma (huroknál 2), jelölés: \textbf{d(a)}
+\item \textbf{Izolált csúcs:} $a$ csúcs izolált, ha d(a) = 0
+\item \textbf{Egyszerű gráf:} Hurok és többszörös él nélküli gráf.
+\item \textbf{Reguláris gráf:} A $G = (V, E)$ gráf \textbf{reguláris}, ha $d(a)$ értéke azonos minden $a \in V$-re, \textbf{n-reguláris}, ha ekkor $d(a) = n$ valamely $n \in \mathbb{N}$-re.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
 \begin{block}{Tétel: Fokszám-Élszám}
 Legyen $G = (V, E)$ (Gráf). Ekkor $G$-ben a páratlan fokú csúcsok száma páros.
 
@@ -267,6 +576,41 @@ Legyen $G = (V, E)$ (Gráf). Ekkor $G$-ben a páratlan fokú csúcsok száma pá
 $$\sum_{a \in V} d(a) = \sum_{d(a) \equiv 0 (mod 2)} d(a) + \sum_{d(a) \equiv 1 (mod 2)} d(a) \equiv 0 (mod 2)$$
 amiből kapjuk, hogy $$\sum_{d(a) \equiv 1 (mod 2)} d(a) \equiv 0 (mod 2)$$.
 
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Def.: Gráfok izomorfiája}
+A $G = (V, E)$ és $G' = (V', E')$ gráf \textbf{izomorf},\\
+ha létezik ${\pi} : V \rightarrow V'$, és $\rho : E \rightarrow E'$ bijekció úgy, hogy ha $a \in V$ és $e \in E$ illeszkedik $G$-ben $\iff$ ${\pi}(a)$ és ${\rho}(e)$ illeszkedik $G'$-ben.\\
+\bigskip
+A $G = (V, E)$ és $G' = (V', E')$ egyszerű gráf \textbf{izomorf}, ha létezik ${\pi} : V \rightarrow V'$ bijekció úgy, hogy $a, b \in V$ szomszédos $G$-ben $\iff$ ${\pi}(a)$ és ${\pi}(b)$ szomszédos G'-ben.\\
+\bigskip
+A $G = (V, E)$ egyszerű gráf \textbf{teljes gráf}, ha bármely két pontja szomszédos. \textbf{$K_n$} jelöli az \textbf{n} pontú teljes gráfot.
+\end{block}
+
+\begin{block}{Ész}
+Ugyanannyi csússzámú teljes gráfok izomorfak.\\
+\bigskip
+$K_n$-nek $\frac{n(n - 1)}{2}$ éle van.
+\end{block}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Def.: Páros Gráf}
+A $G = (V, E, {\phi})$ hármast \textbf{páros gráfnak} nevezzük, ha $V = V' \cup V'', V' \cap V'' = \emptyset$, és $G$ minden élének egyik végpontja $V'$-ben, másik végpontja $V''$-ben van.\\
+\medskip
+($K_{3, 3}$ 6 pontú teljes páros gráf, $K_5$ 5 pontú teljes gráf.)
+\end{block}
+\begin{block}{Def.: Részgráf}
+A $G' = (V', E', {\phi}')$ gráf a $G = (V, E, {\phi})$ gráf \textbf{részgráfja}, ha\\
+$V' \subseteq V$ és $E' \subseteq E$, valamint ${\phi}'(e) = {\phi}(e)$ minden $e \in E'$-re.
+\end{block}
+\begin{block}{Def.: Telített Részgráf}
+Ha a $G' = (V', E', {\phi}')$ gráf a $G = (V, E, {\phi})$ gráf részgráfja, és $E'$ mindazon $E$-beli elemeket tartalmazza, amelyek végpontjai $V'$-ben vannak, akkor $G'$-t \textbf{telített részgráfnak} nevezzük, vagy pontosabban \textbf{$V'$ által meghatározott telített részgráfnak.}
 \end{block}
 
 \end{frame}
