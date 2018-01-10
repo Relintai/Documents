@@ -1,9 +1,22 @@
 % Compile twice!
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
+% Uncomment these to get the presentation form
 \documentclass{beamer}
+\geometry{paperwidth=170mm,paperheight=170mm}
 
-\geometry{paperwidth=160mm,paperheight=160mm}
+% Uncomment these, and comment the 2 lines above, to get a paper-type article
+%\documentclass[10pt]{article}
+%\usepackage{beamerarticle}
+%\renewcommand{\\}{\par\noindent}
+%\setbeamertemplate{note page}[plain]
+
+% Uncomment these, to put more than one slide / page into a generated page.
+%\usepackage{pgfpages}
+% Choose one
+%\pgfpagesuselayout{4 on 1}[a4paper]
+%\pgfpagesuselayout{8 on 1}[a4paper]
+
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
@@ -16,6 +29,7 @@
 \usepackage{array}
 \usepackage{arydshln}
 
+% Beamer theme
 \usetheme{boxes}
 
 % tikz settings for the flowchart(s)
@@ -38,24 +52,26 @@
 \begin{document}
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
 \begin{beamercolorbox}[center]{title}
-    {\Huge A Számítástudomány Alapjai I}\\
-    {\Large Vizsgatételek}
-\end{beamercolorbox}};
-\end{tikzpicture}
+    {\Huge A Számítástudomány Alapjai I}
+    \bigskip
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+\underline{\textbf{A kisbetűs szövegek (LaTeX-ben tiny), (Ha nincs előttük (S) jelzés, akkor lemaradt)}}\\
+\underline{\textbf{a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!}}
+\end{block}
 \end{frame}
 
 % --------------------  LOGIKA --------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
 \begin{beamercolorbox}[center]{title}
     {\Huge Logika}
-\end{beamercolorbox}};
-\end{tikzpicture}
+    \medskip
+\end{beamercolorbox}
 \end{frame}
 
 \begin{frame}
@@ -90,7 +106,6 @@ $(A \iff B) \equiv (A \Rightarrow B) \land (B \Rightarrow A) \equiv ({\neg}A \lo
 
 \end{frame}
 
-
 \begin{frame}
 
 \begin{block}{Tétel: Minden formula egyértelműen olvasható}
@@ -122,36 +137,39 @@ A tétel 2-4 pontjában szereplő $G$ és $H$ \textbf{közvetlen részformulái}
 \begin{frame}
 
 \begin{block}{Hozzárendelés}
-Egy $A : Var \rightarrow \{0, 1\}$ leképzést \textbf{hozzárendelésnek} nevezünk.\\
+Egy $\mathcal{A} : Var \rightarrow \{0, 1\}$ leképzést \textbf{hozzárendelésnek} nevezünk.\\
+{\tiny (S) Ítéletváltozóhoz (Var az összes ítéletváltozó halmaza) hozzárendelünk elemet a {0, 1} halmazból. Kb értékadás. (kb függvény)}\\
 \bigskip
-$A : Form \rightarrow \{0, 1\}$ kiterjesztéshez legyen $F$ formula.\\
+$\mathcal{A} : Form \rightarrow \{0, 1\}$ kiterjesztéshez legyen $F$ formula.\\
+{\tiny (S) Ugyan az, csak formulának adunk értéket.}\\
 \bigskip
 \begin{enumerate}
-\item Ha $F = p$ valamely $p \in Var$ esetén, akkor $A(F) = A(p)$.
+\item Ha $F = p$ valamely $p \in Var$ esetén, akkor $\mathcal{A}(F) = \mathcal{A}(p)$.\\
+{\tiny (S) Ha F formula értéke mindíg ugyan az mint egy tetszőleges p ítéletváltozó értéke, akkor hozzárendelés után is megegyezik az értékük. Kb mint monotonitás. }\\
 \bigskip
 \item Ha $F = {\neg}G$ akkor:\\
 \medskip
-$A(F)$ = $
+$\mathcal{A}(F)$ = $
 \begin{cases}
-1 & ha A(G) = 0\\
-0 & ha A(G) = 1\\
+1 &$ ha $\mathcal{A}(G) = 0\\
+0 &$ ha $\mathcal{A}(G) = 1\\
 \end{cases}
 $
 \bigskip
 \item Ha $F = G \lor H$ akkor:\\ 
 \medskip
-$A(F)$ = $
+$\mathcal{A}(F)$ = $
 \begin{cases}
-1 & ha A(G) = 1$ vagy $A(H) = 1\\
+1 &$ ha $\mathcal{A}(G) = 1$ vagy $\mathcal{A}(H) = 1\\
 0 &$ különben$\\
 \end{cases}
 $
 \bigskip
 \item Ha $F = G \land H$ akkor:\\
 \medskip
-$A(F)$ = $
+$\mathcal{A}(F)$ = $
 \begin{cases}
-1 & ha A(G) = 1$ és $A(H) = 1\\
+1 &$ ha $\mathcal{A}(G) = 1$ és $\mathcal{A}(H) = 1\\
 0 &$ különben$\\
 \end{cases}
 $
@@ -164,18 +182,20 @@ $
 \begin{frame}
 
 \begin{block}{Formula modellje, Kielégíthető, Tautológia, Kielégíthetetlen}
-Legyen $F$ formula. Ekkor\\
+Legyen $F$ formula, Legyen $\mathcal{A}$ egy hozzárendelés.s Ekkor\\
 \bigskip
-Legyen $A$ egy hozzárendelés. Ha $A(F) = 1$, akkor ezt a tényt $A \models F$-fel jelöljük, és azt mondjuk, hogy $A$ \textbf{kielégíti} $F$-et, vagy hogy $A$ \underline{\textbf{modellje}} $F$-nek.\\
+Ha $\mathcal{A}(F) = 1$, akkor ezt a tényt $\mathcal{A} \models F$-fel jelöljük, és azt mondjuk, hogy $\mathcal{A}$ \textbf{kielégíti} $F$-et, vagy hogy $\mathcal{A}$ \underline{\textbf{modellje}} $F$-nek.\\
+{\tiny (S) Mint egy függvén kb. F formulához hozzárendelünk egy értéket, és ha ez 1)}\\
 \bigskip
 Ha $F$-nek van modellje, akkor azt mondjuk, hogy $F$ \underline{\textbf{kielégíthető}}.\\
 \bigskip
-Ha minden $A$ hozzárendelés esetén $A \models F$, akkor $F$ \underline{\textbf{tautológia}} (vagy másképpen érvényes).\\
+Ha minden $\mathcal{A}$ hozzárendelés esetén $\mathcal{A} \models F$, akkor $F$ \underline{\textbf{tautológia}} (vagy másképpen érvényes).\\
 Jele: $\models F$.\\
 \bigskip
 Ha $F$-nek nincs modellje, akkor azt mondjuk, hogy $F$ \underline{\textbf{kielégíthetetlen}}.\\
 \bigskip
-Legyen $\Sigma$ formulák egy halmaza. Ha valamely $A$ hozzárendelés esetén minden $F \in \Sigma$-re $A \models F$, akkor ezen tényt $A \models \Sigma$-val jelöljük, és azt mondjuk, hogy $A$ kielégíti $\Sigma$-t vagy, hogy $A$ modellje $\Sigma$-nak.\\
+Legyen $\Sigma$ formulák egy halmaza. Ha valamely $\mathcal{A}$ hozzárendelés esetén minden $F \in \Sigma$-re $\mathcal{A} \models F$, akkor ezen tényt $\mathcal{A} \models \Sigma$-val jelöljük, és azt mondjuk, hogy $\mathcal{A}$ kielégíti $\Sigma$-t vagy, hogy $\mathcal{A}$ modellje $\Sigma$-nak.\\
+{\tiny (S) Ha van egy olyan $\mathcal{A}$ hozzárendelésünk, amire a $\Sigma$ halmaz összes formulája igazat ad.}\\
 \bigskip
 Ha $\Sigma$-nak van modellje, akkor azt mondjuk, hogy $\Sigma$ kielégíthető.
 \end{block}
@@ -267,19 +287,28 @@ $\{\neg, \lor, \land\}, \{\neg, \lor\}, \{\neg, \land\}$ adekvát (azaz bármily
 \begin{block}{Def.: Logikai következmény}
 Legyen $\Sigma \subseteq Form$ és $F \in Form$.\\
 Azt mondjuk, hogy $F$ \underline{\textbf{logikai következménye}} $\Sigma$-nak, (jele: $\Sigma \models F$),\\
-ha minden $A$ hozzárendelés esetén valahányszor $A \models \Sigma$, mindannyiszor $A \models F$ is teljesül.
+ha minden $\mathcal{A}$ hozzárendelés esetén valahányszor $\mathcal{A} \models \Sigma$, mindannyiszor $\mathcal{A} \models F$ is teljesül.\\
+{\tiny (S) logikai következmény egyenlő a $A \Rightarrow B$ boole függvénnyel, ha kikötjük, hogy A csak igaz lehet. (Mivel az alap Boole függvényben ha $A$ hamis, akkor az eredmény igaz!)}
 \end{block}
-\bigskip
+\medskip
 \begin{block}{Ész}
 \begin{enumerate}
-\item $F$ akkor és csak akkor érvényes (tautológia), ha $\emptyset \models F$. Tehát $\models F$. és $\emptyset \models F$ ugyanazt jelenti.
-\item Ha $F$ érvényes, akkor minden $\Sigma$-ra $\Sigma \models F$
-\item Ha $F \in \Sigma$, akkor $\Sigma \models F$
-\item Minden $F$-re $\downarrow \models F$.
-\item Minden $F$-re és $G$-re $F \models G$ akkor és csak akkor teljesül, ha $F \rightarrow G$ érvényes.
-\item (Modus Ponens, röviden MP) Minden $\Sigma$-ra, $F$-re és $G$-re $\Sigma \cup \{F, F \rightarrow G\} \models \Sigma \cup \{G\}$
-\item (Monotonitás) Ha $\Sigma \subseteq {\Sigma}_1$, akkor minden $F$-re, ha $\Sigma \models F$, akkor ${\Sigma}_1 \models F$.
-\item (Következmény) Minden $\Sigma$-ra, F-re, G-re $\Sigma \models F \rightarrow G$ akkor és csak akkor teljesül, ha $\Sigma \cup \{F\} \models G$.
+\item $F$ akkor és csak akkor érvényes (tautológia), ha $\emptyset \models F$. Tehát $\models F$. és $\emptyset \models F$ ugyanazt jelenti.\\
+{\tiny (S) Kb mintha csak rövidítva lenne}\\
+\item Ha $F$ érvényes, akkor minden $\Sigma$-ra $\Sigma \models F$\\
+{\tiny (S) Igen, mert bármikor amikor $\Sigma$ összes formulája egyszerre igazat ad vissza $F$ is igaz (mivel F tautológia).}\\
+\item Ha $F \in \Sigma$, akkor $\Sigma \models F$\\
+{\tiny (S) Igen, mert bármikor amikor $\Sigma$ összes formulája egyszerre igazat ad vissza $F$ garantáltan igaz (Persze F lehet többször igaz).}\\
+\item Minden $F$-re $\downarrow \models F$.\\
+{\tiny (S) Ugyan az mint az előbb, csak mivel $\downarrow$ sose igaz, ezért a feltétel mindíg teljesül.}\\
+\item Minden $F$-re és $G$-re $F \models G$ akkor és csak akkor teljesül, ha $F \rightarrow G$ érvényes (= tautológia).\\
+{\tiny (S) A $\rightarrow$ boole függvény, ha $F$ hamis, akkor igazat ad vissza mindíg. (Ez nem probléma, mert az $F$ hamis rész, a logikai következménynény definícióban nem számít)}\\
+\item (Modus Ponens, röviden MP) Minden $\Sigma$-ra, $F$-re és $G$-re $\Sigma \cup \{F, F \rightarrow G\} \models \Sigma \cup \{G\}$\\
+{\tiny (S) 3. 5. 8. pontok összekombinálása eggyé.}\\
+\item (Monotonitás) Ha $\Sigma \subseteq {\Sigma}_1$, akkor minden $F$-re, ha $\Sigma \models F$, akkor ${\Sigma}_1 \models F$.\\
+{\tiny (S) Persze, ${\Sigma}_1$ részhalmaz.}\\
+\item (Következmény) Minden $\Sigma$-ra, F-re, G-re $\Sigma \models F \rightarrow G$ akkor és csak akkor teljesül, ha $\Sigma \cup \{F\} \models G$.\\
+{\tiny (S) Persze, mert ha $F$ hamis, akkor a $\Sigma$ halmaz gyakorlatilag hamisat ad vissza, mert egy eleme hamis (ekkor nem számít), ha pedig $F$ igaz (ettől még nem muszály $\Sigma$-nak igazat visszaadnia, ha esetleg ilyenkor is hamis, attól még ugyanúgy működik, pl $\Sigma$ $\downarrow$, ekkor logikai következmény lesz akkor is, ha $F \rightarrow G$ hamisat ad vissza. (Lásd 4. pont)), akkor meg kell nézni $G$-t, viszont ha ilyenkor $G$ hamis, akkor nem logikai következmény.}
 \end{enumerate}
 \end{block}
 
@@ -476,12 +505,9 @@ Tetszőleges formulahalmaz, akkor és csak akkor konzisztens, ha kielégíthető
 % --------------------  PREDIKÁTUMKALKULUS (1-RENDŰ LOGIKA) --------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
 \begin{beamercolorbox}[center]{title}
     {\Huge Predikátumkalkulus (1-Rendű Logika)}
-\end{beamercolorbox}};
-\end{tikzpicture}
+\end{beamercolorbox}
 \end{frame}
 
 \begin{frame}
@@ -512,12 +538,9 @@ TODO
 % --------------------  GRÁFELMÉLET --------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
 \begin{beamercolorbox}[center]{title}
     {\Huge Gráfelmélet}
-\end{beamercolorbox}};
-\end{tikzpicture}
+\end{beamercolorbox}
 \end{frame}
 
 
@@ -551,7 +574,7 @@ $[V]^2 = \{ [a, b] | a, b \in V \}$, ahol $[a, b] = [b, a]$\\
 \begin{itemize}
 \item \textbf{Véges gráf:} Ha $V(G)$ és $E(G)$ is véges.
 \item \textbf{Él végpontjai / él illeszkedése:}\\
-$e \in E$ él végpontjai ($e$ illeszkedik $ä$-ra, és $b$-re) ha $a, b \in V$ esetén ${\phi}(e) = [a, b]$
+$e \in E$ él végpontjai ($e$ illeszkedik $a$-ra, és $b$-re) ha $a, b \in V$ esetén ${\phi}(e) = [a, b]$
 \item \textbf{Hurokél:} Ha a = b.
 \item \textbf{Párhuzamos (többszörös él):} Ha $e, f \in E$, és ${\phi}(e) = {\phi}(f)$
 \item \textbf{Szomszédos él:} Ha $e, f \in E$ és ${\phi}(e) = [a_1, a_2], {\phi}(f) = [b_1, b_2]$ esetén $\{a_1, a_2\} \cap \{b_1, b_2\} \neq \emptyset$
@@ -855,12 +878,9 @@ Ekkor visszavezetjük az első esetre, élek hozzáadásával.
 % --------------------  FORÁLIS NYELVEK, ÉS AUTOMATÁK --------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
 \begin{beamercolorbox}[center]{title}
     {\Huge Formális nyelvek, és Automaták}
-\end{beamercolorbox}};
-\end{tikzpicture}
+\end{beamercolorbox}
 \end{frame}
 
 \begin{frame}
@@ -972,7 +992,7 @@ $
 {\delta}_1(q, a) & q \in Q_1 - F_1\\
 {\delta}_1(q, a) & q \in F_1, a \neq \epsilon $ (Végállapot) $\\
 {\delta}_1(q, a) \cup \{q_2\} & q \in F_1, a = \epsilon $ (Végállapot) $\rightarrow \\
- & \rightarrow$ Ha üres betű, akkor átugrunk a második automata kezdőállapotába. $ \\
+ & \rightarrow$ Ha üres betű, akkor átugrunk a második automata kezdőállapotába.$\\
 {\delta}_2(q, a) & q \in Q_2 $ A második automata $ \\
 \end{cases}
 $\\

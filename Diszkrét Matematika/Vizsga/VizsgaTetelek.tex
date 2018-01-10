@@ -606,9 +606,19 @@ Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ é
 \begin{frame}
 
 \begin{block}{Tétel: Skatulya-elv}
+Ha $X, Y$ véges halmazok, és $|X| > |Y|$, akkor nem létezik $f: X \rightarrow Y$ bijekció.
+
 \end{block}
 
-\begin{block}{Bizonyítás}
+\begin{block}{Bizonyítás (Indirekt)}
+Tfh $f$ bijektív.\\
+$Y ~ \{1, 2, ..., m\}$ és $X ~ \{1, 2, ..., m\}$, ahol $m < n$ $\implies$\\
+$\implies$ $\{1, 2, ..., m\}$ bármely részhalmaza $\{1, 2, ..., n\}$-nek is részhalmaza,\\
+$f$ bijektív $\implies$ $\{1, 2, ..., n\}$ $~$ saját valódi részhalmazával. $\rightarrow$ Ellentmondás!\\
+\bigskip
+\textbf{Más megfogalmazás:} Ha $n$ db tárgyat $m$ db skatulyába teszünk, akkor van olyan skatulya, amelyik legalább\\
+$\lfloor (n - 1) / m \rfloor + 1$ tárgyat tartalmaz.
+
 \end{block}
 
 \end{frame}
@@ -616,9 +626,19 @@ Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ é
 \begin{frame}
 
 \begin{block}{Tétel: Permutációk száma}
+$$P_n = n!$$
+
 \end{block}
 
 \begin{block}{Bizonyítás}
+Teljes indukció $n$ szerint\\
+1. lépés: $P_0 = P_1 = 1$ Igaz. (Megegyezés szerint $0! = 1$)\\
+2. lépés: Tfh $n > 1$ és $n - 1$-ig már beláttuk.\\
+ekvivalencia reláció:\\
+amely sorozatok 1. eleme megegyezik $\implies$ $n$ db osztály.\\
+Ind. feltétel $\implies$ $\forall$ osztályban $P_{n - 1}$ elem.\\
+$P_n = nP_{n - 1} = n(n - 1)! = n!$
+
 \end{block}
 
 \end{frame}
@@ -626,9 +646,15 @@ Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ é
 \begin{frame}
 
 \begin{block}{Tétel: Variációk száma}
+$$V_n^k = \frac{n!}{(n - k)!} = n * (n - 1) * (n - 2) * ... * (n - k + 1)$$, ha $k \leq n$, kölünben 0.
+
 \end{block}
 
 \begin{block}{Bizonyítás}
+Legyen két sorozat egy ekv. osztályban, ha első $k$ elemük megegyezik.\\
+Ekkor: $P_n = $ (osztályok száma ($V_n^k = \frac{P_n}{P_n - k}$))*(ahány elem egy osztályban ($P_{n - k}$)
+
+
 \end{block}
 
 \end{frame}
@@ -636,9 +662,17 @@ Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ é
 \begin{frame}
 
 \begin{block}{Tétel: Ismétléses variációk száma}
+$$V_n^{k, i} = n^k$$
+
 \end{block}
 
 \begin{block}{Bizonyítás}
+Teljes indukció $k$ szerint, $n$ rögzített\\
+1. lépés: $k = 1$-re igaz: $V_n^{1, i} = n \rightarrow n^1$\\
+2. lépés: Tfh $k > 1$ és $k - 1$-ig már beláttuk, ekkor\\
+$(k - 1)$-es osztályú variációból $k$-ad osztályú:\\
+$n$ db választás $\implies$ $V_n^{k, i}$ (n választás) $= V_n^{k - 1, j} * n$ (n - 1 választás).
+
 \end{block}
 
 \end{frame}
@@ -646,9 +680,14 @@ Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ é
 \begin{frame}
 
 \begin{block}{Tétel: Kombinációk száma}
+$$C_n^k = {{n}\choose{k}} = \frac{n!}{k!(n - k)!} $$, ha $k \neq n$, különben 0.
+
 \end{block}
 
 \begin{block}{Bizonyítás}
+$V_n^k$ db különböző $k$-tagú sorozat, sorrend nem számít $\implies$\\
+$\implies$ minden $P_k$ sb sorozat ugyanaz $\implies$ számoljuk egyszer.\\
+
 \end{block}
 
 \end{frame}
@@ -656,9 +695,16 @@ Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ é
 \begin{frame}
 
 \begin{block}{Tétel: Ismétléses kombinációk száma}
+$$C_n^{k, i} = C_{n + k -1}^k = {{n + k - 1}\choose{k}} = \frac{(n + k - 1)!}{k!((n + k - 1) - k)!} $$
+
 \end{block}
 
 \begin{block}{Bizonyítás}
+Legyen $A = \{a_1, a_2, ..., a_n\}$.\\
+MInden egyes választási lehetőségnek feleltessünk meg egy bitsorozatot:\\
+$1 1 ... 1 0 1 1 ... 1 0 ... 0 1 1 1 ... 1$\\
+
+
 \end{block}
 
 \end{frame}
