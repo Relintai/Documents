@@ -786,7 +786,7 @@ Mivel $\delta \geq 6 \implies 6v(G) \leq 2e(G)$\\
 A síkgráf élszáma tételből következik, hogy:\\
 $2e(G) \leq 6v(G) - 12.$\\
 \bigskip
-$2e(G) \leq 6v(G) - 12$ \hspace{1ex} $/*2$\\
+$2e(G) \leq 6v(G) - 12$ \hspace{1ex} $/\cdot2$\\
 $6v(G) \leq 6v(G) - 12$ $\rightarrow$ Ellentmondás!
 
 \end{block}
@@ -883,10 +883,141 @@ Ekkor visszavezetjük az első esetre, élek hozzáadásával.
 \end{beamercolorbox}
 \end{frame}
 
+
 \begin{frame}
+\begin{block}{Def.: $\Sigma$ feletti szó}
+Legyen $\Sigma$ véges nemüres halmaz.\\
+\medskip
+\textbf{$\Sigma$ feletti szón} a $\Sigma$ elemeiből (betűiből) képzett véges sorozatot értjük: \\
+\medskip
+$w = w_1 ... w_n$, $w_1 \in {\Sigma}, i = 1, ..., n$\\
+\medskip
+\textbf{Szó hossza:} Az $n$ nemnegatív, egész szám a w szó hossza. Jelölés: $|w|$.\\
+($|w|_0$ a $w$-ben található $0$-k száma.)\\
+\medskip
+\textbf{Üres szó:} A $0$ hosszúságú szó, jelölése : $\epsilon$\\
+\medskip
+${\Sigma}^*$ jelöli a $\Sigma$ feletti szavak halmazát.\\
+(Végtelen, viszont a szavak végesek)
+\end{block}
+
+\begin{block}{Def.: $\Sigma$ feletti nyelv}
+${\Sigma}^*$ egy részhalmazát \textbf{$\Sigma$ feletti nyelvnek} nevezzük.
+\end{block}
+
+\begin{block}{Def.: Véges automata}
+\textbf{$(Q, {\Sigma}, {\delta}, q_0, F)$}\\
+\medskip
+$Q$: Állapotok véges, nemüres halmaza.\\
+\medskip
+$\Sigma$: bemenő jelek (betűk) véges, nemüres halmaza.\\
+\medskip
+$\delta : Q x \Sigma \rightarrow Q$: átmeneti függvény.\\
+\medskip
+$q_0 \in Q$: Kezdőállapot.\\
+\medskip
+$F \subseteq Q$: Végállapotok halmaza.\\
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Számítási sorozat, elfogadott szó, felismert nyelv}
+Legyen $M = (Q, {\Sigma}, {\delta}, q_0, F)$ véges automata, $q \in Q$ és $w = w_1...w_n \in {\Sigma}^*$, ekkor az\\
+\medskip
+$r_0, r_1, ..., r_n (r_i \in Q, i = 1, ..., n)$\\
+\medskip
+állapotsorozat az $M$ $q$-ból induló számítási sorozata a $w$ szón, ha\\
+\medskip
+$r_0 = q$ és $r_i = {\delta}(r_{i - 1}, w_i)(i = 1, ..., n)$\\
+\bigskip
+\textbf{Elfogadott szó:} Azt mondjuk, hogy \textbf{$M$ elfogadja a $w$ szót}, ha létezik a $q_0$ kezdőállapotból induló számítási sorozat a $w$ szón és $r_n \in F$.\\
+\bigskip
+\textbf{Felismert nyelv:} Az M által felismert nyelv: $L(M) = \{w \in {\Sigma}^* | M$ elfogadja $w$-t$\}$.\\
+\bigskip
+Két automata \textbf{ekvivalens}, ha ugyanazt a nyelvet ismerik fel.
+\end{block}
+
+\begin{block}{Def.: Felismerhető nyelv}
+Az $L \subseteq {\Sigma}^*$ nyelvet \textbf{felismerhető nyelvnek} nevezzük, ha létezik olyan véges automata, amely felismeri.
+\end{block}
+
+\begin{block}{Def.: Konkatenáció}
+$A$ $\cdot : {\Sigma}^* x {\Sigma}^* \rightarrow {\Sigma}^*$ műveletet konkatenációnak nevezzük, ahol\\
+\medskip
+$u, v \in {\Sigma}^*, u = u_1...u_n, v = v_1...v_n$ esetén\\
+$u \cdot v = u1...u_nv_1...v_n$
+\end{block}
+
+\begin{block}{Ész}
+$({\Sigma}^*, {\cdot})$ egységelemes félcsoport (monoid).\\
+\begin{enumerate}
+\item $\cdot$ zárt, mivel $u \cdot v = u_1...u_nv_1...v_n \in {\Sigma}^*$.
+\item Asszociatív: $(u \cdot v) \cdot w = u \cdot (v \cdot w)$.
+\item $\epsilon$ egységelem: $u \cdot \epsilon = \epsilon \cdot u = u$.
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Egyesítés,Metszet, Komplementer, Konkatenáció, Iteráció}
+Legyen $L, L_1, L_2 \subseteq {\Sigma}^*$, ekkor\\
+\medskip
+\begin{enumerate}
+\item $L_1 \cup L_2 = \{v \in {\Sigma}^* : v \in L_1 \lor v \in L_2\}$ (Egyesítés) (Reguláris művelet)
+\item $L_1 \cap L_2 = \{v \in {\Sigma}^* : v \in L_1 \land v \in L_2\}$ (Metszet)
+\item $\overline{L} = \{v \in {\Sigma}^* : v \notin L\}$ (Komplementer)
+\item $L_1 \cdot  L_2 = \{uv : v \in L_1 \land u \in L_2\}$ (Konkatenáció) (Reguláris művelet)\\
+Nem kommutatív! ($L_1$ $=$ $\{$alma, fűz$\}$, $L_2$ $=$ $\{$fa$\}$, $L_1 \cdot L_2$ $=$ $\{$almafa, fűzfa$\}$, de fordítva nem!) (Minden elemet minden elemmel, úgy, hogy a sorrend számít!)
+\item $L^* = \{v_1...v_n : n \geq 0, v_1, ..., v_n \in L\}$ (Iteráció) (Reguláris művelet)\\
+(Klíni-féle iteráció) (Összes lehetséges módon képezzük, + $\epsilon$)
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Műveleti azonosságok}
+$L_1 \cup (L_2 \cup L_3) = (L_1 \cup L_2) \cup L_3$\\
+$L_1 \cup L_2 = L_2  \cup L_1$\\
+$L \cup L = L$\\
+$L \cup \emptyset = L$\\
+\bigskip
+$L_1 \cdot (L_2 \cdot L_3) = (L_1 \cdot L_2) \cdot L_3$\\
+$L \cdot \{{\epsilon}\} = L$\\
+$\{{\epsilon}\} \cdot L = L$\\
+$L \cdot \emptyset = \emptyset$\\
+$\emptyset \cdot L = \emptyset$\\
+\bigskip
+$L_1 \cdot (L_2 \cup L_3) = (L_1 \cdot L_2) \cup (L_1 \cdot L_3)$\\
+$(L_1 \cup L_2) \cdot L_3 = (L_1 \cdot L_3) \cup (L_2 \cdot L_3)$\\
+\bigskip
+Jelölések:\\
+\medskip
+$L^+ = L \cdot L^* = L^* \cdot L$\\
+$L^n = L \cdot ... \cdot L$ ($n$-szer), $L^0 = \{{\epsilon}\}$\\
+\medskip
+Észrevétel:\\
+\medskip
+$L^* = \bigcup_{n \geq 0} L^n$\\
+$L^+ = \bigcup_{n \geq 1} L^n$\\
+\smallskip
+Tehát: $L^* = L^+ \cup \{{\epsilon}\}$
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Def.: Reguláris nyelv}
+Az $L \subseteq {\Sigma}^*$ nyelvet \textbf{reguláris nyelvnek} nevezzük, ha előáll az\\
+$\emptyset$ és $\{a\}$ $(a \in {\Sigma})$\\
+nyelvekből a három reguláris művelet véges sokszori alkalmazásával.
+\end{block}
+
 \begin{block}{Tétel: Kleene tétel}
 Egy nyelv akkor, és csak akkor felismerhető, ha reguláris.
-
 \end{block}
 
 \end{frame}
@@ -955,9 +1086,48 @@ Ekkor: \underline{$L(M_{\cup}) = L_1 \cup L_2$}\\
 \end{frame}
 
 \begin{frame}
+\begin{block}{Def.: Nemdeterminisztikus automata}
+\textbf{Véges nemdeterminisztikus (üres átmenetekkel ellátott) automata:}\\
+\medskip
+$M = (Q, {\Sigma}, {\delta}, q_0, F)$,\\
+\medskip
+ahol $Q, {\Sigma}, q_0, F$ ugyanazok, mint véges automatában, továbbá:\\
+\medskip
+$\delta : Q$ $x$ $({\Sigma} \cup \{{\epsilon}\}) \rightarrow p(Q)$
+\end{block}
+
+\begin{block}{Def.: Számítási sorozat, elfogadott szó, felismert nyelv}
+Legyen $M = (Q, {\Sigma}, {\delta}, q_0, F)$ véges \underline{nemdeterminisztikus} automata, $q \in Q$ és \underline{$w \in {\Sigma}^*$}, ekkor az\\
+\medskip
+$r_0, r_1, ..., r_n (r_i \in Q, i = 1, ..., n)$\\
+\medskip
+állapotsorozat az $M$ $q$-ból induló számítási sorozata a $w$ szón, ha \underline{$w$ felírható}\\
+\medskip
+\underline{$w = w_1 ... w_n, w_i \in {\Sigma}_{\epsilon}, (i = 1, ..., n)$}\\
+\medskip
+\underline{alakban úgy, hogy:}\\
+\medskip
+$r_0 = q$ és $r_i = {\delta}(r_{i - 1}, w_i)(i = 1, ..., n)$\\
+\bigskip
+\textbf{Elfogadott szó:} Azt mondjuk, hogy \textbf{$M$ elfogadja a $w$ szót}, ha létezik a $q_0$ kezdőállapotból induló számítási sorozat a $w$ szón és $r_n \in F$.\\
+\bigskip
+\textbf{Felismert nyelv:} Az M által felismert nyelv: $L(M) = \{w \in {\Sigma}^* | M$ elfogadja $w$-t$\}$.\\
+\bigskip
+(az aláhúzotta különböznek a determinisztikus automatáshoz képest)
+\end{block}
+
+\begin{block}{Def.: $X \epsilon$-lezártja}
+Legyen $X \subseteq Q$. Ekkor \textbf{$X \epsilon$-lezártján} s állapotok olyan $\widehat{X}$ halmazát értjük, amelyekre létezik $X$-beli $q$ állapotból induló számítási sorozat az $\epsilon$ szón, amely $s$-ben végződik.\\
+Formalizálva:\\
+$\widehat{X} = \{s \in Q : {\exists}r_0,r_1,...,r_n, n \geq 0, r_0 \in X, r_n = s, r_i \in {\delta}(r_{i - 1}, {\epsilon}), i = 1, ..., n\}$.\\
+{\tiny (S) Azaz ha egy számítási sorozat végéből átmenet van csak $\epsilon$-al, akkor hozzávesszük azokat is, ameddig szükséges, és az első nem $\epsilon$-os átmenet lessza vége.}\\
+{\tiny (S) A definíció listában nincs benne, de az egyik bizonyításban fel van használva}
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Tétel: Nemdeterminisztikus automata}
 Minden $M = (Q, \Sigma , \delta , q_0, F)$ véges nemdeterminisztikus automatával felismerhető nyelv, felismerhető véges automatával.
-
 \end{block}
 
 \begin{block}{Bizonyítás}
@@ -976,7 +1146,7 @@ Megjegyzés: Elég lenne $p(Q)$ azon elemeivel számolni, amelyek elérhetők $Q
 
 \begin{frame}
 \begin{block}{Tétel: Felismerhető nyelvek szorzata}
-$L_1, L_2$ felismerhető $\implies$ $L_1 * L_2$
+$L_1, L_2$ felismerhető $\implies$ $L_1 \cdot L_2$
 
 \end{block}
 
@@ -997,9 +1167,9 @@ $
 \end{cases}
 $\\
 \bigskip
-Legyen: $M_1 * M_2 = (Q_1 \cup Q_2, \Sigma , \delta , q_1, F_2)$\\
+Legyen: $M_1 \cdot M_2 = (Q_1 \cup Q_2, \Sigma , \delta , q_1, F_2)$\\
 \bigskip
-Ekkor: \textbf{$L(M_1 * M_2) = L_1 * L_2$}\\
+Ekkor: \textbf{$L(M_1 \cdot M_2) = L_1 \cdot L_2$}\\
 \end{block}
 
 \end{frame}
@@ -1028,6 +1198,22 @@ $\\
 \textbf{Ekkor: $L(M^*) = L^*$}\\
 \end{block}
 
+\end{frame}
+\begin{frame}
+\begin{block}{Def.: Reguláris kifejezések}
+$\Sigma$ véges, nemüres halmaz.\\
+Azt mondjuk, hogy $R$ reguláris kifejezés ($\Sigma$ felett), ha:\\
+\medskip
+\begin{enumerate}
+\item $R = a$  valamely $a \in \Sigma$-ra, és ekkor $R$ a $\{a\}$ nyelvet jelöli, vagy
+\item $R = \emptyset$ és ekkor $R$ az $\emptyset$ nyelvet jelöli, vagy
+\item $R = (R_1 + R_2)$ és ekkor $R$ az $R_1$ és $R_2$ által jelölt nyelvek egyesítését jelöli, vagy
+\item $R = (R_1 \cdot R_2)$ és ekkor $R$ az $R_1$ és $R_2$ által jelölt nyelvek konkatenációját jelöli, vagy
+\item $R = (R^*_1)$ és ekkor az $R$ az $R_1$ által jelölt nyelv iterációját jelöli.
+\end{enumerate}
+\medskip
+ahol $R_1, R_2$ reguláris kifejezések.
+\end{block}
 \end{frame}
 
 \begin{frame}
@@ -1083,12 +1269,48 @@ TODO: Példa értékek
 
 \end{frame}
 
+\begin{frame}
+\begin{block}{Def.: Környezetfüggetlen nyelvtan}
+\textbf{Környezetfüggetlen nyelvtannak} nevezzük a\\
+$G = (V, {\Sigma}, R, S)$ négyest, ahol\\
+\begin{itemize}
+\item $V$ véges, nemüres halmaz: a változók vagy nemterminálisok abc-je
+\item $\Sigma$ véges, nemüres halmaz: a terminálisok abc-je, ahol $V \cap \Sigma = \emptyset$ (Betűk)
+\item $R : A \rightarrow w$ alakú átírási szabályok véges halmaza, ahol $A \in V, w \in (V \cup {\Sigma})^*$\\
+(Nem terminálisokhoz hozzárendelünk terminális szimbólumokat.), (Nem biztos, hogy terminális), ($A$ helyettesíthető a $w$-vel minden esetben.), ($w$ $\rightarrow$ lehetnek végtelen hosszú szavak.)
+\item $S \in V$ a kezdőszimbólum.
+\end{itemize}
+\end{block}
+
+\begin{block}{Def.: Deriváció, közvetlen derivált}
+Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtyan
+TODO
+\end{block}
+
+\begin{block}{Def.: Nyelvtanok ekvivalenciája, Környezetfüggetlen nyelv}
+Két nyelvtan \textbf{ekvivalens}, ha ugyanazt a nyelvet generálják.\\
+Egy nyelv \textbf{Környezetfüggetlen}, ha generálható környezetfüggetlen nyelvtannal.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Derivációs fa}
+TODO
+\end{block}
+\end{frame}
 
 \begin{frame}
 \begin{block}{Tétel: Derivációs fák}
 Egy $X \in (V \cup {\Sigma}_{\epsilon})$-ből induló derivációs fa, amelynek határa az $u \in {\Sigma}^*$ szó, ami akkor és csak akkor létezik, ha $X {\Rightarrow}^* u \in {\Sigma}^*$.
 \end{block}
 
+\begin{block}{Def.: Jobb-, Baloldali deriváció}
+TODO
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Tétel: Ekvivalens állítások derivációs fákra}
 Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a következők ekvivalensek az $u \in {\Sigma}^*$ szóra:\\
 \begin{enumerate}
@@ -1096,9 +1318,14 @@ Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a követke
 \item $S {{\Rightarrow}^*}_l u$
 \item Létezik olyan $S$-ből induló derivációs fa, amelynek határa $u$.
 \end{enumerate}
-
 \end{block}
 
+\end{frame}
+
+\begin{frame}
+\begin{block}{Egyértelmű nyelvtan}
+TODO
+\end{block}
 \end{frame}
 
 \begin{frame}
@@ -1116,6 +1343,12 @@ Ekkor az $u \in  L(G) \iff \exists u$ szóra $q_0$-ból $q$-ba vezető számít�
 (triviális, a vizsgán is lehet mondani).
 \end{block}
 
+\end{frame}
+
+\begin{frame}
+\begin{block}{Jobblineáris nyelvtan, nyelv}
+TODO
+\end{block}
 \end{frame}
 
 \begin{frame}
@@ -1138,7 +1371,7 @@ Ha $E = (E_1 + E_2)$:\\
 Akkor $G_E = (V_{E_1} \cup V_{E_2} \cup \{S\}, \Sigma, R_{E_1} \cup R_{E_2} \cup \{S \rightarrow S_{E_1}, S \rightarrow S_{E_2}\}, S)$,\\
 és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cup V_{E_2}$.\\
 \bigskip
-Ha $E = (E_1 * E_2)$:\\
+Ha $E = (E_1 \cdot E_2)$:\\
 Akkor $G_E = (V_{E_1} \cup V_{E_2} \cup \{S\}, \Sigma, R_{E_1} \cup R_{E_2} \cup \{S \rightarrow S_{E_1}S_{E_2}\}, S)$,\\
 és feltesszük, hogy $V_{E_1} \cap V_{E_2} = {\emptyset}, S \notin V_{E_1} \cup V_{E_2}$.\\
 \bigskip
@@ -1146,6 +1379,27 @@ Ha $E = (E_1)^*$:\\
 Akkor $G_E = (V_{E_1} \cup \{S\}, \Sigma, R_{E_1} \cup \{S \rightarrow SS_{E_1}, S \rightarrow \epsilon \}, S)$,\\
 és feltesszük, hogy $S \notin V_{E_1}$.\\
 
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Veremautomata, Elfgadott szó}
+\textbf{Veremautomata} egy $M = (Q, {\Sigma}, {\Gamma}, {\delta}, q_0, F)$ rendszer,\\
+ahol $Q, {\Sigma}, q_0, F$ ugyanazok, mint véges automata esetén, továbbá\\
+\medskip
+$\Gamma$ : véges, nemüres halmaz, a verem ábécé.\\
+$\delta : Q x {\Sigma}_g x {\Gamma}_g \rightarrow p(Q x {\Gamma}_g)$ az átmenetfüggvény.\\
+\bigskip
+\textbf{Elfogadott szó:}\\
+Az $M$
+TODO
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Konfiguráció}
+TODO
 \end{block}
 \end{frame}
 
