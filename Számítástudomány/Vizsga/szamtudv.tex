@@ -635,56 +635,111 @@ $V' \subseteq V$ és $E' \subseteq E$, valamint ${\phi}'(e) = {\phi}(e)$ minden 
 \begin{block}{Def.: Telített Részgráf}
 Ha a $G' = (V', E', {\phi}')$ gráf a $G = (V, E, {\phi})$ gráf részgráfja, és $E'$ mindazon $E$-beli elemeket tartalmazza, amelyek végpontjai $V'$-ben vannak, akkor $G'$-t \textbf{telített részgráfnak} nevezzük, vagy pontosabban \textbf{$V'$ által meghatározott telített részgráfnak.}
 \end{block}
+\begin{block}{Komplementer Gráf}
+$\overline{G}$ an $n$-pontú egyszerű $G = (V, E)$ gráf \textbf{komplementer gráfja}, ha\\
+\smallskip
+$\overline{V}(G) = V(G)$ és\\
+$E(\overline{G}) = E(K_n) \setminus E(G)$.
+\end{block}
 
 \end{frame}
 
 \begin{frame}
+\begin{block}{Zárt, Nyílt élsorozat (Séta)}
+Legyen $k$ természetes szám.\\
+\textbf{$k$ hosszú élsorozat (séta) $a_0$-ból $a_k$-ba} az\\
+\smallskip
+$[a_0, e_1, a_1, e_2, a_2, ..., e_k, a_k]$ sorozat, ha $a_0, a_1, ..., a_k \in V(G), e_1, e_2, ..., e_k \in E(G)$ és ${\phi}(e_i) = [a_{i - 1}, a_i]$ minden $i = 1, 2, ..., k$-ra.\\
+\bigskip
+\textbf{Út, Vonal:}\\
+Egy élsorozat \textbf{út}, ha benne minden csúcs különböző és \textbf{vonal}, ha minden éle különboző.\\
+\bigskip
+\textbf{Zárt, Nyílt:}\\
+Egy élsorozat \textbf{zárt}, ha $a_0 = a_k$ különben \textbf{nyílt}.\\
+\bigskip
+\textbf{Kör:}\\
+\textbf{Kör} az a zárt élsorozat, melyben a többi csúcs egymástól és $a_0$-tól különbözik, és élei is mind különbözőek.\\
+\bigskip
+Út $\subset$ Vonal $\subset$ Séta\\
+\medskip
+Kör $\subset$ Zárt vonal $\subset$ Zárt séta
+\end{block}
+\begin{block}{Ész}
+\begin{itemize}
+\item Út és kör hossza az éleinek száma.
+\item 0 hosszúságú séta út
+\item út mindig vonal
+\end{itemize}
+\end{block}
 
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Összeföggőség}
+Egy gráf \textbf{összefüggő}, ha benne bármilyen két csúcs összeköthető sétával (következtetésképpen úttal is).
+\end{block}
+\begin{block}{Def.: Komponensek}
+Legyen $\sim$ a következő ekvivalenciareláció (Reflexív, Tranzitív, Szimmetrikus):\\
+\bigskip
+$a_1, a_2 \in V(G)$ esetén $a_1 \sim a_2$, ha $a_1 = a_2$ vagy $a_1$ és $a_2$ között van út.\\
+\bigskip
+Az azonos osztályokba eső csúcsok által meghatározott telített részgráfok a $G$ gráf \textbf{(összefüggő) komponensei}, számuk \textbf{c(G)}.
+\end{block}
+\begin{block}{Ész}
+\begin{itemize}
+\item Különböző osztályokba eső csúcsok nem szomszédosak
+\item Minden él hozzárendelhető egy komponenshez
+\item Egy gráf összefüggő, ha egy komponense van
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Fa}
+Összefüggő körmentes gráf.
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Tétel: Equivalens állítások fákra}
 Egy $G$ egyszerű gráfra a következő állítások equivalensek:
-
 \begin{enumerate}
 \item $G$ Fa
 \item $G$ Összefüggő, de bármely él elhagyásával kapott részgráf már nem összefüggő.
 \item Ha $v, v'$ a $G$ különböző csúcsai, akkor pontosan egy út vezet $v$-ből $v'$be.
 \item $G$-ben nincs kör, de bármely új él hozzáadásával kapott gráf már tartalmaz kört.
 \end{enumerate}
-
 \end{block}
-
 
 \begin{block}{Tétel: Elsőfokú pontok}
 Ha egy véges gráfban nincs kör, de van él, akkor van benne legalább két elsőfokú pont.
-
 \end{block}
-
 \end{frame}
 
 \begin{frame} 
-
 \begin{block}{Tétel: Ekvivalens állítások n-pontú fákra}
 Egy $G$ egyszerű gráfra a következő álítások ekvivalensek:
-
 \begin{enumerate}
 \item $G$ fa.
 \item $G$-ben nincs kör és $n - 1$ éle van.
 \item $G$ összefüggő és $n - 1$ éle van.
 \end{enumerate}
+\end{block}
 
+\begin{block}{Def.: Feszítőfa}
+Az $F$ gráf a $G$ gráf \textbf{feszítőfája}, ha\\
+$F$ részgráfja $G$-nek, $F$ fa és $V(T) = V(G)$.
 \end{block}
 
 \begin{block}{Tétel: Feszítőfa létezése}
 Minden véges összefüggő $G$ gráfnak létezik feszítőfája.
-
 \end{block}
 
 \end{frame}
 
 \begin{frame} 
-
 \begin{block}{Tétel: Körök száma}
 Egy véges összefüggő $G = (E, V)$ gráfban létezik \underline{legalább} $e(G) - v(G) + 1$ különböző kör.
-
 \end{block}
 
 \begin{block}{Bizonyítás}
@@ -692,9 +747,27 @@ A feszítőfa létezése téltel miatt ($\Rightarrow$) $\exists T$ feszítőfa, 
 Legyen $K_f$ az a kör, ami $T \cup \{f\}$-ben van, ahol $f \in E(G) \setminus E(T)$\\
 $T_G$ komplementerben legalább $e(G) - e(T) = e(G) - (v(G) - 1) = e(G) - v(G) - 1$ ilyen $f$ él van.\\
 $\Rightarrow$ legalább $e(G) - v(G) + 1$ különbző kör.
-
 \end{block}
+\end{frame}
 
+\begin{frame}
+\begin{block}{Elvágó élhalmaz, vágás}
+Legyen $G =  (V, E, {\phi})$ egy gráf, $v, w \in V$, és $V' \subseteq V$.\\
+\bigskip
+Ha minden $v$-ből $w$-be vezető út tartalmaz $V'$-beli csúcsot, akkor\\
+\medskip
+\textbf{$V'$ elvágja $v$-t, és $w$-t}.\\
+\medskip
+Ha $E' \subseteq E$ és minden $v$-ből $w$-be vezető út tartalmaz $E'$-beli élet, akkor\\
+\medskip
+\textbf{$E'$ elvágja $v$-t, és $w$-t}.\\
+\bigskip
+Ha $V'$, illetve $E'$ egy elemű, akkor \textbf{elvágó (szeparáló) pontról}, ill \textbf{elvágó (szeparáló) élről} beszélünk.\\
+\bigskip
+$E' \subseteq E$ \textbf{elvágó, (szeparáló) élhalmaz}, ha a $G' = (V, E \setminus E')$ több komponensből áll, mint $G$. (azaz vannak olyan csúcsok $G$-ben, amelyeket $E'$ elvág.)\\
+\bigskip
+$E' \subseteq E$ \textbf{vágás}, ha elvágó élhalmaz, de semelyik  valódi részhalmaza nem az.
+\end{block}
 \end{frame}
 
 \begin{frame}
@@ -708,13 +781,47 @@ $\Rightarrow$ $T_G$ komplementer nem vágás.\\
 Ha $T_G$ komplementerhez hozzáveszünk egy $e$ élt $T$-ből, akkor elvágó élhalmazt kapunk, amely tartalmaz egy vágást.\\
 Ez a vágás tartalmazza $e$ élt, de másikat nem $T$ből.\\
 Mivel $T$-nek $v(G) - 1$ éle van $\Rightarrow$ legalább ennyi különböző vágást kapunk.
-
 \end{block}
-
 \end{frame}
 
 \begin{frame}
+\begin{block}{Erdő, Feszítő erdő}
+Egy körmentes gráfot \textbf{erdőnek} nevezünk.\\
+(Nincs kikötve, hogy összefüggő legyen,)\\
+(Egy fa is erdő).\\
+\medskip
+$G$ gráf maximállis élszámú körmentes részgráfja $G$ \textbf{feszítő erdője}.
+\end{block}
 
+\begin{block}{Ész}
+A feszítő erdő minden összefüggő komponense $G$ megfelelő komponensének feszítőfája.\\
+\medskip
+Egy véges erdő élszáma: $v(G) - c(G)$, ahol $c$ a komponensek száma.
+\end{block}
+
+\begin{block}{Rang, Nullitás}
+$G$ \textbf{rangja}: $r(G) = v(G) - c(G)$\\
+(Minimálisan kiválasztható vágások száma)\\
+\medskip
+$G$ \textbf{Nullitása}: $n(G) = e(G) - v(G) + c(G)$\\
+(Minimálisan kiválaszthatü körök száma.)
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Def.: Euler gráfok}
+Ha egy $G$ gráfban van olyam $Z$ élsorozat (vagy zárt vonal), amelyik $G$ minden élét pontosan egyszer tartalmazza, akkor $G$-t \textbf{Euler-gráfnak}, $Z$-t pedig \textbf{Euler-vonal}-nak \textbf{(Euler-körnek)} nevezzük.
+\end{block}
+\begin{block}{Ész}
+\begin{enumerate}
+\item Ha $v \neq v'$ (nyílt), akkor $v$ és $v'$ fokszáma páratlan, és $v, v'$ kivételével minden fokszám páros.
+\item Ha $v = v'$ (zárt), akkor minden fokszám páros, mivel az Euler-vonal minden pontban ugyanannyiszor "megy be" és "ki".
+\item A königsbergi hidak problémájának megoldása: lehetetlen.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Tétel: Euler gráfok}
 Ha $G$ összefüggő véges gráf, akkor a következő állítások ekvivalensek:\\
 \begin{enumerate}
@@ -723,30 +830,69 @@ Ha $G$ összefüggő véges gráf, akkor a következő állítások ekvivalensek
 \item $G$ éldiszjunkt körök egyesítése.
 \end{enumerate}
 \end{block}
-
 \end{frame}
 
 \begin{frame}
+\begin{block}{Def.: Hamilton gráfok}
+Egy út \textbf{Hamilton-út}, ha $G$ gráf minden pontját tartalmazza.\\
+\medskip
+Ha egy kör a $G$ minden pontját tartalmazza, akkor \textbf{Hamilton-körnek}, $G$-t pedig \textbf{Hamilton-gráfnak} nevezzük.
+\end{block}
 
+\begin{block}{Ész}
+$K_n(n > 2)$ Hamilton-gráf, ha $n$ páratlan, akkor Euler-gráf is.
+\end{block}
+
+\begin{block}{Példák}
+TODO
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Tétel: Ore tétel}
 Legyen $G$ egy $n \geq 3$ pontú egyszerű véges gráf. Ha $$d(v) + d(w) \geq n$$ minden $v$, $w$ nem-szomszédos pontra, akkor $G$ Hamilton-gráf.
-
 \end{block}
 
 \begin{block}{Tétel: Dirac tétel}
 Legyen $G$ egy $n \geq 3$ pontú egyszerű véges gráf. Ha $$d(v) \geq \frac{n}{2}$$ minden $v$ csúcsra, akkor $G$ Hamilton-gráf.
-
 \end{block}
-
 \end{frame}
 
 \begin{frame}
+\begin{block}{Gráf súlya}
+Legyen $G = (V, E, {\phi}, w)$ olyan gráf ($w$ a súlyfüggvény (Az él súlya)), ahol $w$ függvény egy $e \in E(G)$ élhez rendel valós számhalmazbeli értéket, amelyet $e$ \textbf{súlyának} nevezük. $X \subseteq E(G)$ esetén az $X$ részhalmaz súlya:\\
+\medskip
+$\sum_{e \in X} w(e)$.
+\end{block}
 
+\begin{block}{Def.: Mohó algoritmus}
+Egy \textbf{mohó algoritmus} minden döntést az adott pillanatban rendelkezésre álló információk alapján hoz meg, nem törődve a döntés "jövőre" gyakorolt hatásával.
+\end{block}
+
+\begin{block}{Ész}
+\textbf{Előny:}\\
+\medskip
+\begin{enumerate}
+\item Könnyen kitalálható
+\item Könnyen Implementálható
+\item Sok esetben nagyon gyors és hatékony
+\end{enumerate}
+\textbf{Hátrány:}\\
+Nem mindíg adja az optimális megoldást.
+\end{block}
+
+\begin{block}{Ellenpélda: TSP / Travelling Salesman Problem}
+Egy utazóügynöknek $n$ városba kell ellátogatnia. Szeretné az útiköltséget minimalizálni úgy, hogy minden várost pontosan egyszer érintsen.\\
+\bigskip
+TODO kép
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Tétel: Kruskal algoritmus}
 Legyen $G = (V, E, {\phi}, w)$ egy véges összefüggő gráf. A következő algoritmus megtalál egy minimális súlyú feszítőfát $G$-ben.
     
 \end{block}
-
 \begin{tikzpicture}[node distance = 2cm, auto]
     % Place nodes
     \node [block] (step1) {\tiny{$V(F)=V(G)$ és $E(F) = \emptyset$.}};
@@ -758,18 +904,19 @@ Legyen $G = (V, E, {\phi}, w)$ egy véges összefüggő gráf. A következő alg
     \draw [arrow] (step2) -- (step3);
 	\draw [arrow] (step3) -- node {Nem} (step4);    
     \draw[arrow] (step3) -- node {Igen} + (5, 0.1) |- (step2);
-    
-
 \end{tikzpicture}
-
 \end{frame}
 
 \begin{frame}
+\begin{block}{Def.: Irányított gráf}
 
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{block}{Tétel: Erős összefüggőség}
 Egy összefüggő gráf akkor, és csak akkor irányítható úgy, hogy erősen összefüggő legyen, ha minden \textbf{éléhez} tartozik rajta áthaladó kör.
 \end{block}
-
 \end{frame}
 
 \begin{frame}
@@ -1283,8 +1430,25 @@ $G = (V, {\Sigma}, R, S)$ négyest, ahol\\
 \end{block}
 
 \begin{block}{Def.: Deriváció, közvetlen derivált}
-Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtyan
-TODO
+Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan, $u, v \in (V \cup {\Sigma})^*$.\\
+\medskip
+\textbf{Közvetlen derivált:}\\
+Azt mondjuk, hogy \textbf{$u$ közvetlen deriváltja a $v$ szó}, Jelölés: $u \Rightarrow v$,\\
+ha létezik az $u = u_1Au_2$ és $v = u_1wu_2$ felbontás úgy, hogy $A  \rightarrow w \in R$.\\
+\medskip
+\textbf{$v$ szó $u$ ból való derivációja:}\\
+Egy $u_0, u_1, ..., u_n (n \geq 0)$ sorozatot a \textbf{$v$ szó $u$-ból való derivációjának} nevezünk, ha:\\
+$u_0 = u, u_n = v$ és\\
+$u_{i - 1} \Rightarrow u_i, i = 1, ..., n$.\\
+\medskip
+\textbf{Levezethető:}\\
+Azt mondjuk, hogy a \textbf{$v$ deriválható vagy levezethető $u$-ból},
+\\ha létezik a $v$-nek $u$-ból való derivációja.\\
+Jele: $u {\Rightarrow}^* v$.\\
+\medskip
+A \textbf{$G$ által generált nyelv}:\\
+$L(G) = \{w \in {\Sigma}^* : S {\Rightarrow}^* w\}$.
+
 \end{block}
 
 \begin{block}{Def.: Nyelvtanok ekvivalenciája, Környezetfüggetlen nyelv}
@@ -1296,7 +1460,17 @@ Egy nyelv \textbf{Környezetfüggetlen}, ha generálható környezetfüggetlen n
 
 \begin{frame}
 \begin{block}{Def.: Derivációs fa}
-TODO
+Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan.\\
+\textbf{$G$ feletti derivációs fa} olyan véges, irányított, rendezett fa, amely csúcsai a $V \cup {\Sigma} \cup \{{\epsilon}\}$ halmaz elemeive címkézettek úgy, hogy valahányszor egy csúcs és leszármazottainak címét rendre\\
+\medskip
+$X, X_1, ..., X_n (n \geq 1)$,\\
+mindannyiszor $X \rightarrow X_1...X_n \in R$.\\
+\medskip
+Továbbá minden levél címkéje az $\{{\epsilon}\} \cup {\Sigma} = {\Sigma}_g$ halmazban van, és ha egy csúcs valamely leszármazottja $\epsilon$-nal címkézett, akkor a csúcsnak egyetlen leszármazottja van.\\
+\bigskip
+Ha a gyökér címkéje $X$, akkor a \textbf{derivációs fa $X$-ből indul}.\\
+\bigskip
+A derivációs fa leveleinek, illetve a levelek címkéinek sorozata a \textbf{derivációs fa határa}, amely egy ${\Sigma}^*$-beli szó.
 \end{block}
 \end{frame}
 
@@ -1306,7 +1480,17 @@ Egy $X \in (V \cup {\Sigma}_{\epsilon})$-ből induló derivációs fa, amelynek 
 \end{block}
 
 \begin{block}{Def.: Jobb-, Baloldali deriváció}
-TODO
+Azt mondjuk, hogy egy\\
+\bigskip
+$u_0 \Rightarrow u_1 \Rightarrow ... \Rightarrow u_n$\\
+\bigskip
+\textbf{deriváció baloldali}, ha minden $i < n$ számra $u_{i + 1}$ úgy áll elő az $u_i$ szóból, hogy az $u_i$-ben előforduló első nemterminálist írjuk át.\\
+\bigskip
+\textbf{Jobboldali derivációk} hasonlóan definiálhatóak.\\
+\bigskip
+Baloldali deriváció jelölése:\\
+\bigskip
+$u_0 {\Rightarrow}_l ... {\Rightarrow}_l u_g$, vagy $u_0 {\Rightarrow}^*_l u_g$.
 \end{block}
 \end{frame}
 
@@ -1324,7 +1508,7 @@ Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a követke
 
 \begin{frame}
 \begin{block}{Egyértelmű nyelvtan}
-TODO
+A $G = (V, {\Sigma}, R, S)$ \textbf{nyelvtant egyértelműnek} nevezzük, ha minden $u \in L(G)$ szónak pontosan egy $S$-ből induló baloldali levezetése (derivációs fája) van.
 \end{block}
 \end{frame}
 
@@ -1347,7 +1531,14 @@ Ekkor az $u \in  L(G) \iff \exists u$ szóra $q_0$-ból $q$-ba vezető számít�
 
 \begin{frame}
 \begin{block}{Jobblineáris nyelvtan, nyelv}
-TODO
+A $G = (V, {\Sigma}, R, S)$ környezetfüggetlen \textbf{nyelvtan jobblineáris},\\
+Ha minden osztálya:\\
+\medskip
+$A \rightarrow uB$ vagy $A \rightarrow u$ alakú, ahol $u \in {\Sigma}^*$ és $A, B \in V$\\
+\bigskip
+L \textbf{nyelv jobblineáris}, ha generálhatü jobblineáris nyelvtannal.\\
+\smallskip
+(Ez a legszigorúbb szabály, a reguláris nyelveket tudja generálni.)
 \end{block}
 \end{frame}
 
@@ -1391,15 +1582,38 @@ $\Gamma$ : véges, nemüres halmaz, a verem ábécé.\\
 $\delta : Q x {\Sigma}_g x {\Gamma}_g \rightarrow p(Q x {\Gamma}_g)$ az átmenetfüggvény.\\
 \bigskip
 \textbf{Elfogadott szó:}\\
-Az $M$
-TODO
-
+Az \textbf{$M$ veremautomata akkor fogadja el a $w \in {\Sigma}^*$ szót,} ha\\
+${\exists}w_1, ..., w_m \in {\Sigma}_g, r_0, ..., r_m \in Q, s_0, ..., s_m \in {\Gamma}^*$, ahol\\
+\begin{enumerate}
+\item $w = w_1...w_m$\\
+\item $r_0 = q_0, s_0 = \epsilon$
+\item ${\forall}i < m (r_{i + 1}, b) \in {\delta}(r_i, w_{i + 1}, a)$, ahol $s_i = at$ és $s_{i + 1} = bt$\\
+valamely $a, b \in {\Gamma}_g, t \in {\Gamma}^*$ esetén.
+\item $r_m \in F$
+\end{enumerate}
+\medskip
+Jelölés: $L(M)$ jelöli az $M$ által elfogadott $w \in {\Sigma}^*$ szavak halmazát.\\
+$L(M)$-et am $M$ által felismert nyelvnek nevezzük.
 \end{block}
 \end{frame}
 
 \begin{frame}
 \begin{block}{Def.: Konfiguráció}
-TODO
+\textbf{Konfiguráció} a $(q, {\alpha}, u) \in Q x {\Sigma}_{\epsilon} x {\Gamma}_{\epsilon}$ rendezett hármas.\\
+\medskip
+$(q, {\alpha}, u) \vdash (q', {\alpha}', u')$,\\
+{\tiny (S) A $\vdash$ kb levezethetőt jelent, de nem biztos, hogy ez a szakszó rá!}
+\medskip
+ha létezik olyan $((q, a, {\gamma}), (q', {\gamma}'))$ szabály és $\mathcal{B} \in {\Gamma}^*$, hogy\\
+\medskip
+$u = au'$, $\alpha = {\gamma}{\beta}$, ${\alpha}' = {\gamma}'{\beta}$.\\
+\medskip
+$(q, {\alpha}, u) {\vdash}^* (q', {\alpha}', u')$.\\
+\medskip
+ha valamely $(r_i, {\alpha}_i, u_i), i = 0, ..., n$ konfigurációkra\\
+\medskip
+$(r_0, {\alpha}_0, u_0) = (q, {\alpha}, u)$, $(r_n, {\alpha}_n, u_n) = (q', {\alpha}', u')$, és\\
+$(r_i, {\alpha}_i, u_i) \vdash (r_{i + 1}, {\alpha}_{i + 1}, u_{i + 1})$ minden $i = 0, ..., n - 1$ esetén.\\
 \end{block}
 \end{frame}
 
