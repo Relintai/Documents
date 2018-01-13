@@ -3,7 +3,7 @@
 
 % Uncomment these to get the presentation form
 \documentclass{beamer}
-\geometry{paperwidth=170mm,paperheight=170mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
+\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
 
 % Uncomment these, and comment the 2 lines above, to get a paper-type article
 %\documentclass[10pt]{article}
@@ -535,25 +535,96 @@ Tetszőleges formulahalmaz, akkor és csak akkor konzisztens, ha kielégíthető
 
 \begin{frame}
 
+\begin{tcolorbox}[title={Függvény}]
+Legyen $n \geq 0$ és $f : A^n \rightarrow A$ egy $n$ változós függvény.\\
+\tcblower
+({\small $n = 0$ esetén $f$-et azonosítjuk $A$ halmaz egy elemével.})
+\end{tcolorbox}
+
 \begin{tcolorbox}[title={$A$ feletti n változó predikátum}]
 \textbf{$A$ feletti n változó predikátum} a következő függvény:\\
-$p \rightarrow A^n \rightarrow \{0, 1\}$
+$$p : A^n \rightarrow \{0, 1\}$$
+\tcblower
+{\small $n = 0$ esetben $p \in \{0, 1\}$ $\rightarrow$  a predikátum konstans 0, vagy 1 kell legyen.}\\
+\msmallskip
+{\small Ha valamely $a_1, ..., a_n \in A$-ra $p (a_1, ..., a_n) = 1$},\\
+{\small akkor azt mondjuk, hogy $p(a_1, ..., a_n)$ helyen igaz.}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Az $L$ elsőrendű nyelv szimbólumai}]
-TODO
+\begin{tcolorbox}[title={Az $\mathcal{L}$ elsőrendű nyelv szimbólumai}]
+Változók: $x, y, u, v, w, ..., x_1, x_2, ...$\\
+Függvényszimbólumok: $f, g, h, ..., f_1, f_2, ...$\\
+Predikátumszimbólumok: $p, q, r, ..., p_1, p_2, ...$\\
+Logikai szimbólumok: ${\neg}, {\lor}, {\land}, {\exists}, {\forall}$\\
+Elválasztó szimbólumok: $($, $),$ és a $,$ (vessző).\\
+\tcblower
+A változók halmaza $Var$\\
+A predikátumszimbólumok halmaza nem üres.\\
+A függvény- és predikátumszimbólumoknak van aritása (rangja = Hány változós)\\
+A 0 aritású függvényszimbólumok a konstansok: $a, b, c, ...$
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{tcolorbox}[title={Az $\mathcal{L}$ elsőrendű nyelv formulái}]
+\underline{\textbf{Termek:}} a legszűkebb olyan halmaz, amelyre az alábbi két feltétel teljesül:\\
+\begin{enumerate}
+\item Minden változó term.
+\item Ha $t_1, ..., t_n$ termek valamely $n \geq 0$-ra, $f$ pedig egy $n$ változós függvényszimbólum,
+akkor $f(t_1, ..., t_n)$ is term. (Ha $n = 0$, akkor $f()$ helyett csak $f$-et írunk.)
+\end{enumerate}
+\mmedskip
+
+\underline{\textbf{Atomi formulák:}} a legszűkebb olyan halmaz, amely kielégíti az alábbi feltételt:\\
+\begin{enumerate}
+\item Ha $t_1, ..., t_n$ termek valamely $n \geq 0$-ra, $p$ pedig egy $n$ változós predikátumszimbólum, akkor $p(t_1, ..., t_n)$ atomi formula. (Az $n = 0$ esetben $p()$ helyett most is csak $p$-t írunk.)
+\end{enumerate}
+{\small Termeket "összegyúrjuk" egy predikátum segítségével.}\\
+\mmedskip
+
+\underline{\textbf{Formulák:}} a legszűkebb olyan halmaz, amelyre az alábbi feltételek teljesülnek (Formulák halmaza: $Form(S)$):\\
+\begin{enumerate}
+\item Minden atomi formula egyben formula is.
+\item Ha $F$ és $G$ formulák, akkor ${\neg}F, (F \lor G), (F \land G)$ is formulák.
+\item Ha $F$ formula, $x$ pedig egy változó akkor ${\exists}xF$ és ${\forall}xF$ is formulák.
+\end{enumerate}
+\mmedskip
+
+A formulák halmazát $Form(\mathcal{L})$-lel, vagy ha csak egy $\mathcal{L}$-ről beszélünk, akkor $Form$-al jelöljük.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Az $L$ elsőrendű nyelv formulái}]
-TODO
-\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
 
 \begin{tcolorbox}[title={Kötött, szabad változó, nyílt, zárt formula}]
-TODO
+\begin{enumerate}
+\item Az olyan termeket, amelyekben nem szerepelnek változók \textbf{ground termeknek} nevezzük.
+\item Ha egy $F$ formula, $F = F_1GF_2$ és $G$ is formula, akkor $G$ az $F$ részformulája.
+\item Egy $x$ változó valamely (nem közvetlenül kvantor utáni) előfordulása egy $F$ formulában kötött, ha ez az előfordulás $F$-nek egy ${\exists}xG$ vagy ${\forall}xG$ alakú részformulája $G$ részéban van. Különben $x$ szóban forgó előfordulása szabad.
+\item Egy $x$ változó szabad $F$-ben, ha van $F$-ben szabad előfordulása.
+\item A szabad változó nélküli formulákat zárt formuláknak vagy mondatoknak hívjuk.
+\item Egy $F$ formula mátrixának azt az $F^*$ formulát nevezzük, amelyet úgy kaponk $F$-ből, hogy töröljük belőle a ${\forall}x$ és ${\exists}$x alakú részeket.
+\end{enumerate}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Az elsőrendű nyelv szemantikája}]
-TODO
+Legyen $\mathcal{L}$ egy elsőrendű nyelv.\\
+\mmedskip
+
+$\mathcal{L}$ típusú struktúrának nevezünk egy $\mathcal{A} = (\mathcal{U}, \mathcal{I}, {\phi})$ hármast, ahol:\\
+\mmedskip
+
+\begin{itemize}
+\item $\mathcal{U}$ egy nem üres halmaz, az univerzum.
+\item ${\phi} : Var \rightarrow \mathcal{U}$ egy változó hozzátrendelés.
+\item $\mathcal{I}$ egy olyan leképzés, amely:
+\begin{itemize}
+\item Minden $\mathcal{L}$-beli $n$ változós $f$ függvényszimbólumhoz hozzárendel egy $\mathcal{I}(f) : \mathcal{U}^n \rightarrow \mathcal{U}$ függvényt. (Ha $n = 0$, akkor $\mathcal{I}(f) \in \mathcal{U}$.)
+\item Minden $\mathcal{L}$-beli $n$ változós $p$ predikátumszimbólumhoz hozzárendel egy $\mathcal{I}(p) : \mathcal{U}^n \rightarrow \{0, 1\}$ prdeikátumot. (Ha $n = 0$, akkor $\mathcal{I}(p) \in \{0, 1\}$.)
+\end{itemize}
+\end{itemize}
+
 \end{tcolorbox}
 
 \end{frame}
@@ -983,11 +1054,36 @@ Egy \textbf{mohó algoritmus} minden döntést az adott pillanatban rendelkezés
 \textbf{Hátrány:}\\
 Nem mindíg adja az optimális megoldást.
 \end{tcolorbox}
+\end{frame}
 
+
+\begin{frame}
 \begin{tcolorbox}[title={Ellenpélda: TSP / Travelling Salesman Problem}]
 Egy utazóügynöknek $n$ városba kell ellátogatnia. Szeretné az útiköltséget minimalizálni úgy, hogy minden várost pontosan egyszer érintsen.\\
-\mbigskip
-TODO kép
+\tcblower
+Egy lehetséges mohó algoritmus, amikor mindíg a legrövideb utat választja:\\
+\\
+\mmedskip
+\SetGraphUnit{2}
+\GraphInit[vstyle=Normal]
+\SetVertexSimple[MinSize    = 16pt, LineColor = black, FillColor = mygreen]
+\begin{tikzpicture}
+  \GraphInit[vstyle=Normal]
+  \SetVertexLabel
+  \Vertex{v1}
+  \EA[unit=3](v1){v3}
+  \SO[unit=2](v3){v4}
+  \SO[unit=2](v1){v2}
+  \Edge[label=2](v1)(v3)
+  \Edge[label=99](v3)(v4)
+  \Edge[label=2](v4)(v2)
+  \Edge[label=0](v2)(v1)
+  \Edge[style={pos=0.75},label=1](v3)(v2)
+  \Edge[style={pos=0.75},label=99](v1)(v4)
+\end{tikzpicture}\\
+\mmedskip
+Mohó algoritmusnál lehet: v1 (0) v2 (1) v3 (99) v4 (99) v1 = 199.\\
+Legolcsóbb út: v1 (0) v2 (2) v4 (99) v3 (1) v2 (0) v1 = 103.
 \end{tcolorbox}
 \end{frame}
 
@@ -1131,9 +1227,68 @@ $6v(G) \leq 6v(G) - 12$ $\rightarrow$ Ellentmondás!
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Kuratovski gráfok}]
-A Kuratovski gráfok ($K_5$ és $K_{3,3}$) Nem rajzolhatók síkba.\\
-TODO: kép\\
+\begin{tcolorbox}[title={Tétel: Kuratowski gráfok}]
+A Kuratowski gráfok ($K_5$ és $K_{3,3}$) Nem rajzolhatók síkba.\\
+
+\begin{tcbposter}[
+poster = {height=4.8em,spacing=2mm,rows=1,columns=4},
+boxes = {colframe=mybg, colback=mybg},
+]
+
+\posterbox[]{column=1,row=1}{\vspace{1.5em}$K_{3,3}:$}
+
+
+\posterbox[]{column=3,row=1}{\vspace{1.5em}$K_{5}:$}
+
+\posterbox[]{column=2,row=1}{
+  \SetGraphUnit{2}
+  \GraphInit[vstyle=Normal]
+  \SetVertexSimple[MinSize    = 2pt, LineColor = black, FillColor = mygreen]
+\begin{tikzpicture}
+  \GraphInit[vstyle=Normal]
+  \SetVertexNoLabel
+  \Vertex{1}
+  \EA[unit=1](1){2}
+  \EA[unit=1](2){3}
+  \SO[unit=1](1){4}
+  \SO[unit=1](2){5}
+  \SO[unit=1](3){6}
+  \Edge(1)(4)
+  \Edge(1)(5)
+  \Edge(1)(6)
+  \Edge(2)(4)
+  \Edge(2)(5)
+  \Edge(2)(6)
+  \Edge(3)(4)
+  \Edge(3)(5)
+  \Edge(3)(6)
+\end{tikzpicture}
+}
+
+\posterbox[]{column=4,row=1}{
+  \SetGraphUnit{0.5}
+  \GraphInit[vstyle=Normal]
+  \SetVertexSimple[MinSize    = 2pt, LineColor = black, FillColor = mygreen]
+\begin{tikzpicture}[rotate=-53]
+  \GraphInit[vstyle=Normal]
+  \SetVertexNoLabel
+  \Vertices{circle}{1,2,3,4,5}
+  \Edge(1)(2)
+  \Edge(1)(3)
+  \Edge(1)(4)
+  \Edge(1)(5)
+  \Edge(2)(3)
+  \Edge(2)(4)
+  \Edge(2)(5)
+  \Edge(3)(4)
+  \Edge(3)(5)
+  \Edge(4)(5)
+\end{tikzpicture}
+}
+
+
+\end{tcbposter}
+
 \tcblower
 \msmallskip
 \underline{\textbf{Bizonyítás (Indirekt)}}\\
@@ -1165,8 +1320,8 @@ Egy másodfokú $v$ pont \textbf{simítása} az a transzformáció, amikor $v$-t
 Két gráf \textbf{topologikusan izomorf}, ha a szubdivizió és simítás véges sokszori alkalmazásával izomorf gráfokba transzformálhatóak.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Kuratovski tétel}]
-Egy egyszerű véges gráf \textbf{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratovski gráfok valamelyikével topologikusan izomorf részgráfot.
+\begin{tcolorbox}[title={Tétel: Kuratowski tétel}]
+Egy egyszerű véges gráf \textbf{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratowski gráfok valamelyikével topologikusan izomorf részgráfot.
 \end{tcolorbox}
 \end{frame}
 
