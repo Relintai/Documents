@@ -2,24 +2,24 @@
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
 % Uncomment these to get the presentation form
-%\documentclass{beamer}
-%\geometry{paperwidth=170mm,paperheight=170mm, top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+\documentclass{beamer}
+\geometry{paperwidth=170mm,paperheight=170mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
 
 % Uncomment these, and comment the 2 lines above, to get a paper-type article
-\documentclass[10pt]{article}
-\usepackage{geometry}
+%\documentclass[10pt]{article}
+%\usepackage{geometry}
 %\geometry{top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
-\usepackage{beamerarticle}
-\renewcommand{\\}{\par\noindent}
-\setbeamertemplate{note page}[plain]
+%\usepackage{beamerarticle}
+%\renewcommand{\\}{\par\noindent}
+%\setbeamertemplate{note page}[plain]
 
 % Half A4 geometry
-\geometry{paperwidth=105mm,paperheight=297mm,top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+%\geometry{paperwidth=105mm,paperheight=297mm,top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
 
 % Uncomment these, to put more than one slide / page into a generated page.
-\usepackage{pgfpages}
+%\usepackage{pgfpages}
 % Choose one
-\pgfpagesuselayout{2 on 1}[a4paper]
+%\pgfpagesuselayout{2 on 1}[a4paper]
 %\pgfpagesuselayout{4 on 1}[a4paper]
 %\pgfpagesuselayout{8 on 1}[a4paper]
 
@@ -930,13 +930,102 @@ Legyen $G = (V, E, {\phi}, w)$ egy véges összefüggő gráf. A következő alg
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Irányított gráf}]
+A $G = ({\psi}, V, E)$ hármast \textbf{irányított gráfnak} nevezzük, ha $V, E$ halmazok, $V \neq \emptyset, V \cap E = \emptyset$ és $\psi : E \rightarrow V x V$.\\
+\\
+Legyen $e \in E$. Ha ${\psi}(e) = (u, v)$, akkor az $e$ irányított él \textbf{kezdőpontja $u$}, \textbf{végpontja $v$}.
+\end{tcolorbox}
 
+\begin{tcolorbox}[title={Def.: Gráf irányítása}]
+Egy $G = ({\psi}, E, V)$ irányított gráfból az "irányítás törlésével" megkaphatjuk a \textbf{$G$-nek megfelelő irányítatlan gráfot}: $G' = ({\phi}, E, V)$, azaz ha ${\psi}(e) = (u, v)$, akkor ${\psi}(e) = \{u, v\}$.\\
+\\
+Ekkor $G$ egy irányítása $G'$-nek.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ész}]
+Általában egy gráfnak több irányítása is lehet.
 \end{tcolorbox}
 \end{frame}
 
+
 \begin{frame}
+\begin{tcolorbox}[squeezed title={Def.: Irányított gráf megfordítása}]
+A $G = ({\psi}, E, V)$ \textbf{irányított gráf megfordítása} a $G' = ({\psi}', E, V)$ gráf amelyre ${\psi}(e) = (u, v) \iff {\psi}'(e) = (v, u)$.\\
+\\
+Hurok megfordítása önmaga.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Sigorúan Párhuzamos Élek}]
+$e \neq f$ \textbf{szigorúan párhuzamos élek}, ha ${\psi}(e) = (u, v)$ és ${\psi}(f) = (u, v)$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Kifok, Nyelő}]
+Pont \textbf{kifoka}, $d^+(a)$ a kimenő élek száma, ha $d^+(v) = 0$, akkor v \textbf{nyelő}.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Befok, Forrás}]
+Pont \textbf{befoka}, $d^-(a)$ a bemenő élek száma, ha $d^-(v) = 0$, akkor v \textbf{forrás}.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ész}]
+$$\sum_{a \in V(G)} d^+(a) = \sum_{a \in V(G)} d^-(a) = e(G)$$
+\end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+\begin{tcolorbox}[ title={Def.: Összefüggőség (Irányított gráf)}]
+A $G$ irányított gráf \textbf{összefüggő}, ha a megfelelő $G' = (V, E')$ irányítatlan gráf összefüggő.\\
+\\
+A $G$ irányított gráf \textbf{komponensei} a megfelelő $G'$ irányítatlan gráf komponenseit jelentik.\\
+A komponensek száma $c(G) = c(G')$.\\
+\\
+A $G = (V, E)$ gráf \textbf{erősen összefüggő}, ha minden $v_1, v_2 \in V(G)$ esetén $v_1 = v_2$, vagy $v_1$-ből vezet $v_2$-be irányított út, és $v_2$-ből $v_1$-be is.
+\end{tcolorbox}
+
 \begin{tcolorbox}[title={Tétel: Erős összefüggőség}]
 Egy összefüggő gráf akkor, és csak akkor irányítható úgy, hogy erősen összefüggő legyen, ha minden \textbf{éléhez} tartozik rajta áthaladó kör.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ész}]
+Hasonló nem mondható el olyan gráfról, amelyben minden \textbf{csúcson} halad át kör.
+\end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Irányított Fa}]
+Egy irányított gráfot \textbf{irányított fának} hívunk, ha pontosan egy olyan pontot tartalmaz, amelynek befoka 0, és a többi csúcs befoka 1.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ész}]
+A 0 befokú csúcs egyértelműen meghatározott és belőle minden további csúcshoz pontosan egy út vezet.
+\end{tcolorbox}
+
+\begin{tcolorbox}[squeezed title={Def.: Gyökér, n-edik szint, Magasság, Szülő, Gyerekek, Levél}]
+Irányított fában a 0 befokú pont neve \textbf{gyökér}.\\
+\\
+\textbf{$n$-edik szint}: azon csúcsok halmaza, amelyekhez $n$ hosszúságú út vezet a gyökérből.\\
+\\
+A szintek maximuma a fa \textbf{magassága}.\\
+\\
+Ha $v$ kezdő, $v'$ és $v''$ végpontja egy élnek, akkor $v$ a \textbf{szülő}, $v'$ és $v''$ a \textbf{gyereket (testvérek)}.\\
+\\
+Irányított fa 0 kifukú csúcsa a \textbf{levél}.
+\end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Síkgráf}]
+Egy gráf \textbf{síkbarajzolható}, ha lerajzolható a síkra úgy, hogy élei csak a csúcspontokban metszik egymást.\\
+\\
+Az így "lerajzolt" gráfokat szokás \textbf{síkgráfoknak} is nevezni.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Tartomány}]
+Egy síkgráfban a sík egy részhalmazának egy olyan összefüggő komponensét, amely diszjunkt a gráf csúcsaival, és éleivel \textbf{tartománynak nevezzük}.\\
+\\
+Ezek közül pontosan egy végtelen, neve \textbf{külső tartomány}.
 \end{tcolorbox}
 \end{frame}
 
@@ -956,9 +1045,7 @@ $2e(G) \leq 6v(G) - 12.$\\
 \bigskip
 $2e(G) \leq 6v(G) - 12$ \hspace{1ex} $/\cdot2$\\
 $6v(G) \leq 6v(G) - 12$ $\rightarrow$ Ellentmondás!
-
 \end{tcolorbox}
-
 \end{frame}
 
 \begin{frame}
@@ -981,21 +1068,35 @@ $\implies$ $4t \leq 2e(G) \implies 20 \leq 18$. $\rightarrow$ Ellentmondás!\\
 $v(G) = 5$ és $e(G) = 10$\\
 Alkalmazzuk a síkgráf élszáma tételt ($e(G) \leq 3v(G) - 6$), ekkor\\
 $10 \leq 9$ $\rightarrow$ Ellentmondás!
-
 \end{tcolorbox}
-
 \end{frame}
 
+
 \begin{frame}
+\begin{tcolorbox}[title={Def.: Szubdivízió, Simítás}]
+Egy $e$ és \textbf{szubdiviziójáról} beszélünk, ha $e$-t egy 2 hosszúságú úttal helyettesítjük.\\
+\\
+Egy másodfokú $v$ pont \textbf{simítása} az a transzformáció, amikor $v$-t töröljük, és szomszédait összekötjük egy éllel.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Topologikus izomorfia}]
+Két gráf \textbf{topologikusan izomorf}, ha a szubdivizió és simítás véges sokszori alkalmazásával izomorf gráfokba transzformálhatóak.
+\end{tcolorbox}
+
 \begin{tcolorbox}[title={Tétel: Kuratovski tétel}]
 Egy egyszerű véges gráf \textbf{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratovski gráfok valamelyikével topologikusan izomorf részgráfot.
-
 \end{tcolorbox}
-
 \end{frame}
 
-\begin{frame}
 
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Szomszédsági mátrix}]
+TODO
+\end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
 \begin{tcolorbox}[title={Tétel: Euler formula}]
 Egy összefüggő síkbeli gráf, amelynek $t$ tartománya van, (a külső tartományt is beleértve), eleget tesz az Euler-formulának:
 $$v(G) - e(G) + t = 2$$\\
