@@ -1,0 +1,38 @@
+% Compile twice!
+% With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
+
+% Uncomment these to get the presentation form
+%\documentclass{beamer}
+%\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
+
+% Uncomment these, and comment the 2 lines above, to get a paper-type article
+\documentclass[10pt]{article}
+\usepackage{geometry}
+%\geometry{top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+\usepackage{beamerarticle}
+\renewcommand{\\}{\par\noindent}
+\setbeamertemplate{note page}[plain]
+
+% Half A4 geometry
+%\geometry{paperwidth=105mm,paperheight=297mm,top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+
+% "1/3" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=455mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/6" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=891mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/5" A4 geometry
+\geometry{paperwidth=105mm,paperheight=740mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/4" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=594mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% Uncomment these, to put more than one slide / page into a generated page.
+%\usepackage{pgfpages}
+% Choose one
+%\pgfpagesuselayout{2 on 1}[a4paper]
+%\pgfpagesuselayout{4 on 1}[a4paper]
+%\pgfpagesuselayout{8 on 1}[a4paper]
+
+\input{../szamtudv.tex}

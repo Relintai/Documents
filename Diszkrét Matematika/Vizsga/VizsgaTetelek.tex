@@ -1,60 +1,151 @@
 % Compile twice!
+% With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
+% Uncomment these to get the presentation form
 \documentclass{beamer}
-\usepackage{tikz}
+\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
 
+% Uncomment these, and comment the 2 lines above, to get a paper-type article
+%\documentclass[10pt]{article}
+%\usepackage{geometry}
+%\geometry{top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+%\usepackage{beamerarticle}
+%\renewcommand{\\}{\par\noindent}
+%\setbeamertemplate{note page}[plain]
+
+% Half A4 geometry
+%\geometry{paperwidth=105mm,paperheight=297mm,top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+
+% "1/3" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=455mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/6" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=891mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/5" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=740mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/4" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=594mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% Uncomment these, to put more than one slide / page into a generated page.
+%\usepackage{pgfpages}
+% Choose one
+%\pgfpagesuselayout{2 on 1}[a4paper]
+%\pgfpagesuselayout{4 on 1}[a4paper]
+%\pgfpagesuselayout{8 on 1}[a4paper]
+
+% Includes
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usetikzlibrary{shapes,arrows,automata}
 \usepackage[T1]{fontenc}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{arydshln}
+\usepackage{enumerate}
+\usepackage[many, poster]{tcolorbox}
+\usepackage{pgf}
 \usepackage[makeroom]{cancel}
 
+% Colors
+\definecolor{myred}{rgb}{0.87,0.18,0}
+\definecolor{myorange}{rgb}{1,0.4,0}
+\definecolor{myyellowdarker}{rgb}{1,0.69,0}
+\definecolor{myyellowlighter}{rgb}{0.91,0.73,0}
+\definecolor{myyellow}{rgb}{0.97,0.78,0.36}
+\definecolor{myblue}{rgb}{0,0.38,0.47}
+\definecolor{mygreen}{rgb}{0,0.52,0.37}
+\colorlet{mybg}{myyellow!5!white}
+\colorlet{mybluebg}{myyellowlighter!3!white}
+\colorlet{mygreenbg}{myyellowlighter!3!white}
+
+\setbeamertemplate{itemize item}{\color{black}$-$}
+\setbeamertemplate{itemize subitem}{\color{black}$-$}
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{enumerate subitem}{fg=black}
+\setbeamercolor*{enumerate subsubitem}{fg=black}
+
+\renewcommand{\tiny}{\footnotesize}
+\renewcommand{\small}{\footnotesize}
+
+% These are different themes, only uncomment one at a time
+\tcbset{enhanced,fonttitle=\bfseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
+
+%\tcbset{colback=yellow!5!white,colframe=yellow!84!black}
+%\tcbset{enhanced,colback=red!10!white,colframe=red!75!black,colbacktitle=red!50!yellow,fonttitle=
+%\tcbset{enhanced,attach boxed title to top left}
+%\tcbset{enhanced,fonttitle=\bfseries,boxsep=5pt,arc=8pt,borderline={0.5pt}{0pt}{red},borderline={0.5pt}{5pt}{blue,dotted},borderline={0.5pt}{-5pt}{green}}
+
+% Beamer theme
 \usetheme{boxes}
 
-\geometry{paperwidth=160mm,paperheight=160mm}
+% tikz settings for the flowchart(s)
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!15]
+\tikzstyle{tcolorbox} = [rectangle, draw, fill=blue!15, text width=20em, text centered, minimum height=1em]
+    
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\arraystretch}{1.2}
+
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+\newcommand{\mtinyskip}{\vspace{0.2em}}
+\newcommand{\msmallskip}{\vspace{0.3em}}
+\newcommand{\mmedskip}{\vspace{0.5em}}
+\newcommand{\mbigskip}{\vspace{1em}}
+
 
 \begin{document}
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
-\begin{beamercolorbox}[center]{title}
-    {\Huge Diszkrét Matematika}\\
-    {\Large Vizsgatételek}
-\end{beamercolorbox}};
-\end{tikzpicture}
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+{\Huge Diszkrét Matematika I}\\
+\mbigskip
+\\
+A kisbetűs szövegek (LaTeX-ben tiny), (Ha nincs előttük (S) jelzés, akkor lemaradt)\\
+a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
+\end{tcolorbox}
 \end{frame}
+
+% --------------------  HALMAZOK, RELÁCIÓK --------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
-\begin{beamercolorbox}[center]{title}
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
     {\Huge Halmazok, Relációk}
-\end{beamercolorbox}};
-\end{tikzpicture}
+    \mmedskip
+\end{tcolorbox}
 \end{frame}
-
 
 \begin{frame}
 
-\begin{block}{Tétel: Minden dolog halmaza}
+\begin{tcolorbox}[title={Tétel: Minden dolog halmaza}]
 Nincs olyan halmaz, amelynek minden dolog eleme.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Biz}
+\begin{tcolorbox}[title={Biz}]
 asasdad
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Definíció: Unió}
+\begin{tcolorbox}[title={Definíció: Unió}]
 Ha A és B halmazok, akkor A és B unióján a következő halmazt értjük:\\
 $$A \cup B = \{x | x \in A \vee x \in B\}$$
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Tétel: Az unió tulajdonságai}
+\begin{tcolorbox}[title={Tétel: Az unió tulajdonságai}]
 Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
 \begin{enumerate}
@@ -65,18 +156,18 @@ Legyenek A, B, C tetszőleges halmazok. Ekkor:
 \item $A \subseteq B$ akkor, és csak akkor, ha $A \cup B = B$
 \end{enumerate}
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Definíció: Metszet}
+\begin{tcolorbox}[title={Definíció: Metszet}]
 Ha A és B halmazok, akkor A és B metszetén a következő halmazt értjük:\\
 $$A \cap B = \{x \in A \wedge x \in B\}$$
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Tétel: A metszet tulajdonságai}
+\begin{tcolorbox}[title={Tétel: A metszet tulajdonságai}]
 Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
 \begin{enumerate}
@@ -86,13 +177,13 @@ Legyenek A, B, C tetszőleges halmazok. Ekkor:
 \item $A \cap A = A$ (Idempotencia)
 \item $A \subseteq B$ akkor, és csak akkor, ha $A \cap B = A$
 \end{enumerate}
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Unió és metszet disztributivitása}
+\begin{tcolorbox}[title={Tétel: Unió és metszet disztributivitása}]
 Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
 \begin{enumerate}
@@ -100,18 +191,18 @@ Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
 \item $A \cup (B \cap C) = (A \cup B) \cap (B \cup C)$ (Az unió disztributivitása a metszetre nézve)
 \end{enumerate}
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Definíció: Komplementer}
+\begin{tcolorbox}[title={Definíció: Komplementer}]
 Ha X halmaz, A $\wedge$ X, akkor A halmaz X-re vonatkoztatott komplementere:\\
 $$A' = X \setminus A$$
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Tétel: A komplementer tulajdonságai}
+\begin{tcolorbox}[title={Tétel: A komplementer tulajdonságai}]
 Legyenek A, B $\wedge$ X halmazok. Ekkor:
 
 \begin{enumerate}
@@ -123,27 +214,27 @@ Legyenek A, B $\wedge$ X halmazok. Ekkor:
 \item $(A \cap B)' = A' \cup B'$
 \item $(A \cup B)' = A' \cap B'$
 \end{enumerate}
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Definíció: Halmaz osztályfelbontása}
+\begin{tcolorbox}[title={Definíció: Halmaz osztályfelbontása}]
 A tetszőleges X halmazt \textbf{osztályozzuk (osztályokra bontjuk)}, ha páronként diszjunkt, nemüres részhalmazainak uniójaként állítjuk elő.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Az X $\in$ X elem \textbf{ekvivalencia osztálya}:}
+\begin{tcolorbox}[title={Az X $\in$ X elem \textbf{ekvivalencia osztálya}:}]
 $$\overline{x} = \{y \in X : y \sim x\}$$
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Tétel: Ekvivalenciareláció és osztályfelbontás kapcsolata}
+\begin{tcolorbox}[title={Tétel: Ekvivalenciareláció és osztályfelbontás kapcsolata}]
 Valamely X halmazon értelmezett $\sim$ ekvivalenciareláció X-nek egy osztályfelbontását adja. Megfordítva, az X halmaz minden osztályfelbontása egy $\sim$ ekvivalenciarelációt hoz létre.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Biz}
+\begin{tcolorbox}[title={Biz}]
 asasdad
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
@@ -159,41 +250,41 @@ asasdad
 
 \begin{frame}
 
-\begin{block}{Tétel: Egységelem és inverz félcsoportban}
+\begin{tcolorbox}[title={Tétel: Egységelem és inverz félcsoportban}]
 Félcsoportban legfeljebb egy egységelem létezik, és minden elemnek legfeljebb egy, az egységelemre vonatkozó inverze létezik.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Legyen $(G, *)$ félcsoport, $e_b$ bal oldali, $e_j$ pedig jobb oldali egységelem $G$-ben.\\
 Ekkor $e_b = e_j$, hiszen:\\
 $e_be_j = e_j$ és $e_be_j = e_b$, (nyíl éshez $\rightarrow$ a függvény egyértelmű!)\\
 mert $e_b$ bal, $e_j$ jobb oldali egységelem.\\
 Ha az $a \in G$ elemnek $a_b$ balinverze, $a_j$ pedig jobbinverze, akkor $a_b = a_j$.
 $a_baa_j = a_b(aa_j) = a_be = a_b$ és $a_baa_j = (a_ba)a_j = ea_j = a_j$. (Asszociatív tulajdonság) (nyíl éshez ide is $\rightarrow$ a függvény egyértelmű!).d
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Lemma: Észrevételek gyűrűkben}
+\begin{tcolorbox}[title={Lemma: Észrevételek gyűrűkben}]
 \begin{enumerate}
 \item \textbf{Szorzás nullelemmel:} Legyen 0 az R gyűrű nulleleme. Ekkor $a0 = 0a = 0$, minden $a \in R$ esetén.
 \item \textbf{Előjelszabály:} Legyen R gyűrű, és $a, b \in R$. Az $a$ elem additív inverzés jelöljük $-a$-val. Ekkor $-(ab) = (-a)b = a(-b)$, tobábbá $(-a)(-b) = ab$.
 \item \textbf{Véges integritási tartomány test.}
 \item \textbf{Testben nincs nullosztó.}
 \end{enumerate}
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Lemma: Nullosztó és regularitás}
+\begin{tcolorbox}[title={Lemma: Nullosztó és regularitás}]
 R gyűrűben a multiplikatív művelet akkor, és csak akkor reguláris, ha R zérusosztómentes.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 \textbf{1. Rész}\\
 Tfh $a \neq 0$, a nem bal oldali nullosztó és $ab = ac$.\\
 $ab = ac  / -(ac)$ (+ additív inverz)\\
@@ -210,64 +301,64 @@ $ac = ac + ab$ /(Disztributivitás)\\
 $ac = a(c + b)$ Ellentmondás!\\
 Mivel $(b \neq 0) \implies (c \neq (c + b))$ (A b nem additív egységelem).
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Természetes számok}
+\begin{tcolorbox}[title={Tétel: Természetes számok}]
 A $(N, +, *)$ struktúrában mindkét művelet asszociatív, kommutatív, reguláris.\\
 Nullelem (additív egységelem): 0.\\
 Multiplikatív egységelem: 1.\\
 A szorzat mindkét oldalról disztributív az összeadásra.\\
 ${\forall}m \in N : 0 * m = m * 0 = 0$.
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: N rendezése}
+\begin{tcolorbox}[title={Tétel: N rendezése}]
 A természetes számok halmaza a $\leq$ relációval jólrendezett.
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Felső határ és arkhimédészi tulajdonság}
+\begin{tcolorbox}[title={Tétel: Felső határ és arkhimédészi tulajdonság}]
 $T$ felső határ tulajdonságú test, $\implies$ $T$ arkhimédészi tulajdonságú.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás (Indirekt)}
+\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
 Tfh $T$ felső határ tulajdonságú rendezett test, de nem arkhimédészi tulajdonságú.\\
 $\implies : {\nexists}n \in \mathbb{N} : nx \geq y$.\\
 Azaz y felső korlátja az $A = \{ nx | n \in \mathbb{N} \}$ halmaznak.\\
 Ekkor viszont létezik $z = sup A$ $\implies$ $z - x < z$ nem felső korlát. $\implies$\\
 $implies$ ${\exists}n : nx > z - x \implies (n + 1)x > z$. ($(n + 1)x \in A$).\\
 Ellentmondás, mivel ha $n \in \mathbb{N}$, akkor $n^+ \in \mathbb{N}$ $\rightarrow$ Peano axióma!
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Q nem felső határ tulajdonságú}
+\begin{tcolorbox}[title={Tétel: Q nem felső határ tulajdonságú}]
 $\mathbb{Q}$ arkhimédészi tulajdonságú, de nem felső határ tulajdonságú.
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 
 \begin{frame}
 
-\begin{block}{Tétel: $\sqrt{2}$ nem racionális}
+\begin{tcolorbox}[title={Tétel: $\sqrt{2}$ nem racionális}]
 Nincs $\mathbb{Q}$-ban olyan szám, amelynek négyzete 2.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás (Indirekt)}
+\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
 Tfh van, és ez $x$.\\
 $x = \frac{m}{n}, m,n \in \mathbb{N}^+$, és az $m$ minimális.\\
 $2 = x^2 = \frac{m^2}{n^2} \implies m^2 = 2n^2$\\
@@ -276,15 +367,15 @@ Ebből következik, hogy $n$ is páros: $n = 2j, j \in \mathbb{N}^+$\\
 Ekkor viszont $\frac{m}{n} = \frac{2k}{2j} = \frac{k}{j}$.\\
 Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
 
-\end{block}
+\end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Az algebra alaptétele}
+\begin{tcolorbox}[title={Tétel: Az algebra alaptétele}]
 Ha $n \in \mathbb{N}^+$, valamint $c_0, c_1, ... c_n$ komplex számok, $c_n \neq 0$, akkor van olyan $u$ komplex szám, amelyre:\\
 $$\sum_{k = 0}^n c_kz^k = 0$$
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
@@ -299,7 +390,7 @@ $$\sum_{k = 0}^n c_kz^k = 0$$
 
 \begin{frame}
 
-\begin{block}{Tétel: Az oszthatóság tulajdonságai EIT-ban}
+\begin{tcolorbox}[title={Tétel: Az oszthatóság tulajdonságai EIT-ban}]
 \begin{enumerate}
 \item Ha $b|a$ és $b'|a'$, akkor $bb'|aa'$.
 \item A nullának minden elem osztója.
@@ -310,42 +401,42 @@ $$\sum_{k = 0}^n c_kz^k = 0$$
 \item Ha $b|a_i$ és $c_i \in R, (i = 1, 2, ..., j)$, akkor $b|\sum^j_{i=1} c_ia_i$.
 \item Az $|$ reláció reflexív, és tranzitív.
 \end{enumerate}
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Prím és irreducibilis elem EIT-ban}
+\begin{tcolorbox}[title={Tétel: Prím és irreducibilis elem EIT-ban}]
 Tetszőleges $R$ egységelemes integritási tartományban minden $p$ elemre:\\
 Ha $p$ prím $\implies$ $p$ felbonthatatlan.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Tfh $p$ prím, és, $p = bc$\\
 Ekkor vagy $p|b$, vagy $p|c$\\
 $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Maradékos osztás $\mathbb{Z}$-ben}
+\begin{tcolorbox}[title={Tétel: Maradékos osztás $\mathbb{Z}$-ben}]
 ${\exists}a, b({\neq}0) \in \mathbb{Z}$ számhoz egyértelműen létezik olyan $q, r \in \mathbb{Z}$, hogy\\
 $a = qb + r \land 0 \leq r < |b|$.
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Prím és irreducibilis elem $\mathbb{Z}$-ben}
+\begin{tcolorbox}[title={Tétel: Prím és irreducibilis elem $\mathbb{Z}$-ben}]
 Az egész számok körében $p$ prím $\iff$ $p$ felbonthatatlan.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Már láttuk, hogy prím felbonthatatlan!\\
 Tfh p felbonthatatlan\\
 Legyen $p|bc$, ekkor vagy $p | b$-nek, ekkor ksz vagyunk.
@@ -353,17 +444,17 @@ Vagy $p \nmid b$ ekkor $(p,b) = 1$.\\
 $c = pcx +bcx \implies 0 mod p \implies p | c$.\\
 (Észrevétel: $(a, b) = 1 \land a | bc \implies a | c$
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: A számelmélet alaptétele}
+\begin{tcolorbox}[title={Tétel: A számelmélet alaptétele}]
 Minden $m$ nemnulla, nemegység, egész szám sorrendre és asszociáltásgra való tekintet nélkül egyértelműen bontható fel felbonthatatlanok szorzatára.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás (Pozitívakra)}
+\begin{tcolorbox}[title={Bizonyítás (Pozitívakra)}]
 \textbf{(egzisztencia)}\\
 Tfh $n > 1$\\
 Teljes indukció: $n = 2$ kész, tfk $n - 1$-ig kész.\\
@@ -380,29 +471,29 @@ $p_1|q_1$, $p_1|q_2 ... q_r$\\
                       $p_1|q_i  \implies p_1 = q_i \implies$\\
 $\implies$ $n_1 = \frac{n}{p_1} = p_2 ... p_k = q_1 ... q_{i-1}q_{i+1} ... q_r$\\
 $n_1 < n$ és van két lényegesen különböző felbontása!
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Eukleidész tétele}
+\begin{tcolorbox}[title={Tétel: Eukleidész tétele}]
 Végetlen sok prímszám van.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás (Indirekt)}
+\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
 Tfh véges sok van:\\
 $p_1, p_2, ... ,p_k$.\\
 Legyen $n = p_1p_2...p_k$.\\
 Számelmélet alaptételéből következik hogy létezik $p_j : p_j | n + 1$\\
 $p_j : p_j | n + 1 \implies p_j | 1$ Ellentmondás!
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Kongruencia tulajdonságai}
+\begin{tcolorbox}[title={Tétel: Kongruencia tulajdonságai}]
 \begin{enumerate}
 \item Ekvivalencia reláció
 \item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$a + c \equiv b + d \pmod{m}$}
@@ -410,38 +501,38 @@ $p_j : p_j | n + 1 \implies p_j | 1$ Ellentmondás!
 \item $a \equiv b \pmod{m} \land f(x) \in z[x] \implies$ \textbf{$f(a) \equiv f(b) \pmod{m}$}
 \item Ha $(c, m) = d$, $ac \equiv bc \pmod{m} \iff a \equiv b \pmod{\frac{m}{d}}$
 \end{enumerate}
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Omnibusz tétel}
+\begin{tcolorbox}[title={Tétel: Omnibusz tétel}]
 Legyen: $m > 1$ egész, $\{a_1, ..., a_m\}$ TMR modulo $m$, $\{b_1, ..., b_{{\phi}(m)}\}$ RMR modulo $m$, $c, d \in \mathbb{Z}$, és $(c,m) = 1$.\\
 \smallskip
 Ekkor:\\
 \smallskip
 $\{ ca_1 + d, ..., ca_m + d \}$ TMR modulo $m$\\
 $\{ cb_1, ..., cb{{\phi}(m)}\}$ RMR modulo $m$
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás (Indirekt)}
+\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
 Tfh van két nem inkongruens elem\\
 $ca_i + d = ca_i + d$\\
 ${\cancel{c}}a_i + {\cancel{d}} = {\cancel{c}}a_i + {\cancel{d}}$ $(c, m) = 1$, és pontosan $m$ db elem!\\
 $(c, m) = 1$ és $(b_j,m) = 1$ $\implies$ $(cb_j, m) = 1$
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Euler-Fermat tétel}
+\begin{tcolorbox}[title={Tétel: Euler-Fermat tétel}]
 Legyen $m > 1$ egész és $a$ relatív prím $m$-hez. Ekkor $a^{{\phi}(m)} \equiv 1 \pmod{m}$
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Legyen $\{ r_1, ..., r_{{\phi}(m)}\}$ RMR modulo $m$, $(a, m) = 1$.\\
 Az omnibusz tétel miatt, ekkor $\{ ar_1, ..., ar_{{\phi}(m)}\}$ is RMR modulo $m$.\\
 Megfelelő párosítás $\implies$ $r_i \equiv ar_j \pmod{m}$.\\
@@ -449,37 +540,37 @@ Megfelelő párosítás $\implies$ $r_i \equiv ar_j \pmod{m}$.\\
 \smallskip
 $$a^{{\phi}(m)} \prod^{{\phi}(m)}_{i=1} r_i \equiv \prod^{{\phi}(m)}_{i=1} r_i \pmod{m}$$
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: (Kis) Fermat tétel}
+\begin{tcolorbox}[title={Tétel: (Kis) Fermat tétel}]
 Legyen $p$ prím és $a \in \mathbb{Z}$. Ekkor\\
 (első alak) ha $p \nmid a$, akkor $a^{p-1} \equiv 1 \pmod{p}$.\\
 (második alak) ha $a$ tetszőleges, akkor $a^p \equiv a \pmod{p}$.
 
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Első alak: ${\phi}(p) \equiv p - 1$ $\rightarrow$ előző tétel miatt kész.\\
 \bigskip
 Második alak:\\
 Ha $p|a$ $\rightarrow$ $0 \equiv 0$ $\rightarrow$ kész.\\
 Ha $p{\nmid}a$ $\rightarrow$ ekkor ez az első alak $\rightarrow$ kész.
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: A diofantikus egyenlet megoldása}
+\begin{tcolorbox}[title={Tétel: A diofantikus egyenlet megoldása}]
 Rögzített $a, b, c$ egész számok esetén az \textbf{$ax + by = c$} diofantikus egyenletnek akkor, és csak akkor van megoldása, ha $(a, b)|c$.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Tfh $ax + by = c$ egyenletnek van megoldása.\\
 \textbf{1. Rész ($\implies$)}\\
 \smallskip
@@ -494,13 +585,13 @@ $c = (au + bv)q$\\
 $c = a(uq) + b(vq)$\\
 $c = a(uq) + b(vq)$ $\implies$ egy megoldás: $x = uq, y = vq$.\\
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Kínai maradéktétel}
+\begin{tcolorbox}[title={Tétel: Kínai maradéktétel}]
 Legyen $n \in \mathbb{N}^+, m_1, m_2, ..., m_n \in \mathbb{N}^+, a_i, b_i \in \mathbb{Z} (1 <leq i \leq n)$, ahol
 \begin{enumerate}
 \item $m_i, m_j$ páronként relatív prímek.
@@ -515,13 +606,13 @@ Ekkor az\\
 \bigskip
 Kongruenciarendszer megoldható és bármely két megoldása kongruens modulo $m_1m_2...m_n$.
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Számelméleti függvények}
+\begin{tcolorbox}[title={Tétel: Számelméleti függvények}]
 Legyen $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$. Ekkor:\\
 \begin{enumerate}
 \item Ha $f$ additív számelméleti függvény, akkor $$f(n) = f(p_1^{{\alpha}_1}) + ... + f(p_k^{{\alpha}_k})$$
@@ -530,17 +621,17 @@ Legyen $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k
 \item Ha $f$ teljesen multiplikatív számelméleti függvény, akkor $$f(n) = f(p_1)^{{\alpha}_1}...f(p_k)^{{\alpha}_k}$$
 \end{enumerate}
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: $\phi$ multiplikativitása}
+\begin{tcolorbox}[title={Tétel: $\phi$ multiplikativitása}]
 $\phi$ multiplikatív.
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 \smallskip
 \begin{tabular}{c c c c}
 1 & 2 & ... & a \\
@@ -559,18 +650,18 @@ $\implies$ minden oszlopban ${\phi}(b)$ rel. prím $b$-hez.\\
 | Minden sor egy TMR mod $a$ $\implies$ minden sorban ${\phi}(a)$ db elem relatív prím $a$-hoz.\\
 $\implies$ ${\phi}(a)$ db oszlopnak rel prímek az elemei $a$-hoz. $\implies$ összesen ${\phi}(a){\phi}(b)$ rel. prím van $ab$-hez.
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: ${\phi}$(n) kiszámolása}
+\begin{tcolorbox}[title={Tétel: ${\phi}$(n) kiszámolása}]
 Ha $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$, akkor\\
 $${\phi}(n) = \prod^k_{j=1} (p_j^{{\alpha}_j} - p_j^{{\alpha}_j - 1}) = n \prod^k_{j=1} (1 - \frac{1}{p_j}).$$
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 $\phi$ multiplikatív\\
 Kiszámoljuk az értékeket prímhatványhelyeken, majd összeszorozzuk az értékeket.\\
 ${\phi}(p^{\alpha}) = ?$\\
@@ -581,7 +672,7 @@ $p^2$-ig $p - 1$ db van + maga $p^2$, azaz ${\phi}(p^2) = p^2 - p^1$.\\
 Tovább számolva:\\
 ${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
@@ -596,21 +687,21 @@ ${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
 
 \begin{frame}
 
-\begin{block}{Tétel: Véges halmaz valódi részhalmaza}
+\begin{tcolorbox}[title={Tétel: Véges halmaz valódi részhalmaza}]
 Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ és egy valódi részhalmaza között.	
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Skatulya-elv}
+\begin{tcolorbox}[title={Tétel: Skatulya-elv}]
 Ha $X, Y$ véges halmazok, és $|X| > |Y|$, akkor nem létezik $f: X \rightarrow Y$ bijekció.
 
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás (Indirekt)}
+\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
 Tfh $f$ bijektív.\\
 $Y ~ \{1, 2, ..., m\}$ és $X ~ \{1, 2, ..., m\}$, ahol $m < n$ $\implies$\\
 $\implies$ $\{1, 2, ..., m\}$ bármely részhalmaza $\{1, 2, ..., n\}$-nek is részhalmaza,\\
@@ -619,18 +710,18 @@ $f$ bijektív $\implies$ $\{1, 2, ..., n\}$ $~$ saját valódi részhalmazával.
 \textbf{Más megfogalmazás:} Ha $n$ db tárgyat $m$ db skatulyába teszünk, akkor van olyan skatulya, amelyik legalább\\
 $\lfloor (n - 1) / m \rfloor + 1$ tárgyat tartalmaz.
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Permutációk száma}
+\begin{tcolorbox}[title={Tétel: Permutációk száma}]
 $$P_n = n!$$
 
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Teljes indukció $n$ szerint\\
 1. lépés: $P_0 = P_1 = 1$ Igaz. (Megegyezés szerint $0! = 1$)\\
 2. lépés: Tfh $n > 1$ és $n - 1$-ig már beláttuk.\\
@@ -639,103 +730,103 @@ amely sorozatok 1. eleme megegyezik $\implies$ $n$ db osztály.\\
 Ind. feltétel $\implies$ $\forall$ osztályban $P_{n - 1}$ elem.\\
 $P_n = nP_{n - 1} = n(n - 1)! = n!$
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Variációk száma}
+\begin{tcolorbox}[title={Tétel: Variációk száma}]
 $$V_n^k = \frac{n!}{(n - k)!} = n * (n - 1) * (n - 2) * ... * (n - k + 1)$$, ha $k \leq n$, kölünben 0.
 
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Legyen két sorozat egy ekv. osztályban, ha első $k$ elemük megegyezik.\\
 Ekkor: $P_n = $ (osztályok száma ($V_n^k = \frac{P_n}{P_n - k}$))*(ahány elem egy osztályban ($P_{n - k}$)
 
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Ismétléses variációk száma}
+\begin{tcolorbox}[title={Tétel: Ismétléses variációk száma}]
 $$V_n^{k, i} = n^k$$
 
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Teljes indukció $k$ szerint, $n$ rögzített\\
 1. lépés: $k = 1$-re igaz: $V_n^{1, i} = n \rightarrow n^1$\\
 2. lépés: Tfh $k > 1$ és $k - 1$-ig már beláttuk, ekkor\\
 $(k - 1)$-es osztályú variációból $k$-ad osztályú:\\
 $n$ db választás $\implies$ $V_n^{k, i}$ (n választás) $= V_n^{k - 1, j} * n$ (n - 1 választás).
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Kombinációk száma}
+\begin{tcolorbox}[title={Tétel: Kombinációk száma}]
 $$C_n^k = {{n}\choose{k}} = \frac{n!}{k!(n - k)!} $$, ha $k \neq n$, különben 0.
 
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 $V_n^k$ db különböző $k$-tagú sorozat, sorrend nem számít $\implies$\\
 $\implies$ minden $P_k$ sb sorozat ugyanaz $\implies$ számoljuk egyszer.\\
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Ismétléses kombinációk száma}
+\begin{tcolorbox}[title={Tétel: Ismétléses kombinációk száma}]
 $$C_n^{k, i} = C_{n + k -1}^k = {{n + k - 1}\choose{k}} = \frac{(n + k - 1)!}{k!((n + k - 1) - k)!} $$
 
-\end{block}
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
+\begin{tcolorbox}[title={Bizonyítás}]
 Legyen $A = \{a_1, a_2, ..., a_n\}$.\\
 MInden egyes választási lehetőségnek feleltessünk meg egy bitsorozatot:\\
 $1 1 ... 1 0 1 1 ... 1 0 ... 0 1 1 1 ... 1$\\
 
 
-\end{block}
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Ismétléses permutációk száma}
-\end{block}
+\begin{tcolorbox}[title={Tétel: Ismétléses permutációk száma}]
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
-\end{block}
-
-\end{frame}
-
-\begin{frame}
-
-\begin{block}{Tétel: Binomiális tétel}
-\end{block}
-
-\begin{block}{Bizonyítás}
-\end{block}
+\begin{tcolorbox}[title={Bizonyítás}]
+\end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 
-\begin{block}{Tétel: Logikai szita formula}
-\end{block}
+\begin{tcolorbox}[title={Tétel: Binomiális tétel}]
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
-\end{block}
+\begin{tcolorbox}[title={Bizonyítás}]
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{tcolorbox}[title={Tétel: Logikai szita formula}]
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Bizonyítás}]
+\end{tcolorbox}
 
 \end{frame}
 
@@ -748,11 +839,11 @@ $1 1 ... 1 0 1 1 ... 1 0 ... 0 1 1 1 ... 1$\\
 
 \begin{frame}
 
-\begin{block}{Tétel: Egységelem és inverz félcsoportban}
-\end{block}
+\begin{tcolorbox}[title={Tétel: Egységelem és inverz félcsoportban}]
+\end{tcolorbox}
 
-\begin{block}{Bizonyítás}
-\end{block}
+\begin{tcolorbox}[title={Bizonyítás}]
+\end{tcolorbox}
 
 \end{frame}
 
