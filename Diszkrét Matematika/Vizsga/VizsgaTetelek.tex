@@ -2,8 +2,8 @@
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
 % Uncomment these to get the presentation form
-\documentclass{beamer}
-\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
+%\documentclass{beamer}
+%\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
 
 % Uncomment these, and comment the 2 lines above, to get a paper-type article
 %\documentclass[10pt]{article}
@@ -86,7 +86,7 @@
 % tikz settings for the flowchart(s)
 \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!15]
 \tikzstyle{tcolorbox} = [rectangle, draw, fill=blue!15, text width=20em, text centered, minimum height=1em]
-    
+
 \tikzstyle{line} = [draw, -latex']
 \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
     minimum height=2em]
@@ -109,7 +109,7 @@
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-{\Huge Diszkrét Matematika I}\\
+    {\Huge Diszkrét Matematika I}\\
 \mbigskip
 \\
 A kisbetűs szövegek (LaTeX-ben tiny), (Ha nincs előttük (S) jelzés, akkor lemaradt)\\
@@ -688,7 +688,7 @@ ${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
 \begin{frame}
 
 \begin{tcolorbox}[title={Tétel: Véges halmaz valódi részhalmaza}]
-Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ és egy valódi részhalmaza között.	
+Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ és egy valódi részhalmaza között.
 
 \end{tcolorbox}
 
@@ -794,8 +794,13 @@ $$C_n^{k, i} = C_{n + k -1}^k = {{n + k - 1}\choose{k}} = \frac{(n + k - 1)!}{k!
 Legyen $A = \{a_1, a_2, ..., a_n\}$.\\
 MInden egyes választási lehetőségnek feleltessünk meg egy bitsorozatot:\\
 $1 1 ... 1 0 1 1 ... 1 0 ... 0 1 1 1 ... 1$\\
+$k_1$ db,    $k_2$ db,         $k_3$ db 1es.\\
+Az $a_i$ elemet $k_i$-szer választottuk, tehát $k_1 + ... + k_n = k$ az összes $1$-es száma (ennyi elemet választottunk összesen).\\
+Továbbá az elválasztó $0$k száma $n - 1$, tehát a sorozatban $n - 1 + k$ pozíció lesz\\
+\mmedskip
 
-
+Ekkor a $k$ db $1$-es beírása $k$ különböző pozícióba nem más, mint $k$ db választás egy $n - 1 + k$ elemű halmazból ismétlés nélkül:\\
+$$C_{n + k - 1}^k = {n + k - 1 \choose k}$$
 \end{tcolorbox}
 
 \end{frame}
