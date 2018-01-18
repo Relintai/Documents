@@ -2,8 +2,8 @@
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
 % Uncomment these to get the presentation form
-\documentclass{beamer}
-\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
+%\documentclass{beamer}
+%\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
 
 % Uncomment these, and comment the 2 lines above, to get a paper-type article
 %\documentclass[10pt]{article}
@@ -736,141 +736,248 @@ TODO táblázat
 \end{tcolorbox}
 \end{frame}
 
-\begin{frame}
 
+\begin{frame}
 \begin{tcolorbox}[title={Def.:Algebrai struktúrák, izomorfiájuk}]
+%\begin{tcolorbox}[title={Def.: Művelet, Eredmény, Operandus, Algebrai Struktúra, Tartóhalmaz (Alaphalmaz)}]
+Ha $A$ tetszőleges halmaz, akkor egy\\
+\textbf{A-n értelmezett $n$-lr műveleten ($n$-változós)} egy\\
+$f : (A^n =) A x A ... x A$ és $n \in \mathbb{N}_0$.\\
+\msmallskip
+
+Ha $x_1, x_2, ..., x_n\in A$, akkor\\
+$f(x_1, x_2, ..., x_n)$ a művelet \textbf{eredménye}, míg $x_1, x_2, ..., x_n$ a művelet \textbf{operandusai}.\\
+\msmallskip
+
+Az $(A, {\Omega})$ pár \textbf{algebrai struktúra}, ha az $A$ nem üres halmaz, és $\Omega$ az $A$-n értelmezett véges változós műveletek halmaza.\\
+\msmallskip
+
+Szokásos jelölés, ha $\Omega$ $1$ vagy $2$ elemű: $(A, {\oplus})$, ill $(A, {\oplus}, {\otimes})$,\\
+ahol $\otimes$, $\oplus$, $A$-n értelmezett $n$-ér műveletek.\\
+\msmallskip
+
+$A$-t \textbf{tartóhalmaznak (alaphalmaz)} hívjuk.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Műveleti zártság}]
-
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Grupoid}]
-\tcblower
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Morfizmusok}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Félcsoport}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Baloldali, Jobboldali egységelem, Egységelem}]
+Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textbf{${\otimes}$ zárt $A$-n ($A$ zárt a ${\otimes}$ műveletre nézve)}, azaz ${\forall}x_1, x_2, ..., x_n \in A$ esetén $x_1 \otimes x_2 \otimes ... \otimes x_n \in A$
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Balinverz, Jobbinverz, Inverz (Félcsoport)}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Grupoid}]
+    Egy $(G, {\cdot})$ algebrai struktúrát, amelyben $\cdot$ binér művelet, \textbf{grupoidnak} nevezzük.
+  \tcblower
+    Egy $(G, {\cdot})$ grupoidban a művelet:\\
+
+    \begin{itemize}
+      \item \textbf{Asszociatívnak} nevezzük, ha minden $a, b, c \in G$ esetén $a(bc) = (ab)c$
+      \item \textbf{Kommutatívnak} nevezzük, ha minden $a, b \in G$ esetén $ab = ba$
+      \item \textbf{Regulárisnak} nevezzük, ha minden $a, b, c \in G$ esetén $ac = bc$-ből következik, hogy $a = b$, valamint $ca = cb$-ből is következik, hogy $a = b$
+    \end{itemize}
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Def.: Morfizmusok}]
+    Legyen $(G, {\cdot})$ és $(G', {\cdot})$ kát grupoid. A ${\phi} : G \rightarrow G'$ függvényt \textbf{homomorfizmusnak} nevezzük, ha \textbf{művelettartó}, vagyis ${\forall}a_1, a_2 \in G : {\phi}(a_1a_2) = {qphi}(a_1) \otimes {\phi}(a_2)$\\
+
+    \textbf{Izomorfizmus}: bijektív homomorfizmus.
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Def.: Félcsoport}]
+    A $(G, {\cdot})$ grupoid \textbf{félcsoport}, ha $\cdot$ asszociatív.
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Def.: Baloldali, Jobboldali egységelem, Egységelem}]
+    A $(G, {\cdot})$  félcsoportban:\\
+    \begin{itemize}
+      \item $e_b \in G$ \textbf{bal oldali egységelem}, ha minden $a \in G$ esetén $e_ba = a$
+      \item $e_j \in G$ \textbf{jobb olodali egységelem}, ha minden $a \in G$ esetén $ae_j = a$
+      \item $e \in G$ \textbf{egységelem}, ha egyszerre bal és jobb oldali egységelem.
+    \end{itemize}
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+    \begin{tcolorbox}[title={Def.: Balinverz, Jobbinverz, Inverz (Félcsoport)}]
+    Legyen $(G, {\cdot})$ félcsoportban $e_b$ bal oldali egységelem. Az $a \in G$ elemnek \\
+    $a_b \in G$ az \textbf{$e_b$-re vonatkoztatott balinverze}, ha $a_ba = e_b$\\
+    illetve az \textbf{$e_b$-re vonatkoztatott jobbinverze}, ha $aa_b = e_b$\\
+    A bal-é s jobbinverz fogalma jobboldali egységelemre hasonlóan.
+  \end{tcolorbox}
 \end{frame}
 
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Egységelem és inverz félcsoportban}]
-Félcsoportban legfeljebb egy egységelem létezik, és minden elemnek legfeljebb egy, az egységelemre vonatkozó inverze létezik.
-\tcblower
-Legyen $(G, *)$ félcsoport, $e_b$ bal oldali, $e_j$ pedig jobb oldali egységelem $G$-ben.\\
-Ekkor $e_b = e_j$, hiszen:\\
-$e_be_j = e_j$ és $e_be_j = e_b$, (nyíl éshez $\rightarrow$ a függvény egyértelmű!)\\
-mert $e_b$ bal, $e_j$ jobb oldali egységelem.\\
-Ha az $a \in G$ elemnek $a_b$ balinverze, $a_j$ pedig jobbinverze, akkor $a_b = a_j$.
-$a_baa_j = a_b(aa_j) = a_be = a_b$ és $a_baa_j = (a_ba)a_j = ea_j = a_j$. (Asszociatív tulajdonság) (nyíl éshez ide is $\rightarrow$ a függvény egyértelmű!).d
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Egységelem és inverz félcsoportban}]
+    Félcsoportban legfeljebb egy egységelem létezik, és minden elemnek legfeljebb egy, az egységelemre vonatkozó inverze létezik.
+  \tcblower
+    Legyen $(G, *)$ félcsoport, $e_b$ bal oldali, $e_j$ pedig jobb oldali egységelem $G$-ben.\\
+    Ekkor $e_b = e_j$, hiszen:\\
+    $e_be_j = e_j$ és $e_be_j = e_b$, (nyíl éshez $\rightarrow$ a függvény egyértelmű!)\\
+    mert $e_b$ bal, $e_j$ jobb oldali egységelem.\\
+    Ha az $a \in G$ elemnek $a_b$ balinverze, $a_j$ pedig jobbinverze, akkor $a_b = a_j$.
+    $a_baa_j = a_b(aa_j) = a_be = a_b$ és $a_baa_j = (a_ba)a_j = ea_j = a_j$. (Asszociatív tulajdonság) (nyíl éshez ide is $\rightarrow$ a függvény egyértelmű!).
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Abel-csoport}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Csoport, Abel-csoport}]
+    A $(H, {\cdot})$ félcsoport \textbf{csoport}, ha:
+    \begin{enumerate}
+      \item Létezik benne $e$ egységelem
+      \item Minden $a \in H$ elemnek létezik erre az egységelemre vonatkozó $a^{-1}$ inverze: $a^{-1}a = aa^{-1} = e$
+    \end{enumerate}
+    \mmedskip
 
-\begin{tcolorbox}[title={Def.: $n$ tényezős szorzat / Hatványozás egész kitevővel}]
-\end{tcolorbox}
+    \textbf{Abel-csoportnak} nevezzük a kommutatív csoportokat.
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Def.: $n$ tényezős szorzat / Hatványozás egész kitevővel}]
+    Ha $G$ csoport, $g \in G, n \in \mathbb{N}^+$, akkor legyen $n \mapsto g^n$, ahol $g^{-n} = (g^{-1})^n$.\\
+    érvényesek $g, h \in G$ és $m, n \in \mathbb{Z}$-re.\\
+    \msmallskip
+
+    $g^{n . m} = g^m \cdot g^n$ és $(g^m)^n = g^{m \cdot n}$\\
+    ha $g, h$ felcserélhető, akkor $(g \cdot h)^m = g^m \cdot h^m$\\
+    \msmallskip
+
+    Additív írásmód esetén:\\
+    $(m + n)g = mg + ng, m(ng) = (mn)g$ és $n(g + h) = ng + nh$
+  \end{tcolorbox}
 \end{frame}
+
 
 \begin{frame}
+  \begin{tcolorbox}[title={Def.: Gyűrűk}]
+    Az $(R, +, {\cdot})$ algebrai struktúra \textbf{gyűrű}, ha $+$ és $\cdot$ $R$-ben binér műveletek, valamint:\\
+    \begin{enumerate}
+      \item $(R, +)$ Abel-csoport.
+      \item $(R, {\cdot})$ félcsoport
+      \item Teljesül mindkét oldalról a disztributivitás, vagyis:\\
+      $a(b + c) = ab + ac$\\
+      $(b+ c)a = ba + ca$, minden $a, b, c \in R$ esetén.
+    \end{enumerate}
+    \mbigskip
 
-\begin{tcolorbox}[title={Def.: Gyűrűk}]
+    \textbf{Kommutatív} a gyűrű, ha a szorzás kommutatív.\\
+    \mmedskip
 
-\end{tcolorbox}
+    Az additív csoport egységeleme a gyűrű \textbf{nulleleme}, jelben 0.\\
+    \mmedskip
+
+    \textbf{Egységelemes} a gyűrű, ha a szorzásra vonatkozóan van egységelem (amit $e$-vel, vagy $1$-gyel jelölünk.)\\
+    \mmedskip
+
+    \textbf{Nullgyűrű}: egyetlen elemből áll.\\
+    \mmedskip
+
+    \textbf{Zérógyűrű}: ha tetszőleges két elem szorzata a nullelem.\\
+    \mmedskip
+
+    \textbf{Nullosztó}: Az $R$ gyűrűben \textbf{$a$ bal oldali, $b$ jobb oldali nullosztó}, ha $a \neq 0$, $b \neq 0$, és $ab = 0$\\
+    \mmedskip
+
+    \textbf{Integritási tartomány}: A (legalább két elemű), kommutatív, nullosztómentes gyűrűt \textbf{integritási tartománynak} nevezzük.\\
+    \mmedskip
+
+    \textbf{Osztó}: Legyen $R$ integritási tartomány és $a, b \in R$. $a$ \textbf{osztója} $b$-nek ha létezik $c \in R$, amelyre $b = ac$, jelben $a | b$.\\
+    \mmedskip
+
+    \textbf{Egység}: $x \in R$ \textbf{egység}, ha $x | r$ minden $r \in R$-re.\\
+    \mmedskip
+
+    \textbf{Test}: Az $R$ gyűrű \textbf{test}, ha $(R^*, {\cdot})$ Abel csoport.
+  \end{tcolorbox}
 \end{frame}
+
 
 \begin{frame}
 \begin{tcolorbox}[title={Algebrai struktúrák kpacsolata (Kép)}]
+TODO
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Lemma: Észrevételek gyűrűkben}]
-\begin{enumerate}
-\item \textbf{Szorzás nullelemmel:} Legyen 0 az R gyűrű nulleleme. Ekkor $a0 = 0a = 0$, minden $a \in R$ esetén.
-\item \textbf{Előjelszabály:} Legyen R gyűrű, és $a, b \in R$. Az $a$ elem additív inverzés jelöljük $-a$-val. Ekkor $-(ab) = (-a)b = a(-b)$, tobábbá $(-a)(-b) = ab$.
-\item \textbf{Véges integritási tartomány test.}
-\item \textbf{Testben nincs nullosztó.}
-\end{enumerate}
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Lemma: Észrevételek gyűrűkben}]
+    \begin{enumerate}
+      \item \textbf{Szorzás nullelemmel:} Legyen 0 az R gyűrű nulleleme. Ekkor $a0 = 0a = 0$, minden $a \in R$ esetén.
+      \item \textbf{Előjelszabály:} Legyen R gyűrű, és $a, b \in R$. Az $a$ elem additív inverzés jelöljük $-a$-val. Ekkor $-(ab) = (-a)b = a(-b)$, tobábbá $(-a)(-b) = ab$.
+      \item \textbf{Véges integritási tartomány test.}
+      \item \textbf{Testben nincs nullosztó.}
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Lemma: Nullosztó és regularitás}]
-R gyűrűben a multiplikatív művelet akkor, és csak akkor reguláris, ha R zérusosztómentes.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Lemma: Nullosztó és regularitás}]
+    R gyűrűben a multiplikatív művelet akkor, és csak akkor reguláris, ha R zérusosztómentes.
+  \tcblower
+    \textbf{Bizonyítás}\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás}]
-\textbf{1. Rész}\\
-Tfh $a \neq 0$, a nem bal oldali nullosztó és $ab = ac$.\\
-$ab = ac  / -(ac)$ (+ additív inverz)\\
-$ab + (-(ac)) = 0$. Előjel szabály + disztri.\\
-$ab + (a(-c)) = a(b+(-c)) = 0$ (Kiemeljük, csak akkor lehet, ha $(b + -1 = 0) \implies (b = c)$)\\
-A feltételből ($a$ nem baloldali nullosztó) következik, hogy $b + (-c) = 0)$ $\implies$\\
-$\implies$ b = c.\\
-\bigskip
-\textbf{2. Rész}\\
-Tfh $a$ bal oldali nullosztó, tehát $a \neq 0$ és létezik $b \neq 0\: ab = 0$.\\
-tetszőleges $c \in R$-re: $ac = ac$.\\
-$ac = ac / +0 (0 = ab)$\\
-$ac = ac + ab$ /(Disztributivitás)\\
-$ac = a(c + b)$ Ellentmondás!\\
-Mivel $(b \neq 0) \implies (c \neq (c + b))$ (A b nem additív egységelem).
-\end{tcolorbox}
+    \textbf{1. Rész}\\
+    Tfh $a \neq 0$, a nem bal oldali nullosztó és $ab = ac$.\\
+    $ab = ac  / -(ac)$ (+ additív inverz)\\
+    $ab + (-(ac)) = 0$. Előjel szabály + disztri.\\
+    $ab + (a(-c)) = a(b+(-c)) = 0$ (Kiemeljük, csak akkor lehet, ha $(b + -1 = 0) \implies (b = c)$)\\
+    A feltételből ($a$ nem baloldali nullosztó) következik, hogy $b + (-c) = 0)$ $\implies$\\
+    $\implies$ b = c.\\
+    \bigskip
+
+    \textbf{2. Rész}\\
+    Tfh $a$ bal oldali nullosztó, tehát $a \neq 0$ és létezik $b \neq 0\: ab = 0$.\\
+    tetszőleges $c \in R$-re: $ac = ac$.\\
+    $ac = ac / +0 (0 = ab)$\\
+    $ac = ac + ab$ /(Disztributivitás)\\
+    $ac = a(c + b)$ Ellentmondás!\\
+    Mivel $(b \neq 0) \implies (c \neq (c + b))$ (A b nem additív egységelem).
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Def.: Rendezett Integritási Tartomány}]
+    $(R, +, {\cdot})$ integritási tartomány \textbf{rendezett integritási tartomány}, ha $R$ rendezett halmaz és\\
+    \begin{enumerate}
+      \item Ha $x, y \in R$ és $x \leq y$, akkor $x + z \leq y + z$ (Az összeadás monoton)
+      \item Ha $x, y \in R$ és $x, y \geq 0$, akkor $x \cdot y \geq 0$ (A szorzás monoton)
+    \end{enumerate}
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Rendezett Integritási Tartomány}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Egységelemes Integritási Tartomány}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Felbonthatatlan, Prím}]
+    Legyen $R$ egységelemes integritási tartomány, $U(R)$ az $R$-beli egységek halmaza, ekkor:\\
+    \begin{enumerate}
+      \item $a \in R^* \setminus U(R)$ \textbf{felbonthatatlan}, ha $a = b \cdot c (b, c \in R)$ esetén $b \in U(R)$, vagy $c \in U(R)$
+      \item $a \in ^* \setminus U(R)$ \textbf{prím}, ha $a | b \cdot c (b, c \in R) \Rightarrow a|b$ vagy $a|c$
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 
 % ---------------------- SZÁMHALMAZOK ---------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
-\begin{beamercolorbox}[center]{title}
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
     {\Huge Számhalmazok}
-\end{beamercolorbox}};
-\end{tikzpicture}
+    \mmedskip
+\end{tcolorbox}
 \end{frame}
 
 
 \begin{frame}
-
 \begin{tcolorbox}
 {\Huge Természetes számok}
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Peano-axiómák}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Peano-axiómák}]
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Ész}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Ész}]
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Természetes számok halmaza}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Természetes számok halmaza}]
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
@@ -1342,147 +1449,216 @@ ${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
 \end{tcolorbox}
 \end{frame}
 
+
 \begin{frame}
+  \begin{tcolorbox}[title={Def.: Halmazok ekvivalenciája}]
+    $X$ és $Y$ halmaz \textbf{ekvivalens}, ha ${\exists} f$ bijekció $X$-ből $Y$-ra. Jelben $X \sim Y$.\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Def.: Halmazok ekvivalenciája}]
-\end{tcolorbox}
+    Egy $Y$ halmaz véges, ha valamely $n$ természetes számra ekvivalens az $\{ 1, 2, ..., n \}$ halmazzal, egyébként \textbf{végtelen}.\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Tétel: Véges halmaz valódi részhalmaza}]
-Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{1, 2, ..., n\}$ és egy valódi részhalmaza között.
-\end{tcolorbox}
+    Ezt az egyértelműen létező $n$ számot $X$ \textbf{számosságának} nevezzük.\\
+    Jelben: $|X|, \#(X), card(X)$ (Kardinális).
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Tétel: Véges halmaz valódi részhalmaza}]
+    Ha $n$ természetes szám, akkor nem létezik ekvivalencia $\{ 1, 2, ..., n \}$ és egy valódi részhalmaza között.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Skatulya-elv}]
-Ha $X, Y$ véges halmazok, és $|X| > |Y|$, akkor nem létezik $f: X \rightarrow Y$ bijekció.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Skatulya-elv}]
+    Ha $X, Y$ véges halmazok, és $|X| > |Y|$, akkor nem létezik $f: X \rightarrow Y$ bijekció.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
-Tfh $f$ bijektív.\\
-$Y ~ \{1, 2, ..., m\}$ és $X ~ \{1, 2, ..., m\}$, ahol $m < n$ $\implies$\\
-$\implies$ $\{1, 2, ..., m\}$ bármely részhalmaza $\{1, 2, ..., n\}$-nek is részhalmaza,\\
-$f$ bijektív $\implies$ $\{1, 2, ..., n\}$ $~$ saját valódi részhalmazával. $\rightarrow$ Ellentmondás!\\
-\bigskip
-\textbf{Más megfogalmazás:} Ha $n$ db tárgyat $m$ db skatulyába teszünk, akkor van olyan skatulya, amelyik legalább\\
-$\lfloor (n - 1) / m \rfloor + 1$ tárgyat tartalmaz.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
+    Tfh $f$ bijektív.\\
+    $Y ~ \{1, 2, ..., m\}$ és $X ~ \{1, 2, ..., m\}$, ahol $m < n$ $\implies$\\
+    $\implies$ $\{1, 2, ..., m\}$ bármely részhalmaza $\{1, 2, ..., n\}$-nek is részhalmaza,\\
+    $f$ bijektív $\implies$ $\{1, 2, ..., n\}$ $~$ saját valódi részhalmazával. $\rightarrow$ Ellentmondás!\\
+    \bigskip
+
+    \textbf{Más megfogalmazás:} Ha $n$ db tárgyat $m$ db skatulyába teszünk, akkor van olyan skatulya, amelyik legalább\\
+    $\lfloor (n - 1) / m \rfloor + 1$ tárgyat tartalmaz.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Permutáció}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Permutáció}]
+    $n \in \mathbb{N}$ elemű halmaz egy \textbf{permutációján} a halmaz önmagára való bijektív leképzését értjük.\\
+    $P_n$ a halmaz különböző permutációinak száma.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Permutációk száma}]
-$$P_n = n!$$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Permutációk száma}]
+    $$P_n = n!$$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Bizonyítás}]
-Teljes indukció $n$ szerint\\
-1. lépés: $P_0 = P_1 = 1$ Igaz. (Megegyezés szerint $0! = 1$)\\
-2. lépés: Tfh $n > 1$ és $n - 1$-ig már beláttuk.\\
-ekvivalencia reláció:\\
-amely sorozatok 1. eleme megegyezik $\implies$ $n$ db osztály.\\
-Ind. feltétel $\implies$ $\forall$ osztályban $P_{n - 1}$ elem.\\
-$P_n = nP_{n - 1} = n(n - 1)! = n!$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás}]
+    Teljes indukció $n$ szerint\\
+    1. lépés: $P_0 = P_1 = 1$ Igaz. (Megegyezés szerint $0! = 1$)\\
+    2. lépés: Tfh $n > 1$ és $n - 1$-ig már beláttuk.\\
+    ekvivalencia reláció:\\
+    amely sorozatok 1. eleme megegyezik $\implies$ $n$ db osztály.\\
+    Ind. feltétel $\implies$ $\forall$ osztályban $P_{n - 1}$ elem.\\
+    $P_n = nP_{n - 1} = n(n - 1)! = n!$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Ciklikus permutáció}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Ciklikus permutáció}]
+    Minden elem egy hellyeljobbra/balra kerül, az utolsó/első az első/utolsó helyre.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.:Ismétlés nélküli variáció}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.:Ismétlés nélküli variáció}]
+    Egy $A$ halmaz elemeiből képezhető $k$ tagú, csupa különböző elemeket tartalmazó sorozatokat, azaz $\{ 1, 2, ..., k \}$-t $A$-ba képező injektív leképezéseket az \textbf{$A$ halmaz  $k$-ad osztályú ismétlés nélküli variációjának} nevezzük.\\
+    Ha $|A| = n$, akkor $A$ összes $k$-ad osztáylú ismétlés nélküli variávcióinak száma: $V_n^k$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Variációk száma}]
-$$V_n^k = \frac{n!}{(n - k)!} = n * (n - 1) * (n - 2) * ... * (n - k + 1)$$, ha $k \leq n$, kölünben 0.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Variációk száma}]
+    $$V_n^k = \frac{n!}{(n - k)!} = n * (n - 1) * (n - 2) * ... * (n - k + 1)$$, ha $k \leq n$, kölünben 0.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Bizonyítás}]
-Legyen két sorozat egy ekv. osztályban, ha első $k$ elemük megegyezik.\\
-Ekkor: $P_n = $ (osztályok száma ($V_n^k = \frac{P_n}{P_n - k}$))*(ahány elem egy osztályban ($P_{n - k}$)
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás}]
+    Legyen két sorozat egy ekv. osztályban, ha első $k$ elemük megegyezik.\\
+    Ekkor: $P_n = $ (osztályok száma ($V_n^k = \frac{P_n}{P_n - k}$))*(ahány elem egy osztályban ($P_{n - k}$)
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Ismétléses Variáció}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Ismétléses Variáció}]
+    Egy $A$ halmaz elemeiből képezhető $k$ tagú, nem feltétlenül különböző elemeket tartalmazó sorozatokat, azaz $\{ 1, 2, ..., k \}$-t $A$-ba képező leképezéseket az \textbf{$A$ halmaz  $k$-ad osztályú ismétléses variációjának} nevezzük.\\
+    Ha $|A| = n$, akkor $A$ összes $k$-ad osztáylú ismétléses variációinak száma: $V_n^{k, i}$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Ismétléses variációk száma}]
-$$V_n^{k, i} = n^k$$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Ismétléses variációk száma}]
+    $$V_n^{k, i} = n^k$$
+  \tcblower
+    \textbf{Bizonyítás}\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás}]
-Teljes indukció $k$ szerint, $n$ rögzített\\
-1. lépés: $k = 1$-re igaz: $V_n^{1, i} = n \rightarrow n^1$\\
-2. lépés: Tfh $k > 1$ és $k - 1$-ig már beláttuk, ekkor\\
-$(k - 1)$-es osztályú variációból $k$-ad osztályú:\\
-$n$ db választás $\implies$ $V_n^{k, i}$ (n választás) $= V_n^{k - 1, j} * n$ (n - 1 választás).
-\end{tcolorbox}
+    Teljes indukció $k$ szerint, $n$ rögzített\\
+    1. lépés: $k = 1$-re igaz: $V_n^{1, i} = n \rightarrow n^1$\\
+    2. lépés: Tfh $k > 1$ és $k - 1$-ig már beláttuk, ekkor\\
+    $(k - 1)$-es osztályú variációból $k$-ad osztályú:\\
+    $n$ db választás $\implies$ $V_n^{k, i}$ (n választás) $= V_n^{k - 1, j} * n$ (n - 1 választás).
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Ismétlés nélküli Kombináció}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Ismétlés nélküli Kombináció}]
+    Egy $A$ halmaz $k (n \in \mathbb{N})$ elemű részhalmaza \textbf{$A$ halmaz  $k$-ad osztályú ismétlés nélküli kombinációja}.\\
+    Ha $|A| = n$, akkor $A$ összes $k$-ad osztáylú ismétlés nélküli kombinációinak száma: $C_n^k$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Kombinációk száma}]
-$$C_n^k = {{n}\choose{k}} = \frac{n!}{k!(n - k)!} $$, ha $k \neq n$, különben 0.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Kombinációk száma}]
+    $$C_n^k = {{n}\choose{k}} = \frac{n!}{k!(n - k)!} $$, ha $k \neq n$, különben 0.
+  \tcblower
+    \textbf{Bizonyítás}\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás}]
-$V_n^k$ db különböző $k$-tagú sorozat, sorrend nem számít $\implies$\\
-$\implies$ minden $P_k$ sb sorozat ugyanaz $\implies$ számoljuk egyszer.\\
-\end{tcolorbox}
+    $V_n^k$ db különböző $k$-tagú sorozat, sorrend nem számít $\implies$\\
+    $\implies$ minden $P_k$ sb sorozat ugyanaz $\implies$ számoljuk egyszer.\\
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Ismétléses Kombináció}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Ismétléses Kombináció}]
+    Egy $A$ halmaz $k (n \in \mathbb{N})$ nem feltétlenül különböző elem kiválasztása sorrendre való tekintet nélkül, az \textbf{$A$ halmaz  $k$-ad osztályú ismétléses kombinációja}.\\
+    Ha $|A| = n$, akkor $A$ összes $k$-ad osztáylú ismétléses kombinációinak száma: $C_n^{k, i}$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Ismétléses kombinációk száma}]
-$$C_n^{k, i} = C_{n + k -1}^k = {{n + k - 1}\choose{k}} = \frac{(n + k - 1)!}{k!((n + k - 1) - k)!} $$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Ismétléses kombinációk száma}]
+    $$C_n^{k, i} = C_{n + k -1}^k = {{n + k - 1}\choose{k}} = \frac{(n + k - 1)!}{k!((n + k - 1) - k)!}$$
+  \tcblower
+    \textbf{Bizonyítás}\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás}]
-Legyen $A = \{a_1, a_2, ..., a_n\}$.\\
-MInden egyes választási lehetőségnek feleltessünk meg egy bitsorozatot:\\
-$1 1 ... 1 0 1 1 ... 1 0 ... 0 1 1 1 ... 1$\\
-$k_1$ db,    $k_2$ db,         $k_3$ db 1es.\\
-Az $a_i$ elemet $k_i$-szer választottuk, tehát $k_1 + ... + k_n = k$ az összes $1$-es száma (ennyi elemet választottunk összesen).\\
-Továbbá az elválasztó $0$k száma $n - 1$, tehát a sorozatban $n - 1 + k$ pozíció lesz\\
-\mmedskip
+    Legyen $A = \{a_1, a_2, ..., a_n\}$.\\
+    MInden egyes választási lehetőségnek feleltessünk meg egy bitsorozatot:\\
+    $1 1 ... 1 0 1 1 ... 1 0 ... 0 1 1 1 ... 1$\\
+    $k_1$ db,    $k_2$ db,         $k_3$ db 1es.\\
+    Az $a_i$ elemet $k_i$-szer választottuk, tehát $k_1 + ... + k_n = k$ az összes $1$-es száma (ennyi elemet választottunk összesen).\\
+    Továbbá az elválasztó $0$k száma $n - 1$, tehát a sorozatban $n - 1 + k$ pozíció lesz\\
+    \mmedskip
 
-Ekkor a $k$ db $1$-es beírása $k$ különböző pozícióba nem más, mint $k$ db választás egy $n - 1 + k$ elemű halmazból ismétlés nélkül:\\
-$$C_{n + k - 1}^k = {n + k - 1 \choose k}$$
-\end{tcolorbox}
+    Ekkor a $k$ db $1$-es beírása $k$ különböző pozícióba nem más, mint $k$ db választás egy $n - 1 + k$ elemű halmazból ismétlés nélkül:\\
+    $$C_{n + k - 1}^k = {n + k - 1 \choose k}$$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Def.: Ismétléses Permutáció}]
+      $n$ elem valamely sorrendben való felsorolása, amelyben $k$ elem fordul elő rendre $n_1, n_2, ..., n_k$ gyakorisággal $(n_1 + n_2 + ... + n_k = n)$, \textbf{$n$ elem egy $n_1, n_2, ..., n_k$-ad osztályú ismétléses permutációja}.\\
+      Ezek száma: $P_n^{n1, ..., n_k}$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Ismátláses Permutáció}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Ismétléses permutációk száma}]
+    $P_n^{i_1, i_2, ..., i_r} = \frac{n!}{i_1!i_2!...i_r!}$
+  \tcblower
+    \textbf{Bizonyítás}\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Tétel: Ismétléses permutációk száma}]
-\end{tcolorbox}
+    Teljes indukcció $k$ szerint , $n$ rögzített\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás}]
-\end{tcolorbox}
+    1. lépés: k = 1-re igaz: $P_n^n = \frac{n!}{n!} = 1$\\
+    \mbigskip
+
+    2.lépés: Tfh $k > 1$ és $k - 1$-ig már beláttuk, ekkor:\\
+    \msmallskip
+
+    ekvivalencia reláció:\\
+    amely sorozatok megegyeznek, ha kivesszük az $n_k$-szor előforduló elemet ($k$-adik elem).\\
+    \msmallskip
+
+    Ind. feltétel $\Rightarrow$ $P_{n - n_k}^{n_1, ..., n_{k - 1}}$ db osztály van.\\
+    \msmallskip
+
+    Hány elem van az osztályban? $\rightarrow$ $n - n_k$ db elem.\\
+    a $k$-adik elemet $n - n_k + 1$ helyre szúrhatjuk be.\\
+    \mmedskip
+
+    $c_{n - n_k + 1}^{n_k, i} = C^{n_n}_{(n - n_k + 1) + n_k - 1} = c_n^{n_k}$\\
+    \mmedskip
+
+    $P_n^{n_1, ..., n_k} = P_{n - n_k}^{n_1, ..., n_{k - 1}} C_n^{n_k} = \frac{(n - n_k)!}{n_1!...n_{k - 1}!} \cdot \frac{n!}{(n - n_k)!n_k!} = \frac{n!}{n_1...n_k!}$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Binomiális tétel}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Binomiális tétel}]
+    Adott $x, y \in R$ és $n \in \mathbb{N}$ esetén:\\
+    $(x + y)^n = \sum_{k = 0}^n {n \choose k} x^ky^{n - k}$.
+  \tcblower
+    \textbf{Bizonyítás}\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás}]
-\end{tcolorbox}
+    $p(x + y) ... (x + y) = x^n + ... + x^ky^{n - k} + ... + y^n$ ($n$ db tényező)\\
+    \mmedskip
+
+    Hány ilyen tag van? ($x^ky^{n - k}$).\\
+    \mmedskip
+
+    $k$ db tényezőből az $x$-et $n - k$-ből az $y$-t választottuk.\\
+    Összesen $n$ elemből $k$ elemet, sorrend nem számít! $\Rightarrow$\\
+    $\Rightarrow$ ${n \choose k}$ db $x^ky^{n - k}$ alakú tag van.
+  \end{tcolorbox}
+
+
+  \begin{tcolorbox}[title={Tétel: Következmény (Binomiális tétel)}]
+    $\sum_{k = 0}^n {n \choose k} = 2^n$ és $\sum_{i = 0}^n {n \choose k} (-1)^k = 0$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Logikai szita formula}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Logikai szita formula}]
 
-\begin{tcolorbox}[title={Bizonyítás}]
-\end{tcolorbox}
+  \tcblower
+    \textbf{Bizonyítás}\\
+    \mmedskip
+
+  \end{tcolorbox}
 \end{frame}
 
 \end{document}
