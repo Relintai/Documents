@@ -2,8 +2,8 @@
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
 % Uncomment these to get the presentation form
-%\documentclass{beamer}
-%\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
+\documentclass{beamer}
+\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
 
 % Uncomment these, and comment the 2 lines above, to get a paper-type article
 %\documentclass[10pt]{article}
@@ -132,24 +132,61 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: A halmazelmélet "Definiálatlan alapfogalmai"}]
+"Halmaznak lenni", és "eleme".\\
+$A := \{$felsorolás$\}$\\
+$A := \{ x \in B | F(x) \}$\\
+$A := \{ x \in B : F(x) \}$\\
+{\footnotesize ($|$, $:$ $\rightarrow$ ahol.)}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.:  Meghatározottsági Axióma (Halmazok egyenlősége)}]
+Az $A$ és $B$ halmaz akkor és csak akkor egyenlő, ha ugyanazok az elemeik.\\
+{\footnotesize A sorrend nem számít!)}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Az üres halmz axiómája}]
+Van olyaqn halmaz, amelynek nicns eleme.\\
+Jel: $\emptyset$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Részhalmaz-axióma}]
+Minden $A$ halmazra és minden $F(x)$ formulára létezik egy B halmaz, amelyhel $A$-nak pontosa azok az $x$ elemei tartoznak, amelyekre $F(x)$ igaz.
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Minden dolog halmaza}]
-Nincs olyan halmaz, amelynek minden dolog eleme.
+
+\begin{tcolorbox}[title={Russel-paradoxon}]
+$U = \{x : x = x \}$ (Ez Minden dolog tételnek az oka / bizonyítása)
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Biz}]
+\begin{tcolorbox}[title={Tétel: Minden dolog halmaza}]
+Nincs olyan halmaz, amelynek minden dolog eleme.
+\tcblower
+Bizonyítás:\\
+\mmedskip
+
+Legyen $A$ és $B$ tetszőleges halmaz, és $B = \{x \in A, x \neq x \}$
+\msmallskip
+
+Ami azt jelenti, hogy tetszőleges halmazhoz konstruálunk olyan halmazt, amely nem lehet eleme.\\
+(egy x se tartalmazza magát elemként (ne legyen tartalmazkodó (= rendes halmaz)).\\
+\mmedskip
+
+TFH (Indirekt):\\
+$B \in A$, ekkr:\\
+
+\textbf{1.eset}\\
+\msmallskip
+
+Ha $B \notin B$ $\rightarrow$ Definíció szerint ekkor $B \in B$ $\Rightarrow$ Ellentmondás!\\
+\msmallskip
+
+Ha $B \in B$ $\rightarrow$ Definíció szerint ekkor $B \notin B$ $\Rightarrow$ Ellentmondás!\\
+\msmallskip
+
+$\Rightarrow$ $B \notin A$.
+(Belátható, hogy $B \notin A$, mert $B$ nem lehet eleme $A$-nak.)
 \end{tcolorbox}
 \end{frame}
 
@@ -205,12 +242,18 @@ Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Diszjunkt, Páronként diszjunkt halmazok.}]
+Két halmaz \textbf{diszjunkt}, ha metszetük üres.\\
+Egy halmazrendszer elemei \textbf{páronként diszjunktak}, ha bármely kettő metszete üres.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Halmazok Különbsége}]
+Az $A, B$ halmaz \textbf{Különbségén} a következő halmazt értjük:\\
+$A \setminus B = \{ x \in A | x \notin B \}$.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Halmazok Szimmetrikus Differenciája}]
+Az $A, B$ halmazok \textbf{szimmetrikus differenciáján} a következő halmazt értjük:\\
+$A \triangle B = \{ x | x \in A \setminus B \lor x \in B \setminus A \} = \{ x \in A \cup B | x \notin A \cap B \}$.
 \end{tcolorbox}
 \end{frame}
 
@@ -236,7 +279,148 @@ Legyenek A, B $\wedge$ X halmazok. Ekkor:
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Definíció: Halmaz osztályfelbontása}]
+
+\begin{tcolorbox}[title={Definíció: Hatványhalmaz}]
+Ha $A$ halmaz, akkor azt a halmazrendszert melynek elemei $A$ részhalmazai, az \textbf{$A$ hatványhalmazának} nevezzük.\\
+Jele: $p(A)$, (A $p$ betű a "Potenz" szóra utal (gyakori a $2^A$ jelölés is.)
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Axióma: Végtelenségi Axióma}]
+Van olyan $A$ halmaz, amelynej az $\emptyset$ eleme, és ha valamely $x$ halmaz eleme $A$-nak, akkor az $x \cup \{ x \}$ halmaz is eleme $A$-nak.\\
+$\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}, \{ \emptyset , \{ \emptyset \}, \{ \emptyset , \{ \emptyset \} \} \}, ...$
+\end{tcolorbox}
+\end{frame}
+
+% --------------------  RELÁCIÓK --------------------
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\Huge Relációk}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Rendezett pár}]
+$(a:0m a_2) := \{ \{ a_1 \}, \{ a_1, a_2 \} \}$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Rendezett $n$-es}]
+$(a_1, ..., a_n) := ((a_1, ..., a_{n - 1}), a_n)$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Descartes (Direkt) szorzat}]
+$A_1 x A_2 x ... x A_n := \{ (a_1, ..., a_n) | a_i \in A_i \}$,\\
+ahol $A_1, A_2, ..., A_n$ tetszőleges halmazok.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: $n$ változós reláció}]
+$R \subseteq A_1 x A_2 x ... A_n$\\
+\mmedskip
+
+Jelölés binér relációknák: $(a, b) \in R$, vagy $a R b$.
+(1 változós = unér, 2 változós = binér)
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Homogén reláció}]
+${\forall}i, j \in \{ 1, 2, ..., n \} : A_i = A_j$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Identikus leképzés}]
+$\mathbb{I}_X := \{(x, x) \in X x X : x \in X \}$
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Reláció értelmezési tartománya}]
+\textbf{$R \subseteq X x Y$ reláció értelmezési tartománya}\\
+$dmn(R) := \{ a \in X | {\exists}b \in Y : (a, b) \in R \}$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Reláció értékkészlete}]
+\textbf{$R \subseteq X x Y$ reléció értékkészlete}\\
+$rng(R) := \{ b \in Y | {\exists} a \in X : (a, b) \in R \}$.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Leszűkítés, kierjesztés}]
+Ha $S \subseteq R$, akkor $S$ az $R$ \textbf{ledszűkítése}, $R$ az $S$ \textbf{kiterjesztése}.
+TODO a diában nem bozt h melyik fajta jelölést használták, lehet h valódi részhalmazt akar jelenteni.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Az $R$ reláció $X$ halmazra való Leszűkítése}]
+Az $R$ reláció $X$ halmazra való \textbf{leszűkítése}:\\
+$R|_X := \{(a, b) \in R | a |in X \}$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Ar $r \subset X x Y$ reláció inverze}]
+$R^{-1} = \{(b, a) \in Y x X | (a, b) \in R \}$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ész}]
+$(R^{-1})^{-1} = R$\\
+$dmn(R^{-1}) = rng(R)$\\
+$rng(R^{-1} = dmn(R)$\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Az $A$ halmaz képe, (ős)képe / inverz képe}]
+Az $A$ halmaz \textbf{képe}:\\
+$R(A) := \{ y : van olyan x \in A$, hogy $(x, y) \in R \}$\\
+\mmedskip
+
+\textbf{Inverz (Ős) képe}:\\
+$R^{-1}(A)$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ész}]
+$R(A) = \emptyset \iff A \cap dmn(R) = \emptyset$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Az $S$ és $R$ binér relációk kompozíciója}]
+$R \circ S := \{ (x, y) : $ van olyan $z$, hogy $(x, z) \in S$ és $(z, y) \in R \}$
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ész}]
+$rng(S) \cap dmn(R) = \emptyset \Rightarrow R \circ S = \emptyset$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Kompozíció tulajdonságai}]
+Legyenek $R, S,$ és $T$ binéár relációk. Ekkor:\\
+\begin{enumerate}
+\item Ha $rng(S) \subseteq dmn(R)$, akkor $rng(R \circ S) = rng(R)$.
+\item $R \circ (S \circ T) = (R \circ S) \circ T$ (asszociativitás).
+\item $(R \circ S)^{1} = s^{-1} \circ R^{-1}$.
+\end{enumerate}
+
+Ha $R$ reláció $X$ és $Y$ között, akkor:\\
+$\mathbb{I}_Y \circ R = R$ és $R \circ \mathbb{I}_X = R$.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Homogén binér relációk tulajdonságai}]
+Legyen $R \subseteq A x A$ alakú, ekkor $R$\\
+\begin{enumerate}
+\item \textbf{Reflexív}: ${\forall}a \in A (a R a)$
+\item \textbf{Irreflexív}: ${\forall}a \in A {\neg}(a R a)$
+\item \textbf{Szimmetrikus}: ${\forall}a, b \in A (a R b \Rightarrow b R a)$
+\item \textbf{Antiszimmetrikus}: ${\forall}a, b \in A (a R b \land b R a \Rightarrow b = a)$
+\item \textbf{Szigorúan antiszimmetrikus (Asszimetrikus)}: ${\forall}a, b \in A (a R b \Rightarrow {\neg}(b R a))$
+\item \textbf{Tranzitív}: ${\forall}a, b, c \in A (a R b \land b R c \Rightarrow a R c)$
+\item \textbf{Intranzitív}: ${\forall}a, b, c \in A (a R b \land b R c \Rightarrow {\neg}(a R c))$
+\item \textbf{Trichotom}: ${\forall}a, b \in A (1!$ (pontosan 1) áll fenn $a R b, b R a, a = b$ közül.
+\item \textbf{Dichotom}: ${\forall}a, b \in A (a R b \lor b R a)$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Ekvivalenciareláció}]
+ha \textbf{reflexív, tranzitív, szimmetrikus}.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Halmaz osztályfelbontása}]
 A tetszőleges X halmazt \textbf{osztályozzuk (osztályokra bontjuk)}, ha páronként diszjunkt, nemüres részhalmazainak uniójaként állítjuk elő.
 \end{tcolorbox}
 
@@ -246,147 +430,194 @@ $$\overline{x} = \{y \in X : y \sim x\}$$
 
 \begin{tcolorbox}[title={Tétel: Ekvivalenciareláció és osztályfelbontás kapcsolata}]
 Valamely X halmazon értelmezett $\sim$ ekvivalenciareláció X-nek egy osztályfelbontását adja. Megfordítva, az X halmaz minden osztályfelbontása egy $\sim$ ekvivalenciarelációt hoz létre.
-\end{tcolorbox}
+\tcblower
+Bizonyítás:\\
+\mmedskip
 
-\begin{tcolorbox}[title={Biz}]
-\end{tcolorbox}
-\end{frame}
+\textbf{1. Rész ($\Rightarrow$)}\\
+\mmedskip
 
-\begin{frame}
-\begin{tcolorbox}[title={Def.: Rendezett pár}]
-\end{tcolorbox}
+Reflexivitás $\Rightarrow$ $x \in \tilde{x}$ $\Rightarrow$ osztályok nem üresek.\\
+\msmallskip
 
-\begin{tcolorbox}[title={Def.: Rendezett $n$-es}]
-\end{tcolorbox}
+Mi újság a két osztály metszetével?\\
+\msmallskip
 
-\begin{tcolorbox}[title={Def.: Descartes (Direkt) szorzat}]
-\end{tcolorbox}
+\textbf{Tfh} van nem üres: $z \in \tilde{x} \cap \tilde{y}$ tranz + szimm $\rightarrow$ $x \sim y$, továbbá:\\
+\msmallskip
 
-\begin{tcolorbox}[title={Def.: $n$ változós reláció}]
+tranz + szimm $\Rightarrow$ $w \in \tilde{x} \Rightarrow w \in \tilde{y}$ és $w \in \tilde{y} \Rightarrow w \in \tilde{x}$.
+\msmallskip
 
-(1 változós = unér, 2 változós = binér)
-\end{tcolorbox}
+Kaptuk: $\tilde{x} \cap \tilde{y} \neq \emptyset \Rightarrow \tilde{x} = \tilde{y}$
+\mmedskip
 
-\begin{tcolorbox}[title={Def.: Homogén reláció}]
-\end{tcolorbox}
+Tehát a következő halmaz $X$-nek egy osztályfelbontását adja:\\
+$\tilde{X} = \{ \tilde{x} : x \in X \}$\\
 
-\begin{tcolorbox}[title={Def.: Identikus leképzés}]
-\end{tcolorbox}
+\textbf{2. Rész ($\Leftarrow$)}:\\
+\mmedskip
 
-\begin{tcolorbox}[title={Def.: Relávió értelmezési tartománya}]
-\end{tcolorbox}
+Tfh ${\exists}X$-nek osztályfelbontása:\\
 
-\begin{tcolorbox}[title={Def.: Reláció értékkészlete}]
-\end{tcolorbox}
-\end{frame}
+$X_1 \cup X_2 \cup ... \cup X_n =  'X$\\
 
-\begin{frame}
-\begin{tcolorbox}[title={Def.: Leszűkítés, kierjesztés}]
-\end{tcolorbox}
+Legyen a relációnk:\\
 
-\begin{tcolorbox}[title={Def.: Az $R$ reláció $X$ halmazra való Leszűkítése}]
-\end{tcolorbox}
+$p := \{(a,b) \in X x X | a, b \in X-i$ valamely $q \leq i \leq n$-re $\}$.\\
+\mmedskip
 
-\begin{tcolorbox}[title={Def.: Ar $r \subset X x Y$ reláció inverze}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Ész}]
+Reflexív? $\rightarrow$ Igen\\
+Tranzitív? $\rightarrow$ Igen\\
+Szimmetrikus? $\rightarrow$ Igen
 \end{tcolorbox}
 \end{frame}
 
-\begin{frame}
-\begin{tcolorbox}[title={Def.: Az $A$ halmaz képe, (ős)képe / inverz képe}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Ész}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Az $S$ és $R$ relációk kompozíciója}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Ész}]
-\end{tcolorbox}
-\end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Homogén binér relációk tulajdonságai}]
-\end{tcolorbox}
-\end{frame}
-
-\begin{frame}
-\begin{tcolorbox}[title={Def.: Ekvivalenciareláció}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Halmaz osztályfelbontása}]
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Def.: Az $c \in X$ elem ekvivalencia osstálya}]
-\end{tcolorbox}
-
-%\begin{tcolorbox}[title={Tétel.: Ekvivalenciarelácó, és osztályfelbontás}]
-%\end{tcolorbox}
-\end{frame}
-
-\begin{frame}
-
 \begin{tcolorbox}[title={Def.: Részbenrendezés, Szigorú részbenrendezés}]
+Az $R \subset X x X$ reláció \textbf{részbenrendezés (${\leq}$)}, ha:\\
+\begin{itemize}
+\item Reflexív
+\item Tranzitív
+\item Antiszimmetrikus
+\end{itemize}
+\mmedskip
+
+\textbf{Szigorú részbenrendezés (<)}, ha:\\
+\begin{itemize}
+\item Irreflexív
+\item Tranzitív
+\end{itemize}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Teljes rendezés}]
+Tetszőleges részbenrendezett halmaz esetén, ha bármely két elem relációban van, \textbf{rendezésről (teljes rendezés)} beszélünk.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Részbenrendezett, vagy rendezett struktúra}]
+\textbf{$(X, {\leq})$ részbenrendezett vagy rendezett struktúra}, ha ${\leq}$ részbenrendezés vagy rendezés.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Diagonális reláció}]
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Szigorú-gyenge reláció}]
+\begin{tcolorbox}[title={Def.: Szigorú, gyenge reláció, Lánc}]
+Tetszőleges $X$, a $\leq$ relációval részbenrendezett halmaz bármely $Y$ részhalmaza részbenrendezett a ($\leq \subseteq Y x Y$) struktúra rendezés, akkor \textbf{lánc}.\\
+\mmedskip
+
+Tfh $R$ $X$-beli reláció. Ha $S$ $X$-beli reláció olyan, hogy $xSy$ akkor áll fenn, ha $xRy$ ls $x \neq y$, akkor $S$ az $R$-nek megfelelő \textbf{szigorú reláció}.\\
+\mmedskip
+
+Tfh $R$ $X$-beli reláció. Ha $T$ $X$-beli reláció olyan, hogy $xTy$ akkor áll fenn, ha $xRy$ vagy $x = y$, akkor $T$ az $R$-nek megfelelő \textbf{gyenge reláció}.\\
+\mmedskip
+
+\textbf{< szigorú részbenrendezés}: Irreflexív, Tranzitív, Szigorúan Antiszimmetrikus.\\
+\mmedskip
+
+Ész: $\leq$ rendezés $\iff$ trichotóm.
 \end{tcolorbox}
 \end{frame}
 
-\begin{frame}
 
-\begin{tcolorbox}[title={Def.: Zárt, nyílt intervallum}]
+\begin{frame}
+\begin{tcolorbox}[title={Def.: Zárt Intervallum}]
+$[x, y] = \{ z \in X | x \leq z \leq y \}$.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Minimális Legkisebb, Maximális, Legnagyobb elem}]
+\begin{tcolorbox}[title={Def.: Nyílt Intervallum}]
+$(x, y) = \{ z \in X | x < z < y \}$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Közvetlenü megelőzi, Közvetlenül követi}]
+Ha $x < y$, de ugyanakkor nem létezik szigorúan $x$ és $y$ közé eső elem, akkor azt mondjuk, hogy $x$ \textbf{közvetlenül megelőzi} $y$-t, vagy $y$ \textbf{közvetlenül követi} $x$-et.\\
+\mmedskip
+
+Egy $x$ elemhez tartozó \textbf{kezdőszeletnek} a $\{ y \in X : y < x \}$ részhalmazt nevezzük.\\
+\mmedskip
+
+Jel: $] {\leftarrow}, x [$ ($\rightarrow$ = közvetlenül megelőzi)
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Def.: Minimális, Maximális, Legkisebb, Legnagyobb elem}]
+Legyen $(X, {\leq}))$ részbenrendezett struktúra, ekkor\\
+$m \in X$\\
+\msmallskip
+
+az $X$ \textbf{minimális eleme}, ha nem létezik olyan $(m {\neq}) x \in X$, amelyre $m \geq x$.\\
+\mmedskip
+
+\textbf{legkisebb eleme}, ha minden $x \in X$-re $m \leq x$.\\
+\mmedskip
+
+\textbf{Maximális} és \textbf{legnagyobb} elem hasonlóan.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+Legkisebb és legnagyobb elem legfeljebb egy van.\\
+Minimális nés maximális elem több is lehet.\\
+Rendezett halmazban legkisebb és minimális elem egybeesik.
 \end{tcolorbox}
 \end{frame}
 
-
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Alsó korlát, Felős korlát}]
+\begin{tcolorbox}[title={Def.: Alsó korlát, Felső korlát}]
+Legyen $B \subset A$ ($A$ részbenrendezett), ekkor:\\
+\msmallskip
+
+$a \in A$\\
+\textbf{a $B$ alsó korlátja}, ha minden $x \in B$-re $a \leq x$.\\
+\mmedskip
+
+\textbf{Felső korlátja}, ha minden $x \in B$-re $x \leq a$.\\
+\mmedskip
+
+Észrevételek:\\
+\begin{itemize}
+\item Lehet 0, vagy több korlát.
+\item A korlát nem boztos, hoyg $B$ eleme.
+\item Ha egy korlát $B$-ben van, akkor 1! (Legkisebb, vagy legnagyobb elem)
+\end{itemize}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Infinum, Supremum}]
+$B$ \textbf{infinuma} (inf $B$), ha létezik, $B$ legnagyobb alsó korlátja.\\
+\textbf{pontos felső/alsó korlát, felső/alsó határ}\\
+$B$ \textbf{supremuma} (sup $B$), ha létezik, $B$ legkisebb felő korlátja.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Jólrendezett halmaz}]
+Tetszőleges részbenrendezett halmaz \textbf{jólrendezett}, ha bármely nemüres részhalmazának van legkisebb eleme.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+Jólrendezett $\Rightarrow$ rendezett.
 \end{tcolorbox}
 \end{frame}
 
 % ----------------   FÜGGVÉNYEK ------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
-\begin{beamercolorbox}[center]{title}
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
     {\Huge Függvények}
-\end{beamercolorbox}};
-\end{tikzpicture}
+    \mmedskip
+\end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Függvény, Parciális függvény}]
+Az $f$ \textbf{reláció} függvény, ha\\
+$(x, y) \in f \land (x, y') \in f \Rightarrow y = y'$.\\
 \tcblower
-%Kapcsolódó jelölések, fogalmak
+Kapcsolódó jelölések, fogalmak:\\
+$f(x) = y$\\
+$f : x \rightarrow y$\\
+$Y \rightarrow Y$ (Az összes olyan fggvény halmaza, amelynek értelmezési tartománya X-nek, értékkészlete pedig Y-nak része.\\
+\mmedskip
+
+\textbf{Parciális függvény}:\\
+$f: X \rightarrow Y$, $f \in X \rightarrow Y$\\
+$rng(f) = X$, $dmn(f) \subset X$, $rng(f) \subset Y$ ($\subset$ az = is megengedett)
 \end{tcolorbox}
 
 %\begin{tcolorbox}[title={Mikor egyenlő két függvény?}]
@@ -396,64 +627,113 @@ Valamely X halmazon értelmezett $\sim$ ekvivalenciareláció X-nek egy osztály
 \begin{frame}
 
 \begin{tcolorbox}[title={Def.: Függvények típusai}]
-Szürjektív, inj...
+Az $f: A \rightarrow B$ függvény\\
+\begin{itemize}
+\item \textbf{Szürjektív}, ha $B = rng(f)$ (Ráképzés)
+\item \textbf{Injektív}, ha ${\forall} am b \in dmn(f) : (a \neq b) \Rightarrow f(a) \neq f(b)$ (Kölcsönösen egyértelmű)
+\item \textbf{Bijektív}, ha Injektív, és Szürjektív is.
+\end{itemize}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+Injektív függvényinverze is függvény.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Kanonikus leképzés}]
+Ha adott egy $X$ halmazon értelmezett ekvivalenciareláció, akkor az $X$ elemeihez sajét ekvivalenciaosztályukat rendelő leképzést (függvényt) \textbf{kanonikus leképzésnek (függvénynek)} nevezzük.
+
+Fordítva: ha $f: X \rightarrow Y$ függvény, akkor $\sim \subset X x X$ ekvivalenciareláció, ahol $(x, y) \in {\sim}$, ha $f(x) = f(y)$.
 \end{tcolorbox}
 \end{frame}
 
-\begin{frame}
 
+\begin{frame}
 \begin{tcolorbox}[title={Def.: Monoton, Szigorúan monoton függvények}]
+Legyen $(A, {\leq}_1), (B, {\leq}_2)$ részbenrendezett struktúra.\\
+Ekkor az $f : A \rightarrow B$ függvény\\
+\textbf{monoton növő}, ha:\\
+${\forall}x, y \in dmn(f) : x {\leq}_1 y \Rightarrow f(x) {\leq}_2 f(y)$.\\
+\mmedskip
+
+\textbf{Szigorúan onoton növő}, ha:\\
+${\forall}x, y \in dmn(f) : x <_1 y \Rightarrow f(x) <_2 f(y)$.\\
+\mmedskip
+
+\textbf{Csökkenő hasonlóan!}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+Ha $A$ és $B$ rendezettek, akkor:\\
+$f$ szigorúan monoton $\Rightarrow$ $f$ injektív.\\
+$f$ injektív $\land$ monoton $\Rightarrow$ szigorúan monoton és $f$ inverze is monoton.
 \end{tcolorbox}
 \end{frame}
 
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Család, (Indexhalmaz, Indexelt halmaz, Indexelt család)}]
+\begin{tcolorbox}[title={Def.: Családok (Indexhalmaz, Indexelt halmaz, Indexelt család)}]
+Legyen $x$ függvény, $dmg(x) = I$ és $x(i) = y$ helyett írjuk $x(i) = x_i$-t.\\
+\mmedskip
+
+Ekkor:\\
+\msmallskip
+
+$I$ \textbf{indexhalmaz}, $rng(x)$ \textbf{indexelt halmaz}, $x$ \textbf{indexelt család}.\\
+\msmallskip
+
+Ha $rng(x)$ elemei halmazok, akkor \textbf{halmazcsaládról} beszélünk, és egy $X_i, i \in I$ \textbf{halmazcsalád unióját} így definiáljuk:\\
+${\bigcup}_{i \in I} X_i := {\bigcup}\{ X_i : i \in I\}$\\
+\mmedskip
+
+$i \leq \emptyset$ esetén \textbf{halmazcsalád metszetét} így definiáljuk:\\
+${\bigvee}_{i \in I} X_i := {\bigvee}\{ X_i : i \in I\}$
 \end{tcolorbox}
 \end{frame}
 
+
 \begin{frame}
+\begin{tcolorbox}[title={Def.: Kiválasztási függvény, Halmazcsalád Descartes-szorzata}]
+Az $X_i, i \in I$ halmazcsaládhoz tartozó \textbf{kiválasztási függvénynek} nevezzük azokat az\\
+$x : I \rightarrow {\bigcup}_{i \in I} X_i$\\
+alakú függvényeket, ahol ${\forall} i \in I$-re $x_i \in X_i$.\\
+\mmedskip
 
-\begin{tcolorbox}[title={Def.: Kiválasztási függvény}]
-\end{tcolorbox}
+Az $X_i \in I$ halmazcsalád \textbf{Descartes - szorzata} a hozzá tartozó összes kiválasztási függvény halmaza.\\
+\mmedskip
 
-\begin{tcolorbox}[title={Def.: Halmazcsalád Descartes-szorzata}]
+Jel: $X_{i \in I} X_i$, vagy $x_iX_i$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+Ha ${\exists} i \in I : X_i = \emptyset \Rightarrow x_iX_i = \emptyset$\\
+$I = \emptyset \Rightarrow x_iX_i = \{ \emptyset \}$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Leképzás $j$-edik projekciója}]
+Ha $J \subseteq I$, akkor az $x \rightarrow x|_J$ leképzést $x_{i \in I}X_i$-nek $x_{j \in J}X_j$-be való projekciójának nevezzük.\\
+Ha $J = \{ j \}$, akkor ez az $x \rightarrow x_j$ leképzéssel azonosítható és $j$-edik projekciónak nevezzük.
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 
 \begin{tcolorbox}[title={Def.: $n$-változós művelet}]
+$f : A^n \rightarrow A$-n értelmezett \textbf{$n$-változós (n-ér) művelet.}\\
+Jel: $f(a_1, a_2, ..., a_n)$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Műveleti tábla, Operandus}]
+TODO táblázat
 \end{tcolorbox}
 \end{frame}
 
 % ---------------------- ALGEBRAI STRUKTÚRÁK, SZÁMHALMAZOK ---------------------
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
-\begin{beamercolorbox}[center]{title}
-    {\Huge Algebrai struktúrák, számhalmazok}
-\end{beamercolorbox}};
-\end{tikzpicture}
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\Huge Algebrai struktúrák, Számhalmazok}
+    \mmedskip
+\end{tcolorbox}
 \end{frame}
 
 \begin{frame}
@@ -748,12 +1028,10 @@ $$\sum_{k = 0}^n c_kz^k = 0$$
 \end{frame}
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
-\begin{beamercolorbox}[center]{title}
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
     {\Huge Számelmélet}
-\end{beamercolorbox}};
-\end{tikzpicture}
+    \mmedskip
+\end{tcolorbox}
 \end{frame}
 
 \begin{frame}
@@ -1058,12 +1336,10 @@ ${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
 \end{frame}
 
 \begin{frame}[plain]
-\begin{tikzpicture}[overlay, remember picture]
-\node[anchor=center] at (current page.center) {
-\begin{beamercolorbox}[center]{title}
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
     {\Huge Kombinatorika}
-\end{beamercolorbox}};
-\end{tikzpicture}
+    \mmedskip
+\end{tcolorbox}
 \end{frame}
 
 \begin{frame}
