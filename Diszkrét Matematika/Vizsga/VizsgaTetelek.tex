@@ -970,30 +970,68 @@ TODO
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Def.: Természetes számok}]
+    Halmaz, egy nullér és egy injektív unér művelettel.
+  \end{tcolorbox}
+
   \begin{tcolorbox}[title={Def.: Peano-axiómák}]
+      \begin{enumerate}
+        \item $q \in \mathbb{N}$.
+        \item Ha $n \in \mathbb{N}$, akkor $n^+ \in \mathbb{N}$.
+        \item Ha $n \in \mathbb{N}$, akkor $n^+ \neq 0$. (Nincs benne -1 $\rightarrow$ $-1 + 1 = 0$).
+        \item Ha $n, m \in \mathbb{N}$ és $n^+ = m^+$, akkor $n = m$
+        \item Ha $s \subset \mathbb{N}, 0 \in S$ és ha $n \in S$, akkor $n^+ \in S$, akkor $S = \mathbb{N}$. (Teljes indukvió elve).
+      \end{enumerate}
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Ész}]
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Természetes számok halmaza}]
+    Az a lényegében egyértelműen létező halmaz, amely eleget tesz a Peano-axiómáknak, a \textbf{természetes számok halmaza}.\\
+    Jel: $\mathbb{N}$
   \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.:}]
-TODO Műveletek
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Összeadás}]
+    ${\forall}m \in \mathbb{N} : {\exists} s_m : \mathbb{N} \rightarrow \mathbb{N}$ függvény, amelyre\\
+    \mmedskip
+
+    $S_m(0) = m \land {\forall}n \in \mathbb{N} : S_m(n^+) = (s_m(n))^+$,\\
+    $s_m(n)$ $m$ én $n$ szám \textbf{összege}.\\
+    Jelölés: $m + n$
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Ész}]
+    $m^+ = (S_m(0))^+ = s_m(0^+) = S_m(1) = m + 1$\\
+    $m = (S_m(0)) = m + 0$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Természetes számok}]
-A $(N, +, *)$ struktúrában mindkét művelet asszociatív, kommutatív, reguláris.\\
-Nullelem (additív egységelem): 0.\\
-Multiplikatív egységelem: 1.\\
-A szorzat mindkét oldalról disztributív az összeadásra.\\
-${\forall}m \in N : 0 * m = m * 0 = 0$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Szorzás}]
+    ${\forall}m \in \mathbb{N} : {\exists} p_m : \mathbb{N} \rightarrow \mathbb{N}$ függvény, amelyre\\
+    \mmedskip
+
+    $p_m(0) = 0 \land {\forall}n\in \mathbb{N} : p_m(n^+) = pm(n) + m$,\\
+    $p_m(n)$ $m$ én $n$ szám \textbf{szorzata}.\\
+    Jelölés: $m \cdot n$ vagy $mn$
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Ész}]
+    $1 \cdot 1 = p_1(1) = p_1(0^+) = p_1(0) + 1 = 0 + 1 = 1$
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={Tétel: Természetes számok}]
+    A $(N, +, *)$ struktúrában mindkét művelet asszociatív, kommutatív, reguláris.\\
+    Nullelem (additív egységelem): 0.\\
+    Multiplikatív egységelem: 1.\\
+    A szorzat mindkét oldalról disztributív az összeadásra.\\
+    ${\forall}m \in N : 0 * m = m * 0 = 0$.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
@@ -1653,11 +1691,46 @@ ${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
 
 \begin{frame}
   \begin{tcolorbox}[title={Tétel: Logikai szita formula}]
+    Legyenek $X_1, X_2, ..., X_k$ az $X$ véges halmaz részhalmazai, $F$ az $X$-en értelmezett, értékeket egy Abel-csoportban felvevő függvény.\\
+    Ha $1 \leq i_1 < i_2 < ... < i_r \leq k$ akkor legyen\\
+    $Y_{i_1, i_2, ..., i_r} = X_{i_1} \cap X_{i_2} \cap ... \cap X_{i_r}$.\\
+    \mmedskip
 
+    Legyen továbbá
+    \mmedskip
+
+    $S = \sum_{x \in X} f(x), f(x) = 1$\\
+    \mmedskip
+
+    $S_r = \sum_{1 \leq i_1 < i_2 < ... < i_r \leq k} (\sum_{x \in Y_{i_1, i_2, ..., i_r}} f(x))$ \\
+    \mmedskip
+
+    $S_0 = \sum_{x \in X \setminus \bigcup^k_{i = 1} X_i} f(x)$.\\
+    \mmedskip
+
+    Ekkor: $S_0 = S - S_1 + S_2 - S_3 + ... + (-1)^kS_k$
   \tcblower
     \textbf{Bizonyítás}\\
     \mmedskip
 
+    Tehát $S_0 =$ azon elemekre vett függvény összegek értéke, amelyek nem rendelkeznek egyetlen tulajdonsággal sem.\\
+    \mmedskip
+
+    $S_0 =(?) S - S_1 + s_2 - S_3 + ... + (-1)^k S_k$\\
+    \mmedskip
+
+    Tfh az $x$ elem pontosan $r$ tulajdonsággal rendelkezik.\\
+    \mmedskip
+
+    ${r \choose 0} - {r \choose 1} + {r \choose 2} - {r \choose 3} + ... + (-1) {r \choose r} = (1 - 1)^r = 0$\\
+    $f(x)$-et mindíg ennyiszer számoltuk be. (r alatt az x szer), minden esetben.\\
+    \mbigskip
+
+    $\Rightarrow$ a jobboldalon nem szémoltuk.\\
+    \mbigskip
+
+    Ha $x$ elem $0$ tulajdonsággal rendelkezik $\Rightarrow$ $x$ csak $S_0$-ban fordul elő. $\\Rightarrow$\\
+    $\Rightarrow$ $f(x)$-et a jobboldalon pont egyszer számoltuk be.
   \end{tcolorbox}
 \end{frame}
 
