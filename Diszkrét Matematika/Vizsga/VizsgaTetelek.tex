@@ -1,6 +1,8 @@
 % Compile twice!
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
+% !TEX root = ./Headers/PrezA4Page.tex
+
 % Uncomment these to get the presentation form
 %\documentclass{beamer}
 %\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
@@ -131,164 +133,161 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: A halmazelmélet "Definiálatlan alapfogalmai"}]
-"Halmaznak lenni", és "eleme".\\
-$A := \{$felsorolás$\}$\\
-$A := \{ x \in B | F(x) \}$\\
-$A := \{ x \in B : F(x) \}$\\
-{\footnotesize ($|$, $:$ $\rightarrow$ ahol.)}
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: A halmazelmélet "Definiálatlan alapfogalmai"}]
+    "Halmaznak lenni", és "eleme".\\
+    $A := \{$felsorolás$\}$\\
+    $A := \{ x \in B | F(x) \}$\\
+    $A := \{ x \in B : F(x) \}$\\
+    {\footnotesize ($|$, $:$ $\rightarrow$ ahol.)}
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.:  Meghatározottsági Axióma (Halmazok egyenlősége)}]
-Az $A$ és $B$ halmaz akkor és csak akkor egyenlő, ha ugyanazok az elemeik.\\
-{\footnotesize A sorrend nem számít!)}
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.:  Meghatározottsági Axióma (Halmazok egyenlősége)}]
+    Az $A$ és $B$ halmaz akkor és csak akkor egyenlő, ha ugyanazok az elemeik.\\
+    {\footnotesize A sorrend nem számít!)}
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Az üres halmz axiómája}]
-Van olyaqn halmaz, amelynek nicns eleme.\\
-Jel: $\emptyset$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Az üres halmz axiómája}]
+    Van olyaqn halmaz, amelynek nicns eleme.\\
+    Jel: $\emptyset$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Részhalmaz-axióma}]
-Minden $A$ halmazra és minden $F(x)$ formulára létezik egy B halmaz, amelyhel $A$-nak pontosa azok az $x$ elemei tartoznak, amelyekre $F(x)$ igaz.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Részhalmaz-axióma}]
+    Minden $A$ halmazra és minden $F(x)$ formulára létezik egy B halmaz, amelyhel $A$-nak pontosa azok az $x$ elemei tartoznak, amelyekre $F(x)$ igaz.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Russel-paradoxon}]
+    $U = \{x : x = x \}$ (Ez Minden dolog tételnek az oka / bizonyítása)
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Russel-paradoxon}]
-$U = \{x : x = x \}$ (Ez Minden dolog tételnek az oka / bizonyítása)
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Minden dolog halmaza}]
+    Nincs olyan halmaz, amelynek minden dolog eleme.
+  \tcblower
+    Bizonyítás:\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Tétel: Minden dolog halmaza}]
-Nincs olyan halmaz, amelynek minden dolog eleme.
-\tcblower
-Bizonyítás:\\
-\mmedskip
+    Legyen $A$ és $B$ tetszőleges halmaz, és $B = \{x \in A, x \neq x \}$
+    \msmallskip
 
-Legyen $A$ és $B$ tetszőleges halmaz, és $B = \{x \in A, x \neq x \}$
-\msmallskip
+    Ami azt jelenti, hogy tetszőleges halmazhoz konstruálunk olyan halmazt, amely nem lehet eleme.\\
+    (egy x se tartalmazza magát elemként (ne legyen tartalmazkodó (= rendes halmaz)).\\
+    \mmedskip
 
-Ami azt jelenti, hogy tetszőleges halmazhoz konstruálunk olyan halmazt, amely nem lehet eleme.\\
-(egy x se tartalmazza magát elemként (ne legyen tartalmazkodó (= rendes halmaz)).\\
-\mmedskip
+    TFH (Indirekt):\\
+    $B \in A$, ekkr:\\
 
-TFH (Indirekt):\\
-$B \in A$, ekkr:\\
+    \textbf{1.eset}\\
+    \msmallskip
 
-\textbf{1.eset}\\
-\msmallskip
+    Ha $B \notin B$ $\rightarrow$ Definíció szerint ekkor $B \in B$ $\Rightarrow$ Ellentmondás!\\
+    \msmallskip
 
-Ha $B \notin B$ $\rightarrow$ Definíció szerint ekkor $B \in B$ $\Rightarrow$ Ellentmondás!\\
-\msmallskip
+    Ha $B \in B$ $\rightarrow$ Definíció szerint ekkor $B \notin B$ $\Rightarrow$ Ellentmondás!\\
+    \msmallskip
 
-Ha $B \in B$ $\rightarrow$ Definíció szerint ekkor $B \notin B$ $\Rightarrow$ Ellentmondás!\\
-\msmallskip
-
-$\Rightarrow$ $B \notin A$.
-(Belátható, hogy $B \notin A$, mert $B$ nem lehet eleme $A$-nak.)
-\end{tcolorbox}
+    $\Rightarrow$ $B \notin A$.
+    (Belátható, hogy $B \notin A$, mert $B$ nem lehet eleme $A$-nak.)
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Definíció: Unió}]
-Ha A és B halmazok, akkor A és B unióján a következő halmazt értjük:\\
-$$A \cup B = \{x | x \in A \vee x \in B\}$$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Definíció: Unió}]
+    Ha A és B halmazok, akkor A és B unióján a következő halmazt értjük:\\
+    $$A \cup B = \{x | x \in A \vee x \in B\}$$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Az unió tulajdonságai}]
-Legyenek A, B, C tetszőleges halmazok. Ekkor:
+  \begin{tcolorbox}[title={Tétel: Az unió tulajdonságai}]
+    Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
-\begin{enumerate}
-\item $A \cup \emptyset = A$
-\item $A \cup B = B \cup A$ (Kommutativitás)
-\item $A \cup (B \cup C) = (A \cup B) \cup )$ (Asszociativitás)
-\item $A \cup A = A$ (Idempotencia)
-\item $A \subseteq B$ akkor, és csak akkor, ha $A \cup B = B$
-\end{enumerate}
-\end{tcolorbox}
+    \begin{enumerate}
+      \item $A \cup \emptyset = A$
+      \item $A \cup B = B \cup A$ (Kommutativitás)
+      \item $A \cup (B \cup C) = (A \cup B) \cup )$ (Asszociativitás)
+      \item $A \cup A = A$ (Idempotencia)
+      \item $A \subseteq B$ akkor, és csak akkor, ha $A \cup B = B$
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Definíció: Metszet}]
-Ha A és B halmazok, akkor A és B metszetén a következő halmazt értjük:\\
-$$A \cap B = \{x \in A \wedge x \in B\}$$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Definíció: Metszet}]
+    Ha A és B halmazok, akkor A és B metszetén a következő halmazt értjük:\\
+    $$A \cap B = \{x \in A \wedge x \in B\}$$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: A metszet tulajdonságai}]
-Legyenek A, B, C tetszőleges halmazok. Ekkor:
+  \begin{tcolorbox}[title={Tétel: A metszet tulajdonságai}]
+    Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
-\begin{enumerate}
-\item $A \cap \emptyset = \emptyset$
-\item $A \cap B = B \cap A$ (Kommutativitás)
-\item $A \cap (B \cap C) = (A \cap B) \cap C$ (Asszociativitás)
-\item $A \cap A = A$ (Idempotencia)
-\item $A \subseteq B$ akkor, és csak akkor, ha $A \cap B = A$
-\end{enumerate}
-\end{tcolorbox}
+    \begin{enumerate}
+      \item $A \cap \emptyset = \emptyset$
+      \item $A \cap B = B \cap A$ (Kommutativitás)
+      \item $A \cap (B \cap C) = (A \cap B) \cap C$ (Asszociativitás)
+      \item $A \cap A = A$ (Idempotencia)
+      \item $A \subseteq B$ akkor, és csak akkor, ha $A \cap B = A$
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Unió és metszet disztributivitása}]
-Legyenek A, B, C tetszőleges halmazok. Ekkor:
+  \begin{tcolorbox}[title={Tétel: Unió és metszet disztributivitása}]
+    Legyenek A, B, C tetszőleges halmazok. Ekkor:
 
-\begin{enumerate}
-\item $A \cap (B \cup C) = (A \cap B) \cup (B \cap C)$ (A metszet disztributivitása az unióra nézve)
-
-\item $A \cup (B \cap C) = (A \cup B) \cap (B \cup C)$ (Az unió disztributivitása a metszetre nézve)
-\end{enumerate}
-\end{tcolorbox}
+    \begin{enumerate}
+      \item $A \cap (B \cup C) = (A \cap B) \cup (B \cap C)$ (A metszet disztributivitása az unióra nézve)
+      \item $A \cup (B \cap C) = (A \cup B) \cap (B \cup C)$ (Az unió disztributivitása a metszetre nézve)
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Diszjunkt, Páronként diszjunkt halmazok.}]
-Két halmaz \textbf{diszjunkt}, ha metszetük üres.\\
-Egy halmazrendszer elemei \textbf{páronként diszjunktak}, ha bármely kettő metszete üres.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Diszjunkt, Páronként diszjunkt halmazok.}]
+    Két halmaz \textbf{diszjunkt}, ha metszetük üres.\\
+    Egy halmazrendszer elemei \textbf{páronként diszjunktak}, ha bármely kettő metszete üres.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Halmazok Különbsége}]
-Az $A, B$ halmaz \textbf{Különbségén} a következő halmazt értjük:\\
-$A \setminus B = \{ x \in A | x \notin B \}$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Halmazok Különbsége}]
+    Az $A, B$ halmaz \textbf{Különbségén} a következő halmazt értjük:\\
+    $A \setminus B = \{ x \in A | x \notin B \}$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Halmazok Szimmetrikus Differenciája}]
-Az $A, B$ halmazok \textbf{szimmetrikus differenciáján} a következő halmazt értjük:\\
-$A \triangle B = \{ x | x \in A \setminus B \lor x \in B \setminus A \} = \{ x \in A \cup B | x \notin A \cap B \}$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Halmazok Szimmetrikus Differenciája}]
+    Az $A, B$ halmazok \textbf{szimmetrikus differenciáján} a következő halmazt értjük:\\
+    $A \triangle B = \{ x | x \in A \setminus B \lor x \in B \setminus A \} = \{ x \in A \cup B | x \notin A \cap B \}$.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Definíció: Komplementer}]
-Ha X halmaz, A $\wedge$ X, akkor A halmaz X-re vonatkoztatott komplementere:\\
-$$A' = X \setminus A$$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Definíció: Komplementer}]
+    Ha X halmaz, A $\wedge$ X, akkor A halmaz X-re vonatkoztatott komplementere:\\
+    $$A' = X \setminus A$$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: A komplementer tulajdonságai}]
-Legyenek A, B $\wedge$ X halmazok. Ekkor:
+  \begin{tcolorbox}[title={Tétel: A komplementer tulajdonságai}]
+    Legyenek A, B $\wedge$ X halmazok. Ekkor:
 
-\begin{enumerate}
-\item $(A')' = A$
-\item $\emptyset' = X$
-\item $A \cap A' = \emptyset$
-\item $A \cup A' = X$
-\item $A \subseteq B$ akkor, és csak akkor, ha $B' \subseteq A'$
-\item $(A \cap B)' = A' \cup B'$
-\item $(A \cup B)' = A' \cap B'$
-\end{enumerate}
-\end{tcolorbox}
+    \begin{enumerate}
+      \item $(A')' = A$
+      \item $\emptyset' = X$
+      \item $A \cap A' = \emptyset$
+      \item $A \cup A' = X$
+      \item $A \subseteq B$ akkor, és csak akkor, ha $B' \subseteq A'$
+      \item $(A \cap B)' = A' \cup B'$
+      \item $(A \cup B)' = A' \cap B'$
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Definíció: Hatványhalmaz}]
+    Ha $A$ halmaz, akkor azt a halmazrendszert melynek elemei $A$ részhalmazai, az \textbf{$A$ hatványhalmazának} nevezzük.\\
+    Jele: $p(A)$, (A $p$ betű a "Potenz" szóra utal (gyakori a $2^A$ jelölés is.)
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Definíció: Hatványhalmaz}]
-Ha $A$ halmaz, akkor azt a halmazrendszert melynek elemei $A$ részhalmazai, az \textbf{$A$ hatványhalmazának} nevezzük.\\
-Jele: $p(A)$, (A $p$ betű a "Potenz" szóra utal (gyakori a $2^A$ jelölés is.)
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Axióma: Végtelenségi Axióma}]
-Van olyan $A$ halmaz, amelynej az $\emptyset$ eleme, és ha valamely $x$ halmaz eleme $A$-nak, akkor az $x \cup \{ x \}$ halmaz is eleme $A$-nak.\\
-$\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}, \{ \emptyset , \{ \emptyset \}, \{ \emptyset , \{ \emptyset \} \} \}, ...$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Axióma: Végtelenségi Axióma}]
+    Van olyan $A$ halmaz, amelynej az $\emptyset$ eleme, és ha valamely $x$ halmaz eleme $A$-nak, akkor az $x \cup \{ x \}$ halmaz is eleme $A$-nak.\\
+    $\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}, \{ \emptyset , \{ \emptyset \}, \{ \emptyset , \{ \emptyset \} \} \}, ...$
+  \end{tcolorbox}
 \end{frame}
 
 % --------------------  RELÁCIÓK --------------------
@@ -301,44 +300,44 @@ $\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}, \{ \emptyset , \{
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Rendezett pár}]
-$(a:0m a_2) := \{ \{ a_1 \}, \{ a_1, a_2 \} \}$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Rendezett pár}]
+    $(a:0m a_2) := \{ \{ a_1 \}, \{ a_1, a_2 \} \}$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Rendezett $n$-es}]
-$(a_1, ..., a_n) := ((a_1, ..., a_{n - 1}), a_n)$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Rendezett $n$-es}]
+    $(a_1, ..., a_n) := ((a_1, ..., a_{n - 1}), a_n)$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Descartes (Direkt) szorzat}]
-$A_1 x A_2 x ... x A_n := \{ (a_1, ..., a_n) | a_i \in A_i \}$,\\
-ahol $A_1, A_2, ..., A_n$ tetszőleges halmazok.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Descartes (Direkt) szorzat}]
+    $A_1 x A_2 x ... x A_n := \{ (a_1, ..., a_n) | a_i \in A_i \}$,\\
+    ahol $A_1, A_2, ..., A_n$ tetszőleges halmazok.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: $n$ változós reláció}]
-$R \subseteq A_1 x A_2 x ... A_n$\\
-\mmedskip
+  \begin{tcolorbox}[title={Def.: $n$ változós reláció}]
+    $R \subseteq A_1 x A_2 x ... A_n$\\
+    \mmedskip
 
-Jelölés binér relációknák: $(a, b) \in R$, vagy $a R b$.
-(1 változós = unér, 2 változós = binér)
-\end{tcolorbox}
+    Jelölés binér relációknák: $(a, b) \in R$, vagy $a R b$.
+    (1 változós = unér, 2 változós = binér)
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Homogén reláció}]
-${\forall}i, j \in \{ 1, 2, ..., n \} : A_i = A_j$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Homogén reláció}]
+    ${\forall}i, j \in \{ 1, 2, ..., n \} : A_i = A_j$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Identikus leképzés}]
-$\mathbb{I}_X := \{(x, x) \in X x X : x \in X \}$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Identikus leképzés}]
+    $\mathbb{I}_X := \{(x, x) \in X x X : x \in X \}$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Reláció értelmezési tartománya}]
-\textbf{$R \subseteq X x Y$ reláció értelmezési tartománya}\\
-$dmn(R) := \{ a \in X | {\exists}b \in Y : (a, b) \in R \}$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Reláció értelmezési tartománya}]
+    \textbf{$R \subseteq X x Y$ reláció értelmezési tartománya}\\
+    $dmn(R) := \{ a \in X | {\exists}b \in Y : (a, b) \in R \}$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: Reláció értékkészlete}]
-\textbf{$R \subseteq X x Y$ reléció értékkészlete}\\
-$rng(R) := \{ b \in Y | {\exists} a \in X : (a, b) \in R \}$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Reláció értékkészlete}]
+    \textbf{$R \subseteq X x Y$ reléció értékkészlete}\\
+    $rng(R) := \{ b \in Y | {\exists} a \in X : (a, b) \in R \}$.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
@@ -1089,7 +1088,7 @@ A természetes számok halmaza a $\leq$ relációval jólrendezett.\\
   Egy $(T; +, {\cdot}; {\leq})$ rendezett test \textbf{arkhimédeszi tulajdonságú}, ha\\
   ${\forall}x, y \in T : x > 0$ esetén ${\exists}n \in \mathbb{N} : nx \geq y$\\
   \msmallskip
-  
+
   Ekkor T \textbf{arkhimédeszien rendezett}.
 \end{tcolorbox}
 
@@ -1148,14 +1147,14 @@ Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
   \textbf{Alsó egész rész}: ${\lfloor}x{\rfloor} = \mathbb{Z}$ legnagyobb eleme, amely nem nagyobb, mint $x$\\
   \textbf{Felső egész rész}: ${\lceil}x{\rceil} = \mathbb{Z}$ legkisebb eleme, amely nem kisebb, mint $x$\\
   \mbigskip
-  
+
   \textbf{Észrevételek:}\\
   \mmedskip
-  
+
   $c = 0 \Rightarrow {\lceil}x{\rceil} = {\lfloor}x{\rfloor} = 0$,\\
   Ha $x > 0$: arkhi. tul. ból és $\mathbb{N}$ jólrendezettségéből $\Rightarrow$ ${\exists}n \in \mathbb{N}$, ahol $n$ a legkisebb olyan természetes szám, amely $n \geq x \Rightarrow n = {\lceil}x{\rceil}$, ekkor ha $x = n \in \mathbb{N}^+ \Rightarrow$ ${\lfloor}x{\rfloor} = n$, különben ${\lfloor}x{\rfloor} = n - 1$.\\
   \mmedskip
-  
+
   ha $x < 0 \Rightarrow {\lceil}x{\rceil} = -{\lfloor}-x{\rfloor} = n$, különben ${\lfloor}x{\rfloor} = -{\lceil}-x{\rceil}$.
 \end{tcolorbox}
 \end{frame}
@@ -1165,17 +1164,17 @@ Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
 \begin{tcolorbox}[title={Def.: Bővített valós számok}]
   $\overline{\mathbb{R}} = \mathbb{R} \cup \{ -{\infty}, {\infty}\}$\\
   \mbigskip
-  
+
   Rendezés kiterjesztése:\\
   $-{\infty} < x < +{\infty}$ teljesüljön minden $x$ valósra.\\
   Bármely részhalmaznak van szuprémuma, és infinuma:\\
   $sup{\emptyset} = -{\infty}, inf{\emptyset} = +{\infty}$\\
   \mmedskip
-  
+
   Összeadás $x$ valósra (nem mindenütt értelmezett):\\
   $x + (-{\infty}) = (-{\infty}) + x = -{\infty}$, ha $x < +{\infty}$, és $x + (+{\infty}) = (+{\infty}) + x = +{\infty}$, ha $x < +{\infty}$\\
   \mmedskip
-  
+
   Ellentett képzés: $-(+{\infty}) = -{\infty}$, és $-(-{\infty}) = +{\infty}$.
 \end{tcolorbox}
 \end{frame}
@@ -1193,7 +1192,7 @@ Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
   $\mathbb{C} = \mathbb{R} x \mathbb{R}$\\
   halmazát a következő műveletekkel:\\
   \mmedskip
-  
+
   $a, b, c, d \in \mathbb{R}$:\\
   $(a, b) + (c, d) = (a + c, b + d)$\\
   $(a, b) \cdot (c, d) = (ac - bd, ad + bc)$
@@ -1202,14 +1201,14 @@ Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
 \begin{tcolorbox}[title={Ész}]
   $(\mathbb{C}, +, {\cdot})$ test.\\
   \mmedskip
-  
+
   $(\mathbb{C}, +)$ Abel-csoport:\\
   \begin{itemize}
     \item Egységelem: $(0, 0)$
     \item (a, b) additív inverze: $-(a, b) = (-a, -b)$
   \end{itemize}
   \mmedskip
-  
+
   $(\mathbb{C}, {\cdot})$: Abel-csoport:\\
   \begin{itemize}
     \item Egységelem: $(1, 0)$
@@ -1324,8 +1323,29 @@ $$\sum_{k = 0}^n c_kz^k = 0$$
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Oszthatóság egységelemes integritási tarományban (Emlékeztető)}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Oszthatóság egységelemes integritási tarományban (Emlékeztető)}]
+    Legyen $R$ integrritási tartomány és $a, b \in R$, $a$ \textbf{osztója} $b$-nek, ha létezik $c \in R$, amelyre $b = ac$, jelben $a | b$.\\
+    \mmedskip
+
+    $x \in R$ \textbf{egydég}, ha $x | r$ teljesül ${\forall}r \in R$-re. Az $R$-beli egységek halmaza $U(R)$.\\
+    \mmedskip
+
+    Azt mondjuk, hogy $a$ és $b$ \textbf{asszociáltak}, ha létezik olyan $c$ egység, amelyikkel $a = bc$. Ezt a tényt $a \sim b$-vel jelöljük.\\
+    \mmedskip
+
+    $a \in R^*{\setminus}U(R)$ \textbf{felbonthatatlan}, ha $a = b \cdot c, (b, c, \in R)$ esetén $b \in U(R)$ vagy $c \in U(R)$.\\
+    \mmedskip
+
+    $a \in R^*{\setminus}U(R)$ \textbf{prím}, ha $a | b \cdot c, (b, c, \in R) \Rightarrow a | b$ vagy $a | c$.\\
+    \mmedskip
+
+    Ha $a \in R^*{\setminus}U(R)$ : $a$ \textbf{triviális osztói} az egységek és önmaga egységszeresei, $a$ \textbf{összetett}, ha nem csak triviális osztója van.\\
+    \mmedskip
+
+    $R^*$: R additív egységeleme\\
+    $U(R)$: R egysége\\
+    $R^*{\setminus}U(R)$: R, egységek, és additív ergységelem nélkül.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
@@ -1357,278 +1377,448 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Legnagyobb közös osztó}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Legnagyobb közös osztó}]
+      Legyen $a_1, ..., a_n \in R$ (EIT), $L \subseteq R $ és ${\forall}d \in L$-re:\\
+      \mmedskip
+
+      $d|a_i$ $(i = 1, ..., n)$,\\
+      \mmedskip
+
+      $d' | a_i$ $(i = 1, ..., n)$ $\Rightarrow$ $d'|d$\\
+      \mmedskip
+
+      Ekkor $L$ elemei az $a_1, ..., a_n$ elemek \textbf{legnagyobb közös osztói}.\\
+      \mmedskip
+
+      Jelben: $lnko(a_1, ..., a_n) = (a_1, ..., a_n) = d$\\
+      \mmedskip
+
+      d csak az asszociáltság erejéig egyértemű $\Rightarrow$ kijelölünk egyet (megegyezés szerint alapból a pozitívat).
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Def.: Relatív prím, Páronként relatív prím}]
+    $a_1, ..., a_n$ \textbf{relatív prímek}, ha $d$ egység.\\
+    \mmedskip
+
+    Erősebb: \textbf{Páronként relatív prímek}
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Def.: Legkisebb közös többszörös}]
+      Legyen $a_1, ..., a_n \in R$ (EIT), $T \subseteq R $ és ${\forall}t \in T$-re:\\
+      \mmedskip
+
+      $a_i|t$ $(i = 1, ..., n)$,\\
+      \mmedskip
+
+      $a_i|t'$ $(i = 1, ..., n)$ $\Rightarrow$ $t'|t$\\
+      \mmedskip
+
+      Ekkor $T$ elemei az $a_1, ..., a_n$ elemek \textbf{legkisebb közös többszörösei}.\\
+      \mmedskip
+
+      Jelben: $lkkt(a_1, ..., a_n) = [a_1, ..., a_n] = t$\\
+      \mmedskip
+
+      $t$ csak az asszociáltság erejéig egyértemű! $\Rightarrow$ Kijelölünk egyet!
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Maradékos osztás $\mathbb{Z}$-ben}]
-${\exists}a, b({\neq}0) \in \mathbb{Z}$ számhoz egyértelműen létezik olyan $q, r \in \mathbb{Z}$, hogy\\
-$a = qb + r \land 0 \leq r < |b|$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Maradékos osztás $\mathbb{Z}$-ben}]
+    ${\exists}a, b({\neq}0) \in \mathbb{Z}$ számhoz egyértelműen létezik olyan $q, r \in \mathbb{Z}$, hogy\\
+    $a = qb + r \land 0 \leq r < |b|$.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Prím és irreducibilis elem $\mathbb{Z}$-ben}]
-Az egész számok körében $p$ prím $\iff$ $p$ felbonthatatlan.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Prím és irreducibilis elem $\mathbb{Z}$-ben}]
+    Az egész számok körében $p$ prím $\iff$ $p$ felbonthatatlan.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Bizonyítás}]
-Már láttuk, hogy prím felbonthatatlan!\\
-Tfh p felbonthatatlan\\
-Legyen $p|bc$, ekkor vagy $p | b$-nek, ekkor ksz vagyunk.
-Vagy $p \nmid b$ ekkor $(p,b) = 1$.\\
-$c = pcx +bcx \implies 0 mod p \implies p | c$.\\
-(Észrevétel: $(a, b) = 1 \land a | bc \implies a | c$
-
-\end{tcolorbox}
-
+  \begin{tcolorbox}[title={Bizonyítás}]
+    Már láttuk, hogy prím felbonthatatlan!\\
+    Tfh p felbonthatatlan\\
+    Legyen $p|bc$, ekkor vagy $p | b$-nek, ekkor ksz vagyunk.
+    Vagy $p \nmid b$ ekkor $(p,b) = 1$.\\
+    $c = pcx +bcx \implies 0 mod p \implies p | c$.\\
+    (Észrevétel: $(a, b) = 1 \land a | bc \implies a | c$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Tétel: A számelmélet alaptétele}]
+    Minden $m$ nemnulla, nemegység, egész szám sorrendre és asszociáltásgra való tekintet nélkül egyértelműen bontható fel felbonthatatlanok szorzatára.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: A számelmélet alaptétele}]
-Minden $m$ nemnulla, nemegység, egész szám sorrendre és asszociáltásgra való tekintet nélkül egyértelműen bontható fel felbonthatatlanok szorzatára.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás (Pozitívakra)}]
+    \textbf{(egzisztencia)}\\
+    Tfh $n > 1$\\
+    Teljes indukció: $n = 2$ kész, tfk $n - 1$-ig kész.\\
+    Ha $n$ felbonthatatlan $\rightarrow$ kész.\\
+    Ha $n$ nem felbonthatatlan $\rightarrow$ $n = ab \land a, b$ (a, b nem egység!), $a, b < n$ $\implies$ igaz rájuk az ind. feltétel.\\
+    $n$ felbontása $=$ $a$ felbontása szor $b$ felbontása.\\
+    \bigskip
 
-\begin{tcolorbox}[title={Bizonyítás (Pozitívakra)}]
-\textbf{(egzisztencia)}\\
-Tfh $n > 1$\\
-Teljes indukció: $n = 2$ kész, tfk $n - 1$-ig kész.\\
-Ha $n$ felbonthatatlan $\rightarrow$ kész.\\
-Ha $n$ nem felbonthatatlan $\rightarrow$ $n = ab \land a, b$ (a, b nem egység!), $a, b < n$ $\implies$ igaz rájuk az ind. feltétel.\\
-$n$ felbontása $=$ $a$ felbontása szor $b$ felbontása.\\
-\bigskip
-\textbf{(unicitás) (Indirekt)}\\
-Tfh $n$ a legkisebb olyan szám, amely felbontása nem egyértelmű.\\
-$n = p_1 ... p_k = q_1 ... q_r$ $\implies$\\
-$p_j|n \implies p_1|q_1 ... q_r$\\
-$p_1|q_1$, $p_1|q_2 ... q_r$\\
-           $p_1|q_2   p_1|q_3 ... q_r$\\
-                      $p_1|q_i  \implies p_1 = q_i \implies$\\
-$\implies$ $n_1 = \frac{n}{p_1} = p_2 ... p_k = q_1 ... q_{i-1}q_{i+1} ... q_r$\\
-$n_1 < n$ és van két lényegesen különböző felbontása!
-\end{tcolorbox}
-
+    \textbf{(unicitás) (Indirekt)}\\
+    Tfh $n$ a legkisebb olyan szám, amely felbontása nem egyértelmű.\\
+    $n = p_1 ... p_k = q_1 ... q_r$ $\implies$\\
+    $p_j|n \implies p_1|q_1 ... q_r$\\
+    $p_1|q_1$, $p_1|q_2 ... q_r$\\
+               $p_1|q_2   p_1|q_3 ... q_r$\\
+                          $p_1|q_i  \implies p_1 = q_i \implies$\\
+    $\implies$ $n_1 = \frac{n}{p_1} = p_2 ... p_k = q_1 ... q_{i-1}q_{i+1} ... q_r$\\
+    $n_1 < n$ és van két lényegesen különböző felbontása!
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Tétel: Eukleidész tétele}]
+    Végetlen sok prímszám van.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Tétel: Eukleidész tétele}]
-Végetlen sok prímszám van.
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
-Tfh véges sok van:\\
-$p_1, p_2, ... ,p_k$.\\
-Legyen $n = p_1p_2...p_k$.\\
-Számelmélet alaptételéből következik hogy létezik $p_j : p_j | n + 1$\\
-$p_j : p_j | n + 1 \implies p_j | 1$ Ellentmondás!
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
+    Tfh véges sok van:\\
+    $p_1, p_2, ... ,p_k$.\\
+    Legyen $n = p_1p_2...p_k$.\\
+    Számelmélet alaptételéből következik hogy létezik $p_j : p_j | n + 1$\\
+    $p_j : p_j | n + 1 \implies p_j | 1$ Ellentmondás!
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Kanonikus alak, Módosított kanonikus alak}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Kanonikus alak, Módosított kanonikus alak}]
+    Egy $n > 1$ egész\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Def.: Erathosztenész SZitája}]
-\end{tcolorbox}
+    $n = p_1^{{\alpha_1}}p_2^{{\alpha_2}}...p_k^{{\alpha_k}}$\\
+    \mmedskip
+
+    alakú felírását, ahol $p_i$-k különböző (pozitív) prímek és ${\alpha}_i > 0$, $n$ \textbf{kanonikus alakjának} nevezzük.\\
+    \mmedskip
+
+    \textbf{Módosított kanonikus alak}, ha ${\alpha}_i = 0$ is megengedett.
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Ész}]
+    $n$ osztói: $n = p_1^{{\alpha_1}}p_2^{{\alpha_2}}...p_k^{{\alpha_k}}$\\
+    \mmedskip
+
+    módosított kanonikus alakú szám osztói: $d = p_1^{{\beta}_1}p_2^{{\beta}_2}...p_k^{{\beta}_k}$,\\
+    ahol ${\beta}_i \in \mathbb{N}, 0 \leq {\beta}_i \leq {\alpha}_i, i = 1, 2, ..., k$.\\
+    \mmedskip
+
+    Lnko, Lkkt:\\
+    \mmedskip
+
+    Legyen $a$ és $b$ módosított kanonikus alakja:\\
+    $a = p_1^{{\alpha}_1}p_2^{{\alpha}_2}...p_r^{{\alpha}_r}$, $b = p_1^{{\beta}_1}p_2^{{\beta}_2}...p_r^{{\beta}_r}$\\
+    \mmedskip
+
+    ekkor:\\
+    $(a, b) = p_1^{min({\alpha}_1, {\beta}_1)}...p_r^{min({\alpha}_r, {\beta}_r)}$\\
+    $[a, b] = p_1^{max({\alpha}_1, {\beta}_1)}...p_r^{max({\alpha}_r, {\beta}_r)}$\\
+    \mbigskip
+
+    Következmények:\\
+    Legyen $a, b, c \in \mathbb{Z}$, ekkor:\\
+    \begin{enumerate}
+      \item Ha $a$ is $b$ is relatív prím $c$-hez akkor $ab$ is.
+      \item $a, b$-nek mindíg létezik legkisebb közös többszöröse és $[a, b](a, b) = |ab|$
+      \item $[ac, bc] = c[a, b]$
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Def.: Erathosztenész Szitája}]
+    Prímkereső algoritmus.\\
+    \mbigskip
 
-\begin{tcolorbox}[title={Def.: Lineáris Kongruencia}]
-$a \equiv b \pmod{m}$, ha $m | a - b$.
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Tétel: Kongruencia tulajdonságai}]
-\begin{enumerate}
-\item Ekvivalencia reláció
-\item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$a + c \equiv b + d \pmod{m}$}
-\item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$ac \equiv bd \pmod{m}$}
-\item $a \equiv b \pmod{m} \land f(x) \in z[x] \implies$ \textbf{$f(a) \equiv f(b) \pmod{m}$}
-\item Ha $(c, m) = d$, $ac \equiv bc \pmod{m} \iff a \equiv b \pmod{\frac{m}{d}}$
-\end{enumerate}
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Ész}]
-\end{tcolorbox}
+    1 $\rightarrow$ Egység, nem prím.\\
+    2 $\rightarrow$ Prím $\Rightarrow$ a többszörösei nem prímek.\\
+    3 $\rightarrow$ Prím $\Rightarrow$ a többszörösei nem prímek.\\
+    4 $\rightarrow$ 2 többszöröse, kiesett.\\
+    ...
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: Az Euler-féle $\phi$ függvény}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Lineáris Kongruencia}]
+    $a \equiv b \pmod{m}$, ha $m | a - b$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: A $\tau$ függvény}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Kongruencia tulajdonságai}]
+    \begin{enumerate}
+      \item Ekvivalencia reláció
+      \item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$a + c \equiv b + d \pmod{m}$}
+      \item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$ac \equiv bd \pmod{m}$}
+      \item $a \equiv b \pmod{m} \land f(x) \in z[x] \implies$ \textbf{$f(a) \equiv f(b) \pmod{m}$}
+      \item Ha $(c, m) = d$, $ac \equiv bc \pmod{m} \iff a \equiv b \pmod{\frac{m}{d}}$
+    \end{enumerate}
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Ész}]
+    $a \equiv b \pmod{n} \Rightarrow (a, m) = (b, m)$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Def.: TMR, RMR}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: TMR, RMR}]
+    $\overline{a}$ az $a$ elem által reprezentált \textbf{$m$ szerinti maradékosztály} az $a$-val kongruens elemek halmaza $\pmod{m}$.\\
+    {\footnotesize (Van nullosztó), (Ekvivalencia reláció osztályok)}
+    \mmedskip
+
+    \textbf{Teljes maradékrendszer (TMR) modulo $m$} tartalmaz az összes $m$ szerinti maradékosztályból pontosan 1-et.\\
+    \mmedskip
+
+    $\overline{a}$ az $a$ elem által reprezentált \textbf{$m$ szerinti redukált maradékosztály}, ha $(a, m) = 1$.\\
+    {\footnotesize (Biztosan test, mivel nincs nullosztó.}\\
+    \mmedskip
+
+    \textbf{Redukált maradékrendszer (RMR) modulo $m$} tartalmaz az összes $m$ szerinti redukált maradékosztályból pontosan 1-et.\\
+  \tcblower
+    1. Biztosan TMR-t alkotnak a következő számhalmazok mod $m$:\\
+    \begin{enumerate}
+      \item $0, 1, ..., |m| - 1$
+      \item Ha $m$ páratlan: $0, +-1, ..., +-\frac{(|m| - 1)}{2}$
+      \item Ha $m$ páros: $ , +-1, ..., +-(\frac{|m|}{2} - 1)$ (Vagy $\frac{|m|}{2}$, vagy -$\frac{|m|}{2<}$
+    \end{enumerate}
+    \mmedskip
+
+    2. Legyen $m \in \mathbb{N}$, és vagyünk egy TMR-t mod $m$.\\
+    Definiáljunk műveleteket a következőképp:\\
+    $\overline{a} + \overline{b} = \overline{a + b}$\\
+    $\overline{a} \cdot \overline{b} = \overline{a \cdot b}$\\
+    Jelöljük $Z_m$-mel ezt a struktúrát.\\
+    \mmedskip
+
+    A $(Z, +, {\cdot})$ struktúra kommutatív, egységelemes gyűrű.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Omnibusz tétel}]
-Legyen: $m > 1$ egész, $\{a_1, ..., a_m\}$ TMR modulo $m$, $\{b_1, ..., b_{{\phi}(m)}\}$ RMR modulo $m$, $c, d \in \mathbb{Z}$, és $(c,m) = 1$.\\
-\smallskip
-Ekkor:\\
-\smallskip
-$\{ ca_1 + d, ..., ca_m + d \}$ TMR modulo $m$\\
-$\{ cb_1, ..., cb{{\phi}(m)}\}$ RMR modulo $m$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: Az Euler-féle $\phi$ függvény}]
+    Legyen $n \in \mathbb{N}^+$, ekkor ${\phi}(n)$ jelenti az $n$-nél nem nagyobb, hozzá relatív prímek számát, azaz:\\
+    ${\phi}(n) = \sum_{q \leq k \leq n\\ (k, n) = 1} 1$\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
-Tfh van két nem inkongruens elem\\
-$ca_i + d = ca_i + d$\\
-${\cancel{c}}a_i + {\cancel{d}} = {\cancel{c}}a_i + {\cancel{d}}$ $(c, m) = 1$, és pontosan $m$ db elem!\\
-$(c, m) = 1$ és $(b_j,m) = 1$ $\implies$ $(cb_j, m) = 1$
-\end{tcolorbox}
+    Másképp: ${\phi}(n)$ jelenti a modulo $n$ relatív maradékosztályok számát.
+  \tcblower
+    \textbf{Észrevétel}: Ha $n$ prím, akkor ${\phi}(n) = n - 1$
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Def.: A $\tau$ függvény}]
+    Legyen $n \in \mathbb{N}^+$, ekkor ${\phi}(n)$ jelenti az $a$ pozitív osztóinka számát.
+  \tcblower
+    \textbf{Észrevétel}:\\
+    \msmallskip
+
+
+    $n = p_1^{{\alpha}_1}p_2^{{\alpha}_2}...p_r^{{\alpha}_r}$ módosított kanonikus alak.\\
+    \msmallskip
+    $n$ osztói: $d = p_1^{{\beta}_1}p_2^{{\beta}_2}...p_r^{{\beta}_r}$, ahol ${\beta}_i \in \mathbb{N}, 0 \leq {\beta}_i \leq {\alpha}_i, i = 1, 2, ..., k$ $\Rightarrow$\\
+    $\Rightarrow$ ${\tau}(n) = ({\alpha}_1 + 1)...({\alpha}_k + 1)$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Euler-Fermat tétel}]
-Legyen $m > 1$ egész és $a$ relatív prím $m$-hez. Ekkor $a^{{\phi}(m)} \equiv 1 \pmod{m}$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: Omnibusz tétel}]
+    Legyen: $m > 1$ egész, $\{a_1, ..., a_m\}$ TMR modulo $m$, $\{b_1, ..., b_{{\phi}(m)}\}$ RMR modulo $m$, $c, d \in \mathbb{Z}$, és $(c,m) = 1$.\\
+    \smallskip
+    Ekkor:\\
+    \smallskip
+    $\{ ca_1 + d, ..., ca_m + d \}$ TMR modulo $m$\\
+    $\{ cb_1, ..., cb{{\phi}(m)}\}$ RMR modulo $m$
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Bizonyítás}]
-Legyen $\{ r_1, ..., r_{{\phi}(m)}\}$ RMR modulo $m$, $(a, m) = 1$.\\
-Az omnibusz tétel miatt, ekkor $\{ ar_1, ..., ar_{{\phi}(m)}\}$ is RMR modulo $m$.\\
-Megfelelő párosítás $\implies$ $r_i \equiv ar_j \pmod{m}$.\\
-Összehozva: $(r_i, m) = 1$\\
-\smallskip
-$$a^{{\phi}(m)} \prod^{{\phi}(m)}_{i=1} r_i \equiv \prod^{{\phi}(m)}_{i=1} r_i \pmod{m}$$
-
-\end{tcolorbox}
-
+  \begin{tcolorbox}[title={Bizonyítás (Indirekt)}]
+    Tfh van két nem inkongruens elem\\
+    $ca_i + d = ca_i + d$\\
+    ${\cancel{c}}a_i + {\cancel{d}} = {\cancel{c}}a_i + {\cancel{d}}$ $(c, m) = 1$, és pontosan $m$ db elem!\\
+    $(c, m) = 1$ és $(b_j,m) = 1$ $\implies$ $(cb_j, m) = 1$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: (Kis) Fermat tétel}]
-Legyen $p$ prím és $a \in \mathbb{Z}$. Ekkor\\
-(első alak) ha $p \nmid a$, akkor $a^{p-1} \equiv 1 \pmod{p}$.\\
-(második alak) ha $a$ tetszőleges, akkor $a^p \equiv a \pmod{p}$.
+  \begin{tcolorbox}[title={Tétel: Euler-Fermat tétel}]
+    Legyen $m > 1$ egész és $a$ relatív prím $m$-hez. Ekkor $a^{{\phi}(m)} \equiv 1 \pmod{m}$
+  \end{tcolorbox}
 
-\end{tcolorbox}
-
-\begin{tcolorbox}[title={Bizonyítás}]
-Első alak: ${\phi}(p) \equiv p - 1$ $\rightarrow$ előző tétel miatt kész.\\
-\bigskip
-Második alak:\\
-Ha $p|a$ $\rightarrow$ $0 \equiv 0$ $\rightarrow$ kész.\\
-Ha $p{\nmid}a$ $\rightarrow$ ekkor ez az első alak $\rightarrow$ kész.
-
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás}]
+    Legyen $\{ r_1, ..., r_{{\phi}(m)}\}$ RMR modulo $m$, $(a, m) = 1$.\\
+    Az omnibusz tétel miatt, ekkor $\{ ar_1, ..., ar_{{\phi}(m)}\}$ is RMR modulo $m$.\\
+    Megfelelő párosítás $\implies$ $r_i \equiv ar_j \pmod{m}$.\\
+    Összehozva: $(r_i, m) = 1$\\
+    \smallskip
+    $$a^{{\phi}(m)} \prod^{{\phi}(m)}_{i=1} r_i \equiv \prod^{{\phi}(m)}_{i=1} r_i \pmod{m}$$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: A diofantikus egyenlet megoldása}]
-Rögzített $a, b, c$ egész számok esetén az \textbf{$ax + by = c$} diofantikus egyenletnek akkor, és csak akkor van megoldása, ha $(a, b)|c$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: (Kis) Fermat tétel}]
+    Legyen $p$ prím és $a \in \mathbb{Z}$. Ekkor\\
+    (első alak) ha $p \nmid a$, akkor $a^{p-1} \equiv 1 \pmod{p}$.\\
+    (második alak) ha $a$ tetszőleges, akkor $a^p \equiv a \pmod{p}$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Bizonyítás}]
-Tfh $ax + by = c$ egyenletnek van megoldása.\\
-\textbf{1. Rész ($\implies$)}\\
-\smallskip
-Tfh $x_0, y_0$ megoldás. $\implies$ $(a, b)|a \land (a, b)|b$ $\implies$ lin. kombinációs tul. $\implies$\\
-$\implies$ $(a, b)|ax_0 + by_0 = c$ (Igaz, mert az a, b osztója az $ax_0 + by_0$-nak.)\\
-\bigskip
-\textbf{2.Rész ($\Longleftarrow$)}\\
-\smallskip
-Tfh (a, b)|c. Ekkor:\\
-$c = (a, b)q$\\
-$c = (au + bv)q$\\
-$c = a(uq) + b(vq)$\\
-$c = a(uq) + b(vq)$ $\implies$ egy megoldás: $x = uq, y = vq$.\\
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás}]
+    Első alak: ${\phi}(p) \equiv p - 1$ $\rightarrow$ előző tétel miatt kész.\\
+    \bigskip
+
+    Második alak:\\
+    Ha $p|a$ $\rightarrow$ $0 \equiv 0$ $\rightarrow$ kész.\\
+    Ha $p{\nmid}a$ $\rightarrow$ ekkor ez az első alak $\rightarrow$ kész.
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: Kínai maradéktétel}]
-Legyen $n \in \mathbb{N}^+, m_1, m_2, ..., m_n \in \mathbb{N}^+, a_i, b_i \in \mathbb{Z} (1 <leq i \leq n)$, ahol
-\begin{enumerate}
-\item $m_i, m_j$ páronként relatív prímek.
-\item $(m_i, a_i) = 1$, minden $1 \leq i \leq n$ esetén.
-\end{enumerate}
-Ekkor az\\
-\bigskip
-	$a_1x \equiv b_1 \pmod{m_1}$\\
-	$a_2x \equiv b_2 \pmod{m_2}$\\
-	...\\
-	$a_nx \equiv b_n \pmod{m_n}$\\
-\bigskip
-Kongruenciarendszer megoldható és bármely két megoldása kongruens modulo $m_1m_2...m_n$.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: A diofantikus egyenlet megoldása}]
+    Rögzített $a, b, c$ egész számok esetén az \textbf{$ax + by = c$} diofantikus egyenletnek akkor, és csak akkor van megoldása, ha $(a, b)|c$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: A kínai maradéktétel megoldása}]
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás}]
+    Tfh $ax + by = c$ egyenletnek van megoldása.\\
+    \textbf{1. Rész ($\implies$)}\\
+    \smallskip
+
+    Tfh $x_0, y_0$ megoldás. $\implies$ $(a, b)|a \land (a, b)|b$ $\implies$ lin. kombinációs tul. $\implies$\\
+    $\implies$ $(a, b)|ax_0 + by_0 = c$ (Igaz, mert az a, b osztója az $ax_0 + by_0$-nak.)\\
+    \bigskip
+
+    \textbf{2.Rész ($\Longleftarrow$)}\\
+    \smallskip
+
+    Tfh (a, b)|c. Ekkor:\\
+    $c = (a, b)q$\\
+    $c = (au + bv)q$\\
+    $c = a(uq) + b(vq)$\\
+    $c = a(uq) + b(vq)$ $\implies$ egy megoldás: $x = uq, y = vq$.\\
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
+  \begin{tcolorbox}[title={Tétel: Kínai maradéktétel}]
+    Legyen $n \in \mathbb{N}^+, m_1, m_2, ..., m_n \in \mathbb{N}^+, a_i, b_i \in \mathbb{Z} (1 <leq i \leq n)$, ahol
+    \begin{enumerate}
+      \item $m_i, m_j$ páronként relatív prímek.
+      \item $(m_i, a_i) = 1$, minden $1 \leq i \leq n$ esetén.
+    \end{enumerate}
+    Ekkor az\\
+    \bigskip
+    	$a_1x \equiv b_1 \pmod{m_1}$\\
+    	$a_2x \equiv b_2 \pmod{m_2}$\\
+    	...\\
+    	$a_nx \equiv b_n \pmod{m_n}$\\
+    \bigskip
+    Kongruenciarendszer megoldható és bármely két megoldása kongruens modulo $m_1m_2...m_n$.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Def.: A számelméleti függvények}]
-\end{tcolorbox}
-\begin{tcolorbox}[title={Tétel: Számelméleti függvények}]
-Legyen $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$. Ekkor:\\
-\begin{enumerate}
-\item Ha $f$ additív számelméleti függvény, akkor $$f(n) = f(p_1^{{\alpha}_1}) + ... + f(p_k^{{\alpha}_k})$$
-\item Ha $f$ multiplikatív számelméleti függvény, akkor $$f(n) = f(p_1^{{\alpha}_1})...f(p_k^{{\alpha}_k})$$
-\item Ha $f$ teljesen additív számelméleti függvény, akkor $$f(n) = {\alpha}_1f(p_1) + ... + {\alpha}_kf(p_k)$$
-\item Ha $f$ teljesen multiplikatív számelméleti függvény, akkor $$f(n) = f(p_1)^{{\alpha}_1}...f(p_k)^{{\alpha}_k}$$
-\end{enumerate}
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: A kínai maradéktétel megoldása}]
+    \begin{enumerate}
+      \item Megoldjuk a kongruenciákat külön-külön.\\
+      Mivel minden  $1 \leq i \leq n$ esetén $(m_i, a_i) = 1$, mindenütt pontosan egy megoldást kapunk.\\
+      Ezeket jelöljük: $c_1, c_2, ..., c_n$
+      \item Legyen $M = m_1m_2...m_n$ és\\
+      $M_j = \frac{m}{m_j} = m_1 \cdot m_2 \cdot ... \cdot m_{j - 1} \cdot m_{j + 1} \cdot ... \cdot m_n$ $(1 \leq j \leq n)$
+      \item Oldjuk meg a következő lineáris kongruenciákat:\\
+      $M_1y \equiv \pmod{m_1}$\\
+      $M_2y \equiv \pmod{m_2}$\\
+      ...\\
+      $M_ny \equiv \pmod{m_n}$\\
+      Mivel minden $1 \leq j \leq n$ esetén $(M_j, m_j) = 1$, ezért mindenütt pontosan 1 megoldást kapunk.\\
+      Ezeket jelöljük: $y_1, y_2, ... y_n$
+      \item $x_0 = \sum_{i = 1}^n M_iy_ic_i$
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: $\phi$ multiplikativitása}]
-$\phi$ multiplikatív.
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Def.: A számelméleti függvények}]
+    \textbf{Számelméleti függvénynek} nevezzük az:\\
+    $f : \mathbb{N}^+ \rightarrow \mathbb{C}$\\
+    alakú függvényeket.\\
+    \mmedskip
 
-\begin{tcolorbox}[title={Bizonyítás}]
-\smallskip
-\begin{tabular}{c c c c}
-1 & 2 & ... & a \\
-a + 1 & a + 2 & ... & 2a\\
- &  & ... &  \\
-(b - 1)a + 1 & (b - 1)a + 2 & ... & ba
-\end{tabular}
-\smallskip
-Számoljuk meg, hogy a táblázatban hány relatív prím van $ab$-hez: ennyi lesz ${\phi}(ab)$ értéke.\\
-(Ha $a$ is $b$ is relatív prím $c$-hez, akkor $ab$ is. $\implies$ azokat kell számolni, amelyek $a$-hoz és $b$-hez is rel. prímek)\\
-\smallskip
-AZ Omnibusz tételből következik hogy minden oszlop TMR mod $b$, ha $(a, b) = 1$ $\implies$\\
-$\implies$ minden oszlopban ${\phi}(b)$ rel. prím $b$-hez.\\
-\smallskip
-| Minden oszlom kongruens elemeket tart mod $a$.\\
-| Minden sor egy TMR mod $a$ $\implies$ minden sorban ${\phi}(a)$ db elem relatív prím $a$-hoz.\\
-$\implies$ ${\phi}(a)$ db oszlopnak rel prímek az elemei $a$-hoz. $\implies$ összesen ${\phi}(a){\phi}(b)$ rel. prím van $ab$-hez.
-\end{tcolorbox}
+    Legyen $m, n \in \mathbb{n}^+$ és $(m, n) = 1$, ekkor $f$:
+    \begin{itemize}
+      \item \textbf{additív}, ha $f(nm) = f(n) + f(m)$
+      \item \textbf{totálisan (teljesen) additív}, ha additív $(m, n) \neq 1$ esetén is.
+      \item \textbf{Multiplikatív}, ha $f(nm) = f(n)f(m)$
+      \item \textbf{Totálisan (Teljesen) multiplikatív}, ha multiplikatív $(m, n) \neq 1$ esetén is.
+    \end{itemize}
+  \tcblower
+    \textbf{Észrevételek:}\\
+    \begin{enumerate}
+      \item Ha $f$ additív, akkor $f(1) = 0$
+      \item Ha $f$ multiplikatív, és nem azonosan nulla, akkor $f(1) = 1$
+    \end{enumerate}
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Tétel: Számelméleti függvények}]
+    Legyen $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$. Ekkor:\\
+    \begin{enumerate}
+      \item Ha $f$ additív számelméleti függvény, akkor $$f(n) = f(p_1^{{\alpha}_1}) + ... + f(p_k^{{\alpha}_k})$$
+      \item Ha $f$ multiplikatív számelméleti függvény, akkor $$f(n) = f(p_1^{{\alpha}_1})...f(p_k^{{\alpha}_k})$$
+      \item Ha $f$ teljesen additív számelméleti függvény, akkor $$f(n) = {\alpha}_1f(p_1) + ... + {\alpha}_kf(p_k)$$
+      \item Ha $f$ teljesen multiplikatív számelméleti függvény, akkor $$f(n) = f(p_1)^{{\alpha}_1}...f(p_k)^{{\alpha}_k}$$
+    \end{enumerate}
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-\begin{tcolorbox}[title={Tétel: ${\phi}$(n) kiszámolása}]
-Ha $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$, akkor\\
-$${\phi}(n) = \prod^k_{j=1} (p_j^{{\alpha}_j} - p_j^{{\alpha}_j - 1}) = n \prod^k_{j=1} (1 - \frac{1}{p_j}).$$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Tétel: $\phi$ multiplikativitása}]
+  $\phi$ multiplikatív.
+  \end{tcolorbox}
 
-\begin{tcolorbox}[title={Bizonyítás}]
-$\phi$ multiplikatív\\
-Kiszámoljuk az értékeket prímhatványhelyeken, majd összeszorozzuk az értékeket.\\
-${\phi}(p^{\alpha}) = ?$\\
-$1, 2, ..., p, ..., 2p, ..., 3p, ..., (p-1)p, ..., p^2, ..., (p+1)p, ..., (p-1)p^{{\alpha}-1}, ..., p^{\alpha}$\\
-Melyek nem relatív prímek $p$-hez?\\
-\smallskip
-$p^2$-ig $p - 1$ db van + maga $p^2$, azaz ${\phi}(p^2) = p^2 - p^1$.\\
-Tovább számolva:\\
-${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
-\end{tcolorbox}
+  \begin{tcolorbox}[title={Bizonyítás}]
+    \smallskip
+
+    \begin{tabular}{c c c c}
+    1 & 2 & ... & a \\
+    a + 1 & a + 2 & ... & 2a\\
+     &  & ... &  \\
+    (b - 1)a + 1 & (b - 1)a + 2 & ... & ba
+    \end{tabular}
+    \smallskip
+
+    Számoljuk meg, hogy a táblázatban hány relatív prím van $ab$-hez: ennyi lesz ${\phi}(ab)$ értéke.\\
+    (Ha $a$ is $b$ is relatív prím $c$-hez, akkor $ab$ is. $\implies$ azokat kell számolni, amelyek $a$-hoz és $b$-hez is rel. prímek)\\
+    \smallskip
+
+    AZ Omnibusz tételből következik hogy minden oszlop TMR mod $b$, ha $(a, b) = 1$ $\implies$\\
+    $\implies$ minden oszlopban ${\phi}(b)$ rel. prím $b$-hez.\\
+    \smallskip
+
+    | Minden oszlom kongruens elemeket tart mod $a$.\\
+    | Minden sor egy TMR mod $a$ $\implies$ minden sorban ${\phi}(a)$ db elem relatív prím $a$-hoz.\\
+    $\implies$ ${\phi}(a)$ db oszlopnak rel prímek az elemei $a$-hoz. $\implies$ összesen ${\phi}(a){\phi}(b)$ rel. prím van $ab$-hez.
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={Tétel: ${\phi}$(n) kiszámolása}]
+    Ha $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$, akkor\\
+    $${\phi}(n) = \prod^k_{j=1} (p_j^{{\alpha}_j} - p_j^{{\alpha}_j - 1}) = n \prod^k_{j=1} (1 - \frac{1}{p_j}).$$
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={Bizonyítás}]
+    $\phi$ multiplikatív\\
+    Kiszámoljuk az értékeket prímhatványhelyeken, majd összeszorozzuk az értékeket.\\
+    ${\phi}(p^{\alpha}) = ?$\\
+    $1, 2, ..., p, ..., 2p, ..., 3p, ..., (p-1)p, ..., p^2, ..., (p+1)p, ..., (p-1)p^{{\alpha}-1}, ..., p^{\alpha}$\\
+    Melyek nem relatív prímek $p$-hez?\\
+    \smallskip
+    $p^2$-ig $p - 1$ db van + maga $p^2$, azaz ${\phi}(p^2) = p^2 - p^1$.\\
+    Tovább számolva:\\
+    ${\phi}(p^{\alpha}) = p^{\alpha} - p^{\phi - 1}$
+  \end{tcolorbox}
 \end{frame}
 
 \begin{frame}[plain]
-\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Kombinatorika}
-    \mmedskip
-\end{tcolorbox}
+  \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+      {\Huge Kombinatorika}
+      \mmedskip
+  \end{tcolorbox}
 \end{frame}
 
 
