@@ -1036,33 +1036,41 @@ TODO
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: $\mathbb{N}$ rendezése}]
+  $n \leq m \iff {\exists}k \in \mathbb{N}: n + k = m$.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Tétel: N rendezése}]
-A természetes számok halmaza a $\leq$ relációval jólrendezett.
+A természetes számok halmaza a $\leq$ relációval jólrendezett.\\
+{\footnotesize Tetszőleges részbenrendezett halmaz jólrendezett, ha bármely nemüres részhalmazának van legkisebb eleme. Jólrendezett $\Rightarrow$ Rendezett}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Végtelen sorozatok}]
+  $\mathbb{N}^+$-on értelmezett függvények.
 \end{tcolorbox}
 
 %\begin{tcolorbox}[title={Def.: Fibonacci számok}]
 %\end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+  A $(\mathbb{N}, +, {\cdot})$ nem gyűrű, mert $(\mathbb{N}, +)$ nem Abel-csoport.
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Egész számok}]
+  $\mathbb{Z} = -\mathbb{N} \cup \mathbb{N}$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+  A $(Z, +, {\cdot})$ struktúra egységelemes integritási tartomány.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Racionális számok}]
+  $\mathbb{Q} = \{\frac{m}{n} | m,n \in \mathbb{Z}, n \neq 0 \}$.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+  A $(Q, +, {\cdot})$ struktúra test.
 \end{tcolorbox}
 \end{frame}
 
@@ -1074,12 +1082,19 @@ A természetes számok halmaza a $\leq$ relációval jólrendezett.
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Rendezett test}]
+  Egy struktúra \textbf{rendezett test}, ha test és rendezett integritási tartomány.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Arkhimédészi tulajdonság}]
+  Egy $(T; +, {\cdot}; {\leq})$ rendezett test \textbf{arkhimédeszi tulajdonságú}, ha\\
+  ${\forall}x, y \in T : x > 0$ esetén ${\exists}n \in \mathbb{N} : nx \geq y$\\
+  \msmallskip
+  
+  Ekkor T \textbf{arkhimédeszien rendezett}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Felső határ tulajdonság}]
+  Egy $(T; +, {\cdot}; {\leq})$ rendezett test \textbf{felső határ tulajdonságú}, ha minden nem üres felülről korlátos részhalmazának létezik $T$-ben felső határa (legkisebb felső korlátja $\rightarrow$ Supremum).
 \end{tcolorbox}
 \end{frame}
 
@@ -1123,16 +1138,48 @@ Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Valós számok halmaza}]
+  A lényegében egyetlen, felső határ tulajdonsággal rendelkező testet a \textbf{valós számok halmazának} nevezzük.\\
+  Jel.: $\mathbb{R}$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: néhány Függvény (?)}]
+  \textbf{Abszolút érték}: |x| = $x$, ha $x \geq 0$ | $-x$, ha $x < 0$.\\
+  \textbf{Előjel}: sgn(x) = $0$, ha $x = 0$ | $x / |x|$, különben.\\
+  \textbf{Alsó egész rész}: ${\lfloor}x{\rfloor} = \mathbb{Z}$ legnagyobb eleme, amely nem nagyobb, mint $x$\\
+  \textbf{Felső egész rész}: ${\lceil}x{\rceil} = \mathbb{Z}$ legkisebb eleme, amely nem kisebb, mint $x$\\
+  \mbigskip
+  
+  \textbf{Észrevételek:}\\
+  \mmedskip
+  
+  $c = 0 \Rightarrow {\lceil}x{\rceil} = {\lfloor}x{\rfloor} = 0$,\\
+  Ha $x > 0$: arkhi. tul. ból és $\mathbb{N}$ jólrendezettségéből $\Rightarrow$ ${\exists}n \in \mathbb{N}$, ahol $n$ a legkisebb olyan természetes szám, amely $n \geq x \Rightarrow n = {\lceil}x{\rceil}$, ekkor ha $x = n \in \mathbb{N}^+ \Rightarrow$ ${\lfloor}x{\rfloor} = n$, különben ${\lfloor}x{\rfloor} = n - 1$.\\
+  \mmedskip
+  
+  ha $x < 0 \Rightarrow {\lceil}x{\rceil} = -{\lfloor}-x{\rfloor} = n$, különben ${\lfloor}x{\rfloor} = -{\lceil}-x{\rceil}$.
 \end{tcolorbox}
 \end{frame}
 
+
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Bővített valós számok}]
+  $\overline{\mathbb{R}} = \mathbb{R} \cup \{ -{\infty}, {\infty}\}$\\
+  \mbigskip
+  
+  Rendezés kiterjesztése:\\
+  $-{\infty} < x < +{\infty}$ teljesüljön minden $x$ valósra.\\
+  Bármely részhalmaznak van szuprémuma, és infinuma:\\
+  $sup{\emptyset} = -{\infty}, inf{\emptyset} = +{\infty}$\\
+  \mmedskip
+  
+  Összeadás $x$ valósra (nem mindenütt értelmezett):\\
+  $x + (-{\infty}) = (-{\infty}) + x = -{\infty}$, ha $x < +{\infty}$, és $x + (+{\infty}) = (+{\infty}) + x = +{\infty}$, ha $x < +{\infty}$\\
+  \mmedskip
+  
+  Ellentett képzés: $-(+{\infty}) = -{\infty}$, és $-(-{\infty}) = +{\infty}$.
 \end{tcolorbox}
 \end{frame}
+
 
 \begin{frame}
 \begin{tcolorbox}
@@ -1142,26 +1189,123 @@ Viszont ebből koövetkezik, hogy m nem minimális $\rightarrow$ Ellentmondás!
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Komplex számok}]
+  \textbf{Komplex számoknak} nevezzük a valós számpárok\\
+  $\mathbb{C} = \mathbb{R} x \mathbb{R}$\\
+  halmazát a következő műveletekkel:\\
+  \mmedskip
+  
+  $a, b, c, d \in \mathbb{R}$:\\
+  $(a, b) + (c, d) = (a + c, b + d)$\\
+  $(a, b) \cdot (c, d) = (ac - bd, ad + bc)$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
-\end{tcolorbox}
+  $(\mathbb{C}, +, {\cdot})$ test.\\
+  \mmedskip
+  
+  $(\mathbb{C}, +)$ Abel-csoport:\\
+  \begin{itemize}
+    \item Egységelem: $(0, 0)$
+    \item (a, b) additív inverze: $-(a, b) = (-a, -b)$
+  \end{itemize}
+  \mmedskip
+  
+  $(\mathbb{C}, {\cdot})$: Abel-csoport:\\
+  \begin{itemize}
+    \item Egységelem: $(1, 0)$
+    \item (a, b) multiplikatív inverze: $(a, b)^{-1} = (\frac{a}{a^2 + b^2}, \frac{-b}{a^2 + b^2})$
+  \end{itemize}
+  \mmedskip
 
+  Kétoldali disztributivitás teljesül.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
 \begin{tcolorbox}[title={Alakok}]
+$Re(z) = {\Re}z)$, $Im(z) = {\Im}(z)$\\
+\mmedskip
+
+algebrai: $z = x + yi$\\
+(Imaginárius egység: $i = (0, 1)$, ahol $i^2 = -1$)\\
+\mmedskip
+
+Trigonometrikus: $z = r{\cos}(t) + i{\sin}(t)$\\
+r: Abszolút érték / hossz: $|(x, y)| = \sqrt{x^2 + y^2}$\\
+\mmedskip
+
+Euler-féle: $z = re^{i{\phi}}$\\
+\mmedskip
+
+Konjugált: Ha $x = x + iy$, akkor $\overline{x} = x - iy$\\
+\mmedskip
+
+A kompley számok halmaza \textbf{nem rendezhető}, mert rendezett integritási tartományban negatív szám négyzete pozitív kell hogy legyen!
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
+\begin{enumerate}
+\item $\overline{\overline{z}} = z$
+\item $\overline{(z + n)} = \overline{z} + \overline{n}$
+\item $\overline{(z \cdot n)} = \overline{z} \cdot \overline{n}$
+\item $z + \overline{z} = 2Re(z)$
+\item $z - \overline{z} = 2iLm(z)$
+\item $z \cdot \overline{z} = |z|^2$
+\item $z \neq 0, z^{-1} = \frac{\overline{z}}{|z|^2}$
+\item $|0| = 0, z \neq 0 : |z| > 0$
+\item $|z| = |\overline{z}|$
+\item $|zw| = |z| \cdot |w|$
+\item $|Re(z)| \leq |z|, |Im(z)| \leq |z|$
+\item $|z + w| \leq |z| + |w|, ||z| - |w|| \leq |z - w|$
+\end{enumerate}
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Moivre azonosságok}]
+Legyen $z, w \in \mathbb{C}, z = |z|({\cos}(t) + i{\sin}(t))$ és $w = |w|({\cos}s + i {\sin}s)$, ahol $t, s \in \mathbb{R}$. Ekkor $zw$ trigonometrikus alakja\\
+\mbigskip
+
+$zw = |z| \cdot ({\cos}t + i{\sin}t) \cdot |w| \cdot ({\cos}s + i{\sin}s) =$\\
+$|z| \cdot |w| \cdot ({\cos}t + i{\sin}t) \cdot ({\cos}s + i{\sin}s) =$\\
+$= |zw| \cdot ({\cos}t{\cos}s - {\sin}t{\sin}s + i({\cos}t{\sin}s + {\cos}s{\sin}t)) =$\\
+$= |zw|({\cos}(t + s) + i{\sin}(t + s)$\\
+\mbigskip
+
+$w \neq 0$ esetén:\\
+$\frac{z}{w} = \frac{|z|}{|w|}({\cos}(t - s) + i {\sin}(t - s))$\\
+\mbigskip
+
+$n \in \mathbb{Z}$ és $z \neq 0$:\\
+$z^n = |z|^n({\cos}(nt) + i{\sin}(nt))$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Gyökvonás komplex számokból}]
-\end{tcolorbox}
+$z_k = \sqrt[n]{|w|}({\cos}(\frac{t + 2k{\pi}}{n}) + i{\sin}(\frac{t + 2k{\pi}}{n}))$\\
+$k = 0, 1, ..., n - 1$\\
+\mbigskip
 
+\textbf{$n$edik egységgyökök} ${\epsilon}^n = 1$ esetén:\\
+${\epsilon}_k = {\cos}(\frac{2k{\pi}}{n}) + i{\sin}(\frac{2k{\pi}}{n})$. $k = 0, 1, ..., n - 1$
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
 \begin{tcolorbox}[title={Def.: $n$-edik primitív egységgyökök}]
+Az $n$-edik primitív egységgyökök: HAtványaikkal előállítják a többit.\\
+\mmedskip
+
+Pl.: ${\epsilon}_0$ biztos nem az, ${\epsilon}_1$ biztosan az.\\
+\mmedskip
+
+$z^n = w$ esetén $z_k$-k előállnak a következő alakban:\\
+$z{\epsilon}_0, z{\epsilon}_1, ..., z{\epsilon}_{n - 1}$\\
+\mmedskip
+
+$Rightarrow$ $n > 1$ esetén:\\
+\mmedskip
+
+$\sum_{k = 0}^{n - 1} z{\epsilon}_k = \sum_{k = 0}^{n - 1} z{\epsilon}^k_1 = z\frac{{\epsilon}_1^n - 1}{{\epsilon}_1 - 1} = z\frac{1 - 1}{{\epsilon}_1 - 1} = 0$
 \end{tcolorbox}
 \end{frame}
 
