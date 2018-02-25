@@ -105,7 +105,7 @@
 \newcommand{\msmallskip}{\vspace{0.3em}}
 \newcommand{\mmedskip}{\vspace{0.5em}}
 \newcommand{\mbigskip}{\vspace{1em}}
-\newcommand{\u}[1]{\underline{#1}}
+\renewcommand{\u}[1]{\underline{#1}}
 
 \begin{document}
 
@@ -135,17 +135,29 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Linearitás}]
     $f$ leképzés lineáris, ha:\\
-    \\begin{itemize}
+    \begin{itemize}
       \item $f(a + b) = f(a) + f(b)$
-      \item ${\delta}f(a) = f({\delta}b)$
+      \item ${\lambda}f(a) = f({\lambda}b)$
     \end{itemize}
   \end{tcolorbox}
 
 
   \begin{tcolorbox}[title={Def.: Vektorok}]
-    Összeadás: $\u{a + b}$\\
-    Nagyítás: ${\delta}a$
+  $\u{a} = (a_1, a_2), \u{b} = (b_1, b_2)$\\
+  \mmedskip
+  
+    Összeadás: $\u{a + b} = (a_1 + b_1, a_2 + b_2)$\\
+    Nagyítás: ${\lambda}a = (a_1, a_2) \lor {\lambda}\u{a} = ({\lambda}a_1, {\lambda}a_2)$
   \end{tcolorbox}
+  
+    \begin{tcolorbox}[title={Def.: Összeadás}]
+    $f$ leképzés lineáris, ha:\\
+    \begin{itemize}
+      \item $f(a + b) = f(a) + f(b)$
+      \item ${\lambda}f(a) = f({\lambda}b)$
+    \end{itemize}
+  \end{tcolorbox}
+
 \end{frame}
 
 
