@@ -1,0 +1,152 @@
+% Compile twice!
+% With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
+
+% !TEX root = ./Headers/PrezA4Page.tex
+
+% Uncomment these to get the presentation form
+%\documentclass{beamer}
+%\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
+
+% Uncomment these, and comment the 2 lines above, to get a paper-type article
+%\documentclass[10pt]{article}
+%\usepackage{geometry}
+%\geometry{top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+%\usepackage{beamerarticle}
+%\renewcommand{\\}{\par\noindent}
+%\setbeamertemplate{note page}[plain]
+
+% Half A4 geometry
+%\geometry{paperwidth=105mm,paperheight=297mm,top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+
+% "1/3" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=455mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/6" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=891mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/5" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=740mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/4" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=594mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% Uncomment these, to put more than one slide / page into a generated page.
+%\usepackage{pgfpages}
+% Choose one
+%\pgfpagesuselayout{2 on 1}[a4paper]
+%\pgfpagesuselayout{4 on 1}[a4paper]
+%\pgfpagesuselayout{8 on 1}[a4paper]
+
+% Includes
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usetikzlibrary{shapes,arrows,automata}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{arydshln}
+\usepackage{enumerate}
+\usepackage[many, poster]{tcolorbox}
+\usepackage{pgf}
+\usepackage[makeroom]{cancel}
+
+% Colors
+\definecolor{myred}{rgb}{0.87,0.18,0}
+\definecolor{myorange}{rgb}{1,0.4,0}
+\definecolor{myyellowdarker}{rgb}{1,0.69,0}
+\definecolor{myyellowlighter}{rgb}{0.91,0.73,0}
+\definecolor{myyellow}{rgb}{0.97,0.78,0.36}
+\definecolor{myblue}{rgb}{0,0.38,0.47}
+\definecolor{mygreen}{rgb}{0,0.52,0.37}
+\colorlet{mybg}{myyellow!5!white}
+\colorlet{mybluebg}{myyellowlighter!3!white}
+\colorlet{mygreenbg}{myyellowlighter!3!white}
+
+\setbeamertemplate{itemize item}{\color{black}$-$}
+\setbeamertemplate{itemize subitem}{\color{black}$-$}
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{enumerate subitem}{fg=black}
+\setbeamercolor*{enumerate subsubitem}{fg=black}
+
+\renewcommand{\tiny}{\footnotesize}
+\renewcommand{\small}{\footnotesize}
+
+% These are different themes, only uncomment one at a time
+\tcbset{enhanced,fonttitle=\bfseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
+
+%\tcbset{colback=yellow!5!white,colframe=yellow!84!black}
+%\tcbset{enhanced,colback=red!10!white,colframe=red!75!black,colbacktitle=red!50!yellow,fonttitle=
+%\tcbset{enhanced,attach boxed title to top left}
+%\tcbset{enhanced,fonttitle=\bfseries,boxsep=5pt,arc=8pt,borderline={0.5pt}{0pt}{red},borderline={0.5pt}{5pt}{blue,dotted},borderline={0.5pt}{-5pt}{green}}
+
+% Beamer theme
+\usetheme{boxes}
+
+% tikz settings for the flowchart(s)
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!15]
+\tikzstyle{tcolorbox} = [rectangle, draw, fill=blue!15, text width=20em, text centered, minimum height=1em]
+
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\arraystretch}{1.2}
+
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+\newcommand{\mtinyskip}{\vspace{0.2em}}
+\newcommand{\msmallskip}{\vspace{0.3em}}
+\newcommand{\mmedskip}{\vspace{0.5em}}
+\newcommand{\mbigskip}{\vspace{1em}}
+\newcommand{\u}[1]{\underline{#1}}
+
+\begin{document}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\Huge Lineáris Algebra és Geometria}\\
+\mbigskip
+\\
+A kisbetűs szövegek (LaTeX-ben tiny), (Ha nincs előttük (S) jelzés, akkor lemaradt)\\
+a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
+\end{tcolorbox}
+\end{frame}
+
+
+%\begin{tcolorbox}[title={Def.: }]
+%\end{tcolorbox}
+
+% --------------------  HALMAZOK, RELÁCIÓK --------------------
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\Huge Vektorterek, Leképzések}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={Def.: Linearitás}]
+    $f$ leképzés lineáris, ha:\\
+    \\begin{itemize}
+      \item $f(a + b) = f(a) + f(b)$
+      \item ${\delta}f(a) = f({\delta}b)$
+    \end{itemize}
+  \end{tcolorbox}
+
+
+  \begin{tcolorbox}[title={Def.: Vektorok}]
+    Összeadás: $\u{a + b}$\\
+    Nagyítás: ${\delta}a$
+  \end{tcolorbox}
+\end{frame}
+
+
+\end{document}

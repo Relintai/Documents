@@ -9,5 +9,6 @@
 *.synctex*
 *.bm
 *.snm
-
+*.fdb_latexmk
+*.fls
 
