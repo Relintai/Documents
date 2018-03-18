@@ -147,18 +147,144 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
   \mmedskip
   
     Összeadás: $\u{a + b} = (a_1 + b_1, a_2 + b_2)$\\
-    Nagyítás: ${\lambda}a = (a_1, a_2) \lor {\lambda}\u{a} = ({\lambda}a_1, {\lambda}a_2)$
+    Nyújtás: ${\lambda}a = (a_1, a_2) \lor {\lambda}\u{a} = ({\lambda}a_1, {\lambda}a_2)$
   \end{tcolorbox}
   
-    \begin{tcolorbox}[title={Def.: Összeadás}]
-    $f$ leképzés lineáris, ha:\\
-    \begin{itemize}
-      \item $f(a + b) = f(a) + f(b)$
-      \item ${\lambda}f(a) = f({\lambda}b)$
-    \end{itemize}
-  \end{tcolorbox}
+  \end{frame}
+  
+  \begin{frame}  
+  
+	\begin{tcolorbox}[title={Def.: Összeadás}]	
+		\begin{align}
+			\u{a} + \u{b} &= \begin{bmatrix}
+				a_1 + b_1 \\
+				a_2 + b_2 \\
+				... \\
+				a_n + b_n
+			\end{bmatrix}
+		\end{align}
+				
+		\tcblower
+		
+		\textbf{Tulajdonságok} \\
+		
+		\msmallskip
+		
+		\begin{enumerate}
+			\item Van értelme
+			\item Kommutativitás - $\u{a} + \u{b} = \u{b} + \u{a}$
+			\item Asszociativitás - $(\u{a} + \u{b}) + \u{c} = \u{a} + (\u{b} + \u{c})$
+			\item Van nullelem - ${\exists}0 \rightarrow \u{0}$
+			\item Minden elemre létezik additív inverz - ${\forall}\u{a} \in \mathbb{R}^n : {\exists}\u{-a}$, ahol $\u{a} + \u{-a} = \u{0}$ \\
+			$\u{-a} = -1 \cdot \u{a} = \u{-a}$, $\u{a} + \u{-a} = \u{0}$
+		\end{enumerate}				
+	\end{tcolorbox}
 
-\end{frame}
+  \end{frame}
+  
+  \begin{frame}
+  
+    \begin{tcolorbox}[title={Def.: Szorzás számmal}]	
+		\begin{align}
+			\u{a} + \u{b} &= \begin{bmatrix}
+				{\lambda}a_1 \\
+				{\lambda}a_2 \\
+				... \\
+				{\lambda}a_n
+			\end{bmatrix}
+		\end{align}
+		
+		\tcblower
+		
+		\textbf{Tulajdonságok} \\		
+		
+		 \msmallskip
+		 
+		 \begin{enumerate}
+		 	\item Van értelme
+		 	\item Asszociativitás ${\lambda}, {\mu} \in \mathbb{R}$, $({\lambda}{\mu})\u{a} = {\lambda}({\mu}\u{a})$
+		 	\item Disztributivitás ${\lambda}, {\mu} \in \mathbb{R}$, $({\lambda} + {\mu})\u{a} = {\lambda}\u{a} + {\mu}\u{b}$
+		 	\item Disztributivitás $\u{a}, \u{b} \in \mathbb{R}^n, {\lambda} \in \mathbb{R}$, ${\lambda}\u{a} + \u{b}) = {\lambda}\u{a} + {\lambda}\u{b}$
+		 	\item Létezik egységelem. $1 \cdot \u{a} = \u{a}$
+		 \end{enumerate}
+		
+	\end{tcolorbox}
+  	
+    \end{frame}
+  
+	\begin{frame}
+		 \begin{tcolorbox}[title={Def.: Vektortér}]
+			$\mathbb{R}^n$vektortér $\mathbb{R}$ felett, ha igazak rá az összeadás, és a szorzás tulajdonságai.\\
 
+			\mmedskip
+			
+			Azaz, ha egy $V \neq \emptyset$ tudja ezeket a tulajdonságokat, akkor $V$ vektortér $\mathbb{R}$ felett.			
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Altér}]
+			Azt mondjuk, hogy $W \leq \mathbb{R}^n$ altere $\mathbb{R}^n$-nek, ha
+			\begin{enumerate}
+				\item $W \neq \emptyset$
+				\item Ha zárt az összeadásra ($\u{a}, \u{b} \in W \Rightarrow \u{a} + \u{b} \in W$)
+				\item Ha zárt a számmal való szorzásra ($\u{a} \in W, {\lambda}\u{a} \in W$)
+			\end{enumerate}
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Megj}]
+			$\mathbb{R}^2$ $\rightarrow$ alterei: $x, y$ tengely\\
+			$\mathbb{R}^3$ $\rightarrow$ alteret: A síkok is.
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Vektorrendszer, Lineáris kombináció}]
+			\textbf{Vektorrendszer}:\\
+			Legyen $k \geq 1$ egész. és legyenek $\u{v_1}, \u{v_2}, ..., \u{v_k} \in \mathbb{R}^n$.\\
+			Ezeket a vektorokat együtt \textbf{vektorrendszernek} hívjuk.\\			
+			\msmallskip
+			
+			\textbf{Lineáris kombináció}:\\
+			Legyenek ${\lambda}_1, {\lambda}_2, ..., {\lambda}_k \in \mathbb{R}$ adottak,\\
+			ekkor a ${\lambda}_1\u{v_1} + {\lambda}_2\u{v_2} + ... + {\lambda}_k\u{v_k}$ kifejezést a\\
+			$\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer \u{lineáris kombinációjának} nevezzük.\\
+			\msmallskip			
+			
+			\textbf{triviális lineáris kombináció}:\\
+			Ha ${\lambda}_1 = {\lambda}_2 = ... = {\lambda}_k = 0$, akkor a lineáris kombináció triviális.
+		\end{tcolorbox}
+	\end{frame}
+
+	\begin{frame}
+	\begin{tcolorbox}[title={Def.: Lineáris összefüggőség}]
+			Legyen $k \geq 1$ egész. és legyen $\u{v_1}, \u{v_2}, ..., \u{v_k} \in \mathbb{R}^n$. vektorrendszer.\\
+			Ekkor azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszerünk \textbf{lineárisan összefüggő}, ha létezik nemtriviális lineáris kombinációja, melyre:\\
+			${\lambda}_1\u{v_1} + {\lambda}_2\u{v_2} + ... + {\lambda}_k\u{v_k} = \u{0}$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Lineáris függetlenség}]
+			Legyen $k \geq 1$ egész. és legyen $\u{v_1}, \u{v_2}, ..., \u{v_k} \in \mathbb{R}^n$. vektorrendszer.\\
+			Ekkor azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszerünk \textbf{lineárisan független}, ha csak a triviális lineáris kombinációjára igaz, hogy:\\
+			${\lambda}_1\u{v_1} + {\lambda}_2\u{v_2} + ... + {\lambda}_k\u{v_k} = \u{0}$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Bázis}]
+			Legyen $ V \leq \mathbb{R}^k$ altér, és legyen adott $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer.\\
+			Azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer \textbf{bázis} $V$-ben, ha:\\
+			\begin{itemize}
+				\item Lineárisan függetlenek
+				\item Tetszőleges eleme $V$-nek előáll belőlük lineáris kobinációként.
+			\end{itemize}
+			\mmedskip
+			
+			 (Megj:   $n$ dimenzóban $n$ elemű egy bázis)
+		\end{tcolorbox}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel.: Bázistransformáció}]
+			Legyen $V \leq \mathbb{R}^n$, $\u{b_1}, u{b_2}, ..., u{b_k}$ bázis $V$-ben.\\
+			Legyen $a \in V$ adott, és $\u{a} = {\alpha}_1\u{v_1} +  {\alpha}_2\u{v_2} +  ... + {\alpha}_k\u{v_k}$.\\
+			Ekkor $\u{b_1}, u{b_2}, ..., u{b_k}$ nyd
+		\end{tcolorbox}
+	\end{frame}
 
 \end{document}
