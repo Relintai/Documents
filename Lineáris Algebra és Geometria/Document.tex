@@ -277,14 +277,72 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 			 (Megj:   $n$ dimenzóban $n$ elemű egy bázis)
 		\end{tcolorbox}
 		
+		\begin{tcolorbox}[title={Tétel: Lineáris kombináció, és bázisok}]
+			$\u{b_1}, \u{b_2}, ..., \u{b_k}$ bázis $V$-ben, akkor $\forall \u{v} \in V$ elem \textbf{egyértelműen} előáll belőle lineáris kombinációjaként.
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Bázisok, és Lineáris kombináció}]
+			Ha a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer olyan V-ben, hogy ha $\forall a \in V$ egyértelműen létezik ${\alpha}_1, ..., {\alpha}_k \in \mathbb{R}$, hogy $\u{a} = {\alpha}_1\u{b_1} + {\alpha}_2\u{b_2} + ... + {\alpha}_k\u{b_k} \Rightarrow \u{b_1}, \u{b_2}, ..., \u{b_k}$ bázis.
+		\end{tcolorbox}
+		
 	\end{frame}
 	
 	\begin{frame}
 		\begin{tcolorbox}[title={Tétel.: Bázistransformáció}]
 			Legyen $V \leq \mathbb{R}^n$, $\u{b_1}, u{b_2}, ..., u{b_k}$ bázis $V$-ben.\\
 			Legyen $a \in V$ adott, és $\u{a} = {\alpha}_1\u{v_1} +  {\alpha}_2\u{v_2} +  ... + {\alpha}_k\u{v_k}$.\\
-			Ekkor $\u{b_1}, u{b_2}, ..., u{b_k}$ nyd
+			Ekkor $\u{b_1}, u{b_2}, ..., u{b_k} \iff {\alpha}_i \neq 0$ bázis.\\
+			\mmedskip
+			
+			Akkor cserélhetjük ki, ha az együtthatója nem 0 az $\u{a}$-ban.
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Képlet}]
+			$x_j = x_j - \frac{x_i}{{{\alpha}_i}} {\alpha}_j$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Öf táblázat}]
 		\end{tcolorbox}
 	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Lineáris függőség}]
+			$A \neq \emptyset$, $A \subseteq \mathbb{R}^n$, azt mondjuk hogy $\u{v} \in \mathbb{R}^n$ \textbf{lineárisan függ} $A$-tól,\\
+			ha létezik véges sok elem $A$-ban, hogy $\u{v}$ előáll az ő lineáris kombinációjaként.
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Lineáris függőség}]
+			$k \geq 2$, $\u{a_1}, u{a_2}, ..., u{a_k} \in \mathbb{R}^n$,\\
+			ekkor $\u{a_1}, u{a_2}, ..., u{a_k}$ összefüggő $\iff$ $\exists i \in \{ 1, ..., k \}$, hogy $a_i$ lineárisan függ a többitől.
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Áll.: Lineáris függőség}]
+			Ha$\u{a_1}, u{a_2}, ..., u{a_k}$, $\u{b} \in \mathbb{R}^n$\\		
+			$\u{a_1}, u{a_2}, ..., u{a_k}$ lineárisan független, de $\u{a_1}, u{a_2}, ..., u{a_k}, \u{b}$ lineárisan összefüggő, akkor\\
+			$\u{b}$ lineárisan független az $\u{a_1}, u{a_2}, ..., u{a_k}$ vektorrendszertől.	
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Halmaz által generált altér / Lineáris Burok}]
+			$A \neq \emptyset$, $A \leq \mathbb{R}^n$:\\
+			$: W(A) = \{ \u{b} \in \mathbb{R}^n | \u{v}$ lineárisan függ $A$-tól $\}$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Vektor koordinátái}]
+			\begin{align}
+				[a]_{\u{b_1}, \u{b_2}, ..., \u{b_k}} &= \begin{bmatrix}
+					{\lambda}a_1 \\
+					{\lambda}a_2 \\
+					... \\
+					{\lambda}a_n
+				\end{bmatrix} \in \mathbb{R}^k
+			\end{align}
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Altér}]
+			$W(A)$ altér $(A \neq \emptyset)$
+		\end{tcolorbox}
+	\end{frame}
+	
+	
 
 \end{document}
