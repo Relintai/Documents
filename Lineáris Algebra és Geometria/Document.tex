@@ -386,10 +386,33 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 		\begin{tcolorbox}[title={Bázis}]
 			\begin{itemize}			
 				\item Minden bázis mérete $\mathbb{R}^n$-ben $n$
-				\item $V \leq \mathbb{R}^n$
+				\item $V \leq \mathbb{R}^n$ és van véges generátorrendszer $\Rightarrow$ Leszűkíthető bázissá.
+				\item $V \leq \mathbb{R}^n$ és $v_1, ..., v_k$ vektorrendszer lineárisan független a $V$-ben. $\Rightarrow$ Leszűkíthető bázissá.
 			\end{itemize}
+			\mmedskip
+			
+			Ezekből követketik, hogy a bázis a maximális elemszámú lineárisan független vektorrendszer.\\
+			\mmedskip
+			
+			Maximális lineárisan független vektorrendszer elemszáma = minimális generátorrendszer elemszáma = bázis elemszáma
 		\end{tcolorbox}
 		
+		\begin{tcolorbox}[title={Def.: Dimenzió}]
+			$V \leq \mathbb{R}^n$ dimenziója:\\
+			\mmedskip
+			
+			\[
+   				dim(V) = 
+			\begin{cases}
+   				0,				& \text{ha } V = \{ \u{0} \}\\
+    				|B|,                & \text{ha } V \neq \{ \u{0} \} \text{ (B a V-nek egy bázisa.) } \\
+			\end{cases}
+			\]		
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Rang}]
+			 $v_1, ..., v_k \in \mathbb{R}^n$ vektorrendszer rangja, az általuk generált altér dimenziója.
+		\end{tcolorbox}
 	\end{frame}
 
 \end{document}
