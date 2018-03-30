@@ -343,6 +343,53 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 		\end{tcolorbox}
 	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel: Alterek metszete}]
+			Ha $V_1$ és $V_2$ is altér $\Rightarrow$ $V_1 \cap V_2$ is altér.
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Span}]
+			Azt mondjuk, hogy az $A \subseteq \mathbb{R}^n$ halmaz által \textbf{generált / kifeszített altér} az $A$-t tartalmazó alterek / vektorterek metszete.\\
+			\msmallskip
+			
+			Jel.: $Span(A)$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Span és Lineáris burok}]
+			$Span(A) = W(A)$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Def.: Generátorrendszer}]
+			Azt mondjuk, hogy $G$ vektorrendszer \textbf{generátorrendszere} $V$ altérnek, ha $Span(G) = W(G)$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel.: Generátorrendszer létezése}]
+			Ha $V \leq \mathbb{R}^n$-ben létezik véges méretű generátorrendszer $\Rightarrow$ belőle kiválasztható bázis.
+		\end{tcolorbox}
+	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel: Kicserélési tétel}]
+			Legyen $V \leq \mathbb{R}^n$, legyen $a_1, ..., a_k$ lineárisan független, és $b_1, ..., b_n$ generátorrendszer. Ekkor:\\
+			\begin{itemize}
+				\item $\exists j$, hogy tetszőleges $i$-re $v_j, a_2, ..., a_k$ is Lineárisan független.\\
+				(megj.: Igazából $a_1, ..., a_k$ bármilyen eleme lecserélhető)
+				\item $|LF| \leq |GR|$ ($|LF|$ = $LF$ elemszáma, $LF$ = $a_1, ..., a_k$)
+			\end{itemize}
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel.: Bázis}]
+			Ha $V \leq \mathbb{R}^n,$ és $B_1, B_2$ bázis, akkor\\
+			$|B_1| < + \infty \rightarrow |B_1| = |B_2|$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Bázis}]
+			\begin{itemize}			
+				\item Minden bázis mérete $\mathbb{R}^n$-ben $n$
+				\item $V \leq \mathbb{R}^n$
+			\end{itemize}
+		\end{tcolorbox}
+		
+	\end{frame}
 
 \end{document}
