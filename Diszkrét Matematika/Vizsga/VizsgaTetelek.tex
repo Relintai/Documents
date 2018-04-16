@@ -71,8 +71,21 @@
 \setbeamercolor*{enumerate subitem}{fg=black}
 \setbeamercolor*{enumerate subsubitem}{fg=black}
 
+\renewcommand{\footnotesize}{\fontsize{1.4em}{0.2em}}
+\renewcommand{\normalsize}{\fontsize{1.4em}{0.2em}}
+\renewcommand{\large}{\footnotesize}
+\renewcommand{\Large}{\footnotesize}
+
+
+\renewcommand{\scriptsize}{\footnotesize}
+\renewcommand{\LARGE}{\footnotesize}
+\renewcommand{\Huge}{\footnotesize}
+
 \renewcommand{\tiny}{\footnotesize}
 \renewcommand{\small}{\footnotesize}
+
+\fontsize{1.4em}{0.2em}
+\selectfont
 
 % These are different themes, only uncomment one at a time
 \tcbset{enhanced,fonttitle=\bfseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
@@ -112,10 +125,6 @@
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
     {\Huge Diszkrét Matematika I}\\
-\mbigskip
-\\
-A kisbetűs szövegek (LaTeX-ben tiny), (Ha nincs előttük (S) jelzés, akkor lemaradt)\\
-a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 \end{tcolorbox}
 \end{frame}
 
