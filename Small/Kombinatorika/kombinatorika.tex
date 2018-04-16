@@ -1,0 +1,127 @@
+\documentclass[a4paper,9pt,leqno]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=50pt]{geometry}
+
+
+\begin{document}
+\noindent
+\setlength\parindent{0pt}
+\title{Kombinatorika}
+
+\begin{center}
+{\huge Kombinatorika}
+\end{center}
+
+\section{Permutáció}
+
+$$P_n = n!$$
+
+Elemek összes különböző sorbarendezéseinek a száma. Az elemek nem ismétlődhetnek.
+
+A "képek" szó betűiből összeálítható összes szó:
+
+képek $\Rightarrow$ 5 betű (különbözők!)
+
+$P_5 = 5! = 120.$
+
+\section{Permutáció Ismétléses}
+
+$$P_n^{i_1, i_2, ... , i_r} = \frac{n!}{(i_1)!(i_2)! ... (i_r)!}$$
+
+
+Elemek összes különböző sorbarendezéseinek a száma. Az elemek ismétlődhetnek!
+
+
+A "terep" szó betűiből összeálítható összes szó:
+
+
+terep $\Rightarrow$ 5 betű (2 ugyan az!)
+
+
+$P_5^{2} = \frac{5!}{2!} = \frac{5 * 4 * 3 * 2 * 1}{2 * 1} = 5 * 4 * 3 = 60$
+
+
+A "tollaslabda" szó betűiből összeálítható összes szó:
+
+
+tollaslabda $\Rightarrow$ 11 betű (több ismétlődés van (3 * l, 3 * a) !)
+
+
+$P_{11}^{3, 3} = \frac{5!}{3! * 3!} = 1108800$
+
+
+\section{Variáció Ismétlés nélkül}
+
+Variáció Ismétlés nélkül $\iff$ Permutáció, több elemből kevesebb helyre
+
+$$V_n^k = \frac{n!}{(n - k)!} = n * (n - 1) * (n - 2) * ... * (n - k + 1)$$
+
+Rendszám, ha nem lehet ismétlődés:
+
+Betűk:
+$V_{26}^3 = \frac{26!}{26 - 3)!} = \frac{26!}{23!} = 26 * 25 * 24 = 15600$
+
+Számok:
+
+$V_{10}^3 = \frac{10!}{10 - 3)!} = \frac{10!}{7!} = 10 * 9 * 8 = 720$
+
+Az egész:
+$V_{26}^3 * V_{10}^3 = 11232000$
+
+\section{Variáció Ismétléses}
+
+$$V_n^{k, i} = n^k$$
+
+Rendszám
+
+3 betű, 3 szám
+
+3 Betű: $V_n^{k, i} = V_{26}^{3, i} = 26^3 =  17576$ ($3 hely : 26 26 26$)
+3 Szám: $V_n^{k, i} = V_{10}^{3, i} = 10^3 =  1000$ ($3 hely : 10 10 10$)
+
+$V_{26}^{3, i} * V_{10}^{3, i} = 26^3 * 10^3 = 17576000$
+
+\section{Kombinációk}
+
+Permutáció, ahol az elemek sorrendje nem számít.
+
+$$C_n^k = {{n}\choose{k}} = \frac{n!}{k!(n - k)!} $$
+
+Pl szövegesen:
+
+A gyümölcssalátában van banán, alma, szőlő $\Rightarrow$ Kombináció
+
+3 Embert választunk 10 ből $\Rightarrow$ Kombináció
+
+Kiválasztunk egy zenekarba zongoristát, gitárost 10 emberből (a helyek miatt) $\Rightarrow$ Permutáció
+
+Egy étterembe rendelünk 3 desszertet 10 ből $\Rightarrow$ Kombináció
+
+Felsorolni 3 külömböző kedvenc desszertet 10 ből $\Rightarrow$ Permutáció
+
+A zár nyitó kombinációja 1233 volt $\Rightarrow$ Permutáció
+
+Lottó $\Rightarrow$ Kombináció
+
+
+\section{Kombinációk Ismétléses}
+
+
+
+$$C_n^{k, i} = C_{n + k -1}^k = {{n + k - 1}\choose{k}} = \frac{(n + k - 1)!}{k!((n + k - 1) - k)!} $$
+
+
+Ki akarunk választani 17 emberből egy hat tagú bizottságot, hány féleképpen lehet?
+
+$C_{17}^6 = C_{12 + 6 - 1}^6 = {{17 + 6 - 1}\choose{6}} = \frac{(17 + 6 - 1)!}{6!((17 + 6 - 1) - 6)!} = \frac{22!}{6!(22 - 6)!} = \frac{22!}{6!(22 - 6)!} = \frac{22!}{6! * 16!} = \frac{22 * 21 * 20 * 19 * 18 * 17}{6!} = 74613 $
+
+
+
+
+
+
+\end{document}

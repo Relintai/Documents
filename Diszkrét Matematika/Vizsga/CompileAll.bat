@@ -32,4 +32,7 @@ copy ArticleHalfA4Page4x2.pdf ..\Build\DiMat_1_Article_HalfA4_4x2.pdf
 pdflatex PrezA4Page.tex
 copy PrezA4Page.pdf ..\Build\DiMat_1_Prez_Normal.pdf
 
+pdflatex Article1d2A5Page.tex
+copy Article1d2A5Page.pdf ..\Build\DiMat_1_Article_Scaled1d2A5.pdf
+
 pause
