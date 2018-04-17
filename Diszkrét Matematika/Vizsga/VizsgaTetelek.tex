@@ -71,8 +71,11 @@
 \setbeamercolor*{enumerate subitem}{fg=black}
 \setbeamercolor*{enumerate subsubitem}{fg=black}
 
-\renewcommand{\footnotesize}{\fontsize{1.4em}{0.2em}}
-\renewcommand{\normalsize}{\fontsize{1.4em}{0.2em}}
+ \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\rmdefault}
+
+\renewcommand{\footnotesize}{\fontsize{1.2em}{0.2em}}
+\renewcommand{\normalsize}{\fontsize{1.2em}{0.2em}}
 \renewcommand{\large}{\footnotesize}
 \renewcommand{\Large}{\footnotesize}
 
@@ -84,11 +87,17 @@
 \renewcommand{\tiny}{\footnotesize}
 \renewcommand{\small}{\footnotesize}
 
-\fontsize{1.4em}{0.2em}
+\fontsize{1.2em}{0.2em}
 \selectfont
 
+\newcommand{\RHuge}{\fontsize{1.8em}{0.3em}\selectfont}
+
+\newsavebox\CBox 
+%\newcommand<>*\textBF[1]{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf#2{#1}}}
+\newcommand<>*\textBF[1]{\only#2{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}}
+
 % These are different themes, only uncomment one at a time
-\tcbset{enhanced,fonttitle=\bfseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
+\tcbset{enhanced,fonttitle=\mdseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
 
 %\tcbset{colback=yellow!5!white,colframe=yellow!84!black}
 %\tcbset{enhanced,colback=red!10!white,colframe=red!75!black,colbacktitle=red!50!yellow,fonttitle=
@@ -124,7 +133,7 @@
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Diszkrét Matematika I}\\
+    {\RHuge Diszkrét Matematika I}\\
 \end{tcolorbox}
 \end{frame}
 
@@ -136,7 +145,7 @@
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Halmazok, Relációk}
+    {\RHuge Halmazok, Relációk}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
@@ -191,7 +200,7 @@
     TFH (Indirekt):\\
     $B \in A$, ekkor:\\
 
-    \textbf{1.eset}\\
+    \textBF{1.eset}\\
     \msmallskip
 
     Ha $B \notin B$ $\rightarrow$ Definíció szerint ekkor $B \in B$ $\Rightarrow$ Ellentmondás!\\
@@ -256,17 +265,17 @@
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Diszjunkt, Páronként diszjunkt halmazok.}]
-    Két halmaz \textbf{diszjunkt}, ha metszetük üres.\\
-    Egy halmazrendszer elemei \textbf{páronként diszjunktak}, ha bármely kettő metszete üres.
+    Két halmaz \textBF{diszjunkt}, ha metszetük üres.\\
+    Egy halmazrendszer elemei \textBF{páronként diszjunktak}, ha bármely kettő metszete üres.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Halmazok Különbsége}]
-    Az $A, B$ halmaz \textbf{Különbségén} a következő halmazt értjük:\\
+    Az $A, B$ halmaz \textBF{Különbségén} a következő halmazt értjük:\\
     $A \setminus B = \{ x \in A | x \notin B \}$.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Halmazok Szimmetrikus Differenciája}]
-    Az $A, B$ halmazok \textbf{szimmetrikus differenciáján} a következő halmazt értjük:\\
+    Az $A, B$ halmazok \textBF{szimmetrikus differenciáján} a következő halmazt értjük:\\
     $A \triangle B = \{ x | x \in A \setminus B \lor x \in B \setminus A \} = \{ x \in A \cup B | x \notin A \cap B \}$.
   \end{tcolorbox}
 \end{frame}
@@ -295,7 +304,7 @@
 
 \begin{frame}
   \begin{tcolorbox}[title={Definíció: Hatványhalmaz}]
-    Ha $A$ halmaz, akkor azt a halmazrendszert, melynek elemei $A$ részhalmazai, az \textbf{$A$ hatványhalmazának} nevezzük.\\
+    Ha $A$ halmaz, akkor azt a halmazrendszert, melynek elemei $A$ részhalmazai, az \textBF{$A$ hatványhalmazának} nevezzük.\\
     Jele: ${\wp}(A)$, (A $\wp$ betű a "Potenz" szóra utal (gyakori a $2^A$ jelölés is.)
   \end{tcolorbox}
 
@@ -309,7 +318,7 @@
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Relációk}
+    {\RHuge Relációk}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
@@ -345,23 +354,23 @@
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Reláció értelmezési tartománya}]
-    \textbf{$R \subseteq X x Y$ reláció értelmezési tartománya}\\
+    \textBF{$R \subseteq X x Y$ reláció értelmezési tartománya}\\
     $dmn(R) := \{ a \in X | {\exists}b \in Y : (a, b) \in R \}$.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Reláció értékkészlete}]
-    \textbf{$R \subseteq X x Y$ reláció értékkészlete}\\
+    \textBF{$R \subseteq X x Y$ reláció értékkészlete}\\
     $rng(R) := \{ b \in Y | {\exists} a \in X : (a, b) \in R \}$.
   \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Leszűkítés, kierjesztés}]
-Ha $S \subseteq R$, akkor $S$ az $R$ \textbf{ledszűkítése}, $R$ az $S$ \textbf{kiterjesztése}.
+Ha $S \subseteq R$, akkor $S$ az $R$ \textBF{ledszűkítése}, $R$ az $S$ \textBF{kiterjesztése}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Az $R$ reláció $X$ halmazra való Leszűkítése}]
-Az $R$ reláció $X$ halmazra való \textbf{leszűkítése}:\\
+Az $R$ reláció $X$ halmazra való \textBF{leszűkítése}:\\
 $R|_X := \{(a, b) \in R | a \in X \}$.
 \end{tcolorbox}
 
@@ -378,11 +387,11 @@ $rng(R^{-1}) = dmn(R)$\\
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Az $A$ halmaz képe, (ős)képe / inverz képe}]
-Az $A$ halmaz \textbf{képe}:\\
+Az $A$ halmaz \textBF{képe}:\\
 $R(A) := \{ y :$ van olyan $x \in A$, hogy $(x, y) \in R \}$\\
 \mmedskip
 
-\textbf{Inverz (Ős) képe}:\\
+\textBF{Inverz (Ős) képe}:\\
 $R^{-1}(A)$.
 \end{tcolorbox}
 
@@ -415,29 +424,29 @@ $\mathbb{I}_Y \circ R = R$ és $R \circ \mathbb{I}_X = R$.
 \begin{tcolorbox}[title={Def.: Homogén binér relációk tulajdonságai}]
 Legyen $R \subseteq A x A$ alakú, ekkor $R$\\
 \begin{enumerate}
-\item \textbf{Reflexív}: ${\forall}a \in A (a R a)$
-\item \textbf{Irreflexív}: ${\forall}a \in A {\neg}(a R a)$
-\item \textbf{Szimmetrikus}: ${\forall}a, b \in A (a R b \Rightarrow b R a)$
-\item \textbf{Antiszimmetrikus}: ${\forall}a, b \in A (a R b \land b R a \Rightarrow b = a)$
-\item \textbf{Szigorúan antiszimmetrikus (Asszimetrikus)}: ${\forall}a, b \in A (a R b \Rightarrow {\neg}(b R a))$
-\item \textbf{Tranzitív}: ${\forall}a, b, c \in A (a R b \land b R c \Rightarrow a R c)$
-\item \textbf{Intranzitív}: ${\forall}a, b, c \in A (a R b \land b R c \Rightarrow {\neg}(a R c))$
-\item \textbf{Trichotom}: ${\forall}a, b \in A (1!$ (pontosan 1) áll fenn $a R b, b R a, a = b$ közül.
-\item \textbf{Dichotom}: ${\forall}a, b \in A (a R b \lor b R a)$
+\item \textBF{Reflexív}: ${\forall}a \in A (a R a)$
+\item \textBF{Irreflexív}: ${\forall}a \in A {\neg}(a R a)$
+\item \textBF{Szimmetrikus}: ${\forall}a, b \in A (a R b \Rightarrow b R a)$
+\item \textBF{Antiszimmetrikus}: ${\forall}a, b \in A (a R b \land b R a \Rightarrow b = a)$
+\item \textBF{Szigorúan antiszimmetrikus (Asszimetrikus)}: ${\forall}a, b \in A (a R b \Rightarrow {\neg}(b R a))$
+\item \textBF{Tranzitív}: ${\forall}a, b, c \in A (a R b \land b R c \Rightarrow a R c)$
+\item \textBF{Intranzitív}: ${\forall}a, b, c \in A (a R b \land b R c \Rightarrow {\neg}(a R c))$
+\item \textBF{Trichotom}: ${\forall}a, b \in A (1!$ (pontosan 1) áll fenn $a R b, b R a, a = b$ közül.
+\item \textBF{Dichotom}: ${\forall}a, b \in A (a R b \lor b R a)$
 \end{enumerate}
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Ekvivalenciareláció}]
-ha \textbf{reflexív, tranzitív, szimmetrikus}.
+ha \textBF{reflexív, tranzitív, szimmetrikus}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Halmaz osztályfelbontása}]
-A tetszőleges X halmazt \textbf{osztályozzuk (osztályokra bontjuk)}, ha páronként diszjunkt, nemüres részhalmazainak uniójaként állítjuk elő.
+A tetszőleges X halmazt \textBF{osztályozzuk (osztályokra bontjuk)}, ha páronként diszjunkt, nemüres részhalmazainak uniójaként állítjuk elő.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Az x $\in$ X elem \textbf{ekvivalencia osztálya}:}]
+\begin{tcolorbox}[title={Az x $\in$ X elem \textBF{ekvivalencia osztálya}:}]
 $$\overline{x} = \{y \in X : y \sim x\}$$
 \end{tcolorbox}
 
@@ -447,7 +456,7 @@ Valamely X halmazon értelmezett $\sim$ ekvivalenciareláció X-nek egy osztály
 Bizonyítás:\\
 \mmedskip
 
-\textbf{1. Rész ($\Rightarrow$)}\\
+\textBF{1. Rész ($\Rightarrow$)}\\
 \mmedskip
 
 Tfh $\sim$ ekvivalenciareláció X-n.
@@ -459,7 +468,7 @@ Reflexivitás $\Rightarrow$ $x \in \tilde{x}$ $\Rightarrow$ osztályok nem üres
 Mi újság a két osztály metszetével?\\
 \msmallskip
 
-\textbf{Tfh} van nem üres: $z \in \tilde{x} \cap \tilde{y}$ tranz + szimm $\Rightarrow$ $x \sim y$, továbbá:\\
+\textBF{Tfh} van nem üres: $z \in \tilde{x} \cap \tilde{y}$ tranz + szimm $\Rightarrow$ $x \sim y$, továbbá:\\
 \msmallskip
 
 tranz + szimm $\Rightarrow$ $w \in \tilde{x} \Rightarrow w \in \tilde{y}$ és $w \in \tilde{y} \Rightarrow w \in \tilde{x}$.
@@ -471,7 +480,7 @@ Kaptuk: $\tilde{x} \cap \tilde{y} \neq \emptyset \Rightarrow \tilde{x} = \tilde{
 Tehát a következő halmaz $X$-nek egy osztályfelbontását adja:\\
 $\tilde{X} = \{ \tilde{x} : x \in X \}$\\
 
-\textbf{2. Rész ($\Leftarrow$)}:\\
+\textBF{2. Rész ($\Leftarrow$)}:\\
 \mmedskip
 
 Tfh ${\exists}X$-nek osztályfelbontása:\\
@@ -492,7 +501,7 @@ Szimmetrikus? $\rightarrow$ Igen
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Részbenrendezés, Szigorú részbenrendezés}]
-Az $R \subseteq X x X$ reláció \textbf{részbenrendezés (${\leq}$)}, ha:\\
+Az $R \subseteq X x X$ reláció \textBF{részbenrendezés (${\leq}$)}, ha:\\
 \begin{itemize}
 \item Reflexív
 \item Tranzitív
@@ -500,7 +509,7 @@ Az $R \subseteq X x X$ reláció \textbf{részbenrendezés (${\leq}$)}, ha:\\
 \end{itemize}
 \mmedskip
 
-\textbf{Szigorú részbenrendezés (<)}, ha:\\
+\textBF{Szigorú részbenrendezés (<)}, ha:\\
 \begin{itemize}
 \item Irreflexív
 \item Tranzitív
@@ -508,11 +517,11 @@ Az $R \subseteq X x X$ reláció \textbf{részbenrendezés (${\leq}$)}, ha:\\
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Teljes rendezés}]
-Tetszőleges részbenrendezett halmaz esetén, ha bármely két elem relációban van, \textbf{rendezésről (teljes rendezés)} beszélünk.
+Tetszőleges részbenrendezett halmaz esetén, ha bármely két elem relációban van, \textBF{rendezésről (teljes rendezés)} beszélünk.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Részbenrendezett, vagy rendezett struktúra}]
-\textbf{$(X, {\leq})$ részbenrendezett vagy rendezett struktúra}, ha ${\leq}$ részbenrendezés vagy rendezés.
+\textBF{$(X, {\leq})$ részbenrendezett vagy rendezett struktúra}, ha ${\leq}$ részbenrendezés vagy rendezés.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Diagonális reláció}]
@@ -522,16 +531,16 @@ Tetszőleges részbenrendezett halmaz esetén, ha bármely két elem relációba
 Tetszőleges $X$, a $\leq$ relációval részbenrendezett halmaz bármely $Y$ részhalmaza részbenrendezett a $\leq \subseteq Y x Y$ relációval.\\
 \msmallskip
 
-Ha ($\leq \subseteq Y x Y$) struktúra rendezés, akkor \textbf{lánc}.\\
+Ha ($\leq \subseteq Y x Y$) struktúra rendezés, akkor \textBF{lánc}.\\
 \mmedskip
 
-Tfh $R$ $X$-beli reláció. Ha $S$ $X$-beli reláció olyan, hogy $xSy$ akkor áll fenn, ha $xRy$ ls $x \neq y$, akkor $S$ az $R$-nek megfelelő \textbf{szigorú reláció}.\\
+Tfh $R$ $X$-beli reláció. Ha $S$ $X$-beli reláció olyan, hogy $xSy$ akkor áll fenn, ha $xRy$ ls $x \neq y$, akkor $S$ az $R$-nek megfelelő \textBF{szigorú reláció}.\\
 \mmedskip
 
-Tfh $R$ $X$-beli reláció. Ha $T$ $X$-beli reláció olyan, hogy $xTy$ akkor áll fenn, ha $xRy$ vagy $x = y$, akkor $T$ az $R$-nek megfelelő \textbf{gyenge reláció}.\\
+Tfh $R$ $X$-beli reláció. Ha $T$ $X$-beli reláció olyan, hogy $xTy$ akkor áll fenn, ha $xRy$ vagy $x = y$, akkor $T$ az $R$-nek megfelelő \textBF{gyenge reláció}.\\
 \mmedskip
 
-\textbf{< szigorú részbenrendezés}: Irreflexív, Tranzitív, Szigorúan Antiszimmetrikus.\\
+\textBF{< szigorú részbenrendezés}: Irreflexív, Tranzitív, Szigorúan Antiszimmetrikus.\\
 \mmedskip
 
 Ész: $\leq$ rendezés $\iff$ trichotóm.
@@ -549,10 +558,10 @@ $(x, y) = \{ z \in X | x < z < y \}$.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Közvetlenü megelőzi, Közvetlenül követi}]
-Ha $x < y$, de ugyanakkor nem létezik szigorúan $x$ és $y$ közé eső elem, akkor azt mondjuk, hogy $x$ \textbf{közvetlenül megelőzi} $y$-t, vagy $y$ \textbf{közvetlenül követi} $x$-et.\\
+Ha $x < y$, de ugyanakkor nem létezik szigorúan $x$ és $y$ közé eső elem, akkor azt mondjuk, hogy $x$ \textBF{közvetlenül megelőzi} $y$-t, vagy $y$ \textBF{közvetlenül követi} $x$-et.\\
 \mmedskip
 
-Egy $x$ elemhez tartozó \textbf{kezdőszeletnek} a $\{ y \in X : y < x \}$ részhalmazt nevezzük.\\
+Egy $x$ elemhez tartozó \textBF{kezdőszeletnek} a $\{ y \in X : y < x \}$ részhalmazt nevezzük.\\
 \mmedskip
 
 Jel: $] {\leftarrow}, x [$ ($\rightarrow$ = közvetlenül megelőzi)
@@ -563,13 +572,13 @@ Legyen $(X, {\leq})$ részbenrendezett struktúra, ekkor\\
 $m \in X$\\
 \msmallskip
 
-az $X$ \textbf{minimális eleme}, ha nem létezik olyan $(m {\neq}) x \in X$, amelyre $m \geq x$.\\
+az $X$ \textBF{minimális eleme}, ha nem létezik olyan $(m {\neq}) x \in X$, amelyre $m \geq x$.\\
 \mmedskip
 
-\textbf{legkisebb eleme}, ha minden $x \in X$-re $m \leq x$.\\
+\textBF{legkisebb eleme}, ha minden $x \in X$-re $m \leq x$.\\
 \mmedskip
 
-\textbf{Maximális} és \textbf{legnagyobb} elem hasonlóan.
+\textBF{Maximális} és \textBF{legnagyobb} elem hasonlóan.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -585,10 +594,10 @@ Legyen $B \subseteq A$ ($A$ részbenrendezett), ekkor:\\
 \msmallskip
 
 $a \in A$\\
-\textbf{a $B$ alsó korlátja}, ha minden $x \in B$-re $a \leq x$.\\
+\textBF{a $B$ alsó korlátja}, ha minden $x \in B$-re $a \leq x$.\\
 \mmedskip
 
-\textbf{Felső korlátja}, ha minden $x \in B$-re $x \leq a$.\\
+\textBF{Felső korlátja}, ha minden $x \in B$-re $x \leq a$.\\
 \mmedskip
 
 Észrevételek:\\
@@ -600,17 +609,17 @@ $a \in A$\\
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Infinum, Supremum}]
-$B$ \textbf{infinuma} (inf $B$), ha létezik, $B$ legnagyobb alsó korlátja.\\
+$B$ \textBF{infinuma} (inf $B$), ha létezik, $B$ legnagyobb alsó korlátja.\\
 \mmedskip
 
-\textbf{pontos felső/alsó korlát, felső/alsó határ}\\
+\textBF{pontos felső/alsó korlát, felső/alsó határ}\\
 \mmedskip
 
-$B$ \textbf{supremuma} (sup $B$), ha létezik, $B$ legkisebb felő korlátja.
+$B$ \textBF{supremuma} (sup $B$), ha létezik, $B$ legkisebb felő korlátja.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Jólrendezett halmaz}]
-Tetszőleges részbenrendezett halmaz \textbf{jólrendezett}, ha bármely nemüres részhalmazának van legkisebb eleme.
+Tetszőleges részbenrendezett halmaz \textBF{jólrendezett}, ha bármely nemüres részhalmazának van legkisebb eleme.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -622,14 +631,14 @@ Jólrendezett $\Rightarrow$ rendezett.
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Függvények}
+    {\RHuge Függvények}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Függvény, Parciális függvény}]
-Az $f$ \textbf{reláció} függvény, ha\\
+Az $f$ \textBF{reláció} függvény, ha\\
 $(x, y) \in f \land (x, y') \in f \Rightarrow y = y'$.\\
 \tcblower
 Kapcsolódó jelölések, fogalmak:\\
@@ -640,7 +649,7 @@ $f : x \rightarrow y$\\
 $X \rightarrow Y$ (Az összes olyan fggvény halmaza, amelynek értelmezési tartománya X-nek, értékkészlete pedig Y-nak része.)\\
 \mmedskip
 
-\textbf{Parciális függvény}:\\
+\textBF{Parciális függvény}:\\
 \msmallskip
 
 $f: X \rightarrow Y$, ($dmn(f) = X$)\\
@@ -660,9 +669,9 @@ Akkor, és csak akkor, ha minden érték megegyezik, és az értelmezési tartom
 \begin{tcolorbox}[title={Def.: Függvények típusai}]
 Az $f: A \rightarrow B$ függvény\\
 \begin{itemize}
-\item \textbf{Szürjektív}, ha $B = rng(f)$ (Ráképzés)
-\item \textbf{Injektív}, ha ${\forall} a, b \in dmn(f) : (a \neq b) \Rightarrow f(a) \neq f(b)$ (Kölcsönösen egyértelmű)
-\item \textbf{Bijektív}, ha Injektív, és Szürjektív is.
+\item \textBF{Szürjektív}, ha $B = rng(f)$ (Ráképzés)
+\item \textBF{Injektív}, ha ${\forall} a, b \in dmn(f) : (a \neq b) \Rightarrow f(a) \neq f(b)$ (Kölcsönösen egyértelmű)
+\item \textBF{Bijektív}, ha Injektív, és Szürjektív is.
 \end{itemize}
 \end{tcolorbox}
 
@@ -671,7 +680,7 @@ Injektív függvény inverze is függvény.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Kanonikus leképzés}]
-Ha adott egy $X$ halmazon értelmezett ekvivalenciareláció, akkor az $X$ elemeihez saját ekvivalenciaosztályukat rendelő leképzést (függvényt) \textbf{kanonikus leképzésnek (függvénynek)} nevezzük.\\
+Ha adott egy $X$ halmazon értelmezett ekvivalenciareláció, akkor az $X$ elemeihez saját ekvivalenciaosztályukat rendelő leképzést (függvényt) \textBF{kanonikus leképzésnek (függvénynek)} nevezzük.\\
 \msmallskip
 
 Fordítva: ha $f: X \rightarrow Y$ függvény, akkor $\sim \subset X x X$ ekvivalenciareláció, ahol $(x, y) \in {\sim}$, ha $f(x) = f(y)$.
@@ -684,15 +693,15 @@ Legyen $(A, {\leq}_1), (B, {\leq}_2)$ részbenrendezett struktúra.\\
 Ekkor az $f : A \rightarrow B$ függvény\\
 \mmedskip
 
-\textbf{monoton növő}, ha:\\
+\textBF{monoton növő}, ha:\\
 ${\forall}x, y \in dmn(f) : x {\leq}_1 y \Rightarrow f(x) {\leq}_2 f(y)$.\\
 \mmedskip
 
-\textbf{Szigorúan monoton növő}, ha:\\
+\textBF{Szigorúan monoton növő}, ha:\\
 ${\forall}x, y \in dmn(f) : x <_1 y \Rightarrow f(x) <_2 f(y)$.\\
 \mmedskip
 
-\textbf{Csökkenő hasonlóan!}
+\textBF{Csökkenő hasonlóan!}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -711,14 +720,14 @@ Legyen $x$ függvény, $dmn(x) = I$ és $x(i) = y$ helyett írjuk $x(i) = x_i$-t
 Ekkor:\\
 \msmallskip
 
-$I$ \textbf{indexhalmaz}, $rng(x)$ \textbf{indexelt halmaz}, $x$ \textbf{indexelt család}.\\
+$I$ \textBF{indexhalmaz}, $rng(x)$ \textBF{indexelt halmaz}, $x$ \textBF{indexelt család}.\\
 \msmallskip
 
-Ha $rng(x)$ elemei halmazok, akkor \textbf{halmazcsaládról} beszélünk, és egy $X_i, i \in I$ \textbf{halmazcsalád unióját} így definiáljuk:\\
+Ha $rng(x)$ elemei halmazok, akkor \textBF{halmazcsaládról} beszélünk, és egy $X_i, i \in I$ \textBF{halmazcsalád unióját} így definiáljuk:\\
 ${\bigcup}_{i \in I} X_i := {\bigcup}\{ X_i : i \in I\}$\\
 \mmedskip
 
-$i \leq \emptyset$ esetén \textbf{halmazcsalád metszetét} így definiáljuk:\\
+$i \leq \emptyset$ esetén \textBF{halmazcsalád metszetét} így definiáljuk:\\
 ${\bigcap}_{i \in I} X_i := {\bigcap}\{ X_i : i \in I\}$
 \end{tcolorbox}
 \end{frame}
@@ -726,12 +735,12 @@ ${\bigcap}_{i \in I} X_i := {\bigcap}\{ X_i : i \in I\}$
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Kiválasztási függvény, Halmazcsalád Descartes-szorzata}]
-Az $X_i, i \in I$ halmazcsaládhoz tartozó \textbf{kiválasztási függvénynek} nevezzük azokat az\\
+Az $X_i, i \in I$ halmazcsaládhoz tartozó \textBF{kiválasztási függvénynek} nevezzük azokat az\\
 $x : I \rightarrow {\bigcup}_{i \in I} X_i$\\
 alakú függvényeket, ahol ${\forall} i \in I$-re $x_i \in X_i$.\\
 \mmedskip
 
-Az $X_i \in I$ halmazcsalád \textbf{Descartes - szorzata} a hozzá tartozó összes kiválasztási függvény halmaza.\\
+Az $X_i \in I$ halmazcsalád \textBF{Descartes - szorzata} a hozzá tartozó összes kiválasztási függvény halmaza.\\
 \mmedskip
 
 Jel: $X_{i \in I} X_i$, vagy $x_iX_i$
@@ -751,7 +760,7 @@ Ha $J = \{ j \}$, akkor ez az $x \rightarrow x_j$ leképzéssel azonosítható �
 \begin{frame}
 
 \begin{tcolorbox}[title={Def.: $n$-változós művelet}]
-$f : A^n \rightarrow A$-n értelmezett \textbf{$n$-változós (n-ér) művelet.}\\
+$f : A^n \rightarrow A$-n értelmezett \textBF{$n$-változós (n-ér) művelet.}\\
 Jel: $f(a_1, a_2, ..., a_n)$
 \end{tcolorbox}
 
@@ -774,7 +783,7 @@ Bal oldalon bal oldali operandusok.
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Algebrai struktúrák, Számhalmazok}
+    {\RHuge Algebrai struktúrák, Számhalmazok}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
@@ -784,59 +793,59 @@ Bal oldalon bal oldali operandusok.
 \begin{tcolorbox}[title={Def.:Algebrai struktúrák, izomorfiájuk}]
 %\begin{tcolorbox}[title={Def.: Művelet, Eredmény, Operandus, Algebrai Struktúra, Tartóhalmaz (Alaphalmaz)}]
 Ha $A$ tetszőleges halmaz, akkor egy\\
-\textbf{A-n értelmezett $n$-ér műveleten ($n$-változós)} egy\\
+\textBF{A-n értelmezett $n$-ér műveleten ($n$-változós)} egy\\
 $f : (A^n =) A x A ... x \rightarrow A$ és $n \in \mathbb{N}_0$.\\
 \msmallskip
 
 Ha $x_1, x_2, ..., x_n\in A$, akkor\\
-$f(x_1, x_2, ..., x_n)$ a művelet \textbf{eredménye}, míg $x_1, x_2, ..., x_n$ a művelet \textbf{operandusai}.\\
+$f(x_1, x_2, ..., x_n)$ a művelet \textBF{eredménye}, míg $x_1, x_2, ..., x_n$ a művelet \textBF{operandusai}.\\
 \msmallskip
 
-Az $(A, {\Omega})$ pár \textbf{algebrai struktúra}, ha az $A$ nem üres halmaz, és $\Omega$ az $A$-n értelmezett véges változós műveletek halmaza.\\
+Az $(A, {\Omega})$ pár \textBF{algebrai struktúra}, ha az $A$ nem üres halmaz, és $\Omega$ az $A$-n értelmezett véges változós műveletek halmaza.\\
 \msmallskip
 
 Szokásos jelölés, ha $\Omega$ $1$ vagy $2$ elemű: $(A, {\oplus})$, ill $(A, {\oplus}, {\otimes})$,\\
 ahol $\otimes$, $\oplus$, $A$-n értelmezett $n$-ér műveletek.\\
 \msmallskip
 
-$A$-t \textbf{tartóhalmaznak (alaphalmaz)} hívjuk.
+$A$-t \textBF{tartóhalmaznak (alaphalmaz)} hívjuk.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Műveleti zártság}]
-Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textbf{${\otimes}$ zárt $A$-n ($A$ zárt a ${\otimes}$ műveletre nézve)}, azaz ${\forall}x_1, x_2, ..., x_n \in A$ esetén $x_1 \otimes x_2 \otimes ... \otimes x_n \in A$
+Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textBF{${\otimes}$ zárt $A$-n ($A$ zárt a ${\otimes}$ műveletre nézve)}, azaz ${\forall}x_1, x_2, ..., x_n \in A$ esetén $x_1 \otimes x_2 \otimes ... \otimes x_n \in A$
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Grupoid}]
-    Egy $(G, {\cdot})$ algebrai struktúrát, amelyben $\cdot$ binér művelet, \textbf{grupoidnak} nevezzük.
+    Egy $(G, {\cdot})$ algebrai struktúrát, amelyben $\cdot$ binér művelet, \textBF{grupoidnak} nevezzük.
   \tcblower
     Egy $(G, {\cdot})$ grupoidban a művelet:\\
 
     \begin{itemize}
-      \item \textbf{Asszociatívnak} nevezzük, ha minden $a, b, c \in G$ esetén $a(bc) = (ab)c$
-      \item \textbf{Kommutatívnak} nevezzük, ha minden $a, b \in G$ esetén $ab = ba$
-      \item \textbf{Regulárisnak} nevezzük, ha minden $a, b, c \in G$ esetén $ac = bc$-ből következik, hogy $a = b$, valamint $ca = cb$-ből is következik, hogy $a = b$
+      \item \textBF{Asszociatívnak} nevezzük, ha minden $a, b, c \in G$ esetén $a(bc) = (ab)c$
+      \item \textBF{Kommutatívnak} nevezzük, ha minden $a, b \in G$ esetén $ab = ba$
+      \item \textBF{Regulárisnak} nevezzük, ha minden $a, b, c \in G$ esetén $ac = bc$-ből következik, hogy $a = b$, valamint $ca = cb$-ből is következik, hogy $a = b$
     \end{itemize}
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Morfizmusok}]
-    Legyen $(G, {\cdot})$ és $(G', {\otimes})$ két grupoid. A ${\phi} : G \rightarrow G'$ függvényt \textbf{homomorfizmusnak} nevezzük, ha \textbf{művelettartó}, vagyis ${\forall}a_1, a_2 \in G : {\phi}(a_1a_2) = {\phi}(a_1) \otimes {\phi}(a_2)$\\
+    Legyen $(G, {\cdot})$ és $(G', {\otimes})$ két grupoid. A ${\phi} : G \rightarrow G'$ függvényt \textBF{homomorfizmusnak} nevezzük, ha \textBF{művelettartó}, vagyis ${\forall}a_1, a_2 \in G : {\phi}(a_1a_2) = {\phi}(a_1) \otimes {\phi}(a_2)$\\
 
-    \textbf{Izomorfizmus}: bijektív homomorfizmus.
+    \textBF{Izomorfizmus}: bijektív homomorfizmus.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Félcsoport}]
-    A $(G, {\cdot})$ grupoid \textbf{félcsoport}, ha $\cdot$ asszociatív.
+    A $(G, {\cdot})$ grupoid \textBF{félcsoport}, ha $\cdot$ asszociatív.
   \tcblower
-    \textbf{Baloldali, Jobboldali egységelem, Egységelem}:\\
+    \textBF{Baloldali, Jobboldali egységelem, Egységelem}:\\
     \mmedskip
     
     A $(G, {\cdot})$  félcsoportban:\\
     \begin{itemize}
-      \item $e_b \in G$ \textbf{bal oldali egységelem}, ha minden $a \in G$ esetén $e_ba = a$
-      \item $e_j \in G$ \textbf{jobb olodali egységelem}, ha minden $a \in G$ esetén $ae_j = a$
-      \item $e \in G$ \textbf{egységelem}, ha egyszerre bal és jobb oldali egységelem.
+      \item $e_b \in G$ \textBF{bal oldali egységelem}, ha minden $a \in G$ esetén $e_ba = a$
+      \item $e_j \in G$ \textBF{jobb olodali egységelem}, ha minden $a \in G$ esetén $ae_j = a$
+      \item $e \in G$ \textBF{egységelem}, ha egyszerre bal és jobb oldali egységelem.
     \end{itemize}
   \end{tcolorbox}
 \end{frame}
@@ -847,17 +856,17 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
     \msmallskip
     
     \begin{itemize}
-      \item $a_b \in G$ \textbf{balinverze}, ha $a_ba = e$.
-      \item $a_j \in G$ \textbf{jobbinverze}, ha $aa_j = e$.
-      \item $a' \in G$ \textbf{inverze}, ha $aa' / a'a = e$.
+      \item $a_b \in G$ \textBF{balinverze}, ha $a_ba = e$.
+      \item $a_j \in G$ \textBF{jobbinverze}, ha $aa_j = e$.
+      \item $a' \in G$ \textBF{inverze}, ha $aa' / a'a = e$.
     \end{itemize}
     \mmedskip
     
     Legyen $(G, {\cdot})$ félcsoportban $e_b$ bal oldali egységelem. Az $a \in G$ elemnek \\
     \msmallskip
     
-    $a_b \in G$ az \textbf{$e_b$-re vonatkoztatott balinverze}, ha $a_ba = e_b$\\
-    illetve az \textbf{$e_b$-re vonatkoztatott jobbinverze}, ha $aa_b = e_b$\\
+    $a_b \in G$ az \textBF{$e_b$-re vonatkoztatott balinverze}, ha $a_ba = e_b$\\
+    illetve az \textBF{$e_b$-re vonatkoztatott jobbinverze}, ha $aa_b = e_b$\\
     \mmedskip
     
     A bal-é s jobbinverz fogalma jobboldali egységelemre hasonlóan.
@@ -888,7 +897,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Csoport, Abel-csoport}]
-    A $(H, {\cdot})$ félcsoport \textbf{csoport}, ha:
+    A $(H, {\cdot})$ félcsoport \textBF{csoport}, ha:
     \begin{enumerate}
       \item Létezik benne $e$ egységelem
       \item Minden $a \in H$ elemnek létezik erre az egységelemre vonatkozó $a^{-1}$ inverze:\\
@@ -898,7 +907,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
     \end{enumerate}
     \mmedskip
 
-    \textbf{Abel-csoportnak} nevezzük a kommutatív csoportokat.
+    \textBF{Abel-csoportnak} nevezzük a kommutatív csoportokat.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: $n$ tényezős szorzat / Hatványozás egész kitevővel}]
@@ -920,7 +929,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Gyűrűk}]
-    Az $(R, +, {\cdot})$ algebrai struktúra \textbf{gyűrű}, ha $+$ és $\cdot$ $R$-ben binér műveletek, valamint:\\
+    Az $(R, +, {\cdot})$ algebrai struktúra \textBF{gyűrű}, ha $+$ és $\cdot$ $R$-ben binér műveletek, valamint:\\
     \begin{enumerate}
       \item $(R, +)$ Abel-csoport.
       \item $(R, {\cdot})$ félcsoport
@@ -933,34 +942,34 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
     \end{enumerate}
     \mbigskip
 
-    \textbf{Kommutatív} a gyűrű, ha a szorzás kommutatív.\\
+    \textBF{Kommutatív} a gyűrű, ha a szorzás kommutatív.\\
     \mmedskip
 
-    \textbf{Nullelem}: Az additív csoport egységeleme a gyűrű \textbf{nulleleme}, jelben 0.\\
+    \textBF{Nullelem}: Az additív csoport egységeleme a gyűrű \textBF{nulleleme}, jelben 0.\\
     \mmedskip
 
-    \textbf{Egységelemes} a gyűrű, ha a szorzásra vonatkozóan van egységelem (amit $e$-vel, vagy $1$-gyel jelölünk.)\\
+    \textBF{Egységelemes} a gyűrű, ha a szorzásra vonatkozóan van egységelem (amit $e$-vel, vagy $1$-gyel jelölünk.)\\
     \mmedskip
 
-    \textbf{Nullgyűrű}: egyetlen elemből áll.\\
+    \textBF{Nullgyűrű}: egyetlen elemből áll.\\
     \mmedskip
 
-    \textbf{Zérógyűrű}: ha tetszőleges két elem szorzata a nullelem.\\
+    \textBF{Zérógyűrű}: ha tetszőleges két elem szorzata a nullelem.\\
     \mmedskip
 
-    \textbf{Nullosztó}: Az $R$ gyűrűben \textbf{$a$ bal oldali, $b$ jobb oldali nullosztó}, ha $a \neq 0$, $b \neq 0$, és $ab = 0$\\
+    \textBF{Nullosztó}: Az $R$ gyűrűben \textBF{$a$ bal oldali, $b$ jobb oldali nullosztó}, ha $a \neq 0$, $b \neq 0$, és $ab = 0$\\
     \mmedskip
 
-    \textbf{Integritási tartomány}: A (legalább két elemű), kommutatív, nullosztómentes gyűrűt \textbf{integritási tartománynak} nevezzük.\\
+    \textBF{Integritási tartomány}: A (legalább két elemű), kommutatív, nullosztómentes gyűrűt \textBF{integritási tartománynak} nevezzük.\\
     \mmedskip
 
-    \textbf{Osztó}: Legyen $R$ integritási tartomány és $a, b \in R$. $a$ \textbf{osztója} $b$-nek ha létezik $c \in R$, amelyre $b = ac$, jelben $a | b$.\\
+    \textBF{Osztó}: Legyen $R$ integritási tartomány és $a, b \in R$. $a$ \textBF{osztója} $b$-nek ha létezik $c \in R$, amelyre $b = ac$, jelben $a | b$.\\
     \mmedskip
 
-    \textbf{Egység}: $x \in R$ \textbf{egység}, ha $x | r$ minden $r \in R$-re.\\
+    \textBF{Egység}: $x \in R$ \textBF{egység}, ha $x | r$ minden $r \in R$-re.\\
     \mmedskip
 
-    \textbf{Test}: Az $R$ gyűrű \textbf{test}, ha $(R^*, {\cdot})$ Abel csoport.\\
+    \textBF{Test}: Az $R$ gyűrű \textBF{test}, ha $(R^*, {\cdot})$ Abel csoport.\\
     \msmallskip
     
     {\footnotesize $R^* =$ R struktúra, additív egységelem nélkül. (0)}
@@ -989,22 +998,22 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
 \begin{frame}
   \begin{tcolorbox}[title={Lemma: Észrevételek gyűrűkben}]
     \begin{enumerate}
-      \item \textbf{Szorzás nullelemmel:} Legyen 0 az R gyűrű nulleleme. Ekkor $a0 = 0a = 0$, minden $a \in R$ esetén.
-      \item \textbf{Előjelszabály:} Legyen R gyűrű, és $a, b \in R$. Az $a$ elem additív inverzét jelöljük $-a$-val. Ekkor $-(ab) = (-a)b = a(-b)$, továbbá $(-a)(-b) = ab$.
-      \item \textbf{Véges integritási tartomány test.}
-      \item \textbf{Testben nincs nullosztó.}
+      \item \textBF{Szorzás nullelemmel:} Legyen 0 az R gyűrű nulleleme. Ekkor $a0 = 0a = 0$, minden $a \in R$ esetén.
+      \item \textBF{Előjelszabály:} Legyen R gyűrű, és $a, b \in R$. Az $a$ elem additív inverzét jelöljük $-a$-val. Ekkor $-(ab) = (-a)b = a(-b)$, továbbá $(-a)(-b) = ab$.
+      \item \textBF{Véges integritási tartomány test.}
+      \item \textBF{Testben nincs nullosztó.}
     \end{enumerate}
   \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
   \begin{tcolorbox}[title={Lemma: Nullosztó és regularitás}]
-    R gyűrűben a multiplikatív művelet \textbf{akkor, és csak akkor} reguláris, ha R zérusosztómentes.
+    R gyűrűben a multiplikatív művelet \textBF{akkor, és csak akkor} reguláris, ha R zérusosztómentes.
   \tcblower
-    \textbf{Bizonyítás}\\
+    \textBF{Bizonyítás}\\
     \mmedskip
 
-    \textbf{1. Rész}\\
+    \textBF{1. Rész}\\
     \msmallskip
     
     Tfh $a \neq 0$, a nem bal oldali nullosztó és $ab = ac$.\\
@@ -1019,7 +1028,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
     $\implies$ b = c.\\
     \bigskip
 
-    \textbf{2. Rész}\\
+    \textBF{2. Rész}\\
     \msmallskip
     
     Tfh $a$ bal oldali nullosztó, tehát $a \neq 0$ és létezik $b \neq 0\: ab = 0$.\\
@@ -1037,7 +1046,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Rendezett Integritási Tartomány}]
-    $(R, +, {\cdot})$ integritási tartomány \textbf{rendezett integritási tartomány}, ha $R$ rendezett halmaz és\\
+    $(R, +, {\cdot})$ integritási tartomány \textBF{rendezett integritási tartomány}, ha $R$ rendezett halmaz és\\
     \begin{enumerate}
       \item Ha $x, y \in R$ és $x \leq y$, akkor $x + z \leq y + z$ (Az összeadás monoton)
       \item Ha $x, y \in R$ és $x, y \geq 0$, akkor $x \cdot y \geq 0$ (A szorzás monoton)
@@ -1047,8 +1056,8 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
   \begin{tcolorbox}[title={Def.: Felbonthatatlan, Prím}]
     Legyen $R$ egységelemes integritási tartomány, $U(R)$ az $R$-beli egységek halmaza, ekkor:\\
     \begin{enumerate}
-      \item $a \in R^* \setminus U(R)$ \textbf{felbonthatatlan}, ha $a = b \cdot c (b, c \in R)$ esetén $b \in U(R)$, vagy $c \in U(R)$
-      \item $a \in R^* \setminus U(R)$ \textbf{prím}, ha $a | b \cdot c$ $(b, c \in R) \Rightarrow a|b$ vagy $a|c$
+      \item $a \in R^* \setminus U(R)$ \textBF{felbonthatatlan}, ha $a = b \cdot c (b, c \in R)$ esetén $b \in U(R)$, vagy $c \in U(R)$
+      \item $a \in R^* \setminus U(R)$ \textBF{prím}, ha $a | b \cdot c$ $(b, c \in R) \Rightarrow a|b$ vagy $a|c$
     \end{enumerate}
   \end{tcolorbox}
 \end{frame}
@@ -1058,7 +1067,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Számhalmazok}
+    {\RHuge Számhalmazok}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
@@ -1079,7 +1088,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
 
 \begin{frame}
   \begin{tcolorbox}
-    {\Huge Természetes számok}
+    {\RHuge Természetes számok}
   \end{tcolorbox}
 \end{frame}
 
@@ -1101,7 +1110,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
   %\end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Természetes számok halmaza}]
-    Az a lényegében egyértelműen létező halmaz, amely eleget tesz a Peano-axiómáknak, a \textbf{természetes számok halmaza}.\\
+    Az a lényegében egyértelműen létező halmaz, amely eleget tesz a Peano-axiómáknak, a \textBF{természetes számok halmaza}.\\
     Jel: $\mathbb{N}$
   \end{tcolorbox}
 \end{frame}
@@ -1112,10 +1121,10 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
     \mmedskip
 
     $s_m(0) = m \land {\forall}n \in \mathbb{N} : s_m(n^+) = (s_m(n))^+$,\\
-    $s_m(n)$ $m$ én $n$ szám \textbf{összege}.\\
+    $s_m(n)$ $m$ én $n$ szám \textBF{összege}.\\
     Jelölés: $m + n$
   \tcblower
-    \textbf{Észrevételek}:\\
+    \textBF{Észrevételek}:\\
     \mmedskip
   
     $m^+ = (S_m(0))^+ = s_m(0^+) = S_m(1) = m + 1$\\
@@ -1129,10 +1138,10 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
     \mmedskip
 
     $p_m(0) = 0 \land {\forall}n\in \mathbb{N} : p_m(n^+) = p_m(n) + m$,\\
-    $p_m(n)$ $m$ és $n$ szám \textbf{szorzata}.\\
+    $p_m(n)$ $m$ és $n$ szám \textBF{szorzata}.\\
     Jelölés: $m \cdot n$ vagy $mn$
   \tcblower
-    \textbf{Észrevételek}:\\
+    \textBF{Észrevételek}:\\
     \mmedskip
     
     $1 \cdot 1 = p_1(1) = p_1(0^+) = p_1(0) + 1 = 0 + 1 = 1$
@@ -1141,7 +1150,7 @@ Ha $\otimes$ egy $A$-n értelmezett $n$-ér művelet, akkor mondjuk, hogy \textb
 
 \begin{frame}
   \begin{tcolorbox}[title={Tétel: Természetes számok}]
-    A $(N, +, {\cdot})$ struktúrában mindkét művelet \textbf{asszociatív, kommutatív, reguláris}.\\
+    A $(N, +, {\cdot})$ struktúrában mindkét művelet \textBF{asszociatív, kommutatív, reguláris}.\\
     \msmallskip
     
     Nullelem (additív egységelem): 0.\\
@@ -1193,25 +1202,25 @@ A természetes számok halmaza a $\leq$ relációval jólrendezett.\\
 
 \begin{frame}
 \begin{tcolorbox}
-{\Huge Valós Számok}
+{\RHuge Valós Számok}
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Rendezett test}]
-  Egy struktúra \textbf{rendezett test}, ha test és rendezett integritási tartomány.
+  Egy struktúra \textBF{rendezett test}, ha test és rendezett integritási tartomány.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Arkhimédészi tulajdonság}]
-  Egy $(T; +, {\cdot}; {\leq})$ rendezett test \textbf{arkhimédeszi tulajdonságú}, ha\\
+  Egy $(T; +, {\cdot}; {\leq})$ rendezett test \textBF{arkhimédeszi tulajdonságú}, ha\\
   ${\forall}x, y \in T : x > 0$ esetén ${\exists}n \in \mathbb{N} : nx \geq y$\\
   \msmallskip
 
-  Ekkor T \textbf{arkhimédeszien rendezett}.
+  Ekkor T \textBF{arkhimédeszien rendezett}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Felső határ tulajdonság}]
-  Egy $(T; +, {\cdot}; {\leq})$ rendezett test \textbf{felső határ tulajdonságú}, ha minden nem üres felülről korlátos részhalmazának létezik $T$-ben felső határa (legkisebb felső korlátja $\rightarrow$ Supremum).
+  Egy $(T; +, {\cdot}; {\leq})$ rendezett test \textBF{felső határ tulajdonságú}, ha minden nem üres felülről korlátos részhalmazának létezik $T$-ben felső határa (legkisebb felső korlátja $\rightarrow$ Supremum).
 \end{tcolorbox}
 \end{frame}
 
@@ -1219,7 +1228,7 @@ A természetes számok halmaza a $\leq$ relációval jólrendezett.\\
   \begin{tcolorbox}[title={Tétel: Felső határ és arkhimédészi tulajdonság}]
     $T$ felső határ tulajdonságú test $\implies$ $T$ arkhimédészi tulajdonságú.
   \tcblower
-    \textbf{Bizonyítás (Indirekt)}\\
+    \textBF{Bizonyítás (Indirekt)}\\
     \mmedskip
     
     Tfh (indirekte) $T$ felső határ tulajdonságú rendezett test, de nem arkhimédészi tulajdonságú.\\
@@ -1248,7 +1257,7 @@ $\mathbb{Q}$ arkhimédészi tulajdonságú, de nem felső határ tulajdonságú.
   \begin{tcolorbox}[title={Tétel: $\sqrt{2}$ nem racionális}]
     Nincs $\mathbb{Q}$-ban olyan szám, amelynek négyzete 2.
   \tcblower
-    \textbf{Bizonyítás (Indirekt)}\\
+    \textBF{Bizonyítás (Indirekt)}\\
     \mmedskip
     
     Tfh (indirekte) van, és ez $x$.\\
@@ -1278,24 +1287,24 @@ $\mathbb{Q}$ arkhimédészi tulajdonságú, de nem felső határ tulajdonságú.
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Valós számok halmaza}]
-  A lényegében egyetlen, felső határ tulajdonsággal rendelkező testet a \textbf{valós számok halmazának} nevezzük.\\
+  A lényegében egyetlen, felső határ tulajdonsággal rendelkező testet a \textBF{valós számok halmazának} nevezzük.\\
   Jel.: $\mathbb{R}$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: néhány Függvény (?)}]
-  \textbf{Abszolút érték}: |x| = $x$, ha $x \geq 0$ | $-x$, ha $x < 0$.\\
+  \textBF{Abszolút érték}: |x| = $x$, ha $x \geq 0$ | $-x$, ha $x < 0$.\\
   \msmallskip
   
-  \textbf{Előjel}: sgn(x) = $0$, ha $x = 0$ | $x / |x|$, különben.\\
+  \textBF{Előjel}: sgn(x) = $0$, ha $x = 0$ | $x / |x|$, különben.\\
   \msmallskip
   
-  \textbf{Alsó egész rész}: ${\lfloor}x{\rfloor} = \mathbb{Z}$ legnagyobb eleme, amely nem nagyobb, mint $x$\\
+  \textBF{Alsó egész rész}: ${\lfloor}x{\rfloor} = \mathbb{Z}$ legnagyobb eleme, amely nem nagyobb, mint $x$\\
   \msmallskip
   
-  \textbf{Felső egész rész}: ${\lceil}x{\rceil} = \mathbb{Z}$ legkisebb eleme, amely nem kisebb, mint $x$\\
+  \textBF{Felső egész rész}: ${\lceil}x{\rceil} = \mathbb{Z}$ legkisebb eleme, amely nem kisebb, mint $x$\\
   \mbigskip
 
-  \textbf{Észrevételek:}\\
+  \textBF{Észrevételek:}\\
   \msmallskip
 
   $x = 0 \Rightarrow {\lceil}x{\rceil} = {\lfloor}x{\rfloor} = 0$,\\
@@ -1339,13 +1348,13 @@ $\mathbb{Q}$ arkhimédészi tulajdonságú, de nem felső határ tulajdonságú.
 
 \begin{frame}
 \begin{tcolorbox}
-{\Huge Komplex Számok}
+{\RHuge Komplex Számok}
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Komplex számok}]
-  \textbf{Komplex számoknak} nevezzük a valós számpárok\\
+  \textBF{Komplex számoknak} nevezzük a valós számpárok\\
   $\mathbb{C} = \mathbb{R} x \mathbb{R}$\\
   halmazát a következő műveletekkel:\\
   \msmallskip
@@ -1384,22 +1393,22 @@ $\mathbb{Q}$ arkhimédészi tulajdonságú, de nem felső határ tulajdonságú.
 $Re(z) = {\Re}(z)$, $Im(z) = {\Im}(z)$\\
 \mmedskip
 
-\textbf{Algebrai}: $z = x + yi$\\
+\textBF{Algebrai}: $z = x + yi$\\
 (Imaginárius egység: $i = (0, 1)$, ahol $i^2 = -1$)\\
 \mmedskip
 
-\textbf{Trigonometrikus}: $z = r({\cos}(t) + i{\sin}(t))$\\
+\textBF{Trigonometrikus}: $z = r({\cos}(t) + i{\sin}(t))$\\
 r: Abszolút érték / hossz: $|(x, y)| = \sqrt{x^2 + y^2}$\\
 \mmedskip
 
-\textbf{Euler-féle}: $z = re^{i{\phi}}$\\
+\textBF{Euler-féle}: $z = re^{i{\phi}}$\\
 \mmedskip
 
-\textbf{Konjugált}: Ha $x = x + iy$, akkor $\overline{x} = x - iy$\\
+\textBF{Konjugált}: Ha $x = x + iy$, akkor $\overline{x} = x - iy$\\
 (Tükrözés a valós tengelyre)\\
 \mmedskip
 
-A komplex számok halmaza \textbf{nem rendezhető}, mert rendezett integritási tartományban negatív szám négyzete pozitív kell hogy legyen!
+A komplex számok halmaza \textBF{nem rendezhető}, mert rendezett integritási tartományban negatív szám négyzete pozitív kell hogy legyen!
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -1425,19 +1434,19 @@ A komplex számok halmaza \textbf{nem rendezhető}, mert rendezett integritási 
 Legyen $z, w \in \mathbb{C}, z = |z|({\cos}(t) + i{\sin}(t))$ és $w = |w|({\cos}s + i {\sin}s)$, ahol $t, s \in \mathbb{R}$. Ekkor $zw$ trigonometrikus alakja\\
 \mbigskip
 
-\textbf{Szorzás}:\\
+\textBF{Szorzás}:\\
 $zw = |z| \cdot ({\cos}t + i{\sin}t) \cdot |w| \cdot ({\cos}s + i{\sin}s) =$\\
 $|z| \cdot |w| \cdot ({\cos}t + i{\sin}t) \cdot ({\cos}s + i{\sin}s) =$\\
 $= |zw| \cdot ({\cos}t{\cos}s - {\sin}t{\sin}s + i({\cos}t{\sin}s + {\cos}s{\sin}t)) =$\\
 $= |zw|({\cos}(t + s) + i{\sin}(t + s)$\\
 \mbigskip
 
-\textbf{Osztás}:\\
+\textBF{Osztás}:\\
 $w \neq 0$ esetén:\\
 $\frac{z}{w} = \frac{|z|}{|w|}({\cos}(t - s) + i {\sin}(t - s))$\\
 \mbigskip
 
-\textbf{Hatványozás}:\\
+\textBF{Hatványozás}:\\
 $n \in \mathbb{Z}$ és $z \neq 0$:\\
 $z^n = |z|^n({\cos}(nt) + i{\sin}(nt))$
 \end{tcolorbox}
@@ -1451,7 +1460,7 @@ $z_k = \sqrt[n]{|w|}({\cos}(\frac{t + 2k{\pi}}{n}) + i{\sin}(\frac{t + 2k{\pi}}{
 $k = 0, 1, ..., n - 1$\\
 \mbigskip
 
-\textbf{$n$-edik egységgyökök} ${\epsilon}^n = 1$ esetén:\\
+\textBF{$n$-edik egységgyökök} ${\epsilon}^n = 1$ esetén:\\
 ${\epsilon}_k = {\cos}(\frac{2k{\pi}}{n}) + i{\sin}(\frac{2k{\pi}}{n})$. $k = 0, 1, ..., n - 1$
 \end{tcolorbox}
 \end{frame}
@@ -1485,29 +1494,29 @@ $$\sum_{k = 0}^n c_kz^k = 0$$
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Számelmélet}
+    {\RHuge Számelmélet}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
   \begin{tcolorbox}[title={Oszthatóság egységelemes integritási tarományban (Emlékeztető)}]
-    Legyen $R$ integrritási tartomány és $a, b \in R$, $a$ \textbf{osztója} $b$-nek, ha létezik $c \in R$, amelyre $b = ac$, jelben $a | b$.\\
+    Legyen $R$ integrritási tartomány és $a, b \in R$, $a$ \textBF{osztója} $b$-nek, ha létezik $c \in R$, amelyre $b = ac$, jelben $a | b$.\\
     \mmedskip
 
-    $x \in R$ \textbf{egydég}, ha $x | r$ teljesül ${\forall}r \in R$-re. Az $R$-beli egységek halmaza $U(R)$.\\
+    $x \in R$ \textBF{egydég}, ha $x | r$ teljesül ${\forall}r \in R$-re. Az $R$-beli egységek halmaza $U(R)$.\\
     \mmedskip
 
-    Azt mondjuk, hogy $a$ és $b$ \textbf{asszociáltak}, ha létezik olyan $c$ egység, amelyikkel $a = bc$. Ezt a tényt $a \sim b$-vel jelöljük.\\
+    Azt mondjuk, hogy $a$ és $b$ \textBF{asszociáltak}, ha létezik olyan $c$ egység, amelyikkel $a = bc$. Ezt a tényt $a \sim b$-vel jelöljük.\\
     \mmedskip
 
-    $a \in R^*{\setminus}U(R)$ \textbf{felbonthatatlan}, ha $a = b \cdot c, (b, c, \in R)$ esetén $b \in U(R)$ vagy $c \in U(R)$.\\
+    $a \in R^*{\setminus}U(R)$ \textBF{felbonthatatlan}, ha $a = b \cdot c, (b, c, \in R)$ esetén $b \in U(R)$ vagy $c \in U(R)$.\\
     \mmedskip
 
-    $a \in R^*{\setminus}U(R)$ \textbf{prím}, ha $a | b \cdot c, (b, c, \in R) \Rightarrow a | b$ vagy $a | c$.\\
+    $a \in R^*{\setminus}U(R)$ \textBF{prím}, ha $a | b \cdot c, (b, c, \in R) \Rightarrow a | b$ vagy $a | c$.\\
     \mmedskip
 
-    Ha $a \in R^*{\setminus}U(R)$ : $a$ \textbf{triviális osztói} az egységek és önmaga egységszeresei, $a$ \textbf{összetett}, ha nem csak triviális osztója van.\\
+    Ha $a \in R^*{\setminus}U(R)$ : $a$ \textBF{triviális osztói} az egységek és önmaga egységszeresei, $a$ \textBF{összetett}, ha nem csak triviális osztója van.\\
     \mmedskip
 
     $R^*$: R, az additív egységeleme nélkül.\\
@@ -1537,7 +1546,7 @@ $$\sum_{k = 0}^n c_kz^k = 0$$
 Tetszőleges $R$ egységelemes integritási tartományban minden $p$ elemre:\\
 Ha $p$ prím $\implies$ $p$ felbonthatatlan.
 \tcblower
-\textbf{Bizonyítás}\\
+\textBF{Bizonyítás}\\
 \mmedskip
 
 Tfh $p$ prím, és, $p = bc$\\
@@ -1561,7 +1570,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
       $d' | a_i$ $(i = 1, ..., n)$ $\Rightarrow$ $d'|d$\\
       \mmedskip
 
-      Ekkor $L$ elemei az $a_1, ..., a_n$ elemek \textbf{legnagyobb közös osztói}.\\
+      Ekkor $L$ elemei az $a_1, ..., a_n$ elemek \textBF{legnagyobb közös osztói}.\\
       \mmedskip
 
       Jelben: $lnko(a_1, ..., a_n) = (a_1, ..., a_n) = d$\\
@@ -1571,10 +1580,10 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Relatív prím, Páronként relatív prím}]
-    $a_1, ..., a_n$ \textbf{relatív prímek}, ha $d$ egység.\\
+    $a_1, ..., a_n$ \textBF{relatív prímek}, ha $d$ egység.\\
     \mmedskip
 
-    Erősebb: \textbf{Páronként relatív prímek}
+    Erősebb: \textBF{Páronként relatív prímek}
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: Legkisebb közös többszörös}]
@@ -1587,7 +1596,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
       $a_i|t'$ $(i = 1, ..., n)$ $\Rightarrow$ $t'|t$\\
       \mmedskip
 
-      Ekkor $T$ elemei az $a_1, ..., a_n$ elemek \textbf{legkisebb közös többszörösei}.\\
+      Ekkor $T$ elemei az $a_1, ..., a_n$ elemek \textBF{legkisebb közös többszörösei}.\\
       \mmedskip
 
       Jelben: $lkkt(a_1, ..., a_n) = [a_1, ..., a_n] = t$\\
@@ -1618,7 +1627,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: Prím és irreducibilis elem $\mathbb{Z}$-ben}]
     Az egész számok körében $p$ prím $\iff$ $p$ felbonthatatlan.
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
   
     Már láttuk, hogy prím felbonthatatlan!\\
@@ -1647,10 +1656,10 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: A számelmélet alaptétele}]
     Minden $m$ nemnulla, nemegység, egész szám sorrendre és asszociáltásgra való tekintet nélkül egyértelműen bontható fel felbonthatatlanok szorzatára.
   \tcblower
-    \textbf{Bizonyítás (Pozitívakra)}
+    \textBF{Bizonyítás (Pozitívakra)}
     \mmedskip
     
-    \textbf{(egzisztencia)}\\
+    \textBF{(egzisztencia)}\\
     Tfh $n > 1$\\
     \msmallskip
     
@@ -1666,7 +1675,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
     $n$ felbontása $=$ $a$ felbontása szor $b$ felbontása.\\
     \bigskip
 
-    \textbf{(unicitás) (Indirekt)}\\
+    \textBF{(unicitás) (Indirekt)}\\
     \msmallskip
     
     Tfh $n$ a legkisebb olyan szám, amely felbontása nem egyértelmű.\\
@@ -1688,7 +1697,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: Eukleidész tétele}]
     Végetlen sok prímszám van.
   \tcblower
-    \textbf{Bizonyítás (Indirekt)}
+    \textBF{Bizonyítás (Indirekt)}
     \mmedskip
     
     Tfh véges sok van:\\
@@ -1714,10 +1723,10 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
     $n = p_1^{{\alpha_1}}p_2^{{\alpha_2}}...p_k^{{\alpha_k}}$\\
     \mmedskip
 
-    alakú felírását, ahol $p_i$-k különböző (pozitív) prímek és ${\alpha}_i > 0$, $n$ \textbf{kanonikus alakjának} nevezzük.\\
+    alakú felírását, ahol $p_i$-k különböző (pozitív) prímek és ${\alpha}_i > 0$, $n$ \textBF{kanonikus alakjának} nevezzük.\\
     \mmedskip
 
-    \textbf{Módosított kanonikus alak}, ha ${\alpha}_i = 0$ is megengedett.
+    \textBF{Módosított kanonikus alak}, ha ${\alpha}_i = 0$ is megengedett.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Ész}]
@@ -1777,9 +1786,9 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: Kongruencia tulajdonságai}]
     \begin{enumerate}
       \item Ekvivalencia reláció
-      \item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$a + c \equiv b + d \pmod{m}$}
-      \item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textbf{$ac \equiv bd \pmod{m}$}
-      \item $a \equiv b \pmod{m} \land f(x) \in \mathbb{Z}[x] \implies$ \textbf{$f(a) \equiv f(b) \pmod{m}$}
+      \item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textBF{$a + c \equiv b + d \pmod{m}$}
+      \item $a \equiv b \pmod{m} \land c \equiv d \pmod{m} \implies$ \textBF{$ac \equiv bd \pmod{m}$}
+      \item $a \equiv b \pmod{m} \land f(x) \in \mathbb{Z}[x] \implies$ \textBF{$f(a) \equiv f(b) \pmod{m}$}
       \item Ha $(c, m) = d$, $ac \equiv bc \pmod{m} \iff a \equiv b \pmod{\frac{m}{d}}$
     \end{enumerate}
   \end{tcolorbox}
@@ -1791,18 +1800,18 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: TMR, RMR}]
-    $\overline{a}$ az $a$ elem által reprezentált \textbf{$m$ szerinti maradékosztály} az $a$-val kongruens elemek halmaza $\pmod{m}$.\\
+    $\overline{a}$ az $a$ elem által reprezentált \textBF{$m$ szerinti maradékosztály} az $a$-val kongruens elemek halmaza $\pmod{m}$.\\
     {\footnotesize (Van nullosztó), (Ekvivalencia reláció osztályok)}
     \mmedskip
 
-    \textbf{Teljes maradékrendszer (TMR) modulo $m$} tartalmaz az összes $m$ szerinti maradékosztályból pontosan 1-et.\\
+    \textBF{Teljes maradékrendszer (TMR) modulo $m$} tartalmaz az összes $m$ szerinti maradékosztályból pontosan 1-et.\\
     \mmedskip
 
-    $\overline{a}$ az $a$ elem által reprezentált \textbf{$m$ szerinti redukált maradékosztály}, ha $(a, m) = 1$.\\
+    $\overline{a}$ az $a$ elem által reprezentált \textBF{$m$ szerinti redukált maradékosztály}, ha $(a, m) = 1$.\\
     {\footnotesize (Biztosan test, mivel nincs nullosztó.}\\
     \mmedskip
 
-    \textbf{Redukált maradékrendszer (RMR) modulo $m$} tartalmaz az összes $m$ szerinti redukált maradékosztályból pontosan 1-et.\\
+    \textBF{Redukált maradékrendszer (RMR) modulo $m$} tartalmaz az összes $m$ szerinti redukált maradékosztályból pontosan 1-et.\\
   \tcblower
     1. Biztosan TMR-t alkotnak a következő számhalmazok mod $m$:\\
     \begin{enumerate}
@@ -1836,13 +1845,13 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
     Másképp: ${\phi}(n)$ jelenti a modulo $n$ relatív maradékosztályok számát.
   \tcblower
-    \textbf{Észrevétel}: Ha $n$ prím, akkor ${\phi}(n) = n - 1$
+    \textBF{Észrevétel}: Ha $n$ prím, akkor ${\phi}(n) = n - 1$
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Def.: A $\tau$ függvény}]
     Legyen $n \in \mathbb{N}^+$, ekkor ${\tau}(n)$ jelenti az $n$ pozitív osztóinak számát.
   \tcblower
-    \textbf{Észrevétel}:\\
+    \textBF{Észrevétel}:\\
     \msmallskip
 
 
@@ -1869,7 +1878,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
     $\{ ca_1 + d, ..., ca_m + d \}$ TMR modulo $m$\\
     $\{ cb_1, ..., cb{{\phi}(m)}\}$ RMR modulo $m$
   \tcblower
-    \textbf{Bizonyítás (Indirekt)}
+    \textBF{Bizonyítás (Indirekt)}
     \mmedskip
     
     Tfh van két nem inkongruens elem\\
@@ -1887,7 +1896,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: Euler-Fermat tétel}]
     Legyen $m > 1$ egész és $a$ relatív prím $m$-hez. Ekkor $a^{{\phi}(m)} \equiv 1 \pmod{m}$
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
     
     Legyen $\{ r_1, ..., r_{{\phi}(m)}\}$ RMR modulo $m$, $(a, m) = 1$ (A tételben feltétel).\\
@@ -1915,7 +1924,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
     
     (második alak) ha $a$ tetszőleges, akkor $a^p \equiv a \pmod{p}$.
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
     
     Első alak: ${\phi}(p) \equiv p - 1$ $\rightarrow$ előző tétel miatt kész.\\
@@ -1929,22 +1938,22 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Tétel: A diofantikus egyenlet megoldása}]
-    Rögzített $a, b, c$ egész számok esetén az \textbf{$ax + by = c$} diofantikus egyenletnek akkor, és csak akkor van megoldása, ha $(a, b)|c$.
+    Rögzített $a, b, c$ egész számok esetén az \textBF{$ax + by = c$} diofantikus egyenletnek akkor, és csak akkor van megoldása, ha $(a, b)|c$.
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
     
     Tfh $ax + by = c$ egyenletnek van megoldása.\\
     \msmallskip
     
-    \textbf{1. Rész ($\implies$)}\\
+    \textBF{1. Rész ($\implies$)}\\
     \smallskip
 
     Tfh $x_0, y_0$ megoldás. $\implies$ $(a, b)|a \land (a, b)|b$ $\implies$ lin. kombinációs tul. $\implies$\\
     $\implies$ $(a, b)|ax_0 + by_0 = c$ (Igaz, mert az a, b osztója az $ax_0 + by_0$-nak.)\\
     \bigskip
 
-    \textbf{2.Rész ($\Longleftarrow$)}\\
+    \textBF{2.Rész ($\Longleftarrow$)}\\
     \smallskip
 
     Tfh (a, b)|c (Definíció). Ekkor:\\
@@ -2001,7 +2010,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: A számelméleti függvények}]
-    \textbf{Számelméleti függvénynek} nevezzük az:\\
+    \textBF{Számelméleti függvénynek} nevezzük az:\\
     \mtinyskip
     
     $f : \mathbb{N}^+ \rightarrow \mathbb{C}$\\
@@ -2012,13 +2021,13 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
     Legyen $m, n \in \mathbb{N}^+$ és $(m, n) = 1$, ekkor $f$:
     \begin{itemize}
-      \item \textbf{additív}, ha $f(nm) = f(n) + f(m)$
-      \item \textbf{totálisan (teljesen) additív}, ha additív $(m, n) \neq 1$ esetén is.
-      \item \textbf{Multiplikatív}, ha $f(nm) = f(n)f(m)$
-      \item \textbf{Totálisan (Teljesen) multiplikatív}, ha multiplikatív $(m, n) \neq 1$ esetén is.
+      \item \textBF{additív}, ha $f(nm) = f(n) + f(m)$
+      \item \textBF{totálisan (teljesen) additív}, ha additív $(m, n) \neq 1$ esetén is.
+      \item \textBF{Multiplikatív}, ha $f(nm) = f(n)f(m)$
+      \item \textBF{Totálisan (Teljesen) multiplikatív}, ha multiplikatív $(m, n) \neq 1$ esetén is.
     \end{itemize}
   \tcblower
-    \textbf{Észrevételek:}\\
+    \textBF{Észrevételek:}\\
     \begin{enumerate}
       \item Ha $f$ additív, akkor $f(1) = 0$
       \item Ha $f$ multiplikatív, és nem azonosan nulla, akkor $f(1) = 1$
@@ -2040,7 +2049,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: $\phi$ multiplikativitása}]
   $\phi$ multiplikatív.
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
 
     \begin{tabular}{c c c c}
@@ -2072,7 +2081,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
     Ha $n \in \mathbb{N}^+$ kanonikus alakja $p_1^{{\alpha}_1}...p_k^{{\alpha}_k}$, akkor\\
     $${\phi}(n) = \prod^k_{j=1} (p_j^{{\alpha}_j} - p_j^{{\alpha}_j - 1}) = n \prod^k_{j=1} (1 - \frac{1}{p_j}).$$
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
     
     $\phi$ multiplikatív\\
@@ -2098,7 +2107,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}[plain]
   \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-      {\Huge Kombinatorika}
+      {\RHuge Kombinatorika}
       \mmedskip
   \end{tcolorbox}
 \end{frame}
@@ -2106,13 +2115,13 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Halmazok ekvivalenciája}]
-    $X$ és $Y$ halmaz \textbf{ekvivalens}, ha ${\exists} f$ bijekció $X$-ből $Y$-ra. Jelben $X \sim Y$.\\
+    $X$ és $Y$ halmaz \textBF{ekvivalens}, ha ${\exists} f$ bijekció $X$-ből $Y$-ra. Jelben $X \sim Y$.\\
     \mmedskip
 
-    Egy $Y$ \textbf{halmaz véges}, ha valamely $n$ természetes számra ekvivalens az $\{ 1, 2, ..., n \}$ halmazzal, egyébként \textbf{végtelen}.\\
+    Egy $Y$ \textBF{halmaz véges}, ha valamely $n$ természetes számra ekvivalens az $\{ 1, 2, ..., n \}$ halmazzal, egyébként \textBF{végtelen}.\\
     \mmedskip
 
-    Ezt az egyértelműen létező $n$ számot $X$ \textbf{számosságának} nevezzük.\\
+    Ezt az egyértelműen létező $n$ számot $X$ \textBF{számosságának} nevezzük.\\
     Jelben: $|X|, \#(X), card(X)$ (Kardinális).
   \end{tcolorbox}
 
@@ -2125,7 +2134,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: Skatulya-elv}]
     Ha $X, Y$ véges halmazok, és $|X| > |Y|$, akkor nem létezik $f: X \rightarrow Y$ bijekció.
   \tcblower
-    \textbf{Bizonyítás (Indirekt)}
+    \textBF{Bizonyítás (Indirekt)}
     \mmedskip
     
     Tfh $f$ bijektív.\\
@@ -2138,21 +2147,21 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
     $f$ bijektív $\implies$ $\{1, 2, ..., n\}$ $\sim$ saját valódi részhalmazával. $\rightarrow$ Ellentmondás (Véges halmaz valódi részhalmaza tétel miatt)!\\
     \bigskip
 
-    \textbf{Más megfogalmazás:} Ha $n$ db tárgyat $m$ db skatulyába teszünk, akkor van olyan skatulya, amelyik legalább\\
+    \textBF{Más megfogalmazás:} Ha $n$ db tárgyat $m$ db skatulyába teszünk, akkor van olyan skatulya, amelyik legalább\\
     $\lfloor (n - 1) / m \rfloor + 1$ tárgyat tartalmaz.
   \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Permutáció}]
-    $n \in \mathbb{N}$ elemű halmaz egy \textbf{permutációján} a halmaz önmagára való bijektív leképzését értjük.\\
+    $n \in \mathbb{N}$ elemű halmaz egy \textBF{permutációján} a halmaz önmagára való bijektív leképzését értjük.\\
     $P_n$ a halmaz különböző permutációinak száma.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Tétel: Permutációk száma}]
     $$P_n = n!$$
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
     
     Teljes indukció $n$ szerint\\
@@ -2181,14 +2190,14 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.:Ismétlés nélküli variáció}]
-    Egy $A$ halmaz elemeiből képezhető $k$ tagú, csupa különböző elemeket tartalmazó sorozatokat, azaz $\{ 1, 2, ..., k \}$-t $A$-ba képező injektív leképezéseket az \textbf{$A$ halmaz  $k$-ad osztályú ismétlés nélküli variációjának} nevezzük.\\
+    Egy $A$ halmaz elemeiből képezhető $k$ tagú, csupa különböző elemeket tartalmazó sorozatokat, azaz $\{ 1, 2, ..., k \}$-t $A$-ba képező injektív leképezéseket az \textBF{$A$ halmaz  $k$-ad osztályú ismétlés nélküli variációjának} nevezzük.\\
     Ha $|A| = n$, akkor $A$ összes $k$-ad osztáylú ismétlés nélküli variávcióinak száma: $V_n^k$.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Tétel: Variációk száma}]
     $$V_n^k = \frac{n!}{(n - k)!} = n \cdot (n - 1) \cdot (n - 2) \cdot ... \cdot (n - k + 1)$$, ha $k \leq n$, kölünben 0.
   \tcblower
-    \textbf{Bizonyítás}
+    \textBF{Bizonyítás}
     \mmedskip
     
     Legyen két sorozat egy ekv. osztályban, ha első $k$ elemük megegyezik.\\
@@ -2200,14 +2209,14 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Ismétléses Variáció}]
-    Egy $A$ halmaz elemeiből képezhető $k$ tagú, nem feltétlenül különböző elemeket tartalmazó sorozatokat, azaz $\{ 1, 2, ..., k \}$-t $A$-ba képező leképezéseket az \textbf{$A$ halmaz  $k$-ad osztályú ismétléses variációjának} nevezzük.\\
+    Egy $A$ halmaz elemeiből képezhető $k$ tagú, nem feltétlenül különböző elemeket tartalmazó sorozatokat, azaz $\{ 1, 2, ..., k \}$-t $A$-ba képező leképezéseket az \textBF{$A$ halmaz  $k$-ad osztályú ismétléses variációjának} nevezzük.\\
     Ha $|A| = n$, akkor $A$ összes $k$-ad osztáylú ismétléses variációinak száma: $V_n^{k, i}$.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Tétel: Ismétléses variációk száma}]
     $$V_n^{k, i} = n^k$$
   \tcblower
-    \textbf{Bizonyítás}\\
+    \textBF{Bizonyítás}\\
     \mmedskip
 
     Teljes indukció $k$ szerint, $n$ rögzített\\
@@ -2226,14 +2235,14 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Ismétlés nélküli Kombináció}]
-    Egy $A$ halmaz $k (n \in \mathbb{N})$ elemű részhalmaza \textbf{$A$ halmaz  $k$-ad osztályú ismétlés nélküli kombinációja}.\\
+    Egy $A$ halmaz $k (n \in \mathbb{N})$ elemű részhalmaza \textBF{$A$ halmaz  $k$-ad osztályú ismétlés nélküli kombinációja}.\\
     Ha $|A| = n$, akkor $A$ összes $k$-ad osztályú ismétlés nélküli kombinációinak száma: $C_n^k$.
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Tétel: Kombinációk száma}]
     $$C_n^k = \frac{V_n^k}{P_k} = {{n}\choose{k}} = \frac{n!}{k!(n - k)!} $$, ha $k \leq n$, különben $0$.
   \tcblower
-    \textbf{Bizonyítás}\\
+    \textBF{Bizonyítás}\\
     \mmedskip
 
     $V_n^k$ db különböző $k$-tagú sorozat, sorrend nem számít $\implies$\\
@@ -2243,7 +2252,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Ismétléses Kombináció}]
-    Egy $A$ halmaz $k (n \in \mathbb{N})$ nem feltétlenül különböző elem kiválasztása sorrendre való tekintet nélkül, az \textbf{$A$ halmaz  $k$-ad osztályú ismétléses kombinációja}.\\
+    Egy $A$ halmaz $k (n \in \mathbb{N})$ nem feltétlenül különböző elem kiválasztása sorrendre való tekintet nélkül, az \textBF{$A$ halmaz  $k$-ad osztályú ismétléses kombinációja}.\\
     \msmallskip
     
     Ha $|A| = n$, akkor $A$ összes $k$-ad osztályú ismétléses kombinációinak száma: $C_n^{k, i}$.
@@ -2252,7 +2261,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
   \begin{tcolorbox}[title={Tétel: Ismétléses kombinációk száma}]
     $$C_n^{k, i} = C_{n + k -1}^k = {{n + k - 1}\choose{k}} = \frac{(n + k - 1)!}{k!((n + k - 1) - k)!}$$
   \tcblower
-    \textbf{Bizonyítás}\\
+    \textBF{Bizonyítás}\\
     \mmedskip
 
     Legyen $A = \{a_1, a_2, ..., a_n\}$.\\
@@ -2276,14 +2285,14 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
 \begin{frame}
   \begin{tcolorbox}[title={Def.: Ismétléses Permutáció}]
-      $n$ elem valamely sorrendben való felsorolása, amelyben $k$ elem fordul elő rendre $n_1, n_2, ..., n_k$ gyakorisággal $(n_1 + n_2 + ... + n_k = n)$, \textbf{$n$ elem egy $n_1, n_2, ..., n_k$-ad osztályú ismétléses permutációja}.\\
+      $n$ elem valamely sorrendben való felsorolása, amelyben $k$ elem fordul elő rendre $n_1, n_2, ..., n_k$ gyakorisággal $(n_1 + n_2 + ... + n_k = n)$, \textBF{$n$ elem egy $n_1, n_2, ..., n_k$-ad osztályú ismétléses permutációja}.\\
       Ezek száma: $P_n^{n1, ..., n_k}$
   \end{tcolorbox}
 
   \begin{tcolorbox}[title={Tétel: Ismétléses permutációk száma}]
     $P_n^{i_1, i_2, ..., i_r} = \frac{n!}{i_1!i_2!...i_r!}$
   \tcblower
-    \textbf{Bizonyítás}\\
+    \textBF{Bizonyítás}\\
     \mmedskip
 
     Teljes indukcció $k$ szerint , $n$ rögzített\\
@@ -2318,7 +2327,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
     Adott $x, y \in R$ és $n \in \mathbb{N}$ esetén:\\
     $$(x + y)^n = \sum_{k = 0}^n {n \choose k} x^ky^{n - k}$$.
   \tcblower
-    \textbf{Bizonyítás}\\
+    \textBF{Bizonyítás}\\
     \mmedskip
 
     $(x + y) ... (x + y) = x^n + ... + x^ky^{n - k} + ... + y^n$ ($n$ db tényező)\\
@@ -2361,7 +2370,7 @@ $b = pq = b(cq) \implies cq = 1$ $\implies$ $c, q$ egység $p, b$ asszociáltak.
 
     Ekkor: $S_0 = S - S_1 + S_2 - S_3 + ... + (-1)^kS_k$
   \tcblower
-    \textbf{Bizonyítás}\\
+    \textBF{Bizonyítás}\\
     \mmedskip
 
     Tehát $S_0 =$ azon elemekre vett függvény összegek értéke, amelyek nem rendelkeznek egyetlen tulajdonsággal sem.\\

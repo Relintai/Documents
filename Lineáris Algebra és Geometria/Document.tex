@@ -71,11 +71,34 @@
 \setbeamercolor*{enumerate subitem}{fg=black}
 \setbeamercolor*{enumerate subsubitem}{fg=black}
 
+ \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\rmdefault}
+
+\renewcommand{\footnotesize}{\fontsize{1.2em}{0.2em}}
+\renewcommand{\normalsize}{\fontsize{1.2em}{0.2em}}
+\renewcommand{\large}{\footnotesize}
+\renewcommand{\Large}{\footnotesize}
+
+
+\renewcommand{\scriptsize}{\footnotesize}
+\renewcommand{\LARGE}{\footnotesize}
+\renewcommand{\Huge}{\footnotesize}
+
 \renewcommand{\tiny}{\footnotesize}
 \renewcommand{\small}{\footnotesize}
 
+\fontsize{1.2em}{0.2em}
+\selectfont
+
+\newcommand{\RHuge}{\fontsize{1.8em}{0.3em}\selectfont}
+
+\newsavebox\CBox 
+%\newcommand<>*\textBF[1]{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf#2{#1}}}
+\newcommand<>*\textBF[1]{\only#2{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}}
+
+
 % These are different themes, only uncomment one at a time
-\tcbset{enhanced,fonttitle=\bfseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
+\tcbset{enhanced,fonttitle=\mdseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
 
 %\tcbset{colback=yellow!5!white,colframe=yellow!84!black}
 %\tcbset{enhanced,colback=red!10!white,colframe=red!75!black,colbacktitle=red!50!yellow,fonttitle=
@@ -111,11 +134,7 @@
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Lineáris Algebra és Geometria}\\
-\mbigskip
-\\
-A kisbetűs szövegek (LaTeX-ben tiny), (Ha nincs előttük (S) jelzés, akkor lemaradt)\\
-a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
+    {\RHuge Lineáris Algebra és Geometria}\\
 \end{tcolorbox}
 \end{frame}
 
@@ -127,7 +146,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Vektorterek, Leképzések}
+    {\RHuge Vektorterek, Leképzések}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
@@ -166,7 +185,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 				
 		\tcblower
 		
-		\textbf{Tulajdonságok} \\
+		\textBF{Tulajdonságok} \\
 		
 		\msmallskip
 		
@@ -196,7 +215,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 		
 		\tcblower
 		
-		\textbf{Tulajdonságok} \\		
+		\textBF{Tulajdonságok} \\		
 		
 		 \msmallskip
 		 
@@ -236,18 +255,18 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Def.: Vektorrendszer, Lineáris kombináció}]
-			\textbf{Vektorrendszer}:\\
+			\textBF{Vektorrendszer}:\\
 			Legyen $k \geq 1$ egész. és legyenek $\u{v_1}, \u{v_2}, ..., \u{v_k} \in \mathbb{R}^n$.\\
-			Ezeket a vektorokat együtt \textbf{vektorrendszernek} hívjuk.\\			
+			Ezeket a vektorokat együtt \textBF{vektorrendszernek} hívjuk.\\			
 			\msmallskip
 			
-			\textbf{Lineáris kombináció}:\\
+			\textBF{Lineáris kombináció}:\\
 			Legyenek ${\lambda}_1, {\lambda}_2, ..., {\lambda}_k \in \mathbb{R}$ adottak,\\
 			ekkor a ${\lambda}_1\u{v_1} + {\lambda}_2\u{v_2} + ... + {\lambda}_k\u{v_k}$ kifejezést a\\
 			$\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer \u{lineáris kombinációjának} nevezzük.\\
 			\msmallskip			
 			
-			\textbf{triviális lineáris kombináció}:\\
+			\textBF{triviális lineáris kombináció}:\\
 			Ha ${\lambda}_1 = {\lambda}_2 = ... = {\lambda}_k = 0$, akkor a lineáris kombináció triviális.
 		\end{tcolorbox}
 	\end{frame}
@@ -255,19 +274,19 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 	\begin{frame}
 	\begin{tcolorbox}[title={Def.: Lineáris összefüggőség}]
 			Legyen $k \geq 1$ egész. és legyen $\u{v_1}, \u{v_2}, ..., \u{v_k} \in \mathbb{R}^n$. vektorrendszer.\\
-			Ekkor azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszerünk \textbf{lineárisan összefüggő}, ha létezik nemtriviális lineáris kombinációja, melyre:\\
+			Ekkor azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszerünk \textBF{lineárisan összefüggő}, ha létezik nemtriviális lineáris kombinációja, melyre:\\
 			${\lambda}_1\u{v_1} + {\lambda}_2\u{v_2} + ... + {\lambda}_k\u{v_k} = \u{0}$
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Def.: Lineáris függetlenség}]
 			Legyen $k \geq 1$ egész. és legyen $\u{v_1}, \u{v_2}, ..., \u{v_k} \in \mathbb{R}^n$. vektorrendszer.\\
-			Ekkor azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszerünk \textbf{lineárisan független}, ha csak a triviális lineáris kombinációjára igaz, hogy:\\
+			Ekkor azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszerünk \textBF{lineárisan független}, ha csak a triviális lineáris kombinációjára igaz, hogy:\\
 			${\lambda}_1\u{v_1} + {\lambda}_2\u{v_2} + ... + {\lambda}_k\u{v_k} = \u{0}$
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Def.: Bázis}]
 			Legyen $ V \leq \mathbb{R}^k$ altér, és legyen adott $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer.\\
-			Azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer \textbf{bázis} $V$-ben, ha:\\
+			Azt mondjuk, hogy a $\u{v_1}, \u{v_2}, ..., \u{v_k}$ vektorrendszer \textBF{bázis} $V$-ben, ha:\\
 			\begin{itemize}
 				\item Lineárisan függetlenek
 				\item Tetszőleges eleme $V$-nek előáll belőlük lineáris kobinációként.
@@ -278,7 +297,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Tétel: Lineáris kombináció, és bázisok}]
-			$\u{b_1}, \u{b_2}, ..., \u{b_k}$ bázis $V$-ben, akkor $\forall \u{v} \in V$ elem \textbf{egyértelműen} előáll belőle lineáris kombinációjaként.
+			$\u{b_1}, \u{b_2}, ..., \u{b_k}$ bázis $V$-ben, akkor $\forall \u{v} \in V$ elem \textBF{egyértelműen} előáll belőle lineáris kombinációjaként.
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Tétel: Bázisok, és Lineáris kombináció}]
@@ -307,7 +326,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 	
 	\begin{frame}
 		\begin{tcolorbox}[title={Def.: Lineáris függőség}]
-			$A \neq \emptyset$, $A \subseteq \mathbb{R}^n$, azt mondjuk hogy $\u{v} \in \mathbb{R}^n$ \textbf{lineárisan függ} $A$-tól,\\
+			$A \neq \emptyset$, $A \subseteq \mathbb{R}^n$, azt mondjuk hogy $\u{v} \in \mathbb{R}^n$ \textBF{lineárisan függ} $A$-tól,\\
 			ha létezik véges sok elem $A$-ban, hogy $\u{v}$ előáll az ő lineáris kombinációjaként.
 		\end{tcolorbox}
 		
@@ -349,7 +368,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Def.: Span}]
-			Azt mondjuk, hogy az $A \subseteq \mathbb{R}^n$ halmaz által \textbf{generált / kifeszített altér} az $A$-t tartalmazó alterek / vektorterek metszete.\\
+			Azt mondjuk, hogy az $A \subseteq \mathbb{R}^n$ halmaz által \textBF{generált / kifeszített altér} az $A$-t tartalmazó alterek / vektorterek metszete.\\
 			\msmallskip
 			
 			Jel.: $Span(A)$
@@ -360,7 +379,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Def.: Generátorrendszer}]
-			Azt mondjuk, hogy $G$ vektorrendszer \textbf{generátorrendszere} $V$ altérnek, ha $Span(G) = W(G)$
+			Azt mondjuk, hogy $G$ vektorrendszer \textBF{generátorrendszere} $V$ altérnek, ha $Span(G) = W(G)$
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Tétel.: Generátorrendszer létezése}]

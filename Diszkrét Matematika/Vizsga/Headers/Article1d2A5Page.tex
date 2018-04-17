@@ -38,4 +38,8 @@
 %\pgfpagesuselayout{4 on 1}[a4paper]
 %\pgfpagesuselayout{8 on 1}[a4paper]
 
+\newsavebox\CBox
+\newcommand<>*\textBF[1]{\only#2{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}}
+\parindent=0pt
+
 \input{../VizsgaTetelek.tex}

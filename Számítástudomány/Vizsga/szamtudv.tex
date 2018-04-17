@@ -68,11 +68,34 @@
 \setbeamercolor*{enumerate subitem}{fg=black}
 \setbeamercolor*{enumerate subsubitem}{fg=black}
 
+ \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\rmdefault}
+
+\renewcommand{\footnotesize}{\fontsize{1.2em}{0.2em}}
+\renewcommand{\normalsize}{\fontsize{1.2em}{0.2em}}
+\renewcommand{\large}{\footnotesize}
+\renewcommand{\Large}{\footnotesize}
+
+
+\renewcommand{\scriptsize}{\footnotesize}
+\renewcommand{\LARGE}{\footnotesize}
+\renewcommand{\Huge}{\footnotesize}
+
 \renewcommand{\tiny}{\footnotesize}
 \renewcommand{\small}{\footnotesize}
 
+\fontsize{1.2em}{0.2em}
+\selectfont
+
+\newcommand{\RHuge}{\fontsize{1.8em}{0.3em}\selectfont}
+
+\newsavebox\CBox 
+%\newcommand<>*\textBF[1]{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf#2{#1}}}
+\newcommand<>*\textBF[1]{\only#2{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}}
+
+
 % These are different themes, only uncomment one at a time
-\tcbset{enhanced,fonttitle=\bfseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
+\tcbset{enhanced,fonttitle=\mdseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
 
 %\tcbset{colback=yellow!5!white,colframe=yellow!84!black}
 %\tcbset{enhanced,colback=red!10!white,colframe=red!75!black,colbacktitle=red!50!yellow,fonttitle=
@@ -107,11 +130,7 @@
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-{\Huge A Számítástudomány Alapjai I}\\
-\mbigskip
-\\
-A kisbetűs szövegek (LaTeX-ben tiny), (Ha nincs előttük (S) jelzés, akkor lemaradt)\\
-a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
+{\RHuge A Számítástudomány Alapjai I}\\
 \end{tcolorbox}
 \end{frame}
 
@@ -119,7 +138,7 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Logika}
+    {\RHuge Logika}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
@@ -128,21 +147,21 @@ a saját értelmezést jelentik, és egyáltalán nem garantált hogy jók!
 
 \begin{tcolorbox}[squeezed title={(Ítélet) változók, Logikai szimbólumok, Elválasztó szimbólumok, Logikai formula}]
 \mbigskip
-\textbf{(Ítélet) változók:} $p_1, p_2, ...$\\
-\hspace{1ex} \textbf{Jel: } $Var = \{p_1, p_2, ...\}$\\
+\textBF{(Ítélet) változók:} $p_1, p_2, ...$\\
+\hspace{1ex} \textBF{Jel: } $Var = \{p_1, p_2, ...\}$\\
 \mbigskip
-\textbf{Logikai szimbólumok:} ${\neg}, {\land}, {\lor}, {\Rightarrow}, {\iff}.$\\
+\textBF{Logikai szimbólumok:} ${\neg}, {\land}, {\lor}, {\Rightarrow}, {\iff}.$\\
 \mbigskip
-\textbf{Elválasztó szimbólumok:} $(, )$\\
+\textBF{Elválasztó szimbólumok:} $(, )$\\
 \mbigskip
-\textbf{Logikai Formula:} Minden változó formula, továbbá ha $A, B$ formula, akkor:\\
-\textbf{${\neg}A, (A \land B), (A \lor B), (A \Rightarrow B), (A \iff B)$} is formula.\\
+\textBF{Logikai Formula:} Minden változó formula, továbbá ha $A, B$ formula, akkor:\\
+\textBF{${\neg}A, (A \land B), (A \lor B), (A \Rightarrow B), (A \iff B)$} is formula.\\
 \mbigskip
 Legyen $Form$ az összes formula halmaza.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Megj}]
-\textbf{Precedencia:}\\ 
+\textBF{Precedencia:}\\ 
 \mbigskip
 $1. {\neg}, 2. {\land}, 3. {\lor}$\\
 \mbigskip
@@ -168,15 +187,15 @@ F formulára a következő állítások közül pontosan egy teljesül:
 \begin{frame}
 \begin{tcolorbox}[title={Részformula, Közvetlen részformula}]
 Ha $F$ és formulákra  $f = G_1GG_2$, alkalmas $G_1, G_2, E(G)$ szavakra, ($G_1, G_2$ üres szavak is lehetnek!)\\
-akkor $G$ \textbf{részformulája} $F$-nek.\\
+akkor $G$ \textBF{részformulája} $F$-nek.\\
 \mbigskip
-A tétel 2-4 pontjában szereplő $G$ és $H$ \textbf{közvetlen részformulái} $F$-nek.
+A tétel 2-4 pontjában szereplő $G$ és $H$ \textBF{közvetlen részformulái} $F$-nek.
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Hozzárendelés}]
-Egy $\mathcal{A} : Var \rightarrow \{0, 1\}$ leképzést \textbf{hozzárendelésnek} nevezünk.\\
+Egy $\mathcal{A} : Var \rightarrow \{0, 1\}$ leképzést \textBF{hozzárendelésnek} nevezünk.\\
 {\tiny (S) Ítéletváltozóhoz (Var az összes ítéletváltozó halmaza) hozzárendelünk elemet a {0, 1} halmazból. Kb értékadás. (kb függvény)}\\
 \mbigskip
 $\mathcal{A} : Form \rightarrow \{0, 1\}$ kiterjesztéshez legyen $F$ formula.\\
@@ -223,15 +242,15 @@ $
 \begin{tcolorbox}[squeezed title={Formula modellje, Kielégíthető, Tautológia, Kielégíthetetlen}]
 Legyen $F$ formula, Legyen $\mathcal{A}$ egy hozzárendelés.s Ekkor\\
 \mbigskip
-Ha $\mathcal{A}(F) = 1$, akkor ezt a tényt $\mathcal{A} \models F$-fel jelöljük, és azt mondjuk, hogy $\mathcal{A}$ \textbf{kielégíti} $F$-et, vagy hogy $\mathcal{A}$ \underline{\textbf{modellje}} $F$-nek.\\
+Ha $\mathcal{A}(F) = 1$, akkor ezt a tényt $\mathcal{A} \models F$-fel jelöljük, és azt mondjuk, hogy $\mathcal{A}$ \textBF{kielégíti} $F$-et, vagy hogy $\mathcal{A}$ \underline{\textBF{modellje}} $F$-nek.\\
 {\tiny (S) Mint egy függvén kb. F formulához hozzárendelünk egy értéket, és ha ez 1)}\\
 \mbigskip
-Ha $F$-nek van modellje, akkor azt mondjuk, hogy $F$ \underline{\textbf{kielégíthető}}.\\
+Ha $F$-nek van modellje, akkor azt mondjuk, hogy $F$ \underline{\textBF{kielégíthető}}.\\
 \mbigskip
-Ha minden $\mathcal{A}$ hozzárendelés esetén $\mathcal{A} \models F$, akkor $F$ \underline{\textbf{tautológia}} (vagy másképpen érvényes).\\
+Ha minden $\mathcal{A}$ hozzárendelés esetén $\mathcal{A} \models F$, akkor $F$ \underline{\textBF{tautológia}} (vagy másképpen érvényes).\\
 Jele: $\models F$.\\
 \mbigskip
-Ha $F$-nek nincs modellje, akkor azt mondjuk, hogy $F$ \underline{\textbf{kielégíthetetlen}}.\\
+Ha $F$-nek nincs modellje, akkor azt mondjuk, hogy $F$ \underline{\textBF{kielégíthetetlen}}.\\
 \mbigskip
 Legyen $\Sigma$ formulák egy halmaza. Ha valamely $\mathcal{A}$ hozzárendelés esetén minden $F \in \Sigma$-re $\mathcal{A} \models F$, akkor ezen tényt $\mathcal{A} \models \Sigma$-val jelöljük, és azt mondjuk, hogy $\mathcal{A}$ kielégíti $\Sigma$-t vagy, hogy $\mathcal{A}$ modellje $\Sigma$-nak.\\
 {\tiny (S) Ha van egy olyan $\mathcal{A}$ hozzárendelésünk, amire a $\Sigma$ halmaz összes formulája igazat ad.}\\
@@ -248,7 +267,7 @@ Egy formulahalmaz akkor és csak akkor elégíthető ki, ha minden véges részh
 
 \begin{frame}
 \begin{tcolorbox}[title={K változós igazságtábla}]
-Tetszőleges $k \in \mathbb{N}$ esetén az IT: $\{0, 1\}^k \rightarrow \{0, 1\}$ leképzést \textbf{$k$ változós igazságtáblának (Boole függvény)} nevezzük.
+Tetszőleges $k \in \mathbb{N}$ esetén az IT: $\{0, 1\}^k \rightarrow \{0, 1\}$ leképzést \textBF{$k$ változós igazságtáblának (Boole függvény)} nevezzük.
 \end{tcolorbox}
 
 \begin{block}{Igazságtáblák:}
@@ -258,7 +277,7 @@ Negáció (unér művelet)\\
 \mbigskip
 \begin{tabular}{@{}C{3em}C{3em}@{}}
 \toprule
-\textbf{$A$} & \textbf{${\neg}A$} \\
+\textBF{$A$} & \textBF{${\neg}A$} \\
 \hline
 i & h\\
 \hdashline
@@ -274,7 +293,7 @@ A többi művelet\\
 \mbigskip
 \begin{tabular}{C{1em}C{1em}rC{4.4em}C{4.4em}C{4.4em}C{4.6em}}
 \toprule
-\textbf{$A$} & \textbf{$B$} & \textbf{$|$} & \textbf{$A \land B$} & \textbf{$A \lor B$} & \textbf{$A \Rightarrow B$} & \textbf{$A \iff B$} \\
+\textBF{$A$} & \textBF{$B$} & \textBF{$|$} & \textBF{$A \land B$} & \textBF{$A \lor B$} & \textBF{$A \Rightarrow B$} & \textBF{$A \iff B$} \\
 \hline
 i & i & | & i & i & i & i\\
 \hdashline
@@ -292,7 +311,7 @@ h & h & | & h & h & i & i\\
 
 %\begin{frame}
 %\begin{tcolorbox}[title={Def: {Az $F$ formula által meghatározott Igazság tábla}]
-%\textbf{Az $F$ formula által meghatározott $IT_F$ igazságtábla:}\\
+%\textBF{Az $F$ formula által meghatározott $IT_F$ igazságtábla:}\\
 %ha $p_1, ..., p_n$ az $F$ változói és $x_1, ..., x_n \in \{0, 1\}$, akkor\\
 %$IT_F(x_1, ..., x_n) = A(F)$, ahol $A(p_j) = x_j, 1 \leq j \leq n$.
 %\end{tcolorbox}
@@ -301,7 +320,7 @@ h & h & | & h & h & i & i\\
 \begin{frame}
 
 \begin{tcolorbox}[title={Def: Adekvát halmaz}]
-A ${\neg}, {\land}, {\lor}, \rightarrow$ műveleti jelek C halmaza \textbf{adekvát}, ha\\
+A ${\neg}, {\land}, {\lor}, \rightarrow$ műveleti jelek C halmaza \textBF{adekvát}, ha\\
 $IT: \{0, 1\}^k \rightarrow \{0, 1\}, k \geq 1$ igazságtábla esetén van olyan $F \in Form$, hogy\\
 \begin{enumerate}
 \item $F$-ben csak $C$-beli műveletei jelek szerepelhetnek,
@@ -319,7 +338,7 @@ $\{\neg, \lor, \land\}, \{\neg, \lor\}, \{\neg, \land\}$ adekvát (azaz bármily
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Logikai következmény}]
 Legyen $\Sigma \subseteq Form$ és $F \in Form$.\\
-Azt mondjuk, hogy $F$ \underline{\textbf{logikai következménye}} $\Sigma$-nak, (jele: $\Sigma \models F$),\\
+Azt mondjuk, hogy $F$ \underline{\textBF{logikai következménye}} $\Sigma$-nak, (jele: $\Sigma \models F$),\\
 ha minden $\mathcal{A}$ hozzárendelés esetén valahányszor $\mathcal{A} \models \Sigma$, mindannyiszor $\mathcal{A} \models F$ is teljesül.\\
 {\tiny (S) logikai következmény egyenlő a $A \Rightarrow B$ boole függvénnyel, ha kikötjük, hogy A csak igaz lehet. (Mivel az alap Boole függvényben ha $A$ hamis, akkor az eredmény igaz!)}
 \end{tcolorbox}
@@ -417,13 +436,13 @@ $$H \equiv H[F/G]$$
 \begin{frame}
 
 \begin{tcolorbox}[title={Def.: Literál}]
-Egy $F$ formulát \textbf{pozitíb literálnak} nevezünk, ha $F = p$, és \textbf{negatív literálnak}, ha $F = {\neg}o$, ahol $p$ változó.
+Egy $F$ formulát \textBF{pozitíb literálnak} nevezünk, ha $F = p$, és \textBF{negatív literálnak}, ha $F = {\neg}o$, ahol $p$ változó.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Konjunktív, diszjunktív normálforma}]
-Egy $F$ formula \textbf{Konjunktív normálforma}, ha:\\
+Egy $F$ formula \textBF{Konjunktív normálforma}, ha:\\
 $$F = \bigwedge_{i = 1}^n (\bigvee_{j = 1}^{m_i} l_{i, j}))$$\\
-Egy $F$ formula \textbf{Diszjunktív normálforma}, ha:\\
+Egy $F$ formula \textBF{Diszjunktív normálforma}, ha:\\
 $$F = \bigvee_{i = 1}^n (\bigwedge_{j = 1}^{m_i} l_{i, j}))$$\\
 ahol $l_{i, j}$-k literálok.
 \end{tcolorbox}
@@ -438,7 +457,7 @@ Minden $F$ Formulához létezik vele logikailag ekvivalens konjunktív és diszj
 %\mmedskip
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Konjunktív:
@@ -475,21 +494,21 @@ Diszjunktív:
 \begin{tcolorbox}[title={Def.: Elmélet}]
 Legyen $\Sigma$ egy formulahalmaz, ekkor:\\
 \msmallskip
-$Th({\Sigma}) = \{F | \Sigma \models F\}$ a \textbf{$\Sigma$ által generált elmélet}.\\
+$Th({\Sigma}) = \{F | \Sigma \models F\}$ a \textBF{$\Sigma$ által generált elmélet}.\\
 ($Th({\Sigma})$ a $\Sigma$ összes logikai következménye).
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Levezetés, bizonyítható formula}]
-Ha $\Sigma$ formulák egy halmaza, akkor az $F_1, ... F_n$ formulák sorozatát a \textbf{$\Sigma$-ból történő ($\Sigma$ feletti) bizonyításnak levezetésnek)} nevezünk, ha minden $1 \leq i \leq n$ esetén az aláőbbi feltételek valamelyike teljesül:\\
+Ha $\Sigma$ formulák egy halmaza, akkor az $F_1, ... F_n$ formulák sorozatát a \textBF{$\Sigma$-ból történő ($\Sigma$ feletti) bizonyításnak levezetésnek)} nevezünk, ha minden $1 \leq i \leq n$ esetén az aláőbbi feltételek valamelyike teljesül:\\
 \begin{enumerate}
 \item $F_i \in \Sigma$
 \item $F_i$ tautológia
 \item van olyan $k, l < i$, hogy $F_l = F_k \rightarrow F_i$
 \end{enumerate}
 \mbigskip
-Egy $F$ formula \textbf{bizonyítható (levezethető)} $\Sigma$-ból, ha van olyan $\Sigma$ feletti $F_1, ..., F_n$ bizonyítás, hogy $F_n = F$.\\
+Egy $F$ formula \textBF{bizonyítható (levezethető)} $\Sigma$-ból, ha van olyan $\Sigma$ feletti $F_1, ..., F_n$ bizonyítás, hogy $F_n = F$.\\
 \mbigskip
-\textbf{Jel.: $\Sigma \vdash F$}
+\textBF{Jel.: $\Sigma \vdash F$}
 \end{tcolorbox}
 
 \end{frame}
@@ -544,7 +563,7 @@ Tetszőleges formulahalmaz, akkor és csak akkor konzisztens, ha kielégíthető
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Predikátumkalkulus (1-Rendű Logika)}
+    {\RHuge Predikátumkalkulus (1-Rendű Logika)}
 \end{tcolorbox}
 \end{frame}
 
@@ -557,7 +576,7 @@ Legyen $n \geq 0$ és $f : A^n \rightarrow A$ egy $n$ változós függvény.\\
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={$A$ feletti n változó predikátum}]
-\textbf{$A$ feletti n változó predikátum} a következő függvény:\\
+\textBF{$A$ feletti n változó predikátum} a következő függvény:\\
 $$p : A^n \rightarrow \{0, 1\}$$
 \tcblower
 {\small $n = 0$ esetben $p \in \{0, 1\}$ $\rightarrow$  a predikátum konstans 0, vagy 1 kell legyen.}\\
@@ -582,7 +601,7 @@ A 0 aritású függvényszimbólumok a konstansok: $a, b, c, ...$
 
 \begin{frame}
 \begin{tcolorbox}[title={Az $\mathcal{L}$ elsőrendű nyelv formulái}]
-\underline{\textbf{Termek:}} a legszűkebb olyan halmaz, amelyre az alábbi két feltétel teljesül:\\
+\underline{\textBF{Termek:}} a legszűkebb olyan halmaz, amelyre az alábbi két feltétel teljesül:\\
 \begin{enumerate}
 \item Minden változó term.
 \item Ha $t_1, ..., t_n$ termek valamely $n \geq 0$-ra, $f$ pedig egy $n$ változós függvényszimbólum,
@@ -590,14 +609,14 @@ akkor $f(t_1, ..., t_n)$ is term. (Ha $n = 0$, akkor $f()$ helyett csak $f$-et �
 \end{enumerate}
 \mmedskip
 
-\underline{\textbf{Atomi formulák:}} a legszűkebb olyan halmaz, amely kielégíti az alábbi feltételt:\\
+\underline{\textBF{Atomi formulák:}} a legszűkebb olyan halmaz, amely kielégíti az alábbi feltételt:\\
 \begin{enumerate}
 \item Ha $t_1, ..., t_n$ termek valamely $n \geq 0$-ra, $p$ pedig egy $n$ változós predikátumszimbólum, akkor $p(t_1, ..., t_n)$ atomi formula. (Az $n = 0$ esetben $p()$ helyett most is csak $p$-t írunk.)
 \end{enumerate}
 {\small Termeket "összegyúrjuk" egy predikátum segítségével.}\\
 \mmedskip
 
-\underline{\textbf{Formulák:}} a legszűkebb olyan halmaz, amelyre az alábbi feltételek teljesülnek (Formulák halmaza: $Form(S)$):\\
+\underline{\textBF{Formulák:}} a legszűkebb olyan halmaz, amelyre az alábbi feltételek teljesülnek (Formulák halmaza: $Form(S)$):\\
 \begin{enumerate}
 \item Minden atomi formula egyben formula is.
 \item Ha $F$ és $G$ formulák, akkor ${\neg}F, (F \lor G), (F \land G)$ is formulák.
@@ -614,7 +633,7 @@ A formulák halmazát $Form(\mathcal{L})$-lel, vagy ha csak egy $\mathcal{L}$-r�
 
 \begin{tcolorbox}[title={Kötött, szabad változó, nyílt, zárt formula}]
 \begin{enumerate}
-\item Az olyan termeket, amelyekben nem szerepelnek változók \textbf{ground termeknek} nevezzük.
+\item Az olyan termeket, amelyekben nem szerepelnek változók \textBF{ground termeknek} nevezzük.
 \item Ha egy $F$ formula, $F = F_1GF_2$ és $G$ is formula, akkor $G$ az $F$ részformulája.
 \item Egy $x$ változó valamely (nem közvetlenül kvantor utáni) előfordulása egy $F$ formulában kötött, ha ez az előfordulás $F$-nek egy ${\exists}xG$ vagy ${\forall}xG$ alakú részformulája $G$ részéban van. Különben $x$ szóban forgó előfordulása szabad.
 \item Egy $x$ változó szabad $F$-ben, ha van $F$-ben szabad előfordulása.
@@ -648,7 +667,7 @@ $\mathcal{L}$ típusú struktúrának nevezünk egy $\mathcal{A} = (\mathcal{U},
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Gráfelmélet}
+    {\RHuge Gráfelmélet}
 \end{tcolorbox}
 \end{frame}
 
@@ -656,13 +675,13 @@ $\mathcal{L}$ típusú struktúrának nevezünk egy $\mathcal{A} = (\mathcal{U},
 \begin{frame}
 
 \begin{tcolorbox}[title={Gráf}]
-A $G = (V, E, {\phi})$ hármast \textbf{(irányítatlan) gráfnak} nevezzük, ha $V, E$ halmazok, $V \neq \emptyset, V \cap E = \emptyset$, és $\phi : E \rightarrow [V]^2$.\\
+A $G = (V, E, {\phi})$ hármast \textBF{(irányítatlan) gráfnak} nevezzük, ha $V, E$ halmazok, $V \neq \emptyset, V \cap E = \emptyset$, és $\phi : E \rightarrow [V]^2$.\\
 \mbigskip
 $[V]^2 = \{ [a, b] | a, b \in V \}$, ahol $[a, b] = [b, a]$\\
 \mbigskip
-\textbf{V}: pont-, csúcshalmaz. $V(G)$ $G$ pontjai, $v(G) = |V(G)| = \#V$ G pontjainak száma.\\
+\textBF{V}: pont-, csúcshalmaz. $V(G)$ $G$ pontjai, $v(G) = |V(G)| = \#V$ G pontjainak száma.\\
 \mbigskip
-\textbf{E}: élhalmaz. $E(G)$ $G$ élei, $e(G) = |E(G)| = \#E$ G éleinek száma.\\
+\textBF{E}: élhalmaz. $E(G)$ $G$ élei, $e(G) = |E(G)| = \#E$ G éleinek száma.\\
 \mbigskip
 (E = Edge, V = Vertex)
 \end{tcolorbox}
@@ -681,17 +700,17 @@ $[V]^2 = \{ [a, b] | a, b \in V \}$, ahol $[a, b] = [b, a]$\\
 
 \begin{tcolorbox}[title={Egyéb definíciók}]
 \begin{itemize}
-\item \textbf{Véges gráf:} Ha $V(G)$ és $E(G)$ is véges.
-\item \textbf{Él végpontjai / él illeszkedése:}\\
+\item \textBF{Véges gráf:} Ha $V(G)$ és $E(G)$ is véges.
+\item \textBF{Él végpontjai / él illeszkedése:}\\
 $e \in E$ él végpontjai ($e$ illeszkedik $a$-ra, és $b$-re) ha $a, b \in V$ esetén ${\phi}(e) = [a, b]$
-\item \textbf{Hurokél:} Ha a = b.
-\item \textbf{Párhuzamos (többszörös él):} Ha $e, f \in E$, és ${\phi}(e) = {\phi}(f)$
-\item \textbf{Szomszédos él:} Ha $e, f \in E$ és ${\phi}(e) = [a_1, a_2], {\phi}(f) = [b_1, b_2]$ esetén $\{a_1, a_2\} \cap \{b_1, b_2\} \neq \emptyset$
-\item \textbf{Szomszédos csúcsok:} Ha $a_1, a_2 \in V$, és $a_1 \neq a_2$, és ${\exists}e \in E$, amire ${\phi}(e) = [a_1, a_2]$
-\item \textbf{Csúcs foka:} A rá illeszkedő élek száma (huroknál 2), jelölés: \textbf{d(a)}
-\item \textbf{Izolált csúcs:} $a$ csúcs izolált, ha d(a) = 0
-\item \textbf{Egyszerű gráf:} Hurok és többszörös él nélküli gráf.
-\item \textbf{Reguláris gráf:} A $G = (V, E)$ gráf \textbf{reguláris}, ha $d(a)$ értéke azonos minden $a \in V$-re, \textbf{n-reguláris}, ha ekkor $d(a) = n$ valamely $n \in \mathbb{N}$-re.
+\item \textBF{Hurokél:} Ha a = b.
+\item \textBF{Párhuzamos (többszörös él):} Ha $e, f \in E$, és ${\phi}(e) = {\phi}(f)$
+\item \textBF{Szomszédos él:} Ha $e, f \in E$ és ${\phi}(e) = [a_1, a_2], {\phi}(f) = [b_1, b_2]$ esetén $\{a_1, a_2\} \cap \{b_1, b_2\} \neq \emptyset$
+\item \textBF{Szomszédos csúcsok:} Ha $a_1, a_2 \in V$, és $a_1 \neq a_2$, és ${\exists}e \in E$, amire ${\phi}(e) = [a_1, a_2]$
+\item \textBF{Csúcs foka:} A rá illeszkedő élek száma (huroknál 2), jelölés: \textBF{d(a)}
+\item \textBF{Izolált csúcs:} $a$ csúcs izolált, ha d(a) = 0
+\item \textBF{Egyszerű gráf:} Hurok és többszörös él nélküli gráf.
+\item \textBF{Reguláris gráf:} A $G = (V, E)$ gráf \textBF{reguláris}, ha $d(a)$ értéke azonos minden $a \in V$-re, \textBF{n-reguláris}, ha ekkor $d(a) = n$ valamely $n \in \mathbb{N}$-re.
 \end{itemize}
 \end{tcolorbox}
 
@@ -703,7 +722,7 @@ $e \in E$ él végpontjai ($e$ illeszkedik $a$-ra, és $b$-re) ha $a, b \in V$ e
 Legyen $G = (V, E)$ (Gráf). Ekkor $G$-ben a páratlan fokú csúcsok száma páros.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 $$\sum_{a \in V} d(a) = \sum_{d(a) \equiv 0 (mod 2)} d(a) + \sum_{d(a) \equiv 1 (mod 2)} d(a) \equiv 0 (mod 2)$$
@@ -716,12 +735,12 @@ amiből kapjuk, hogy $$\sum_{d(a) \equiv 1 (mod 2)} d(a) \equiv 0 (mod 2)$$.
 \begin{frame}
 
 \begin{tcolorbox}[title={Def.: Gráfok izomorfiája}]
-A $G = (V, E)$ és $G' = (V', E')$ gráf \textbf{izomorf},\\
+A $G = (V, E)$ és $G' = (V', E')$ gráf \textBF{izomorf},\\
 ha létezik ${\pi} : V \rightarrow V'$, és $\rho : E \rightarrow E'$ bijekció úgy, hogy ha $a \in V$ és $e \in E$ illeszkedik $G$-ben $\iff$ ${\pi}(a)$ és ${\rho}(e)$ illeszkedik $G'$-ben.\\
 \mbigskip
-A $G = (V, E)$ és $G' = (V', E')$ egyszerű gráf \textbf{izomorf}, ha létezik ${\pi} : V \rightarrow V'$ bijekció úgy, hogy $a, b \in V$ szomszédos $G$-ben $\iff$ ${\pi}(a)$ és ${\pi}(b)$ szomszédos G'-ben.\\
+A $G = (V, E)$ és $G' = (V', E')$ egyszerű gráf \textBF{izomorf}, ha létezik ${\pi} : V \rightarrow V'$ bijekció úgy, hogy $a, b \in V$ szomszédos $G$-ben $\iff$ ${\pi}(a)$ és ${\pi}(b)$ szomszédos G'-ben.\\
 \mbigskip
-A $G = (V, E)$ egyszerű gráf \textbf{teljes gráf}, ha bármely két pontja szomszédos. \textbf{$K_n$} jelöli az \textbf{n} pontú teljes gráfot.
+A $G = (V, E)$ egyszerű gráf \textBF{teljes gráf}, ha bármely két pontja szomszédos. \textBF{$K_n$} jelöli az \textBF{n} pontú teljes gráfot.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -734,19 +753,19 @@ $K_n$-nek $\frac{n(n - 1)}{2}$ éle van.
 \begin{frame}
 
 \begin{tcolorbox}[title={Def.: Páros Gráf}]
-A $G = (V, E, {\phi})$ hármast \textbf{páros gráfnak} nevezzük, ha $V = V' \cup V'', V' \cap V'' = \emptyset$, és $G$ minden élének egyik végpontja $V'$-ben, másik végpontja $V''$-ben van.\\
+A $G = (V, E, {\phi})$ hármast \textBF{páros gráfnak} nevezzük, ha $V = V' \cup V'', V' \cap V'' = \emptyset$, és $G$ minden élének egyik végpontja $V'$-ben, másik végpontja $V''$-ben van.\\
 \mmedskip
 ($K_{3, 3}$ 6 pontú teljes páros gráf, $K_5$ 5 pontú teljes gráf.)
 \end{tcolorbox}
 \begin{tcolorbox}[title={Def.: Részgráf}]
-A $G' = (V', E', {\phi}')$ gráf a $G = (V, E, {\phi})$ gráf \textbf{részgráfja}, ha\\
+A $G' = (V', E', {\phi}')$ gráf a $G = (V, E, {\phi})$ gráf \textBF{részgráfja}, ha\\
 $V' \subseteq V$ és $E' \subseteq E$, valamint ${\phi}'(e) = {\phi}(e)$ minden $e \in E'$-re.
 \end{tcolorbox}
 \begin{tcolorbox}[title={Def.: Telített Részgráf}]
-Ha a $G' = (V', E', {\phi}')$ gráf a $G = (V, E, {\phi})$ gráf részgráfja, és $E'$ mindazon $E$-beli elemeket tartalmazza, amelyek végpontjai $V'$-ben vannak, akkor $G'$-t \textbf{telített részgráfnak} nevezzük, vagy pontosabban \textbf{$V'$ által meghatározott telített részgráfnak.}
+Ha a $G' = (V', E', {\phi}')$ gráf a $G = (V, E, {\phi})$ gráf részgráfja, és $E'$ mindazon $E$-beli elemeket tartalmazza, amelyek végpontjai $V'$-ben vannak, akkor $G'$-t \textBF{telített részgráfnak} nevezzük, vagy pontosabban \textBF{$V'$ által meghatározott telített részgráfnak.}
 \end{tcolorbox}
 \begin{tcolorbox}[title={Komplementer Gráf}]
-$\overline{G}$ an $n$-pontú egyszerű $G = (V, E)$ gráf \textbf{komplementer gráfja}, ha\\
+$\overline{G}$ an $n$-pontú egyszerű $G = (V, E)$ gráf \textBF{komplementer gráfja}, ha\\
 \msmallskip
 $\overline{V}(G) = V(G)$ és\\
 $E(\overline{G}) = E(K_n) \setminus E(G)$.
@@ -757,18 +776,18 @@ $E(\overline{G}) = E(K_n) \setminus E(G)$.
 \begin{frame}
 \begin{tcolorbox}[title={Zárt, Nyílt élsorozat (Séta)}]
 Legyen $k$ természetes szám.\\
-\textbf{$k$ hosszú élsorozat (séta) $a_0$-ból $a_k$-ba} az\\
+\textBF{$k$ hosszú élsorozat (séta) $a_0$-ból $a_k$-ba} az\\
 \msmallskip
 $[a_0, e_1, a_1, e_2, a_2, ..., e_k, a_k]$ sorozat, ha $a_0, a_1, ..., a_k \in V(G), e_1, e_2, ..., e_k \in E(G)$ és ${\phi}(e_i) = [a_{i - 1}, a_i]$ minden $i = 1, 2, ..., k$-ra.\\
 \mbigskip
-\textbf{Út, Vonal:}\\
-Egy élsorozat \textbf{út}, ha benne minden csúcs különböző és \textbf{vonal}, ha minden éle különboző.\\
+\textBF{Út, Vonal:}\\
+Egy élsorozat \textBF{út}, ha benne minden csúcs különböző és \textBF{vonal}, ha minden éle különboző.\\
 \mbigskip
-\textbf{Zárt, Nyílt:}\\
-Egy élsorozat \textbf{zárt}, ha $a_0 = a_k$ különben \textbf{nyílt}.\\
+\textBF{Zárt, Nyílt:}\\
+Egy élsorozat \textBF{zárt}, ha $a_0 = a_k$ különben \textBF{nyílt}.\\
 \mbigskip
-\textbf{Kör:}\\
-\textbf{Kör} az a zárt élsorozat, melyben a többi csúcs egymástól és $a_0$-tól különbözik, és élei is mind különbözőek.\\
+\textBF{Kör:}\\
+\textBF{Kör} az a zárt élsorozat, melyben a többi csúcs egymástól és $a_0$-tól különbözik, és élei is mind különbözőek.\\
 \mbigskip
 Út $\subset$ Vonal $\subset$ Séta\\
 \mmedskip
@@ -786,14 +805,14 @@ Kör $\subset$ Zárt vonal $\subset$ Zárt séta
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Összeföggőség}]
-Egy gráf \textbf{összefüggő}, ha benne bármilyen két csúcs összeköthető sétával (következtetésképpen úttal is).
+Egy gráf \textBF{összefüggő}, ha benne bármilyen két csúcs összeköthető sétával (következtetésképpen úttal is).
 \end{tcolorbox}
 \begin{tcolorbox}[title={Def.: Komponensek}]
 Legyen $\sim$ a következő ekvivalenciareláció (Reflexív, Tranzitív, Szimmetrikus):\\
 \mbigskip
 $a_1, a_2 \in V(G)$ esetén $a_1 \sim a_2$, ha $a_1 = a_2$ vagy $a_1$ és $a_2$ között van út.\\
 \mbigskip
-Az azonos osztályokba eső csúcsok által meghatározott telített részgráfok a $G$ gráf \textbf{(összefüggő) komponensei}, számuk \textbf{c(G)}.
+Az azonos osztályokba eső csúcsok által meghatározott telített részgráfok a $G$ gráf \textBF{(összefüggő) komponensei}, számuk \textBF{c(G)}.
 \end{tcolorbox}
 \begin{tcolorbox}[title={Ész}]
 \begin{itemize}
@@ -837,7 +856,7 @@ Egy $G$ egyszerű gráfra a következő álítások ekvivalensek:
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Feszítőfa}]
-Az $F$ gráf a $G$ gráf \textbf{feszítőfája}, ha\\
+Az $F$ gráf a $G$ gráf \textBF{feszítőfája}, ha\\
 $F$ részgráfja $G$-nek, $F$ fa és $V(T) = V(G)$.
 \end{tcolorbox}
 
@@ -852,7 +871,7 @@ Minden véges összefüggő $G$ gráfnak létezik feszítőfája.
 Egy véges összefüggő $G = (E, V)$ gráfban létezik \underline{legalább} $e(G) - v(G) + 1$ különböző kör.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 A feszítőfa létezése téltel miatt ($\Rightarrow$) $\exists T$ feszítőfa, aminek $v(G) - 1$ éle van.\\
@@ -868,17 +887,17 @@ Legyen $G =  (V, E, {\phi})$ egy gráf, $v, w \in V$, és $V' \subseteq V$.\\
 \mbigskip
 Ha minden $v$-ből $w$-be vezető út tartalmaz $V'$-beli csúcsot, akkor\\
 \mmedskip
-\textbf{$V'$ elvágja $v$-t, és $w$-t}.\\
+\textBF{$V'$ elvágja $v$-t, és $w$-t}.\\
 \mmedskip
 Ha $E' \subseteq E$ és minden $v$-ből $w$-be vezető út tartalmaz $E'$-beli élet, akkor\\
 \mmedskip
-\textbf{$E'$ elvágja $v$-t, és $w$-t}.\\
+\textBF{$E'$ elvágja $v$-t, és $w$-t}.\\
 \mbigskip
-Ha $V'$, illetve $E'$ egy elemű, akkor \textbf{elvágó (szeparáló) pontról}, ill \textbf{elvágó (szeparáló) élről} beszélünk.\\
+Ha $V'$, illetve $E'$ egy elemű, akkor \textBF{elvágó (szeparáló) pontról}, ill \textBF{elvágó (szeparáló) élről} beszélünk.\\
 \mbigskip
-$E' \subseteq E$ \textbf{elvágó, (szeparáló) élhalmaz}, ha a $G' = (V, E \setminus E')$ több komponensből áll, mint $G$. (azaz vannak olyan csúcsok $G$-ben, amelyeket $E'$ elvág.)\\
+$E' \subseteq E$ \textBF{elvágó, (szeparáló) élhalmaz}, ha a $G' = (V, E \setminus E')$ több komponensből áll, mint $G$. (azaz vannak olyan csúcsok $G$-ben, amelyeket $E'$ elvág.)\\
 \mbigskip
-$E' \subseteq E$ \textbf{vágás}, ha elvágó élhalmaz, de semelyik  valódi részhalmaza nem az.
+$E' \subseteq E$ \textBF{vágás}, ha elvágó élhalmaz, de semelyik  valódi részhalmaza nem az.
 \end{tcolorbox}
 \end{frame}
 
@@ -887,7 +906,7 @@ $E' \subseteq E$ \textbf{vágás}, ha elvágó élhalmaz, de semelyik  valódi r
 Egy véges összefüggő $G = (V, E)$ gráfban létezik legalább $v(G) - 1$ vágás.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 $T$ Feszítőfa összefüggő.\\
@@ -900,11 +919,11 @@ Mivel $T$-nek $v(G) - 1$ éle van $\Rightarrow$ legalább ennyi különböző v�
 
 \begin{frame}
 \begin{tcolorbox}[title={Erdő, Feszítő erdő}]
-Egy körmentes gráfot \textbf{erdőnek} nevezünk.\\
+Egy körmentes gráfot \textBF{erdőnek} nevezünk.\\
 (Nincs kikötve, hogy összefüggő legyen,)\\
 (Egy fa is erdő).\\
 \mmedskip
-$G$ gráf maximállis élszámú körmentes részgráfja $G$ \textbf{feszítő erdője}.
+$G$ gráf maximállis élszámú körmentes részgráfja $G$ \textBF{feszítő erdője}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -914,17 +933,17 @@ Egy véges erdő élszáma: $v(G) - c(G)$, ahol $c$ a komponensek száma.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Rang, Nullitás}]
-$G$ \textbf{rangja}: $r(G) = v(G) - c(G)$\\
+$G$ \textBF{rangja}: $r(G) = v(G) - c(G)$\\
 (Minimálisan kiválasztható vágások száma)\\
 \mmedskip
-$G$ \textbf{Nullitása}: $n(G) = e(G) - v(G) + c(G)$\\
+$G$ \textBF{Nullitása}: $n(G) = e(G) - v(G) + c(G)$\\
 (Minimálisan kiválaszthatü körök száma.)
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Euler gráfok}]
-Ha egy $G$ gráfban van olyam $Z$ élsorozat (vagy zárt vonal), amelyik $G$ minden élét pontosan egyszer tartalmazza, akkor $G$-t \textbf{Euler-gráfnak}, $Z$-t pedig \textbf{Euler-vonal}-nak \textbf{(Euler-körnek)} nevezzük.
+Ha egy $G$ gráfban van olyam $Z$ élsorozat (vagy zárt vonal), amelyik $G$ minden élét pontosan egyszer tartalmazza, akkor $G$-t \textBF{Euler-gráfnak}, $Z$-t pedig \textBF{Euler-vonal}-nak \textBF{(Euler-körnek)} nevezzük.
 \end{tcolorbox}
 \begin{tcolorbox}[title={Ész}]
 \begin{enumerate}
@@ -948,9 +967,9 @@ Ha $G$ összefüggő véges gráf, akkor a következő állítások ekvivalensek
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Hamilton gráfok}]
-Egy út \textbf{Hamilton-út}, ha $G$ gráf minden pontját tartalmazza.\\
+Egy út \textBF{Hamilton-út}, ha $G$ gráf minden pontját tartalmazza.\\
 \mmedskip
-Ha egy kör a $G$ minden pontját tartalmazza, akkor \textbf{Hamilton-körnek}, $G$-t pedig \textbf{Hamilton-gráfnak} nevezzük.
+Ha egy kör a $G$ minden pontját tartalmazza, akkor \textBF{Hamilton-körnek}, $G$-t pedig \textBF{Hamilton-gráfnak} nevezzük.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -1049,24 +1068,24 @@ Legyen $G$ egy $n \geq 3$ pontú egyszerű véges gráf. Ha $$d(v) \geq \frac{n}
 
 \begin{frame}
 \begin{tcolorbox}[title={Gráf súlya}]
-Legyen $G = (V, E, {\phi}, w)$ olyan gráf ($w$ a súlyfüggvény (Az él súlya)), ahol $w$ függvény egy $e \in E(G)$ élhez rendel valós számhalmazbeli értéket, amelyet $e$ \textbf{súlyának} nevezük. $X \subseteq E(G)$ esetén az $X$ részhalmaz súlya:\\
+Legyen $G = (V, E, {\phi}, w)$ olyan gráf ($w$ a súlyfüggvény (Az él súlya)), ahol $w$ függvény egy $e \in E(G)$ élhez rendel valós számhalmazbeli értéket, amelyet $e$ \textBF{súlyának} nevezük. $X \subseteq E(G)$ esetén az $X$ részhalmaz súlya:\\
 \mmedskip
 $\sum_{e \in X} w(e)$.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Mohó algoritmus}]
-Egy \textbf{mohó algoritmus} minden döntést az adott pillanatban rendelkezésre álló információk alapján hoz meg, nem törődve a döntés "jövőre" gyakorolt hatásával.
+Egy \textBF{mohó algoritmus} minden döntést az adott pillanatban rendelkezésre álló információk alapján hoz meg, nem törődve a döntés "jövőre" gyakorolt hatásával.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
-\textbf{Előny:}\\
+\textBF{Előny:}\\
 \mmedskip
 \begin{enumerate}
 \item Könnyen kitalálható
 \item Könnyen Implementálható
 \item Sok esetben nagyon gyors és hatékony
 \end{enumerate}
-\textbf{Hátrány:}\\
+\textBF{Hátrány:}\\
 Nem mindíg adja az optimális megoldást.
 \end{tcolorbox}
 \end{frame}
@@ -1123,13 +1142,13 @@ Legyen $G = (V, E, {\phi}, w)$ egy véges összefüggő gráf. A következő alg
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Irányított gráf}]
-A $G = ({\psi}, V, E)$ hármast \textbf{irányított gráfnak} nevezzük, ha $V, E$ halmazok, $V \neq \emptyset, V \cap E = \emptyset$ és $\psi : E \rightarrow V x V$.\\
+A $G = ({\psi}, V, E)$ hármast \textBF{irányított gráfnak} nevezzük, ha $V, E$ halmazok, $V \neq \emptyset, V \cap E = \emptyset$ és $\psi : E \rightarrow V x V$.\\
 \\
-Legyen $e \in E$. Ha ${\psi}(e) = (u, v)$, akkor az $e$ irányított él \textbf{kezdőpontja $u$}, \textbf{végpontja $v$}.
+Legyen $e \in E$. Ha ${\psi}(e) = (u, v)$, akkor az $e$ irányított él \textBF{kezdőpontja $u$}, \textBF{végpontja $v$}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Gráf irányítása}]
-Egy $G = ({\psi}, E, V)$ irányított gráfból az "irányítás törlésével" megkaphatjuk a \textbf{$G$-nek megfelelő irányítatlan gráfot}: $G' = ({\phi}, E, V)$, azaz ha ${\psi}(e) = (u, v)$, akkor ${\psi}(e) = \{u, v\}$.\\
+Egy $G = ({\psi}, E, V)$ irányított gráfból az "irányítás törlésével" megkaphatjuk a \textBF{$G$-nek megfelelő irányítatlan gráfot}: $G' = ({\phi}, E, V)$, azaz ha ${\psi}(e) = (u, v)$, akkor ${\psi}(e) = \{u, v\}$.\\
 \\
 Ekkor $G$ egy irányítása $G'$-nek.
 \end{tcolorbox}
@@ -1142,21 +1161,21 @@ Ekkor $G$ egy irányítása $G'$-nek.
 
 \begin{frame}
 \begin{tcolorbox}[squeezed title={Def.: Irányított gráf megfordítása}]
-A $G = ({\psi}, E, V)$ \textbf{irányított gráf megfordítása} a $G' = ({\psi}', E, V)$ gráf amelyre ${\psi}(e) = (u, v) \iff {\psi}'(e) = (v, u)$.\\
+A $G = ({\psi}, E, V)$ \textBF{irányított gráf megfordítása} a $G' = ({\psi}', E, V)$ gráf amelyre ${\psi}(e) = (u, v) \iff {\psi}'(e) = (v, u)$.\\
 \\
 Hurok megfordítása önmaga.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Sigorúan Párhuzamos Élek}]
-$e \neq f$ \textbf{szigorúan párhuzamos élek}, ha ${\psi}(e) = (u, v)$ és ${\psi}(f) = (u, v)$.
+$e \neq f$ \textBF{szigorúan párhuzamos élek}, ha ${\psi}(e) = (u, v)$ és ${\psi}(f) = (u, v)$.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Kifok, Nyelő}]
-Pont \textbf{kifoka}, $d^+(a)$ a kimenő élek száma, ha $d^+(v) = 0$, akkor v \textbf{nyelő}.
+Pont \textBF{kifoka}, $d^+(a)$ a kimenő élek száma, ha $d^+(v) = 0$, akkor v \textBF{nyelő}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Befok, Forrás}]
-Pont \textbf{befoka}, $d^-(a)$ a bemenő élek száma, ha $d^-(v) = 0$, akkor v \textbf{forrás}.
+Pont \textBF{befoka}, $d^-(a)$ a bemenő élek száma, ha $d^-(v) = 0$, akkor v \textBF{forrás}.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -1167,27 +1186,27 @@ $$\sum_{a \in V(G)} d^+(a) = \sum_{a \in V(G)} d^-(a) = e(G)$$
 
 \begin{frame}
 \begin{tcolorbox}[ title={Def.: Összefüggőség (Irányított gráf)}]
-A $G$ irányított gráf \textbf{összefüggő}, ha a megfelelő $G' = (V, E')$ irányítatlan gráf összefüggő.\\
+A $G$ irányított gráf \textBF{összefüggő}, ha a megfelelő $G' = (V, E')$ irányítatlan gráf összefüggő.\\
 \\
-A $G$ irányított gráf \textbf{komponensei} a megfelelő $G'$ irányítatlan gráf komponenseit jelentik.\\
+A $G$ irányított gráf \textBF{komponensei} a megfelelő $G'$ irányítatlan gráf komponenseit jelentik.\\
 A komponensek száma $c(G) = c(G')$.\\
 \\
-A $G = (V, E)$ gráf \textbf{erősen összefüggő}, ha minden $v_1, v_2 \in V(G)$ esetén $v_1 = v_2$, vagy $v_1$-ből vezet $v_2$-be irányított út, és $v_2$-ből $v_1$-be is.
+A $G = (V, E)$ gráf \textBF{erősen összefüggő}, ha minden $v_1, v_2 \in V(G)$ esetén $v_1 = v_2$, vagy $v_1$-ből vezet $v_2$-be irányított út, és $v_2$-ből $v_1$-be is.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Tétel: Erős összefüggőség}]
-Egy összefüggő gráf akkor, és csak akkor irányítható úgy, hogy erősen összefüggő legyen, ha minden \textbf{éléhez} tartozik rajta áthaladó kör.
+Egy összefüggő gráf akkor, és csak akkor irányítható úgy, hogy erősen összefüggő legyen, ha minden \textBF{éléhez} tartozik rajta áthaladó kör.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
-Hasonló nem mondható el olyan gráfról, amelyben minden \textbf{csúcson} halad át kör.
+Hasonló nem mondható el olyan gráfról, amelyben minden \textBF{csúcson} halad át kör.
 \end{tcolorbox}
 \end{frame}
 
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Irányított Fa}]
-Egy irányított gráfot \textbf{irányított fának} hívunk, ha pontosan egy olyan pontot tartalmaz, amelynek befoka 0, és a többi csúcs befoka 1.
+Egy irányított gráfot \textBF{irányított fának} hívunk, ha pontosan egy olyan pontot tartalmaz, amelynek befoka 0, és a többi csúcs befoka 1.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Ész}]
@@ -1195,30 +1214,30 @@ A 0 befokú csúcs egyértelműen meghatározott és belőle minden további cs�
 \end{tcolorbox}
 
 \begin{tcolorbox}[squeezed title={Def.: Gyökér, n-edik szint, Magasság, Szülő, Gyerekek, Levél}]
-Irányított fában a 0 befokú pont neve \textbf{gyökér}.\\
+Irányított fában a 0 befokú pont neve \textBF{gyökér}.\\
 \\
-\textbf{$n$-edik szint}: azon csúcsok halmaza, amelyekhez $n$ hosszúságú út vezet a gyökérből.\\
+\textBF{$n$-edik szint}: azon csúcsok halmaza, amelyekhez $n$ hosszúságú út vezet a gyökérből.\\
 \\
-A szintek maximuma a fa \textbf{magassága}.\\
+A szintek maximuma a fa \textBF{magassága}.\\
 \\
-Ha $v$ kezdő, $v'$ és $v''$ végpontja egy élnek, akkor $v$ a \textbf{szülő}, $v'$ és $v''$ a \textbf{gyereket (testvérek)}.\\
+Ha $v$ kezdő, $v'$ és $v''$ végpontja egy élnek, akkor $v$ a \textBF{szülő}, $v'$ és $v''$ a \textBF{gyereket (testvérek)}.\\
 \\
-Irányított fa 0 kifukú csúcsa a \textbf{levél}.
+Irányított fa 0 kifukú csúcsa a \textBF{levél}.
 \end{tcolorbox}
 \end{frame}
 
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Síkgráf}]
-Egy gráf \textbf{síkbarajzolható}, ha lerajzolható a síkra úgy, hogy élei csak a csúcspontokban metszik egymást.\\
+Egy gráf \textBF{síkbarajzolható}, ha lerajzolható a síkra úgy, hogy élei csak a csúcspontokban metszik egymást.\\
 \\
-Az így "lerajzolt" gráfokat szokás \textbf{síkgráfoknak} is nevezni.
+Az így "lerajzolt" gráfokat szokás \textBF{síkgráfoknak} is nevezni.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Tartomány}]
-Egy síkgráfban a sík egy részhalmazának egy olyan összefüggő komponensét, amely diszjunkt a gráf csúcsaival, és éleivel \textbf{tartománynak nevezzük}.\\
+Egy síkgráfban a sík egy részhalmazának egy olyan összefüggő komponensét, amely diszjunkt a gráf csúcsaival, és éleivel \textBF{tartománynak nevezzük}.\\
 \\
-Ezek közül pontosan egy végtelen, neve \textbf{külső tartomány}.
+Ezek közül pontosan egy végtelen, neve \textBF{külső tartomány}.
 \end{tcolorbox}
 \end{frame}
 
@@ -1227,7 +1246,7 @@ Ezek közül pontosan egy végtelen, neve \textbf{külső tartomány}.
 Ha $G$ egyszerű, síkba rajzolható gráf, akkor $$\delta = \min_{{q \in V(G)}} d(a) \leq 5$$\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás (Indirekt)}}\\
+\underline{\textBF{Bizonyítás (Indirekt)}}\\
 \mmedskip
 TFH $\delta \geq 6$.
 Az általánosság megsértése nélkül feltehetjük, hogy $v(G) \geq 3$.\\
@@ -1306,17 +1325,17 @@ boxes = {colframe=mybg, colback=mybg},
 
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás (Indirekt)}}\\
+\underline{\textBF{Bizonyítás (Indirekt)}}\\
 \mmedskip
 TFH $K_5$ és $K_{3,3}$ síkbarajzolható.\\
 \msmallskip
-\textbf{$K_{3,3}$ esetén}:\\
+\textBF{$K_{3,3}$ esetén}:\\
 $v(G) = 6$, és $e(G) = 9$\\
 Euler forumlából következik, hogy $t = 5$.\\
 Viszont $K_{3,3}$ nem tartalmaz háromszöget, és nincs szeparáló éle. $\implies$\\
 $\implies$ $4t \leq 2e(G) \implies 20 \leq 18$. $\rightarrow$ Ellentmondás!\\
 \msmallskip
-\textbf{$K_5$ esetén}:\\
+\textBF{$K_5$ esetén}:\\
 $v(G) = 5$ és $e(G) = 10$\\
 Alkalmazzuk a síkgráf élszáma tételt ($e(G) \leq 3v(G) - 6$), ekkor\\
 $10 \leq 9$ $\rightarrow$ Ellentmondás!
@@ -1326,17 +1345,17 @@ $10 \leq 9$ $\rightarrow$ Ellentmondás!
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Szubdivízió, Simítás}]
-Egy $e$ és \textbf{szubdiviziójáról} beszélünk, ha $e$-t egy 2 hosszúságú úttal helyettesítjük.\\
+Egy $e$ és \textBF{szubdiviziójáról} beszélünk, ha $e$-t egy 2 hosszúságú úttal helyettesítjük.\\
 \\
-Egy másodfokú $v$ pont \textbf{simítása} az a transzformáció, amikor $v$-t töröljük, és szomszédait összekötjük egy éllel.
+Egy másodfokú $v$ pont \textBF{simítása} az a transzformáció, amikor $v$-t töröljük, és szomszédait összekötjük egy éllel.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Topologikus izomorfia}]
-Két gráf \textbf{topologikusan izomorf}, ha a szubdivizió és simítás véges sokszori alkalmazásával izomorf gráfokba transzformálhatóak.
+Két gráf \textBF{topologikusan izomorf}, ha a szubdivizió és simítás véges sokszori alkalmazásával izomorf gráfokba transzformálhatóak.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Tétel: Kuratowski tétel}]
-Egy egyszerű véges gráf \textbf{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratowski gráfok valamelyikével topologikusan izomorf részgráfot.
+Egy egyszerű véges gráf \textBF{akkor, és csak akkor} rajzolható síkba, ha nem tartalmaz a Kuratowski gráfok valamelyikével topologikusan izomorf részgráfot.
 \end{tcolorbox}
 \end{frame}
 
@@ -1398,7 +1417,7 @@ Egy összefüggő síkbeli gráf, amelynek $t$ tartománya van, (a külső tarto
 $$v(G) - e(G) + t = 2$$\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás (Sematikus)}}\\
+\underline{\textBF{Bizonyítás (Sematikus)}}\\
 \mmedskip
 Tekintsünk egy $K$ kört $G$-ben és egy $e \in E(K)$ élet.\\
 Mivel $e$ két tartomány határán van $\implies$ $e$ törlésével két szomszéd régió eggyé válik.
@@ -1421,10 +1440,10 @@ $$\implies v(G) - e(G) + t = v(G) - (v(G) - 1) + 1 = 2$$
 Ha $G$ egyszerű, síkba rajzolható gráf, és $v(G) \geq 3$, akkor $$e(G) \leq 3v(G) - 6$$.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
-\textbf{1. Eset}\\
+\textBF{1. Eset}\\
 TFH $G$ összefüggő.\\
 Mivel $v(G) = 3$-ra igaz, ezért tfh (legyen) v(G) > 3.\\
 Mivel G egyszeű $\implies$ minden tartományát legalább 3 él határolja. $\implies$\\
@@ -1432,7 +1451,7 @@ $\implies$ legalább 3t élet számoltunk.\\
 Mivel az elvágó éleket egyszer számoltuk, a többit kétszer $\implies$ $3t \leq 2e(G)$.\\
 Az Euler formulából következik, hogy $$3(e(G) - v(G) + 2) \leq 2e(G) \implies e(G) \leq 3v(G) - 6$$\\
 \msmallskip
-\textbf{2. Eset}\\
+\textBF{2. Eset}\\
 TFH $G$ nem összefüggő.\\
 Ekkor visszavezetjük az első esetre, élek hozzáadásával.
 \end{tcolorbox}
@@ -1497,7 +1516,7 @@ B_{4 x 5} =
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\Huge Formális nyelvek, és Automaták}
+    {\RHuge Formális nyelvek, és Automaták}
 \end{tcolorbox}
 \end{frame}
 
@@ -1506,25 +1525,25 @@ B_{4 x 5} =
 \begin{tcolorbox}[title={Def.: $\Sigma$ feletti szó}]
 Legyen $\Sigma$ véges nemüres halmaz.\\
 \mmedskip
-\textbf{$\Sigma$ feletti szón} a $\Sigma$ elemeiből (betűiből) képzett véges sorozatot értjük: \\
+\textBF{$\Sigma$ feletti szón} a $\Sigma$ elemeiből (betűiből) képzett véges sorozatot értjük: \\
 \mmedskip
 $w = w_1 ... w_n$, $w_1 \in {\Sigma}, i = 1, ..., n$\\
 \mmedskip
-\textbf{Szó hossza:} Az $n$ nemnegatív, egész szám a w szó hossza. Jelölés: $|w|$.\\
+\textBF{Szó hossza:} Az $n$ nemnegatív, egész szám a w szó hossza. Jelölés: $|w|$.\\
 ($|w|_0$ a $w$-ben található $0$-k száma.)\\
 \mmedskip
-\textbf{Üres szó:} A $0$ hosszúságú szó, jelölése : $\epsilon$\\
+\textBF{Üres szó:} A $0$ hosszúságú szó, jelölése : $\epsilon$\\
 \mmedskip
 ${\Sigma}^*$ jelöli a $\Sigma$ feletti szavak halmazát.\\
 (Végtelen, viszont a szavak végesek)
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: $\Sigma$ feletti nyelv}]
-${\Sigma}^*$ egy részhalmazát \textbf{$\Sigma$ feletti nyelvnek} nevezzük.
+${\Sigma}^*$ egy részhalmazát \textBF{$\Sigma$ feletti nyelvnek} nevezzük.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Véges automata}]
-\textbf{$(Q, {\Sigma}, {\delta}, q_0, F)$}\\
+\textBF{$(Q, {\Sigma}, {\delta}, q_0, F)$}\\
 \mmedskip
 $Q$: Állapotok véges, nemüres halmaza.\\
 \mmedskip
@@ -1549,15 +1568,15 @@ $r_0, r_1, ..., r_n (r_i \in Q, i = 1, ..., n)$\\
 \mmedskip
 $r_0 = q$ és $r_i = {\delta}(r_{i - 1}, w_i)(i = 1, ..., n)$\\
 \mbigskip
-\textbf{Elfogadott szó:} Azt mondjuk, hogy \textbf{$M$ elfogadja a $w$ szót}, ha létezik a $q_0$ kezdőállapotból induló számítási sorozat a $w$ szón és $r_n \in F$.\\
+\textBF{Elfogadott szó:} Azt mondjuk, hogy \textBF{$M$ elfogadja a $w$ szót}, ha létezik a $q_0$ kezdőállapotból induló számítási sorozat a $w$ szón és $r_n \in F$.\\
 \mbigskip
-\textbf{Felismert nyelv:} Az M által felismert nyelv: $L(M) = \{w \in {\Sigma}^* | M$ elfogadja $w$-t$\}$.\\
+\textBF{Felismert nyelv:} Az M által felismert nyelv: $L(M) = \{w \in {\Sigma}^* | M$ elfogadja $w$-t$\}$.\\
 \mbigskip
-Két automata \textbf{ekvivalens}, ha ugyanazt a nyelvet ismerik fel.
+Két automata \textBF{ekvivalens}, ha ugyanazt a nyelvet ismerik fel.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Felismerhető nyelv}]
-Az $L \subseteq {\Sigma}^*$ nyelvet \textbf{felismerhető nyelvnek} nevezzük, ha létezik olyan véges automata, amely felismeri.
+Az $L \subseteq {\Sigma}^*$ nyelvet \textBF{felismerhető nyelvnek} nevezzük, ha létezik olyan véges automata, amely felismeri.
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: Konkatenáció}]
@@ -1629,7 +1648,7 @@ Tehát: $L^* = L^+ \cup \{{\epsilon}\}$
 \begin{frame}
 
 \begin{tcolorbox}[title={Def.: Reguláris nyelv}]
-Az $L \subseteq {\Sigma}^*$ nyelvet \textbf{reguláris nyelvnek} nevezzük, ha előáll az\\
+Az $L \subseteq {\Sigma}^*$ nyelvet \textBF{reguláris nyelvnek} nevezzük, ha előáll az\\
 $\emptyset$ és $\{a\}$ $(a \in {\Sigma})$\\
 nyelvekből a három reguláris művelet véges sokszori alkalmazásával.
 \end{tcolorbox}
@@ -1645,7 +1664,7 @@ Egy nyelv akkor, és csak akkor felismerhető, ha reguláris.
 $L$ Felismerhető $\implies$ $\overline{L}$\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Legyen $M = (Q, \Sigma , \delta , q_0, F)$ véges automata és $L = L(M)$ (M automata felismeri az L nyelvet).\\
@@ -1663,7 +1682,7 @@ Ekkor  $L(\overline{M}) = \overline{L}$. (Azaz az $\overline{M}$ automata biztos
 $L_1, L_2$ felismerhető $\implies$ $L_1 \cap L_2$\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
@@ -1673,7 +1692,7 @@ Legyen: $\delta = Q x \Sigma \rightarrow Q$ (Párok lesznek).\\
 Legyen: $\delta(s, a), s \in Q = \delta((s_1, s_2), a) = ({\delta}_1(s_1, a), {\delta}_2(s_2, a))$, $s_1 \in Q_1, s_2 \in Q_2, a \in \Sigma$\\
 \mbigskip
 Legyen: $q_0 = (q_1, q_2)$\\
-Legyen: \underline{\textbf{$F_{\cap} = F_1 x F_2$}} (Az összes lehetséges módon párokat képzünk mindkét alap automata végállapot halmazaiból) $\implies$ csak akkor fog egy nyelvet felismerni, a "nagy" automata, ha mindkét "kis" automata az egyik eredeti végállapotában áll.)\\
+Legyen: \underline{\textBF{$F_{\cap} = F_1 x F_2$}} (Az összes lehetséges módon párokat képzünk mindkét alap automata végállapot halmazaiból) $\implies$ csak akkor fog egy nyelvet felismerni, a "nagy" automata, ha mindkét "kis" automata az egyik eredeti végállapotában áll.)\\
 \msmallskip
 Legyen: $M_{\cap} = (Q, \Sigma , \delta , q_0, F_{\cap})$\\
 \mbigskip
@@ -1687,7 +1706,7 @@ Ekkor: \underline{$L(M_{\cap}) = L_1 \cap L_2$}\\
 $L_1, L_2$ felismerhető $\implies$ $L_1 \cup L_2$\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
@@ -1697,7 +1716,7 @@ Legyen: $\delta = Q x \Sigma \rightarrow Q$ (Párok lesznek).\\
 Legyen: $\delta((s_1, s_2), a) = ({\delta}_1(s_1, a), {\delta}_2(s_2, a))$, $s_1 \in Q_1, s_2 \in Q_2, a \in \Sigma$\\
 \mbigskip
 Legyen: $q_0 = (q_1, q_2)$\\
-Legyen: \underline{\textbf{$F_{\cup} = F_1 x Q_2 \cup F_2 x Q_1$}} (Az \textbf{első} "kicsi" automata összes \textbf{végállapotát} párba vesszük a \textbf{második} "kicsi" automata összes \textbf{állapotával}, unió a \textbf{második} "kicsi" automata összes végállapota az első "kicsi" automata \textbf{állapotával} $\implies$ bármelyik "kicsi" automata végállapotba kerül, az a másiknak is végállapota lesz a pár másik felén. (Mivel pároknál számít az elemek sorrendje))\\
+Legyen: \underline{\textBF{$F_{\cup} = F_1 x Q_2 \cup F_2 x Q_1$}} (Az \textBF{első} "kicsi" automata összes \textBF{végállapotát} párba vesszük a \textBF{második} "kicsi" automata összes \textBF{állapotával}, unió a \textBF{második} "kicsi" automata összes végállapota az első "kicsi" automata \textBF{állapotával} $\implies$ bármelyik "kicsi" automata végállapotba kerül, az a másiknak is végállapota lesz a pár másik felén. (Mivel pároknál számít az elemek sorrendje))\\
 \msmallskip
 Legyen: $M_{\cup} = (Q, \Sigma , \delta , q_0, F_{\cup})$\\
 \mbigskip
@@ -1708,7 +1727,7 @@ Ekkor: \underline{$L(M_{\cup}) = L_1 \cup L_2$}\\
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Nemdeterminisztikus automata}]
-\textbf{Véges nemdeterminisztikus (üres átmenetekkel ellátott) automata:}\\
+\textBF{Véges nemdeterminisztikus (üres átmenetekkel ellátott) automata:}\\
 \mmedskip
 $M = (Q, {\Sigma}, {\delta}, q_0, F)$,\\
 \mmedskip
@@ -1730,15 +1749,15 @@ $r_0, r_1, ..., r_n (r_i \in Q, i = 1, ..., n)$\\
 \mmedskip
 $r_0 = q$ és $r_i = {\delta}(r_{i - 1}, w_i)(i = 1, ..., n)$\\
 \mbigskip
-\textbf{Elfogadott szó:} Azt mondjuk, hogy \textbf{$M$ elfogadja a $w$ szót}, ha létezik a $q_0$ kezdőállapotból induló számítási sorozat a $w$ szón és $r_n \in F$.\\
+\textBF{Elfogadott szó:} Azt mondjuk, hogy \textBF{$M$ elfogadja a $w$ szót}, ha létezik a $q_0$ kezdőállapotból induló számítási sorozat a $w$ szón és $r_n \in F$.\\
 \mbigskip
-\textbf{Felismert nyelv:} Az M által felismert nyelv: $L(M) = \{w \in {\Sigma}^* | M$ elfogadja $w$-t$\}$.\\
+\textBF{Felismert nyelv:} Az M által felismert nyelv: $L(M) = \{w \in {\Sigma}^* | M$ elfogadja $w$-t$\}$.\\
 \mbigskip
 (az aláhúzotta különböznek a determinisztikus automatáshoz képest)
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Def.: $X \epsilon$-lezártja}]
-Legyen $X \subseteq Q$. Ekkor \textbf{$X \epsilon$-lezártján} s állapotok olyan $\widehat{X}$ halmazát értjük, amelyekre létezik $X$-beli $q$ állapotból induló számítási sorozat az $\epsilon$ szón, amely $s$-ben végződik.\\
+Legyen $X \subseteq Q$. Ekkor \textBF{$X \epsilon$-lezártján} s állapotok olyan $\widehat{X}$ halmazát értjük, amelyekre létezik $X$-beli $q$ állapotból induló számítási sorozat az $\epsilon$ szón, amely $s$-ben végződik.\\
 Formalizálva:\\
 $\widehat{X} = \{s \in Q : {\exists}r_0,r_1,...,r_n, n \geq 0, r_0 \in X, r_n = s, r_i \in {\delta}(r_{i - 1}, {\epsilon}), i = 1, ..., n\}$.\\
 {\tiny (S) Azaz ha egy számítási sorozat végéből átmenet van csak $\epsilon$-al, akkor hozzávesszük azokat is, ameddig szükséges, és az első nem $\epsilon$-os átmenet lessza vége.}\\
@@ -1751,7 +1770,7 @@ $\widehat{X} = \{s \in Q : {\exists}r_0,r_1,...,r_n, n \geq 0, r_0 \in X, r_n = 
 Minden $M = (Q, \Sigma , \delta , q_0, F)$ véges nemdeterminisztikus automatával felismerhető nyelv, felismerhető véges automatával.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Tekintsük az $M' = (Q', \Sigma , {\delta}', Q_0, F')$ véges automatát ($Q_0$ halmaz!), ahol\\
@@ -1772,7 +1791,7 @@ Megjegyzés: Elég lenne $p(Q)$ azon elemeivel számolni, amelyek elérhetők $Q
 $L_1, L_2$ felismerhető $\implies$ $L_1 \cdot L_2$\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Legyen: $L_1 = L(M_1), L_2 = L(M_2)$.\\
@@ -1796,7 +1815,7 @@ $\\
 \mbigskip
 Legyen: $M_1 \cdot M_2 = (Q_1 \cup Q_2, \Sigma , \delta , q_1, F_2)$\\
 \mbigskip
-Ekkor: \textbf{$L(M_1 \cdot M_2) = L_1 \cdot L_2$}\\
+Ekkor: \textBF{$L(M_1 \cdot M_2) = L_1 \cdot L_2$}\\
 \end{tcolorbox}
 
 \end{frame}
@@ -1806,7 +1825,7 @@ Ekkor: \textbf{$L(M_1 \cdot M_2) = L_1 \cdot L_2$}\\
 $L$ felismerhető $\implies$ $L^*$ is felismerhető.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Legyen: $M = (Q, \Sigma , {\delta}, q_0, F)$.\\
@@ -1823,7 +1842,7 @@ $
 \end{cases}
 $\\
 \mbigskip
-\textbf{Ekkor: $L(M^*) = L^*$}\\
+\textBF{Ekkor: $L(M^*) = L^*$}\\
 \end{tcolorbox}
 
 \end{frame}
@@ -1855,7 +1874,7 @@ alakban úgy, hogy\\
 \end{enumerate}
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Az L reguláris nyelvhez konstruáljuk meg az $M = (Q, {\Sigma}, {\delta}, q_0, F)$ véges automatát úgy, hogy legyen $p = |Q|$.\\
@@ -1874,7 +1893,7 @@ Legyen továbbá:
 \item $z$ az $u$-nak az $n - j$ hosszú zárószelete 
 \end{itemize}
 \mbigskip
-\textbf{Ekkor az $u = xyz$ felbontásra teljesülnek a lemma állításai.}
+\textBF{Ekkor az $u = xyz$ felbontásra teljesülnek a lemma állításai.}
 \end{tcolorbox}
 
 \end{frame}
@@ -1884,7 +1903,7 @@ Legyen továbbá:
 Az $L = \{0^n1^n : n \geq 0\} \subseteq \{0, 1\}^*$ nyelv nem reguláris.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Legyen $p$  tetszőleges, ekkor $u$ (szó) $ = 0^p1^p$.\\
@@ -1893,14 +1912,14 @@ $u = xyz, |xy| \leq p, |y| > 0$.\\
 \mbigskip
 Ekkor $xy$ csupa 0-ból áll és $y$ tartalmaz legalább egy 0-t. $\implies$\\
 $\implies$ $i \neq 1$ esetén $xy'z \notin L$, mert több 0 lessz benne, mint 1-es! $\implies$\\
-$\implies$ Sosem találunk megfelelő $p$-t $\implies$ \textbf{A nyelv nem reguláris.}\\
+$\implies$ Sosem találunk megfelelő $p$-t $\implies$ \textBF{A nyelv nem reguláris.}\\
 \end{tcolorbox}
 
 \end{frame}
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Környezetfüggetlen nyelvtan}]
-\textbf{Környezetfüggetlen nyelvtannak} nevezzük a\\
+\textBF{Környezetfüggetlen nyelvtannak} nevezzük a\\
 $G = (V, {\Sigma}, R, S)$ négyest, ahol\\
 \begin{itemize}
 \item $V$ véges, nemüres halmaz: a változók vagy nemterminálisok abc-je
@@ -1914,28 +1933,28 @@ $G = (V, {\Sigma}, R, S)$ négyest, ahol\\
 \begin{tcolorbox}[title={Def.: Deriváció, közvetlen derivált}]
 Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan, $u, v \in (V \cup {\Sigma})^*$.\\
 \mmedskip
-\textbf{Közvetlen derivált:}\\
-Azt mondjuk, hogy \textbf{$u$ közvetlen deriváltja a $v$ szó}, Jelölés: $u \Rightarrow v$,\\
+\textBF{Közvetlen derivált:}\\
+Azt mondjuk, hogy \textBF{$u$ közvetlen deriváltja a $v$ szó}, Jelölés: $u \Rightarrow v$,\\
 ha létezik az $u = u_1Au_2$ és $v = u_1wu_2$ felbontás úgy, hogy $A  \rightarrow w \in R$.\\
 \mmedskip
-\textbf{$v$ szó $u$ ból való derivációja:}\\
-Egy $u_0, u_1, ..., u_n (n \geq 0)$ sorozatot a \textbf{$v$ szó $u$-ból való derivációjának} nevezünk, ha:\\
+\textBF{$v$ szó $u$ ból való derivációja:}\\
+Egy $u_0, u_1, ..., u_n (n \geq 0)$ sorozatot a \textBF{$v$ szó $u$-ból való derivációjának} nevezünk, ha:\\
 $u_0 = u, u_n = v$ és\\
 $u_{i - 1} \Rightarrow u_i, i = 1, ..., n$.\\
 \mmedskip
-\textbf{Levezethető:}\\
-Azt mondjuk, hogy a \textbf{$v$ deriválható vagy levezethető $u$-ból},
+\textBF{Levezethető:}\\
+Azt mondjuk, hogy a \textBF{$v$ deriválható vagy levezethető $u$-ból},
 \\ha létezik a $v$-nek $u$-ból való derivációja.\\
 Jele: $u {\Rightarrow}^* v$.\\
 \mmedskip
-A \textbf{$G$ által generált nyelv}:\\
+A \textBF{$G$ által generált nyelv}:\\
 $L(G) = \{w \in {\Sigma}^* : S {\Rightarrow}^* w\}$.
 
 \end{tcolorbox}
 
 \begin{tcolorbox}[squeezed title={Def.: Nyelvtanok ekvivalenciája, Környezetfüggetlen nyelv}]
-Két nyelvtan \textbf{ekvivalens}, ha ugyanazt a nyelvet generálják.\\
-Egy nyelv \textbf{Környezetfüggetlen}, ha generálható környezetfüggetlen nyelvtannal.
+Két nyelvtan \textBF{ekvivalens}, ha ugyanazt a nyelvet generálják.\\
+Egy nyelv \textBF{Környezetfüggetlen}, ha generálható környezetfüggetlen nyelvtannal.
 \end{tcolorbox}
 
 \end{frame}
@@ -1943,16 +1962,16 @@ Egy nyelv \textbf{Környezetfüggetlen}, ha generálható környezetfüggetlen n
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Derivációs fa}]
 Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan.\\
-\textbf{$G$ feletti derivációs fa} olyan véges, irányított, rendezett fa, amely csúcsai a $V \cup {\Sigma} \cup \{{\epsilon}\}$ halmaz elemeive címkézettek úgy, hogy valahányszor egy csúcs és leszármazottainak címét rendre\\
+\textBF{$G$ feletti derivációs fa} olyan véges, irányított, rendezett fa, amely csúcsai a $V \cup {\Sigma} \cup \{{\epsilon}\}$ halmaz elemeive címkézettek úgy, hogy valahányszor egy csúcs és leszármazottainak címét rendre\\
 \mmedskip
 $X, X_1, ..., X_n (n \geq 1)$,\\
 mindannyiszor $X \rightarrow X_1...X_n \in R$.\\
 \mmedskip
 Továbbá minden levél címkéje az $\{{\epsilon}\} \cup {\Sigma} = {\Sigma}_g$ halmazban van, és ha egy csúcs valamely leszármazottja $\epsilon$-nal címkézett, akkor a csúcsnak egyetlen leszármazottja van.\\
 \mbigskip
-Ha a gyökér címkéje $X$, akkor a \textbf{derivációs fa $X$-ből indul}.\\
+Ha a gyökér címkéje $X$, akkor a \textBF{derivációs fa $X$-ből indul}.\\
 \mbigskip
-A derivációs fa leveleinek, illetve a levelek címkéinek sorozata a \textbf{derivációs fa határa}, amely egy ${\Sigma}^*$-beli szó.
+A derivációs fa leveleinek, illetve a levelek címkéinek sorozata a \textBF{derivációs fa határa}, amely egy ${\Sigma}^*$-beli szó.
 \end{tcolorbox}
 \end{frame}
 
@@ -1966,9 +1985,9 @@ Azt mondjuk, hogy egy\\
 \mbigskip
 $u_0 \Rightarrow u_1 \Rightarrow ... \Rightarrow u_n$\\
 \mbigskip
-\textbf{deriváció baloldali}, ha minden $i < n$ számra $u_{i + 1}$ úgy áll elő az $u_i$ szóból, hogy az $u_i$-ben előforduló első nemterminálist írjuk át.\\
+\textBF{deriváció baloldali}, ha minden $i < n$ számra $u_{i + 1}$ úgy áll elő az $u_i$ szóból, hogy az $u_i$-ben előforduló első nemterminálist írjuk át.\\
 \mbigskip
-\textbf{Jobboldali derivációk} hasonlóan definiálhatóak.\\
+\textBF{Jobboldali derivációk} hasonlóan definiálhatóak.\\
 \mbigskip
 Baloldali deriváció jelölése:\\
 \mbigskip
@@ -1990,7 +2009,7 @@ Legyen $G = (V, {\Sigma}, R, S)$ környezetfüggetlen nyelvtan. Ekkor a követke
 
 \begin{frame}
 \begin{tcolorbox}[title={Egyértelmű nyelvtan}]
-A $G = (V, {\Sigma}, R, S)$ \textbf{nyelvtant egyértelműnek} nevezzük, ha minden $u \in L(G)$ szónak pontosan egy $S$-ből induló baloldali levezetése (derivációs fája) van.
+A $G = (V, {\Sigma}, R, S)$ \textBF{nyelvtant egyértelműnek} nevezzük, ha minden $u \in L(G)$ szónak pontosan egy $S$-ből induló baloldali levezetése (derivációs fája) van.
 \end{tcolorbox}
 \end{frame}
 
@@ -1999,7 +2018,7 @@ A $G = (V, {\Sigma}, R, S)$ \textbf{nyelvtant egyértelműnek} nevezzük, ha min
 Minden reguláris nyelv környezetfüggetlen.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás (Konstr)}}\\
+\underline{\textBF{Bizonyítás (Konstr)}}\\
 \mmedskip
 Legyen $L \in {\Sigma}^*, L = L(M)$, és\\
 $M = (Q, {\Sigma}, {\delta}, q_0, F)$ nemdeterminisztikus véges automata.\\
@@ -2014,12 +2033,12 @@ Ekkor az $u \in  L(G) \iff \exists u$ szóra $q_0$-ból $q$-ba vezető számít�
 
 \begin{frame}
 \begin{tcolorbox}[title={Jobblineáris nyelvtan, nyelv}]
-A $G = (V, {\Sigma}, R, S)$ környezetfüggetlen \textbf{nyelvtan jobblineáris},\\
+A $G = (V, {\Sigma}, R, S)$ környezetfüggetlen \textBF{nyelvtan jobblineáris},\\
 Ha minden osztálya:\\
 \mmedskip
 $A \rightarrow uB$ vagy $A \rightarrow u$ alakú, ahol $u \in {\Sigma}^*$ és $A, B \in V$\\
 \mbigskip
-L \textbf{nyelv jobblineáris}, ha generálhatü jobblineáris nyelvtannal.\\
+L \textBF{nyelv jobblineáris}, ha generálhatü jobblineáris nyelvtannal.\\
 \msmallskip
 (Ez a legszigorúbb szabály, a reguláris nyelveket tudja generálni.)
 \end{tcolorbox}
@@ -2030,7 +2049,7 @@ L \textbf{nyelv jobblineáris}, ha generálhatü jobblineáris nyelvtannal.\\
 A környezetfüggetlen nyelvek zártak a reguláris műveletekre.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás (Kontrapozíció)}}\\
+\underline{\textBF{Bizonyítás (Kontrapozíció)}}\\
 \mmedskip
 A módszer: adott $E$ reguláris kifejezéshez megadjuk a\\
 $G_E = (V_E, {\Sigma}, R_E, S_E)$\\
@@ -2059,14 +2078,14 @@ Akkor $G_E = (V_{E_1} \cup \{S\}, \Sigma, R_{E_1} \cup \{S \rightarrow SS_{E_1},
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Veremautomata, Elfgadott szó}]
-\textbf{Veremautomata} egy $M = (Q, {\Sigma}, {\Gamma}, {\delta}, q_0, F)$ rendszer,\\
+\textBF{Veremautomata} egy $M = (Q, {\Sigma}, {\Gamma}, {\delta}, q_0, F)$ rendszer,\\
 ahol $Q, {\Sigma}, q_0, F$ ugyanazok, mint véges automata esetén, továbbá\\
 \mmedskip
 $\Gamma$ : véges, nemüres halmaz, a verem ábécé.\\
 $\delta : Q x {\Sigma}_g x {\Gamma}_g \rightarrow p(Q x {\Gamma}_g)$ az átmenetfüggvény.\\
 \mbigskip
-\textbf{Elfogadott szó:}\\
-Az \textbf{$M$ veremautomata akkor fogadja el a $w \in {\Sigma}^*$ szót,} ha\\
+\textBF{Elfogadott szó:}\\
+Az \textBF{$M$ veremautomata akkor fogadja el a $w \in {\Sigma}^*$ szót,} ha\\
 ${\exists}w_1, ..., w_m \in {\Sigma}_g, r_0, ..., r_m \in Q, s_0, ..., s_m \in {\Gamma}^*$, ahol\\
 \begin{enumerate}
 \item $w = w_1...w_m$\\
@@ -2083,7 +2102,7 @@ $L(M)$-et am $M$ által felismert nyelvnek nevezzük.
 
 \begin{frame}
 \begin{tcolorbox}[title={Def.: Konfiguráció}]
-\textbf{Konfiguráció} a $(q, {\alpha}, u) \in Q x {\Sigma}_{\epsilon} x {\Gamma}_{\epsilon}$ rendezett hármas.\\
+\textBF{Konfiguráció} a $(q, {\alpha}, u) \in Q x {\Sigma}_{\epsilon} x {\Gamma}_{\epsilon}$ rendezett hármas.\\
 \mmedskip
 $(q, {\alpha}, u) \vdash (q', {\alpha}', u')$,\\
 {\tiny (S) A $\vdash$ kb levezethetőt jelent, de nem biztos, hogy ez a szakszó rá!}
@@ -2123,7 +2142,7 @@ alakban úgy, hogy\\
 Az $L = \{a^nb^nc^n : n \geq 0 \} \subseteq \{a, b, c\}^*$ nyelv nem környezetfüggetlen.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Belátjuk, hogy ${\forall}p > 0$ egészhez ${\exists}w \in L, |w| \geq p$ úgy, hogy\\
@@ -2139,7 +2158,7 @@ Tetszőleges $p$-hez legyen $w = a^pb^pc^p$. Ekkor bárhogyan is írjuk fel a $w
 Az $L = \{w\#w : w \in \{0, 1\}^* \}$ nyelv nem környezetfüggetlen.\\
 \tcblower
 \msmallskip
-\underline{\textbf{Bizonyítás}}\\
+\underline{\textBF{Bizonyítás}}\\
 \mmedskip
 \\
 Tetszőleges $p$-hez legyen $w = 0^p1^p\#0^p1^p$, és tekintsük $w$ egy tetszőleges olyan $w = uvxyz$ felbontását, ahol $|vy| > 0, |vxy| < p$.\\

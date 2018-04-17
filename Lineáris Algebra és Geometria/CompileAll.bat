@@ -7,6 +7,9 @@ cd Headers
 pdflatex Article1d3A4Page.tex
 copy Article1d3A4Page.pdf ..\Build\%file%_1_Article_Scaled1d3A4.pdf
 
+pdflatex Article1d3A4PageVariant.tex
+copy Article1d3A4PageVariant.pdf ..\Build\%file%_1_Article_Scaled1d3A4_Variant.pdf
+
 pdflatex Article1d4A4Page.tex
 copy Article1d4A4Page.pdf ..\Build\%file%_1_Article_Scaled1d4A4.pdf
 
