@@ -463,42 +463,146 @@ Az $\mathbb{R}^{m x n}$-re is teljesül az 1/3 oldali 10 tulajdonság megfelelő
 	\end{tcolorbox}	
 	
 	\begin{tcolorbox}[title={Def.: Nullmátrix}]	
-		Nullmátrix:\begin{align}
-				 0 &:= \begin{bmatrix}
+		Nullmátrix: 0 := $\begin{bmatrix}
 					{\lambda}a_1 \\
 					{\lambda}a_2 \\
 					... \\
 					{\lambda}a_n
-				\end{bmatrix} \in \mathbb{R}^k
-		\end{align}
+				\end{bmatrix} \in \mathbb{R}^k$
 	\end{tcolorbox}		
 	
 	\end{frame}
 	
-	
-	
 	\begin{frame}
 
 		\begin{tcolorbox}[title={Def.: Mátrixszorzás}]	
-	$A$ $in$ $\mathbb{R}^{m x n}$, $B$ $\in$ $\mathbb{R}^{n x k}$ esetén $AB$ $\in$ $\mathbb{R}^{m x k}$ úgy, hogy minden szóbajövő $i, j$-re (most $1 \leq i \leq m, 1 \leq j \leq k$)
-\mmedskip
+			$A$ $in$ $\mathbb{R}^{m x n}$, $B$ $\in$ $\mathbb{R}^{n x k}$ esetén $AB$ $\in$ $\mathbb{R}^{m x k}$ úgy, hogy minden szóbajövő $i, j$-re (most $1 \leq i \leq m, 1 \leq j \leq k$)
+			\mmedskip
 	
-$_{i} [AB]_j$ $=$ $_{i} [A]_1$ $_{1} [B]_j$ + $_{i} [A]_2$ $_{2} [A]_j$ + $...$ + $_{i} [A]_n$ $_{n} [B]_j$ = $\sum_{l = 1}^n$ $_{i} [A]_l$ $_{l} [B]_j$
-\mmedskip
+			$_{i} [AB]_j$ $=$ $_{i} [A]_1$ $_{1} [B]_j$ + $_{i} [A]_2$ $_{2} [A]_j$ + $...$ + $_{i} [A]_n$ $_{n} [B]_j$ = $\sum_{l = 1}^n$ $_{i} [A]_l$ $_{l} [B]_j$
+			\mmedskip
 
-Ez az ún. sor-oszlop szorzás: a szorzatmátrix i-edik sora j-edik elemét úgy kapjuk, hogy a bal oldali mátrix i-edik sorának és a jobb oldali mátrix j-edik oszlopának megfelelő elemeit összeszorozzuk, s a kapott szorzatokat összeadjuk.
+			Ez az ún. sor-oszlop szorzás: a szorzatmátrix i-edik sora j-edik elemét úgy kapjuk, hogy a bal oldali mátrix i-edik sorának és a jobb oldali mátrix j-edik oszlopának megfelelő elemeit összeszorozzuk, s a kapott szorzatokat összeadjuk.
 		\end{tcolorbox}		
+		
+		\begin{tcolorbox}[title={Def.: Egységmátrix}]	
+			$I_n$ = $\begin{bmatrix} 
+  				1 & 0 & \cdots & 0 \\ 
+  				0 & 1 & \cdots & 0 \\
+  				\vdots & \vdots &  & \vdots \\
+  				0 & 0 & \cdots & 1
+			\end{bmatrix}$ $\in \mathbb{R}$ az $n$ x $n$-es egységmátrix\\
+			
+			
+			\[
+   				{\delta}_{ij} = 
+			\begin{cases}
+   				1, & \text{ha } i = j\\
+    			0, & \text{ha } i \neq j \\
+			\end{cases}
+			\]\\
+			
+			(A ${\delta}_{ij}$ egyik szokásos elnevezése: Kronecker-szimbólum.)
+		\end{tcolorbox}	
 	
+		\begin{tcolorbox}[title={Tétel: Egységmátrix}]	
+			$A$ $\in$ $\mathbb{R}^{m x n}$ esetén $I_mA$ = $A$ és $AI_n$ = $A$.
+		\end{tcolorbox}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Tranzponált}]
+			A $\mathbb{R}^{m x n}$ esetén az $A$ mátrix transzponáltja: $A^T$ $\mathbb{R}^{m x n}$, melyre minden szóbajövő $i$, $j$-re $_{i} [A^T]_j$ = $_{j} [A]_i$.
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Tranzponálás tulajdonságai}]
+			$A$, $B$ $\mathbb{R}^{m x n}$ $\Rightarrow$ $(A + B)^T$ = $A^T$ + $B^T$\\
+			${\lambda}$ $\in$ $\mathbb{R}$, $A$ $\mathbb{R}^{m x n}$ $\Rightarrow$ $({\lambda}A)^T$ = ${\lambda}A^T$\\
+			$A$ $\in$ $\mathbb{R}^{m x n}$, $B$ $\in$ $\mathbb{R}^{n x k}$ $\Rightarrow$ $(AB)T$ = $B^TA^T$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Mátrixszorzás, és asszociativitás}]
+			$A$ $\in$ $\mathbb{R}^{m x n_1}$ , $B$ $\in$ $\mathbb{R}^{n_2 x k_2}$, $C$ $\in$ $\mathbb{R}^{k_3 x s}$, esetén\\
+			\mmedskip
+			
+			$\exists$ $(AB)C)$ $\iff$ $\{n_1 = n_2$ és $k_2 = k_3\}$ $\iff$ ${\exists}A(BC)$\\
+			\mmedskip
+			
+			($\{n_1 = n_2$ és $k_2 = k_3\}$ = $(AB)C$ = $A(BC)$)
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Mátrixszorzás és összeadás disztributivitása}]
+			$A$ $\in$ $\mathbb{R}^{m x n_1}$ , $B$ $\in$ $\mathbb{R}^{n_2 x k_2}$, $C$ $\in$ $\mathbb{R}^{n_3 x k_3}$, esetén\\
+			\mmedskip
+			
+			$\exists$ $A(B + C)$ $\iff$ $\{n_1 = n_2$ és $k_2 = k_3\}$ $\iff$ ${\exists}$ $AB + BC$\\
+			\mmedskip
+			
+			($\{n_1 = n_2$ és $k_2 = k_3\}$ = $A(B + C)$ = $AB + BC$)
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Számmal való szorzás és mátrixszorzás kapcsolata}]
+			$\lambda$ $\in$ $\mathbb{R}$, $A$ $\in$ $\mathbb{R}^{m x n}$, $B$ $\in$ $\mathbb{R}^{n x k}$ $\Rightarrow$\\
+			\mmedskip
+			
+			${\lambda}(AB)$ = $({\lambda}A)B$ = $A({\lambda}B)$\\
+		\end{tcolorbox}
 	\end{frame}
 	
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Sorrang, Oszloprang}]
+			$A$ = $[a_1, {\cdots}, a_n]$ $\in$ $\mathbb{R}^{m x n}$ \\
+			\mmedskip
+			
+			oszloprangja: ${\rho}_{O}(A)$ = $r(a_1, {\cdots}, a_n)$ $($ = $dim$ $Span(a_1, {\cdots}, a_n))$\\
+			sorrangja: ${\rho}_{s}(A)$ = ${\rho}_{O}(A^T)$\\
+		\end{tcolorbox}
+
+		\begin{tcolorbox}[title={Tétel: Mátrixszorzás, dimenzió}]
+			Legyenek $C$ = $[c_1, {\cdots}, c_n]$ és $D$ = $[d_1, {\cdots}, d_k]$ ebben a sorrendben összeszorozható
+R feletti mátrixok. Ekkor:\\
+			\mmedskip
+			
+	 		${\rho}_{s}(CD)$ $\leq$ ${\rho}_{s}(C)$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Mátrix, rang}]
+			Tetszőleges $\mathbb{R}$ feletti $A$ mátrixra ${\rho}_{o}(A)$ $\leq$ ${\rho}_{s}(A)$\\
+			\mmedskip
+			
+			(ezentúl ${\rho}_{o}(A)$ $\leq$ ${\rho}_{s}(A)$ = ${\rho}(A)$ (az $\rho$ helyett használatos a $p$, vagy $r$ is.)
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Inverz}]
+			$A$ $\in$ $\mathbb{R}^{m x n}$ esetén:\\
+			\mmedskip
+			
+			Az $A^{(j)}$ egy jobb oldali inverze az $A$-nak, ha $A^{(j)}$ $\in$ $\mathbb{R}^{n x m}$ és $AA^{(j)}$ = $I_m$\\
+			Az $A^{(b)}$ egy bal oldali inverze az $A$-nak, ha $A^{(b)}$ $\in$ $\mathbb{R}^{n x m}$ és $A^{(b)}A$ = $I_n$\\
+			Az $A^{-1}$ kétoldali inverze $A$-nak, ha bal oldali inverze is és jobb oldali inverze is $A$-nak. 
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Inverz létezése}]
+			$A$ $\in$ $\mathbb{R}^{m x n}$ esetén:\\
+			
+			\begin{enumerate}
+			\item $\exists$ $A^{(j)}$ $\iff$ ${\rho}(A)$ = $m$
+			\item $\exists$ $A^{(b)}$ $\iff$ ${\rho}(A)$ = $n$
+			\item $\exists$ $A^{-1}$ $\Rightarrow$ ${\rho}(A)$ = $m$ = $n$ $\Rightarrow$ $\exists$ $A^{(b)}$), $\exists$ $A^{(j)}$ és egyenlők $\Rightarrow$ $\exists$ $A^{-1}$.
+			\end{enumerate}
+		\end{tcolorbox}
+	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: 05 adjugált}]
+		\end{tcolorbox}
+	\end{frame}
 	
+
 	
-	
-	
-	
-	
+
 	
 	
 	
