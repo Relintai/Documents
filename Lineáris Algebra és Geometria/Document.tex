@@ -52,6 +52,7 @@
 \usepackage[many, poster]{tcolorbox}
 \usepackage{pgf}
 \usepackage[makeroom]{cancel}
+\usepackage{verbatim}
 
 % Colors
 \definecolor{myred}{rgb}{0.87,0.18,0}
@@ -434,10 +435,115 @@
 		\end{tcolorbox}
 	\end{frame}
 	
+	\begin{frame}
+
+	\begin{tcolorbox}[title={Def.: Mátrix}]	
+		Legyen $e_k$ adott $a_k$ az $m$ és $n$ pozitív egész számok, továbbá minden
+	
+		$i \in \{1, ..., m\} és j \in \{1, ..., n\}$ esetére az $aij$ valós számok. Az
+		
+		táblázatot egy $\mathbb{R}$ feletti mátrixnak nevezzük, és $A$-val jelöljük, részletesebben $A = [aij]mn$, vagy
+		
+		Az $A$ mátrix $i$-ed $i_k$ sora $j$-edik elemén $e_k$ jelölése: $aij$ vagy $i[A]j$.
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[title={Def.: Mátrixok egyenlősége}]	
+		Az $A$ és a $B$ mátrixok egyenlők, ha alakjuk azonos (mondjuk $m x n$-es) és a megfelelő elemeik megegyeznek, azaz minden „szóbajövő" $i$, $j$ párra $(1 \leq i \leq m, 1 \leq j \leq n)$ teljesül, hogy $i[A]j = i[B]j$. Az $\mathbb{R}$ feletti $m x n$-es mátrixok halmazát $\mathbb{R}^{m x n}$-mel jelöljük ($\mathbb{R}^{m}$ = $\mathbb{R}^{m x 1}$).
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[title={Def.: Mátrix összeadás, számmal való szorzás}]	
+		Az $\mathbb{R}^{m}$-beli komponensenkénti összeadás és valós számmal való szorzás (1/2) mintájára természetes módon kínálkoznak $m x n$-es mátrixok esetén a megfelelő elemek összeadásával, illetve az összes elemnek egy valós számmal szorzásával a következő műveletek:
+
+$+$ : $\mathbb{R}^{m x n}$ x $\mathbb{R}^{m x n} \rightarrow \mathbb{R}^{m x n}$, A, B $\in$ $\mathbb{R}^{m x n}$ esetén $A + B$ $\in$ $\mathbb{R}^{m x n}$ és minden szóbajövő
+$i, j$-re $_{i} [A + B]_j$ = $_{i} [A]_j + _{i} [B]_j$.
+
+${\lambda}$ : $\mathbb{R}$ x $\mathbb{R}^{m x n} \rightarrow \mathbb{R}^{m x n}$, ${\lambda} \in \mathbb{R}$, $A \in \mathbb{R}^{m x n}$ esetén ${\lambda}A \in \mathbb{R}^{m x n}$ és minden szóbajövő $i, j$-re $_{i} [{\lambda}A]_j$ = ${\lambda} _{i} [A]_j$.
+
+Az $\mathbb{R}^{m x n}$-re is teljesül az 1/3 oldali 10 tulajdonság megfelelője a fenti $+$, ${\lambda}$ műveletekre nézve, így $\mathbb{R}^{m x n}$-et is $\mathbb{R}$ feletti vektortérnek mondjuk.
+	\end{tcolorbox}	
+	
+	\begin{tcolorbox}[title={Def.: Nullmátrix}]	
+		Nullmátrix:\begin{align}
+				 0 &:= \begin{bmatrix}
+					{\lambda}a_1 \\
+					{\lambda}a_2 \\
+					... \\
+					{\lambda}a_n
+				\end{bmatrix} \in \mathbb{R}^k
+		\end{align}
+	\end{tcolorbox}		
+	
+	\end{frame}
+	
+	
+	
+	\begin{frame}
+
+		\begin{tcolorbox}[title={Def.: Mátrixszorzás}]	
+	$A$ $in$ $\mathbb{R}^{m x n}$, $B$ $\in$ $\mathbb{R}^{n x k}$ esetén $AB$ $\in$ $\mathbb{R}^{m x k}$ úgy, hogy minden szóbajövő $i, j$-re (most $1 \leq i \leq m, 1 \leq j \leq k$)
+\mmedskip
+	
+$_{i} [AB]_j$ $=$ $_{i} [A]_1$ $_{1} [B]_j$ + $_{i} [A]_2$ $_{2} [A]_j$ + $...$ + $_{i} [A]_n$ $_{n} [B]_j$ = $\sum_{l = 1}^n$ $_{i} [A]_l$ $_{l} [B]_j$
+\mmedskip
+
+Ez az ún. sor-oszlop szorzás: a szorzatmátrix i-edik sora j-edik elemét úgy kapjuk, hogy a bal oldali mátrix i-edik sorának és a jobb oldali mátrix j-edik oszlopának megfelelő elemeit összeszorozzuk, s a kapott szorzatokat összeadjuk.
+		\end{tcolorbox}		
+	
+	\end{frame}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	%Kiegészítések / Számolások
-	
+	\begin{comment}
 	\begin{frame}
 		\begin{tcolorbox}[title={Bázistranzformáció}]
 			Kérdés: Hány dimenziós?\\
@@ -459,5 +565,5 @@
 			asd
 		\end{tcolorbox}
 	\end{frame}
-
+	\end{comment}
 \end{document}
