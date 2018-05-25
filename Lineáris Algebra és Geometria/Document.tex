@@ -596,17 +596,108 @@ R feletti mátrixok. Ekkor:\\
 	\end{frame}
 	
 	\begin{frame}
-		\begin{tcolorbox}[title={Def.: 05 adjugált}]
+		\begin{tcolorbox}[title={Def.: Adjugált}]
+			 $A  \in \mathbb{C}^{m x n}$ esetén az $A$ mátrix adjungáltja: $A^{{\ast}} \in \mathbb{C}^{n x m}$, melyre minden szóbajövő $j, k$-ra $_{j} [A{\ast}]_k$ = $_{k} [A]_j$.
 		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel.: Az adjungálás kapcsolata a mátrixműveletekkel}]
+			$A, B \in \mathbb{C}^{m x n}$ $\Rightarrow$ $(A + B)^*$ = $A^* + B^*$\\
+			$\lambda \in C, A \mathbb{C}^{m x n}$  $\Rightarrow$ $({\lambda}A)^* = \overline{{\lambda}}A^*$
+			$A \in \mathbb{C}^{m x n}$ $B \in \mathbb{C}^{n x k}$ $\Rightarrow$ $(AB)^* = B^*A^*$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Rangtartó átalakítások}]
+			$a_1, ..., a_k$ $\in \mathbb{C}^{n}, {\lambda} \in \mathbb{R}^n$, ${\lambda}$ $=$ $0$, $k \leq 2$ esetén
+			$r(a_2, a_1, ..., a_k) = r(a_1, a_2, ..., a_k),$\\
+			$r({\lambda}a_1, a_2, ..., a_k) = r(a_1, a_2, ..., a_k),$\\
+			$r(a_1 + a_2, a_2, ..., a_k) = r(a_1, a_2, ..., a_k),$\\
+			$r(a_1 + {\lambda}a_2, a_2, ..., a_k) = r(a_1, a_2, ..., a_k).$
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[title={Tétel: Rangtartó átalakítások és mátrixok}]
+			$A  \in \mathbb{R}^{m x n}, {\rho}(A) = r \leq 1$ esetén $A \leadsto$ $\begin{bmatrix} 
+  				I_r & 0  \\ 
+  				0 & 0 \\
+			\end{bmatrix}$ $\in \mathbb{R}^{m x n}$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Geometriai vektorok skaláris szorzata tulajdonságai}]
+			$ab$ $=$ $|a| |b| cos {\gamma}(a, b)$\\
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Skaláris szorzat, geometriai vektorokra}]
+			$ab = ba$ (kommutativitás)\\
+			$ab = 0$ $\iff$ $a \bot b$\\
+			${\lambda}(ab) = ({\lambda}a)b = a({\lambda}b)$ (skalár kiemelhetősége)\\
+			$(ab)c \neq a(bc)$\\
+			$cc = |c|^2 \geq 0$\\
+			$a(b + c) = ab + ac$, $(b + c)a = ba + ca$ (disztributivitás)
+		\end{tcolorbox}	
 	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Skaláris szorzat, geometriai vektorokra}]
+			Az $a, b, c$ nem egysíkú geometriai vektorok ebben a sorrendben jobbrendszert alkotnak, ha közös kezdőponttal felrajzolva őket, a kezdőpontban az $a$ és $b$ síkjára emelt merőlegesen (mint forgástengelyen) a $c$-t tartalmazó féltérből nézve pozitív irányú, $0^{\circ}$ és $180^{\circ}$ közötti forgatással vihetjük át az $\frac{a}{|a|}$ -t a $\frac{b}{|b|}$ -be.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Jobbrendszer}]
+			Az $a, b, c$ nem egysíkú geometriai vektorok ebben a sorrendben jobbrendszert alkotnak, ha közös kezdőponttal felrajzolva őket, a kezdőpontban az $a$ és $b$ síkjára emelt merőlegesen (mint forgástengelyen) a $c$-t tartalmazó féltérből nézve pozitív irányú, $0^{\circ}$ és $180^{\circ}$ közötti forgatással vihetjük át az $\frac{a}{|a|}$ -t a $\frac{b}{|b|}$ -be.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vektoriális szorzat}]
+			$a x b$ VEKTOR (,,a kereszt b,,) $:=$\\
+			\mmedskip
+			
+			\begin{enumerate}
+			\item $|a x b|$ = $|a||b| sin {\gamma}(a, b)$;
+			\item $a x b \bot a, b$;
+			\item $|a x b| = 0$ esetén $a, b, a x b$ jobbrendszer.
+			\end{enumerate}
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vektoriális szorzat műveleti tulajdonságai}]
+				Tetszőleges $a, b, c$ geometriai vektorokra és ${\lambda}$ skalárra: \\
+				
+				$a x b \iff a \parallel b$\\
+				$b x a = -a x b$ (alternálás vagy antikommutativitás), így $a \nparallel b$ esetén $b x  a = a x b$ (tehát a vektoriális szorzat nem kommutatív)\\
+				${\lambda}(a b) = ({\lambda}a) b = a ({\lambda}b)$ (skalár kiemelhetősége)\\
+				$a x (b + c) = a x b + a x c, (b + c) x a = b x a + c x a$ (disztributivitás).\\
+				\mmedskip
 
-	
+				A disztibutivitás bizonyítása a korábbi három segédtétel felhasználásával történhet, kiegészítve azzal, hogy $e = 1$ esetén tetszőleges $a$-ra $a_m = (e x a) x e$, ezt pedig az $e$ irányából nézve $+90^{\circ}$-os forgatással átvihetjük $e x a$-ba (ezzel kerülhető el a bizonyítandó állítás felhasználása).
 
+		\end{tcolorbox}	
+	\end{frame}
 	
-	
-	
-	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel.: Kifejtési tétel}]
+			$(a x b) x c$ $=$ $(ac)b - (bc)a$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel.: Felcserélési tétel}]
+			$(a x b)c = a(b x c)$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vegyesszorzat}]
+			Az $a, b, c$ geometriai vektorok vegyes szorzata: $abc = (a x b)c$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Determináns}]
+			Az $A$ $=$ $\begin{bmatrix} 
+  				a_{11} & \cdots & a_{1n}  \\
+  				\vdots &   & \vdots \\
+  				a_{n1} & \cdots & a_{nn}
+			\end{bmatrix}$ $\in$ $\mathbb{R}^{n x n}$ mátrix determinánsa egy alább definiált szám, melyet röviden $A$-val jelölünk, részletesebben kiírhatjuk a mátrix elemeit a szokott módon, de függőleges vonalak közé:\\
+			\mmedskip
+			
+			$(|A| = )$ $\begin{bmatrix} 
+  				a_{11} & \cdots & a_{1n} \\
+  				\vdots &   & \vdots\\
+  				a_{n1} & \cdots & a_{nn}
+			\end{bmatrix}$ $\in$ $\mathbb{R}^{n x n}$ = $\sum_{i_1, ..., i_n\\ (1, ..., n)} (-1)^{I(i_1, i_2, ..., i_n)} a_{1i_1} \cdot a_{1i_2} \cdot a_{1i_3} \cdot ... \cdot a_{ni_n}$
+		\end{tcolorbox}	
+		
+	\end{frame}
 	
 	
 	
