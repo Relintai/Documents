@@ -556,8 +556,8 @@ Az $\mathbb{R}^{m x n}$-re is teljesül az 1/3 oldali 10 tulajdonság megfelelő
 			$A$ = $[a_1, {\cdots}, a_n]$ $\in$ $\mathbb{R}^{m x n}$ \\
 			\mmedskip
 			
-			oszloprangja: ${\rho}_{O}(A)$ = $r(a_1, {\cdots}, a_n)$ $($ = $dim$ $Span(a_1, {\cdots}, a_n))$\\
-			sorrangja: ${\rho}_{s}(A)$ = ${\rho}_{O}(A^T)$\\
+			oszloprangja: ${\varrho}_{O}(A)$ = $r(a_1, {\cdots}, a_n)$ $($ = $dim$ $Span(a_1, {\cdots}, a_n))$\\
+			sorrangja: ${\varrho}_{s}(A)$ = ${\varrho}_{O}(A^T)$\\
 		\end{tcolorbox}
 
 		\begin{tcolorbox}[title={Tétel: Mátrixszorzás, dimenzió}]
@@ -565,14 +565,14 @@ Az $\mathbb{R}^{m x n}$-re is teljesül az 1/3 oldali 10 tulajdonság megfelelő
 R feletti mátrixok. Ekkor:\\
 			\mmedskip
 			
-	 		${\rho}_{s}(CD)$ $\leq$ ${\rho}_{s}(C)$
+	 		${\varrho}_{s}(CD)$ $\leq$ ${\varrho}_{s}(C)$
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Tétel: Mátrix, rang}]
-			Tetszőleges $\mathbb{R}$ feletti $A$ mátrixra ${\rho}_{o}(A)$ $\leq$ ${\rho}_{s}(A)$\\
+			Tetszőleges $\mathbb{R}$ feletti $A$ mátrixra ${\varrho}_{o}(A)$ $\leq$ ${\varrho}_{s}(A)$\\
 			\mmedskip
 			
-			(ezentúl ${\rho}_{o}(A)$ $\leq$ ${\rho}_{s}(A)$ = ${\rho}(A)$ (az $\rho$ helyett használatos a $p$, vagy $r$ is.)
+			(ezentúl ${\varrho}_{o}(A)$ $\leq$ ${\varrho}_{s}(A)$ = ${\varrho}(A)$ (az $\varrho$ helyett használatos a $p$, vagy $r$ is.)
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Tétel: Inverz}]
@@ -588,9 +588,9 @@ R feletti mátrixok. Ekkor:\\
 			$A$ $\in$ $\mathbb{R}^{m x n}$ esetén:\\
 			
 			\begin{enumerate}
-			\item $\exists$ $A^{(j)}$ $\iff$ ${\rho}(A)$ = $m$
-			\item $\exists$ $A^{(b)}$ $\iff$ ${\rho}(A)$ = $n$
-			\item $\exists$ $A^{-1}$ $\Rightarrow$ ${\rho}(A)$ = $m$ = $n$ $\Rightarrow$ $\exists$ $A^{(b)}$), $\exists$ $A^{(j)}$ és egyenlők $\Rightarrow$ $\exists$ $A^{-1}$.
+			\item $\exists$ $A^{(j)}$ $\iff$ ${\varrho}(A)$ = $m$
+			\item $\exists$ $A^{(b)}$ $\iff$ ${\varrho}(A)$ = $n$
+			\item $\exists$ $A^{-1}$ $\Rightarrow$ ${\varrho}(A)$ = $m$ = $n$ $\Rightarrow$ $\exists$ $A^{(b)}$), $\exists$ $A^{(j)}$ és egyenlők $\Rightarrow$ $\exists$ $A^{-1}$.
 			\end{enumerate}
 		\end{tcolorbox}
 	\end{frame}
@@ -615,7 +615,7 @@ R feletti mátrixok. Ekkor:\\
 		\end{tcolorbox}
 		
 		\begin{tcolorbox}[title={Tétel: Rangtartó átalakítások és mátrixok}]
-			$A  \in \mathbb{R}^{m x n}, {\rho}(A) = r \leq 1$ esetén $A \leadsto$ $\begin{bmatrix} 
+			$A  \in \mathbb{R}^{m x n}, {\varrho}(A) = r \leq 1$ esetén $A \leadsto$ $\begin{bmatrix} 
   				I_r & 0  \\ 
   				0 & 0 \\
 			\end{bmatrix}$ $\in \mathbb{R}^{m x n}$
@@ -690,52 +690,497 @@ R feletti mátrixok. Ekkor:\\
 			\end{bmatrix}$ $\in$ $\mathbb{R}^{n x n}$ mátrix determinánsa egy alább definiált szám, melyet röviden $A$-val jelölünk, részletesebben kiírhatjuk a mátrix elemeit a szokott módon, de függőleges vonalak közé:\\
 			\mmedskip
 			
-			$(|A| = )$ $\begin{bmatrix} 
+			$(|A| = )$ $\begin{vmatrix} 
   				a_{11} & \cdots & a_{1n} \\
   				\vdots &   & \vdots\\
   				a_{n1} & \cdots & a_{nn}
-			\end{bmatrix}$ $\in$ $\mathbb{R}^{n x n}$ = $\sum_{i_1, ..., i_n\\ (1, ..., n)} (-1)^{I(i_1, i_2, ..., i_n)} a_{1i_1} \cdot a_{1i_2} \cdot a_{1i_3} \cdot ... \cdot a_{ni_n}$
+			\end{vmatrix}$ $\in$ $\mathbb{R}^{n x n}$ = $\sum_{i_1, ..., i_n\\ (1, ..., n)} (-1)^{I(i_1, i_2, ..., i_n)} a_{1i_1} \cdot a_{1i_2} \cdot a_{1i_3} \cdot ... \cdot a_{ni_n}$
 		\end{tcolorbox}	
 		
+		\begin{tcolorbox}[title={Tétel.: Determináns elem, és sorcsere}]
+			Legyen $n \geq 2$.\\
+			
+			\begin{enumerate}
+    				\item Ha az $1, 2, ..., n$ számok $i_1, i_2, ..., i_n$ permutációjában két elemet felcserélünk, akkor az inverziószám páratlan számmal változik.
+    				\item Ha az $A \in \mathbb{R}^{n x n}$ mátrix valamely két sorát felcseréljük, akkor az így nyert $B$ mátrix determinánsa: $|B| = -|A|$ , azaz két sor felcserélése esetén a determináns értéke $(- 1)$-gyel szorzódik.
+			\end{enumerate}
+		\end{tcolorbox}	
+	\end{frame}
+	
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel.: Determináns két sor egyenlősége}]
+			Ha $n \geq 2$ és az $A \in \mathbb{R}^{n x n}$  mátrixnak van két megegyező sora, akkor $A$ determinánsa $0$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel.: Determináns két sor összeadása}]
+			Ha $n \geq 2$, $\lambda \in \mathbb{R}$ esetén az $A \in \mathbb{R}^{n x n}$ mátrix egyik sorához egy másik sorának a $\lambda $-szorosát hozzáadjuk, akkor az így keletkezett mátrix determinánsa is $A$, tehát az a rangtartó átalakítás, amikor egyik sorhoz egy másik sor számszorosát adjuk, egyben determinánstartó is!
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel.: Felsőháromszög mátrix}]
+			Felső háromszög mátrix determinánsa a főátlóban lévő elemek szorzata.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel.: Inverz létezése}]
+			$A \in \mathbb{R}^{n x n}$ esetén:\\
+			$|A|$ $\neq$ $0$ $\iff$ ${\varrho}(A) = n \iff {\exists}A^{-1}$.
+		\end{tcolorbox}	
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel.: Kifejtési tétel}]
+			$n \geq 2$, $A \in \mathbb{R}^{n x n}$ esetén\\
+			
+			\begin{enumerate}
+    				\item Tetszőleges $1 \leq i \leq n$ esetén $|A|$ $=$ $\sum_{j = 1}^n a_{ij}A_{ij}$.
+    				\item Tetszőleges $1 \leq j \leq n$ esetén $|A|$ $=$ $\sum_{i = 1}^n a_{ij}A_{ij}$.
+    				\end{enumerate}
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel.: Cramer-szabály}]
+			$A = [a_1, ..., a_n]$ $\in \mathbb{R}^{n x n}$, $A \geq 0$, $b \in \mathbb{R}^{n}$ esetén:\\
+			
+			 !$\exists$ $x \in \mathbb{R}^n$, melyre: $Ax = b$, továbbá az $x$ $j$-edik komponense $(j = 1, ..., n)$\\
+			$x_j =$ $\frac{det([a_1, ..., b, ..., a_n])}{det([a_1, ..., a_j, ..., a_n])}$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel.: Vandermonde-determináns, és kifejtése}]
+			$V_n(a_1, ..., a_n) =$ $\begin{vmatrix} 
+  				1 & a_1 & a_1^2 & \cdots & a_1^{n-1} \\
+  				\vdots & \vdots  & \vdots & & \vdots\\
+  				1 & a_1 & a_1^2 & \cdots & a_1^{n-1}
+			\end{vmatrix}$ $=$ $\prod_{n \geq i > j \geq 1} (a_i - a_j)$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Részmátrix}]
+			$j x k$-as részmátrix: $j$ sor és $k$ oszlop kiválasztásával a metszéspontokba kerülő elemek alkotta $j x k$-as mátrix.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Részmátrix és determináns}]
+			$A \in \mathbb{R}^{n x m}$ és ${\varrho}(A) = r \geq 1$ esetén $A$-nak van olyan $r x r$-es részmátrixa, melynek determinánsa $\neq 0$, viszont minden $(r + 1) x (r + 1)$-es részmátrix determinánsa $0$.
+		\end{tcolorbox}	
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel: Egyenletrendszer megoldása, determináns}]
+			Legyen $A \in \mathbb{R}^{n x n}$. Az $Ax = 0$ homogén lineáris egyenletrendszernek akkor és csak akkor van nemtriviális megoldása, ha $A = 0$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Szorzástétel}]
+			$A, B \in \mathbb{R}^{n x n}$ $\Rightarrow$ $|AB| = |A| |B|$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Szorzástétel}]
+			$A, B \in \mathbb{R}^{n x n}$ $\Rightarrow$ $|AB| = |A| |B|$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Hasonlóság}]
+			$A, B \in \mathbb{R}^{n x n}$ esetén azt mondjuk, hogy az $A$ hasonló $\mathbb{R}$ felett a $B$-hez (jelölés: $A {\sim}_{\mathbb{R}} B$), ha létezik olyan invertálható $D \in \mathbb{R}^{n x n}$, melyre $B = D^{-1}AD$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Diagonizáció}]
+			Az $A$ diagonalizálható $\mathbb{R}$ felett, ha $\mathbb{R}$ felett hasonló egy diagonális mátrixhoz.
+		\end{tcolorbox}	
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Jobb oldali sajátvektor, sajátérték}]
+			Legyen $n$ pozitív egész, $A \in \mathbb{R}^{n x n}$\\
+			Az $x \in \mathbb{R}^{n}$ jobb oldali sajátvektora $A$-nak, ha\\
+
+			\begin{enumerate}
+			\item $x \neq 0$
+			\item $\exists$ ${\lambda}_0 \in \mathbb{R}$  : $Ax = {\lambda}_0x$
+			\end{enumerate}						
+			
+			Ilyenkor a ${\lambda}_0$ az $x$ jobb oldali sajátvektorhoz tartozó jobb oldali sajátértéke az $A$-nak. 
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Bal oldali sajátvektor, sajátérték}]
+			Legyen $n$ pozitív egész, $A \in \mathbb{R}^{n x n}$\\
+			Az $y \in \mathbb{R}^{1xn}$ bal oldali sajátvektora $A$-nak, ha\\
+
+			\begin{enumerate}
+			\item $y \neq 0 = [0, ..., 0]$
+			\item $\exists$ ${\mu}_0 \in \mathbb{R}$  : $yA = {\mu}_0x$
+			\end{enumerate}						
+			
+			Ilyenkor a ${\mu}_0$ az $y$ bal oldali sajátvektorhoz tartozó bal oldali sajátértéke az $A$-nak. 
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Diagonizálhatóság, sajátvektor}]
+			Legyen $A \in \mathbb{R}^{n x n}$.\\
+			$A$ diagonalizálható $\mathbb{R}$ felett $\iff$ létezik $\mathbb{R}^n$-ben az $A$ sajátvektoraiból álló bázis (röviden: SB).
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Sajátaltér}]
+			Legyen $A \in \mathbb{R}^{n x n}$, ${\lambda}_0 \in \mathbb{R}$ pedig egy (jobb oldali) sajátértéke az $A$-nak $A$ ${\lambda}_0$-hoz tartozó sajátaltér:\\
+			$W_{{\lambda}_0} := \{x$ $|$ $x \in \mathbb{R}^n,$ $Ax = {\lambda}_0x\}$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Karakterisztikus polinom}]
+			Legyen $n$ pozitív egész, $A \in \mathbb{R}^{n x n}$.\\
+			Az $A$ mátrix karakterisztikus polinomja: $k_A({\lambda}) := |A - I_n{\lambda}|$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Karakterisztikus polinom, hasonlóság}]
+ 			$A, B \in \mathbb{R}^{n x n}$ és $A {\sim}_\mathbb{R} B$ esetén $k_A({\lambda}) = k_B({\lambda})$.
+		\end{tcolorbox}	
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Euklideszi tér, Skaláris szorzat}]
+ 			Legyen $\mathbb{K} = \mathbb{R}$ vagy $\mathbb{K} = \mathbb{C}$, továbbá $V$ vektortér a $\mathbb{K}$ felett.\\
+ 			Azt mondjuk, hogy a $V$ (valós vagy komplex) euklideszi tér, ha adott benne egy skaláris szorzatnak nevezett ${\langle}x, y{\rangle}$ $:$ $V$ $x$ $V$ $\rightarrow$ $\mathbb{K}$ függvény, melyre a következők teljesülnek minden $x, y, z \in V$ és $\lambda \in \mathbb{K}$ esetén:
+
+			\begin{enumerate}
+			\item ${\langle}y, x{\rangle} = {\langle}x, y{\rangle}$
+			\item ${\langle}{\lambda}x, y{\rangle} = {\lambda}{\langle}x, y{\rangle}$
+			\item ${\langle}x, y + z{\rangle} = {\langle}x, y{\rangle} + {\langle}x, z{\rangle}$
+			\item ${\langle}x, x{\rangle}$ mindíg (valós és) nemnegatív
+			\item ${\langle}x, x{\rangle} = 0  \iff  x = 0$
+			\end{enumerate}
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Norma}]
+ 			Legyen $V$ valós vagy komplex euklideszi tér. $x \in V$ esetén az $x$ (euklideszi) normája:\\
+ 			$||x||$ $:=$ $\sqrt{{\langle}x, x{\rangle}}$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Cauchy-egyenlőtlenség}]
+ 			Legyen $V$ valós vagy komplex euklideszi tér.\\
+ 			Ekkor tetszőleges $x, y \in V$ -re $|{\langle}x, y{\rangle}|$ $\leq$ $||x|| \cdot ||y||$.||
+ 			Itt egyenlőség akkor és csak akkor teljesül, ha $x, y$ lineárisan összefüggő.
+		\end{tcolorbox}	
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Ortogonált, ortonormált bázis}]
+ 			Legyen $V$ n-dimenziós (valós vagy komplex) euklideszi tér, $e_1, ..., e_n$ $B$ $V$-ben.\\
+ 			Az $e_1, ..., e_n$ ortogonális bázis (OB) $V$-ben, ha (bázis és) elemei páronként ortogonálisak.\\
+ 			Az $e_1, ..., e_n$ ortonormált bázis (ONB) $V$-ben, ha elemei páronként ortogonálisak és normájuk $1$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Ortonormált bázis létezése}]
+ 			$n > 0$ -ra tetszőleges $n$-dimenziós euklideszi térben létezik ortonormált bázis.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: A valós szimmetrikus mátrixok spektráltétele}]
+ 			$A \in \mathbb{R}^{n x n}$ esetén\\
+ 			
+			$A$ szimmetrikus $\iff$ $\exists$ $SONB$ $\mathbb{R}^{n}$-ben és $A$ minden sajátértéke valós.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Quadratikus alak}]
+ 			$A \in \mathbb{R}^{n x n}$ és $A^T = A$ esetén az $A$-hoz tartozó $Q$ kvadratikus alak (vagy kvadratikus forma):\\
+ 			$Q : \mathbb{R}^n \rightarrow \mathbb{R}$, $Q(x) = x^TAx$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Definitek}]
+			$x \in \mathbb{R}^n \setminus {0}$-ra elnevezés:\\
+			\mmedskip
+			
+			${\forall}{\lambda}_k > 0$: $Q(x) > 0$: Q pozitív definit\\
+			${\forall}{\lambda}_k < 0$: $Q(x) < 0$: Q negatív definit\\
+			${\forall}{\lambda}_k \geq 0$: $Q(x) \geq 0$: Q pozitív szemidefinit\\
+			${\forall}{\lambda}_k \leq 0$: $Q(x) \leq 0$: Q negatív szemidefinit\\
+			${\exists}{\lambda}_j > 0$ és ${\exists}{\lambda}_k < 0$: $Q(u_j) > 0$, $Q(u_k) < 0$: Q indefinit
+		\end{tcolorbox}	
+	\end{frame}
+	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel.: Karakterisztikus szorzat}]
+ 			Legyen az $A = $ $\begin{bmatrix} 
+  				a_{11} & \cdots & a_{1n} \\
+  				\vdots &  & \vdots \\
+  				a_{n1} & \cdots & a_{nn}
+			\end{bmatrix}$ $=$ $A^T \in \mathbb{R}^{n x n}$ Karakterisztikus szorzata:\\
+			\mmedskip
+			 
+ 			${\Delta}_0$ $=$ $1$; ${\Delta}_1$ $=$ $a_{11}$; ${\Delta}_2$ $=$ $\begin{vmatrix} 
+  				a_{11} & a_{12} \\
+  				a_{21} & a_{22}
+			\end{vmatrix}$; ${\Delta}_3$ $=$ $\begin{vmatrix} 
+  				a_{11} & a_{12} & a_{13} \\
+  				a_{21} & a_{22}& a_{23} \\
+  				a_{31} & a_{32}& a_{33}
+			\end{vmatrix}$; $...$; ${\Delta}_n$ $=$ $|A|$.\\
+			\mmedskip
+			
+			Az $A$-hoz tartozó $Q$ pozitív definit $\iff$ ${\forall}j \in \{0, 1, . . . , n\}$-re ${\Delta}_j > 0$.\\
+			Az $A$-hoz tartozó $Q$ negatív definit $\iff$ ${\forall}j \in \{0, 1, . . . , [n/2]\}$-re ${\Delta}_{2j} > 0$ és ${\forall}j \in
+{0, 1, . . . , [(n - 1)/2]}$-re ${\Delta}_{2j + 1} < 0$.\\
+			\mmedskip
+
+			Az első esetben azt mondják, hogy a karakterisztikus sorozat jeltartó, a másodikban pedig azt, hogy a karakterisztikus sorozat jelváltó (a ${\Delta}_0$-t ne felejtsük ki!).
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: mátrix, tranzponáltja, skaláris szorzat}]
+ 			Legyen $A = A^T \in \mathbb{R}^{n x n}$. Ha $\lambda$ és $\mu$ az $A$ különböző sajátértékei, továbbá $x \in W_{\lambda}, y \in W_{\mu}$, akkor ${\langle}x, y{\rangle} = 0$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vektortérhomomorfizmus, Vektortérizomorfizmus}]
+ 			Legyen $\varphi :  \mathbb{R}^n \rightarrow \mathbb{R}^m$.\\
+ 			$\varphi$ vektortérhomomorfizmus [vagy homogén lineáris leképezés, vagy lineáris leképezés, vagy művelettartó leképezés $+, \lambda$-ra], ha\\
+ 			
+ 			\begin{enumerate}
+ 			\item $u, v \in \mathbb{R}^n$ $\Rightarrow$ $\varphi(u + v) = \varphi(u) + \varphi(v)$
+			\item ${\lambda} \in \mathbb{R}, u \in \mathbb{R}^n$ $\Rightarrow$ ${\varphi}({\lambda}u) = {\lambda}{\varphi}(u)$
+ 			\end{enumerate}
+
+			Ha egy lineáris leképezés, azaz vektortérhomomorfizmus netán bijektív, akkor vektortér-izomorfizmusnak hívjuk.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Egyértelmű kiterjesztés tétel}]
+ 			Legyen $e_1, ..., e_n$ bázis $\in \mathbb{R}^n$-ben; $w_1, ..., w_n$ tetszőleges vektorok $\mathbb{R}^m$-ben. Ekkor ${\exists}!{\varphi} : \mathbb{R}^n \rightarrow \mathbb{R}^m$ vektortérhomomorfizmus, melyre $\varphi(e_i) = w_i (i = 1, ..., n)$.
+		\end{tcolorbox}	
 	\end{frame}
 	
 	
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Vektortérhomomorfizmus mátrixa}]
+ 			Ha $e_1, ..., e_n$ bázis $\mathbb{R}^n$-ben; $f_1, ..., f_m$ bázis $\mathbb{R}^m$-ben,\\
+ 			$\varphi : \mathbb{R}^n \rightarrow \mathbb{R}^m$ vektortérhomomorfizmus, akkor a $\varphi$ mátrixa az $e; f$ bázispárban\\
+ 			\mmedskip
+
+			$[{\varphi}]^{e;f}$ $:=$ $[[{\varphi}(e_1)]_f, ..., [{\varphi}(e_n)]_f] \in \mathbb{R}^{m x n}$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vektortérhomomorfizmusok halmaza}]
+ 			$Hom(\mathbb{R}^n, \mathbb{R}^m)$ jelölje a $\mathbb{R}^n$-ből $\mathbb{R}^m$-be képező vektortérhomomorfizmusok halmazát.\\
+ 			\mmedskip
+ 			
+			$\varphi, \psi \in Hom(\mathbb{R}^n, \mathbb{R}^m)$ esetén legyen\\
+			$\varphi + \psi : \mathbb{R}^n \rightarrow \mathbb{R}^m$ úgy, hogy $u \in \mathbb{R}^n$-re\\
+			$(\varphi + \psi)(u) = \varphi(u) + \psi(u)$. \\
+			\mmedskip
+						
+			${\lambda} \in \mathbb{R}$ és $\varphi \in Hom(\mathbb{R}^n, \mathbb{R}^m)$ esetén legyen\\
+			${\lambda}_{\phi} : \mathbb{R}^n \rightarrow \mathbb{R}^m$ úgy, hogy $u \in \mathbb{R}^n$-re\\
+			$({\lambda}\varphi)(u) = {\lambda}(\varphi(u))$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vektortérhomomorfizmus mátrixa}]
+ 			Legyen $V_1 = \mathbb{R}^n$, $V_2 = \mathbb{R}^m$ és $V_3 = \mathbb{R}^s$\\
+ 			$\varphi \in Hom(V_1, V_2)$, $\psi \in Hom(V_2, V_3)$.\\
+ 			Legyen ${\psi}\varphi : V_1 \rightarrow V_3$ úgy, hogy $u \in V_1$-re $({\psi}{\varphi})(u) = \psi(\varphi(u))$.\\
+			Könnyen látható, hogy a definiált ${\psi}{\varphi} \in Hom(V_1, V_3)$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Képtér, magtér}]
+ 			 Legyen $\varphi \in Hom(\mathbb{R}^n, \mathbb{R}^m)$.\\
+ 			 
+ 			 $\varphi$ képtere: $Im \varphi$ $:=$ $\{v' | v' \in \mathbb{R}^m$ ${\exists}u \in \mathbb{R}^n$ $\varphi(u) = v'\}$\\
+ 			 $\varphi$ magtere: $Ker \varphi$ $:=$ $\{ x | x \in \mathbb{R}^n$ ${\varphi}(x) = 0'\}$
+		\end{tcolorbox}	
+	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Sajtávektor, sajátérték}]
+ 			 Legyen $\varphi \in Hom(\mathbb{R}^n, \mathbb{R}^m)$.\\
+ 			 Az $u \in \mathbb{R}^n$ sajátvektora $\varphi$-nek, ha\\
+ 			 
+ 			 \begin{enumerate}
+ 			 \item $u \neq 0$.
+			 \item ${\exists}{\lambda}_0 \in \mathbb{R}$ $:$ $\varphi(u) = {\lambda}_0u$.
+ 			 \end{enumerate}
+
+			 Ilyenkor a ${\lambda}_0$ az $u$ sajátvektorhoz tartozó sajátértéke a $\varphi$-nek.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Sajátvektor, sajátérték, lineáris függetlenség}]
+ 			Legyen $\varphi \in Hom(\mathbb{R}^n, \mathbb{R}^n)$., továbbá $u_1, u_2, ..., u_k \in \mathbb{R}^n$ sajátvektorai $\varphi$-nek, továbbá ${\lambda}_1, {\lambda}_2, ..., {\lambda}_k \in \mathbb{R}$ a megfelelő sajátértékek, melyek páronként különbözök.\\
+ 			
+ 			Ekkor $u_1, u_2, ..., u_k$ lineárisan független sajátvektorrendszer.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Sajátérték, sakátbázis}]
+ 			Ha a $\varphi \in Hom(\mathbb{R}^n, \mathbb{R}^n)$ lineáris transzformációnak $n$ darab páronként különbözö sajátértéke van (ahol $n = dim \mathbb{R}^n$), akkor létezik $\mathbb{R}^n$-ben SB, azaz a $\varphi$ sajátvektoraiból álló bázis.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vektortér dimenziója}]
+ 			Az $\mathbb{R}$ feletti $V$ vektortér dimenziója:\\
+ 			
+			$dim V$ $=$ $\begin{cases}
+   				0,				& \text{ha } V = \{ \u{0} \}\\
+    				|B|,                & \text{ha } V \neq \{ \u{0} \} \text{ és van véges G V-ben } \\
+    				\infty  & \text{egyébként}
+			\end{cases}$	
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Vektortér dimenziója}]
+ 			Az $\mathbb{R}$ feletti $V$ vektortér dimenziója:\\
+ 			
+			$dim V$ $=$ $\begin{cases}
+   				0,				& \text{ha } V = \{ \u{0} \}\\
+    				|B|,                & \text{ha } V \neq \{ \u{0} \} \text{ és van véges G V-ben } \\
+    				\infty  & \text{egyébként}
+			\end{cases}$	
+		\end{tcolorbox}	
+	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Vektortérhomomorfizmus, Vektortérizomorfizmus}]
+ 			Legyen Legyen $V_1$ és $V_2$ vektortér $\mathbb{R}$ felett, $\varphi : V_1 \rightarrow V_2$.\\
+ 			$\varphi$ vektortérhomomorfizmus [vagy homogén lineáris leképezés, vagy lineáris leképezés, vagy művelettartó leképezés $+, \lambda$-ra], ha\\
+ 			
+ 			\begin{enumerate}
+ 			\item $u, v \in V_1$ $\Rightarrow$ $\varphi(u + v) = \varphi(u) + \varphi(v)$
+			\item ${\lambda} \in \mathbb{R}, u \in V_1$ $\Rightarrow$ ${\varphi}({\lambda}u) = {\lambda}{\varphi}(u)$
+ 			\end{enumerate}
+
+			Ha egy lineáris leképezés, azaz vektortérhomomorfizmus netán bijektív, akkor vektortér-izomorfizmusnak hívjuk.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Egyértelmű kiterjesztés tétel}]
+ 			Legyen $V_1$ és $V_2$ vektortér az $\mathbb{R}$ felett, $dim V_1$ $=$ $n > 0$, $e_1, ..., e_n$ bázis $V_1$-ben, $w_1, ..., w_n$ tetszőleges vektorok $V_2$-ben. Ekkor\\
+ 			
+			${\exists}! \varphi : V_1 \rightarrow V_2$ vektortérhomomorfizmus, melyre $\varphi(e_i) = w_i (i = 1, ..., n)$.
+		\end{tcolorbox}	
 	
+		\begin{tcolorbox}[title={Def.: Vektortérhomomorfizmus mátrixa}]
+ 			Ha $e_1, ..., e_n$ bázis $V_1$-ben; $f_1, ..., f_m$ bázis $V_2$-ben,\\
+ 			$\varphi : V_1 \rightarrow V_2$ vektortérhomomorfizmus, akkor a $\varphi$ mátrixa az $e; f$ bázispárban\\
+ 			\mmedskip
+
+			$[{\varphi}]^{e;f}$ $:=$ $[[{\varphi}(e_1)]_f, ..., [{\varphi}(e_n)]_f] \in \mathbb{R}^{m x n}$
+		\end{tcolorbox}	
 	
+		\begin{tcolorbox}[title={Def.: Lineáris tranzformáció}]
+ 			Azok a lineáris leképezések, amelyeknél $V_1 = V_2 = V$.\\
+ 			
+ 			Ilyenkor megállapodunk abban, hogy a mátrix definíciójában mindkét helyre ugyanazt a bázist vesszük:\\
+ 			Ha $e_1, ..., e_n$ bázis $V$-ben, $\varphi : V \rightarrow V$ lineáris transzformáció, akkor\\
+ 			$[\varphi]^e$ $:=$ $[\varphi]^{e;e}$
+		\end{tcolorbox}	
+	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Vektortérhomomorfizmusok halmaza}]
+ 			Legyen $V_1$ és $V_2$ vektortér $\mathbb{R}$ felett. $Hom(V_1, V_2)$ jelölje a $V_1$-ből $V_2$-be képező vektortérhomomorfizmusok halmazát.\\
+ 			\mmedskip
+ 			
+			$\varphi, \psi \in Hom(V_1, V_2)$ esetén legyen\\
+			$\varphi + \psi : V_1 \rightarrow V_2$ úgy, hogy $u \in V_1$-re\\
+			$(\varphi + \psi)(u) = \varphi(u) + \psi(u)$. \\
+			\mmedskip
+						
+			${\lambda} \in \mathbb{R}$ és $\varphi \in Hom(V_1, V_2)$ esetén legyen\\
+			${\lambda}_{\phi} : V_1 \rightarrow V_2$ úgy, hogy $u \in V_1$-re\\
+			$({\lambda}\varphi)(u) = {\lambda}(\varphi(u))$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Képtér, magtér}]
+ 			 Legyen $\varphi \in V_1, V_2$, $\varphi \in Hom(V_1, V_2)$\\
+ 			 
+ 			 $\varphi$ képtere: $Im \varphi$ $:=$ $\{v' | v' \in V_2$ ${\exists}u \in V_1$ $\varphi(u) = v'\}$\\
+ 			 $\varphi$ magtere: $Ker \varphi$ $:=$ $\{ x | x \in V_1$ ${\varphi}(x) = 0'\}$
+		\end{tcolorbox}	
 	
+		\begin{tcolorbox}[title={Tétel: Vektortér dimenziója}]
+ 			 Legyen $V_1$ és $V_2$ véges dimenziós vektortér $\mathbb{R}$ felett. Ekkor\\
+ 			 
+ 			 $V_1 \cong V_2$ $\iff$ $dim V_1 = dim V_2$
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Dimenzióösszefüggés}]
+ 			 Legyen $V_1$ és $V_2$ vektortér $\mathbb{R}$ felett, $\varphi \in Hom(V_1, V_2)$. Ha $V_1$ véges dimenziós, akkor\\
+ 			 
+ 			 $dim Im \varphi + dim Ker \varphi = dim V_1$.\\
+			 (Itt $\varphi$ rangja: $r(\varphi) = dim Im \varphi$; $\varphi$ defektusa: $d(\varphi) = dim Ker \varphi$)
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Szorzástétel}]
+ 			Legyen $V_1$, $V_2$ és $V_3$ vektortér $\mathbb{R}$ felett, dimenziójuk rendre $n, m, s$ (pozitív egészek); $e_1, ..., e_n$ bázis $V_1$-ben; $f_1, ..., f_m$ bázis $V_2$-ben; $g_1, ..., g_s$ bázis $V_3$-ban; $\varphi \in Hom(V_1, V_2)$, $\psi \in Hom(V_2, V_3)$. Ekkor\\
+ 			
+			$[{\psi}{\varphi}]^{e;g} = [{\psi}]^{f ;g}[{\varphi}]^{e;f}$.
+		\end{tcolorbox}	
+
+	\end{frame}
 	
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel: Új bázisba való áttérés}]
+ 			Legyen $V$ vektortér $\mathbb{R}$ felett; $dim V = n > 0$; $e_1, ..., e_n$ bázis $V$-ben; $e'_1, ..., e'_n$ bázis $V$-ben.\\
+ 			Ekkor ${\exists}!{\tau} \in Hom(V, V) : {\tau}(e_i) = e'_i (i = 1, ..., n)$.\\
+ 			\mmedskip
+ 			
+ 			Legyen $D = [{\tau}]^e$.\\
+ 			Ekkor $D$ invertálható, és tetszőleges $\varphi \in Hom(V, V )$ esetén\\
+ 			\mmedskip
+ 			
+			$[{\varphi}]^{e'} = D^{-1}[{\varphi}]^eD$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Skaláris szorzat}]
+			Legyen $\mathbb{K} = \mathbb{R}$ vagy $\mathbb{K} = \mathbb{C}$, továbbá $V$ vektortér a $\mathbb{K}$ felett.\\
+			Korábban egy skaláris szorzatnak nevezett ${\langle}x, y{\rangle}$ $:$ $V x V \rightarrow \mathbb{K}$ függvényre teljesültek a következők minden $x, y, z \in V$ és $\lambda \in \mathbb{K}$ esetén:\\
+
+ 			  \begin{enumerate}
+ 			 \item ${\langle}x, y{\rangle} = \overline{{\langle}x, y{\rangle}}$
+ 			 \item ${\langle}{\lambda}x, y{\rangle} = {\lambda}{\langle}x, y{\rangle}$, ${\langle}x, {\lambda}y{\rangle} = \overline{{\lambda}}{\langle}x, y{\rangle}$
+			 \item ${\langle}x, y + z{\rangle} = {\langle}x, y{\rangle} + {\langle}x, z{\rangle}$, ${\langle}y + z, x{\rangle} = {\langle}y, x{\rangle} + {\langle}z, x{\rangle}$.
+			 \item ${\langle}x, x{\rangle}$ mindíg (valós és) nemnegatív
+			 \item ${\langle}x, x{\rangle}$ $=$ $0$ $\iff$ $x = 0$
+ 			 \end{enumerate}	
+ 		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Skaláris szorzat}]
+ 			Legyen $\mathbb{K} = \mathbb{R}$ vagy $\mathbb{K} = \mathbb{C}$, továbbá $V$ vektortér a $\mathbb{K}$ felett.\\
+ 			
+ 			 Az $\mathcal{A}(x, y) : V x V \rightarrow \mathbb{K}$ függvényt $V$-n értelmezett ($\mathbb{K}$-tól függően valós vagy komplex) bilineáris függvénynek, bilineáris alaknak, vagy bilineáris formának hívjuk, ha teljesülnek a következők minden $x, y, z \in V$ és $\lambda \in \mathbb{K}$ esetén:
+ 			 
+ 			 \begin{enumerate}
+ 			 \item $\mathcal{A}({\lambda}x, y) = {\lambda} \mathcal{A}(x, y)$, $\mathcal{A}(x, {\lambda}y) = \overline{{\lambda}} \mathcal{A}(x, y)$
+			\item $\mathcal{A}(x, y + z) = \mathcal{A}(x, y) + \mathcal{A}(x, z)$, $\mathcal{A}(y + z, x) = \mathcal{A}(y, x) + \mathcal{A}(z, x)$.
+ 			 \end{enumerate}
+		\end{tcolorbox}	
+	\end{frame}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	\begin{frame}
+		\begin{tcolorbox}[title={Def.: Bilineáris alak}]
+ 			Legyen az $\mathcal{\mathcal{A}}(x, y) : V x V \rightarrow \mathbb{K}$ a $V$-n értelmezett bilineáris alak, továbbá $e_1, ..., e_n$ bázis $V$-ben. $[\mathcal{A}]^e \in \mathbb{K}^{nxn}$, éspedig minden szóbajövő $j, k$ esetén $(a_{jk} =)$ ${}_{j} [\mathcal{A}]_k^e =
+\mathcal{A}(e_j, e_k)$.
+			Így az előbbi kifejezés a következő formában is írható:\\
+			\mmedskip
+			
+			$\mathcal{A}(\sum_{j = 1}^n x_je_j, \sum_{k = 1}^n y_ke_k) = \sum_{j = 1}^n \sum_{k = 1}^n x_j \overline{y_k} a_{jk}$\\
+			\mmedskip
+			
+			speciálisan:\\
+			$\mathcal{A}(\sum_{j = 1}^n x_je_j, \sum_{k = 1}^n x_ke_k) = \sum_{j = 1}^n \sum_{k = 1}^n x_j \overline{x_k} a_{jk}$\\
+			\mmedskip
+			
+			ugyanez $\mathbb{K} = \mathbb{R}$ esetén:\\
+			$\mathcal{A}(\sum_{j = 1}^n x_je_j, \sum_{k = 1}^n x_ke_k) = \sum_{j = 1}^n \sum_{k = 1}^n x_j x_k a_{jk}$\\
+		\end{tcolorbox}		
+
+		\begin{tcolorbox}[title={Def.: Hermite-féle bilineáris alak}]
+			Legyen az $\mathcal{A}(x, y) : V x V \rightarrow \mathbb{K}$ a $V$ -n értelmezett bilineáris alak. Azt mondjuk, hogy az $\mathcal{A}$ Hermite-féle bilineáris alak ($\mathbb{K}  = \mathbb{R}$ esetén a szimmetrikus bilineáris alak kifejezés is használatos), ha $x, y \in V$ esetén teljesül:\\
+			$\mathcal{A}(y, x) = \mathcal{A}(x, y)$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Def.: Szimmetrikus bilineáris alak}]
+			Legyen $\mathbb{K}  = \mathbb{R}$, az $\mathcal{A}(x, y) : V x V \rightarrow \mathbb{R}$ pedig $V$-n értelmezett szimmetrikus bilineáris alak (tehát most minden $x, y \in V$ esetén teljesül: $\mathcal{A}(y, x) = \mathcal{A}(x, y)$). Ekkor az $\mathcal{A}$-hoz tartozó $\mathcal{Q}$ kvadratikus alak:\\
+			 $\mathcal{Q} : V \rightarrow \mathbb{R}$, $\mathcal{Q}(x) = \mathcal{A}(x, x)$.
+		\end{tcolorbox}		
+		
+		\begin{tcolorbox}[title={Def.: Kvadratikus alak}]
+			Legyen $\mathbb{K}  = \mathbb{C}$, az $\mathcal{A}(x, y) : V x V \rightarrow \mathbb{C}$ pedig $V$-n értelmezett bilineáris alak. Ekkor az $\mathcal{A}$-hoz tartozó kvadratikus alak:\\
+			
+			$\mathcal{Q} : V \rightarrow \mathbb{C}$, $\mathcal{Q}(x) = \mathcal{A}(x, x)$.
+		\end{tcolorbox}	
+		
+		\begin{tcolorbox}[title={Tétel: Szimmetrikus bilineáris alak, kvadratikus alak}]
+			Legyen $\mathbb{K}  = \mathbb{R}$, az $\mathcal{A}(x, y) : V x V \rightarrow \mathbb{R}$ pedig $V$-n értelmezett szimmetrikus bilineáris alak (tehát most minden $x, y \in V$ esetén teljesül: $\mathcal{A}(y, x) = \mathcal{A}(x, y)$). Ekkor az $\mathcal{A}$ minden értéke kifejezhető az $\mathcal{A}$-hoz tartozó $\mathcal{Q}$ kvadratikus alak alkalmas értékei segítségével.
+		\end{tcolorbox}	
+	\end{frame}
+		
+	\begin{frame}
+		\begin{tcolorbox}[title={Tétel: Szimmetrikus bilineáris alak, kvadratikus alak}]
+			Legyen $\mathbb{K}  = \mathbb{R}$, az $\mathcal{A}(x, y) : V x V \rightarrow \mathbb{R}$ pedig $V$-n értelmezett szimmetrikus bilineáris alak (tehát most minden $x, y \in V$ esetén teljesül: $\mathcal{A}(y, x) = \mathcal{A}(x, y)$). Ekkor az $\mathcal{A}$ minden értéke kifejezhető az $\mathcal{A}$-hoz tartozó $\mathcal{Q}$ kvadratikus alak alkalmas értékei segítségével.
+		\end{tcolorbox}	
+	\end{frame}
 	
 	%Kiegészítések / Számolások
 	\begin{comment}
