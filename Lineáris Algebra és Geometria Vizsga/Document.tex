@@ -54,17 +54,8 @@
 \usepackage[makeroom]{cancel}
 \usepackage{verbatim}
 
-% Colors
-\definecolor{myred}{rgb}{0.87,0.18,0}
-\definecolor{myorange}{rgb}{1,0.4,0}
-\definecolor{myyellowdarker}{rgb}{1,0.69,0}
-\definecolor{myyellowlighter}{rgb}{0.91,0.73,0}
-\definecolor{myyellow}{rgb}{0.97,0.78,0.36}
-\definecolor{myblue}{rgb}{0,0.38,0.47}
-\definecolor{mygreen}{rgb}{0,0.52,0.37}
-\colorlet{mybg}{myyellow!5!white}
-\colorlet{mybluebg}{myyellowlighter!3!white}
-\colorlet{mygreenbg}{myyellowlighter!3!white}
+\providecommand{\includecolors}{\input{../Colors/Default.tex}}% fallback definition
+\includecolors
 
 \setbeamertemplate{itemize item}{\color{black}$-$}
 \setbeamertemplate{itemize subitem}{\color{black}$-$}
@@ -96,15 +87,6 @@
 \newsavebox\CBox
 %\newcommand<>*\textBF[1]{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf#2{#1}}}
 \newcommand<>*\textBF[1]{\only#2{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}}
-
-
-% These are different themes, only uncomment one at a time
-\tcbset{enhanced,fonttitle=\mdseries,boxsep=7pt,arc=0pt,colframe={myyellowlighter},colbacktitle={myyellow},colback={mybg},coltitle={black}, coltext={black},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={size=small,arc=0mm}}
-
-%\tcbset{colback=yellow!5!white,colframe=yellow!84!black}
-%\tcbset{enhanced,colback=red!10!white,colframe=red!75!black,colbacktitle=red!50!yellow,fonttitle=
-%\tcbset{enhanced,attach boxed title to top left}
-%\tcbset{enhanced,fonttitle=\bfseries,boxsep=5pt,arc=8pt,borderline={0.5pt}{0pt}{red},borderline={0.5pt}{5pt}{blue,dotted},borderline={0.5pt}{-5pt}{green}}
 
 % Beamer theme
 \usetheme{boxes}
