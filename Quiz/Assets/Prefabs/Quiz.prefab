@@ -49,6 +49,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1112893479959678
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224993197977202276}
+  - component: {fileID: 222740388714071446}
+  - component: {fileID: 114468000226751000}
+  m_Layer: 5
+  m_Name: Checkmark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1200265054141202
 GameObject:
   m_ObjectHideFlags: 1
@@ -132,6 +149,7 @@ GameObject:
   - component: {fileID: 222895686147026648}
   - component: {fileID: 114250062434945058}
   - component: {fileID: 114796233749770962}
+  - component: {fileID: 225537391244324174}
   m_Layer: 5
   m_Name: Container
   m_TagString: Untagged
@@ -191,6 +209,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1429487426939172
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224188433185569254}
+  - component: {fileID: 222724538931947202}
+  - component: {fileID: 114173062727473642}
+  - component: {fileID: 114461737593940306}
+  m_Layer: 5
+  m_Name: TextMeshPro Text (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1525813280553010
 GameObject:
   m_ObjectHideFlags: 1
@@ -205,6 +241,23 @@ GameObject:
   - component: {fileID: 114510797424561538}
   m_Layer: 5
   m_Name: Button (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1527056497497966
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224906121723505580}
+  - component: {fileID: 222701873522058482}
+  - component: {fileID: 114698997271025604}
+  m_Layer: 5
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,6 +508,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1740917793796784
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224235844471873738}
+  - component: {fileID: 114007162661883614}
+  m_Layer: 5
+  m_Name: Toggle (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1769511791427038
 GameObject:
   m_ObjectHideFlags: 1
@@ -588,7 +657,7 @@ GameObject:
   - component: {fileID: 224184219304057936}
   - component: {fileID: 114566260289209774}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: Toggle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,6 +751,62 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &114007162661883614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740917793796784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.84313726, g: 0.84313726, b: 0.84313726, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
+    m_PressedColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+    m_DisabledColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114698997271025604}
+  toggleTransition: 1
+  graphic: {fileID: 114468000226751000}
+  m_Group: {fileID: 114973171627588510}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114234084059828954}
+        m_MethodName: SetRandomOrder
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_IsOn: 1
 --- !u!114 &114071909158407180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -748,7 +873,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
     m_DisabledColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -783,7 +908,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &114096735093609612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -803,10 +928,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: a3
+  m_text: "c) Mindegyik jellemz\xF5."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -871,10 +997,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114096735093609612}
-    characterCount: 2
+    characterCount: 22
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -935,10 +1061,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: In order
+  m_text: "V\xE9letlen K\xE9rd\xE9s Sorrend"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1003,10 +1130,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114125219064817606}
-    characterCount: 8
+    characterCount: 23
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1067,10 +1194,146 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 
+  m_text: "1/185 - j\xF3: 0 rossz: 0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281149225
+  m_fontColor: {r: 0.1625425, g: 0.15641688, b: 0.1792453, a: 1}
+  m_enableVertexGradient: 0
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: 0
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 114164360000452872}
+    characterCount: 22
+    spriteCount: 0
+    spaceCount: 5
+    wordCount: 7
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_havePropertiesChanged: 0
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114167868628872480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104131960048460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!114 &114173062727473642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429487426939172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: Sorban
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1134,14 +1397,14 @@ MonoBehaviour:
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
-    textComponent: {fileID: 114164360000452872}
-    characterCount: 0
+    textComponent: {fileID: 114173062727473642}
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
@@ -1161,27 +1424,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &114167868628872480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1104131960048460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!114 &114216355882802788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1212,11 +1454,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018efe893acf2a04082eb8568072b530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomOrder: 1
+  randomOrder: 0
+  randomQuestionOrder: 1
   questionTextField: {fileID: 114827693395229746}
   messagesTextField: {fileID: 114164360000452872}
   showAnswerButton: {fileID: 114968540077316844}
   nextQuestionButton: {fileID: 114616449254647486}
+  orderOffToggle: {fileID: 114007162661883614}
+  randomQuestionOrderToggle: {fileID: 114566260289209774}
   inputs:
   - button: {fileID: 114351367932177958}
     text: {fileID: 114451661483695722}
@@ -1234,17 +1479,1852 @@ MonoBehaviour:
     text: {fileID: 114753993251736394}
     correctImage: {fileID: 114579201899129498}
     incorrectImage: {fileID: 114582739288727544}
+  answerPrefixes:
+  - 'a) '
+  - 'b) '
+  - 'c) '
+  - 'd) '
+  - 'e) '
+  - 'f) '
   data: {fileID: 4900000, guid: 16b24862a520088438ee8d66b8b38a7f, type: 3}
-  entries: []
-  order: 
+  entries:
+  - question: "Az al\xE1bb felsoroltak k\xF6z\xFCl melyik nem jellemz\xF5 a t\xE1rsadalmi
+      \xE9s jogi norm\xE1kra?"
+    answers:
+    - A hipotetikus szerkezet.
+    - "A szankci\xF3."
+    - "A m\xFAltra ir\xE1nyults\xE1g."
+    - "Mindegyik jellemz\xF5."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 02000000000000000300000001000000
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem tartozik a t\xE1rsadalmi norm\xE1k
+      l\xE9nyeges mozzanatai k\xF6z\xE9?"
+    answers:
+    - "A magatart\xE1s le\xEDr\xE1sa."
+    - "A magatart\xE1s min\xF5s\xEDt\xE9se. (tilos, k\xF6telez\xF5 stb.)"
+    - "A k\xF6vetkezm\xE9nyek le\xEDr\xE1sa."
+    - Mindegyik oda tartozik.
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s a legjellemz\xF5bb a jogi norm\xE1kra?"
+    answers:
+    - "A t\xE1rsadalom alkotja, \xE9rv\xE9nyes\xFCl\xE9s\xE9t az \xE1llam biztos\xEDtja."
+    - "Az \xE1llam alkotja, \xE9rv\xE9nyes\xFCl\xE9s\xE9t az \xE1llam biztos\xEDtja."
+    - "Az \xE1llam alkotja, \xE9rv\xE9nyes\xFCl\xE9s\xE9t a t\xE1rsadalom biztos\xEDtja."
+    - "A t\xE1rsadalom alkotja, \xE9rv\xE9nyes\xFCl\xE9s\xE9t a t\xE1rsadalom biztos\xEDtja."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "A jogi norm\xE1kat gyorsabban meg lehet v\xE1ltoztatni, mint a t\xE1rsadalmi
+      norm\xE1kat."
+    - "Az erk\xF6lcsi norm\xE1k szankci\xF3rendszer\xE9t a t\xE1rsadalmi nyom\xE1s
+      jellemzi."
+    - "A jogi norma az emberek form\xE1lis magatart\xE1s\xE1ra ir\xE1nyul."
+    - "Mindh\xE1rom el\xF5z\xF5 \xE1ll\xEDt\xE1s igaz."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "A t\xE1rsadalmi norm\xE1kat gyorsabban meg lehet v\xE1ltoztatni, mint a jogi
+      norm\xE1kat."
+    - "Az erk\xF6lcsi norm\xE1k szankci\xF3rendszer\xE9t a t\xE1rsadalmi nyom\xE1s
+      jellemzi."
+    - "A jogi norma az emberek form\xE1lis magatart\xE1s\xE1ra ir\xE1nyul."
+    - "Mindh\xE1rom el\xF5z\xF5 \xE1ll\xEDt\xE1s igaz."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "A jog melyik funkci\xF3j\xE1nak megval\xF3s\xEDt\xE1s\xE1t biztos\xEDtja
+      els\xF5sorban a b\xEDr\xF3s\xE1gi szervezet?"
+    answers:
+    - "Az integr\xE1l\xF3 funkci\xF3t."
+    - "A konfliktus-felold\xF3 funkci\xF3t."
+    - "A t\xE1rsadalomszervez\xF5 funkci\xF3t."
+    - "Egyik funkci\xF3 megval\xF3s\xEDt\xE1s\xE1t sem biztos\xEDtja."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "Az anyagi jogforr\xE1s azt a szervet jelenti, amelyt\xF5l a jogi norma ered."
+    - "A bels\xF5 jogforr\xE1s ugyanazt jelenti, mint az alaki jogforr\xE1s."
+    - "Az alaki jogforr\xE1s azt a form\xE1t jelenti, amelyben a jogi norma megjelenik."
+    - "Els\xF5dleges jogforr\xE1s maga a jogalkot\xF3 hatalom, az \xE1llam."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: Mit mond ki a "Lex superior derogat legi inferiori" alapelv?
+    answers:
+    - "A k\xE9s\xF5bb megalkotott jogszab\xE1ly a kor\xE1bbinak a hat\xE1ly\xE1t lerontja."
+    - "A speci\xE1lis jogszab\xE1lyt kell alkalmazni az \xE1ltal\xE1nossal szemben."
+    - "Alacsonyabb szint\xFB jogszab\xE1ly nem ellenkezhet magasabb szint\xFBvel."
+    - "Jogszab\xE1llyal ellent\xE9tes m\xE1sik jogszab\xE1lyt nem lehet alkotni."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi jogszab\xE1lyok k\xF6z\xFCl melyik tartozik az anyagi
+      jog k\xF6r\xE9be?"
+    answers:
+    - "A b\xFCntet\xF5elj\xE1r\xE1sr\xF3l sz\xF3l\xF3 t\xF6rv\xE9ny."
+    - "A polg\xE1ri elj\xE1r\xE1sr\xF3l sz\xF3l\xF3 t\xF6rv\xE9ny."
+    - "A k\xF6zigazgat\xE1si elj\xE1r\xE1sr\xF3l sz\xF3l\xF3 t\xF6rv\xE9ny."
+    - Egyik sem.
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi jogszab\xE1lyok k\xF6z\xFCl melyik tartozik az anyagi
+      jog k\xF6r\xE9be?"
+    answers:
+    - "A b\xFCntet\xF5elj\xE1r\xE1sr\xF3l sz\xF3l\xF3 t\xF6rv\xE9ny."
+    - "A polg\xE1ri t\xF6rv\xE9nyk\xF6nyv."
+    - "A k\xF6zigazgat\xE1si elj\xE1r\xE1sr\xF3l sz\xF3l\xF3 t\xF6rv\xE9ny."
+    - Egyik sem.
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi jogszab\xE1lyok k\xF6z\xFCl melyik tartozik az alaki jog
+      k\xF6r\xE9be?"
+    answers:
+    - "A b\xFCntet\xF5 t\xF6rv\xE9nyk\xF6nyv."
+    - "A b\xFCntet\xF5elj\xE1r\xE1sr\xF3l sz\xF3l\xF3 t\xF6rv\xE9ny."
+    - "A polg\xE1ri t\xF6rv\xE9nyk\xF6nyv."
+    - "A munka t\xF6rv\xE9nyk\xF6nyve."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A polg\xE1ri jog a k\xF6zjog ter\xFClet\xE9hez tartozik."
+    - "A b\xFCntet\xF5jog a mag\xE1njog ter\xFClet\xE9hez tartozik."
+    - "A kereskedelmi jog a mag\xE1njog ter\xFClet\xE9hez tartozik."
+    - "A k\xF6zigazgat\xE1si jog a mag\xE1njog ter\xFClet\xE9hez tartozik."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz az angolsz\xE1sz jogrendszerekre?"
+    answers:
+    - "A jogalkot\xE1s \xE9s jogalkalmaz\xE1s szf\xE9r\xE1ja mereven elv\xE1lik egym\xE1st\xF3l."
+    - "A szab\xE1lyok jelent\xF5s r\xE9sze nincs t\xF6rv\xE9nybe foglalva."
+    - "E jogrendszerek pill\xE9rei az \xEDrott jogforr\xE1sok."
+    - "A joganyag \xF6n\xE1ll\xF3, z\xE1rt rendszert alkot."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik jogrendszerre a legink\xE1bb jellemz\xF5, hogy politikailag
+      er\xF5sen k\xF6t\xF6tt?"
+    answers:
+    - "Az angolsz\xE1sz jogrendszerekre."
+    - A szocialista jogrendszerekre.
+    - "A kontinent\xE1lis jogrendszerekre."
+    - "A vall\xE1si alap\xFA jogrendszerekre."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz a kontinent\xE1lis jogrendszerekre?"
+    answers:
+    - "A b\xEDr\xF3nak jelent\xF5s szerepe van a jogalkot\xE1sban."
+    - "A jogszab\xE1lyok kev\xE9sb\xE9 elvontak \xE9s \xE1ltal\xE1nosak."
+    - "A joganyag \xF6n\xE1ll\xF3, z\xE1rt rendszert alkot."
+    - "A jogszab\xE1lyok egy-egy vit\xE1s \xFCgy eld\xF6nt\xE9sekor keletkeznek."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s nem igaz a szocialista jogrendszerekre vonatkoz\xF3an?"
+    answers:
+    - "A politika k\xF6zvetlen\xFCl befoly\xE1solja a jogot."
+    - "A mag\xE1njognak kisebb a jelent\xF5s\xE9ge."
+    - "A jogi t\xFAlszab\xE1lyoz\xE1s jellemz\xF5."
+    - "Mindegyik fenti \xE1ll\xEDt\xE1s igaz r\xE1."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s nem igaz a szocialista jogrendszerekre vonatkoz\xF3an?"
+    answers:
+    - "A politika k\xF6zvetlen\xFCl befoly\xE1solja a jogot."
+    - "A mag\xE1njognak nagy jelent\xF5s\xE9ge van."
+    - "A jogi t\xFAlszab\xE1lyoz\xE1s jellemz\xF5."
+    - "Mindegyik fenti \xE1ll\xEDt\xE1s igaz r\xE1."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "A t\xE9nyeknek olyan \xF6sszess\xE9ge, amelyhez valamilyen joghat\xE1s
+      f\xFBz\xF5dik, ..."
+    answers:
+    - "a jogi norma diszpoz\xEDci\xF3ja."
+    - "a jogi norma szankci\xF3ja."
+    - "a jogi norma hipot\xE9zise."
+    - "a jogi norma jogk\xF6vetkezm\xE9nye."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az a magatart\xE1si szab\xE1ly, amelyet a jogalkot\xF3 a jogalany sz\xE1m\xE1ra
+      el\xF5\xEDr, ..."
+    answers:
+    - "a jogi norma diszpoz\xEDci\xF3ja."
+    - "a jogi norma szankci\xF3ja."
+    - "a jogi norma hipot\xE9zise."
+    - "a jogi norma jogk\xF6vetkezm\xE9nye."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Eg\xE9sz\xEDtse ki a kipontozott r\xE9szt.A ... eset\xE9n a jogalkot\xF3
+      nem hat\xE1rozza meg, hogy mely t\xE9ny\xE1ll\xE1s eset\xE9n sz\xFCks\xE9ges
+      a norm\xE1ban meghat\xE1rozott magatart\xE1st tan\xFAs\xEDtani, csup\xE1n p\xE9ldaszer\xFBen
+      felsorolja azokat."
+    answers:
+    - "z\xE1rt t\xE9ny\xE1ll\xE1s"
+    - "nyitott t\xE9ny\xE1ll\xE1s"
+    - "parancsol\xF3 norma"
+    - "diszpozit\xEDv norma"
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Milyenfajta rendelkez\xE9s nem fordulhat el\xF5 a jogi norma diszpoz\xEDci\xF3j\xE1ban?"
+    answers:
+    - "tilt\xF3"
+    - "parancsol\xF3"
+    - "megenged\xF5"
+    - "mindh\xE1rom el\xF5fordulhat"
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A lop\xE1s b\xFBncselekm\xE9nye mindig vagyoni jelleg\xFB szankci\xF3t von
+      maga ut\xE1n."
+    - "A jogi norma megs\xE9rt\xE9se nem j\xE1rhat szem\xE9lyi jelleg\xFB szankci\xF3val."
+    - "A szankci\xF3 egyidej\xFBleg mindig csak egyf\xE9le jogh\xE1tr\xE1nyt alkalmazhat."
+    - "Az \xE9rv\xE9nytelens\xE9g a szankci\xF3k egyik t\xEDpusa."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Az apas\xE1g v\xE9lelme nem megd\xF6nthet\xF5."
+    - "A fikci\xF3 eset\xE9n lehet\xF5s\xE9g van az ellenkez\xF5 bizony\xEDt\xE1s\xE1ra."
+    - "A k\xE9zbes\xEDt\xE9si v\xE9lelem megd\xF6nthet\xF5."
+    - "A fikci\xF3 legfontosabb jogi k\xF6vetkezm\xE9nye a bizony\xEDt\xE1si teher
+      megford\xEDt\xE1sa."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Az apas\xE1g v\xE9lelme megd\xF6nthet\xF5."
+    - "A fikci\xF3 eset\xE9n lehet\xF5s\xE9g van az ellenkez\xF5 bizony\xEDt\xE1s\xE1ra."
+    - "A k\xE9zbes\xEDt\xE9si v\xE9lelem nem megd\xF6nthet\xF5."
+    - "A fikci\xF3 legfontosabb jogi k\xF6vetkezm\xE9nye a bizony\xEDt\xE1si teher
+      megford\xEDt\xE1sa."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Egy jogszab\xE1ly \xE9rv\xE9nyess\xE9g\xE9nek h\xE1ny felt\xE9tele
+      van? Sorolja is fel ezeket."
+    answers:
+    - "3, a k\xF6vetkez\xF5k:"
+    - "4, a k\xF6vetkez\xF5k: megfelel\xF5 szerv; megfelel\xF5 elj\xE1r\xE1s; kihirdet\xE9s;
+      hierarchi\xE1ba illeszked\xE9s"
+    - "2, a k\xF6vetkez\xF5k:"
+    - "5, a k\xF6vetkez\xF5k:"
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A jogszab\xE1ly id\xF5beli hat\xE1lya nem lehet visszamen\xF5leges."
+    - "A magyar jogszab\xE1lyok ter\xFCleti hat\xE1lya Magyarorsz\xE1g teljes ter\xFClete."
+    - "Egy jogszab\xE1ly lehet egyidej\xFBleg \xE9rv\xE9nyes, de nem hat\xE1lyos."
+    - "Egy jogszab\xE1ly lehet egyidej\xFBleg hat\xE1lyos \xE9s \xE9rv\xE9nytelen."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Egy magyar jogszab\xE1ly minden magyar \xE1llampolg\xE1rra vonatkozik."
+    - "Egy jogszab\xE1ly csak a j\xF6v\xF5re vonatkoz\xF3an \xE1llap\xEDthat meg k\xF6telezetts\xE9get."
+    - "A szem\xE9lyi hat\xE1ly azt hat\xE1rozza meg, hogy ki alkotta a jogszab\xE1lyt."
+    - "Egy magyar jogszab\xE1ly csak magyar \xE1llampolg\xE1rokra vonatkozik."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Egy jogszab\xE1ly nem \xE9rv\xE9nyes, ha a k\xF6zt\xE1rsas\xE1gi eln\xF6k nem
+      \xEDrta al\xE1."
+    - "Egy t\xF6rv\xE9ny nem \xE9rv\xE9nyes, ha ellenkezik egy rendelettel."
+    - "Egy jogszab\xE1ly nem \xE9rv\xE9nyes, ha nem hirdett\xE9k ki."
+    - "Mindh\xE1rom fenti \xE1ll\xEDt\xE1s hamis."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Egy jogszab\xE1ly nem \xE9rv\xE9nyes, ha a k\xF6zt\xE1rsas\xE1gi eln\xF6k nem
+      \xEDrta al\xE1."
+    - "Egy rendelet nem \xE9rv\xE9nyes, ha ellenkezik egy t\xF6rv\xE9nnyel."
+    - "Egy jogszab\xE1ly akkor is \xE9rv\xE9nyes, ha nem hirdett\xE9k ki."
+    - "Mindh\xE1rom fenti \xE1ll\xEDt\xE1s hamis."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A jogszab\xE1lyok tudom\xE1nyos \xE9rtelmez\xE9s\xE9nek csak az adott \xFCgyben
+      van k\xF6telez\xF5 ereje."
+    - "A jogalkot\xF3i jogszab\xE1ly \xE9rtelmez\xE9s minden c\xEDmzettre n\xE9zve
+      k\xF6telez\xF5."
+    - "A jogalkalmaz\xF3i jogszab\xE1ly \xE9rtelmez\xE9snek nincs k\xF6telez\xF5 ereje."
+    - "A jogalkot\xF3i jogszab\xE1ly \xE9rtelmez\xE9s tilos."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A k\xF6zigazgat\xE1si szervek elj\xE1r\xE1sa mindig kezdem\xE9nyez\xE9sre indul."
+    - "A jogalanyok \xF6nk\xE9ntes jogk\xF6vet\xE9s\xE9t is jogalkalmaz\xE1snak tekintj\xFCk."
+    - "A jogalkalmaz\xE1s c\xE9lja mindig valamilyen jogs\xE9relem orvosl\xE1sa."
+    - "A jogalkalmaz\xE1s utols\xF3 l\xE9p\xE9se a t\xE9ny\xE1ll\xE1s meg\xE1llap\xEDt\xE1sa."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik nem k\xF6vetkezhet be a jogalkalmaz\xE1s eredm\xE9nyek\xE9ppen?"
+    answers:
+    - "Jogviszony keletkez\xE9se."
+    - "Jogviszony megsz\xFBn\xE9se."
+    - "Jogviszony m\xF3dosul\xE1sa."
+    - "Mindh\xE1rom fenti bek\xF6vetkezhet."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Mely szerv biztos\xEDtja a b\xEDr\xF3s\xE1gok egys\xE9ges jogalkalmaz\xE1s\xE1t?"
+    answers:
+    - "Az alkotm\xE1nyb\xEDr\xF3s\xE1g."
+    - "A t\xF6rv\xE9nysz\xE9k."
+    - "Az \xEDt\xE9l\xF5t\xE1bla."
+    - "A K\xFAria."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik nem tartozik a jogszab\xE1ly \xE9rtelmez\xE9s\xE9nek m\xF3dszerei
+      k\xF6z\xE9?"
+    answers:
+    - "A rendszertani \xE9rtelmez\xE9s."
+    - "A t\xF6rt\xE9neti \xE9rtelmez\xE9s."
+    - "A m\xF3dszertani \xE9rtelmez\xE9s."
+    - "A logikai \xE9rtelmez\xE9s."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "A jogviszony szerkezeti elemei k\xF6z\xE9 tartozik"
+    answers:
+    - a jogviszony helye.
+    - a jogviszony ideje.
+    - a jogviszony tartalma.
+    - Egyik sem.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Ingatlan ad\xE1sv\xE9teli szerz\xF5d\xE9s eset\xE9n a jogviszony t\xE1rgya"
+    answers:
+    - "a v\xE9tel\xE1r kifizet\xE9se."
+    - "a tulajdonjog \xE1truh\xE1z\xE1sa."
+    - az ingatlan.
+    - Egyik sem.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A k\xF6telmi jogban a relat\xEDv szerkezet\xFB jogviszonyok jellemz\xF5k."
+    - "A tulajdonjog abszol\xFAt szerkezet\xFB jogviszony."
+    - "Ha t\xF6bb, mint 2 f\xE9l szerepel a szerz\xF5d\xE9sben, az abszol\xFAt szerkezet\xFB
+      jogviszonyt eredm\xE9nyez."
+    - "A k\xE1rokoz\xE1s relat\xEDv szerkezet\xFB jogviszonyt teremt."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik nem rendelkezik jogi szem\xE9lyis\xE9ggel?"
+    answers:
+    - "Az \xC1llam."
+    - "Az egyes\xFClet."
+    - "A t\xE1rsash\xE1z."
+    - Az egyetem.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Egy\xFCttes k\xF6telezettek b\xE1rmelyik\xE9t\xF5l az eg\xE9sz tartoz\xE1s
+      k\xF6vetelhet\xF5."
+    - "Egyetemleges k\xF6telezettek egyidej\xFBleg, de ar\xE1nyosan k\xF6telesek teljes\xEDteni."
+    - "A kezes az ad\xF3ssal fele-fele ar\xE1nyban k\xF6teles teljes\xEDteni a tartoz\xE1st."
+    - "Mindh\xE1rom fenti \xE1ll\xEDt\xE1s hamis."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "Aki jogk\xE9pes, az \xF6n\xE1ll\xF3an k\xF6thet szerz\xF5d\xE9st."
+    - "Aki jogk\xE9pes, az jogosults\xE1gok alanya lehet."
+    - "Aki bet\xF6lt\xF6tte a 14. \xE9let\xE9v\xE9t az jogk\xE9pes."
+    - "Mindh\xE1rom el\xF5z\xF5 \xE1ll\xEDt\xE1s igaz."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A jogk\xE9pess\xE9g a sz\xFClet\xE9ssel kezd\xF5dik."
+    - "A jogk\xE9pess\xE9g mindig a sz\xFClet\xE9s el\xF5tti 300-adik napon kezd\xF5dik."
+    - "A jogk\xE9pess\xE9g mindig a fogamz\xE1st\xF3l kezd\xF5dik."
+    - "A magzat jogk\xE9pess\xE9ge felt\xE9teles."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A b\xEDr\xF3s\xE1g korl\xE1tozhatja a term\xE9szetes szem\xE9ly jogk\xE9pess\xE9g\xE9t."
+    - "A Ptk. nem korl\xE1tozhatja az ember cselekv\xF5k\xE9pess\xE9g\xE9t."
+    - "Aki cselekv\xF5k\xE9pes, az \xF6n\xE1ll\xF3an k\xF6thet szerz\xF5d\xE9st."
+    - "Mindh\xE1rom fenti \xE1ll\xEDt\xE1s hamis."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "17 \xE9ves szem\xE9ly is lehet nagykor\xFA."
+    - "17 \xE9ves szem\xE9ly is lehet cselekv\xF5k\xE9pes."
+    - "13 \xE9ves szem\xE9ly is lehet korl\xE1tozottan cselekv\xF5k\xE9pes."
+    - "Mindh\xE1rom el\xF5z\xF5 \xE1ll\xEDt\xE1s igaz."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "A kiskor\xFA szem\xE9ly a h\xE1zass\xE1gk\xF6t\xE9ssel nagykor\xFAv\xE1 v\xE1lik."
+    - "17 \xE9ves szem\xE9ly is lehet cselekv\xF5k\xE9pes."
+    - "A 13 \xE9ves szem\xE9ly minden esetben cselekv\xF5k\xE9ptelennek min\xF5s\xFCl."
+    - "Mindh\xE1rom el\xF5z\xF5 \xE1ll\xEDt\xE1s igaz."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "Nagykor\xFA szem\xE9ly is lehet cselekv\xF5k\xE9ptelen."
+    - "Kiskor\xFA szem\xE9ly is lehet korl\xE1tozottan cselekv\xF5k\xE9pes."
+    - "A kiskor\xFA szem\xE9ly h\xE1zass\xE1gk\xF6t\xE9se \xE9rv\xE9nytelen."
+    - "Mindh\xE1rom el\xF5z\xF5 \xE1ll\xEDt\xE1s igaz."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Mit nem tehet meg \xF6n\xE1ll\xF3an a korl\xE1tozottan cselekv\xF5k\xE9pes
+      kiskor\xFA?"
+    answers:
+    - "Tetsz\xF5leges \xE9rt\xE9k\xFB aj\xE1nd\xE9kot adhat."
+    - "Tetsz\xF5leges \xE9rt\xE9k\xFB aj\xE1nd\xE9kot elfogadhat."
+    - "Rendelkezhet munk\xE1val szerzett j\xF6vedelm\xE9vel."
+    - "Mindh\xE1rom fenti jognyilatkozatot megteheti \xF6n\xE1ll\xF3an."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik nem tartozik a gy\xE1m feladatai k\xF6z\xE9?"
+    answers:
+    - "A gyermek gondoz\xE1sa, nevel\xE9se."
+    - "A gyermek vagyon\xE1nak kezel\xE9se."
+    - "A gyermek t\xF6rv\xE9nyes k\xE9pviselete."
+    - "Mindh\xE1rom fenti a gy\xE1m feladatai k\xF6z\xE9 tartozik."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyikkel nem felt\xE9tlen\xFCl kell rendelkeznie a jogi szem\xE9lynek?"
+    answers:
+    - "Sz\xE9khellyel."
+    - "Saj\xE1t vagyonnal."
+    - Telephellyel.
+    - "K\xE9pvisel\xF5vel."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Ki felel a jogi szem\xE9ly tartoz\xE1sai\xE9rt?"
+    answers:
+    - "A vezet\xF5 tiszts\xE9gvisel\xF5."
+    - "A d\xF6nt\xE9shoz\xF3 szerv."
+    - "A tagok \xE9s alap\xEDt\xF3k."
+    - Egyik sem.
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Mikor j\xF6n l\xE9tre a jogi szem\xE9ly?"
+    answers:
+    - "A l\xE9tes\xEDt\xF5 okirat al\xE1\xEDr\xE1sakor."
+    - "A bejegyz\xE9si k\xE9relem b\xEDr\xF3s\xE1ghoz t\xF6rt\xE9n\xF5 beny\xFAjt\xE1sakor."
+    - "A b\xEDr\xF3s\xE1gi nyilv\xE1ntart\xE1sba v\xE9tel megt\xF6rt\xE9ntekor."
+    - "A b\xEDr\xF3s\xE1gi hat\xE1rozat k\xE9zbes\xEDt\xE9sekor."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Ki l\xE1tja el a jogi szem\xE9ly tulajdonosainak \xE9rdekv\xE9delm\xE9t?"
+    answers:
+    - "A k\xF6nyvvizsg\xE1l\xF3."
+    - "A vezet\xF5 tiszts\xE9gvisel\xF5."
+    - "A fel\xFCgyel\xF5bizotts\xE1g."
+    - Egyik sem.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Ki l\xE1tja el a jogi szem\xE9ly t\xF6rv\xE9nyes m\xFBk\xF6d\xE9s\xE9nek
+      fel\xFCgyelet\xE9t?"
+    answers:
+    - "Az \xFCgy\xE9szs\xE9g."
+    - "A fel\xFCgyel\xF5bizotts\xE1g."
+    - "A nyilv\xE1ntart\xF3 b\xEDr\xF3s\xE1g."
+    - Egyik sem.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "\xD6sszeolvad\xE1sn\xE1l a kor\xE1bbi jogi szem\xE9lyek megsz\xFBnnek."
+    - "Kiv\xE1l\xE1sn\xE1l a jogi szem\xE9ly megsz\xFBnik."
+    - "K\xFCl\xF6nv\xE1l\xE1sn\xE1l a jogi szem\xE9ly megsz\xFBnik."
+    - "\xC1talakul\xE1sn\xE1l a kor\xE1bbi jogi szem\xE9ly megsz\xFBnik."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik nem tartozik a (jogi szem\xE9ly) jogut\xF3d n\xE9lk\xFCli megsz\xFBn\xE9s
+      esetei k\xF6z\xE9?"
+    answers:
+    - "A tagok kimondj\xE1k a megsz\xFBn\xE9st."
+    - "A l\xE9tes\xEDt\xF5 okiratban meghat\xE1rozott id\xF5 eltelik."
+    - "A jogi szem\xE9ly tartoz\xE1sa meghaladja a vagyon\xE1t."
+    - "A jogosult szerv megsz\xFCnteti."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Alap\xEDtv\xE1ny l\xE9trehoz\xE1s\xE1hoz legal\xE1bb 10 alap\xEDt\xF3 sz\xFCks\xE9ges."
+    - "Az egyes\xFClet megsz\xFBnik, ha tagjainak sz\xE1ma tart\xF3san nem \xE9ri
+      el a 12 f\xF5t."
+    - "Az egyes\xFClet \xE1talakulhat alap\xEDtv\xE1nny\xE1."
+    - "Egyik fenti \xE1ll\xEDt\xE1s sem igaz."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Alap\xEDtv\xE1ny l\xE9trehoz\xE1s\xE1hoz legal\xE1bb 10 alap\xEDt\xF3 sz\xFCks\xE9ges."
+    - "Az egyes\xFClet megsz\xFBnik, ha tagjainak sz\xE1ma tart\xF3san nem \xE9ri
+      el a 10 f\xF5t."
+    - "Az alap\xEDtv\xE1ny \xE1talakulhat egyes\xFClett\xE9."
+    - "Egyik fenti \xE1ll\xEDt\xE1s sem igaz."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Egyes\xFCletn\xE9l mely esetben k\xF6telez\xF5 a fel\xFCgyel\xF5bizotts\xE1g
+      l\xE9trehoz\xE1sa?"
+    answers:
+    - "Ha a tagok t\xF6bb, mint negyede nem term\xE9szetes szem\xE9ly."
+    - "Ha a tagok l\xE9tsz\xE1ma az 50 f\xF5t meghaladja."
+    - "Ha a k\xF6nyvvizsg\xE1l\xF3 ezt k\xE9ri."
+    - "Egyik fenti esetben sem k\xF6telez\xF5."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Egyes\xFCletn\xE9l mely esetben k\xF6telez\xF5 a fel\xFCgyel\xF5bizotts\xE1g
+      l\xE9trehoz\xE1sa?"
+    answers:
+    - "Ha a tagok t\xF6bb, mint fele nem term\xE9szetes szem\xE9ly."
+    - "Ha a tagok l\xE9tsz\xE1ma az 50 f\xF5t meghaladja."
+    - "Ha a k\xF6nyvvizsg\xE1l\xF3 ezt k\xE9ri."
+    - "Egyik fenti esetben sem k\xF6telez\xF5."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Alap\xEDtv\xE1ny nem, de egyes\xFClet l\xE9trehozhat\xF3 gazdas\xE1gi tev\xE9kenys\xE9g
+      folytat\xE1s\xE1ra."
+    - "Egyes\xFClet nem, de alap\xEDtv\xE1ny l\xE9trehozhat\xF3 gazdas\xE1gi tev\xE9kenys\xE9g
+      folytat\xE1s\xE1ra."
+    - "Sem egyes\xFClet, sem alap\xEDtv\xE1ny nem hozhat\xF3 l\xE9tre gazdas\xE1gi
+      tev\xE9kenys\xE9g folytat\xE1s\xE1ra."
+    - "Egyes\xFClet \xE9s alap\xEDtv\xE1ny is l\xE9trehozhat\xF3 gazdas\xE1gi tev\xE9kenys\xE9g
+      folytat\xE1s\xE1ra."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik jellemz\xF5 a kontinent\xE1lis (n\xE9met) t\xE1rsas\xE1gi modellre?"
+    answers:
+    - "Er\xF5sen megosztott a tulajdonosi szerkezet."
+    - "Csek\xE9ly a t\xE1rsas\xE1gi formav\xE1laszt\xE9k."
+    - "A t\xE1rsas\xE1gi szervek \xE9lesen elk\xFCl\xF6n\xFClnek egym\xE1st\xF3l."
+    - "Egyik sem jellemz\xF5."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik nem jellemz\xF5 az angol-amerikai t\xE1rsas\xE1gi modellre?"
+    answers:
+    - "A t\xE1rsas\xE1gi jog szorosan \xF6sszefon\xF3dik a t\xF5kepiac int\xE9zm\xE9nyeivel."
+    - "A t\xE1rsas\xE1gnak egys\xE9ges vezet\xF5 szerve van."
+    - "A k\xF6nyvvizsg\xE1l\xF3 szerepe \xE9s felel\xF5ss\xE9ge csek\xE9ly."
+    - "Mindegyik fenti \xE1ll\xEDt\xE1s jellemz\xF5 r\xE1."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik szolg\xE1lja a k\xF6z\xE9rdeket a
+      t\xE1rsas\xE1gi jogban?"
+    answers:
+    - "A diszpozit\xEDv szab\xE1lyoz\xE1s."
+    - "A c\xE9gnyilv\xE1noss\xE1g elve."
+    - "A v\xE1lasztott b\xEDr\xF3s\xE1gi elj\xE1r\xE1s ig\xE9nybev\xE9tel\xE9nek lehet\xF5s\xE9ge."
+    - Egyik sem.
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik t\xE1rsas\xE1gi forma nem hozhat\xF3 l\xE9tre egyszem\xE9lyes
+      gazdas\xE1gi t\xE1rsas\xE1gk\xE9nt?"
+    answers:
+    - "Egyszem\xE9lyes korl\xE1tolt felel\xF5ss\xE9g\xFB t\xE1rsas\xE1g."
+    - "Egyszem\xE9lyes bet\xE9ti t\xE1rsas\xE1g."
+    - "Egyszem\xE9lyes r\xE9szv\xE9nyt\xE1rsas\xE1g."
+    - "Mindh\xE1rom forma l\xE9trehozhat\xF3."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik t\xE1rsas\xE1gi forma hozhat\xF3 l\xE9tre egyszem\xE9lyes gazdas\xE1gi
+      t\xE1rsas\xE1gk\xE9nt?"
+    answers:
+    - "Egyszem\xE9lyes bet\xE9ti t\xE1rsas\xE1g."
+    - "Egyszem\xE9lyes korl\xE1tolt felel\xF5ss\xE9g\xFB t\xE1rsas\xE1g."
+    - "Egyszem\xE9lyes k\xF6zkereseti t\xE1rsas\xE1g."
+    - "Egyik sem hozhat\xF3 l\xE9tre."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "H\xE1ny tag alap\xEDthat k\xF6zkereseti t\xE1rsas\xE1got?"
+    answers:
+    - "Legal\xE1bb egy beltag."
+    - "Legal\xE1bb egy beltag \xE9s egy k\xFCltag."
+    - "Legal\xE1bb k\xE9t tag."
+    - "Legal\xE1bb k\xE9t beltag."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Milyen c\xE9lt szolg\xE1l a t\xE1rsas\xE1gi formak\xE9nyszer?"
+    answers:
+    - "A hitelez\xF5k v\xE9delm\xE9t."
+    - "A kisebbs\xE9gi jogok v\xE9delm\xE9t."
+    - "A t\xE1rsul\xE1si szabads\xE1g \xE9rv\xE9nyre jut\xE1s\xE1t."
+    - "A k\xF6z\xE9rdeket."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "H\xE1nyf\xE9le t\xE1rsas\xE1gi form\xE1ban alap\xEDthat\xF3 gazdas\xE1gi
+      t\xE1rsas\xE1g? Sorolja is fel \xF5ket."
+    answers:
+    - "3, a k\xF6vetkez\xF5k:"
+    - "4, a k\xF6vetkez\xF5k: Kkt., Bt., Kft., Zrt."
+    - "5, a k\xF6vetkez\xF5k:"
+    - "Egyik fenti v\xE1lasz sem megfelel\xF5."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik gazdas\xE1gi t\xE1rsas\xE1g nem rendelkezik jogi szem\xE9lyis\xE9ggel?"
+    answers:
+    - "A korl\xE1tolt felel\xF5ss\xE9g\xFB t\xE1rsas\xE1g."
+    - "A bet\xE9ti t\xE1rsas\xE1g."
+    - "A r\xE9szv\xE9nyt\xE1rsas\xE1g."
+    - Mindegyik rendelkezik.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem lehet apport gazdas\xE1gi t\xE1rsas\xE1g
+      alap\xEDt\xE1sa sor\xE1n?"
+    answers:
+    - "Egy szem\xE9lyaut\xF3."
+    - "Egy tal\xE1lm\xE1ny."
+    - "Szerz\xF5d\xE9sen alapul\xF3 k\xF6vetel\xE9s."
+    - A fentiek mindegyike lehet apport.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "K\xF6zkereseti t\xE1rsas\xE1g nem lehet egy korl\xE1tolt felel\xF5ss\xE9g\xFB
+      t\xE1rsas\xE1gnak tagja."
+    - "Bet\xE9ti t\xE1rsas\xE1g nem lehet egy k\xF6zkereseti t\xE1rsas\xE1gnak tagja."
+    - "Korl\xE1tolt felel\xF5ss\xE9g\xFB t\xE1rsas\xE1g nem lehet egy bet\xE9ti t\xE1rsas\xE1gnak
+      beltagja."
+    - "R\xE9szv\xE9nyt\xE1rsas\xE1gnak csak term\xE9szetes szem\xE9lyek lehetnek a
+      tagjai."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyiket nem kezdem\xE9nyezhetik a G.T. szavazati jogok 5%-\xE1val
+      rendelkez\xF5 tagjai?"
+    answers:
+    - "Egyedi k\xF6nyvvizsg\xE1latot."
+    - "A legf\xF5bb szerv \xF6sszeh\xEDv\xE1s\xE1t."
+    - "Egy tag kiz\xE1r\xE1s\xE1t."
+    - "A t\xE1rsas\xE1g ig\xE9ny\xE9nek \xE9rv\xE9nyes\xEDt\xE9s\xE9t egy taggal szemben."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Kik szavazhatnak a gazdas\xE1gi t\xE1rsas\xE1g legf\xF5bb szerv\xE9nek
+      \xFCl\xE9s\xE9n?"
+    answers:
+    - "A t\xE1rsas\xE1g tagjai."
+    - "A t\xE1rsas\xE1g tagjai \xE9s a vezet\xF5 tiszts\xE9gvisel\xF5."
+    - "A tagok \xE9s a fel\xFCgyel\xF5 bizotts\xE1g tagjai."
+    - "A tagok \xE9s a c\xE9gvezet\xF5k."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik tartozik a gazdas\xE1gi t\xE1rsas\xE1g fel\xFCgyel\xF5bizotts\xE1g\xE1nak
+      feladatai k\xF6z\xE9?"
+    answers:
+    - "A vezet\xF5 tiszts\xE9gvisel\xF5 megv\xE1laszt\xE1sa \xE9s visszah\xEDv\xE1sa."
+    - "A k\xF6nyvvizsg\xE1l\xF3 ellen\xF5rz\xE9se."
+    - "Az \xFCgyvezet\xE9s ellen\xF5rz\xE9se."
+    - "A besz\xE1mol\xF3 elk\xE9sz\xEDt\xE9se."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "A gazdas\xE1gi t\xE1rsas\xE1g melyik szerve kezdem\xE9nyezheti egy
+      tag kiz\xE1r\xE1s\xE1t?"
+    answers:
+    - "A fel\xFCgyel\xF5 bizotts\xE1g."
+    - "A legf\xF5bb szerv."
+    - "A vezet\xF5 tiszts\xE9gvisel\xF5."
+    - "Egyik sem, mert tagot nem lehet kiz\xE1rni."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik szerv d\xF6nt a t\xE1rsas\xE1g jogut\xF3d n\xE9lk\xFCli megsz\xFBn\xE9s\xE9r\xF5l?"
+    answers:
+    - "A legf\xF5bb szerv."
+    - "A fel\xFCgyel\xF5 bizotts\xE1g."
+    - "A vezet\xF5 tiszts\xE9gvisel\xF5."
+    - "A k\xF6nyvvizsg\xE1l\xF3."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis a Kft-re vonatkoz\xF3an?"
+    answers:
+    - "Kft. eset\xE9n a tagok t\xF6rzsbet\xE9tei k\xFCl\xF6nb\xF6z\xF5 m\xE9rt\xE9k\xFBek
+      lehetnek."
+    - "Az egyes t\xF6rzsbet\xE9tek m\xE9rt\xE9ke legal\xE1bb 100.000 Ft."
+    - "A t\xF6rzstbet\xE9tek \xF6sszege a t\xF6rzst\xF5ke, melynek minim\xE1lis m\xE9rt\xE9ke
+      1 milli\xF3 Ft."
+    - "Minden tagnak egy t\xF6rzsbet\xE9te lehet."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A Bt. alapt\xF5k\xE9je nem lehet kevesebb, mint 100.000 Ft."
+    - "A Zrt. alapt\xF5k\xE9je nem lehet kevesebb, mint 5 milli\xF3 Ft."
+    - "Az Nyrt. alapt\xF5k\xE9je nem lehet kevesebb, mint 20 milli\xF3 Ft."
+    - "A k\xF6zkereseti t\xE1rsas\xE1g alapt\xF5k\xE9j\xE9re nincs minim\xE1lis el\xF5\xEDr\xE1s."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Kinek a tulajdona a bet\xE9ti t\xE1rsas\xE1g vagyona?"
+    answers:
+    - "A beltagok k\xF6z\xF6s tulajdona."
+    - "Valamennyi tag k\xF6z\xF6s tulajdona."
+    - "A t\xE1rsas\xE1g tulajdona."
+    - "Az alap\xEDt\xF3 tagok k\xF6z\xF6s tulajdona."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "Az egyes\xFCl\xE9s jogi szem\xE9lyis\xE9ggel rendelkezik."
+    - "Az egyes\xFCl\xE9s vagyon\xE1t meghalad\xF3 tartoz\xE1sai\xE9rt a tagok nem
+      felelnek."
+    - "Az egyes\xFCl\xE9s saj\xE1t nyeres\xE9gre nem t\xF6rekszik."
+    - "Az egyes\xFCl\xE9s c\xE9lja a tagok tev\xE9kenys\xE9g\xE9nek \xF6sszehangol\xE1sa."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A sz\xF6vetkezet tagjainak t\xF6bbs\xE9ge term\xE9szetes szem\xE9ly."
+    - "A sz\xF6vetkezet valamennyi tagj\xE1nak szem\xE9lyes k\xF6zrem\xFBk\xF6d\xE9st
+      kell v\xE1llalnia."
+    - "Sz\xF6vetkezeti jogvit\xE1ra v\xE1lasztott-b\xEDr\xF3s\xE1gi elj\xE1r\xE1s
+      nem k\xF6thet\xF5 ki."
+    - "A sz\xF6vetkezet nem rendelkezik jogi szem\xE9lyis\xE9ggel."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "H\xE1ny szem\xE9ly alap\xEDthat sz\xF6vetkezetet?"
+    answers:
+    - "Legal\xE1bb 2 szem\xE9ly."
+    - "Legal\xE1bb 7 szem\xE9ly."
+    - "Legal\xE1bb 10 szem\xE9ly."
+    - "Egy szem\xE9ly is alap\xEDthat."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A sz\xF6vetkezet k\xF6zgy\xFBl\xE9s\xE9n minden tagnak egy szavazata van."
+    - "Sz\xF6vetkezetn\xE9l k\xF6telez\xF5 a k\xF6nyvvizsg\xE1l\xF3 kinevez\xE9se."
+    - "Sz\xF6vetkezetn\xE9l k\xF6telez\xF5 a fel\xFCgyel\xF5bizotts\xE1g m\xFBk\xF6d\xE9se."
+    - "A sz\xF6vetkezet \xFCgyvezet\xE9s\xE9t az igazgat\xF3s\xE1g l\xE1tja el."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik szervezet nem vehet r\xE9szt tagk\xE9nt v\xE1llalatcsoportban?"
+    answers:
+    - "Korl\xE1tolt felel\xF5ss\xE9g\xFB t\xE1rsas\xE1g."
+    - "Sz\xF6vetkezet."
+    - "Egyes\xFCl\xE9s."
+    - "Bet\xE9ti t\xE1rsas\xE1g."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis a v\xE1llalatcsoportra vonatkoz\xF3an?"
+    answers:
+    - "Legal\xE1bb egy uralkod\xF3 tag \xE9s 3 ellen\xF5rz\xF6tt tag sz\xFCks\xE9ges
+      hozz\xE1."
+    - "A c\xE9gb\xEDr\xF3s\xE1g a c\xE9gnyilv\xE1ntart\xE1sba bejegyzi."
+    - "Az uralkod\xF3 tag nem utas\xEDthatja az ellen\xF5rz\xF6tt tagokat."
+    - "\xD6n\xE1ll\xF3 jogi szem\xE9lyis\xE9ggel nem rendelkezik."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl ki nem lehet egy\xE9ni v\xE1llalkoz\xF3?"
+    answers:
+    - "17 \xE9ves, h\xE1zass\xE1got k\xF6t\xF6tt szem\xE9ly."
+    - "K\xF6zkereseti t\xE1rsas\xE1g tagja."
+    - "Korl\xE1tolt felel\xF5ss\xE9g\xFB t\xE1rsas\xE1g tagja."
+    - "Bet\xE9ti t\xE1rsas\xE1g k\xFCltagja."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik szervezet vezeti az egy\xE9ni v\xE1llalkoz\xF3k nyilv\xE1ntart\xE1s\xE1t?"
+    answers:
+    - "A Bel\xFCgyminiszt\xE9rium."
+    - "A c\xE9gb\xEDr\xF3s\xE1g."
+    - "A t\xF6rv\xE9nysz\xE9k."
+    - "A c\xE9ginform\xE1ci\xF3s szolg\xE1lat."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Az egy\xE9ni v\xE1llalkoz\xF3nak nem lehet alkalmazottja."
+    - "A tev\xE9kenys\xE9g csak egy\xE9ni v\xE1llalkoz\xF3i igazolv\xE1ny ki\xE1ll\xEDt\xE1sa
+      ut\xE1n v\xE9gezhet\xF5."
+    - "Az egy\xE9ni v\xE1llalkoz\xF3 a k\xF6telezetts\xE9gei\xE9rt csak v\xE1llalkoz\xF3i
+      vagyon\xE1val felel."
+    - "Az egy\xE9ni v\xE1llalkoz\xF3 k\xF6teles szem\xE9lyesen k\xF6zrem\xFBk\xF6dni
+      a tev\xE9kenys\xE9g folytat\xE1s\xE1ban."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis az egy\xE9ni c\xE9gre vonatkoz\xF3an?"
+    answers:
+    - "Az egy\xE9ni c\xE9g jogk\xE9pes."
+    - "Az egy\xE9ni c\xE9g jogi szem\xE9lyis\xE9ggel rendelkezik."
+    - "Az egy\xE9ni c\xE9get a c\xE9gb\xEDr\xF3s\xE1g tartja nyilv\xE1n."
+    - "Az egy\xE9ni c\xE9gnek c\xE9gjegyz\xE9ksz\xE1ma van."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Ki alap\xEDthat egy\xE9ni c\xE9get?"
+    answers:
+    - "Minden nagykor\xFA, cselekv\xF5k\xE9pes szem\xE9ly."
+    - "Minden nagykor\xFA, cselekv\xF5k\xE9pes magyar \xE1llampolg\xE1r."
+    - "Aki az egy\xE9ni v\xE1llalkoz\xF3i nyilv\xE1ntart\xE1sban szerepel."
+    - "Minden nagykor\xFA, cselekv\xF5k\xE9pes szem\xE9ly, aki nem korl\xE1tlanul
+      felel\xF5s tagja G.T.-nak."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem lehet egy egy\xE9ni c\xE9g alap\xEDt\xE1skori
+      jegyzett t\xF5k\xE9je?"
+    answers:
+    - "100.000 Ft plusz egy 200.000 Ft \xE9rt\xE9k\xFB aut\xF3."
+    - "100.000 Ft plusz egy 100.000 Ft \xE9rt\xE9k\xFB aut\xF3."
+    - "Egy 300.000 Ft \xE9rt\xE9k\xFB aut\xF3."
+    - 100.000 Ft.
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A k\xF6ztest\xFClet k\xF6zfeladatot l\xE1t el."
+    - "A k\xF6ztest\xFCletet a tagjai szabad elhat\xE1roz\xE1sukkal hozz\xE1k l\xE9tre."
+    - "A k\xF6ztest\xFClet jogi szem\xE9ly."
+    - "A Magyar Orvosi Kamara is egy k\xF6ztest\xFClet."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem k\xF6ztest\xFClet?"
+    answers:
+    - "Magyar Tudom\xE1nyos Akad\xE9mia"
+    - "Magyar \xDCgyv\xE9di Kamara"
+    - "Magyar Labdar\xFAg\xF3 Sz\xF6vets\xE9g"
+    - "Magyar Kereskedelmi \xE9s Iparkamara"
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem lehet k\xF6zhaszn\xFA st\xE1tusz\xFA?"
+    answers:
+    - "A sz\xF6vetkezet."
+    - "Az egyes\xFClet."
+    - "Az alap\xEDtv\xE1ny."
+    - A nonprofit Kft.
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi jogalanyok k\xF6z\xFCl melyiknek nincs c\xE9gjegyz\xE9ksz\xE1ma?"
+    answers:
+    - "Az egyes\xFCl\xE9snek."
+    - "A sz\xF6vetkezetnek."
+    - "Az egyes\xFCletnek."
+    - "Az egy\xE9ni c\xE9gnek."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem a c\xE9gb\xEDr\xF3s\xE1g feladata?"
+    answers:
+    - "C\xE9gbejegyz\xE9si elj\xE1r\xE1s lefolytat\xE1sa."
+    - "Felsz\xE1mol\xE1si elj\xE1r\xE1s lefolytat\xE1sa."
+    - "D\xF6nt\xE9s a k\xF6zhaszn\xFAv\xE1 min\xF5s\xEDt\xE9sr\xF5l."
+    - "T\xF6rv\xE9nyess\xE9gi fel\xFCgyeleti elj\xE1r\xE1s lefolytat\xE1sa c\xE9gekkel
+      kapcsolatban."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi esetek k\xF6z\xFCl melyik fordulhat el\xF5 egy c\xE9ggel
+      kapcsolatban?"
+    answers:
+    - "Sz\xE9khelye V\xE1con van, telephelye nincs, fi\xF3ktelepe V\xE1con van."
+    - "Sz\xE9khelye nincs, telephelye V\xE1con van, fi\xF3ktelepe V\xE1con van."
+    - "Sz\xE9khelye V\xE1con van, telephelye V\xE1con van, fi\xF3ktelepe nincs."
+    - "Sz\xE9khelye V\xE1con van, telephelye V\xE1con van, fi\xF3ktelepe V\xE1con
+      van."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A c\xE9gbejegyz\xE9si k\xE9relmet csak elektronikus \xFAton lehet beny\xFAjtani."
+    - "A c\xE9gbejegyz\xE9si elj\xE1r\xE1s nem-peres elj\xE1r\xE1s."
+    - "A k\xE9relmet a l\xE9tes\xEDt\xF5 okirat al\xE1\xEDr\xE1s\xE1t\xF3l sz\xE1m\xEDtott
+      30 napon bel\xFCl kell beny\xFAjtani."
+    - "A c\xE9gbejegyz\xE9si elj\xE1r\xE1s sor\xE1n a jogi k\xE9pviselet nem k\xF6telez\xF5."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Ki d\xF6nt egy c\xE9g eset\xE9n a v\xE9gelsz\xE1mol\xE1sr\xF3l?"
+    answers:
+    - "A c\xE9gb\xEDr\xF3s\xE1g."
+    - "A c\xE9g legf\xF5bb szerve."
+    - "A vezet\xF5 tiszts\xE9gvisel\xF5."
+    - "A hitelez\xF5(k)."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Mikor van helye egyszer\xFBs\xEDtett c\xE9gbejegyz\xE9si elj\xE1r\xE1snak?"
+    answers:
+    - "Egy\xE9ni c\xE9g \xE9s Bt. alap\xEDt\xE1sakor."
+    - "Ha a c\xE9g alapt\xF5k\xE9je nem haladja meg a 100.000 Ft-ot."
+    - "Ha a l\xE9tes\xEDt\xF5 okirat szerz\xF5d\xE9sminta alapj\xE1n k\xE9sz\xFClt."
+    - "Ha a tagok sz\xE1ma egy f\xF5."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Mely c\xE9geknek kell banksz\xE1ml\xE1val rendelkeznie?"
+    answers:
+    - "Csak a Zrt.-nek \xE9s az Nyrt.-nek."
+    - "A gazdas\xE1gi t\xE1rsas\xE1goknak."
+    - "A Zrt.-nek, Nyrt.-nek \xE9s a Kft.-nek."
+    - "Minden c\xE9gnek banksz\xE1ml\xE1val kell rendelkeznie."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Mennyi egy Zrt. egyszer\xFBs\xEDtett c\xE9gbejegyz\xE9si elj\xE1r\xE1s\xE1nak
+      illet\xE9ke?"
+    answers:
+    - 10.000 Ft
+    - 50.000 Ft
+    - 100.000 Ft
+    - "Az elj\xE1r\xE1s illet\xE9kmentes."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Mennyi egy Kft. rendes (nem egyszer\xFBs\xEDtett) c\xE9gbejegyz\xE9si
+      elj\xE1r\xE1s\xE1nak illet\xE9ke?"
+    answers:
+    - 10.000 Ft
+    - 50.000 Ft
+    - 100.000 Ft
+    - "Az elj\xE1r\xE1s illet\xE9kmentes."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Ki k\xE9pviseli a c\xE9get a v\xE9gelsz\xE1mol\xE1s kezd\xF5 id\xF5pontja
+      ut\xE1n?"
+    answers:
+    - "A vezet\xF5 tiszts\xE9gvisel\xF5."
+    - "A vagyonfel\xFCgyel\xF5."
+    - "A fel\xFCgyel\xF5bizotts\xE1g eln\xF6ke."
+    - "A v\xE9gelsz\xE1mol\xF3."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik elj\xE1r\xE1snak nem c\xE9lja a c\xE9g jogut\xF3d n\xE9lk\xFCli
+      megsz\xFCntet\xE9se?"
+    answers:
+    - "A felsz\xE1mol\xE1si elj\xE1r\xE1snak."
+    - "A cs\xF5delj\xE1r\xE1snak."
+    - "A v\xE9gelsz\xE1mol\xE1snak."
+    - "Mindegyiknek az a c\xE9lja."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Mi a cs\xF5delj\xE1r\xE1s c\xE9lja?"
+    answers:
+    - "A fizet\xE9sk\xE9ptelen ad\xF3s c\xE9g jogut\xF3d n\xE9lk\xFCli megsz\xFCntet\xE9se."
+    - "A nem fizet\xE9sk\xE9ptelen c\xE9g jogut\xF3d n\xE9lk\xFCli megsz\xFCntet\xE9se."
+    - "Az ad\xF3s c\xE9g fizet\xE9si halad\xE9kot kap a hitelez\xF5kkel val\xF3 megegyez\xE9s
+      c\xE9lj\xE1b\xF3l."
+    - "Az ad\xF3s c\xE9g vagyon\xE1nak hat\xF3s\xE1gi \xE1rver\xE9sen val\xF3 \xE9rt\xE9kes\xEDt\xE9se."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Mi a v\xE9gelsz\xE1mol\xE1s c\xE9lja?"
+    answers:
+    - "A fizet\xE9sk\xE9ptelen ad\xF3s c\xE9g jogut\xF3d n\xE9lk\xFCli megsz\xFCntet\xE9se."
+    - "A nem fizet\xE9sk\xE9ptelen c\xE9g jogut\xF3d n\xE9lk\xFCli megsz\xFCntet\xE9se."
+    - "Az ad\xF3s c\xE9g fizet\xE9si halad\xE9kot kap a hitelez\xF5kkel val\xF3 megegyez\xE9s
+      c\xE9lj\xE1b\xF3l."
+    - "Az ad\xF3s c\xE9g vagyon\xE1nak hat\xF3s\xE1gi \xE1rver\xE9sen val\xF3 \xE9rt\xE9kes\xEDt\xE9se."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Mi a felsz\xE1mol\xE1si elj\xE1r\xE1s c\xE9lja?"
+    answers:
+    - "A fizet\xE9sk\xE9ptelen ad\xF3s c\xE9g jogut\xF3d n\xE9lk\xFCli megsz\xFCntet\xE9se."
+    - "A nem fizet\xE9sk\xE9ptelen c\xE9g jogut\xF3d n\xE9lk\xFCli megsz\xFCntet\xE9se."
+    - "Az ad\xF3s c\xE9g fizet\xE9si halad\xE9kot kap a hitelez\xF5kkel val\xF3 megegyez\xE9s
+      c\xE9lj\xE1b\xF3l."
+    - "Az ad\xF3s c\xE9g vagyon\xE1nak hat\xF3s\xE1gi \xE1rver\xE9sen val\xF3 \xE9rt\xE9kes\xEDt\xE9se."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik elj\xE1r\xE1s indul meg a c\xE9gb\xEDr\xF3s\xE1ghoz beny\xFAjtott
+      v\xE1ltoz\xE1sbejegyz\xE9si k\xE9relemmel?"
+    answers:
+    - "Cs\xF5delj\xE1r\xE1s."
+    - "V\xE9gelsz\xE1mol\xE1s."
+    - "Felsz\xE1mol\xE1si elj\xE1r\xE1s."
+    - "A fentiek k\xF6z\xFCl egyik sem."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik elj\xE1r\xE1st ind\xEDthatja meg a hitelez\xF5 az ad\xF3s c\xE9g
+      ellen?"
+    answers:
+    - "A v\xE9gelsz\xE1mol\xE1st."
+    - "A cs\xF5delj\xE1r\xE1st."
+    - "A felsz\xE1mol\xE1si elj\xE1r\xE1st."
+    - "K\xE9nyszer-t\xF6rl\xE9si elj\xE1r\xE1st."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik elj\xE1r\xE1st milyen f\xF3rumon kell megind\xEDtani? V\xE1lassza
+      ki a helyeset."
+    answers:
+    - "Cs\xF5delj\xE1r\xE1st a c\xE9gb\xEDr\xF3s\xE1gon."
+    - "Felsz\xE1mol\xE1si elj\xE1r\xE1st a rendes b\xEDr\xF3s\xE1gon (t\xF6rv\xE9nysz\xE9ken)."
+    - "V\xE9gelsz\xE1mol\xE1st a rendes b\xEDr\xF3s\xE1gon (t\xF6rv\xE9nysz\xE9ken)."
+    - "C\xE9gbejegyz\xE9si elj\xE1r\xE1st a rendes b\xEDr\xF3s\xE1gon (t\xF6rv\xE9nysz\xE9ken)."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Kivel szemben nem illeti meg a birtokv\xE9delem joga a birtokost?"
+    answers:
+    - A tulajdonossal szemben.
+    - "A hitelez\xF5vel szemben."
+    - "Azzal szemben, akit\xF5l a dolgot tilos \xF6nhatalommal szerezte meg."
+    - "Kiv\xE9tel n\xE9lk\xFCl mindenkivel szemben megilleti."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyek a birtokv\xE9delem megengedett eszk\xF6zei?"
+    answers:
+    - "Minden esetben a b\xEDr\xF3s\xE1ghoz kell fordulni."
+    - "Minden esetben a jegyz\xF5h\xF6z kell fordulni."
+    - "Minden esetben a rend\xF5rs\xE9ghez kell fordulni."
+    - "B\xEDr\xF3s\xE1ghoz vagy jegyz\xF5h\xF6z fordul\xE1s, speci\xE1lis esetben
+      \xF6nhatalommal val\xF3 fell\xE9p\xE9s."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem tartozik a \"sz\xFCks\xE9ges
+      k\xF6lts\xE9gek\" k\xF6r\xE9be?"
+    answers:
+    - "Az \xE1llagmeg\xF3v\xE1sra ford\xEDtott k\xF6lts\xE9gek."
+    - "A k\xE1rt\xF3l val\xF3 meg\xF3v\xE1sra ford\xEDtott k\xF6lts\xE9gek."
+    - "A dolog \xE9rt\xE9k\xE9t n\xF6vel\xF5 k\xF6lts\xE9gek."
+    - "Mindh\xE1rom fenti a \"sz\xFCks\xE9ges\" k\xF6lts\xE9gek k\xF6r\xE9be tartozik."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Milyen k\xF6lts\xE9gei megt\xE9r\xEDt\xE9s\xE9t k\xF6vetelheti a rosszhiszem\xFB
+      jogalap n\xE9lk\xFCli birtokos?"
+    answers:
+    - "A dologra ford\xEDtott sz\xFCks\xE9ges k\xF6lts\xE9gei megt\xE9r\xEDt\xE9s\xE9t."
+    - "A dologra ford\xEDtott hasznos k\xF6lts\xE9gei megt\xE9r\xEDt\xE9s\xE9t."
+    - "A sz\xFCks\xE9ges \xE9s hasznos k\xF6lts\xE9gei megt\xE9r\xEDt\xE9s\xE9t is
+      k\xF6vetelheti."
+    - "Semmilyen k\xF6lts\xE9gei megt\xE9r\xEDt\xE9s\xE9t nem k\xF6vetelheti."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem lehet tulajdonjog t\xE1rgya?"
+    answers:
+    - "Az elektromos energia (villamos \xE1ram)."
+    - "A szellemi alkot\xE1s."
+    - "Az \xE1llatok."
+    - "Az \xE9rt\xE9kpap\xEDr."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "Az ingatlan tulajdonosa a haszn\xE1lat jog\xE1t m\xE1snak \xE1tengedheti."
+    - "Az ingatlan tulajdonosa a tulajdonjog\xE1t m\xE1sra \xE1truh\xE1zhatja."
+    - "Az ingatlan tulajdonosa a tulajdonjog\xE1val felhagyhat."
+    - "Mindh\xE1rom el\xF5z\xF5 \xE1ll\xEDt\xE1s igaz."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Sz\xFCks\xE9ghelyzetben okozott k\xE1r eset\xE9n a (k\xE1rosult) tulajdonos
+      k\xE1rt\xE9r\xEDt\xE9st k\xF6vetelhet."
+    - "K\xF6z\xE9rdek\xFB haszn\xE1lat eset\xE9n a tulajdonost k\xE1rt\xE9r\xEDt\xE9s
+      illeti meg."
+    - "Kisaj\xE1t\xEDt\xE1s eset\xE9n a tulajdonost k\xE1rt\xE9r\xEDt\xE9s illeti
+      meg."
+    - "Mindh\xE1rom fenti esetben k\xE1rtalan\xEDt\xE1s \xE9s nem k\xE1rt\xE9r\xEDt\xE9s
+      illeti meg a tulajdonost."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Jogellenes k\xE1rokoz\xE1s eset\xE9n a (k\xE1rosult) tulajdonos k\xE1rt\xE9r\xEDt\xE9st
+      k\xF6vetelhet."
+    - "K\xF6z\xE9rdek\xFB haszn\xE1lat eset\xE9n a tulajdonost k\xE1rt\xE9r\xEDt\xE9s
+      illeti meg."
+    - "Kisaj\xE1t\xEDt\xE1s eset\xE9n a tulajdonost k\xE1rt\xE9r\xEDt\xE9s illeti
+      meg."
+    - "Mindh\xE1rom fenti esetben k\xE1rtalan\xEDt\xE1s \xE9s nem k\xE1rt\xE9r\xEDt\xE9s
+      illeti meg a tulajdonost."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik tulajdonszerz\xE9si m\xF3d sz\xE1rmaz\xE9kos?"
+    answers:
+    - "Tulajdon \xE1truh\xE1z\xE1s."
+    - "Hat\xF3s\xE1gi \xE1rver\xE9s \xFAtj\xE1n val\xF3 tulajdonszerz\xE9s."
+    - "Elbirtokl\xE1s."
+    - "Kisaj\xE1t\xEDt\xE1s."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Mikor sz\xE1ll \xE1t az ingatlan tulajdonjoga \xE1truh\xE1z\xE1s eset\xE9n?"
+    answers:
+    - "A szerz\xF5d\xE9s megk\xF6t\xE9sekor."
+    - "A felek \xE1ltal a szerz\xF5d\xE9sben meghat\xE1rozott id\xF5pontban."
+    - "A birtokbaad\xE1skor."
+    - "Az \xFAj tulajdonosnak az ingatlan-nyilv\xE1ntart\xE1sba val\xF3 bejegyz\xE9s\xE9vel."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "Kisaj\xE1t\xEDt\xE1s csak k\xF6z\xE9rdek\xFB c\xE9lra lehets\xE9ges."
+    - "Kisaj\xE1t\xEDtani csak ingatlant lehet."
+    - "A kisaj\xE1t\xEDt\xE1st csak az \xE1llam k\xE9rheti."
+    - "A kisaj\xE1t\xEDt\xE1si elj\xE1r\xE1s sor\xE1n a kisaj\xE1t\xEDt\xE1si hat\xF3s\xE1g
+      t\xE1rgyal\xE1st tart."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Az ingatlan elbirtokl\xE1si ideje 10 \xE9v."
+    - "B\xFBncselekm\xE9nnyel megszerzett dolgon nem k\xF6vetkezik be az elbirtokl\xE1s."
+    - "Ingatlan elbirtokl\xE1s\xE1hoz a tulajdonjogot az ingatlan-nyilv\xE1ntart\xE1sba
+      be kell jegyezni."
+    - "Elbirtokl\xE1ssal csak ing\xF3 dolog tulajdonjog\xE1t lehet megszerezni."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "Villamoson felejtett dolgon nem lehet tal\xE1l\xE1ssal tulajdont szerezni."
+    - "Gazd\xE1tlan dolgon nem lehet tal\xE1l\xE1ssal tulajdont szerezni."
+    - "A tal\xE1l\xF3 csak akkor v\xE1lik tulajdonoss\xE1, ha a kor\xE1bbi tulajdonos
+      1 \xE9ven bel\xFCl nem jelentkezik."
+    - "A tal\xE1l\xE1s sz\xE1rmaz\xE9kos tulajdonszerz\xE9si m\xF3d."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis a z\xE1logjogviszony eset\xE9n?"
+    answers:
+    - "A jogviszony alanya a szem\xE9lyes k\xF6telezett \xE9s a z\xE1logjogosult."
+    - "A z\xE1logt\xE1rgy tulajdonosa a z\xE1logk\xF6telezett."
+    - "A z\xE1logjogosult kiel\xE9g\xEDt\xE9si joga akkor ny\xEDlik meg, ha a szem\xE9lyes
+      k\xF6telezett nem teljes\xEDt."
+    - "A z\xE1logk\xF6telezett csak a z\xE1logt\xE1rggyal felel a z\xE1logjogosultnak."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis a z\xE1logjogviszony eset\xE9n?"
+    answers:
+    - "A jogviszony alanya a z\xE1logk\xF6telezett \xE9s a z\xE1logjogosult."
+    - "A z\xE1logt\xE1rgy tulajdonosa a z\xE1logjogosult."
+    - "A z\xE1logjogosult kiel\xE9g\xEDt\xE9si joga akkor ny\xEDlik meg, ha a szem\xE9lyes
+      k\xF6telezett nem teljes\xEDt."
+    - "A z\xE1logk\xF6telezett csak a z\xE1logt\xE1rggyal felel a z\xE1logjogosultnak."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis a z\xE1logjogviszony eset\xE9n?"
+    answers:
+    - "A jogviszony alanya a z\xE1logk\xF6telezett \xE9s a z\xE1logjogosult."
+    - "A z\xE1logt\xE1rgy tulajdonosa a z\xE1logk\xF6telezett."
+    - "A z\xE1logjogosult kiel\xE9g\xEDt\xE9si joga akkor ny\xEDlik meg, ha a szem\xE9lyes
+      k\xF6telezett nem teljes\xEDt."
+    - "A z\xE1logk\xF6telezett teljes vagyon\xE1val felel a z\xE1logjogosultnak."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis a z\xE1logjogviszony eset\xE9n?"
+    answers:
+    - "Az \xF3vad\xE9k is a z\xE1log egy fajt\xE1ja."
+    - "Jelz\xE1logjog csak ingatlanon alap\xEDthat\xF3."
+    - "K\xE9ziz\xE1logjog t\xE1rgya csak ing\xF3 dolog lehet."
+    - "A szem\xE9lyes k\xF6telezett \xE9s a z\xE1logk\xF6telezett lehet ugyanaz a
+      szem\xE9ly."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyiket nem teheti meg a haszon\xE9lvezeti jog jogosultja?"
+    answers:
+    - "A dolgot nem hasznos\xEDthatja."
+    - "A haszon\xE9lvezeti jogot nem ruh\xE1zhatja \xE1t."
+    - "A dolgot nem tarthatja a birtok\xE1ban."
+    - "A fenti 3 mindegyik\xE9t megteheti."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi esetek k\xF6z\xFCl melyikben nem haszn\xE1lhatja a birtokos
+      a dolgot?"
+    answers:
+    - "Haszonk\xF6lcs\xF6n eset\xE9n."
+    - "K\xE9ziz\xE1log eset\xE9n."
+    - "Haszon\xE9lvezeti jog eset\xE9n."
+    - "A fenti esetek mindegyik\xE9ben haszn\xE1lhatja."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik magatart\xE1sra nem ir\xE1nyulhat
+      a k\xF6telem?"
+    answers:
+    - "Valaminek az ad\xE1s\xE1ra."
+    - "Valamilyen tev\xE9kenys\xE9g elv\xE9gz\xE9s\xE9re."
+    - "Valamit\xF5l val\xF3 tart\xF3zkod\xE1sra."
+    - "Mindegyik fenti magatart\xE1sra ir\xE1nyulhat."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyikb\xF5l nem keletkezhet k\xF6telem?"
+    answers:
+    - "Jogalap n\xE9lk\xFCli gazdagod\xE1sb\xF3l."
+    - "Szem\xE9lyis\xE9gi jog megs\xE9rt\xE9s\xE9b\xF5l."
+    - "Utal\xF3 magatart\xE1sb\xF3l."
+    - "A fentiek mindegyik\xE9b\xF5l keletkezhet."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik k\xE1rokoz\xE1s jogellenes?"
+    answers:
+    - "A k\xE1rosult beleegyez\xE9s\xE9vel okozott k\xE1r."
+    - "Jogtalan t\xE1mad\xE1s elh\xE1r\xEDt\xE1sa sor\xE1n a t\xE1mad\xF3nak okozott
+      k\xE1r."
+    - "Sz\xFCks\xE9ghelyzetben okozott k\xE1r."
+    - A fentiek egyike sem jogellenes.
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik esetben keletkezik k\xF6telem (k\xF6telezetts\xE9g)?"
+    answers:
+    - "Jogtalan t\xE1mad\xE1s elh\xE1r\xEDt\xE1sa sor\xE1n a t\xE1mad\xF3nak okozott
+      k\xE1r eset\xE9n."
+    - "A k\xE1rosult beleegyez\xE9s\xE9vel okozott k\xE1r eset\xE9n."
+    - "Sz\xFCks\xE9ghelyzetben okozott k\xE1r eset\xE9n."
+    - Egyik esetben sem keletkezik.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "K\xE1rt\xE9r\xEDt\xE9si k\xF6telezetts\xE9ghez nem sz\xFCks\xE9ges a k\xE1r
+      bek\xF6vetkez\xE9se."
+    - "A k\xE1r bek\xF6vetkez\xE9s\xE9t a k\xE1rosultnak kell bizony\xEDtania."
+    - "Akit szem\xE9lyis\xE9gi jog\xE1ban megs\xE9rtenek, k\xE1rt\xE9r\xEDt\xE9st
+      k\xF6vetelhet."
+    - "Akit szem\xE9lyis\xE9gi jog\xE1ban megs\xE9rtenek, k\xE1rtalan\xEDt\xE1st k\xF6vetelhet."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A s\xE9relemd\xEDj meg\xE1llap\xEDt\xE1s\xE1hoz nem sz\xFCks\xE9ges k\xE1r
+      bek\xF6vetkez\xE9se."
+    - "A becs\xFClets\xE9rt\xE9s\xE9rt b\xFCntet\xF5elj\xE1r\xE1sban k\xE9rhet\xF5
+      s\xE9relemd\xEDj."
+    - "A becs\xFClets\xE9rt\xE9s\xE9rt meg\xEDt\xE9lt p\xE9nzb\xFCntet\xE9s a s\xE9rtettet
+      illeti."
+    - "A szem\xE9lyis\xE9gi jog megs\xE9rt\xE9se b\xFBncselekm\xE9ny."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Az aj\xE1nd\xE9koz\xE1s egyoldal\xFA nyilatkozat."
+    - "Ha valaki nyilv\xE1nosan d\xEDjat \xEDg\xE9r egy teljes\xEDtm\xE9ny\xE9rt,
+      nem k\xF6teles azt teljes\xEDteni."
+    - "Ha valaki k\xF6z\xE9rdek\xFB c\xE9lra v\xE1llal k\xF6telezetts\xE9get, az egy
+      szerz\xF5d\xE9s az \xE1llammal."
+    - "A szerz\xF5d\xE9s soha nem lehet egyoldal\xFA nyilatkozat."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Ha valaki t\xE9ved\xE9sb\xF5l t\xF6bbet utal \xE1t a v\xE9tel\xE1rn\xE1l, nem
+      k\xF6vetelheti azt vissza."
+    - "Ha valaki t\xE9ved\xE9sb\xF5l t\xF6bbet utal \xE1t a v\xE9tel\xE1rn\xE1l, az
+      aj\xE1nd\xE9koz\xE1snak min\xF5s\xFCl."
+    - "Ha valaki t\xE9ved\xE9sb\xF5l t\xF6bbet utal \xE1t, a t\xF6bbletet a m\xE1sik
+      k\xF6teles visszat\xE9r\xEDteni."
+    - "Ha valaki t\xE9ved\xE9sb\xF5l t\xF6bbet utal \xE1t, a t\xF6bblet fel\xE9t visszak\xF6vetelheti."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "\xC9rt\xE9kpap\xEDrt csak \xEDr\xE1sban, okirati form\xE1ban lehet kibocs\xE1tani."
+    - "Az \xE9rt\xE9kpap\xEDr egy szerz\xF5d\xE9s a kibocs\xE1t\xF3 \xE9s a jogosult
+      k\xF6z\xF6tt."
+    - "Az \xE9rt\xE9kpap\xEDrban foglalt k\xF6vetel\xE9s nem \xE1truh\xE1zhat\xF3."
+    - "A befektet\xE9si jegy az \xE9rt\xE9kpap\xEDr egyik fajt\xE1ja."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A v\xE1lt\xF3 hitelviszonyt megtestes\xEDt\xF5 \xE9rt\xE9kpap\xEDr."
+    - "A k\xF6tv\xE9ny tags\xE1gi jogokat megtestes\xEDt\xF5 \xE9rt\xE9kpap\xEDr."
+    - "A r\xE9szv\xE9ny tags\xE1gi jogokat megtestes\xEDt\xF5 \xE9rt\xE9kpap\xEDr."
+    - "A k\xF6zrakt\xE1ri jegy dologi jogot megtestes\xEDt\xF5 \xE9rt\xE9kpap\xEDr."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi esetek k\xF6z\xFCl melyikben nem sz\xFBnik meg a k\xF6telem
+      (f\xF5 szab\xE1ly szerint)?"
+    answers:
+    - "A szolg\xE1ltat\xE1s teljes\xEDt\xE9s\xE9vel."
+    - "A k\xF6telezett hal\xE1l\xE1val."
+    - "Tartoz\xE1s\xE1tv\xE1llal\xE1s eset\xE9n."
+    - "A jogosult jogut\xF3d n\xE9lk\xFCli megsz\xFBn\xE9se eset\xE9n."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "H\xE1nyf\xE9le form\xE1ban lehet jognyilatkozatot tenni? Sorolja is
+      fel \xF5ket."
+    answers:
+    - "2, amelyek a k\xF6vetkez\xF5k:"
+    - "3, amelyek a k\xF6vetkez\xF5k: sz\xF3ban, \xEDr\xE1sban, r\xE1utal\xF3 magatart\xE1ssal"
+    - "4, amelyek a k\xF6vetkez\xF5k:"
+    - "5, amelyek a k\xF6vetkez\xF5k:"
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Mikor min\xF5s\xFCl a jognyilatkozat \xEDr\xE1sba foglaltnak?"
+    answers:
+    - "Ha a nyilatkoz\xF3 saj\xE1t kez\xFBleg \xEDrta."
+    - "Ha k\xE9t tan\xFA al\xE1\xEDrta."
+    - "Ha a nyilatkoz\xF3 al\xE1\xEDrta."
+    - "Ha \xFCgyv\xE9d al\xE1\xEDrta."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl ki nem k\xE9sz\xEDthet k\xF6zokiratot?"
+    answers:
+    - "\xDCgyv\xE9d."
+    - "B\xEDr\xF3s\xE1g."
+    - "K\xF6zjegyz\xF5."
+    - "K\xF6zigazgat\xE1si szerv."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A k\xE9pviseleti jog alapulhat v\xE1llalkoz\xE1si szerz\xF5d\xE9sen."
+    - "A k\xE9pviseleti jog alapulhat l\xE9tes\xEDt\xF5 okiraton."
+    - "A k\xE9pviseleti jog alapulhat meghatalmaz\xE1son."
+    - "A k\xE9pviseleti jog alapulhat jogszab\xE1lyon."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Jognyilatkozatot csak szem\xE9lyesen lehet tenni."
+    - "A k\xE9pvisel\xF5 jognyilatkozata a k\xE9pvisel\xF5t jogos\xEDtja \xE9s k\xF6telezi."
+    - "A meghatalmaz\xE1s egyoldal\xFA jognyilatkozat."
+    - "A meghatalmaz\xE1s sz\xF3ban nem \xE9rv\xE9nyes."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "H\xE1ny \xE9v alatt \xE9v\xFClnek el a k\xF6vetel\xE9sek (f\xF5 szab\xE1ly
+      szerint)?"
+    answers:
+    - "3 \xE9v alatt."
+    - "5 \xE9v alatt."
+    - "1 \xE9v alatt."
+    - "A k\xF6vetel\xE9sek nem \xE9v\xFClnek el."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "El\xE9v\xFClt k\xF6vetel\xE9s b\xEDr\xF3s\xE1gi elj\xE1r\xE1sban csak jogi
+      k\xE9pviselettel \xE9rv\xE9nyes\xEDthet\xF5."
+    - "Ha valaki el\xE9v\xFClt k\xF6vetel\xE9st teljes\xEDt, ut\xF3bb visszak\xF6vetelheti
+      azt."
+    - "A fogad\xE1sb\xF3l ered\xF5 k\xF6vetel\xE9s b\xEDr\xF3s\xE1g el\xF5tt 1 \xE9vig
+      \xE9rv\xE9nyes\xEDthet\xF5."
+    - "Mindh\xE1rom fenti \xE1ll\xEDt\xE1s hamis."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s a legpontosabb a szerz\xF5d\xE9sre vonatkoz\xF3an?"
+    answers:
+    - "A szerz\xF5d\xE9s a felek egyidej\xFB \xE9s egybehangz\xF3 jognyilatkozata."
+    - "A szerz\xF5d\xE9s a felek k\xF6lcs\xF6n\xF6s \xE9s egyidej\xFB jognyilatkozata."
+    - "A szerz\xF5d\xE9s a felek k\xF6lcs\xF6n\xF6s \xE9s egybehangz\xF3 jognyilatkozata."
+    - "A szerz\xF5d\xE9s a felek k\xF6lcs\xF6n\xF6s, egybehangz\xF3 \xE9s egyidej\xFB
+      jognyilatkozata."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem tartozik a szerz\xF5d\xE9si jog
+      legfontosabb alapelvei k\xF6z\xE9?"
+    answers:
+    - "A szerz\xF5d\xE9si szabads\xE1g elve."
+    - "A visszterhess\xE9g v\xE9lelme."
+    - "Az egy\xFCttm\xFBk\xF6d\xE9si \xE9s t\xE1j\xE9koztat\xE1si k\xF6telezetts\xE9g."
+    - "A gyeng\xE9bb f\xE9l \xE9rdekei v\xE9delm\xE9nek az elve."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Mi t\xF6rt\xE9nik ha a felek szerz\xF5d\xE9si nyilatkozatai l\xE9nyeges
+      k\xE9rd\xE9sben elt\xE9rnek?"
+    answers:
+    - "A szerz\xF5d\xE9s megt\xE1madhat\xF3 lesz."
+    - "A szerz\xF5d\xE9s \xE9rv\xE9nytelen lesz."
+    - "A szerz\xF5d\xE9s nem j\xF6n l\xE9tre."
+    - "A b\xEDr\xF3s\xE1g \xEDt\xE9let\xE9vel kik\xFCsz\xF6b\xF6li az elt\xE9r\xE9st."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis az aj\xE1nlatra vonatkoz\xF3an?"
+    answers:
+    - "Aki aj\xE1nlatot tesz, meghat\xE1rozott ideig k\xF6tve van az aj\xE1nlathoz."
+    - "Az aj\xE1nlati k\xF6t\xF6tts\xE9g idej\xE9t a felek k\xF6z\xF6sen hat\xE1rozz\xE1k
+      meg."
+    - "Ha a m\xE1sik f\xE9l hat\xE1rid\xF5ben elfogadja az aj\xE1nlatot, a szerz\xF5d\xE9s
+      l\xE9trej\xF6n."
+    - "Ha a m\xE1sik f\xE9l elt\xE9r\xF5 tartalommal fogadja el, az \xFAj aj\xE1nlatnak
+      min\xF5s\xFCl."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyikb\xF5l nem sz\xE1rmazhat szerz\xF5d\xE9sk\xF6t\xE9si
+      k\xF6telezetts\xE9g?"
+    answers:
+    - "Jogszab\xE1lyb\xF3l."
+    - "Versenyeztet\xE9si elj\xE1r\xE1sb\xF3l."
+    - "El\xF5szerz\xF5d\xE9sb\xF5l."
+    - "Mindh\xE1romb\xF3l fentib\xF5l sz\xE1rmazhat."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Az \xC1ltal\xE1nos Szerz\xF5d\xE9si Felt\xE9teleket a felek el\xF5re, k\xF6z\xF6sen
+      hat\xE1rozz\xE1k meg."
+    - "A fogyaszt\xF3 csak term\xE9szetes szem\xE9ly lehet."
+    - "T\xE1voll\xE9v\xF5k k\xF6z\xF6tt k\xF6t\xF6tt szerz\xF5d\xE9s l\xE9trej\xF6het
+      k\xE9t v\xE1llalkoz\xE1s k\xF6z\xF6tt is."
+    - "Fogyaszt\xF3i szerz\xF5d\xE9s eset\xE9n a fogyaszt\xF3t 14 napon bel\xFCl el\xE1ll\xE1si
+      jog illeti meg."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az \xE9rv\xE9nytelens\xE9gnek h\xE1nyf\xE9le form\xE1ja van a polg\xE1ri
+      jogban, \xE9s melyek ezek?"
+    answers:
+    - "3, \xE9spedig a k\xF6vetkez\xF5k:"
+    - "2, \xE9spedig a k\xF6vetkez\xF5k: semmiss\xE9g, megt\xE1madhat\xF3s\xE1g"
+    - "1, \xE9spedig a k\xF6vetkez\xF5:"
+    - "A polg\xE1ri jogban nem l\xE9tezik az \xE9rv\xE9nytelens\xE9g fogalma."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik a c\xE9lzott joghat\xE1s hib\xE1ja?"
+    answers:
+    - "A t\xE9ved\xE9s."
+    - "A megt\xE9veszt\xE9s."
+    - "A j\xF3 erk\xF6lcsbe \xFCtk\xF6z\xE9s."
+    - "A jogellenes fenyeget\xE9s."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi esetek k\xF6z\xFCl melyikben mer\xFCl fel a szerz\xF5d\xE9si
+      akarat hib\xE1ja?"
+    answers:
+    - "A megt\xE9veszt\xE9ssel k\xF6t\xF6tt szerz\xF5d\xE9s."
+    - "Az uzsor\xE1s szerz\xF5d\xE9s."
+    - "A jogszab\xE1lyba \xFCtk\xF6z\xF5 szerz\xF5d\xE9s."
+    - "A nem megfelel\xF5 form\xE1ban megk\xF6t\xF6tt szerz\xF5d\xE9s."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "A jogszab\xE1lyba \xFCtk\xF6z\xF5 szerz\xF5d\xE9s megt\xE1madhat\xF3."
+    - "A jogellenes fenyeget\xE9ssel k\xF6t\xF6tt szerz\xF5d\xE9s semmis."
+    - "Az uzsor\xE1s szerz\xF5d\xE9s semmis."
+    - "Mindh\xE1rom fenti \xE1ll\xEDt\xE1s hamis."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyiknek a jogk\xF6vetkezm\xE9nye a szerz\xF5d\xE9s
+      semmiss\xE9ge?"
+    answers:
+    - "A felt\xFBn\xF5 \xE9rt\xE9kar\xE1nytalans\xE1ggal k\xF6t\xF6tt szerz\xF5d\xE9s."
+    - "A megt\xE9veszt\xE9ssel k\xF6t\xF6tt szerz\xF5d\xE9s."
+    - "A j\xF3 erk\xF6lcsbe \xFCtk\xF6z\xF5 szerz\xF5d\xE9s."
+    - "A jogellenes fenyeget\xE9ssel k\xF6t\xF6tt szerz\xF5d\xE9s."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "\xC9rv\xE9nytelen szerz\xF5d\xE9s alapj\xE1n a teljes\xEDt\xE9s nem k\xF6vetelhet\xF5."
+    - "Hat\xE1lytalan szerz\xF5d\xE9s alapj\xE1n a teljes\xEDt\xE9s nem k\xF6vetelhet\xF5."
+    - "\xC9rv\xE9nytelen szerz\xF5d\xE9s alapj\xE1n teljes\xEDtett szolg\xE1ltat\xE1st
+      nem lehet visszak\xF6vetelni."
+    - "\xC9rv\xE9nytelen szerz\xF5d\xE9s ut\xF3bb \xE9rv\xE9nyess\xE9 v\xE1lhat a
+      felek akarat\xE1b\xF3l."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Szerz\xF5d\xE9sszeg\xE9s eset\xE9n melyiket nem teheti meg a s\xE9relmet
+      szenvedett f\xE9l?"
+    answers:
+    - "Tov\xE1bbra is k\xF6vetelheti a teljes\xEDt\xE9st."
+    - "Fedezeti szerz\xF5d\xE9st k\xF6thet \xE9s k\xF6vetelheti annak k\xF6lts\xE9geit."
+    - "A n\xE1la lev\xF5, a m\xE1sik f\xE9l tulajdon\xE1t k\xE9pez\xF5 dologb\xF3l
+      kiel\xE9g\xEDt\xE9st kereshet."
+    - "A saj\xE1t szolg\xE1ltat\xE1s\xE1t visszatarthatja."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem tartozik a szerz\xF5d\xE9sszeg\xE9s
+      neves\xEDtett esetei k\xF6z\xE9?"
+    answers:
+    - "A k\xE9sedelem."
+    - "Az el\xE1ll\xE1s."
+    - "A lehetetlen\xFCl\xE9s."
+    - "A teljes\xEDt\xE9s megtagad\xE1sa."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "Ha jogosult k\xE9sedelembe esik a k\xE1rvesz\xE9ly \xE1tsz\xE1ll r\xE1."
+    - "Ha a hiba a teljes\xEDt\xE9s ut\xE1n keletkezett, szavatoss\xE1gi ig\xE9ny
+      nem \xE9rv\xE9nyes\xEDthet\xF5."
+    - "Ha a teljes\xEDt\xE9s lehetetlenn\xE9 v\xE1lik, a szerz\xF5d\xE9s megt\xE1madhat\xF3."
+    - "A kell\xE9kszavatoss\xE1gi ig\xE9nyek 1 \xE9v alatt el\xE9v\xFClnek."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Mennyi a kell\xE9kszavatoss\xE1gi ig\xE9nyek el\xE9v\xFCl\xE9si ideje
+      fogyaszt\xF3i szerz\xF5d\xE9s eset\xE9n?"
+    answers:
+    - "1 \xE9v"
+    - "2 \xE9v"
+    - "5 \xE9v"
+    - "Fogyaszt\xF3i szerz\xF5d\xE9s eset\xE9n ezen ig\xE9nyek nem \xE9v\xFClnek el."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyiket nem v\xE1laszthatja a fogyaszt\xF3
+      term\xE9kszavatoss\xE1gi ig\xE9nyk\xE9nt?"
+    answers:
+    - "A kijav\xEDt\xE1st."
+    - "A kicser\xE9l\xE9st."
+    - "Az el\xE1ll\xE1st."
+    - "Mindh\xE1rmat v\xE1laszthatja."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz a j\xF3t\xE1ll\xE1sra vonatkoz\xF3an?"
+    answers:
+    - "A j\xF3t\xE1ll\xE1s minden szerz\xF5d\xE9s eset\xE9n megilleti a szolg\xE1ltat\xE1s
+      jogosultj\xE1t."
+    - "A szavatoss\xE1g \xE9s a j\xF3t\xE1ll\xE1s ugyanazt jelenti."
+    - "A j\xF3t\xE1ll\xE1si id\xF5 nem lehet hosszabb 5 \xE9vn\xE9l."
+    - "A j\xF3t\xE1ll\xE1s lehet \xF6nk\xE9ntes vagy k\xF6telez\xF5."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi alanyv\xE1ltoz\xE1sok k\xF6z\xFCl melyik h\xE1romoldal\xFA
+      meg\xE1llapod\xE1s?"
+    answers:
+    - "A jog\xE1truh\xE1z\xE1s."
+    - "Az engedm\xE9nyez\xE9s."
+    - "A tartoz\xE1s\xE1tv\xE1llal\xE1s."
+    - Egyik sem.
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A szerz\xF5d\xE9s felmond\xE1sa egyoldal\xFA jognyilatkozat."
+    - "Az el\xE1ll\xE1s a j\xF6v\xF5re n\xE9zve sz\xFCnteti meg a szerz\xF5d\xE9st."
+    - "A szerz\xF5d\xE9s felbont\xE1sa a felek k\xF6z\xF6s nyilatkozata."
+    - "A felek a szerz\xF5d\xE9st b\xE1rmikor megsz\xFCntethetik."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik jog nem alap\xEDthat\xF3 (szerezhet\xF5
+      meg) b\xE1rmikor?"
+    answers:
+    - "Az elad\xE1si jog."
+    - "A v\xE9teli jog."
+    - "A visszav\xE1s\xE1rl\xE1si jog."
+    - "Az el\xF5v\xE1s\xE1rl\xE1si jog."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "Az elad\xE1si jog jogosultja egyoldal\xFA nyilatkozattal eladhatja a dolgot."
+    - "Az el\xF5v\xE1s\xE1rl\xE1si jog jogosultja egyoldal\xFA nyilatkozattal megveheti
+      a dolgot."
+    - "A v\xE9teli jog jogosultja egyoldal\xFA nyilatkozattal megveheti a dolgot."
+    - "A visszav\xE1s\xE1rl\xE1si jog jogosultja egyoldal\xFA nyilatkozattal megveheti
+      a dolgot."
+    answerId: 1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyiket nem kell az ingatlan-nyilv\xE1ntart\xE1sba
+      bejegyeztetni?"
+    answers:
+    - "A tulajdonjog fenntart\xE1st."
+    - "A v\xE9teli jogot."
+    - "Az elad\xE1si jogot."
+    - "Mindh\xE1rom fentit be kell jegyeztetni."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s igaz?"
+    answers:
+    - "Az aj\xE1nd\xE9koz\xE1s egyoldal\xFA jognyilatkozat."
+    - "Aj\xE1nd\xE9koz\xE1s t\xF6rt\xE9nhet ellen\xE9rt\xE9k fej\xE9ben is."
+    - "Az aj\xE1nd\xE9k egyes esetekben visszak\xF6vetelhet\xF5."
+    - "Az aj\xE1nd\xE9koz\xE1sra a jogalap n\xE9lk\xFCli gazdagod\xE1s szab\xE1lyait
+      kell alkalmazni."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis a v\xE1llalkoz\xE1si szerz\xF5d\xE9sre
+      vonatkoz\xF3an?"
+    answers:
+    - "A v\xE1llalkoz\xE1si szerz\xF5d\xE9s eredm\xE9nyk\xF6telem."
+    - "A megrendel\xF5 a teljes\xEDt\xE9s el\xF5tt b\xE1rmikor el\xE1llhat."
+    - "A v\xE1llalkoz\xF3 a teljes\xEDt\xE9s el\xF5tt b\xE1rmikor el\xE1llhat."
+    - "A v\xE1llalkoz\xF3t t\xF6rv\xE9nyes z\xE1logjog illeti meg."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem a v\xE1llalkoz\xE1si szerz\xF5d\xE9s
+      alt\xEDpusa?"
+    answers:
+    - "A tervez\xE9si szerz\xF5d\xE9s."
+    - "A fuvaroz\xE1si szerz\xF5d\xE9s."
+    - "A sz\xE1ll\xEDtm\xE1nyoz\xE1si szerz\xF5d\xE9s."
+    - "A kivitelez\xE9si szerz\xF5d\xE9s."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A megb\xEDz\xE1si szerz\xF5d\xE9s eredm\xE9nyk\xF6telem."
+    - "A megb\xEDz\xF3 a szerz\xF5d\xE9st felmondhatja."
+    - "A megb\xEDzott a szerz\xF5d\xE9st felmondhatja."
+    - "A megb\xEDzottat t\xF6rv\xE9nyes z\xE1logjog illeti meg."
+    answerId: 0
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem a megb\xEDz\xE1si szerz\xF5d\xE9s
+      alt\xEDpusa?"
+    answers:
+    - "A bizom\xE1nyi szerz\xF5d\xE9s."
+    - "A sz\xE1ll\xEDtm\xE1nyoz\xE1si szerz\xF5d\xE9s."
+    - "A k\xF6zvet\xEDt\xF5i szerz\xF5d\xE9s."
+    - "A fuvaroz\xE1si szerz\xF5d\xE9s."
+    answerId: 3
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik nem min\xF5s\xFCl k\xFCl\xF6nleges
+      szem\xE9lyes adatnak?"
+    answers:
+    - "Az \xE9rintett eg\xE9szs\xE9gi \xE1llapota."
+    - "Az \xE9rintett vagyoni helyzete."
+    - "Az \xE9rintett vall\xE1si meggy\xF5z\xF5d\xE9se."
+    - "Az \xE9rintett politikai v\xE9lem\xE9nye."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi m\xFBveletek k\xF6z\xFCl melyik nem min\xF5s\xFCl adatkezel\xE9snek?"
+    answers:
+    - "Az adatok gy\xFBjt\xE9se."
+    - "Az adatok t\xE1rol\xE1sa."
+    - "Az adatok lek\xE9rdez\xE9se."
+    - "Mind a h\xE1rom fenti m\xFBvelet adatkezel\xE9snek min\xF5s\xFCl."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi m\xFBveletek k\xF6z\xFCl melyik nem min\xF5s\xFCl adatkezel\xE9snek?"
+    answers:
+    - "Az adatok gy\xFBjt\xE9se."
+    - "Az adatkezel\xE9si m\xFBveletekhez kapcsol\xF3d\xF3 technikai feladatok elv\xE9gz\xE9se."
+    - "Az adatok lek\xE9rdez\xE9se."
+    - "Mind a h\xE1rom fenti m\xFBvelet adatkezel\xE9snek min\xF5s\xFCl."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbi 3 \xE1ll\xEDt\xE1s (a,b,c) k\xF6z\xFCl melyik hamis?"
+    answers:
+    - "Szem\xE9lyes adatok kezel\xE9s\xE9hez el\xE9g ha az \xE9rintett sz\xF3ban hozz\xE1j\xE1rult."
+    - "K\xFCl\xF6nleges adat csak t\xF6rv\xE9nyi el\xF5\xEDr\xE1s alapj\xE1n kezelhet\xF5."
+    - "B\xFBn\xFCgyi szem\xE9lyes adatot csak \xE1llami vagy \xF6nkorm\xE1nyzati szerv
+      kezelhet."
+    - "Mind a h\xE1rom fenti \xE1ll\xEDt\xE1s igaz."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik esetben nem tiltakozhat az \xE9rintett
+      szem\xE9lyes adat\xE1nak kezel\xE9se ellen?"
+    answers:
+    - "K\xF6zvetlen \xFCzletszerz\xE9s c\xE9lj\xE1ra t\xF6rt\xE9n\xF5 felhaszn\xE1l\xE1s
+      eset\xE9n."
+    - "K\xF6zv\xE9lem\xE9ny kutat\xE1si c\xE9l\xFA felhaszn\xE1l\xE1s eset\xE9n."
+    - "Tudom\xE1nyos c\xE9l\xFA felhaszn\xE1l\xE1s eset\xE9n."
+    - "Mindh\xE1rom fenti esetben tiltakozhat."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik esetben nem tiltakozhat az \xE9rintett
+      szem\xE9lyes adat\xE1nak kezel\xE9se ellen?"
+    answers:
+    - "K\xF6zvetlen \xFCzletszerz\xE9s c\xE9lj\xE1ra t\xF6rt\xE9n\xF5 felhaszn\xE1l\xE1s
+      eset\xE9n."
+    - "K\xF6zv\xE9lem\xE9ny kutat\xE1si c\xE9l\xFA felhaszn\xE1l\xE1s eset\xE9n."
+    - "Ha az adatkezel\xE9st k\xF6z\xE9rdek\xFB c\xE9lb\xF3l t\xF6rv\xE9ny rendeli
+      el."
+    - "Mindh\xE1rom fenti esetben tiltakozhat."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Az al\xE1bbiak k\xF6z\xFCl melyik alkot\xE1s nem \xE1ll a szerz\xF5i
+      jog v\xE9delme alatt?"
+    answers:
+    - "\xD6tlet, elj\xE1r\xE1s."
+    - Szoftver
+    - "Adatb\xE1zis"
+    - "T\xE9rk\xE9p"
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Mennyi ideig v\xE9di a szerz\xF5i jog a m\xFBvet?"
+    answers:
+    - "50 \xE9vig."
+    - "A szerz\xF5 \xE9lete v\xE9g\xE9ig."
+    - "A szerz\xF5 \xE9let\xE9ben \xE9s hal\xE1la ut\xE1n 70 \xE9vig."
+    - "20 \xE9vig."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Melyik \xE1ll\xEDt\xE1s hamis?"
+    answers:
+    - "A felhaszn\xE1l\xE1si enged\xE9ly korl\xE1tozhat\xF3 valamely ter\xFCletre."
+    - "A felhaszn\xE1l\xE1si enged\xE9ly korl\xE1tozhat\xF3 megadott id\xF5tartamra."
+    - "A felhaszn\xE1l\xE1si enged\xE9ly korl\xE1tozhat\xF3 valamely felhaszn\xE1l\xE1si
+      m\xF3dra."
+    - "A felhaszn\xE1l\xE1si enged\xE9ly sz\xF3ban is \xE9rv\xE9nyes."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  - question: "Mennyi ideig v\xE9di a szabadalmi oltalom a tal\xE1lm\xE1nyt?"
+    answers:
+    - "10 \xE9vig."
+    - "20 \xE9vig."
+    - "A szabadalmas \xE9lete v\xE9g\xE9ig."
+    - "A szabadalmas \xE9let\xE9ben \xE9s hal\xE1la ut\xE1n 20 \xE9vig."
+    answerId: -1
+    remappedAnswerId: 0
+    order: 
+  order: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000
   currentQuestionIndex: 0
   currentQuestion:
-    question: 
-    answers: []
-    answerId: -1
-  state: 0
-  questionState: 0
-  selectedAnswer: 0
+    question: "Az al\xE1bb felsoroltak k\xF6z\xFCl melyik nem jellemz\xF5 a t\xE1rsadalmi
+      \xE9s jogi norm\xE1kra?"
+    answers:
+    - A hipotetikus szerkezet.
+    - "A szankci\xF3."
+    - "A m\xFAltra ir\xE1nyults\xE1g."
+    - "Mindegyik jellemz\xF5."
+    answerId: 2
+    remappedAnswerId: 0
+    order: 02000000000000000300000001000000
+  state: -1
+  questionState: -1
+  selectedAnswer: -1
   goodAnswer: 0
   badAnswer: 0
 --- !u!114 &114237088520494312
@@ -1286,7 +3366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8980392, b: 0.8980392, a: 1}
+  m_Color: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1320,10 +3400,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: a2
+  m_text: b) A hipotetikus szerkezet.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1388,10 +3469,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114296029424908284}
-    characterCount: 2
+    characterCount: 27
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1480,7 +3561,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     m_DisabledColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1621,7 +3702,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     m_DisabledColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1672,10 +3753,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: a1
+  m_text: "a) A m\xFAltra ir\xE1nyults\xE1g."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1740,10 +3822,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114451661483695722}
-    characterCount: 2
+    characterCount: 24
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1805,7 +3887,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114461737593940306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429487426939172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: 10000
+  m_LayoutPriority: 1
+--- !u!114 &114468000226751000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112893479959678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1839,10 +3967,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: New Game
+  m_text: "\xDAj j\xE1t\xE9k"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1953,7 +4082,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     m_DisabledColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2042,10 +4171,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Random
+  m_text: "V\xE9letlen"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2110,7 +4240,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114516035810252784}
-    characterCount: 6
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -2221,7 +4351,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.84313726, g: 0.84313726, b: 0.84313726, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
     m_DisabledColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2239,13 +4369,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114460873012581358}
   toggleTransition: 1
   graphic: {fileID: 114461288618789878}
-  m_Group: {fileID: 114973171627588510}
+  m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114234084059828954}
-        m_MethodName: SetRandomOrder
-        m_Mode: 6
+        m_MethodName: SetRandomQuestionOrder
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2256,7 +4386,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!114 &114566880781100152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2277,7 +4407,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     m_DisabledColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2429,7 +4559,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.77254903, g: 0.77254903, b: 0.77254903, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     m_DisabledColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2548,6 +4678,33 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 10000
   m_LayoutPriority: 1
+--- !u!114 &114698997271025604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527056497497966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.77254903, g: 0.77254903, b: 0.77254903, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114724599279362652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2662,10 +4819,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: a4
+  m_text: "d) A szankci\xF3."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2730,10 +4888,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114753993251736394}
-    characterCount: 2
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -2956,10 +5114,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: m
+  m_text: "Az al\xE1bb felsoroltak k\xF6z\xFCl melyik nem jellemz\xF5 a t\xE1rsadalmi
+    \xE9s jogi norm\xE1kra?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3024,10 +5184,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114827693395229746}
-    characterCount: 1
+    characterCount: 77
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 11
+    wordCount: 12
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -3070,7 +5230,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     m_DisabledColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3240,8 +5400,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.77254903, g: 0.77254903, b: 0.77254903, a: 1}
+    m_NormalColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    m_HighlightedColor: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
     m_PressedColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     m_DisabledColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3304,10 +5464,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Next
+  m_text: "K\xF6vetkez\u0151"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 40b38aeb1e52a234ba09cfe148835a22, type: 2}
+  m_sharedMaterial: {fileID: 21273955730004622, guid: 40b38aeb1e52a234ba09cfe148835a22,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3372,7 +5533,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114976982665801258}
-    characterCount: 4
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -3557,12 +5718,30 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672882448846636}
+--- !u!222 &222701873522058482
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527056497497966}
 --- !u!222 &222708578723384886
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533770339983604}
+--- !u!222 &222724538931947202
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429487426939172}
+--- !u!222 &222740388714071446
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112893479959678}
 --- !u!222 &222760664015372408
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3769,16 +5948,34 @@ RectTransform:
   m_GameObject: {fileID: 1881148942131202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000014, y: 1.0000014, z: 1.0000014}
   m_Children:
   - {fileID: 224805924418068120}
   - {fileID: 224383168343946846}
   m_Father: {fileID: 224669065264615546}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224188433185569254
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429487426939172}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224235844471873738}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224204079949031114
@@ -3821,6 +6018,26 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224235844471873738
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740917793796784}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224906121723505580}
+  - {fileID: 224188433185569254}
+  m_Father: {fileID: 224669065264615546}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4191,6 +6408,7 @@ RectTransform:
   m_Children:
   - {fileID: 224106335225601898}
   - {fileID: 224284955253454526}
+  - {fileID: 224235844471873738}
   - {fileID: 224184219304057936}
   m_Father: {fileID: 224670572241181084}
   m_RootOrder: 1
@@ -4315,6 +6533,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224906121723505580
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527056497497966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224993197977202276}
+  m_Father: {fileID: 224235844471873738}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224958123349815230
 RectTransform:
   m_ObjectHideFlags: 1
@@ -4333,3 +6570,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224993197977202276
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112893479959678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224906121723505580}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225537391244324174
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384980609887144}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

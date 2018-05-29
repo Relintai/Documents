@@ -19,6 +19,9 @@ public class Quiz : MonoBehaviour {
     bool randomOrder = true;
 
     [SerializeField]
+    bool randomQuestionOrder = true;
+
+    [SerializeField]
     TextMeshProUGUI questionTextField;
 
     [SerializeField]
@@ -31,7 +34,16 @@ public class Quiz : MonoBehaviour {
     Button nextQuestionButton;
 
     [SerializeField]
+    Toggle orderOffToggle;
+
+    [SerializeField]
+    Toggle randomQuestionOrderToggle;
+
+    [SerializeField]
     List<QuizInput> inputs;
+
+    [SerializeField]
+    List<string> answerPrefixes;
 
     [SerializeField]
     TextAsset data;
@@ -62,6 +74,8 @@ public class Quiz : MonoBehaviour {
 
     [SerializeField]
     int badAnswer = 0;
+
+    bool badAnswerMarked = false;
 
     // Use this for initialization
     void Awake() {
@@ -109,14 +123,17 @@ public class Quiz : MonoBehaviour {
             return;
         }
 
+        badAnswerMarked = false;
         selectedAnswer = -1;
-        ResetGUI();
 
         ++currentQuestionIndex;
+
+        ResetGUI();
 
         if (currentQuestionIndex >= entries.Count)
         {
             GameFinished();
+            return;
         }
 
         SetQuestion(entries[order[currentQuestionIndex]]);
@@ -131,12 +148,17 @@ public class Quiz : MonoBehaviour {
 
         if (questionState == QuestionState.Answers)
         {
-            if (currentQuestion.IsValid && currentQuestion.answerId != selectedAnswer)
+            if (!badAnswerMarked)
             {
-                inputs[selectedAnswer].incorrectImage.gameObject.SetActive(true);
-            }
+                if (currentQuestion.IsValid && !currentQuestion.IsAnswerCorrect(selectedAnswer))
+                {
+                    inputs[selectedAnswer].incorrectImage.gameObject.SetActive(true);
+                }
 
-            inputs[currentQuestion.answerId].correctImage.gameObject.SetActive(true);
+                inputs[currentQuestion.AnswerID].correctImage.gameObject.SetActive(true);
+
+                badAnswerMarked = true;
+            }
 
             return;
         }
@@ -145,7 +167,7 @@ public class Quiz : MonoBehaviour {
 
         if (selectedAnswer != -1)
         {
-            if (currentQuestion.IsValid && currentQuestion.answerId != selectedAnswer)
+            if (currentQuestion.IsValid && !currentQuestion.IsAnswerCorrect(selectedAnswer))
             {
                 inputs[selectedAnswer].incorrectImage.gameObject.SetActive(true);
 
@@ -170,11 +192,18 @@ public class Quiz : MonoBehaviour {
             return; ;
         }
 
-        inputs[currentQuestion.answerId].correctImage.gameObject.SetActive(true);
+        inputs[currentQuestion.AnswerID].correctImage.gameObject.SetActive(true);
+
+        badAnswerMarked = true;
     }
 
-    public void SetQuestion(QuizEntry e)
+    public void SetQuestion(QuizEntry e, bool randomize = true)
     {
+        if (randomize)
+        {
+            e.RandomizeOrder(randomQuestionOrder);
+        }
+
         currentQuestion = e;
 
         questionState = QuestionState.Question;
@@ -188,7 +217,16 @@ public class Quiz : MonoBehaviour {
                 break;
             }
 
-            inputs[i].text.text = currentQuestion.answers[i];
+            string ca = "";
+
+            if (answerPrefixes.Count > i)
+            {
+                ca += answerPrefixes[i];
+            }
+
+            ca += currentQuestion.GetAnswer(i);
+
+            inputs[i].text.text = ca;
         }
     }
 
@@ -209,9 +247,9 @@ public class Quiz : MonoBehaviour {
 
     public void Save()
     {
-        string save = "";
+        string save = "V2;";
 
-        save += currentQuestionIndex + ";" + selectedAnswer + ";" + goodAnswer + ";" + badAnswer + ";" + (int)state + ";" + (int)questionState;
+        save += randomOrder + ";" + randomQuestionOrder + ";" + currentQuestionIndex + ";" + currentQuestion.GetSaveString() + ";" + selectedAnswer + ";" + goodAnswer + ";" + badAnswer + ";" + (int)state + ";" + (int)questionState;
 
         for (int i = 0; i < order.Count; i++)
         {
@@ -241,21 +279,34 @@ public class Quiz : MonoBehaviour {
 
         try
         {
-            currentQuestionIndex = int.Parse(indices[0]);
-            selectedAnswer = int.Parse(indices[1]);
-            goodAnswer = int.Parse(indices[2]);
-            badAnswer = int.Parse(indices[3]);
-            questionState = (QuestionState)int.Parse(indices[5]);
-            state = (QuizState)int.Parse(indices[4]);
+            int index = -1;
+
+            if (!indices[++index].Equals("V2"))
+            {
+                return false;
+            }
+
+            SetupRandomOrderGUI(bool.Parse(indices[++index]));
+            randomQuestionOrder = bool.Parse(indices[++index]);
+            SetupRandomQuestionOrderGUI(randomQuestionOrder);
+            currentQuestionIndex = int.Parse(indices[++index]);
+            string currentQuestionSaveString = indices[++index];
+            selectedAnswer = int.Parse(indices[++index]);
+            goodAnswer = int.Parse(indices[++index]);
+            badAnswer = int.Parse(indices[++index]);
+            questionState = (QuestionState)int.Parse(indices[++index]);
+            state = (QuizState)int.Parse(indices[++index]);
             
 
-            for (int i = 6; i < indices.Length; i++)
+            for (int i = ++index; i < indices.Length; i++)
             {
                 order.Add(int.Parse(indices[i]));
             }
 
+            entries[order[currentQuestionIndex]].loadOrderFromString(currentQuestionSaveString);
+
             ResetGUI();
-            SetQuestion(entries[order[currentQuestionIndex]]);
+            SetQuestion(entries[order[currentQuestionIndex]], false);
 
             questionState = (QuestionState)int.Parse(indices[5]);
 
@@ -287,5 +338,23 @@ public class Quiz : MonoBehaviour {
     public void SetRandomOrder(bool on)
     {
         randomOrder = on;
+    }
+
+    public void SetupRandomOrderGUI(bool order)
+    {
+        if (!order)
+        {
+            orderOffToggle.isOn = true;
+        }
+    }
+
+    public void SetRandomQuestionOrder(bool on)
+    {
+        randomQuestionOrder = on;
+    }
+
+    public void SetupRandomQuestionOrderGUI(bool order)
+    {
+        randomQuestionOrderToggle.isOn = order;
     }
 }

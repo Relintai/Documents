@@ -85,6 +85,8 @@ public class SimpleTexFormatParser {
                     qe.answerId = indexj;
                 }
 
+                answ = answ.Substring(3);
+
                 qe.answers.Add(answ);
 
                 ++indexj;
