@@ -1,0 +1,2304 @@
+% Compile twice!
+% With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
+
+% !TEX root = ./Headers/PrezA4Page.tex
+
+% Uncomment these to get the presentation form
+%\documentclass{beamer}
+%\geometry{paperwidth=200mm,paperheight=200mm, top=0in, bottom=0.2in, left=0.2in, right=0.2in}
+
+% Uncomment these, and comment the 2 lines above, to get a paper-type article
+%\documentclass[10pt]{article}
+%\usepackage{geometry}
+%\geometry{top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+%\usepackage{beamerarticle}
+%\renewcommand{\\}{\par\noindent}
+%\setbeamertemplate{note page}[plain]
+
+% Half A4 geometry
+%\geometry{paperwidth=105mm,paperheight=297mm,top=0.2in, bottom=0.2in, left=0.2in, right=0.2in}
+
+% "1/3" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=455mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/6" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=891mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/5" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=740mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% "1/4" A4 geometry
+%\geometry{paperwidth=105mm,paperheight=594mm,top=0.1in, bottom=0.1in, left=0.1in, right=0.1in}
+
+% Uncomment these, to put more than one slide / page into a generated page.
+%\usepackage{pgfpages}
+% Choose one
+%\pgfpagesuselayout{2 on 1}[a4paper]
+%\pgfpagesuselayout{4 on 1}[a4paper]
+%\pgfpagesuselayout{8 on 1}[a4paper]
+
+% Includes
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usetikzlibrary{shapes,arrows,automata}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{arydshln}
+\usepackage{enumerate}
+\usepackage[many, poster]{tcolorbox}
+\usepackage{pgf}
+\usepackage[makeroom]{cancel}
+\usepackage{ulem}
+
+\providecommand{\includecolors}{\input{../Colors/Default.tex}}% fallback definition
+\includecolors
+
+\setbeamertemplate{itemize item}{\color{black}$-$}
+\setbeamertemplate{itemize subitem}{\color{black}$-$}
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{enumerate subitem}{fg=black}
+\setbeamercolor*{enumerate subsubitem}{fg=black}
+
+ \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\rmdefault}
+
+\renewcommand{\footnotesize}{\fontsize{1.2em}{0.2em}}
+\renewcommand{\normalsize}{\fontsize{1.2em}{0.2em}}
+\renewcommand{\large}{\footnotesize}
+\renewcommand{\Large}{\footnotesize}
+
+
+\renewcommand{\scriptsize}{\footnotesize}
+\renewcommand{\LARGE}{\footnotesize}
+\renewcommand{\Huge}{\footnotesize}
+
+\renewcommand{\tiny}{\footnotesize}
+\renewcommand{\small}{\footnotesize}
+
+\fontsize{1.2em}{0.2em}
+\selectfont
+
+\newcommand{\RHuge}{\fontsize{1.8em}{0.3em}\selectfont}
+
+\newsavebox\CBox 
+%\newcommand<>*\textBF[1]{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf#2{#1}}}
+\newcommand<>*\textBF[1]{\only#2{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}}
+
+% Beamer theme
+\usetheme{boxes}
+
+% tikz settings for the flowchart(s)
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!15]
+\tikzstyle{tcolorbox} = [rectangle, draw, fill=blue!15, text width=20em, text centered, minimum height=1em]
+
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\arraystretch}{1.2}
+
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+\newcommand{\mtinyskip}{\vspace{0.2em}}
+\newcommand{\msmallskip}{\vspace{0.3em}}
+\newcommand{\mmedskip}{\vspace{0.5em}}
+\newcommand{\mbigskip}{\vspace{1em}}
+\renewcommand{\u}[1]{\underline{#1}}
+
+\begin{document}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge Jog}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 01 Jogi alapok}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}  
+
+%1. 
+\begin{tcolorbox}[title={1. Kérdés}]
+Az alább felsoroltak közül melyik nem jellemzõ a társadalmi és jogi normákra?
+\tcblower
+a) A hipotetikus szerkezet.\\
+b) A szankció.\\
+\uline {c) A múltra irányultság.}\\
+d) Mindegyik jellemzõ.
+\end{tcolorbox}
+
+%2.
+\begin{tcolorbox}[title={2. Kérdés}]
+Az alábbiak közül melyik nem tartozik a társadalmi normák lényeges mozzanatai közé?
+\tcblower
+a) A magatartás leírása.\\
+b) A magatartás minõsítése. (tilos, kötelezõ stb.)\\
+c) A következmények leírása.\\
+\uline {d) Mindegyik oda tartozik.}
+\end{tcolorbox}
+
+%3. 
+\begin{tcolorbox}[title={3. Kérdés}]
+Melyik állítás a legjellemzõbb a jogi normákra?
+\tcblower
+a) A társadalom alkotja, érvényesülését az állam biztosítja.\\
+\uline {b) Az állam alkotja, érvényesülését az állam biztosítja.}\\
+c) Az állam alkotja, érvényesülését a társadalom biztosítja.\\
+d) A társadalom alkotja, érvényesülését a társadalom biztosítja.
+\end{tcolorbox}
+
+%4. 
+\begin{tcolorbox}[title={4. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+a) A jogi normákat gyorsabban meg lehet változtatni, mint a társadalmi normákat.\\
+b) Az erkölcsi normák szankciórendszerét a társadalmi nyomás jellemzi.\\
+c) A jogi norma az emberek formális magatartására irányul.\\
+\uline {d) Mindhárom elõzõ állítás igaz.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%5. 
+\begin{tcolorbox}[title={5. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+\uline {a) A társadalmi normákat gyorsabban meg lehet változtatni, mint a jogi normákat.}\\
+b) Az erkölcsi normák szankciórendszerét a társadalmi nyomás jellemzi.\\
+c) A jogi norma az emberek formális magatartására irányul.\\
+d) Mindhárom elõzõ állítás igaz.
+\end{tcolorbox}
+
+%6.
+\begin{tcolorbox}[title={6. Kérdés}]
+A jog melyik funkciójának megvalósítását biztosítja elsõsorban a bírósági szervezet?
+\tcblower
+a) Az integráló funkciót.\\
+\uline {b) A konfliktus-feloldó funkciót.}\\
+c) A társadalomszervezõ funkciót.\\
+d) Egyik funkció megvalósítását sem biztosítja.
+\end{tcolorbox}
+
+%7.
+\begin{tcolorbox}[title={7. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Az anyagi jogforrás azt a szervet jelenti, amelytõl a jogi norma ered.\\
+\uline {b) A belsõ jogforrás ugyanazt jelenti, mint az alaki jogforrás.}\\
+c) Az alaki jogforrás azt a formát jelenti, amelyben a jogi norma megjelenik.\\
+d) Elsõdleges jogforrás maga a jogalkotó hatalom, az állam. 
+\end{tcolorbox}
+
+%8.
+\begin{tcolorbox}[title={8. Kérdés}]
+Mit mond ki a "Lex superior derogat legi inferiori" alapelv?
+\tcblower
+a) A késõbb megalkotott jogszabály a korábbinak a hatályát lerontja.\\
+b) A speciális jogszabályt kell alkalmazni az általánossal szemben.\\
+\uline {c) Alacsonyabb szintû jogszabály nem ellenkezhet magasabb szintûvel.}\\
+d) Jogszabállyal ellentétes másik jogszabályt nem lehet alkotni.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%9. 
+\begin{tcolorbox}[title={9. Kérdés}]
+Az alábbi jogszabályok közül melyik tartozik az anyagi jog körébe?
+\tcblower
+a) A büntetõeljárásról szóló törvény.\\
+b) A polgári eljárásról szóló törvény.\\
+c) A közigazgatási eljárásról szóló törvény.\\
+\uline {d) Egyik sem.}
+\end{tcolorbox}
+
+%10.
+\begin{tcolorbox}[title={10. Kérdés}]
+Az alábbi jogszabályok közül melyik tartozik az anyagi jog körébe?
+\tcblower
+a) A büntetõeljárásról szóló törvény.\\
+\uline {b) A polgári törvénykönyv.}\\
+c) A közigazgatási eljárásról szóló törvény.\\
+d) Egyik sem.
+\end{tcolorbox}
+
+%11. 
+\begin{tcolorbox}[title={11. Kérdés}]
+Az alábbi jogszabályok közül melyik tartozik az alaki jog körébe?
+\tcblower
+a) A büntetõ törvénykönyv.\\
+\uline {b) A büntetõeljárásról szóló törvény.}\\
+c) A polgári törvénykönyv.\\
+d) A munka törvénykönyve.
+\end{tcolorbox}
+
+%12. 
+\begin{tcolorbox}[title={12. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) A polgári jog a közjog területéhez tartozik.\\
+b) A büntetõjog a magánjog területéhez tartozik.\\
+\uline {c) A kereskedelmi jog a magánjog területéhez tartozik.}\\
+d) A közigazgatási jog a magánjog területéhez tartozik.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%13. 
+\begin{tcolorbox}[title={13. Kérdés}]
+Melyik állítás igaz az angolszász jogrendszerekre?
+\tcblower
+a) A jogalkotás és jogalkalmazás szférája mereven elválik egymástól.\\
+\uline {b) A szabályok jelentõs része nincs törvénybe foglalva.}\\
+c) E jogrendszerek pillérei az írott jogforrások.\\
+d) A joganyag önálló, zárt rendszert alkot.
+\end{tcolorbox}
+
+%14. 
+\begin{tcolorbox}[title={14. Kérdés}]
+Melyik jogrendszerre a leginkább jellemzõ, hogy politikailag erõsen kötött?
+\tcblower
+a) Az angolszász jogrendszerekre.\\
+\uline {b) A szocialista jogrendszerekre.}\\
+c) A kontinentális jogrendszerekre.\\
+d) A vallási alapú jogrendszerekre.
+\end{tcolorbox}
+
+%15. 
+\begin{tcolorbox}[title={15. Kérdés}]
+Melyik állítás igaz a kontinentális jogrendszerekre?
+\tcblower
+a) A bírónak jelentõs szerepe van a jogalkotásban.\\
+b) A jogszabályok kevésbé elvontak és általánosak.\\
+\uline {c) A joganyag önálló, zárt rendszert alkot.}\\
+d) A jogszabályok egy-egy vitás ügy eldöntésekor keletkeznek.
+\end{tcolorbox}
+
+%16. 
+\begin{tcolorbox}[title={16. Kérdés}]
+Melyik állítás nem igaz a szocialista jogrendszerekre vonatkozóan?
+\tcblower
+a) A politika közvetlenül befolyásolja a jogot.\\
+b) A magánjognak kisebb a jelentõsége.\\
+c) A jogi túlszabályozás jellemzõ.\\
+\uline {d) Mindegyik fenti állítás igaz rá.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%17. 
+\begin{tcolorbox}[title={17. Kérdés}]
+Melyik állítás nem igaz a szocialista jogrendszerekre vonatkozóan?
+\tcblower
+a) A politika közvetlenül befolyásolja a jogot.\\
+\uline {b) A magánjognak nagy jelentõsége van.}\\
+c) A jogi túlszabályozás jellemzõ.\\
+d) Mindegyik fenti állítás igaz rá.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 02 Jogszabalytan}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}  
+
+%18. 
+\begin{tcolorbox}[title={18. Kérdés}]
+A tényeknek olyan összessége, amelyhez valamilyen joghatás fûzõdik, ...
+\tcblower
+a) a jogi norma diszpozíciója.\\
+b) a jogi norma szankciója.\\
+\uline {c) a jogi norma hipotézise.}\\
+d) a jogi norma jogkövetkezménye.
+\end{tcolorbox}
+
+%19. 
+\begin{tcolorbox}[title={19. Kérdés}]
+Az a magatartási szabály, amelyet a jogalkotó a jogalany számára elõír, ...
+\tcblower
+\uline {a) a jogi norma diszpozíciója.}\\
+b) a jogi norma szankciója.\\
+c) a jogi norma hipotézise.\\
+d) a jogi norma jogkövetkezménye.
+\end{tcolorbox}
+
+%20. 
+\begin{tcolorbox}[title={20. Kérdés}]
+Egészítse ki a kipontozott részt.
+A ... esetén a jogalkotó nem határozza meg, hogy mely tényállás esetén szükséges 
+a normában meghatározott magatartást tanúsítani, csupán példaszerûen felsorolja azokat.
+\tcblower
+a) zárt tényállás\\
+\uline {b) nyitott tényállás}\\
+c) parancsoló norma\\
+d) diszpozitív norma
+\end{tcolorbox}
+
+%21.
+\begin{tcolorbox}[title={21. Kérdés}]
+Milyenfajta rendelkezés nem fordulhat elõ a jogi norma diszpozíciójában?
+\tcblower
+a) tiltó\\
+b) parancsoló\\
+c) megengedõ\\
+\uline {d) mindhárom elõfordulhat}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%22. 
+\begin{tcolorbox}[title={22. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) A lopás bûncselekménye mindig vagyoni jellegû szankciót von maga után.\\
+b) A jogi norma megsértése nem járhat személyi jellegû szankcióval.\\
+c) A szankció egyidejûleg mindig csak egyféle joghátrányt alkalmazhat.\\
+\uline {d) Az érvénytelenség a szankciók egyik típusa.}
+\end{tcolorbox}
+
+%23. 
+\begin{tcolorbox}[title={23. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Az apaság vélelme nem megdönthetõ.\\
+b) A fikció esetén lehetõség van az ellenkezõ bizonyítására.\\
+\uline {c) A kézbesítési vélelem megdönthetõ.}\\
+d) A fikció legfontosabb jogi következménye a bizonyítási teher megfordítása.
+\end{tcolorbox}
+
+%24.
+\begin{tcolorbox}[title={24. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+\uline {a) Az apaság vélelme megdönthetõ.}\\
+b) A fikció esetén lehetõség van az ellenkezõ bizonyítására.\\
+c) A kézbesítési vélelem nem megdönthetõ.\\
+d) A fikció legfontosabb jogi következménye a bizonyítási teher megfordítása.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%25. 
+\begin{tcolorbox}[title={25. Kérdés}]
+Egy jogszabály érvényességének hány feltétele van? Sorolja is fel ezeket.
+\tcblower
+a) 3, a következõk:\\
+\uline {b) 4, a következõk: megfelelõ szerv; megfelelõ eljárás; kihirdetés; hierarchiába illeszkedés}\\
+c) 2, a következõk:\\
+d) 5, a következõk:
+\end{tcolorbox}
+
+%26. 
+\begin{tcolorbox}[title={26. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) A jogszabály idõbeli hatálya nem lehet visszamenõleges.\\
+b) A magyar jogszabályok területi hatálya Magyarország teljes területe.\\
+\uline {c) Egy jogszabály lehet egyidejûleg érvényes, de nem hatályos.}\\
+d) Egy jogszabály lehet egyidejûleg hatályos és érvénytelen.
+\end{tcolorbox}
+
+%27. 
+\begin{tcolorbox}[title={27. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Egy magyar jogszabály minden magyar állampolgárra vonatkozik.\\
+\uline {b) Egy jogszabály csak a jövõre vonatkozóan állapíthat meg kötelezettséget.}\\
+c) A személyi hatály azt határozza meg, hogy ki alkotta a jogszabályt.\\
+d) Egy magyar jogszabály csak magyar állampolgárokra vonatkozik.
+\end{tcolorbox}
+
+%28.
+\begin{tcolorbox}[title={28. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Egy jogszabály nem érvényes, ha a köztársasági elnök nem írta alá.\\
+b) Egy törvény nem érvényes, ha ellenkezik egy rendelettel.\\
+\uline {c) Egy jogszabály nem érvényes, ha nem hirdették ki.}\\
+d) Mindhárom fenti állítás hamis.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%29. 
+\begin{tcolorbox}[title={29. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Egy jogszabály nem érvényes, ha a köztársasági elnök nem írta alá.\\
+\uline {b) Egy rendelet nem érvényes, ha ellenkezik egy törvénnyel.}\\
+c) Egy jogszabály akkor is érvényes, ha nem hirdették ki.\\
+d) Mindhárom fenti állítás hamis.
+\end{tcolorbox}
+
+%30. 
+\begin{tcolorbox}[title={30. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) A jogszabályok tudományos értelmezésének csak az adott ügyben van kötelezõ ereje.\\
+\uline {b) A jogalkotói jogszabály értelmezés minden címzettre nézve kötelezõ.}\\
+c) A jogalkalmazói jogszabály értelmezésnek nincs kötelezõ ereje.\\
+d) A jogalkotói jogszabály értelmezés tilos. 
+\end{tcolorbox}
+
+%31.
+\begin{tcolorbox}[title={31. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) A közigazgatási szervek eljárása mindig kezdeményezésre indul.\\
+\uline {b) A jogalanyok önkéntes jogkövetését is jogalkalmazásnak tekintjük.}\\
+c) A jogalkalmazás célja mindig valamilyen jogsérelem orvoslása.\\
+d) A jogalkalmazás utolsó lépése a tényállás megállapítása.
+\end{tcolorbox}
+
+%32.
+\begin{tcolorbox}[title={32. Kérdés}]
+Melyik nem következhet be a jogalkalmazás eredményeképpen?
+\tcblower
+a) Jogviszony keletkezése.\\
+b) Jogviszony megszûnése.\\
+c) Jogviszony módosulása.\\
+\uline {d) Mindhárom fenti bekövetkezhet.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%33. 
+\begin{tcolorbox}[title={33. Kérdés}]
+Mely szerv biztosítja a bíróságok egységes jogalkalmazását?
+\tcblower
+a) Az alkotmánybíróság.\\
+b) A törvényszék.\\
+c) Az ítélõtábla.\\
+\uline {d) A Kúria.}
+\end{tcolorbox}
+
+%34. 
+\begin{tcolorbox}[title={34. Kérdés}]
+Melyik nem tartozik a jogszabály értelmezésének módszerei közé?
+\tcblower
+a) A rendszertani értelmezés.\\
+b) A történeti értelmezés.\\
+\uline {c) A módszertani értelmezés.}\\
+d) A logikai értelmezés.
+\end{tcolorbox}
+
+%35. 
+\begin{tcolorbox}[title={35. Kérdés}]
+A jogviszony szerkezeti elemei közé tartozik
+\tcblower
+a) a jogviszony helye.\\
+b) a jogviszony ideje.\\
+\uline {c) a jogviszony tartalma.}\\
+d) Egyik sem.
+\end{tcolorbox}
+
+%36.
+\begin{tcolorbox}[title={36. Kérdés}]
+Ingatlan adásvételi szerzõdés esetén a jogviszony tárgya
+\tcblower
+a) a vételár kifizetése.\\
+b) a tulajdonjog átruházása.\\
+\uline {c) az ingatlan.}\\
+d) Egyik sem.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%37. 
+\begin{tcolorbox}[title={37. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) A kötelmi jogban a relatív szerkezetû jogviszonyok jellemzõk.\\
+b) A tulajdonjog abszolút szerkezetû jogviszony.\\
+\uline {c) Ha több, mint 2 fél szerepel a szerzõdésben, az abszolút szerkezetû jogviszonyt eredményez.}\\
+d) A károkozás relatív szerkezetû jogviszonyt teremt.
+\end{tcolorbox}
+
+%38. 
+\begin{tcolorbox}[title={38. Kérdés}]
+Melyik nem rendelkezik jogi személyiséggel?
+\tcblower
+a) Az Állam.\\
+b) Az egyesület.\\
+\uline {c) A társasház.}\\
+d) Az egyetem.
+\end{tcolorbox}
+
+%39. 
+\begin{tcolorbox}[title={39. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Együttes kötelezettek bármelyikétõl az egész tartozás követelhetõ.\\
+b) Egyetemleges kötelezettek egyidejûleg, de arányosan kötelesek teljesíteni.\\
+c) A kezes az adóssal fele-fele arányban köteles teljesíteni a tartozást.\\
+\uline {d) Mindhárom fenti állítás hamis.}
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 03 Szemelyek joga}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}  
+
+%40. 
+\begin{tcolorbox}[title={40. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+\uline {a) Aki jogképes, az önállóan köthet szerzõdést.}\\
+b) Aki jogképes, az jogosultságok alanya lehet.\\
+c) Aki betöltötte a 14. életévét az jogképes.\\
+d) Mindhárom elõzõ állítás igaz.
+\end{tcolorbox}
+
+%41. 
+\begin{tcolorbox}[title={41. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) A jogképesség a születéssel kezdõdik.\\
+b) A jogképesség mindig a születés elõtti 300-adik napon kezdõdik.\\
+c) A jogképesség mindig a fogamzástól kezdõdik.\\
+\uline {d) A magzat jogképessége feltételes.}
+\end{tcolorbox}
+
+%42. 
+\begin{tcolorbox}[title={42. Kérdés}]
+Melyik állítás igaz?
+a) A bíróság korlátozhatja a természetes személy jogképességét.\\
+b) A Ptk. nem korlátozhatja az ember cselekvõképességét.\\
+\uline {c) Aki cselekvõképes, az önállóan köthet szerzõdést}.\\
+d) Mindhárom fenti állítás hamis.
+\end{tcolorbox}
+
+%43. 
+\begin{tcolorbox}[title={43. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+a) 17 éves személy is lehet nagykorú.\\
+b) 17 éves személy is lehet cselekvõképes.\\
+c) 13 éves személy is lehet korlátozottan cselekvõképes.\\
+\uline {d) Mindhárom elõzõ állítás igaz.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%44.
+\begin{tcolorbox}[title={44. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+a) A kiskorú személy a házasságkötéssel nagykorúvá válik.\\
+b) 17 éves személy is lehet cselekvõképes.\\
+c) A 13 éves személy minden esetben cselekvõképtelennek minõsül.\\
+\uline {d) Mindhárom elõzõ állítás igaz.}
+\end{tcolorbox}
+
+%45.
+\begin{tcolorbox}[title={45. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+a) Nagykorú személy is lehet cselekvõképtelen.\\
+b) Kiskorú személy is lehet korlátozottan cselekvõképes.\\
+\uline {c) A kiskorú személy házasságkötése érvénytelen.}\\
+d) Mindhárom elõzõ állítás igaz.
+\end{tcolorbox}
+
+%46. 
+\begin{tcolorbox}[title={46. Kérdés}]
+Mit nem tehet meg önállóan a korlátozottan cselekvõképes kiskorú?
+\tcblower
+\uline {a) Tetszõleges értékû ajándékot adhat.}\\
+b) Tetszõleges értékû ajándékot elfogadhat.\\
+c) Rendelkezhet munkával szerzett jövedelmével.\\
+d) Mindhárom fenti jognyilatkozatot megteheti önállóan.
+\end{tcolorbox}
+
+%47. 
+\begin{tcolorbox}[title={47. Kérdés}]
+Melyik nem tartozik a gyám feladatai közé?
+\tcblower
+a) A gyermek gondozása, nevelése.\\
+b) A gyermek vagyonának kezelése.\\
+c) A gyermek törvényes képviselete.\\
+\uline {d) Mindhárom fenti a gyám feladatai közé tartozik.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%48. 
+\begin{tcolorbox}[title={48. Kérdés}]
+Melyikkel nem feltétlenül kell rendelkeznie a jogi személynek?
+\tcblower
+a) Székhellyel.\\
+b) Saját vagyonnal.\\
+\uline {c) Telephellyel.}\\
+d) Képviselõvel.
+\end{tcolorbox}
+
+%49. 
+\begin{tcolorbox}[title={49. Kérdés}]
+Ki felel a jogi személy tartozásaiért?
+\tcblower
+a) A vezetõ tisztségviselõ.\\
+b) A döntéshozó szerv.\\
+c) A tagok és alapítók.\\
+\uline {d) Egyik sem.}
+\end{tcolorbox}
+
+%50. 
+\begin{tcolorbox}[title={50. Kérdés}]
+Mikor jön létre a jogi személy?
+\tcblower
+a) A létesítõ okirat aláírásakor.\\
+b) A bejegyzési kérelem bírósághoz történõ benyújtásakor.\\
+\uline {c) A bírósági nyilvántartásba vétel megtörténtekor.}\\
+d) A bírósági határozat kézbesítésekor.
+\end{tcolorbox}
+
+%51. 
+\begin{tcolorbox}[title={51. Kérdés}]
+Ki látja el a jogi személy tulajdonosainak érdekvédelmét?
+\tcblower
+a) A könyvvizsgáló.\\
+b) A vezetõ tisztségviselõ.\\
+\uline {c) A felügyelõbizottság.}\\
+d) Egyik sem.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%52. 
+\begin{tcolorbox}[title={52. Kérdés}]
+Ki látja el a jogi személy törvényes mûködésének felügyeletét?
+\tcblower
+a) Az ügyészség.\\
+b) A felügyelõbizottság.\\
+\uline {c) A nyilvántartó bíróság.}\\
+d) Egyik sem.
+\end{tcolorbox}
+
+%53.
+\begin{tcolorbox}[title={53. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Összeolvadásnál a korábbi jogi személyek megszûnnek.\\
+\uline {b) Kiválásnál a jogi személy megszûnik.}\\
+c) Különválásnál a jogi személy megszûnik.\\
+d) Átalakulásnál a korábbi jogi személy megszûnik.
+\end{tcolorbox}
+
+%54. 
+\begin{tcolorbox}[title={54. Kérdés}]
+Melyik nem tartozik a (jogi személy) jogutód nélküli megszûnés esetei közé?
+\tcblower
+a) A tagok kimondják a megszûnést.\\
+b) A létesítõ okiratban meghatározott idõ eltelik.\\
+\uline {c) A jogi személy tartozása meghaladja a vagyonát.}\\
+d) A jogosult szerv megszünteti.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%55. 
+\begin{tcolorbox}[title={55. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Alapítvány létrehozásához legalább 10 alapító szükséges.\\
+b) Az egyesület megszûnik, ha tagjainak száma tartósan nem éri el a 12 fõt.\\
+c) Az egyesület átalakulhat alapítvánnyá.\\
+\uline {d) Egyik fenti állítás sem igaz.}
+\end{tcolorbox}
+
+%56.
+\begin{tcolorbox}[title={56. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Alapítvány létrehozásához legalább 10 alapító szükséges.\\
+\uline {b) Az egyesület megszûnik, ha tagjainak száma tartósan nem éri el a 10 fõt.}\\
+c) Az alapítvány átalakulhat egyesületté.\\
+d) Egyik fenti állítás sem igaz.
+\end{tcolorbox}
+
+%57.
+\begin{tcolorbox}[title={57. Kérdés}]
+Egyesületnél mely esetben kötelezõ a felügyelõbizottság létrehozása?
+\tcblower
+a) Ha a tagok több, mint negyede nem természetes személy.\\
+\uline {b) Ha a tagok létszáma az 50 fõt meghaladja.}\\
+c) Ha a könyvvizsgáló ezt kéri.\\
+d) Egyik fenti esetben sem kötelezõ.
+\end{tcolorbox}
+
+%58.
+\begin{tcolorbox}[title={58. Kérdés}]
+Egyesületnél mely esetben kötelezõ a felügyelõbizottság létrehozása?
+\tcblower
+\uline {a) Ha a tagok több, mint fele nem természetes személy.}\\
+b) Ha a tagok létszáma az 50 fõt meghaladja.\\
+c) Ha a könyvvizsgáló ezt kéri.\\
+d) Egyik fenti esetben sem kötelezõ.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%59. 
+\begin{tcolorbox}[title={59. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Alapítvány nem, de egyesület létrehozható gazdasági tevékenység folytatására.\\
+b) Egyesület nem, de alapítvány létrehozható gazdasági tevékenység folytatására.\\
+\uline {c) Sem egyesület, sem alapítvány nem hozható létre gazdasági tevékenység folytatására.}\\
+d) Egyesület és alapítvány is létrehozható gazdasági tevékenység folytatására.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 04 Tarsasagi jog}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+%60. 
+\begin{tcolorbox}[title={60. Kérdés}]
+Melyik jellemzõ a kontinentális (német) társasági modellre?
+\tcblower
+a) Erõsen megosztott a tulajdonosi szerkezet.\\
+b) Csekély a társasági formaválaszték.\\
+\uline {c) A társasági szervek élesen elkülönülnek egymástól.}\\
+d) Egyik sem jellemzõ.
+\end{tcolorbox}
+
+%61. 
+\begin{tcolorbox}[title={61. Kérdés}]
+Melyik nem jellemzõ az angol-amerikai társasági modellre?
+\tcblower
+a) A társasági jog szorosan összefonódik a tõkepiac intézményeivel.\\
+b) A társaságnak egységes vezetõ szerve van.\\
+\uline {c) A könyvvizsgáló szerepe és felelõssége csekély.}\\
+d) Mindegyik fenti állítás jellemzõ rá.
+\end{tcolorbox}
+
+%62.
+\begin{tcolorbox}[title={62. Kérdés}]
+Az alábbiak közül melyik szolgálja a közérdeket a társasági jogban?
+\tcblower
+a) A diszpozitív szabályozás.\\
+\uline {b) A cégnyilvánosság elve.}\\
+c) A választott bírósági eljárás igénybevételének lehetõsége.\\
+d) Egyik sem.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%63. 
+\begin{tcolorbox}[title={63. Kérdés}]
+Melyik társasági forma nem hozható létre egyszemélyes gazdasági társaságként?
+\tcblower
+a) Egyszemélyes korlátolt felelõsségû társaság.\\
+\uline {b) Egyszemélyes betéti társaság.}\\
+c) Egyszemélyes részvénytársaság.\\
+d) Mindhárom forma létrehozható.
+\end{tcolorbox}
+
+%64.
+\begin{tcolorbox}[title={64. Kérdés}]
+Melyik társasági forma hozható létre egyszemélyes gazdasági társaságként?
+\tcblower
+a) Egyszemélyes betéti társaság.\\
+\uline {b) Egyszemélyes korlátolt felelõsségû társaság.}\\
+c) Egyszemélyes közkereseti társaság.\\
+d) Egyik sem hozható létre.
+\end{tcolorbox}
+
+%65. 
+\begin{tcolorbox}[title={65. Kérdés}]
+Hány tag alapíthat közkereseti társaságot?
+\tcblower
+a) Legalább egy beltag.\\
+b) Legalább egy beltag és egy kültag.\\
+\uline {c) Legalább két tag.}\\
+d) Legalább két beltag.
+\end{tcolorbox}
+
+%66.
+\begin{tcolorbox}[title={66. Kérdés}]
+Milyen célt szolgál a társasági formakényszer?
+\tcblower
+a) A hitelezõk védelmét.\\
+b) A kisebbségi jogok védelmét.\\
+c) A társulási szabadság érvényre jutását.\\
+\uline {d) A közérdeket.}
+\end{tcolorbox}
+ 
+\end{frame}
+
+
+\begin{frame}
+
+%67. 
+\begin{tcolorbox}[title={67. Kérdés}]
+Hányféle társasági formában alapítható gazdasági társaság? Sorolja is fel õket.
+\tcblower
+a) 3, a következõk:\\
+\uline {-b) 4, a következõk: Kkt., Bt., Kft., Zrt.}\\
+c) 5, a következõk:\\
+d) Egyik fenti válasz sem megfelelõ.
+\end{tcolorbox}
+
+%68. 
+\begin{tcolorbox}[title={68. Kérdés}]
+Melyik gazdasági társaság nem rendelkezik jogi személyiséggel?
+\tcblower
+a) A korlátolt felelõsségû társaság.\\
+b) A betéti társaság.\\
+\uline {c) A részvénytársaság.}\\
+d) Mindegyik rendelkezik.
+\end{tcolorbox}
+
+%69.
+\begin{tcolorbox}[title={69. Kérdés}]
+Az alábbiak közül melyik nem lehet apport gazdasági társaság alapítása során?
+\tcblower
+a) Egy személyautó.\\
+b) Egy találmány.\\
+\uline {c) Szerzõdésen alapuló követelés.}\\
+d) A fentiek mindegyike lehet apport.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%70. 
+\begin{tcolorbox}[title={70. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Közkereseti társaság nem lehet egy korlátolt felelõsségû társaságnak tagja.\\
+\uline {b) Betéti társaság nem lehet egy közkereseti társaságnak tagja.}\\
+c) Korlátolt felelõsségû társaság nem lehet egy betéti társaságnak beltagja.\\
+d) Részvénytársaságnak csak természetes személyek lehetnek a tagjai.
+\end{tcolorbox}
+
+%71. 
+\begin{tcolorbox}[title={71. Kérdés}]
+Melyiket nem kezdeményezhetik a G.T. szavazati jogok 5%-ával rendelkezõ tagjai?
+\tcblower
+a) Egyedi könyvvizsgálatot.\\
+b) A legfõbb szerv összehívását.\\
+\uline {c) Egy tag kizárását.}\\
+d) A társaság igényének érvényesítését egy taggal szemben.
+\end{tcolorbox}
+
+%72. 
+\begin{tcolorbox}[title={72. Kérdés}]
+Kik szavazhatnak a gazdasági társaság legfõbb szervének ülésén?
+\tcblower
+\uline {a) A társaság tagjai.}\\
+b) A társaság tagjai és a vezetõ tisztségviselõ.\\
+c) A tagok és a felügyelõ bizottság tagjai.\\
+d) A tagok és a cégvezetõk.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%73. 
+\begin{tcolorbox}[title={73. Kérdés}]
+Melyik tartozik a gazdasági társaság felügyelõbizottságának feladatai közé?
+\tcblower
+a) A vezetõ tisztségviselõ megválasztása és visszahívása.\\
+b) A könyvvizsgáló ellenõrzése.\\
+\uline {c) Az ügyvezetés ellenõrzése.}\\
+d) A beszámoló elkészítése.
+\end{tcolorbox}
+
+%74. 
+\begin{tcolorbox}[title={74. Kérdés}]
+A gazdasági társaság melyik szerve kezdeményezheti egy tag kizárását?
+\tcblower
+a) A felügyelõ bizottság.\\
+\uline {b) A legfõbb szerv.}\\
+c) A vezetõ tisztségviselõ.\\
+d) Egyik sem, mert tagot nem lehet kizárni.
+\end{tcolorbox}
+
+%75.
+\begin{tcolorbox}[title={75. Kérdés}]
+Melyik szerv dönt a társaság jogutód nélküli megszûnésérõl?
+\tcblower
+\uline {a) A legfõbb szerv.}\\
+b) A felügyelõ bizottság.\\
+c) A vezetõ tisztségviselõ.\\
+d) A könyvvizsgáló. 
+\end{tcolorbox}
+
+%76. 
+\begin{tcolorbox}[title={76. Kérdés}]
+Melyik állítás hamis a Kft-re vonatkozóan?
+\tcblower
+a) Kft. esetén a tagok törzsbetétei különbözõ mértékûek lehetnek.\\
+b) Az egyes törzsbetétek mértéke legalább 100.000 Ft.\\
+\uline {c) A törzstbetétek összege a törzstõke, melynek minimális mértéke 1 millió Ft.}\\
+d) Minden tagnak egy törzsbetéte lehet.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%77. 
+\begin{tcolorbox}[title={77. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+\uline {a) A Bt. alaptõkéje nem lehet kevesebb, mint 100.000 Ft.}\\
+b) A Zrt. alaptõkéje nem lehet kevesebb, mint 5 millió Ft.\\
+c) Az Nyrt. alaptõkéje nem lehet kevesebb, mint 20 millió Ft.\\
+d) A közkereseti társaság alaptõkéjére nincs minimális elõírás.
+\end{tcolorbox}
+
+%78. 
+\begin{tcolorbox}[title={78. Kérdés}]
+Kinek a tulajdona a betéti társaság vagyona?
+\tcblower
+a) A beltagok közös tulajdona.\\
+b) Valamennyi tag közös tulajdona.\\
+\uline {c) A társaság tulajdona.}\\
+d) Az alapító tagok közös tulajdona.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 05 Egyeb jogalanyok}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+
+%79.
+\begin{tcolorbox}[title={79. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Az egyesülés jogi személyiséggel rendelkezik.\\
+\uline {b) Az egyesülés vagyonát meghaladó tartozásaiért a tagok nem felelnek.}\\
+c) Az egyesülés saját nyereségre nem törekszik.\\
+d) Az egyesülés célja a tagok tevékenységének összehangolása.
+\end{tcolorbox}
+
+%80.
+\begin{tcolorbox}[title={80. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+\uline {a) A szövetkezet tagjainak többsége természetes személy.}\\
+b) A szövetkezet valamennyi tagjának személyes közremûködést kell vállalnia.\\
+c) Szövetkezeti jogvitára választott-bírósági eljárás nem köthetõ ki.\\
+d) A szövetkezet nem rendelkezik jogi személyiséggel.
+\end{tcolorbox}
+
+%81. 
+\begin{tcolorbox}[title={81. Kérdés}]
+Hány személy alapíthat szövetkezetet?
+\tcblower
+a) Legalább 2 személy.\\
+\uline {b) Legalább 7 személy.}\\
+c) Legalább 10 személy.\\
+d) Egy személy is alapíthat.
+\end{tcolorbox}
+
+%82. 
+\begin{tcolorbox}[title={82. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) A szövetkezet közgyûlésén minden tagnak egy szavazata van.\\
+\uline {b) Szövetkezetnél kötelezõ a könyvvizsgáló kinevezése.}\\
+c) Szövetkezetnél kötelezõ a felügyelõbizottság mûködése. \\
+d) A szövetkezet ügyvezetését az igazgatóság látja el.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%83.
+\begin{tcolorbox}[title={83. Kérdés}]
+Melyik szervezet nem vehet részt tagként vállalatcsoportban?
+\tcblower
+a) Korlátolt felelõsségû társaság.\\
+b) Szövetkezet.\\
+c) Egyesülés.\\
+\uline {d) Betéti társaság.}
+\end{tcolorbox}
+
+%84. 
+\begin{tcolorbox}[title={84. Kérdés}]
+Melyik állítás hamis a vállalatcsoportra vonatkozóan?
+\tcblower
+a) Legalább egy uralkodó tag és 3 ellenõrzött tag szükséges hozzá.\\
+b) A cégbíróság a cégnyilvántartásba bejegyzi.\\
+\uline {c) Az uralkodó tag nem utasíthatja az ellenõrzött tagokat.}\\
+d) Önálló jogi személyiséggel nem rendelkezik.
+\end{tcolorbox}
+
+%85. 
+\begin{tcolorbox}[title={85. Kérdés}]
+Az alábbiak közül ki nem lehet egyéni vállalkozó?
+\tcblower
+a) 17 éves, házasságot kötött személy.\\
+\uline {b) Közkereseti társaság tagja.}\\
+c) Korlátolt felelõsségû társaság tagja.\\
+d) Betéti társaság kültagja.
+\end{tcolorbox}
+
+%86. 
+\begin{tcolorbox}[title={86. Kérdés}]
+Melyik szervezet vezeti az egyéni vállalkozók nyilvántartását?
+\tcblower
+\uline {a) A Belügyminisztérium.}\\
+b) A cégbíróság.\\
+c) A törvényszék.\\
+d) A céginformációs szolgálat.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%87. 
+\begin{tcolorbox}[title={87. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Az egyéni vállalkozónak nem lehet alkalmazottja.\\
+b) A tevékenység csak egyéni vállalkozói igazolvány kiállítása után végezhetõ.\\
+c) Az egyéni vállalkozó a kötelezettségeiért csak vállalkozói vagyonával felel. \\
+\uline {d) Az egyéni vállalkozó köteles személyesen közremûködni a tevékenység folytatásában.}
+\end{tcolorbox}
+
+%88. 
+\begin{tcolorbox}[title={88. Kérdés}]
+Melyik állítás hamis az egyéni cégre vonatkozóan?
+\tcblower
+a) Az egyéni cég jogképes.\\
+\uline {b) Az egyéni cég jogi személyiséggel rendelkezik.}\\
+c) Az egyéni céget a cégbíróság tartja nyilván.\\
+d) Az egyéni cégnek cégjegyzékszáma van.
+\end{tcolorbox}
+
+%89.
+\begin{tcolorbox}[title={89. Kérdés}]
+Ki alapíthat egyéni céget?
+\tcblower
+a) Minden nagykorú, cselekvõképes személy.\\
+b) Minden nagykorú, cselekvõképes magyar állampolgár.\\
+\uline {c) Aki az egyéni vállalkozói nyilvántartásban szerepel.}\\
+d) Minden nagykorú, cselekvõképes személy, aki nem korlátlanul felelõs tagja G.T.-nak.
+\end{tcolorbox}
+
+%90.
+\begin{tcolorbox}[title={90. Kérdés}]
+Az alábbiak közül melyik nem lehet egy egyéni cég alapításkori jegyzett tõkéje?
+\tcblower
+a) 100.000 Ft plusz egy 200.000 Ft értékû autó.\\
+\uline {b) 100.000 Ft plusz egy 100.000 Ft értékû autó.}\\
+c) Egy 300.000 Ft értékû autó. \\
+d) 100.000 Ft.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%91.
+\begin{tcolorbox}[title={91. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) A köztestület közfeladatot lát el.\\
+\uline {b) A köztestületet a tagjai szabad elhatározásukkal hozzák létre.}\\
+c) A köztestület jogi személy.\\
+d) A Magyar Orvosi Kamara is egy köztestület.
+\end{tcolorbox}
+
+%92. 
+\begin{tcolorbox}[title={92. Kérdés}]
+Az alábbiak közül melyik nem köztestület?
+\tcblower
+a) Magyar Tudományos Akadémia\\
+b) Magyar Ügyvédi Kamara\\
+\uline {c) Magyar Labdarúgó Szövetség}\\
+d) Magyar Kereskedelmi és Iparkamara
+\end{tcolorbox}
+
+%93. 
+\begin{tcolorbox}[title={93. Kérdés}]
+Az alábbiak közül melyik nem lehet közhasznú státuszú?
+\tcblower
+\uline {a) A szövetkezet.}\\
+b) Az egyesület.\\
+c) Az alapítvány.\\
+d) A nonprofit Kft.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 06 Cegeljaras}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+%94. 
+\begin{tcolorbox}[title={94. Kérdés}]
+Az alábbi jogalanyok közül melyiknek nincs cégjegyzékszáma?
+\tcblower
+a) Az egyesülésnek.\\
+b) A szövetkezetnek.\\
+\uline {c) Az egyesületnek.}\\
+d) Az egyéni cégnek.
+\end{tcolorbox}
+
+%95. 
+\begin{tcolorbox}[title={95. Kérdés}]
+Az alábbiak közül melyik nem a cégbíróság feladata?
+\tcblower
+a) Cégbejegyzési eljárás lefolytatása.\\
+\uline {b) Felszámolási eljárás lefolytatása.}\\
+c) Döntés a közhasznúvá minõsítésrõl.\\
+d) Törvényességi felügyeleti eljárás lefolytatása cégekkel kapcsolatban.
+\end{tcolorbox}
+
+%96. 
+\begin{tcolorbox}[title={96. Kérdés}]
+Az alábbi esetek közül melyik fordulhat elõ egy céggel kapcsolatban?
+\tcblower
+a) Székhelye Vácon van, telephelye nincs, fióktelepe Vácon van.\\
+b) Székhelye nincs, telephelye Vácon van, fióktelepe Vácon van.\\
+\uline {c) Székhelye Vácon van, telephelye Vácon van, fióktelepe nincs.}\\
+d) Székhelye Vácon van, telephelye Vácon van, fióktelepe Vácon van.
+\end{tcolorbox}
+
+%97. 
+\begin{tcolorbox}[title={97. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) A cégbejegyzési kérelmet csak elektronikus úton lehet benyújtani.\\
+b) A cégbejegyzési eljárás nem-peres eljárás. \\
+c) A kérelmet a létesítõ okirat aláírásától számított 30 napon belül kell benyújtani.\\
+\uline {d) A cégbejegyzési eljárás során a jogi képviselet nem kötelezõ.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%98.
+\begin{tcolorbox}[title={98. Kérdés}]
+Ki dönt egy cég esetén a végelszámolásról?
+\tcblower
+a) A cégbíróság.\\
+\uline {b) A cég legfõbb szerve.}\\
+c) A vezetõ tisztségviselõ.\\
+d) A hitelezõ(k).
+\end{tcolorbox}
+
+%99. 
+\begin{tcolorbox}[title={99. Kérdés}]
+Mikor van helye egyszerûsített cégbejegyzési eljárásnak?
+\tcblower
+a) Egyéni cég és Bt. alapításakor.\\
+b) Ha a cég alaptõkéje nem haladja meg a 100.000 Ft-ot.\\
+\uline {c) Ha a létesítõ okirat szerzõdésminta alapján készült.}\\
+d) Ha a tagok száma egy fõ.
+\end{tcolorbox}
+
+%100. 
+\begin{tcolorbox}[title={100. Kérdés}]
+Mely cégeknek kell bankszámlával rendelkeznie?
+\tcblower
+a) Csak a Zrt.-nek és az Nyrt.-nek.\\
+b) A gazdasági társaságoknak.\\
+c) A Zrt.-nek, Nyrt.-nek és a Kft.-nek.\\
+\uline {d) Minden cégnek bankszámlával kell rendelkeznie.}
+\end{tcolorbox}
+
+%101. 
+\begin{tcolorbox}[title={101. Kérdés}]
+Mennyi egy Zrt. egyszerûsített cégbejegyzési eljárásának illetéke?
+\tcblower
+a) 10.000 Ft\\
+\uline {b) 50.000 Ft}\\
+c) 100.000 Ft\\
+d) Az eljárás illetékmentes.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%102.
+\begin{tcolorbox}[title={102. Kérdés}]
+Mennyi egy Kft. rendes (nem egyszerûsített) cégbejegyzési eljárásának illetéke?
+\tcblower
+a) 10.000 Ft\\
+b) 50.000 Ft\\
+c) 100.000 Ft\\
+\uline {d) Az eljárás illetékmentes.}
+\end{tcolorbox}
+
+%103.
+\begin{tcolorbox}[title={103. Kérdés}]
+Ki képviseli a céget a végelszámolás kezdõ idõpontja után?
+\tcblower
+a) A vezetõ tisztségviselõ.\\
+b) A vagyonfelügyelõ.\\
+c) A felügyelõbizottság elnöke.\\
+\uline {d) A végelszámoló.}
+\end{tcolorbox}
+
+%104. 
+\begin{tcolorbox}[title={104. Kérdés}]
+Melyik eljárásnak nem célja a cég jogutód nélküli megszüntetése?
+\tcblower
+a) A felszámolási eljárásnak.\\
+\uline {b) A csõdeljárásnak.}\\
+c) A végelszámolásnak.\\
+d) Mindegyiknek az a célja.
+\end{tcolorbox}
+
+%105. 
+\begin{tcolorbox}[title={105. Kérdés}]
+Mi a csõdeljárás célja?
+\tcblower
+a) A fizetésképtelen adós cég jogutód nélküli megszüntetése.\\
+b) A nem fizetésképtelen cég jogutód nélküli megszüntetése.\\
+\uline {c) Az adós cég fizetési haladékot kap a hitelezõkkel való megegyezés céljából.}\\
+d) Az adós cég vagyonának hatósági árverésen való értékesítése.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%106. 
+\begin{tcolorbox}[title={106. Kérdés}]
+Mi a végelszámolás célja?
+\tcblower
+a) A fizetésképtelen adós cég jogutód nélküli megszüntetése.\\
+\uline {b) A nem fizetésképtelen cég jogutód nélküli megszüntetése.}\\
+c) Az adós cég fizetési haladékot kap a hitelezõkkel való megegyezés céljából.\\
+d) Az adós cég vagyonának hatósági árverésen való értékesítése.
+\end{tcolorbox}
+
+%107. 
+\begin{tcolorbox}[title={107. Kérdés}]
+Mi a felszámolási eljárás célja?
+\tcblower
+\uline {a) A fizetésképtelen adós cég jogutód nélküli megszüntetése.}\\
+b) A nem fizetésképtelen cég jogutód nélküli megszüntetése.\\
+c) Az adós cég fizetési haladékot kap a hitelezõkkel való megegyezés céljából.\\
+d) Az adós cég vagyonának hatósági árverésen való értékesítése.
+\end{tcolorbox}
+
+%108.
+\begin{tcolorbox}[title={108. Kérdés}]
+Melyik eljárás indul meg a cégbírósághoz benyújtott változásbejegyzési kérelemmel?
+\tcblower
+a) Csõdeljárás.\\
+\uline {b) Végelszámolás.}\\
+c) Felszámolási eljárás.\\
+d) A fentiek közül egyik sem.
+\end{tcolorbox}
+
+%109. 
+\begin{tcolorbox}[title={109. Kérdés}]
+Melyik eljárást indíthatja meg a hitelezõ az adós cég ellen?
+\tcblower
+a) A végelszámolást.\\
+b) A csõdeljárást.\\
+\uline {c) A felszámolási eljárást.}\\
+d) Kényszer-törlési eljárást.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%110. 
+\begin{tcolorbox}[title={110. Kérdés}]
+Melyik eljárást milyen fórumon kell megindítani? Válassza ki a helyeset.
+\tcblower
+a) Csõdeljárást a cégbíróságon.\\
+\uline {b) Felszámolási eljárást a rendes bíróságon (törvényszéken).}\\
+c) Végelszámolást a rendes bíróságon (törvényszéken).\\
+d) Cégbejegyzési eljárást a rendes bíróságon (törvényszéken).
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 07 Dologi jog}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+
+%111. 
+\begin{tcolorbox}[title={111. Kérdés}]
+Kivel szemben nem illeti meg a birtokvédelem joga a birtokost?
+\tcblower
+a) A tulajdonossal szemben.\\
+b) A hitelezõvel szemben.\\
+\uline {c) Azzal szemben, akitõl a dolgot tilos önhatalommal szerezte meg.}\\
+d) Kivétel nélkül mindenkivel szemben megilleti.
+\end{tcolorbox}
+
+%112.
+\begin{tcolorbox}[title={112. Kérdés}]
+Melyek a birtokvédelem megengedett eszközei?
+\tcblower
+a) Minden esetben a bírósághoz kell fordulni.\\
+b) Minden esetben a jegyzõhöz kell fordulni.\\
+c) Minden esetben a rendõrséghez kell fordulni.\\
+\uline {d) Bírósághoz vagy jegyzõhöz fordulás, speciális esetben önhatalommal való fellépés.}
+\end{tcolorbox}
+
+%113. 
+\begin{tcolorbox}[title={113. Kérdés}]
+Az alábbiak közül melyik nem tartozik a "szükséges költségek" körébe?
+\tcblower
+a) Az állagmegóvásra fordított költségek.\\
+b) A kártól való megóvásra fordított költségek.\\
+\uline {c) A dolog értékét növelõ költségek.}\\
+d) Mindhárom fenti a "szükséges" költségek körébe tartozik.
+\end{tcolorbox}
+
+%114. 
+\begin{tcolorbox}[title={114. Kérdés}]
+Milyen költségei megtérítését követelheti a rosszhiszemû jogalap nélküli birtokos?
+\tcblower
+\uline {a) A dologra fordított szükséges költségei megtérítését.}\\
+b) A dologra fordított hasznos költségei megtérítését.\\
+c) A szükséges és hasznos költségei megtérítését is követelheti.\\
+d) Semmilyen költségei megtérítését nem követelheti.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%115. 
+\begin{tcolorbox}[title={115. Kérdés}]
+Az alábbiak közül melyik nem lehet tulajdonjog tárgya?
+\tcblower
+a) Az elektromos energia (villamos áram).\\
+\uline {b) A szellemi alkotás.}\\
+c) Az állatok.\\
+d) Az értékpapír.
+\end{tcolorbox}
+
+%116. 
+\begin{tcolorbox}[title={116. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+a) Az ingatlan tulajdonosa a használat jogát másnak átengedheti.\\
+b) Az ingatlan tulajdonosa a tulajdonjogát másra átruházhatja.\\
+\uline {c) Az ingatlan tulajdonosa a tulajdonjogával felhagyhat.}\\
+d) Mindhárom elõzõ állítás igaz.
+\end{tcolorbox}
+
+%117. 
+\begin{tcolorbox}[title={117. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Szükséghelyzetben okozott kár esetén a (károsult) tulajdonos kártérítést követelhet.\\
+b) Közérdekû használat esetén a tulajdonost kártérítés illeti meg.\\
+c) Kisajátítás esetén a tulajdonost kártérítés illeti meg.\\
+\uline {d) Mindhárom fenti esetben kártalanítás és nem kártérítés illeti meg a tulajdonost.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%118.
+\begin{tcolorbox}[title={118. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+\uline {a) Jogellenes károkozás esetén a (károsult) tulajdonos kártérítést követelhet.}\\
+b) Közérdekû használat esetén a tulajdonost kártérítés illeti meg.\\
+c) Kisajátítás esetén a tulajdonost kártérítés illeti meg.\\
+d) Mindhárom fenti esetben kártalanítás és nem kártérítés illeti meg a tulajdonost.
+\end{tcolorbox}
+
+%119. 
+\begin{tcolorbox}[title={119. Kérdés}]
+Az alábbiak közül melyik tulajdonszerzési mód származékos?
+\tcblower
+\uline {a) Tulajdon átruházás.}\\
+b) Hatósági árverés útján való tulajdonszerzés.\\
+c) Elbirtoklás.\\
+d) Kisajátítás.
+\end{tcolorbox}
+
+%120.
+\begin{tcolorbox}[title={120. Kérdés}]
+Mikor száll át az ingatlan tulajdonjoga átruházás esetén?
+\tcblower
+a) A szerzõdés megkötésekor.\\
+b) A felek által a szerzõdésben meghatározott idõpontban.\\
+c) A birtokbaadáskor.\\
+\uline {d) Az új tulajdonosnak az ingatlan-nyilvántartásba való bejegyzésével.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%121. 
+\begin{tcolorbox}[title={121. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Kisajátítás csak közérdekû célra lehetséges.\\
+b) Kisajátítani csak ingatlant lehet.\\
+\uline {c) A kisajátítást csak az állam kérheti.}\\
+d) A kisajátítási eljárás során a kisajátítási hatóság tárgyalást tart.
+\end{tcolorbox}
+ 
+%122.
+\begin{tcolorbox}[title={122. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Az ingatlan elbirtoklási ideje 10 év.\\
+\uline {b) Bûncselekménnyel megszerzett dolgon nem következik be az elbirtoklás.}\\
+c) Ingatlan elbirtoklásához a tulajdonjogot az ingatlan-nyilvántartásba be kell jegyezni.\\
+d) Elbirtoklással csak ingó dolog tulajdonjogát lehet megszerezni.
+\end{tcolorbox}
+
+%123. 
+\begin{tcolorbox}[title={123. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Villamoson felejtett dolgon nem lehet találással tulajdont szerezni.\\
+b) Gazdátlan dolgon nem lehet találással tulajdont szerezni.\\
+c) A találó csak akkor válik tulajdonossá, ha a korábbi tulajdonos 1 éven belül nem jelentkezik.\\
+\uline {d) A találás származékos tulajdonszerzési mód.}
+\end{tcolorbox}
+
+%124. 
+\begin{tcolorbox}[title={124. Kérdés}]
+Melyik állítás hamis a zálogjogviszony esetén?
+\tcblower
+\uline {a) A jogviszony alanya a személyes kötelezett és a zálogjogosult.}\\
+b) A zálogtárgy tulajdonosa a zálogkötelezett.\\
+c) A zálogjogosult kielégítési joga akkor nyílik meg, ha a személyes kötelezett nem teljesít. \\
+d) A zálogkötelezett csak a zálogtárggyal felel a zálogjogosultnak. 
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%125. 
+\begin{tcolorbox}[title={125. Kérdés}]
+Melyik állítás hamis a zálogjogviszony esetén?
+\tcblower
+a) A jogviszony alanya a zálogkötelezett és a zálogjogosult.\\
+\uline {b) A zálogtárgy tulajdonosa a zálogjogosult.}\\
+c) A zálogjogosult kielégítési joga akkor nyílik meg, ha a személyes kötelezett nem teljesít. \\
+d) A zálogkötelezett csak a zálogtárggyal felel a zálogjogosultnak. 
+\end{tcolorbox}
+
+%126.
+\begin{tcolorbox}[title={126. Kérdés}]
+Melyik állítás hamis a zálogjogviszony esetén?
+\tcblower
+a) A jogviszony alanya a zálogkötelezett és a zálogjogosult.\\
+b) A zálogtárgy tulajdonosa a zálogkötelezett.\\
+c) A zálogjogosult kielégítési joga akkor nyílik meg, ha a személyes kötelezett nem teljesít. \\
+\uline {d) A zálogkötelezett teljes vagyonával felel a zálogjogosultnak. }
+\end{tcolorbox}
+
+%127. 
+\begin{tcolorbox}[title={127. Kérdés}]
+Melyik állítás hamis a zálogjogviszony esetén?
+\tcblower
+a) Az óvadék is a zálog egy fajtája.\\
+\uline {b) Jelzálogjog csak ingatlanon alapítható.}\\
+c) Kézizálogjog tárgya csak ingó dolog lehet.\\
+d) A személyes kötelezett és a zálogkötelezett lehet ugyanaz a személy.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%128.
+\begin{tcolorbox}[title={128. Kérdés}]
+Melyiket nem teheti meg a haszonélvezeti jog jogosultja?
+\tcblower
+a) A dolgot nem hasznosíthatja.\\
+\uline {b) A haszonélvezeti jogot nem ruházhatja át.}\\
+c) A dolgot nem tarthatja a birtokában.\\
+d) A fenti 3 mindegyikét megteheti.
+\end{tcolorbox}
+
+%129.
+\begin{tcolorbox}[title={129. Kérdés}]
+Az alábbi esetek közül melyikben nem használhatja a birtokos a dolgot?
+\tcblower
+a) Haszonkölcsön esetén.\\
+\uline {b) Kézizálog esetén.}\\
+c) Haszonélvezeti jog esetén.\\
+d) A fenti esetek mindegyikében használhatja.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 08 Kotelmi jog}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+%130.
+\begin{tcolorbox}[title={130. Kérdés}]
+Az alábbiak közül melyik magatartásra nem irányulhat a kötelem?
+\tcblower
+a) Valaminek az adására.\\
+b) Valamilyen tevékenység elvégzésére.\\
+c) Valamitõl való tartózkodásra.\\
+\uline {d) Mindegyik fenti magatartásra irányulhat.}
+\end{tcolorbox}
+
+%131. 
+\begin{tcolorbox}[title={131. Kérdés}]
+Az alábbiak közül melyikbõl nem keletkezhet kötelem?
+\tcblower
+a) Jogalap nélküli gazdagodásból.\\
+b) Személyiségi jog megsértésébõl.\\
+c) Utaló magatartásból.\\
+\uline {d) A fentiek mindegyikébõl keletkezhet.}
+\end{tcolorbox}
+
+%132. 
+\begin{tcolorbox}[title={132. Kérdés}]
+Az alábbiak közül melyik károkozás jogellenes?
+\tcblower
+a) A károsult beleegyezésével okozott kár.\\
+b) Jogtalan támadás elhárítása során a támadónak okozott kár.\\
+c) Szükséghelyzetben okozott kár.\\
+\uline {d) A fentiek egyike sem jogellenes.}
+\end{tcolorbox}
+
+%133. 
+\begin{tcolorbox}[title={133. Kérdés}]
+Az alábbiak közül melyik esetben keletkezik kötelem (kötelezettség)?
+\tcblower
+a) Jogtalan támadás elhárítása során a támadónak okozott kár esetén.\\
+b) A károsult beleegyezésével okozott kár esetén.\\
+\uline {c) Szükséghelyzetben okozott kár esetén.}\\
+d) Egyik esetben sem keletkezik.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%134. 
+\begin{tcolorbox}[title={134. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Kártérítési kötelezettséghez nem szükséges a kár bekövetkezése.\\
+\uline {b) A kár bekövetkezését a károsultnak kell bizonyítania.}\\
+c) Akit személyiségi jogában megsértenek, kártérítést követelhet.\\
+d) Akit személyiségi jogában megsértenek, kártalanítást követelhet. 
+\end{tcolorbox}
+
+%135. 
+\begin{tcolorbox}[title={135. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+\uline {a) A sérelemdíj megállapításához nem szükséges kár bekövetkezése.}\\
+b) A becsületsértésért büntetõeljárásban kérhetõ sérelemdíj.\\
+c) A becsületsértésért megítélt pénzbüntetés a sértettet illeti.\\
+d) A személyiségi jog megsértése bûncselekmény.
+\end{tcolorbox}
+
+%136. 
+\begin{tcolorbox}[title={136. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Az ajándékozás egyoldalú nyilatkozat.\\
+b) Ha valaki nyilvánosan díjat ígér egy teljesítményért, nem köteles azt teljesíteni.\\
+c) Ha valaki közérdekû célra vállal kötelezettséget, az egy szerzõdés az állammal.\\
+\uline {d) A szerzõdés soha nem lehet egyoldalú nyilatkozat.}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%137.
+\begin{tcolorbox}[title={137. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Ha valaki tévedésbõl többet utal át a vételárnál, nem követelheti azt vissza.\\
+b) Ha valaki tévedésbõl többet utal át a vételárnál, az ajándékozásnak minõsül.\\
+\uline {c) Ha valaki tévedésbõl többet utal át, a többletet a másik köteles visszatéríteni.}\\
+d) Ha valaki tévedésbõl többet utal át, a többlet felét visszakövetelheti.
+\end{tcolorbox}
+
+%138. 
+\begin{tcolorbox}[title={138. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Értékpapírt csak írásban, okirati formában lehet kibocsátani.\\
+b) Az értékpapír egy szerzõdés a kibocsátó és a jogosult között.\\
+c) Az értékpapírban foglalt követelés nem átruházható.\\
+\uline {d) A befektetési jegy az értékpapír egyik fajtája.}
+\end{tcolorbox}
+
+%139. 
+\begin{tcolorbox}[title={139. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) A váltó hitelviszonyt megtestesítõ értékpapír.\\
+\uline {b) A kötvény tagsági jogokat megtestesítõ értékpapír.}\\
+c) A részvény tagsági jogokat megtestesítõ értékpapír.\\
+d) A közraktári jegy dologi jogot megtestesítõ értékpapír.
+\end{tcolorbox}
+
+%140. 
+\begin{tcolorbox}[title={140. Kérdés}]
+Az alábbi esetek közül melyikben nem szûnik meg a kötelem (fõ szabály szerint)?
+\tcblower
+a) A szolgáltatás teljesítésével.\\
+b) A kötelezett halálával.\\
+\uline {c) Tartozásátvállalás esetén.}\\
+d) A jogosult jogutód nélküli megszûnése esetén.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%141. 
+\begin{tcolorbox}[title={141. Kérdés}]
+Hányféle formában lehet jognyilatkozatot tenni? Sorolja is fel õket.
+\tcblower
+a) 2, amelyek a következõk:\\
+\uline {b) 3, amelyek a következõk: szóban, írásban, ráutaló magatartással}\\
+c) 4, amelyek a következõk:\\
+d) 5, amelyek a következõk:
+\end{tcolorbox}
+
+%142. 
+\begin{tcolorbox}[title={142. Kérdés}]
+Mikor minõsül a jognyilatkozat írásba foglaltnak?
+\tcblower
+a) Ha a nyilatkozó saját kezûleg írta.\\
+b) Ha két tanú aláírta.\\
+\uline {c) Ha a nyilatkozó aláírta.}\\
+d) Ha ügyvéd aláírta.
+\end{tcolorbox}
+
+%143. 
+\begin{tcolorbox}[title={143. Kérdés}]
+Az alábbiak közül ki nem készíthet közokiratot?
+\tcblower
+\uline {a) Ügyvéd.}\\
+b) Bíróság.\\
+c) Közjegyzõ.\\
+d) Közigazgatási szerv.
+\end{tcolorbox}
+
+%144.
+\begin{tcolorbox}[title={144. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+\uline {a) A képviseleti jog alapulhat vállalkozási szerzõdésen.}\\
+b) A képviseleti jog alapulhat létesítõ okiraton.\\
+c) A képviseleti jog alapulhat meghatalmazáson.\\
+d) A képviseleti jog alapulhat jogszabályon. 
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%145. 
+\begin{tcolorbox}[title={145. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Jognyilatkozatot csak személyesen lehet tenni.\\
+b) A képviselõ jognyilatkozata a képviselõt jogosítja és kötelezi.\\
+\uline {c) A meghatalmazás egyoldalú jognyilatkozat.}\\
+d) A meghatalmazás szóban nem érvényes.
+\end{tcolorbox}
+
+%146. 
+\begin{tcolorbox}[title={146. Kérdés}]
+Hány év alatt évülnek el a követelések (fõ szabály szerint)?
+\tcblower
+a) 3 év alatt.\\
+\uline {b) 5 év alatt. }\\
+c) 1 év alatt.\\
+d) A követelések nem évülnek el.
+\end{tcolorbox}
+
+%147.
+\begin{tcolorbox}[title={147. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Elévült követelés bírósági eljárásban csak jogi képviselettel érvényesíthetõ.\\
+b) Ha valaki elévült követelést teljesít, utóbb visszakövetelheti azt.\\
+c) A fogadásból eredõ követelés bíróság elõtt 1 évig érvényesíthetõ.\\
+\uline {d) Mindhárom fenti állítás hamis.}
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 09 Szerzodesek}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+%148. 
+\begin{tcolorbox}[title={148. Kérdés}]
+Melyik állítás a legpontosabb a szerzõdésre vonatkozóan?
+\tcblower
+a) A szerzõdés a felek egyidejû és egybehangzó jognyilatkozata.\\
+b) A szerzõdés a felek kölcsönös és egyidejû jognyilatkozata.\\
+\uline {c) A szerzõdés a felek kölcsönös és egybehangzó jognyilatkozata.}\\
+d) A szerzõdés a felek kölcsönös, egybehangzó és egyidejû jognyilatkozata.
+\end{tcolorbox}
+
+%149.
+\begin{tcolorbox}[title={149. Kérdés}]
+Az alábbiak közül melyik nem tartozik a szerzõdési jog legfontosabb alapelvei közé?
+\tcblower
+a) A szerzõdési szabadság elve.\\
+b) A visszterhesség vélelme.\\
+c) Az együttmûködési és tájékoztatási kötelezettség.\\
+\uline {d) A gyengébb fél érdekei védelmének az elve.}
+\end{tcolorbox}
+
+%150. 
+\begin{tcolorbox}[title={150. Kérdés}]
+Mi történik ha a felek szerzõdési nyilatkozatai lényeges kérdésben eltérnek?
+\tcblower
+a) A szerzõdés megtámadható lesz.\\
+b) A szerzõdés érvénytelen lesz.\\
+\uline {c) A szerzõdés nem jön létre.}\\
+d) A bíróság ítéletével kiküszöböli az eltérést.
+\end{tcolorbox}
+
+%151.
+\begin{tcolorbox}[title={151. Kérdés}]
+Melyik állítás hamis az ajánlatra vonatkozóan?
+\tcblower
+a) Aki ajánlatot tesz, meghatározott ideig kötve van az ajánlathoz.\\
+\uline {b) Az ajánlati kötöttség idejét a felek közösen határozzák meg.}\\
+c) Ha a másik fél határidõben elfogadja az ajánlatot, a szerzõdés létrejön.\\
+d) Ha a másik fél eltérõ tartalommal fogadja el, az új ajánlatnak minõsül.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%152. 
+\begin{tcolorbox}[title={152. Kérdés}]
+Az alábbiak közül melyikbõl nem származhat szerzõdéskötési kötelezettség?
+\tcblower
+a) Jogszabályból.\\
+b) Versenyeztetési eljárásból.\\
+c) Elõszerzõdésbõl.\\
+\uline {d) Mindháromból fentibõl származhat.}
+\end{tcolorbox}
+
+%153.
+\begin{tcolorbox}[title={153. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Az Általános Szerzõdési Feltételeket a felek elõre, közösen határozzák meg.\\
+\uline {b) A fogyasztó csak természetes személy lehet.}\\
+c) Távollévõk között kötött szerzõdés létrejöhet két vállalkozás között is.\\
+d) Fogyasztói szerzõdés esetén a fogyasztót 14 napon belül elállási jog illeti meg.
+\end{tcolorbox}
+
+%154. 
+\begin{tcolorbox}[title={154. Kérdés}]
+Az érvénytelenségnek hányféle formája van a polgári jogban, és melyek ezek?
+\tcblower
+a) 3, éspedig a következõk:\\
+\uline {-b) 2, éspedig a következõk: semmisség, megtámadhatóság}\\
+c) 1, éspedig a következõ:\\
+d) A polgári jogban nem létezik az érvénytelenség fogalma.
+\end{tcolorbox}
+
+%155. 
+\begin{tcolorbox}[title={155. Kérdés}]
+Az alábbiak közül melyik a célzott joghatás hibája?
+\tcblower
+a) A tévedés.\\
+b) A megtévesztés.\\
+\uline {c) A jó erkölcsbe ütközés.}\\
+d) A jogellenes fenyegetés.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%156.
+\begin{tcolorbox}[title={156. Kérdés}]
+Az alábbi esetek közül melyikben merül fel a szerzõdési akarat hibája?
+\tcblower
+\uline {a) A megtévesztéssel kötött szerzõdés.}\\
+b) Az uzsorás szerzõdés.\\
+c) A jogszabályba ütközõ szerzõdés.\\
+d) A nem megfelelõ formában megkötött szerzõdés.
+\end{tcolorbox}
+
+%157. 
+\begin{tcolorbox}[title={157. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) A jogszabályba ütközõ szerzõdés megtámadható.\\
+b) A jogellenes fenyegetéssel kötött szerzõdés semmis.\\
+\uline {c) Az uzsorás szerzõdés semmis.}\\
+d) Mindhárom fenti állítás hamis.
+\end{tcolorbox}
+
+%158.
+\begin{tcolorbox}[title={158. Kérdés}]
+Az alábbiak közül melyiknek a jogkövetkezménye a szerzõdés semmissége?
+\tcblower
+a) A feltûnõ értékaránytalansággal kötött szerzõdés.\\
+b) A megtévesztéssel kötött szerzõdés.\\
+\uline {c) A jó erkölcsbe ütközõ szerzõdés.}\\
+d) A jogellenes fenyegetéssel kötött szerzõdés.
+\end{tcolorbox}
+
+%159.
+\begin{tcolorbox}[title={159. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Érvénytelen szerzõdés alapján a teljesítés nem követelhetõ.\\
+b) Hatálytalan szerzõdés alapján a teljesítés nem követelhetõ.\\
+\uline {c) Érvénytelen szerzõdés alapján teljesített szolgáltatást nem lehet visszakövetelni.}\\
+d) Érvénytelen szerzõdés utóbb érvényessé válhat a felek akaratából.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%160. 
+\begin{tcolorbox}[title={160. Kérdés}]
+Szerzõdésszegés esetén melyiket nem teheti meg a sérelmet szenvedett fél?
+\tcblower
+a) Továbbra is követelheti a teljesítést.\\
+b) Fedezeti szerzõdést köthet és követelheti annak költségeit.\\
+\uline {c) A nála levõ, a másik fél tulajdonát képezõ dologból kielégítést kereshet.}\\
+d) A saját szolgáltatását visszatarthatja.
+\end{tcolorbox}
+
+%161.
+\begin{tcolorbox}[title={161. Kérdés}]
+Az alábbiak közül melyik nem tartozik a szerzõdésszegés nevesített esetei közé?
+\tcblower
+a) A késedelem.\\
+\uline {b) Az elállás.}\\
+c) A lehetetlenülés.\\
+d) A teljesítés megtagadása.
+\end{tcolorbox}
+
+%162.
+\begin{tcolorbox}[title={162. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Ha jogosult késedelembe esik a kárveszély átszáll rá.\\
+b) Ha a hiba a teljesítés után keletkezett, szavatossági igény nem érvényesíthetõ.\\
+\uline {c) Ha a teljesítés lehetetlenné válik, a szerzõdés megtámadható.}\\
+d) A kellékszavatossági igények 1 év alatt elévülnek.
+\end{tcolorbox}
+
+%163.
+\begin{tcolorbox}[title={163. Kérdés}]
+Mennyi a kellékszavatossági igények elévülési ideje fogyasztói szerzõdés esetén?
+\tcblower
+a) 1 év\\
+\uline {b) 2 év}\\
+c) 5 év\\
+d) Fogyasztói szerzõdés esetén ezen igények nem évülnek el.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%164.
+\begin{tcolorbox}[title={164. Kérdés}]
+Az alábbiak közül melyiket nem választhatja a fogyasztó termékszavatossági igényként?
+\tcblower
+a) A kijavítást.\\
+b) A kicserélést.\\
+\uline {c) Az elállást.}\\
+d) Mindhármat választhatja.
+\end{tcolorbox}
+
+%165.
+\begin{tcolorbox}[title={165. Kérdés}]
+Melyik állítás igaz a jótállásra vonatkozóan?
+\tcblower
+a) A jótállás minden szerzõdés esetén megilleti a szolgáltatás jogosultját.\\
+b) A szavatosság és a jótállás ugyanazt jelenti.\\
+c) A jótállási idõ nem lehet hosszabb 5 évnél.\\
+\uline {d) A jótállás lehet önkéntes vagy kötelezõ.}
+\end{tcolorbox}
+
+%166. 
+\begin{tcolorbox}[title={166. Kérdés}]
+Az alábbi alanyváltozások közül melyik háromoldalú megállapodás?
+\tcblower
+a) A jogátruházás.\\
+b) Az engedményezés.\\
+\uline {c) A tartozásátvállalás.}\\
+d) Egyik sem.
+\end{tcolorbox}
+
+%167. 
+\begin{tcolorbox}[title={167. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) A szerzõdés felmondása egyoldalú jognyilatkozat.\\
+\uline {b) Az elállás a jövõre nézve szünteti meg a szerzõdést.}\\
+c) A szerzõdés felbontása a felek közös nyilatkozata.\\
+d) A felek a szerzõdést bármikor megszüntethetik.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 10 Egyes szerzodesek}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+
+%168. 
+\begin{tcolorbox}[title={168. Kérdés}]
+Az alábbiak közül melyik jog nem alapítható (szerezhetõ meg) bármikor?
+\tcblower
+a) Az eladási jog.\\
+b) A vételi jog.\\
+\uline {c) A visszavásárlási jog.}\\
+d) Az elõvásárlási jog.
+\end{tcolorbox}
+
+%169. 
+\begin{tcolorbox}[title={169. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) Az eladási jog jogosultja egyoldalú nyilatkozattal eladhatja a dolgot.\\
+\uline {b) Az elõvásárlási jog jogosultja egyoldalú nyilatkozattal megveheti a dolgot.}\\
+c) A vételi jog jogosultja egyoldalú nyilatkozattal megveheti a dolgot.\\
+d) A visszavásárlási jog jogosultja egyoldalú nyilatkozattal megveheti a dolgot.
+\end{tcolorbox}
+
+%170.
+\begin{tcolorbox}[title={170. Kérdés}]
+Az alábbiak közül melyiket nem kell az ingatlan-nyilvántartásba bejegyeztetni?
+\tcblower
+a) A tulajdonjog fenntartást.\\
+b) A vételi jogot.\\
+c) Az eladási jogot.\\
+\uline {d) Mindhárom fentit be kell jegyeztetni.}
+\end{tcolorbox}
+
+%171. 
+\begin{tcolorbox}[title={171. Kérdés}]
+Melyik állítás igaz?
+\tcblower
+a) Az ajándékozás egyoldalú jognyilatkozat.\\
+b) Ajándékozás történhet ellenérték fejében is.\\
+\uline {c) Az ajándék egyes esetekben visszakövetelhetõ.}\\
+d) Az ajándékozásra a jogalap nélküli gazdagodás szabályait kell alkalmazni.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%172. 
+\begin{tcolorbox}[title={172. Kérdés}]
+Melyik állítás hamis a vállalkozási szerzõdésre vonatkozóan?
+\tcblower
+a) A vállalkozási szerzõdés eredménykötelem.\\
+b) A megrendelõ a teljesítés elõtt bármikor elállhat.\\
+\uline {c) A vállalkozó a teljesítés elõtt bármikor elállhat.}\\
+d) A vállalkozót törvényes zálogjog illeti meg.
+\end{tcolorbox}
+
+%173.
+\begin{tcolorbox}[title={173. Kérdés}]
+Az alábbiak közül melyik nem a vállalkozási szerzõdés altípusa?
+\tcblower
+a) A tervezési szerzõdés.\\
+b) A fuvarozási szerzõdés.\\
+\uline {c) A szállítmányozási szerzõdés.}\\
+d) A kivitelezési szerzõdés.
+\end{tcolorbox}
+
+%174. 
+\begin{tcolorbox}[title={174. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+\uline {a) A megbízási szerzõdés eredménykötelem.}\\
+b) A megbízó a szerzõdést felmondhatja.\\
+c) A megbízott a szerzõdést felmondhatja.\\
+d) A megbízottat törvényes zálogjog illeti meg.
+\end{tcolorbox}
+
+%175. 
+\begin{tcolorbox}[title={175. Kérdés}]
+Az alábbiak közül melyik nem a megbízási szerzõdés altípusa?
+\tcblower
+a) A bizományi szerzõdés.\\
+b) A szállítmányozási szerzõdés.\\
+c) A közvetítõi szerzõdés.\\
+\uline {d) A fuvarozási szerzõdés.}
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 11 Adatvédelem}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+
+%176. 
+\begin{tcolorbox}[title={176. Kérdés}]
+Az alábbiak közül melyik nem minõsül különleges személyes adatnak?
+\tcblower
+a) Az érintett egészségi állapota.\\
+b) Az érintett vagyoni helyzete.\\
+c) Az érintett vallási meggyõzõdése.\\
+d) Az érintett politikai véleménye.
+\end{tcolorbox}
+
+%177.
+\begin{tcolorbox}[title={177. Kérdés}]
+Az alábbi mûveletek közül melyik nem minõsül adatkezelésnek?
+\tcblower
+a) Az adatok gyûjtése.\\
+b) Az adatok tárolása.\\
+c) Az adatok lekérdezése.\\
+d) Mind a három fenti mûvelet adatkezelésnek minõsül.
+\end{tcolorbox}
+
+%177/A.
+\begin{tcolorbox}[title={177/A. Kérdés}]
+Az alábbi mûveletek közül melyik nem minõsül adatkezelésnek?
+\tcblower
+a) Az adatok gyûjtése.\\
+b) Az adatkezelési mûveletekhez kapcsolódó technikai feladatok elvégzése.\\
+c) Az adatok lekérdezése.\\
+d) Mind a három fenti mûvelet adatkezelésnek minõsül.
+\end{tcolorbox}
+
+%178. 
+\begin{tcolorbox}[title={178. Kérdés}]
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+\tcblower
+a) Személyes adatok kezeléséhez elég ha az érintett szóban hozzájárult.\\
+b) Különleges adat csak törvényi elõírás alapján kezelhetõ.\\
+c) Bûnügyi személyes adatot csak állami vagy önkormányzati szerv kezelhet.\\
+d) Mind a három fenti állítás igaz.
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}
+
+%179.
+\begin{tcolorbox}[title={179. Kérdés}]
+Az alábbiak közül melyik esetben nem tiltakozhat az érintett személyes adatának kezelése ellen?
+\tcblower
+a) Közvetlen üzletszerzés céljára történõ felhasználás esetén.\\
+b) Közvélemény kutatási célú felhasználás esetén.\\
+c) Tudományos célú felhasználás esetén.\\
+d) Mindhárom fenti esetben tiltakozhat.
+\end{tcolorbox}
+
+%179/A.
+\begin{tcolorbox}[title={179/A. Kérdés}]
+Az alábbiak közül melyik esetben nem tiltakozhat az érintett személyes adatának kezelése ellen?
+\tcblower
+a) Közvetlen üzletszerzés céljára történõ felhasználás esetén.\\
+b) Közvélemény kutatási célú felhasználás esetén.\\
+c) Ha az adatkezelést közérdekû célból törvény rendeli el.\\
+d) Mindhárom fenti esetben tiltakozhat.
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge 12 Szellemi alkotas}\\
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+
+%180. 
+\begin{tcolorbox}[title={180. Kérdés}]
+Az alábbiak közül melyik alkotás nem áll a szerzõi jog védelme alatt?
+\tcblower
+a) Ötlet, eljárás.\\
+b) Szoftver\\
+c) Adatbázis\\
+d) Térkép
+\end{tcolorbox}
+
+%181. 
+\begin{tcolorbox}[title={181. Kérdés}]
+Mennyi ideig védi a szerzõi jog a mûvet?
+\tcblower
+a) 50 évig.\\
+b) A szerzõ élete végéig.\\
+c) A szerzõ életében és halála után 70 évig.\\
+d) 20 évig.
+\end{tcolorbox}
+
+%182.
+\begin{tcolorbox}[title={182. Kérdés}]
+Melyik állítás hamis?
+\tcblower
+a) A felhasználási engedély korlátozható valamely területre.\\
+b) A felhasználási engedély korlátozható megadott idõtartamra.\\
+c) A felhasználási engedély korlátozható valamely felhasználási módra.\\
+d) A felhasználási engedély szóban is érvényes.
+\end{tcolorbox}
+
+%183.
+\begin{tcolorbox}[title={183. Kérdés}]
+Mennyi ideig védi a szabadalmi oltalom a találmányt?
+\tcblower
+a) 10 évig.\\
+b) 20 évig.\\
+c) A szabadalmas élete végéig.\\
+d) A szabadalmas életében és halála után 20 évig.
+\end{tcolorbox}
+
+\end{frame}
+
+\end{document}

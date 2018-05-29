@@ -1,0 +1,95 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+/Library/*
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.unityproj
+*.booproj
+.vs/
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================= #
+# Gaia, because its 1.5Gigs #
+# Also, its deletable       #
+# ========================= #
+Assets/Gaia
+
+# ========================= #
+# Built assetbundles        #
+# ========================= #
+AssetBundles/*
+
+
+# ========================= #
+# StreamingAssets           #
+# ========================= #
+Assets/StreamingAssets/*
+
+# ========================= #
+# Level generated data      #
+# ========================= #
+
+Assets/Levels/DensityTest/*
+
+# ========================= #
+# My asset, it's a git repo #
+# ========================= #
+Assets/Dll Compile Time Optimizer
+
+# ========================= #
+#      Config Files         #
+# ========================= #
+ServerSettings.ini*
+
+# ========================= #
+#      Lightmap Data        #
+# ========================= #
+*.exr
+*.exr.meta
+
+# ========================= #
+#       Collections         #
+# ========================= #
+EnvironmentCollections
+TextureCollections
+EnvironmentCollections.meta
+TextureCollections.meta
+3D Items - Mega Pack
+3D Items - Mega Pack.meta
+RPG Character Animation Pack
+RPG Character Animation Pack.meta
+MB1 FB1
+MB1 FB1.meta
+warrior_woman
+warrior_woman.meta
+MagicEffects
+MagicEffects.meta
+
+
+# ========================= #
+#       QHierarchy          #
+# ========================= #
+QHierarchy
