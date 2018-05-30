@@ -1,7 +1,7 @@
 % Compile twice!
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
-% !TEX root = ./Headers/PrezA4Page.tex
+% !TEX root = ./PrezA4Page.tex
 
 % Uncomment these to get the presentation form
 %\documentclass{beamer}
@@ -2190,7 +2190,7 @@ c) A közvetítõi szerzõdés.\\
 Az alábbiak közül melyik nem minõsül különleges személyes adatnak?
 \tcblower
 a) Az érintett egészségi állapota.\\
-b) Az érintett vagyoni helyzete.\\
+\uline {b) Az érintett vagyoni helyzete.}\\
 c) Az érintett vallási meggyõzõdése.\\
 d) Az érintett politikai véleménye.
 \end{tcolorbox}
@@ -2202,7 +2202,7 @@ Az alábbi mûveletek közül melyik nem minõsül adatkezelésnek?
 a) Az adatok gyûjtése.\\
 b) Az adatok tárolása.\\
 c) Az adatok lekérdezése.\\
-d) Mind a három fenti mûvelet adatkezelésnek minõsül.
+\uline {d) Mind a három fenti mûvelet adatkezelésnek minõsül.}
 \end{tcolorbox}
 
 %177/A.
@@ -2210,7 +2210,7 @@ d) Mind a három fenti mûvelet adatkezelésnek minõsül.
 Az alábbi mûveletek közül melyik nem minõsül adatkezelésnek?
 \tcblower
 a) Az adatok gyûjtése.\\
-b) Az adatkezelési mûveletekhez kapcsolódó technikai feladatok elvégzése.\\
+\uline {b) Az adatkezelési mûveletekhez kapcsolódó technikai feladatok elvégzése.}\\
 c) Az adatok lekérdezése.\\
 d) Mind a három fenti mûvelet adatkezelésnek minõsül.
 \end{tcolorbox}
@@ -2222,7 +2222,7 @@ Az alábbi 3 állítás (a,b,c) közül melyik hamis?
 a) Személyes adatok kezeléséhez elég ha az érintett szóban hozzájárult.\\
 b) Különleges adat csak törvényi elõírás alapján kezelhetõ.\\
 c) Bûnügyi személyes adatot csak állami vagy önkormányzati szerv kezelhet.\\
-d) Mind a három fenti állítás igaz.
+\uline {d) Mind a három fenti állítás igaz.}
 \end{tcolorbox}
 
 \end{frame}
@@ -2237,7 +2237,7 @@ Az alábbiak közül melyik esetben nem tiltakozhat az érintett személyes adat
 a) Közvetlen üzletszerzés céljára történõ felhasználás esetén.\\
 b) Közvélemény kutatási célú felhasználás esetén.\\
 c) Tudományos célú felhasználás esetén.\\
-d) Mindhárom fenti esetben tiltakozhat.
+\uline {d) Mindhárom fenti esetben tiltakozhat.}
 \end{tcolorbox}
 
 %179/A.
@@ -2246,7 +2246,7 @@ Az alábbiak közül melyik esetben nem tiltakozhat az érintett személyes adat
 \tcblower
 a) Közvetlen üzletszerzés céljára történõ felhasználás esetén.\\
 b) Közvélemény kutatási célú felhasználás esetén.\\
-c) Ha az adatkezelést közérdekû célból törvény rendeli el.\\
+\uline {c) Ha az adatkezelést közérdekû célból törvény rendeli el.}\\
 d) Mindhárom fenti esetben tiltakozhat.
 \end{tcolorbox}
 
@@ -2264,7 +2264,7 @@ d) Mindhárom fenti esetben tiltakozhat.
 \begin{tcolorbox}[title={180. Kérdés}]
 Az alábbiak közül melyik alkotás nem áll a szerzõi jog védelme alatt?
 \tcblower
-a) Ötlet, eljárás.\\
+\uline {a) Ötlet, eljárás.}\\
 b) Szoftver\\
 c) Adatbázis\\
 d) Térkép
@@ -2276,7 +2276,7 @@ Mennyi ideig védi a szerzõi jog a mûvet?
 \tcblower
 a) 50 évig.\\
 b) A szerzõ élete végéig.\\
-c) A szerzõ életében és halála után 70 évig.\\
+\uline {c) A szerzõ életében és halála után 70 évig.}\\
 d) 20 évig.
 \end{tcolorbox}
 
@@ -2287,7 +2287,7 @@ Melyik állítás hamis?
 a) A felhasználási engedély korlátozható valamely területre.\\
 b) A felhasználási engedély korlátozható megadott idõtartamra.\\
 c) A felhasználási engedély korlátozható valamely felhasználási módra.\\
-d) A felhasználási engedély szóban is érvényes.
+\uline {d) A felhasználási engedély szóban is érvényes.}
 \end{tcolorbox}
 
 %183.
@@ -2295,7 +2295,7 @@ d) A felhasználási engedély szóban is érvényes.
 Mennyi ideig védi a szabadalmi oltalom a találmányt?
 \tcblower
 a) 10 évig.\\
-b) 20 évig.\\
+\uline {b) 20 évig.}\\
 c) A szabadalmas élete végéig.\\
 d) A szabadalmas életében és halála után 20 évig.
 \end{tcolorbox}
