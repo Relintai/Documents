@@ -328,6 +328,11 @@ public class Quiz : MonoBehaviour {
         Save();
     }
 
+    private void OnApplicationPause(bool pause)
+    {
+        Save();
+    }
+
     public void SelectAnswer(int id)
     {
         selectedAnswer = id;
