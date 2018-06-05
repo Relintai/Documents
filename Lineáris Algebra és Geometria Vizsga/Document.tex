@@ -1,7 +1,7 @@
 % Compile twice!
 % With the current MiKTeX, you need to install the beamer, and the translator packages directly form the package manager!
 
-% !TEX root = ./Headers/PrezA4Page.tex
+% !TEX root = ./PrezA4Page.tex
 
 % Uncomment these to get the presentation form
 %\documentclass{beamer}
@@ -129,17 +129,1532 @@
 
 \begin{frame}[plain]
 \begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
-    {\RHuge  Vektorok koordinátavektora}
+    {\RHuge  A rész}
     \mmedskip
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={Def.: Bázis}]
-    A $\{b_1,b_2,b_3\}$ vektorhalmaz bázis a $V \leq  \mathbb{R}^n$ altérben. Határozzuk meg a $v = 2b_1 + 3b_2 - b_3$ vektor koordinátavektorát a $\{b_1, b_2, b_3\}$ bázisban. $[v]b1,b2,b3 =$
+  \begin{tcolorbox}[title={2. (4p)}]
+Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A részében szereplő főbb témaköröket néhány mintafeladattal, azok megoldásával és esetenként részletesebb magyarázattal. Ez a rész a szemléltetést szolgálja: a dolgozatban általában nem pont ezek a kérdések fognak szerepelni. A feladatok nehézségét szimbólumok jelzik. Ahol egy deﬁníciót vagy tételt kell közvetlenül alkalmazni, ott N a jel. Ha a fogalom már nehezebb, vagy több lépést kell tenni, több fogalmat összekapcsolni, nemtriviális átalakítást kell végezni, ott R szerepel. A Q azt jelzi, hogy a feladat témája kifejezetten nehéz, vagy pedig ötlet kell a megoldáshoz.
   \end{tcolorbox}
+\end{frame}
 
-  \end{frame}
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (1) Vektorok koordinátavektora}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={1/1. -N-}]
+      A $\{b1,b2,b3\}$ vektorhalmaz bázis a $V ≤ Rn$ altérben. Határozzuk meg a $v = 2b1 + 3b2 −b3$ vektor koordinátavektorát a $\{b1,b2,b3\}$ bázisban.
+  \tcblower
+    A vektor bázisban vett koordinátavektorának fogalmát kéri számon.\\
+    
+    A vektorból kell kiszámítani a koordinátáit.\\
+    \mmedskip 
+  
+   $[v]b1,b2,b3 =$ 
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={1/2. -R-}]
+      Legyen $B = \{b1,b2,b3\}$ bázis a $V ≤ Rn$ altérben. Egy $v ∈ V$ vektornak a $\{b1 + b2,b2 + b3,b3\}$ bázisban fölírt koordinátavektora $[v]b1+b2,b2+b3,b3 =$.\\
+      
+      Mi $v$ koordinátavektora a $B$ bázisban?
+  \tcblower
+    A vektor bázisban vett koordinátavektorának fogalmát kéri számon.\\
+   
+    Kétlépéses, először a feladat szövegében megadott koordinátavektort írjuk át a bázisvektorok lineáris kombinációjává: $v = 1·(b1 + b2) + 1·(b2 + b3) + 0·(b3) = 1·b1 + 2·b2 + 1·b3$, majd az így kapott lineáris kombinációt koordinátavektorrá.\\
+     \mmedskip
+     
+   $[v]b1,b2,b3 =$ 
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={1/3. -R-}]
+      A $\{b1,b2,b3\}$ vektorhalmaz bázis a $V ≤ Rn$ altérben. Ebben a bázisban a $v$, illetve $w$ vektorok koordinátorvektora $[v]b1,b2,b3 =  1 0 2   $ és $[w]b1,b2,b3 =  3 1 0   $. Írjuk föl a $v+2w$ vektort a $\{b1,b2,b3\}$ vektorok lineáris kombinációjaként.
+  \tcblower
+    A feladat két fogalmat kérdez:\\
+      hogyan kell a koordinátákból kiszámítani a vektorokat, de még azt is tudni kell, hogy hogyan kell koordinátavektorokkal műveleteket végezni.\\
+      
+      Tehát először a két koordinátavektor megfelelő lineáris kombinációját számoljuk ki: $  1 0 2  + 2   3 1 0  =   7 2 2   $, majd az így kapott oszlopvektort átírjuk a bázisvektorok lineáris kombinációjává.\\
+      
+      De megtehetjük azt is, hogy először a v és w vektorokat írjuk fel a bázisvektorok lineáris kombinációjaként, majd ebből számítjuk ki a $v+2w$-t.
+      
+   $v + 2w = 7b1 + 2b2 + 2b3$
+  \end{tcolorbox}
+\end{frame}
+  
+\begin{frame}
+  \begin{tcolorbox}[title={1/4. -Q-}]
+      Tegyük föl, hogy a $\{b1,b2,b3\}$ vektorhalmaz bázis a $V ≤ Rn$ altérben. Mi lesz ezen $bi$ bázisvektorok $v$-vel jelölt összegénekakoordinátavektora a $\{b1+b2,b2,b3\}$ bázisban?
+  \tcblower
+    Az a kérdés, hogy a $b1+b2+b3 = λ1(b1+b2)+λ2b2+λ3b3$ felírásban mennyi a $λi$ ismeretlenek értéke.\\|
+      Ezekre úgy kapunk lineáris egyenletrendszert, hogy a $bi$ bázisvektor együtthatóját az egyenlet két oldalán összehasonlítjuk.\\
+      
+      Azonnal látszik, hogy $b1 + b2 + b3 = 1·(b1 + b2) + 0·b2 + 1·b3$ megfelelő felírás, és ezért ezek az együtthatók adják a keresett koordinátavektort.\\
+      
+      Ennek a problémának a megoldását az általános esetben az elemi bázistranszformációról szóló tétel szolgáltatja.
+      
+   $[v]b1,b2,b3 =$ 
+  \end{tcolorbox}
+\end{frame}  
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (2) Alterek alaptulajdonságai}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={2/1. -R-}]
+      Konkrét vektorokat megadva mutassuk meg, miért nem alkot alteret $R3$-ben azon vektorok halmaza, ahol az első két komponens szorzata nulla. 
+  \tcblower
+
+    \mmedskip 
+  
+   Pl. benne vannak az altérben, de az összegük,nincs.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={2/2. -Q-}]
+      Konkrét mátrixokat megadva mutassuk meg, miért nem alkot alteret $R2×2$-ben a nulla determinánsú mátrixok halmaza. 
+  \tcblower
+    A nulla determinánsú mátrixok összege könnyen lehet nem nulla determinánsú, s hasonlóképpen nem nulla determinánsú mátrixok összege lehet nulla determinánsú.\\
+    \mmedskip 
+  
+    Pl. det= det= 0, ugyanakkor det
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={2/3. -R-}]
+      Tekintsük azoknak az $R3$-beli  vektoroknak a halmazát, amelyek az alábbi feltételnek tesznek eleget.\\ű
+      
+      Mely eset(ek)ben kapunk alteret?\\
+      (A) $x1 = x2 + 2x3$\\
+      (B) $x1 = x2 + 2$\\
+      (C) $x1x2 = 0$\\
+      (D) $x2 1 = 0$
+  \tcblower
+
+    \mmedskip
+    
+    Alter(ek): (A), (D)
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={2/4. -Q-}]
+      Mely alábbi halmaz(ok) alkot(nak) alteret a $2×2$-es valós mátrixok halmazában mint $R$ fölötti vektortérben:\\
+      \mmedskip
+      
+      (A) $\{A ∈ R2×2|detA = 0\}$\\
+      (B) $\{A ∈ R2×2|detA 6= 0\}$\\
+      (C) $\{A ∈ R2×2|A = AT\}$\\
+      (D) $\{A ∈ R2×2|A2 = I2\}$
+  \tcblower
+    Azt kell megvizsgálnunk, hogy a megadott halmazok zártak-e az összeadásra, ill. a skalárral való szorzásra:\\
+
+    Az (A) kérdésben nulla determinánsú mátrixok összege könnyen lehet nem nulla determinánsú, s hasonlóképpen nem nulla determinánsú mátrixok összege lehet nulla determinánsú.\\
+    
+    A (B)-ben (de érvelhetünk azzal is, hogy a nullmátrix nem ilyen);\\
+
+    A szimmetria megőrződik mátrixok összeadásánál, ill. skalárral való szorzásánál (ez mutatja, hogy a (C) feladatban alterünk van).\\
+
+    Az pedig hogy a (D) feladatban nem kapunk alteret, kiderül pl. abból is, hogy a nullmátrix nem teljesíti az adott feltételt. 
+    \mmedskip 
+    
+    Alter(ek): (C)
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={2/5. -Q-}]
+      Mutassunk egy olyan $H$ részhalmazt $R2$-ben (azaz a síkon), mely zárt a vektorok szokásos összeadására, mégsem alkot alteret $R2$-ben.
+  \tcblower
+    A feladat arra mutat rá, hogy altereknél mindkét műveletre való zártságot meg kell követelnünk:\\
+    
+    erre érdemes már a fölkészülés során is példát keresnünk, hogy jobban megérthessük a fogalmat.
+    \mmedskip 
+    
+    Pl. $\{[a b]T ∈ R2|a,b > 0\}$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (3) Bázis, lineáris függetlenség, generálás, dimenzió, rang kapcsolata}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/1. -N-}]
+      Alkalmas együtthatók megadásával mutassuk meg, hogy a $\{v,0,w\}$ vektorok rendszere lineárisan összefüggő.
+  \tcblower
+
+    \mmedskip 
+  
+    $0·v + 1·0 + 0·w = 0$.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/2. -N-}]
+       Alkalmas együtthatók megadásával mutassuk meg, hogy az $\{u,v,w,v+2w\}$ vektorok rendszere lineárisan összefüggő.
+  \tcblower
+
+    \mmedskip 
+  
+    $0·u + 1·v + 2·w + (−1)(v + 2w) = 0.$.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/3. -N-}]
+       Legyen $v1 =  ∈ R2$ és $v2 =  ∈ R2$. Mely valós $c$ szám(ok)ra lesz $v1$ és $v2$ lineárisan összefüggő?
+  \tcblower
+
+    \mmedskip 
+  
+    $c = 3$.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/4. -R-}]
+       Mely $c ∈ R$ valós számokra lesznek lineárisan függetlenek az $[1 0 c]T, a [2 2 2]T$ és a $[4 2 3]T$ vektorok?
+  \tcblower
+
+    \mmedskip 
+  
+    $c 6= 1/2$.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/5. -R-}]
+       Legyen $v1 = 1 1  ∈ R3$. Adjunk meg olyan $v2$ és $v3$ vektorokat $R3$-ban, melyekre igaz, hogy a $v1,v2,v3$ vektorrendszer lineárisan összefüggő, de közülük bármely két vektor lineárisan független.
+  \tcblower
+
+    \mmedskip 
+  
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/6. -N-}]
+        Egy $U ≤ R2$ altérben $[2 3]T$ generátorrendszert alkot. Adjunk meg $U$-ban egy háromelemű generátorrendszert.
+  \tcblower
+
+    \mmedskip 
+  
+     Pl. $[2 3]T, [4 6]T, [0 0]T$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/7. -R-}]
+    Egy $U ≤ R5$ altérben van olyan $\{v1,v2,v3\}$ háromelemű lineárisan összefüggő vektorhalmaz, mely generátorrendszer U-ban. Hány eleme lehet $U$ egy bázisának?
+  \tcblower
+
+    \mmedskip 
+  
+     Bázis elemszáma lehet: 1,2
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/8. -R-}]
+    Ha egy $U ≤ R9$ altérben van $5$ elemű lineárisan összefüggő generátorrendszer is, meg $3$ elemű lineárisan független vektorrendszer is, akkor mik $dimU$ lehetséges értékei?
+
+  \tcblower
+
+    \mmedskip 
+  
+     dimU lehet: 3 vagy 4
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/9. -N-}]
+     Legyenek $\{v1,v2,v3\}$ lineárisan független vektorok. Adjuk meg a $\{v1 + v2,v2,2v1 + v2\}$ által generált altér egy bázisát.
+
+  \tcblower
+
+    \mmedskip 
+  
+     Pl. : $\{v1 + v2,v2\}$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/10. -Q-}]
+     Adott egy ötelemű vektorrendszer, melynek a rangja $3.$ Eltávolítunk a rendszerből két vektort. Mik az új rendszer rangjának lehetséges értékei?
+  \tcblower
+
+    \mmedskip 
+  
+     A rang lehet: 1, 2 vagy 3
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/11. -Q-}]
+     Legyen $U = \{[x1,x2,x3]T ∈ R3|x1 = 2x2 = 3x3\}$ az R3 altere. Hány olyan bázisa van az $U$ altérnek, mely tartalmazza a $v = [6,3,2]T$ vektort?
+  \tcblower
+
+    \mmedskip 
+    Bázisok száma: 1
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3/11. -Q-}]
+Az első két feladatban 
+
+A lineáris összefüggőséget kell bizonyítanunk.\\
+Ehhez olyan együtthatókat kell megadnunk, amelyek nem mindegyike nulla (és nem olyanokat, hogy egyik sem nulla). Ha tehát a rendszerben látunk néhány összefüggő vektort, akkor a többinek nyugodtan adhatunk nulla együtthatót.
+
+A harmadik feladatban arra érdemes emlékeznünk, hogy két nem nulla vektor akkor és csak akkor lineárisan összefüggő, ha egymás skalárszorosai.
+
+A negyedik feladatot megoldhatjuk a szokásos homogén lineáris egyenletrendszer vizsgálatával (ha a megoldások száma nagyobb, mint 1, akkor a vektorrendszer összefüggő). Másik lehetőség annak a tételnek az alkalmazása, hogy a megadott vektorok pontosan akkor lineárisan függetlenek, ha a belőlük mint oszlopvektorokból képzett mátrix determinánsa nem 0. Mivel
+
+, ezért a válasz c 6= 1/2. Az ötödik feladatban segít, ha tudjuk, hogy mit jelent az összefüggőség a lineáris függés nyelvén: a feltételek azt jelentik, hogy a vektorok egyike sem skalárszorosa a másiknak, de az egyik vektor a másik kettőnek a lineáris kombinációja. 
+
+A hatodik feladatban azt az állítást használjuk, hogy generátorrendszer kibővítve is generátorrendszer marad, de vigyáznunk kell, hogy az új vektorokat is az altérből vegyük. 
+
+A hetedik kérdés megválaszolásához az a tény segít, hogy minden generátorrendszerből kiválasztható bázis, az azonban lineárisan független. Így a háromelemű halmazból legalább egyet el kell távolítanunk, hogy bázist kaphassunk. Mivel az altérben van legalább három vektor, ezért az nem lehet 0 dimenziós. 
+
+A nyolcadik feladat gondolata ugyanez, de hozzá kell tennünk, hogy független rendszer elemszáma kisebb vagy egyenlő, mint az altér dimenziója. 
+
+A kilencedik feladathoz jó arra emlékezni, hogy ha egy U altér egy generátorrendszeréből kiválasztunk olyan vektorokat, amelyek egyrészt függetlenek, másrészt U adott generátorai már kifejezhetők velük (vagyis ez egy maximális független rendszer U adott generátorrendszerében), akkor ez a kiválasztott független rendszer bázis lesz U-ban.
+
+A tizedik feladathoz tudni kell, hogy a rang a generált altér dimenziója. Ha tehát egy háromdimenziós altér ötelemű generátorrendszeréből eltávolítunk két vektort, akkor a maradék vektorrendszer által generált altér még mindig legalább egydimenziós (hiszen még egy háromelemű független rendszerből is maximum kettőt távolíthattunk el), de maradhatott is háromdimenziós (ha pl. a két „fölösleges” vektort dobtuk ki.) 
+
+Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely nem nulla vektor egyúttal bázis is. Ha a tér dimenziója nagyobb lenne, akkor – hivatkozva arra a tételre, mely szerint független rendszer kiegészíthető bázissá – máris megváltozna a helyzet: ilyenkor bármely, a dimenziószámnál kisebb elemszámú vektorhalmaz végtelen sok módon egészíthető ki bázissá.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (4) Bázis megadása, dimenzió}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/1. -N-}]
+      Álljon az $U$ altér az $R3$ azon $v$ vektoraiból, ahol a második és a harmadik komponens egyenlő. Adjunk meg egy bázist $U$-ban.
+  \tcblower
+
+    \mmedskip 
+    
+    Pl. $[1 0 0]T$, $[0 1 1]T$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/2. -N-}]
+      Legyen $\{b1,b2,b3\}$ bázis egy $U$ altérben. Hány dimenziós alteret generál $\{b1 + b2,b2,b1 −b2\}$?
+  \tcblower
+
+    \mmedskip 
+    
+    Az altér dimenziója: 2
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/3. -R-}]
+      Hány dimenziós azon $Rn$-beli vektoroknak az altere, melyekben a komponensek összege $0$?
+  \tcblower
+
+    \mmedskip 
+    
+    A dimenzió: $n−1$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/4. -R-}]
+      Hány dimenziós azon $Rn$-beli vektoroknak az altere, melyekben a komponensek négyzetösszege $0$?
+  \tcblower
+
+    \mmedskip 
+    
+    A dimenzió: $0$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/5. -Q-}]
+      Hány dimenziós alteret alkotnak $R3×3$-ban azok az A mátrixok, amelyekre teljesül, hogy $AT = −A$?
+  \tcblower
+
+    \mmedskip 
+    
+    A dimenzió: $3$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/6. -R-}]
+      Hány négydimenziós altér van $R4$-ben mint $R$ fölötti vektortérben?
+  \tcblower
+
+    \mmedskip 
+    
+    Alterek száma: $1$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/7. -Q-}]
+      Hány olyan altér van $R2×2$-ben mint $R$ fölötti vektortérben, mely tartalmazza az összes $2 × 2$-es szimmetrikus mátrixot?
+  \tcblower
+
+    \mmedskip 
+    
+    Alterek száma: $2$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={4/7. -Q-}]
+Az első feladatban föl kell írni az altér egy általános elemét és lineáris kombinációra bontani. A második feladat kapcsolódik a rang fogalmához is: a generált altér dimenziójának kiszámításához maximális független rendszert kell keresni a generátorok között (azaz olyat, amiből a többi generátor már kifejezhető). Az adott példában {b1 + b2,b2} ilyen. De bázist alkot ebben az altérben {b1,b2} is, hiszen b1 = (b1 + b2) − b2 is eleme az altérnek. A harmadik feladatra (ez a 4. gyakorlat 7/g feladatának y = 0 speciális esete) gondolhatunk úgy, hogy egy homogén lineáris összefüggésünk van: az, hogy az elemek összege nulla, és ez eggyel csökkenti Rn dimenzióját. (Valójában egy homogén lineáris egyenletrendszer szabad változóit számoltuk meg. Bázist alkotnak azok a vektorok, melyekben az első n−1 komponens egyike 1, az utolsó komponens−1, a többi komponens pedig 0, de ezt megadni Q szintű feladat lenne az általános n miatt. Próbálkozhatunk a triviális bázis elemeinek „utánzásával”, de ellenőrizni kell a függetlenséget.) A negyedik feladat mutatja, mennyire gondosnak kell lennünk az előző feladat megoldási elvének alkalmazásakor. Ha ugyanis a komponensek közötti összefüggés nem lineáris, akkor egész más lehet az eredmény: itt csak a nullvektor van benne az altérben. Sőt, nem lináris összefüggéssel megadott vektorok általában nem is alkotnak alteret. Az ötödik feladat is hasonló jellegű, csak itt sokkal több homogén lineáris összefüggés van a komponensek között. Az ilyen mátrixokban a főátló minden eleme 0, a főátlóra szimmetrikus elemek pedig egymás ellentettjei. Ezért pl. a főátló fölötti elemeket szabad változónak tekintve a mátrix elemei már egyértelműen meg vannak határozva, ezért a dimenzió a szabadon választható mátrixelemek száma, azaz 3. (Itt is érdemes gyakorlásul egy bázist fölírni.) A hatodik feladatban azt kell tudni, hogy Rn egy valódi alterének dimenziója határozottan kisebb, mint Rn-é. A hetedik feladat is hasonló jellegű, először azt kell észrevenni, hogy a 2×2-es szimmetrikus mátrixok terének a dimenziója mindössze 1-gyel kisebb, mint a R2×2 téré, így a szimmetrikus mátrixok altere és az egész tér között nincs más altér.
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (5) Lineáris egyenletrendszerek, megoldásszámuk}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={5/1. -N-}]
+      Adjunk meg egy olyan lineáris egyenletrendszert, melyben két egyenlet van, három ismeretlen, és az egyenletrendszernek nincs megoldása.
+  \tcblower
+
+    \mmedskip 
+    
+    Pl.:
+$x + y + z = 2$
+$x + y + z = 3$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={5/2. -N-}]
+      Adjunk meg egy olyan inhomogén lineáris egyenletrendszert, melyben három egyenlet van, két ismeretlen, és az egyenletrendszernek végtelen sok megoldása van.
+  \tcblower
+
+    \mmedskip 
+    
+    Pl.:
+$x + y = 1$
+$2x + 2y = 2$
+$3x + 3y = 3$
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={5/3. -N-}]
+      Mi lehet a megoldások száma egy olyan valós együtthatós lineáris egyenletrendszernél, melyben az egyenletek száma 3, az ismeretlenek száma pedig 5?
+  \tcblower
+
+    \mmedskip 
+    
+    0 vagy végtelen
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={5/3. -N-}]
+Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés van: ha több ismeretlen van, mint egyenlet, akkor nem lehet egyértelmű a megoldás (erre kérdez rá a harmadik feladat). Vagyis ha az egyenletrendszerben nincs elég egyenlet – nem tudunk eleget az ismeretlenekről –, akkor ugyan lehet ellentmondásos (ehhez már két egyenlet is elég, mint az első feladatban, sőt az egyetlen 0·x + 0·y = 1 egyenlet is), de ha nem ellentmondásos, azaz van megoldás, akkor biztosan egynél több megoldás van. Valós és komplex együtthatós egyenletrendszerek esetében ilyenkor a megoldások száma végtelen. Az egyenletek számát szaporíthatjuk úgy, hogy a megoldások halmaza ne változzon: ehhez a rendszerbe már bent lévő egyenletek lineáris kombinációját kell bevenni (mint a második feladatban). Fontos, hogy homogén lineáris egyenletrendszernek – amikor az egyenletek jobb oldalán mindenütt 0 áll – mindig van megoldása: a triviális megoldás, amikor minden ismeretlen értéke nulla.
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (6) Lineáris egyenletrendszerek, megoldásszámuk}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/1. -N-}]
+    Legyen $A ∈ Rk×ℓ$, $B ∈ Rp×r$ és $C ∈ Rt×u$. Adjunk szükséges és elégséges feltételt arra, hogy értelmes legyen az $ABT + C$ mátrixkifejezés.
+  \tcblower
+
+    \mmedskip 
+    
+    $ℓ = r, k = t, p = u$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/2. -N-}]
+    Legyen A =. Adjunk meg egy olyan $2×2$-es, egész elemű, a nullmátrixtól különböző $B$ mátrixot, amelyre igaz, hogy $AB = 0$.
+
+  \tcblower
+
+    \mmedskip 
+    
+    Pl. B =
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/3. -N-}]
+     Legyen A = . Mely c ∈ R számokra van olyan $2×2$-es, valós elemű, a nullmátrixtól különböző $B$ mátrix, amelyre igaz, hogy $AB = 0$?
+  \tcblower
+
+    \mmedskip 
+    
+    c = 9
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/4. -N-}]
+     Adjunk meg egy olyan $2×2$-es egész elemű, a nullmátrixtól különböző A mátrixot, amelyre igaz, hogy van olyan 0 6= $B ∈ R2×2$, melyre $AB = 0$.
+  \tcblower
+
+    \mmedskip 
+    
+    Pl. A =
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/5. -N-}]
+     Adjuk meg az A = mátrix inverzét.
+  \tcblower
+
+    \mmedskip 
+    
+    
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/6. -N-}]
+     Adjuk meg az $A = [1 2 3]$ sormátrix egy jobb oldali inverzét.
+  \tcblower
+
+    \mmedskip 
+    
+     Pl.: $[1 0 0]T$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/7. -N-}]
+     Hány olyan jobb oldali inverze van az $A = [1 1 1]$ sormátrixnak, melyben minden elem egyenlő?
+  \tcblower
+
+    \mmedskip 
+    
+     Számuk: 1
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/8. -Q-}]
+     Az alábbi mátrixok közül melyeknek nem lehet jobb oldali inverze a valós paraméterek semmilyen választására sem (azonos betűk azonos számokat jelölnek)? 
+     
+
+  \tcblower
+
+    \mmedskip 
+    
+     (A), (C)
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6/8. -Q-}]
+Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összeadása, szorzása, illetve mik a transzponált mátrix méretei. Két mátrix szorzatának oszlopaiban a bal oldali mátrix oszlopainak lineáris kombinációi állnak. Ezért az AB = 0 akkor tud teljesülni nem nulla B mátrixszal, ha A oszlopai lineárisan öszefüggenek. Speciálisan ha A négyzetes mátrix, akkor ez azzal ekvivalens, hogy A determinánsa nulla. Ezzel a tétellel könnyű megválaszolni a harmadik feladatot, illetve keresni megfelelő mátrixot a negyedik feladatban. Kétszer kettes mátrix esetében érdemes megjegyezni az inverz képletét: inverz akkor létezik, ha a mátrix d determinánsa nem nulla, és ekkor az inverz mátrixot úgy kapjuk, hogy az eredeti mátrixban a főátló két elemét kicseréljük, a mellékátló elemeit ellentettjükre változtatjuk, végül a mátrix minden elemét elosztjuk d-vel (így kaptuk az ötödik feladat eredményét). Nem feltétlenül négyzetes mátrixra is érvényes, hogy pontosan akkor van jobb oldali inverze, ha rangja megegyezik a sorainak a számával, azaz ha a sorai lineárisan függetlenek. Erre a tételre a hatodik és a hetedik feladat megoldásában nincs szükség, mert azok megoldása közvetlen számolás (a hetedik feladatban az egyetlen megfelelő vektor [1/3 1/3 1/3]T). A nyolcadik feladatban viszont ezt a tételt alkalmazzuk. Az (A) rész két sora nyilván összefügg, a (C) esetében ez azért igaz, mert R2 dimenziója 2, és így bármely három vektor összefüggő. A (B)-ben például az a = d = 1 és b = c = 0 két független vektort ad, a (D) esetben meg a három sor független lesz ha a 6= 9, hiszen ekkor a determináns értéke nem nulla.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (7) Permutációk, inverziók, determinánsok}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={7/1. -N-}]
+    Az A = [aij] ∈ R5×5 mátrix determinánsának kiszámolásakor mennyi lesz az a31a24a53a15a42 szorzathoz tartozó permutációban az inverziók száma?
+
+  \tcblower
+
+    \mmedskip 
+    
+    7
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={7/2. -R-}]
+    Az A = [aij] ∈ R5×5 mátrix determinánsának kiszámolásakor az a11a2ia33a45a5j szorzatot (−1)-gyel szorozva kellett ﬁgyelembe venni. Határozzuk meg i-t és j-t.
+  \tcblower
+
+    \mmedskip 
+    
+    i = j =
+2 4
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={7/3. -Q-}]
+    Az {1,2,3,4,5} számoknak hány olyan sorbarendezése (permutációja) van, melyben az inverziók száma 1?
+  \tcblower
+
+    \mmedskip 
+    
+     Ilyenek száma: 4
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={7/4. -Q-}]
+    Az $\{1,2,3,4,5\}$ számok $i2jkℓ$ típusú sorbarendezései (azaz permutációi) között mennyi lehet az inverziók maximális száma?
+  \tcblower
+
+    \mmedskip 
+    Max. inverziószám: 8
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={7/5. -N-}]
+    Legyenek $A,B,C ∈ R3×3$ olyan valós mátrixok, melyekre $detA = 2, detB = 3$ és $detC = 4$. Mennyi lesz $2A2C−1B$ determinánsa?
+  \tcblower
+
+    \mmedskip 
+    
+     $23 ·22 ·(1/4)·3 = 24$
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={7/6. -R-}]
+    Legyen A =
+, és
+tegyük föl, hogy detA = 5. Mennyi lesz detB?
+
+  \tcblower
+
+    \mmedskip 
+    
+     detB = −5
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={7/6. -R-}]
+    A determináns deﬁníciójában a tagok előjelezését a következőképpen kell kiszámolni. A szorzatot rendezzük át úgy, hogy az aij-k első indexei növekedjenek 1-től n-ig. Ezek után a második indexek által alkotott permutációban számoljuk meg az inverziókat (vagyis azokat a párokat, amelyekben az elöl szereplő szám a nagyobb). Ha ezek száma páros, akkor az előjel +, különben −. Az első feladatban a kapott sorrend 54123. Ha n elemet permutálunk, akkor az inverziók maximális száman 2; ezt a számot az elemek monoton fogyó sorbarendezése produkálja, 0 inverziója pedig csak a természetes, monoton növő sorbarendezésnek van. Két elemet megcserélve, a permutáció paritása (előjele) mindig megváltozik. A második példában i és j csak 2 és 4 lehet valamelyik sorrendben, ezt a két permutációt kell kipróbálni. A harmadik feladatban csak két szomszédos elemet cserélhetünk meg az alapsorrendhez képest. A negyedik feladatban az az ötlet, hogy a 2 után legalább két, 2-nél nagyobb számnak kell lennie, ez két nem-inverziót elront, és így maximum 8 inverzió lehet. Az 52431 sorrend ezt elő is állítja. Az ötödik feladat a determinánsok szorzástételének egyszerű alkalmazása (amiből következik, hogy egy mátrix inverzének a determinánsa az eredeti mátrix determinánsának a reciproka). A hatodik feladatban az eredeti mátrixot transzponáltuk, megcseréltük az első két oszlopot, majd az új első oszlopot adtuk a harmadikhoz. A középső lépésnél a determináns előjelet vált, a másik kettőnél nem változik.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (8) Jobb oldali sajátértékek és sajátvektorok, diagonalizálhatóság}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={8/1. -N-}]
+    Mik az A = R3×3 mátrix sajátértékei? 
+
+  \tcblower
+
+    \mmedskip 
+    
+    1, 4, 6
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8/2. -N-}]
+     Írjunk föl egy olyan mátrixot, amelynek karakterisztikus polinomja $(1−λ)(2−λ)(3−λ)$.
+
+  \tcblower
+
+    \mmedskip 
+    
+     Pl. A =
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8/3. -R-}]
+    Írjunk föl egy olyan nem diagonalizálható mátrixot, melynek karakterisztikus polinomja λ2.
+
+  \tcblower
+
+    \mmedskip 
+    
+    Pl. A =
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8/4. -Q-}]
+    Az A =  ∈ R2×2 mátrix nem diagonalizálható R fölött. Mik c lehetséges értékei?
+
+
+  \tcblower
+
+    \mmedskip 
+    
+    c ≤ 0
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8/5. -Q-}]
+    Milyen c ∈ R valós értékekre lesz az 1 2 0 c ∈ R2×2 mátrix diagonalizálható?
+
+  \tcblower
+
+    \mmedskip 
+    
+     $c \neq 1$
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8/6. -Q-}]
+     Az A =a b c d∈ R2×2 mátrixra . Mennyi az a + 1 b c d + 1 mátrix determinánsa? det a + 1 b c 
+
+  \tcblower
+
+    \mmedskip 
+    
+     det
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8/6. -Q-}]
+     Egy mátrix valós sajátértékeit a karakterisztikus polinom valós gyökei adják: a főátló minden eleméből levonunk λ-t és kiszámítjuk a determinánst. Felső háromszögmátrix, speciálisan diagonális mátrix esetén a sajátértékek a főátlóból leolvashatók. A sajátvektorokat minden egyes sajátértékhez egy-egy lineáris egyenletrendszer megoldásával kaphatjuk meg. A diagonalizálhatóság feltétele az, hogy legyen „elegendő” sajátvektor, azaz a tér dimenziószámával megegyező mennyiségű lineárisan független sajátvektor. A harmadik feladat mátrixa esetében ez nem teljesül, mert a sajátvektorokr 0T alakúak, ahol r 6= 0 (azaz a 0-hoz tartozó sajátaltér egydimenziós). Gyakran használt elégséges feltétel, hogy egy n×n-es mátrix diagonalizálható R fölött, ha n különböző valós sajátértéke van. A negyedik feladat mátrixának karakterisztikus polinomja λ2−c. Ennek c > 0-ra két különböző valós gyöke van, tehát ilyenkor a mátrix diagonalizálható; c < 0-ra nincs valós gyök, ezért R fölött nem diagonalizálhatjuk a mátrixot; végül c = 0-ra a megoldást a harmadik feladat adja. Hasonló érvelés adható az ötödik feladatnál is. A hatodik feladat feltétele azt mutatja, hogy a −1 sajátértéke a mátrixnak, ha tehát −1-et levonunk a főátló minden eleméből, épp az A−(−1)I2 mátrixot kapjuk, aminek a determinánsa 0, hiszen −1 gyöke a karakterisztikus polinomnak.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (9) Lineáris transzformációk mátrixa, sajátértékei, kép- és magtere; báziscsere }
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={9/1. -N-}]
+    Mi a kétdimenziós valós sík, azaz R2 origó körüli +90 fokos forgatásának mátrixa az i és j bázisban?
+
+  \tcblower
+
+    \mmedskip 
+    
+    [ϕ]i,j;i,j = 0 −1 1 0
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={9/2. -R-}]
+    Mi a háromdimenziós valós tér, azaz R3 x-y-síkra való tükrözésének a mátrixa az j,k,i bázisban? (Itt a bázisvektorok sorrendje a megszokottól eltérő.)
+
+  \tcblower
+
+    \mmedskip 
+    
+     [ϕ]j,k,i;j,k,i =
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={9/3. -N-}]
+    Mik a kétdimenziós valós sík, azaz R2 origóra való tükrözésének sajátértékei?
+
+  \tcblower
+
+    \mmedskip 
+    
+    −1
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={9/4. -R-}]
+    Az R2 egy ϕ lineáris transzformációjára ϕ(i) = 2i és ϕ(j) = i + 3j. Mik ϕ sajátértékei? 
+    
+  \tcblower
+
+    \mmedskip 
+    
+     2 és 3
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={9/4. -R-}]
+    Minden lineáris transzformációhoz rögzített bázis esetén egyértelműen tartozik egy négyzetes mátrix. Ezt úgy írhatjuk föl, hogy a bázisvektorokat leképezzük a lineáris transzformációval, e képvektorokat felírjuk a megadott bázisban, és az így kapott koordinátavektorokat írjuk a mátrix oszlopaiba. Ha változtatunk a bázison, akkor változhat a mátrix is; ez kiszámítható a bázistranszformáció képletéből (A′ = S−1AS). Az ötödik feladatban a képletre nincs szükség: az első bázisvektor, b1 kétszeresének a képe szintén önmaga, azaz 2b1, s így az új mátrix első oszlopában az első koordináta 1, a többi meg 0. Ugyanakkor a b2 és b3 képében fele annyit kell „vennünk” 2b1-ből, mint b1-ből, tehát az első sor második és harmadik eleme a felére csökken. Egy lináris transzformáció sajátértékeit kiszámolhatjuk úgy, hogy felírjuk a mátrixát egy alkalmas bázisban, és ennek vesszük a sajátértékeit. Ez a negyedik (kétlépcsős) feladat: a mátrix a triviális bázisban 2 1 0 3. Néha lehetséges közvetlenül a deﬁníció segítségével is boldogulni: a harmadik feladatban minden vektor az ellentettjébe megy, ezért az egyetlen sajátérték a −1. A hatodik és a hetedik feladatban felírhatjuk, hogy ϕ(λe1 + µe2) = µ(e1 + e2). Ez akkor nulla, azaz λe1 + µe2 akkor van a magtérben, ha µ = 0. A képtér elemei pedig e1 + e2 többszörösei. A nyolcadik feladatban azt is lehet használni, hogy [ϕ(v)]B = [ϕ]B[v]B. Az Mx y zT = 0 egyenlet megoldása: x és y tetszőleges, z = 0. A magtér tehát kétdimenziós. Megoldható a feladat a dimenzióösszefüggés segítségével is, amely szerint a magtér dimenziója a mátrix oszlopainak száma mínusz a mátrix rangja. Harmadik megoldásként láthatjuk, hogy két bázisvektor a nullába megy, ezért a magtér legalább kétdimenziós, de háromdimenziós nem lehet, mert a mátrix nem nulla.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (10) Skaláris szorzat, vektorok szöge }
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={10/1. -N-}]
+    Mennyi az1 1 1 1T és az1 −1 −1 −1T vektorok szöge R4-ben, a szokásos ha,bi = aTb skaláris szorzatra nézve?
+
+  \tcblower
+
+    \mmedskip 
+    
+    Szögük: 120◦
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={10/2. -R-}]
+    Az 1 1 + i iT ∈ C3 vektor ha,bi = b∗a mellett merőleges az 1 1 + i cT vektorra. Határozzuk meg c ∈ C értékét.
+
+
+  \tcblower
+
+    \mmedskip 
+    
+    c = −3i
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={10/3. -R-}]
+    Álljon W az R3 azon vektoraiból, amelyek merőlegesek a0 1 1T és1 1 0T vektorok mindegyikére. Adjunk meg egy bázist W-ben.
+
+  \tcblower
+
+    \mmedskip 
+    
+    {1 −1 1T}
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={10/4. -Q-}]
+    Mely a,b ∈ R értékekre lesz |3a + 4b| = 5√a2 + b2
+
+  \tcblower
+
+    \mmedskip 
+    
+    [a,b] = λ[3,4], λ ∈ R
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={10/4. -Q-}]
+    A szokásos skaláris szorzatot Rn-ben az ha,bi = aTb összefüggés adja meg; két vektor merőlegessége azt jelenti, hogy a skaláris szorzatuk nulla. Rn-ben a vektorok szögét a cosγ = ha,bi kak·kbk összefüggéssel deﬁniáljuk, erről szól az első feladat. (A megoldáshoz érdemes átismételni a szögfüggvények értékét a nevezetes szögeken.) A második feladat esetében a skaláris szorzat kiszámításánál vigyázzunk arra, hogy a második tényező komponenseit meg kell konjugálni. A harmadik feladatnál lineáris egyenletrendszert kapunk W elemeinek komponenseire. A negyedik feladat esetében arra kell ráismerni, hogy a feladatbeli egyenlet az u = [3 4]T és a v = [a b]T vektorokra írja föl az |hu,vi| = kuk·kvk összefüggést, ami a Cauchy-egyenlőtlenség alapján akkor és csak akkor teljesülhet, ha u és v párhuzamosak.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (11) Geometriai vektorok: vektoriális és vegyes szorzat }
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={11/1. -N-}]
+    Ha [a]i,j,k = 0 1 1T és a [b]i,j,k = 1 1 0T, akkor számítsuk ki az a és b vektorok vektoriális szorzatát (koordinátákkal).
+
+  \tcblower
+
+    \mmedskip 
+    
+    −1 1 −1T
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={11/1. -N-}]
+    A vektoriális szorzat koordinátáinak kiszámításához érdemes a „determinásos” képletet használni: egy 3 × 3-as determináns első sorába az i, j, k vektorokat írjuk, a másik két sorba pedig a megadott vektorok koordinátáit, majd a determinánst (formálisan) kifejtjük az első sora szerint. Ekkor az i, j, k vektorok egy lineáris kombinációját kapjuk: ez lesz a vektoriális szorzat és így a leggyorsabb megoldani az első feladatot. Ebből a képletből láthatjuk azt is, hogy a vegyes szorzat is egy olyan determináns értéke, amelynek soraiban a három megadott vektor van alkalmas sorrendben. Speciálisan három vektor akkor és csak akkor lineárisan összefüggő, azaz akkor és csak akkor vannak egy síkban, ha a vegyes szorzatuk nulla. Ez kapcsolódik a második és a harmadik feladat (B) részéhez is. Az utolsó három feladatban érdemes a derékszögű koordinátarendszerben a három tengelyirányú egységvektorra, i-re, j-re és k-ra nézni a vektoriális szorzat hatását, ezekkel érdemes kísérletezni az utolsó három feladatban. A második feladat (A) részében könnyű látni, hogy ha a és b nem esnek egy irányba, akkor a × b merőleges lesz az általuk meghatározott síkra, s ekkor c lehet akár a-val is egyenlő, az (a × b) × c vektoriális szorzat nem lesz a nullvektor. A (C) részben ha a és b vagy b és c párhuzamosak, akkor az ő vektoriális szorzatuk 0, és így 0 lesz a teljes vektoriális szorzat is. Ha viszont egyik vektorpár sem párhuzamos, akkor mindkét esetben ugyanazt a síkot feszítik ki (hiszen a,b és c lineárisan összefüggők), és így mindkét vektorpár vektoriális szorzata a síkra merőleges lesz, vagyis ezek párhuzamos vektorok, vektoriális szorzatuk tehát biztosan 0. A (D) esetben pedig pl. a = c = i, b = j esetén a szorzat értéke k és −k skaláris szorzata lesz, tehát nem 0. Hasonló okoskodással lehet kielemezni az utolsó két feladatban szereplő állítások igazságértékét is.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  (12) Kvadratikus alakok jellege (deﬁnitsége)}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={12/1. -N-}]
+     Számítsuk ki az1 2 2 1mátrix által meghatározott kvadratikus alak értékét az1 2T vektoron.
+
+  \tcblower
+
+    \mmedskip 
+    
+    13
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={12/2. -R-}]
+     Adjunk meg egy v ∈ R2 vektort, melyen az A = 1 2 2 1 mátrix által meghatározott kvadratikus alak negatív értéket vesz föl.
+
+
+  \tcblower
+
+    \mmedskip 
+    
+    Pl. v =  1 −1
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={12/3. -R-}]
+     Adjuk meg az 
+a b c b 1 −2 c −2 −1
+ ∈ R3×3 mátrix által meghatározott bilineáris függvény kvadratikus karakterét (deﬁnitségét).
+
+
+  \tcblower
+
+    \mmedskip 
+    
+    Indeﬁnit.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={12/4. -N-}]
+     Milyen c ∈ R valós értékekre lesz az1 c c c∈ R2×2 mátrix által meghatározott kvadratikus alak pozitív deﬁnit?
+
+  \tcblower
+
+    \mmedskip 
+    
+    0 < c < 1
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={12/4. -N-}]
+     Egy szimmetrikus, valós A mátrixhoz tartozó kvadratikus alak Q(u) = uTAu. Abban az esetben ha A = a b b d és u = x yT, akkor Q(u) = ax2 + 2bxy + dy2. A második feladatban tehátolyan x és y számokat kell keresnünk, amelyekre x2 + 4xy + y2 negatív. Ha észrevesszük, hogy x2 + 4xy + y2 = x2 + 4xy + 4y2 −3y2 = (x + 2y)2 −3y2, akkor már könnyen találunk ilyen értékeket (de az alábbiak szerint a mátrix egyik sajátvektora is megfelelő). A kvadratikus alak jellege (karaktere, deﬁnitsége) azt mondja meg, milyen valós értékeket vesz föl a nem nulla vektorokon. Ezt a tulajdonságot le tudjuk olvasni a mátrix sajátértékeiből (amik szimmetrikus mátrix esetén mindig valósak), pontosabban azok előjeléből: Q(u), u 6= 0 sajátértékek előjele: jelleg: mindig pozitív mind pozitív pozitív deﬁnit mindig negatív mind negatív negatív deﬁnit mindig nemnegatív mind nemnegatív pozitív szemideﬁnit mindig nempozitív mind nempozitív negatív szemideﬁnit van pozitív is, negatív is van pozitív is, negatív is indeﬁnit Ha u = ei (a triviális bázis i-edik vektora), akkor Q(u) az A mátrix főátlójának i-edik eleme. A harmadik feladatban a második és a harmadik diagonális elem pozitív, illetve negatív, s így kvadratikus alak pozitív és negatív értékeket is fölvesz, tehát biztosan indeﬁnit. Bizonyos esetekben a következő kritérium segítségével is leolvasható a kvadratikus alak jellege. Legyen ∆0 = 1 és ∆k a mátrix bal fölső sarkában lévő k ×k-as részmátrix determinánsa (ez az ún. karakterisztikus sorozat). Pl. a karakterisztikus sorozat pontosan akkor áll csupa pozitív értékből, ha a kvadratikus alakunk pozitív deﬁnit. A negyedik feladatnál ezt a feltételt használjuk: az 1×1-es részmátrixhoz tartozó tag pozitív, s a pozitív deﬁnitség azzal lesz ekvivalens, hogy a determináns, c−c2 = c(1−c) is pozitív. Ez csak a jelzett intervallumban valósulhat meg.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge  B rész}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={12/4. -N-}]
+     Az alábbi listában azok a deﬁníciók és állítások, tételek szerepelnek, melyeket a vizsgadolgozat B részében kérdezhetünk. A válaszoknál zárójelben néhol magyarázó megjegyzések is vannak, ezeket nem kell leírni a teljes pontszám eléréséhez.
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={1}]
+      Mit jelent az, hogy egy W ⊆ Rn részhalmaz altér?
+
+  \tcblower
+W ⊆ Rn altér Rn-ben, ha: 1) W nem üres; 2) a,b ∈ W esetén a + b ∈ W (azaz W zárt az összeadásra); 3) a ∈ W és λ ∈ R esetén λa ∈ W (azaz W zárt a skalárral szorzásra). (Ahelyett, hogy W nem üres, azt is írhatjuk, hogy 0 ∈ W.)
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={2}]
+      Deﬁniáljuk, mit jelent az, hogy a v1,...,vk ∈ Rn vektorrendszer lineárisan független.
+
+  \tcblower
+A v1,...,vk vektorrendszer akkor és csak akkor lineárisan független, ha csak a triviális lineáris kombinációja adja a nullvektort. Képletben: tetszőleges λ1,λ2,...,λk ∈ R esetén, ha λ1v1 + λ2v2 + ··· + λkvk = 0, akkor minden i-re λi = 0.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3}]
+      Mit jelent az, hogy a v1,...,vk ∈ Rn vektorrendszer lineárisan összefüggő? A válaszban ne hivatkozzunk a lineáris függetlenség fogalmára.
+
+
+  \tcblower
+A v1,...,vk vektorrendszer akkor és csak akkor lineárisan összefüggő (azaz nem lineárisan független), ha léteznek olyan λ1,λ2,...,λk ∈ R nem mind nulla számok, melyekre λ1v1 + λ2v2 + ··· + λkvk = 0.)
+
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={4}]
+     Mit jelent az, hogy egy v vektor lineárisan függ az a1,...,ak ∈ Rn vektoroktól?
+
+  \tcblower
+Azt jelenti, hogy v felírható a1,...,ak lineáris kombinációjaként, azaz léteznek olyan λ1,λ2,...,λk ∈ R skalárok, melyekre v = λ1a1 + λ2a2 + ··· + λkak.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={5}]
+    Jellemezzük egy a1,...,ak ∈ Rn vektorrendszer lineáris összefüggőségét a lineáris függés fogalmával.
+
+
+  \tcblower
+Egy a1,...,ak ∈ Rn vektorrendszer (k ≥ 2 esetén) pontosan akkor lineárisan összefüggő, ha valamelyik i-re ai lineárisan függ az a1,...,ai−1,ai+1,...,ak vektoroktól.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={6}]
+      Deﬁniáljuk egy V ≤ Rn altér bázisának fogalmát.
+
+
+  \tcblower
+Egy b1,...,bk vektorrendszert akkor mondunk a V ≤ Rn altér bázisának, ha lineárisan független, és V minden vektorát előállíthatjuk a bi vektorok lineáris kombinációjaként. (A lineáris függetlenség helyettesíthető azzal a feltétellel, hogy ez a felírás egyértelmű, az előállíthatóság pedig azzal, hogy generátorrendszerről van szó.)
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={7}]
+      Deﬁniáljuk egy a ∈ V ≤ Rn vektor koordinátavektorát a V egy b1,...,bk bázisában fölírva.
+
+
+  \tcblower
+Az a vektor koordinátavektora pontosan akkor [a]b1,...,bk =
+ 
+λ1 . . . λk
+ 
+, ha a = λ1b1+···+λkbk.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8}]
+       Egy A ⊆ Rn vektorhalmaz esetén adjuk meg az A által generált altér egy jellemzését.
+
+
+  \tcblower
+Az A által generált altér azokból az Rn-beli vektorokból áll, amelyek előállnak A-beli vektorok lineáris kombinációiként, azaz amelyek lineárisan függnek az A-beli vektoroktól. (Ez a halmaz megegyezik az A-t tartalmazó Rn-beli alterek metszetével.)
+
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={9}]
+     Mondjuk ki a lineárisan független rendszerek és a generátorrendszerek elemszámát összehasonlító tételt (ez a kicserélési tétel egyik része).
+
+
+
+  \tcblower
+Minden lineárisan független rendszer elemszáma legfeljebb akkora, mint bármelyik generátorrendszer elemszáma.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={10}]
+     Deﬁniáljuk egy V ≤ Rn altér dimenzióját, dimV -t.
+
+  \tcblower
+dimV a V egy bázisának elemszáma, illetve 0, ha V = {0}. (Ez a deﬁníció azért értelmes, mert bármely két bázis elemszáma egyenlő.)
+
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={11}]
+   Deﬁniáljuk egy v1,...,vk ∈ Rn vektorrendszer rangját, r(v1,...,vk)-t.
+
+
+  \tcblower
+r(v1,...,vk) = dimSpan(v1,...,vk), azaz egy vektorrendszer rangja megegyezik az általa generált (kifeszített) altér dimenziójával.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={12}]
+    Adjuk meg képlettel két mátrix, A ∈ Rk×ℓ és B ∈ Rℓ×n szorzatában, AB-ben az i-edik sor j-edik elemét, i[AB]j-t. Azt is mondjuk meg, i és j milyen értékére létezik ez az elem.
+
+
+
+  \tcblower
+Ha 1 ≤ i ≤ k és 1 ≤ j ≤ n, akkor i[AB]j =
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={13}]
+    Mondjunk ki két, a mátrixok transzponálását a többi szokásos mátrixművelettel összekapcsoló összefüggést.
+
+  \tcblower
+A,B ∈ Rk×n ⇒ (A + B)T = AT + BT λ ∈ R,A ∈ Rk×n ⇒ (λA)T = λAT A ∈ Rk×ℓ, B ∈ Rℓ×n ⇒ (AB)T = BTAT
+
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={14}]
+    Deﬁniáljuk egy A ∈ Rk×n mátrix oszloprangját, illetve sorrangját, ρO(A)-t és ρS(A)-t.
+
+  \tcblower
+Ha a1,...,an ∈ Rk a mátrix oszlopai, akkor ρO(A) = r(a1,...,ak), azaz az oszloprang az oszlopok rendszerének rangja (vagyis az oszlopok által generált altér dimenziója.) Analóg módon, a mátrix sorrangja a sorok által generált altér dimenziója, vagy másképpen: ρS(A) = ρO(AT).
+
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={15}]
+   Mondjuk ki a mátrixok szorzatának oszloprangjára vonatkozó becslést.
+
+
+  \tcblower
+Ha létezik az AB mátrixszorzat, akkor ρO(AB) ≤ ρO(A). (Igaz a ρO(AB) ≤ ρO(B) becslés is.)
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={16}]
+     Mit nevezünk egy A ∈ Rn×m mátrix jobb, illetve kétoldali inverzének?
+
+  \tcblower
+Az A(j) ∈ Rm×n mátrix jobb oldali inverze A-nak, ha AA(j) = In, ahol In az n × n-es egységmátrix. A−1 ∈ Rm×n kétoldali inverze A-nak, ha jobb oldali és bal oldali inverze is A-nak, azaz AA−1 = In, és A−1A = Im. (Ez utóbbi létezése esetén m = n.)
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={17}]
+    A mátrixrang fogalmának fölhasználásával mondjuk ki annak szükséges és elégséges feltételét, hogy az A ∈ Rn×m mátrixnak létezzen jobb oldali inverze.
+
+  \tcblower
+Az A ∈ Rn×m mátrixnak pontosan akkor létezik jobb oldali inverze, ha ρ(A) = n, azaz a mátrix rangja megegyezik a sorainak a számával.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={18}]
+   Deﬁniáljuk a geometriai vektorok skaláris szorzatának fogalmát a vektorok hosszának és szögének segítségével.
+
+  \tcblower
+Jelölje |a| az a geometriai vektor hosszát, γ(a,b) pedig az a és b geometriai vektorok hajlásszögét. Ekkor az a és b skaláris szorzata ab = |a||b|cosγ(a,b).
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={19}]
+   Deﬁniáljuk a geometriai vektorok vektoriális szorzatának fogalmát.
+  \tcblower
+Jelölje |a| az a geometriai vektor hosszát, γ(a,b) pedig az a és b geometriai vektorok hajlásszögét. Ekkor az a és b vektoriális szorzata az az a × b-vel jelölt vektor, melyre: 1) |a × b| = |a||b|sinγ(ab); 2) a × b ⊥ a,b; 3) ha |a × b| 6= 0, akkor a,b,a × b jobbrendszert alkot.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={20}]
+    Mondjuk ki a geometriai vektorokra vonatkozó kifejtési tételt.
+
+  \tcblower
+Ha a,b,c geometriai vektorok, akkor (a × b) × c = (ac)b − (bc)a.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={21}]
+    Mondjuk ki a geometriai vektorokra vonatkozó felcserélési tételt.
+
+  \tcblower
+    Ha a,b,c geometriai vektorok, akkor (a × b)c = a(b × c). 
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={22}]
+    Deﬁniáljuk a geometriai vektorok vegyesszorzatának fogalmát.
+
+  \tcblower
+ Deﬁniáljuk a geometriai vektorok vegyesszorzatának fogalmát.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={23}]
+   Adjuk meg az A mátrix determinánsát deﬁniáló képletet. Mit jelent ebben az I(i1,...,in) kifejezés? 
+  \tcblower
+Legyen A = 
+a11 ... a1n . . . . . . an1 ... ann
+ ∈ Rn×n. Ekkor detA = X i1,...,in (1,...,n)
+(−1)I(i1,...,in)a1i1a2i2 ···anin.
+Itt az összegezés az {1,2,...,n} számok minden permutációjára történik, I(i1,...,in) pedig az adott permutáció inverzióinak a számát jelöli.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={24}]
+   Mondjunk ki egy olyan feltételt, mely ekvivalens azzal, hogy az A ∈ Rn×n mátrix determinánsa nem nulla.
+
+  \tcblower
+Mondjunk ki egy olyan feltételt, mely ekvivalens azzal, hogy az A ∈ Rn×n mátrix determinánsa nem nulla.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={25}]
+   Mit értünk az A ∈ Rn×n mátrix i-edik sorának j-edik eleméhez tartozó előjelezett aldeterminánson, Aij-n?
+
+  \tcblower
+Hagyjuk el az A mátrix i-edik sorát és a j-edik oszlopát; az így kapott (n−1)×(n−1)-es mátrixot jelölje Bij. Ekkor a keresett előjelezett aldetermináns: Aij = (−1)i+j detBij.
+
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={26}]
+   Adjuk meg képlettel az A ∈ Rn×n mátrix determinánsának i-edik sora szerinti kifejtését. A mátrix elemeit, illetve előjelezett aldeterminánsait aij, ill. Aij jelöli.
+
+  \tcblower
+detA =
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={28}]
+    DeﬁniáljukaVandermonde-determinánsfogalmát, ésmondjukkiazértékérevonatkozóállítást.
+
+  \tcblower
+a1,...,an ∈ R, n ≥ 2 esetén V (a1,...,an) =
+
+
+= Y 1≤i<j≤n
+(aj − ai).
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={30}]
+    Mondjuk ki a determinánsokra vonatkozó szorzástételt.
+  \tcblower
+    Ha A,B ∈ Rn×n tetszőleges mátrixok, akkor det(AB) = detA · detB.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={31}]
+   Mit jelent, hogy két négyzetes mátrix hasonló R felett?
+
+  \tcblower
+    A,B ∈ Rn×n hasonlók R felett, ha létezik olyan invertálható S ∈ Rn×n mátrix, melyre B = S−1AS. Ezt általában A ∼R B jelöli.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={32}]
+    Mikor mondjuk egy mátrixra, hogy diagonalizálható R felett?
+
+  \tcblower
+    Egy A ∈ Rn×n négyzetes mátrix diagonalizálható R felett, ha hasonló R felett egy diagonális mátrixhoz, azaz létezik olyan S invertálható, ill. D diagonális mátrix Rn×n-ben, hogy D = S−1AS.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={33}]
+    Deﬁniáljuk egy mátrix jobb oldali sajátvektorának a fogalmát.
+
+  \tcblower
+    Legyen A ∈ Rn×n tetszőleges négyzetes mátrix. Egy x ∈ Rn vektort az A mátrix jobb oldali sajátvektorának nevezünk, ha: 1) x 6= 0; 2) létezik λ0 ∈ R szám, melyre Ax = λ0x.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={34}]
+   Deﬁniáljuk egy mátrix jobb oldali sajátértékének a fogalmát.
+  \tcblower
+     Legyen A ∈ Rn×n tetszőleges négyzetes mátrix. Egy λ0 ∈ R számot az A mátrix jobb oldali sajátértékének nevezünk, ha van olyan x ∈ Rn vektor, melyre 1) x 6= 0; 2) Ax = λ0x.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={35}]
+    Mondjuk ki egy valós elemű mátrix R feletti diagonalizálhatóságának szükséges és elégséges feltételét a sajátvektorok fogalmának fölhasználásával.
+
+  \tcblower
+Egy A ∈ Rn×n mátrix pontosan akkor diagonalizálható R felett, ha létezik A sajátvektoraiból álló bázis Rn-ben. 
+  \end{tcolorbox}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={36}]
+     Deﬁniáljuk az A ∈ Rn×n mátrix λ0 (jobb oldali) sajátértékéhez tartozó sajátalterének fogalmát.
+
+  \tcblower
+Wλ0 = {x ∈ Rn |Ax = λ0x} a λ0-hoz tartozó sajátaltér. (Vagyis Wλ0 a λ0 sajátértékű sajátvektorok halmaza, kiegészítve a nullvektorral.)
+
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={37}]
+    Deﬁniáljuk egy négyzetes mátrix karakterisztikus polinomjának fogalmát.
+  \tcblower
+Egy A ∈ Rn×n mátrix karakterisztikus polinomja kA(λ) = det(A−Inλ), ahol In az n×n-es egységmátrix.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={38}]
+    Mondjuk ki a hasonló mátrixok karakterisztikus polinomjára vonatkozó állítást.
+
+  \tcblower
+Ha A,B ∈ Rn×n hasonlók R felett, akkor kA(λ) = kB(λ).
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={39}]
+   Deﬁniáljuk a komplex euklideszi tér fogalmát.
+  \tcblower
+Legyen V vektortér C felett. V -t komplex euklideszi térnek nevezzük, ha adva van egy hx,yi : V × V → C leképezés, melyre minden x,y,z ∈ V és λ ∈ C esetén: (1) hy,xi = hx,yi; (2) hλx,yi = λhx,yi (és hx,λyi = λhx,yi); (3) hx + y,zi = hx,zi + hy,zi (és hx,y + zi = hx,yi + hx,zi); (4) hx,xi mindig valós és nemnegatív, továbbá csak akkor 0, ha x = 0.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={40}]
+   Deﬁniáljuk az x vektor normáját egy euklideszi térben.
+
+  \tcblower
+Ha V valós vagy komplex euklideszi tér, akkor tetszőleges x ∈ V vektorra kxk =phx,xi.
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={41}]
+     Mondjuk ki az euklideszi terek vektoraira vonatkozó háromszög-egyenlőtlenséget.
+  \tcblower
+Ha V valós vagy komplex euklideszi tér, akkor tetszőleges x,y ∈ V vektorokra: kx + yk ≤ kxk + kyk .
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={42}]
+    Mondjuk ki a valós vagy komplex euklideszi terekre vonatkozó Cauchy-egyelőtlenséget, valamint azt, hogy mikor áll ebben egyenlőség.
+  \tcblower
+Ha V valós vagy komplex euklideszi tér, akkor tetszőleges x,y ∈ V vektorokra teljesül, hogy |hx,yi| ≤ kxk·kyk, és egyenlőség akkor és csak akkor áll fönn, ha az x és y vektorok lineárisan összefüggőek (azaz párhuzamosak).
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={43}]
+    Deﬁniáljuk egy V euklideszi tér ortonormált bázisának a fogalmát.
+
+  \tcblower
+Az e1,...,en ∈ V vektorokbólállórendszertortonormáltbázisnaknevezzüka V euklideszi térben, ha: 1) bázist alkotnak V -ben; 2) az ei vektorok páronként merőlegesek, azaz i 6= j esetén hei,eji = 0; és 3) a vektorok normáltak, azaz keik = 1 minden 1 ≤ i ≤ n-re. 
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={44}]
+    Mondjuk ki a valós szimmetrikus mátrixokra vonatkozó spektráltételt (azaz főtengelytételt).
+
+  \tcblower
+Egy A ∈ Rn×n mátrix esetén pontosan akkor létezik A sajátvektoraiból álló ortonormált bázis Rn-ben (azaz A pontosan akkor diagonalizálható R felett ortonormált bázisban), ha az A mátrix szimmetrikus (azaz AT = A). (Ilyenkor az A sajátértékei mind valósak.)
+
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={45}]
+    Deﬁniáljuk egy A ∈ Rn×n valós szimmetrikus mátrixhoz tartozó kvadratikus alakot.
+  \tcblower
+Az A-hoz tartozó kvadratikus alak az a Q : Rn → R függvény, melyre Q(x) = xTAx.
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={46}]
+     Mondjuk meg, mit jelent az, hogy az A ∈ Rn×n szimmetrikus mátrixhoz tartozó Q kvadratikus alak pozitív deﬁnit, és jellemezzük ezt az esetet az A sajátértékei segítségével.
+
+  \tcblower
+Q-t akkor nevezzük pozitív deﬁnitnek, ha minden 0 6= x ∈ Rn vektorra Q(x) > 0. Ez pontosan akkor teljesül, ha az A mátrix minden sajátértéke pozitív.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={46}]
+     Mondjuk meg, mit jelent az, hogy az A ∈ Rn×n szimmetrikus mátrixhoz tartozó Q kvadratikus alak negatív deﬁnit, és jellemezzük ezt az esetet az A karakterisztikus sorozata segítségével.
+
+  \tcblower
+Q-t akkor nevezzük negatív deﬁnitnek, ha minden 0 6= x ∈ Rn vektorra Q(x) < 0. Ez pontosan akkor teljesül, ha az A karakterisztikus sorozata jelváltó. (Az A mátrix ∆o,...,∆n karakterisztikus sorozatának k-adik tagja az A bal fölső sarkában lévő k × k-as részmátrix determinánsa, illetve ∆o = 1.)
+
+  \end{tcolorbox}
+\end{frame}
 
 
 
@@ -157,6 +1672,132 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}[plain]
+\begin{tcolorbox}[center, colback={myyellow}, coltext={black}, colframe={myyellow}]
+    {\RHuge C rész}
+    \mmedskip
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={1. (4p)}]
+    Mondjuk ki a $b1,...,bk$ vektorok lineáris függetlenségének definícióját, majd bizonyítsuk be, hogy ha $B = \{b1,...,bk\}$ lineárisan független vektorrendszer, akkor minden lineáris kombinációjukként felírható vektor egyértelműen írható föl B-beli vektorok lineáris kombinációjaként.
+  \tcblower
+  
+    A $v1,...,vk$ vektorrendszer akkor és csak akkor lineárisan független, ha csak a triviális lineáris kombinációja adja a nullvektort.\\
+
+    Képletben: tetszőleges ${\lambda}1,{\lambda}2,...,{\lambda}k \in R$ esetén, ha ${\lambda}1v1 + {\lambda}2v2 + ··· + {\lambda}kvk = 0$, akkor minden $i$-re ${\lambda}i = 0$.\\
+
+    Ha lenne egy vektor, melynek kétféle fölírása is létezne: $u = Pk i=1 {\lambda}ibi = Pk i=1 {\mu}ibi$, akkor a kétféle előállítást egymásból kivonva azt kapjuk, hogy\\
+
+    $0 = Pk i=1({\lambda}i -{\mu}i)bi$.\\
+
+    Ha a két előállítás különbözik, akkor valamelyik $({\lambda}i-{\mu}i)$ együttható nem nulla, s ez ellentmond a $B$ lineáris függetlenségének.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={2. (4p)}]
+     Tekintsük az alábbi két fogalmat:\\
+     a) egy vektorrendszer lineárisan összefüggő;\\
+     b) egy vektor lineárisan függ egy vektorrendszertől.\\
+     \mmedskip
+     
+     Mondjuk ki azt az állítást, mely ezeket a fogalmakat összekapcsolja, és bizonyítsuk is be az állítást.
+  \tcblower
+  
+    Ha $k ≥ 2$, akkor a $v1,...,vk$ vektorrendszer akkor és csak akkor lineárisan összefüggő, ha létezik olyan $i$, hogy $vi$ lineárisan függ a többi $vj$ vektortól (azaz előáll mint a $v1,...,vi−1,vi+1,...,vk$ vektorok lineáris kombinációja).\\
+    \mmedskip
+    
+    Tegyük föl először, hogy a megadott vektorrendszer lineárisan összefüggő.\\
+    Ez azt jelenti, hogy a nullvektornak van egy olyan $Pk i=1 λivi = 0$ előállítása, melynél valamelyik $λi$ együttható (pl. a $λi0$) nem $0$.\\
+    
+    Ekkor a $vi0$ kifejezhető a többi vektor lineáris kombinációjaként, hiszen $vi0 = −(1/λi0)Pj6=io λjvj$.\\
+    \mmedskip
+    
+    A fordított irányhoz tegyük föl, hogy $vi0$ lineárisan függ a többi $vj$ vektortól, azaz $vi0 = Pj6=i0 µjvj$ valamilyen $µj$ együtthatókra.\\
+    
+    De ekkor átrendezhetjük a fönti egyenlőséget úgy, hogy minden vektor az egyenlőség azonos oldalára kerüljön, s ekkor azt kapjuk, hogy a $µi0 = −1$ választással: $Pk i=1 µivi = 0$. Ez nem triviális lineáris kombinációja a $vi$ vektoroknak, mert $µi0 = −1 6= 0$, tehát a vektorrendszer lineárisan összefüggő.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={3. (4p)}]
+      Mondjuk ki és igazoljuk azt az állítást, mely arról szól, mi történik, ha egy lineárisan független $a1,...,ak$ vektorrendszerhez hozzávéve a $b$ vektort, az új, bővebb $a1,...,ak,b$ vektorrendszer már összefüggővé válik.
+  \tcblower
+    Ha egy lineárisan független $a1,...,ak$ vektorrendszerhez hozzávéve a $b$ vektort, a kapott $a1,...,ak,b$ vektorrendszer már összefüggő, akkor $b$ lineárisan függ az $a1,...,ak$ vektoroktól (azaz előállítható lineáris kombinációjukként).\\
+    
+    A feltétel szerint ugyanis léteznek olyan $λ1,...,λk,µ$ együtthatók, melyek közül legalább az egyik nem nulla, és melyekre $(Pk i=1 λiai) + µb = 0$. Itt azonban $µ$ nem lehet nulla, ellenkező esetben az $ai$ vektorok már önmagukban is előálítanák a nullvektort nem triviális módon, ez pedig ellentmond a lineáris függetlenségüknek.\\
+    
+    Ha átrendezzük az előbbi egyenlőséget úgy, hogy a $b$ vektort hagyjuk az egyik oldalon, akkor $µ$-vel osztva $b = Pk i=1(−λi/µ)ai$, ami azt mutatja, hogy $b$ lineárisan függ az $ai$ vektoroktól.
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={4. (4p)}]
+      Mondjuk ki az $Rn$-beli alterek fogalmának a műveletekre való zártsággal való deﬁnícióját, majd bizonyítsuk be, hogy $Rn$ két alterének metszete is altér.
+  \tcblower
+    $W ⊆ Rn$ pontosan akkor altér, ha nem üres (ekvivalens módon itt azt is megkövetelhetjük, hogy a nullvektor benne van $W$-ben), továbbá $w1,w2 ∈ W$ esetén $w1 +w2 ∈ W$, valamint $w ∈ W és λ ∈ R$ esetén $λw ∈ W$. Tegyük föl, hogy $W1,W2$ altér $Rn$-ben.\\
+    
+    Ekkor a nullvektor mindkét altérnek eleme, így $W1 ∩W2$ nem üres. Ha $w1,w2 ∈ W1 ∩W2$, akkor mindkét $i$ indexre $w1 +w2 ∈ Wi$ (hiszen $Wi$ altér), s ezért az összegvektor benne van a metszetben.\\
+    
+    Hasonlóan, ha $w ∈ W1 ∩ W2$ és $λ ∈ R$, akkor $Wi$ altér volta miatt $λw ∈ Wi$ mindkét lehetséges $i$ indexre, így $λw$ benne van a metszetükben is.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={7. (4p)}]
+      Deﬁniáljuk az $n × n$-es egységmátrix fogalmát, és mondjuk meg, mi lesz az eredménye az egységmátrixszal való szorzásnak.\\
+      
+      Igazoljuk az egységmátrixszal jobbról való szorzásra vonatkozó összefüggést. 
+  \tcblower
+    Az $In ∈ Rn×n$ egységmátrix $i$-edik sorának $j$-edik eleme $1$, ha $i = j$, és $0$ egyébként (azaz a főátlóban $1$-esek, a főátlón kívül $0$-k szerepelnek).\\
+    
+    Úgy is írhatjuk, hogy a mátrix általános eleme $δij$, ahol $δij$ a szokásos Kronecker-szimbólum.\\
+    
+    Tetszőleges $A ∈ Rk×n$ és $B ∈ Rn×m$ mátrixokra $AIn = A$ és $InB = B$.\\
+    
+    Az $AIn = A$ igazolásához jelölje $apq$ az $A$ mátrix általános elemét.\\
+    
+    A szorzatmátrixban az $i$-edik sor $j$-edik eleme a szorzás deﬁníciója szerint $i[AIn]j = Pn t=1(aitδtj)$.\\
+    
+    Ebben az összegben $δtj = 0$ ha $t 6= j$, ezért csak az egyetlen $aijδjj = aij$ tag marad meg.
+  \end{tcolorbox}
+\end{frame}
+
+
+\begin{frame}
+  \begin{tcolorbox}[title={8. (4p)}]
+       Mondjuk ki és bizonyítsuk be a mátrixok szorzatának transzponáltjára kimondott összefüggést. 
+  \tcblower
+    Ha $A ∈ Rk×ℓ$ és $B ∈ Rℓ×n$, akkor $(AB)T = BTAT$. A szorzat transzponáltjának általános eleme ugyanis: $i[(AB)T]j = j[AB]i = Pℓ t=1 j[A]t · t[B]i = Pℓ t=1 i[BT]t · t[AT]j = i[BTAT]j$.
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+  \begin{tcolorbox}[title={15. (4p)}]
+       Deﬁniáljuk egy $A ∈ Rn×n$ mátrix jobb oldali sajátértékének fogalmát, majd igazoljuk, hogy az $A$ mátrix $λ$ sajátértékű (jobb oldali) sajátvektorai a nullvektorral kiegészítve alteret alkotnak $Rn$-ben.
+  \tcblower
+    $λ ∈ R$ jobb oldali sajátértéke $A$-nak, ha van olyan $0 6= v ∈ Rn$ vektor, melyre $Av = λv$. (Ilyenkor $v$-t a $λ$-hoz tartozó (egyik) sajátvektornak nevezhetjük.)\\
+    
+    Azt kell igazolnunk, hogy $Wλ = {v ∈ Rn |Av = λv} ≤ Rn$. Nyilván $0 ∈ Wλ$, így $Wλ$ nem üres. Ha $v1,v2 ∈ Wλ$, akkor $A(v1 +v2) = Av1 +Av2 = λv1 +λv2 = λ(v1 +v2)$, azaz $Wλ$ zárt az összeadásra. Végül, ha $v ∈ Wλ$ és $µ ∈ R$, akkor $A(µv) = µAv = µ(λv) = λ(µv)$, vagyis $Wλ$ zárt a skalárral való szorzásra is.
+  \end{tcolorbox}
+\end{frame}
 
 
 
