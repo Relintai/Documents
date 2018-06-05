@@ -226,7 +226,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 \begin{frame}
   \begin{tcolorbox}[title={2/2. -Q-}]
-      Konkrét mátrixokat megadva mutassuk meg, miért nem alkot alteret $R2×2$-ben a nulla determinánsú mátrixok halmaza. 
+      Konkrét mátrixokat megadva mutassuk meg, miért nem alkot alteret $\mathbb{R}^{2 x 2}$-ben a nulla determinánsú mátrixok halmaza. 
   \tcblower
     A nulla determinánsú mátrixok összege könnyen lehet nem nulla determinánsú, s hasonlóképpen nem nulla determinánsú mátrixok összege lehet nulla determinánsú.\\
     \mmedskip 
@@ -257,10 +257,10 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
       Mely alábbi halmaz(ok) alkot(nak) alteret a $2×2$-es valós mátrixok halmazában mint $R$ fölötti vektortérben:\\
       \mmedskip
       
-      (A) $\{A ∈ R2×2|detA = 0\}$\\
-      (B) $\{A ∈ R2×2|detA 6= 0\}$\\
-      (C) $\{A ∈ R2×2|A = AT\}$\\
-      (D) $\{A ∈ R2×2|A2 = I2\}$
+      (A) $\{A ∈ \mathbb{R}^{2 x 2}|detA = 0\}$\\
+      (B) $\{A ∈ \mathbb{R}^{2 x 2}|detA 6= 0\}$\\
+      (C) $\{A ∈ \mathbb{R}^{2 x 2}|A = AT\}$\\
+      (D) $\{A ∈ \mathbb{R}^{2 x 2}|A2 = I2\}$
   \tcblower
     Azt kell megvizsgálnunk, hogy a megadott halmazok zártak-e az összeadásra, ill. a skalárral való szorzásra:\\
 
@@ -544,7 +544,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 \begin{frame}
   \begin{tcolorbox}[title={4/7. -Q-}]
-      Hány olyan altér van $R2×2$-ben mint $R$ fölötti vektortérben, mely tartalmazza az összes $2 × 2$-es szimmetrikus mátrixot?
+      Hány olyan altér van $\mathbb{R}^{2 x 2}$-ben mint $R$ fölötti vektortérben, mely tartalmazza az összes $2 × 2$-es szimmetrikus mátrixot?
   \tcblower
 
     \mmedskip 
@@ -556,7 +556,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 \begin{frame}
   \begin{tcolorbox}[title={4/7. -Q-}]
-Az első feladatban föl kell írni az altér egy általános elemét és lineáris kombinációra bontani. A második feladat kapcsolódik a rang fogalmához is: a generált altér dimenziójának kiszámításához maximális független rendszert kell keresni a generátorok között (azaz olyat, amiből a többi generátor már kifejezhető). Az adott példában {b1 + b2,b2} ilyen. De bázist alkot ebben az altérben {b1,b2} is, hiszen b1 = (b1 + b2) − b2 is eleme az altérnek. A harmadik feladatra (ez a 4. gyakorlat 7/g feladatának y = 0 speciális esete) gondolhatunk úgy, hogy egy homogén lineáris összefüggésünk van: az, hogy az elemek összege nulla, és ez eggyel csökkenti Rn dimenzióját. (Valójában egy homogén lineáris egyenletrendszer szabad változóit számoltuk meg. Bázist alkotnak azok a vektorok, melyekben az első n−1 komponens egyike 1, az utolsó komponens−1, a többi komponens pedig 0, de ezt megadni Q szintű feladat lenne az általános n miatt. Próbálkozhatunk a triviális bázis elemeinek „utánzásával”, de ellenőrizni kell a függetlenséget.) A negyedik feladat mutatja, mennyire gondosnak kell lennünk az előző feladat megoldási elvének alkalmazásakor. Ha ugyanis a komponensek közötti összefüggés nem lineáris, akkor egész más lehet az eredmény: itt csak a nullvektor van benne az altérben. Sőt, nem lináris összefüggéssel megadott vektorok általában nem is alkotnak alteret. Az ötödik feladat is hasonló jellegű, csak itt sokkal több homogén lineáris összefüggés van a komponensek között. Az ilyen mátrixokban a főátló minden eleme 0, a főátlóra szimmetrikus elemek pedig egymás ellentettjei. Ezért pl. a főátló fölötti elemeket szabad változónak tekintve a mátrix elemei már egyértelműen meg vannak határozva, ezért a dimenzió a szabadon választható mátrixelemek száma, azaz 3. (Itt is érdemes gyakorlásul egy bázist fölírni.) A hatodik feladatban azt kell tudni, hogy Rn egy valódi alterének dimenziója határozottan kisebb, mint Rn-é. A hetedik feladat is hasonló jellegű, először azt kell észrevenni, hogy a 2×2-es szimmetrikus mátrixok terének a dimenziója mindössze 1-gyel kisebb, mint a R2×2 téré, így a szimmetrikus mátrixok altere és az egész tér között nincs más altér.
+Az első feladatban föl kell írni az altér egy általános elemét és lineáris kombinációra bontani. A második feladat kapcsolódik a rang fogalmához is: a generált altér dimenziójának kiszámításához maximális független rendszert kell keresni a generátorok között (azaz olyat, amiből a többi generátor már kifejezhető). Az adott példában {b1 + b2,b2} ilyen. De bázist alkot ebben az altérben {b1,b2} is, hiszen b1 = (b1 + b2) − b2 is eleme az altérnek. A harmadik feladatra (ez a 4. gyakorlat 7/g feladatának y = 0 speciális esete) gondolhatunk úgy, hogy egy homogén lineáris összefüggésünk van: az, hogy az elemek összege nulla, és ez eggyel csökkenti Rn dimenzióját. (Valójában egy homogén lineáris egyenletrendszer szabad változóit számoltuk meg. Bázist alkotnak azok a vektorok, melyekben az első n−1 komponens egyike 1, az utolsó komponens−1, a többi komponens pedig 0, de ezt megadni Q szintű feladat lenne az általános n miatt. Próbálkozhatunk a triviális bázis elemeinek „utánzásával”, de ellenőrizni kell a függetlenséget.) A negyedik feladat mutatja, mennyire gondosnak kell lennünk az előző feladat megoldási elvének alkalmazásakor. Ha ugyanis a komponensek közötti összefüggés nem lineáris, akkor egész más lehet az eredmény: itt csak a nullvektor van benne az altérben. Sőt, nem lináris összefüggéssel megadott vektorok általában nem is alkotnak alteret. Az ötödik feladat is hasonló jellegű, csak itt sokkal több homogén lineáris összefüggés van a komponensek között. Az ilyen mátrixokban a főátló minden eleme 0, a főátlóra szimmetrikus elemek pedig egymás ellentettjei. Ezért pl. a főátló fölötti elemeket szabad változónak tekintve a mátrix elemei már egyértelműen meg vannak határozva, ezért a dimenzió a szabadon választható mátrixelemek száma, azaz 3. (Itt is érdemes gyakorlásul egy bázist fölírni.) A hatodik feladatban azt kell tudni, hogy Rn egy valódi alterének dimenziója határozottan kisebb, mint Rn-é. A hetedik feladat is hasonló jellegű, először azt kell észrevenni, hogy a 2×2-es szimmetrikus mátrixok terének a dimenziója mindössze 1-gyel kisebb, mint a \mathbb{R}^{2 x 2} téré, így a szimmetrikus mátrixok altere és az egész tér között nincs más altér.
   \end{tcolorbox}
 \end{frame}
 
@@ -665,7 +665,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 \begin{frame}
   \begin{tcolorbox}[title={6/4. -N-}]
-     Adjunk meg egy olyan $2×2$-es egész elemű, a nullmátrixtól különböző A mátrixot, amelyre igaz, hogy van olyan 0 6= $B ∈ R2×2$, melyre $AB = 0$.
+     Adjunk meg egy olyan $2×2$-es egész elemű, a nullmátrixtól különböző A mátrixot, amelyre igaz, hogy van olyan 0 6= $B ∈ \mathbb{R}^{2 x 2}$, melyre $AB = 0$.
   \tcblower
 
     \mmedskip 
@@ -869,7 +869,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 \begin{frame}
   \begin{tcolorbox}[title={8/4. -Q-}]
-    Az A =  ∈ R2×2 mátrix nem diagonalizálható R fölött. Mik c lehetséges értékei?
+    Az A =  ∈ \mathbb{R}^{2 x 2} mátrix nem diagonalizálható R fölött. Mik c lehetséges értékei?
 
 
   \tcblower
@@ -883,7 +883,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 \begin{frame}
   \begin{tcolorbox}[title={8/5. -Q-}]
-    Milyen c ∈ R valós értékekre lesz az 1 2 0 c ∈ R2×2 mátrix diagonalizálható?
+    Milyen c ∈ R valós értékekre lesz az 1 2 0 c ∈ \mathbb{R}^{2 x 2} mátrix diagonalizálható?
 
   \tcblower
 
@@ -896,7 +896,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 \begin{frame}
   \begin{tcolorbox}[title={8/6. -Q-}]
-     Az A =a b c d∈ R2×2 mátrixra . Mennyi az a + 1 b c d + 1 mátrix determinánsa? det a + 1 b c 
+     Az A =a b c d∈ \mathbb{R}^{2 x 2} mátrixra . Mennyi az a + 1 b c d + 1 mátrix determinánsa? det a + 1 b c 
 
   \tcblower
 
@@ -1130,7 +1130,7 @@ a b c b 1 −2 c −2 −1
 
 \begin{frame}
   \begin{tcolorbox}[title={12/4. -N-}]
-     Milyen c ∈ R valós értékekre lesz az1 c c c∈ R2×2 mátrix által meghatározott kvadratikus alak pozitív deﬁnit?
+     Milyen c ∈ R valós értékekre lesz az1 c c c∈ \mathbb{R}^{2 x 2} mátrix által meghatározott kvadratikus alak pozitív deﬁnit?
 
   \tcblower
 
