@@ -33,9 +33,9 @@
 % Uncomment these, to put more than one slide / page into a generated page.
 %\usepackage{pgfpages}
 % Choose one
-%\pgfpagesuselayout{2 on 1}[a4paper]
-%\pgfpagesuselayout{4 on 1}[a4paper]
-%\pgfpagesuselayout{8 on 1}[a4paper]
+%\pgfpagesuselayout{2 on 1}[a_4paper]
+%\pgfpagesuselayout{4 on 1}[a_4paper]
+%\pgfpagesuselayout{8 on 1}[a_4paper]
 
 % Includes
 \usepackage{tikz}
@@ -135,8 +135,8 @@
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={2. (4p)}]
-Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A részében szereplő főbb témaköröket néhány mintafeladattal, azok megoldásával és esetenként részletesebb magyarázattal. Ez a rész a szemléltetést szolgálja: a dolgozatban általában nem pont ezek a kérdések fognak szerepelni. A feladatok nehézségét szimbólumok jelzik. Ahol egy definíciót vagy tételt kell közvetlenül alkalmazni, ott N a jel. Ha a fogalom már nehezebb, vagy több lépést kell tenni, több fogalmat összekapcsolni, nemtriviális átalakítást kell végezni, ott R szerepel. A Q azt jelzi, hogy a feladat témája kifejezetten nehéz, vagy pedig ötlet kell a megoldáshoz.
+  \begin{tcolorbox}
+Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A részében szereplő főbb témaköröket néhány mintafeladattal, azok megoldásával és esetenként részletesebb magyarázattal. Ez a rész a szemléltetést szolgálja: a dolgozatban általában nem pont ezek a kérdések fognak szerepelni. A feladatok nehézségét szimbólumok jelzik. Ahol egy definíciót vagy tételt kell közvetlenül alkalmazni, ott -N- a jel. Ha a fogalom már nehezebb, vagy több lépést kell tenni, több fogalmat összekapcsolni, nemtriviális átalakítást kell végezni, ott -R- szerepel. A -Q- azt jelzi, hogy a feladat témája kifejezetten nehéz, vagy pedig ötlet kell a megoldáshoz.
   \end{tcolorbox}
 \end{frame}
 
@@ -149,35 +149,53 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 \begin{frame}
   \begin{tcolorbox}[title={1/1. -N-}]
-      A $\{b1,b2,b3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Határozzuk meg a $v = 2b1 + 3b2 -b3$ vektor koordinátavektorát a $\{b1,b2,b3\}$ bázisban.
+      A $\{b_1,b_2,b_3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Határozzuk meg a $v = 2b_1 + 3b_2 -b_3$ vektor koordinátavektorát a $\{b_1,b_2,b_3\}$ bázisban.
   \tcblower
     A vektor bázisban vett koordinátavektorának fogalmát kéri számon.\\
     
     A vektorból kell kiszámítani a koordinátáit.\\
     \mmedskip 
   
-   $[v]b1,b2,b3 =$ 
+   $[v]_{b_1,b_2,b_3} =$ $\begin{bmatrix} 
+  				2  \\
+  				3 \\
+  				-1
+			\end{bmatrix}$
   \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
   \begin{tcolorbox}[title={1/2. -R-}]
-      Legyen $B = \{b1,b2,b3\}$ bázis a $V \leq \mathbb{R}^n$ altérben. Egy $v \in V$ vektornak a $\{b1 + b2,b2 + b3,b3\}$ bázisban fölírt koordinátavektora $[v]b1+b2,b2+b3,b3 =$.\\
+      Legyen $\mathbb{B} = \{b_1,b_2,b_3\}$ bázis a $V \leq \mathbb{R}^n$ altérben. Egy $v \in V$ vektornak a $\{b_1 + b_2,b_2 + b_3,b_3\}$ bázisban fölírt koordinátavektora $[v]_{b_1+b_2,b_2+b_3,b_3} = [1 1 0]^T$.\\
+      \mmedskip
       
-      Mi $v$ koordinátavektora a $B$ bázisban?
+      Mi $v$ koordinátavektora a $\mathbb{B}$ bázisban?
   \tcblower
-    A vektor bázisban vett koordinátavektorának fogalmát kéri számon.\\
+    A feladat a vektor bázisban vett koordinátavektorának fogalmát kéri számon.\\
+    \mmedskip
    
-    Kétlépéses, először a feladat szövegében megadott koordinátavektort írjuk át a bázisvektorok lineáris kombinációjává: $v = 1 \cdot (b1 + b2) + 1 \cdot (b2 + b3) + 0 \cdot (b3) = 1 \cdot b1 + 2 \cdot b2 + 1 \cdot b3$, majd az így kapott lineáris kombinációt koordinátavektorrá.\\
+    Kétlépéses, először a feladat szövegében megadott koordinátavektort írjuk át a bázisvektorok lineáris kombinációjává: $v = 1 \cdot (b_1 + b_2) + 1 \cdot (b_2 + b_3) + 0 \cdot (b_3) = 1 \cdot b_1 + 2 \cdot b_2 + 1 \cdot b_3$, majd az így kapott lineáris kombinációt koordinátavektorrá.\\
      \mmedskip
      
-   $[v]b1,b2,b3 =$ 
+   $[v]_{b_1,b_2,b_3} =$ $\begin{bmatrix} 
+  				1  \\
+  				2 \\
+  				1
+			\end{bmatrix}$
   \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
   \begin{tcolorbox}[title={1/3. -R-}]
-      A $\{b1,b2,b3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Ebben a bázisban a $v$, illetve $w$ vektorok koordinátorvektora $[v]b1,b2,b3 =| | 1 0 2 ||$ és $[w]b1,b2,b3 =| | 3 1 0 ||$. Írjuk föl a $v+2w$ vektort a $\{b1,b2,b3\}$ vektorok lineáris kombinációjaként.
+      A $\{b_1,b_2,b_3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Ebben a bázisban a $v$, illetve $w$ vektorok koordinátorvektora $[v]_{b_1,b_2,b_3} = $ $\begin{bmatrix} 
+  				1  \\
+  				0 \\
+  				2
+			\end{bmatrix}$ és $[w]{b_1,b_2,b_3} = $ $\begin{bmatrix} 
+  				3  \\
+  				1 \\
+  				0
+			\end{bmatrix}$. Írjuk föl a $v+2w$ vektort a $\{b_1,b_2,b_3\}$ vektorok lineáris kombinációjaként.
   \tcblower
     A feladat két fogalmat kérdez:\\
       hogyan kell a koordinátákból kiszámítani a vektorokat, de még azt is tudni kell, hogy hogyan kell koordinátavektorokkal műveleteket végezni.\\
@@ -186,22 +204,22 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
       
       De megtehetjük azt is, hogy először a v és w vektorokat írjuk fel a bázisvektorok lineáris kombinációjaként, majd ebből számítjuk ki a $v+2w$-t.
       
-   $v + 2w = 7b1 + 2b2 + 2b3$
+   $v + 2w = 7b_1 + 2b_2 + 2b_3$
   \end{tcolorbox}
 \end{frame}
   
 \begin{frame}
   \begin{tcolorbox}[title={1/4. -Q-}]
-      Tegyük föl, hogy a $\{b1,b2,b3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Mi lesz ezen $bi$ bázisvektorok $v$-vel jelölt összegénekakoordinátavektora a $\{b1+b2,b2,b3\}$ bázisban?
+      Tegyük föl, hogy a $\{b_1,b_2,b_3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Mi lesz ezen $b_i$ bázisvektorok $v$-vel jelölt összegénekakoordinátavektora a $\{b_1+b_2,b_2,b_3\}$ bázisban?
   \tcblower
-    Az a kérdés, hogy a $b1+b2+b3 = {\lambda}1(b1+b2)+{\lambda}2b2+{\lambda}3b3$ felírásban mennyi a ${\lambda}i$ ismeretlenek értéke.\\|
-      Ezekre úgy kapunk lineáris egyenletrendszert, hogy a $bi$ bázisvektor együtthatóját az egyenlet két oldalán összehasonlítjuk.\\
+    Az a kérdés, hogy a $b_1+b_2+b_3 = {\lambda}1(b_1+b_2)+{\lambda}2b_2+{\lambda}3b_3$ felírásban mennyi a ${\lambda}i$ ismeretlenek értéke.\\|
+      Ezekre úgy kapunk lineáris egyenletrendszert, hogy a $b_i$ bázisvektor együtthatóját az egyenlet két oldalán összehasonlítjuk.\\
       
-      Azonnal látszik, hogy $b1 + b2 + b3 = 1 \cdot (b1 + b2) + 0 \cdot b2 + 1 \cdot b3$ megfelelő felírás, és ezért ezek az együtthatók adják a keresett koordinátavektort.\\
+      Azonnal látszik, hogy $b_1 + b_2 + b_3 = 1 \cdot (b_1 + b_2) + 0 \cdot b_2 + 1 \cdot b_3$ megfelelő felírás, és ezért ezek az együtthatók adják a keresett koordinátavektort.\\
       
       Ennek a problémának a megoldását az általános esetben az elemi bázistranszformációról szóló tétel szolgáltatja.
       
-   $[v]b1,b2,b3 =$ 
+   $[v]_{b_1,b_2,b_3} =$ 
   \end{tcolorbox}
 \end{frame}  
 
@@ -486,7 +504,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 \begin{frame}
   \begin{tcolorbox}[title={4/2. -N-}]
-      Legyen $\{b1,b2,b3\}$ bázis egy $U$ altérben. Hány dimenziós alteret generál $\{b1 + b2,b2,b1 -b2\}$?
+      Legyen $\{b_1,b_2,b_3\}$ bázis egy $U$ altérben. Hány dimenziós alteret generál $\{b_1 + b_2,b_2,b_1 -b_2\}$?
   \tcblower
 
     \mmedskip 
@@ -558,7 +576,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 \begin{frame}
   \begin{tcolorbox}[title={4/7. -Q-}]
-Az első feladatban föl kell írni az altér egy általános elemét és lineáris kombinációra bontani. A második feladat kapcsolódik a rang fogalmához is: a generált altér dimenziójának kiszámításához maximális független rendszert kell keresni a generátorok között (azaz olyat, amiből a többi generátor már kifejezhető). Az adott példában $\{b1 + b2,b2\}$ ilyen. De bázist alkot ebben az altérben $\{b1,b2\}$ is, hiszen $b1 = (b1 + b2) - b2$ is eleme az altérnek. A harmadik feladatra (ez a 4. gyakorlat 7/g feladatának $y = 0$ speciális esete) gondolhatunk úgy, hogy egy homogén lineáris összefüggésünk van: az, hogy az elemek összege nulla, és ez eggyel csökkenti $\mathbb{R}^n$ dimenzióját. (Valójában egy homogén lineáris egyenletrendszer szabad változóit számoltuk meg. Bázist alkotnak azok a vektorok, melyekben az első $n-1$ komponens egyike 1, az utolsó komponens-1, a többi komponens pedig 0, de ezt megadni Q szintű feladat lenne az általános n miatt. Próbálkozhatunk a triviális bázis elemeinek „utánzásával”, de ellenőrizni kell a függetlenséget.) A negyedik feladat mutatja, mennyire gondosnak kell lennünk az előző feladat megoldási elvének alkalmazásakor. Ha ugyanis a komponensek közötti összefüggés nem lineáris, akkor egész más lehet az eredmény: itt csak a nullvektor van benne az altérben. Sőt, nem lináris összefüggéssel megadott vektorok általában nem is alkotnak alteret. Az ötödik feladat is hasonló jellegű, csak itt sokkal több homogén lineáris összefüggés van a komponensek között. Az ilyen mátrixokban a főátló minden eleme 0, a főátlóra szimmetrikus elemek pedig egymás ellentettjei. Ezért pl. a főátló fölötti elemeket szabad változónak tekintve a mátrix elemei már egyértelműen meg vannak határozva, ezért a dimenzió a szabadon választható mátrixelemek száma, azaz 3. (Itt is érdemes gyakorlásul egy bázist fölírni.) A hatodik feladatban azt kell tudni, hogy $\mathbb{R}^n$ egy valódi alterének dimenziója határozottan kisebb, mint $\mathbb{R}^n$-é. A hetedik feladat is hasonló jellegű, először azt kell észrevenni, hogy a $2x2$-es szimmetrikus mátrixok terének a dimenziója mindössze 1-gyel kisebb, mint a $\mathbb{R}^{2 x 2}$ téré, így a szimmetrikus mátrixok altere és az egész tér között nincs más altér.
+Az első feladatban föl kell írni az altér egy általános elemét és lineáris kombinációra bontani. A második feladat kapcsolódik a rang fogalmához is: a generált altér dimenziójának kiszámításához maximális független rendszert kell keresni a generátorok között (azaz olyat, amiből a többi generátor már kifejezhető). Az adott példában $\{b_1 + b_2,b_2\}$ ilyen. De bázist alkot ebben az altérben $\{b_1,b_2\}$ is, hiszen $b_1 = (b_1 + b_2) - b_2$ is eleme az altérnek. A harmadik feladatra (ez a 4. gyakorlat 7/g feladatának $y = 0$ speciális esete) gondolhatunk úgy, hogy egy homogén lineáris összefüggésünk van: az, hogy az elemek összege nulla, és ez eggyel csökkenti $\mathbb{R}^n$ dimenzióját. (Valójában egy homogén lineáris egyenletrendszer szabad változóit számoltuk meg. Bázist alkotnak azok a vektorok, melyekben az első $n-1$ komponens egyike 1, az utolsó komponens-1, a többi komponens pedig 0, de ezt megadni Q szintű feladat lenne az általános n miatt. Próbálkozhatunk a triviális bázis elemeinek „utánzásával”, de ellenőrizni kell a függetlenséget.) A negyedik feladat mutatja, mennyire gondosnak kell lennünk az előző feladat megoldási elvének alkalmazásakor. Ha ugyanis a komponensek közötti összefüggés nem lineáris, akkor egész más lehet az eredmény: itt csak a nullvektor van benne az altérben. Sőt, nem lináris összefüggéssel megadott vektorok általában nem is alkotnak alteret. Az ötödik feladat is hasonló jellegű, csak itt sokkal több homogén lineáris összefüggés van a komponensek között. Az ilyen mátrixokban a főátló minden eleme 0, a főátlóra szimmetrikus elemek pedig egymás ellentettjei. Ezért pl. a főátló fölötti elemeket szabad változónak tekintve a mátrix elemei már egyértelműen meg vannak határozva, ezért a dimenzió a szabadon választható mátrixelemek száma, azaz 3. (Itt is érdemes gyakorlásul egy bázist fölírni.) A hatodik feladatban azt kell tudni, hogy $\mathbb{R}^n$ egy valódi alterének dimenziója határozottan kisebb, mint $\mathbb{R}^n$-é. A hetedik feladat is hasonló jellegű, először azt kell észrevenni, hogy a $2x2$-es szimmetrikus mátrixok terének a dimenziója mindössze 1-gyel kisebb, mint a $\mathbb{R}^{2 x 2}$ téré, így a szimmetrikus mátrixok altere és az egész tér között nincs más altér.
   \end{tcolorbox}
 \end{frame}
 
@@ -743,7 +761,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 
 \begin{frame}
   \begin{tcolorbox}[title={7/1. -N-}]
-    Az A = $[aij] \in R5x5$ mátrix determinánsának kiszámolásakor mennyi lesz az $a31a24a53a15a42$ szorzathoz tartozó permutációban az inverziók száma?
+    Az A = $[aij] \in R5x5$ mátrix determinánsának kiszámolásakor mennyi lesz az $a_31a_24a_53a_15a_42$ szorzathoz tartozó permutációban az inverziók száma?
 
   \tcblower
 
@@ -756,7 +774,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 
 \begin{frame}
   \begin{tcolorbox}[title={7/2. -R-}]
-    Az $A = [aij] \in R5x5$ mátrix determinánsának kiszámolásakor az $a11a2ia33a45a5j$ szorzatot $(-1)$-gyel szorozva kellett figyelembe venni. Határozzuk meg i-t és j-t.
+    Az $A = [aij] \in R5x5$ mátrix determinánsának kiszámolásakor az $a_11a_2ia_33a_45a_5j$ szorzatot $(-1)$-gyel szorozva kellett figyelembe venni. Határozzuk meg i-t és j-t.
   \tcblower
 
     \mmedskip 
@@ -979,7 +997,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 \begin{frame}
   \begin{tcolorbox}[title={9/4. -R-}]
-    Minden lineáris transzformációhoz rögzített bázis esetén egyértelműen tartozik egy négyzetes mátrix. Ezt úgy írhatjuk föl, hogy a bázisvektorokat leképezzük a lineáris transzformációval, e képvektorokat felírjuk a megadott bázisban, és az így kapott koordinátavektorokat írjuk a mátrix oszlopaiba. Ha változtatunk a bázison, akkor változhat a mátrix is; ez kiszámítható a bázistranszformáció képletéből $(A' = S-1AS)$. Az ötödik feladatban a képletre nincs szükség: az első bázisvektor, $b1$ kétszeresének a képe szintén önmaga, azaz $2b1$, s így az új mátrix első oszlopában az első koordináta $1$, a többi meg $0$. Ugyanakkor a $b2$ és $b3$ képében fele annyit kell „vennünk” $2b1$-ből, mint $b1$-ből, tehát az első sor második és harmadik eleme a felére csökken. Egy lináris transzformáció sajátértékeit kiszámolhatjuk úgy, hogy felírjuk a mátrixát egy alkalmas bázisban, és ennek vesszük a sajátértékeit. Ez a negyedik (kétlépcsős) feladat: a mátrix a triviális bázisban  $2 1 0 3$ . Néha lehetséges közvetlenül a definíció segítségével is boldogulni: a harmadik feladatban minden vektor az ellentettjébe megy, ezért az egyetlen sajátérték a $-1$. A hatodik és a hetedik feladatban felírhatjuk, hogy ${\varphi}({\lambda}e1 + {\mu}e2) = {\mu}(e1 + e2)$. Ez akkor nulla, azaz ${\lambda}e1 + {\mu}e2$ akkor van a magtérben, ha ${\mu} = 0$. A képtér elemei pedig $e1 + e2$ többszörösei. A nyolcadik feladatban azt is lehet használni, hogy $[{\varphi}(v)]B = [{\varphi}]B[v]B$. Az $M[x y z]T = 0$ egyenlet megoldása: $x$ és $y$ tetszőleges, $z = 0$. A magtér tehát kétdimenziós. Megoldható a feladat a dimenzióösszefüggés segítségével is, amely szerint a magtér dimenziója a mátrix oszlopainak száma mínusz a mátrix rangja. Harmadik megoldásként láthatjuk, hogy két bázisvektor a nullába megy, ezért a magtér legalább kétdimenziós, de háromdimenziós nem lehet, mert a mátrix nem nulla.
+    Minden lineáris transzformációhoz rögzített bázis esetén egyértelműen tartozik egy négyzetes mátrix. Ezt úgy írhatjuk föl, hogy a bázisvektorokat leképezzük a lineáris transzformációval, e képvektorokat felírjuk a megadott bázisban, és az így kapott koordinátavektorokat írjuk a mátrix oszlopaiba. Ha változtatunk a bázison, akkor változhat a mátrix is; ez kiszámítható a bázistranszformáció képletéből $(A' = S-1AS)$. Az ötödik feladatban a képletre nincs szükség: az első bázisvektor, $b_1$ kétszeresének a képe szintén önmaga, azaz $2b_1$, s így az új mátrix első oszlopában az első koordináta $1$, a többi meg $0$. Ugyanakkor a $b_2$ és $b_3$ képében fele annyit kell „vennünk” $2b_1$-ből, mint $b_1$-ből, tehát az első sor második és harmadik eleme a felére csökken. Egy lináris transzformáció sajátértékeit kiszámolhatjuk úgy, hogy felírjuk a mátrixát egy alkalmas bázisban, és ennek vesszük a sajátértékeit. Ez a negyedik (kétlépcsős) feladat: a mátrix a triviális bázisban  $2 1 0 3$ . Néha lehetséges közvetlenül a definíció segítségével is boldogulni: a harmadik feladatban minden vektor az ellentettjébe megy, ezért az egyetlen sajátérték a $-1$. A hatodik és a hetedik feladatban felírhatjuk, hogy ${\varphi}({\lambda}e1 + {\mu}e2) = {\mu}(e1 + e2)$. Ez akkor nulla, azaz ${\lambda}e1 + {\mu}e2$ akkor van a magtérben, ha ${\mu} = 0$. A képtér elemei pedig $e1 + e2$ többszörösei. A nyolcadik feladatban azt is lehet használni, hogy $[{\varphi}(v)]B = [{\varphi}]B[v]B$. Az $M[x y z]T = 0$ egyenlet megoldása: $x$ és $y$ tetszőleges, $z = 0$. A magtér tehát kétdimenziós. Megoldható a feladat a dimenzióösszefüggés segítségével is, amely szerint a magtér dimenziója a mátrix oszlopainak száma mínusz a mátrix rangja. Harmadik megoldásként láthatjuk, hogy két bázisvektor a nullába megy, ezért a magtér legalább kétdimenziós, de háromdimenziós nem lehet, mert a mátrix nem nulla.
 
   \end{tcolorbox}
 \end{frame}
@@ -1035,7 +1053,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 \begin{frame}
   \begin{tcolorbox}[title={10/4. -Q-}]
-    Mely $a,b \in \mathbb{R}$ értékekre lesz $|3a + 4b| = 5a2 + b2$
+    Mely $a,b \in \mathbb{R}$ értékekre lesz $|3a + 4b| = 5a_2 + b_2$
 
   \tcblower
 
@@ -1195,21 +1213,21 @@ A $v1,...,vk$ vektorrendszer akkor és csak akkor lineárisan összefüggő (aza
 
 \begin{frame}
   \begin{tcolorbox}[title={4}]
-     Mit jelent az, hogy egy v vektor lineárisan függ az $a1,...,ak \in \mathbb{R}^n$ vektoroktól?
+     Mit jelent az, hogy egy v vektor lineárisan függ az $a_1,...,ak \in \mathbb{R}^n$ vektoroktól?
 
   \tcblower
-Azt jelenti, hogy v felírható $a1,...,ak$ lineáris kombinációjaként, azaz léteznek olyan ${\lambda}1,{\lambda}2,...,{\lambda}k \in \mathbb{R}$ skalárok, melyekre $v = {\lambda}1a1 + {\lambda}2a2 +  \cdot  \cdot  \cdot  + {\lambda}kak$.
+Azt jelenti, hogy v felírható $a_1,...,ak$ lineáris kombinációjaként, azaz léteznek olyan ${\lambda}1,{\lambda}2,...,{\lambda}k \in \mathbb{R}$ skalárok, melyekre $v = {\lambda}1a_1 + {\lambda}2a_2 +  \cdot  \cdot  \cdot  + {\lambda}kak$.
   \end{tcolorbox}
 \end{frame}
 
 
 \begin{frame}
   \begin{tcolorbox}[title={5}]
-    Jellemezzük egy $a1,...,ak \in \mathbb{R}^n$ vektorrendszer lineáris összefüggőségét a lineáris függés fogalmával.
+    Jellemezzük egy $a_1,...,ak \in \mathbb{R}^n$ vektorrendszer lineáris összefüggőségét a lineáris függés fogalmával.
 
 
   \tcblower
-Egy $a1,...,ak \in \mathbb{R}^n$ vektorrendszer ($k \geq 2$ esetén) pontosan akkor lineárisan összefüggő, ha valamelyik i-re $ai$ lineárisan függ az $a1,...,ai-1,ai+1,...,ak$ vektoroktól.
+Egy $a_1,...,ak \in \mathbb{R}^n$ vektorrendszer ($k \geq 2$ esetén) pontosan akkor lineárisan összefüggő, ha valamelyik i-re $ai$ lineárisan függ az $a_1,...,ai-1,ai+1,...,ak$ vektoroktól.
   \end{tcolorbox}
 \end{frame}
 
@@ -1220,20 +1238,20 @@ Egy $a1,...,ak \in \mathbb{R}^n$ vektorrendszer ($k \geq 2$ esetén) pontosan ak
 
 
   \tcblower
-Egy $b1,...,bk$ vektorrendszert akkor mondunk a $V \leq \mathbb{R}^n$ altér bázisának, ha lineárisan független, és V minden vektorát előállíthatjuk a bi vektorok lineáris kombinációjaként. (A lineáris függetlenség helyettesíthető azzal a feltétellel, hogy ez a felírás egyértelmű, az előállíthatóság pedig azzal, hogy generátorrendszerről van szó.)
+Egy $b_1,...,bk$ vektorrendszert akkor mondunk a $V \leq \mathbb{R}^n$ altér bázisának, ha lineárisan független, és V minden vektorát előállíthatjuk a bi vektorok lineáris kombinációjaként. (A lineáris függetlenség helyettesíthető azzal a feltétellel, hogy ez a felírás egyértelmű, az előállíthatóság pedig azzal, hogy generátorrendszerről van szó.)
   \end{tcolorbox}
 \end{frame}
 
 
 \begin{frame}
   \begin{tcolorbox}[title={7}]
-      Definiáljuk egy $a \in V \leq \mathbb{R}^n$ vektor koordinátavektorát a $V$ egy $b1,...,bk$ bázisában fölírva.
+      Definiáljuk egy $a \in V \leq \mathbb{R}^n$ vektor koordinátavektorát a $V$ egy $b_1,...,bk$ bázisában fölírva.
 
 
   \tcblower
-Az a vektor koordinátavektora pontosan akkor $[a]b1,...,bk =$
+Az a vektor koordinátavektora pontosan akkor $[a]b_1,...,bk =$
 ${\lambda}1 . . . {\lambda}k$
-, ha $a = {\lambda}1b1+ \cdot  \cdot  \cdot +{\lambda}kbk$.
+, ha $a = {\lambda}1b_1+ \cdot  \cdot  \cdot +{\lambda}kbk$.
   \end{tcolorbox}
 \end{frame}
 
@@ -1318,7 +1336,7 @@ $A,B \in \mathbb{R}^{k x n} {\Rightarrow} (A + B)T = AT + BT {\lambda} \in R,A \
     Definiáljuk egy $A \in \mathbb{R}^{k x n}$ mátrix oszloprangját, illetve sorrangját, ${\varrho}O(A)-t és {\varrho}S(A)$-t.
 
   \tcblower
-Ha $a1,...,an \in Rk$ a mátrix oszlopai, akkor ${\varrho}O(A) = r(a1,...,ak)$, azaz az oszloprang az oszlopok rendszerének rangja (vagyis az oszlopok által generált altér dimenziója.) Analóg módon, a mátrix sorrangja a sorok által generált altér dimenziója, vagy másképpen: ${\varrho}S(A) = {\varrho}O(AT)$.
+Ha $a_1,...,an \in Rk$ a mátrix oszlopai, akkor ${\varrho}O(A) = r(a_1,...,ak)$, azaz az oszloprang az oszlopok rendszerének rangja (vagyis az oszlopok által generált altér dimenziója.) Analóg módon, a mátrix sorrangja a sorok által generált altér dimenziója, vagy másképpen: ${\varrho}S(A) = {\varrho}O(AT)$.
 
   \end{tcolorbox}
 \end{frame}
@@ -1419,8 +1437,8 @@ Ha $a,b,c$ geometriai vektorok, akkor $(a x b) x c = (ac)b - (bc)a$.
    Adjuk meg az A mátrix determinánsát definiáló képletet. Mit jelent ebben az I(i1,...,in) kifejezés? 
   \tcblower
 Legyen A =| |
-$a11 ... a1n . . . . . . an1 ... ann \in \mathbb{R}^{n x n}$. Ekkor $detA = X i1,...,in (1,...,n)
-(-1)I(i1,...,in)a1i1a2i2  \cdot  \cdot  \cdot anin$.
+$a_11 ... a_1n . . . . . . an1 ... ann \in \mathbb{R}^{n x n}$. Ekkor $detA = X i1,...,in (1,...,n)
+(-1)I(i1,...,in)a_1i1a_2i2  \cdot  \cdot  \cdot anin$.
 Itt az összegezés az $\{1,2,...,n\}$ számok minden permutációjára történik, $I(i1,...,in)$ pedig az adott permutáció inverzióinak a számát jelöli.
 
   \end{tcolorbox}
@@ -1463,7 +1481,7 @@ $detA =$
     DefiniáljukaVandermonde-determinánsfogalmát, ésmondjukkiazértékérevonatkozóállítást.
 
   \tcblower
-$a1,...,an \in R, n \geq 2 esetén V (a1,...,an) =$
+$a_1,...,an \in R, n \geq 2 esetén V (a_1,...,an) =$
 
 
 
@@ -1669,7 +1687,7 @@ Q-t akkor nevezzük negatív definitnek, ha minden $0 6= x \in \mathbb{R}^n$ vek
 
 \begin{frame}
   \begin{tcolorbox}[title={1. (4p)}]
-    Mondjuk ki a $b1,...,bk$ vektorok lineáris függetlenségének definícióját, majd bizonyítsuk be, hogy ha $B = \{b1,...,bk\}$ lineárisan független vektorrendszer, akkor minden lineáris kombinációjukként felírható vektor egyértelműen írható föl B-beli vektorok lineáris kombinációjaként.
+    Mondjuk ki a $b_1,...,bk$ vektorok lineáris függetlenségének definícióját, majd bizonyítsuk be, hogy ha $B = \{b_1,...,bk\}$ lineárisan független vektorrendszer, akkor minden lineáris kombinációjukként felírható vektor egyértelműen írható föl B-beli vektorok lineáris kombinációjaként.
   \tcblower
   
     A $v1,...,vk$ vektorrendszer akkor és csak akkor lineárisan független, ha csak a triviális lineáris kombinációja adja a nullvektort.\\
@@ -1713,9 +1731,9 @@ Q-t akkor nevezzük negatív definitnek, ha minden $0 6= x \in \mathbb{R}^n$ vek
 
 \begin{frame}
   \begin{tcolorbox}[title={3. (4p)}]
-      Mondjuk ki és igazoljuk azt az állítást, mely arról szól, mi történik, ha egy lineárisan független $a1,...,ak$ vektorrendszerhez hozzávéve a $b$ vektort, az új, bővebb $a1,...,ak,b$ vektorrendszer már összefüggővé válik.
+      Mondjuk ki és igazoljuk azt az állítást, mely arról szól, mi történik, ha egy lineárisan független $a_1,...,ak$ vektorrendszerhez hozzávéve a $b$ vektort, az új, bővebb $a_1,...,ak,b$ vektorrendszer már összefüggővé válik.
   \tcblower
-    Ha egy lineárisan független $a1,...,ak$ vektorrendszerhez hozzávéve a $b$ vektort, a kapott $a1,...,ak,b$ vektorrendszer már összefüggő, akkor $b$ lineárisan függ az $a1,...,ak$ vektoroktól (azaz előállítható lineáris kombinációjukként).\\
+    Ha egy lineárisan független $a_1,...,ak$ vektorrendszerhez hozzávéve a $b$ vektort, a kapott $a_1,...,ak,b$ vektorrendszer már összefüggő, akkor $b$ lineárisan függ az $a_1,...,ak$ vektoroktól (azaz előállítható lineáris kombinációjukként).\\
     
     A feltétel szerint ugyanis léteznek olyan ${\lambda}1,...,{\lambda}k,{\mu}$ együtthatók, melyek közül legalább az egyik nem nulla, és melyekre $(Pk i=1 {\lambda}iai) + {\mu}b = 0$. Itt azonban ${\mu}$ nem lehet nulla, ellenkező esetben az $ai$ vektorok már önmagukban is előálítanák a nullvektort nem triviális módon, ez pedig ellentmond a lineáris függetlenségüknek.\\
     
