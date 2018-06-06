@@ -53,6 +53,7 @@
 \usepackage{pgf}
 \usepackage[makeroom]{cancel}
 \usepackage{verbatim}
+\usepackage{skak}
 
 \providecommand{\includecolors}{\input{../Colors/Default.tex}}% fallback definition
 \includecolors
@@ -136,7 +137,7 @@
 
 \begin{frame}
   \begin{tcolorbox}
-Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A részében szereplő főbb témaköröket néhány mintafeladattal, azok megoldásával és esetenként részletesebb magyarázattal. Ez a rész a szemléltetést szolgálja: a dolgozatban általában nem pont ezek a kérdések fognak szerepelni. A feladatok nehézségét szimbólumok jelzik. Ahol egy definíciót vagy tételt kell közvetlenül alkalmazni, ott -N- a jel. Ha a fogalom már nehezebb, vagy több lépést kell tenni, több fogalmat összekapcsolni, nemtriviális átalakítást kell végezni, ott -R- szerepel. A -Q- azt jelzi, hogy a feladat témája kifejezetten nehéz, vagy pedig ötlet kell a megoldáshoz.
+Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A részében szereplő főbb témaköröket néhány mintafeladattal, azok megoldásával és esetenként részletesebb magyarázattal. Ez a rész a szemléltetést szolgálja: a dolgozatban általában nem pont ezek a kérdések fognak szerepelni. A feladatok nehézségét szimbólumok jelzik. Ahol egy definíciót vagy tételt kell közvetlenül alkalmazni, ott {\symknight} a jel. Ha a fogalom már nehezebb, vagy több lépést kell tenni, több fogalmat összekapcsolni, nemtriviális átalakítást kell végezni, ott {\symrook} szerepel. A {\symqueen} azt jelzi, hogy a feladat témája kifejezetten nehéz, vagy pedig ötlet kell a megoldáshoz.
   \end{tcolorbox}
 \end{frame}
 
@@ -148,7 +149,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={1/1. -N-}]
+  \begin{tcolorbox}[title={1/1. {\symknight}}]
       A $\{b_1,b_2,b_3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Határozzuk meg a $v = 2b_1 + 3b_2 -b_3$ vektor koordinátavektorát a $\{b_1,b_2,b_3\}$ bázisban.
   \tcblower
     A vektor bázisban vett koordinátavektorának fogalmát kéri számon.\\
@@ -165,7 +166,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={1/2. -R-}]
+  \begin{tcolorbox}[title={1/2. {\symrook}}]
       Legyen $\mathbb{B} = \{b_1,b_2,b_3\}$ bázis a $V \leq \mathbb{R}^n$ altérben. Egy $v \in V$ vektornak a $\{b_1 + b_2,b_2 + b_3,b_3\}$ bázisban fölírt koordinátavektora $[v]_{b_1+b_2,b_2+b_3,b_3} = [1 1 0]^T$.\\
       \mmedskip
       
@@ -186,7 +187,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={1/3. -R-}]
+  \begin{tcolorbox}[title={1/3. {\symrook}}]
       A $\{b_1,b_2,b_3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Ebben a bázisban a $v$, illetve $w$ vektorok koordinátorvektora $[v]_{b_1,b_2,b_3} = $ $\begin{bmatrix} 
   				1  \\
   				0 \\
@@ -209,7 +210,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
   
 \begin{frame}
-  \begin{tcolorbox}[title={1/4. -Q-}]
+  \begin{tcolorbox}[title={1/4. {\symqueen}}]
       Tegyük föl, hogy a $\{b_1,b_2,b_3\}$ vektorhalmaz bázis a $V \leq \mathbb{R}^n$ altérben. Mi lesz ezen $b_i$ bázisvektorok $v$-vel jelölt összegénekakoordinátavektora a $\{b_1+b_2,b_2,b_3\}$ bázisban?
   \tcblower
     Az a kérdés, hogy a $b_1+b_2+b_3 = {\lambda}1(b_1+b_2)+{\lambda}2b_2+{\lambda}3b_3$ felírásban mennyi a ${\lambda}i$ ismeretlenek értéke.\\|
@@ -231,7 +232,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={2/1. -R-}]
+  \begin{tcolorbox}[title={2/1. {\symrook}}]
       Konkrét vektorokat megadva mutassuk meg, miért nem alkot alteret $\mathbb{R}^3$-ben azon vektorok halmaza, ahol az első két komponens szorzata nulla. 
   \tcblower
 
@@ -243,7 +244,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={2/2. -Q-}]
+  \begin{tcolorbox}[title={2/2. {\symqueen}}]
       Konkrét mátrixokat megadva mutassuk meg, miért nem alkot alteret $\mathbb{R}^{2 x 2}$-ben a nulla determinánsú mátrixok halmaza. 
   \tcblower
     A nulla determinánsú mátrixok összege könnyen lehet nem nulla determinánsú, s hasonlóképpen nem nulla determinánsú mátrixok összege lehet nulla determinánsú.\\
@@ -254,7 +255,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={2/3. -R-}]
+  \begin{tcolorbox}[title={2/3. {\symrook}}]
       Tekintsük azoknak az $\mathbb{R}^3$-beli  vektoroknak a halmazát, amelyek az alábbi feltételnek tesznek eleget.\\ű
       
       Mely eset(ek)ben kapunk alteret?\\
@@ -271,7 +272,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={2/4. -Q-}]
+  \begin{tcolorbox}[title={2/4. {\symqueen}}]
       Mely alábbi halmaz(ok) alkot(nak) alteret a $2x2$-es valós mátrixok halmazában mint $R$ fölötti vektortérben:\\
       \mmedskip
       
@@ -296,7 +297,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={2/5. -Q-}]
+  \begin{tcolorbox}[title={2/5. {\symqueen}}]
       Mutassunk egy olyan $H$ részhalmazt $\mathbb{R}^2$-ben (azaz a síkon), mely zárt a vektorok szokásos összeadására, mégsem alkot alteret $\mathbb{R}^2$-ben.
   \tcblower
     A feladat arra mutat rá, hogy altereknél mindkét műveletre való zártságot meg kell követelnünk:\\
@@ -317,7 +318,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/1. -N-}]
+  \begin{tcolorbox}[title={3/1. {\symknight}}]
       Alkalmas együtthatók megadásával mutassuk meg, hogy a $\{v,0,w\}$ vektorok rendszere lineárisan összefüggő.
   \tcblower
 
@@ -329,7 +330,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/2. -N-}]
+  \begin{tcolorbox}[title={3/2. {\symknight}}]
        Alkalmas együtthatók megadásával mutassuk meg, hogy az $\{u,v,w,v+2w\}$ vektorok rendszere lineárisan összefüggő.
   \tcblower
 
@@ -341,7 +342,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/3. -N-}]
+  \begin{tcolorbox}[title={3/3. {\symknight}}]
        Legyen $v1 =  \in \mathbb{R}^2$ és $v2 =  \in \mathbb{R}^2$. Mely valós $c$ szám(ok)ra lesz $v1$ és $v2$ lineárisan összefüggő?
   \tcblower
 
@@ -353,7 +354,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/4. -R-}]
+  \begin{tcolorbox}[title={3/4. {\symrook}}]
        Mely $c \in R$ valós számokra lesznek lineárisan függetlenek az $[1 0 c]T, a [2 2 2]T$ és a $[4 2 3]T$ vektorok?
   \tcblower
 
@@ -365,7 +366,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/5. -R-}]
+  \begin{tcolorbox}[title={3/5. {\symrook}}]
        Legyen $v1 = 1 1  \in \mathbb{R}^3$. Adjunk meg olyan $v2$ és $v3$ vektorokat $\mathbb{R}^3$-ban, melyekre igaz, hogy a $v1,v2,v3$ vektorrendszer lineárisan összefüggő, de közülük bármely két vektor lineárisan független.
   \tcblower
 
@@ -377,7 +378,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/6. -N-}]
+  \begin{tcolorbox}[title={3/6. {\symknight}}]
         Egy $U \leq \mathbb{R}^2$ altérben $[2 3]T$ generátorrendszert alkot. Adjunk meg $U$-ban egy háromelemű generátorrendszert.
   \tcblower
 
@@ -389,7 +390,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/7. -R-}]
+  \begin{tcolorbox}[title={3/7. {\symrook}}]
     Egy $U \leq R5$ altérben van olyan $\{v1,v2,v3\}$ háromelemű lineárisan összefüggő vektorhalmaz, mely generátorrendszer U-ban. Hány eleme lehet $U$ egy bázisának?
   \tcblower
 
@@ -401,7 +402,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/8. -R-}]
+  \begin{tcolorbox}[title={3/8. {\symrook}}]
     Ha egy $U \leq R9$ altérben van $5$ elemű lineárisan összefüggő generátorrendszer is, meg $3$ elemű lineárisan független vektorrendszer is, akkor mik $dimU$ lehetséges értékei?
 
   \tcblower
@@ -414,7 +415,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/9. -N-}]
+  \begin{tcolorbox}[title={3/9. {\symknight}}]
      Legyenek $\{v1,v2,v3\}$ lineárisan független vektorok. Adjuk meg a $\{v1 + v2,v2,2v1 + v2\}$ által generált altér egy bázisát.
 
   \tcblower
@@ -427,7 +428,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/10. -Q-}]
+  \begin{tcolorbox}[title={3/10. {\symqueen}}]
      Adott egy ötelemű vektorrendszer, melynek a rangja $3.$ Eltávolítunk a rendszerből két vektort. Mik az új rendszer rangjának lehetséges értékei?
   \tcblower
 
@@ -440,7 +441,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/11. -Q-}]
+  \begin{tcolorbox}[title={3/11. {\symqueen}}]
      Legyen $U = \{[x1,x2,x3]T \in \mathbb{R}^3|x1 = 2x2 = 3x3\}$ az $\mathbb{R}^3$ altere. Hány olyan bázisa van az $U$ altérnek, mely tartalmazza a $v = [6,3,2]T$ vektort?
   \tcblower
 
@@ -452,7 +453,7 @@ Az alábbiakban – tájékoztató jelleggel – fölsoroljuk a vizsgadolgozat A
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={3/11. -Q-}]
+  \begin{tcolorbox}[title={3/11. {\symqueen}}]
 Az első két feladatban 
 
 A lineáris összefüggőséget kell bizonyítanunk.\\
@@ -491,7 +492,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/1. -N-}]
+  \begin{tcolorbox}[title={4/1. {\symknight}}]
       Álljon az $U$ altér az $\mathbb{R}^3$ azon $v$ vektoraiból, ahol a második és a harmadik komponens egyenlő. Adjunk meg egy bázist $U$-ban.
   \tcblower
 
@@ -503,7 +504,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/2. -N-}]
+  \begin{tcolorbox}[title={4/2. {\symknight}}]
       Legyen $\{b_1,b_2,b_3\}$ bázis egy $U$ altérben. Hány dimenziós alteret generál $\{b_1 + b_2,b_2,b_1 -b_2\}$?
   \tcblower
 
@@ -515,7 +516,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/3. -R-}]
+  \begin{tcolorbox}[title={4/3. {\symrook}}]
       Hány dimenziós azon $\mathbb{R}^n$-beli vektoroknak az altere, melyekben a komponensek összege $0$?
   \tcblower
 
@@ -527,7 +528,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/4. -R-}]
+  \begin{tcolorbox}[title={4/4. {\symrook}}]
       Hány dimenziós azon $\mathbb{R}^n$-beli vektoroknak az altere, melyekben a komponensek négyzetösszege $0$?
   \tcblower
 
@@ -539,7 +540,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/5. -Q-}]
+  \begin{tcolorbox}[title={4/5. {\symqueen}}]
       Hány dimenziós alteret alkotnak $\mathbb{R}^3x3$-ban azok az A mátrixok, amelyekre teljesül, hogy $AT = -A$?
   \tcblower
 
@@ -551,7 +552,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/6. -R-}]
+  \begin{tcolorbox}[title={4/6. {\symrook}}]
       Hány négydimenziós altér van $\mathbb{R}^4$-ben mint $R$ fölötti vektortérben?
   \tcblower
 
@@ -563,7 +564,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/7. -Q-}]
+  \begin{tcolorbox}[title={4/7. {\symqueen}}]
       Hány olyan altér van $\mathbb{R}^{2 x 2}$-ben mint $R$ fölötti vektortérben, mely tartalmazza az összes $2 x 2$-es szimmetrikus mátrixot?
   \tcblower
 
@@ -575,7 +576,7 @@ Végezetül a 11. feladatban egy egydimenziós alterünk van, s ebben bármely n
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={4/7. -Q-}]
+  \begin{tcolorbox}[title={4/7. {\symqueen}}]
 Az első feladatban föl kell írni az altér egy általános elemét és lineáris kombinációra bontani. A második feladat kapcsolódik a rang fogalmához is: a generált altér dimenziójának kiszámításához maximális független rendszert kell keresni a generátorok között (azaz olyat, amiből a többi generátor már kifejezhető). Az adott példában $\{b_1 + b_2,b_2\}$ ilyen. De bázist alkot ebben az altérben $\{b_1,b_2\}$ is, hiszen $b_1 = (b_1 + b_2) - b_2$ is eleme az altérnek. A harmadik feladatra (ez a 4. gyakorlat 7/g feladatának $y = 0$ speciális esete) gondolhatunk úgy, hogy egy homogén lineáris összefüggésünk van: az, hogy az elemek összege nulla, és ez eggyel csökkenti $\mathbb{R}^n$ dimenzióját. (Valójában egy homogén lineáris egyenletrendszer szabad változóit számoltuk meg. Bázist alkotnak azok a vektorok, melyekben az első $n-1$ komponens egyike 1, az utolsó komponens-1, a többi komponens pedig 0, de ezt megadni Q szintű feladat lenne az általános n miatt. Próbálkozhatunk a triviális bázis elemeinek „utánzásával”, de ellenőrizni kell a függetlenséget.) A negyedik feladat mutatja, mennyire gondosnak kell lennünk az előző feladat megoldási elvének alkalmazásakor. Ha ugyanis a komponensek közötti összefüggés nem lineáris, akkor egész más lehet az eredmény: itt csak a nullvektor van benne az altérben. Sőt, nem lináris összefüggéssel megadott vektorok általában nem is alkotnak alteret. Az ötödik feladat is hasonló jellegű, csak itt sokkal több homogén lineáris összefüggés van a komponensek között. Az ilyen mátrixokban a főátló minden eleme 0, a főátlóra szimmetrikus elemek pedig egymás ellentettjei. Ezért pl. a főátló fölötti elemeket szabad változónak tekintve a mátrix elemei már egyértelműen meg vannak határozva, ezért a dimenzió a szabadon választható mátrixelemek száma, azaz 3. (Itt is érdemes gyakorlásul egy bázist fölírni.) A hatodik feladatban azt kell tudni, hogy $\mathbb{R}^n$ egy valódi alterének dimenziója határozottan kisebb, mint $\mathbb{R}^n$-é. A hetedik feladat is hasonló jellegű, először azt kell észrevenni, hogy a $2x2$-es szimmetrikus mátrixok terének a dimenziója mindössze 1-gyel kisebb, mint a $\mathbb{R}^{2 x 2}$ téré, így a szimmetrikus mátrixok altere és az egész tér között nincs más altér.
   \end{tcolorbox}
 \end{frame}
@@ -590,7 +591,7 @@ Az első feladatban föl kell írni az altér egy általános elemét és lineá
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={5/1. -N-}]
+  \begin{tcolorbox}[title={5/1. {\symknight}}]
       Adjunk meg egy olyan lineáris egyenletrendszert, melyben két egyenlet van, három ismeretlen, és az egyenletrendszernek nincs megoldása.
   \tcblower
 
@@ -604,7 +605,7 @@ $x + y + z = 3$
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={5/2. -N-}]
+  \begin{tcolorbox}[title={5/2. {\symknight}}]
       Adjunk meg egy olyan inhomogén lineáris egyenletrendszert, melyben három egyenlet van, két ismeretlen, és az egyenletrendszernek végtelen sok megoldása van.
   \tcblower
 
@@ -620,7 +621,7 @@ $3x + 3y = 3$
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={5/3. -N-}]
+  \begin{tcolorbox}[title={5/3. {\symknight}}]
       Mi lehet a megoldások száma egy olyan valós együtthatós lineáris egyenletrendszernél, melyben az egyenletek száma 3, az ismeretlenek száma pedig 5?
   \tcblower
 
@@ -632,7 +633,7 @@ $3x + 3y = 3$
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={5/3. -N-}]
+  \begin{tcolorbox}[title={5/3. {\symknight}}]
 Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés van: ha több ismeretlen van, mint egyenlet, akkor nem lehet egyértelmű a megoldás (erre kérdez rá a harmadik feladat). Vagyis ha az egyenletrendszerben nincs elég egyenlet – nem tudunk eleget az ismeretlenekről –, akkor ugyan lehet ellentmondásos (ehhez már két egyenlet is elég, mint az első feladatban, sőt az egyetlen $0 \cdot x + 0 \cdot y = 1$ egyenlet is), de ha nem ellentmondásos, azaz van megoldás, akkor biztosan egynél több megoldás van. Valós és komplex együtthatós egyenletrendszerek esetében ilyenkor a megoldások száma végtelen. Az egyenletek számát szaporíthatjuk úgy, hogy a megoldások halmaza ne változzon: ehhez a rendszerbe már bent lévő egyenletek lineáris kombinációját kell bevenni (mint a második feladatban). Fontos, hogy homogén lineáris egyenletrendszernek – amikor az egyenletek jobb oldalán mindenütt 0 áll – mindig van megoldása: a triviális megoldás, amikor minden ismeretlen értéke nulla.
   \end{tcolorbox}
 \end{frame}
@@ -647,7 +648,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/1. -N-}]
+  \begin{tcolorbox}[title={6/1. {\symknight}}]
     Legyen $A \in Rkxl$, $B \in Rpxr$ és $C \in Rtxu$. Adjunk szükséges és elégséges feltételt arra, hogy értelmes legyen az $ABT + C$ mátrixkifejezés.
   \tcblower
 
@@ -659,7 +660,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/2. -N-}]
+  \begin{tcolorbox}[title={6/2. {\symknight}}]
     Legyen A =. Adjunk meg egy olyan $2x2$-es, egész elemű, a nullmátrixtól különböző $B$ mátrixot, amelyre igaz, hogy $AB = 0$.
 
   \tcblower
@@ -672,7 +673,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/3. -N-}]
+  \begin{tcolorbox}[title={6/3. {\symknight}}]
      Legyen $A = .$ Mely $c \in R$ számokra van olyan $2x2$-es, valós elemű, a nullmátrixtól különböző $B$ mátrix, amelyre igaz, hogy $AB = 0$?
   \tcblower
 
@@ -684,7 +685,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/4. -N-}]
+  \begin{tcolorbox}[title={6/4. {\symknight}}]
      Adjunk meg egy olyan $2x2$-es egész elemű, a nullmátrixtól különböző A mátrixot, amelyre igaz, hogy van olyan 0 6= $B \in \mathbb{R}^{2 x 2}$, melyre $AB = 0$.
   \tcblower
 
@@ -696,7 +697,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/5. -N-}]
+  \begin{tcolorbox}[title={6/5. {\symknight}}]
      Adjuk meg az A = mátrix inverzét.
   \tcblower
 
@@ -708,7 +709,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/6. -N-}]
+  \begin{tcolorbox}[title={6/6. {\symknight}}]
      Adjuk meg az $A = [1 2 3]$ sormátrix egy jobb oldali inverzét.
   \tcblower
 
@@ -720,7 +721,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/7. -N-}]
+  \begin{tcolorbox}[title={6/7. {\symknight}}]
      Hány olyan jobb oldali inverze van az $A = [1 1 1]$ sormátrixnak, melyben minden elem egyenlő?
   \tcblower
 
@@ -732,7 +733,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/8. -Q-}]
+  \begin{tcolorbox}[title={6/8. {\symqueen}}]
      Az alábbi mátrixok közül melyeknek nem lehet jobb oldali inverze a valós paraméterek semmilyen választására sem (azonos betűk azonos számokat jelölnek)? 
      
 
@@ -746,7 +747,7 @@ Lineáris egyenletrendszerek megoldásszámára egy nagyon fontos összefüggés
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={6/8. -Q-}]
+  \begin{tcolorbox}[title={6/8. {\symqueen}}]
 Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összeadása, szorzása, illetve mik a transzponált mátrix méretei. Két mátrix szorzatának oszlopaiban a bal oldali mátrix oszlopainak lineáris kombinációi állnak. Ezért az $AB = 0$ akkor tud teljesülni nem nulla B mátrixszal, ha A oszlopai lineárisan öszefüggenek. Speciálisan ha A négyzetes mátrix, akkor ez azzal ekvivalens, hogy A determinánsa nulla. Ezzel a tétellel könnyű megválaszolni a harmadik feladatot, illetve keresni megfelelő mátrixot a negyedik feladatban. Kétszer kettes mátrix esetében érdemes megjegyezni az inverz képletét: inverz akkor létezik, ha a mátrix d determinánsa nem nulla, és ekkor az inverz mátrixot úgy kapjuk, hogy az eredeti mátrixban a főátló két elemét kicseréljük, a mellékátló elemeit ellentettjükre változtatjuk, végül a mátrix minden elemét elosztjuk d-vel (így kaptuk az ötödik feladat eredményét). Nem feltétlenül négyzetes mátrixra is érvényes, hogy pontosan akkor van jobb oldali inverze, ha rangja megegyezik a sorainak a számával, azaz ha a sorai lineárisan függetlenek. Erre a tételre a hatodik és a hetedik feladat megoldásában nincs szükség, mert azok megoldása közvetlen számolás (a hetedik feladatban az egyetlen megfelelő vektor $[1/3 1/3 1/3]T$). A nyolcadik feladatban viszont ezt a tételt alkalmazzuk. Az (A) rész két sora nyilván összefügg, a (C) esetében ez azért igaz, mert $\mathbb{R}^2$ dimenziója 2, és így bármely három vektor összefüggő. A (B)-ben például az a = d = 1 és $b = c = 0$ két független vektort ad, a (D) esetben meg a három sor független lesz ha a $6= 9$, hiszen ekkor a determináns értéke nem nulla.
   \end{tcolorbox}
 \end{frame}
@@ -760,7 +761,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={7/1. -N-}]
+  \begin{tcolorbox}[title={7/1. {\symknight}}]
     Az A = $[aij] \in R5x5$ mátrix determinánsának kiszámolásakor mennyi lesz az $a_31a_24a_53a_15a_42$ szorzathoz tartozó permutációban az inverziók száma?
 
   \tcblower
@@ -773,7 +774,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={7/2. -R-}]
+  \begin{tcolorbox}[title={7/2. {\symrook}}]
     Az $A = [aij] \in R5x5$ mátrix determinánsának kiszámolásakor az $a_11a_2ia_33a_45a_5j$ szorzatot $(-1)$-gyel szorozva kellett figyelembe venni. Határozzuk meg i-t és j-t.
   \tcblower
 
@@ -786,7 +787,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={7/3. -Q-}]
+  \begin{tcolorbox}[title={7/3. {\symqueen}}]
     Az $\{1,2,3,4,5\}$ számoknak hány olyan sorbarendezése (permutációja) van, melyben az inverziók száma 1?
   \tcblower
 
@@ -798,7 +799,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={7/4. -Q-}]
+  \begin{tcolorbox}[title={7/4. {\symqueen}}]
     Az $\{1,2,3,4,5\}$ számok $i2jkl$ típusú sorbarendezései (azaz permutációi) között mennyi lehet az inverziók maximális száma?
   \tcblower
 
@@ -808,7 +809,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={7/5. -N-}]
+  \begin{tcolorbox}[title={7/5. {\symknight}}]
     Legyenek $A,B,C \in \mathbb{R}^3x3$ olyan valós mátrixok, melyekre $detA = 2, detB = 3$ és $detC = 4$. Mennyi lesz $2A2C-1B$ determinánsa?
   \tcblower
 
@@ -819,7 +820,7 @@ Az első feladat arra kérdez rá, hogy mikor végezhető el a mátrixok összea
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={7/6. -R-}]
+  \begin{tcolorbox}[title={7/6. {\symrook}}]
     Legyen A =
 , és
 tegyük föl, hogy detA = 5. Mennyi lesz detB?
@@ -834,7 +835,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={7/6. -R-}]
+  \begin{tcolorbox}[title={7/6. {\symrook}}]
     A determináns definíciójában a tagok előjelezését a következőképpen kell kiszámolni. A szorzatot rendezzük át úgy, hogy az aij-k első indexei növekedjenek 1-től n-ig. Ezek után a második indexek által alkotott permutációban számoljuk meg az inverziókat (vagyis azokat a párokat, amelyekben az elöl szereplő szám a nagyobb). Ha ezek száma páros, akkor az előjel +, különben -. Az első feladatban a kapott sorrend 54123. Ha n elemet permutálunk, akkor az inverziók maximális száman 2; ezt a számot az elemek monoton fogyó sorbarendezése produkálja, 0 inverziója pedig csak a természetes, monoton növő sorbarendezésnek van. Két elemet megcserélve, a permutáció paritása (előjele) mindig megváltozik. A második példában i és j csak 2 és 4 lehet valamelyik sorrendben, ezt a két permutációt kell kipróbálni. A harmadik feladatban csak két szomszédos elemet cserélhetünk meg az alapsorrendhez képest. A negyedik feladatban az az ötlet, hogy a 2 után legalább két, 2-nél nagyobb számnak kell lennie, ez két nem-inverziót elront, és így maximum 8 inverzió lehet. Az 52431 sorrend ezt elő is állítja. Az ötödik feladat a determinánsok szorzástételének egyszerű alkalmazása (amiből következik, hogy egy mátrix inverzének a determinánsa az eredeti mátrix determinánsának a reciproka). A hatodik feladatban az eredeti mátrixot transzponáltuk, megcseréltük az első két oszlopot, majd az új első oszlopot adtuk a harmadikhoz. A középső lépésnél a determináns előjelet vált, a másik kettőnél nem változik.
 
   \end{tcolorbox}
@@ -849,7 +850,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={8/1. -N-}]
+  \begin{tcolorbox}[title={8/1. {\symknight}}]
     Mik az A = $\mathbb{R}^3x3$ mátrix sajátértékei? 
 
   \tcblower
@@ -862,7 +863,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={8/2. -N-}]
+  \begin{tcolorbox}[title={8/2. {\symknight}}]
      Írjunk föl egy olyan mátrixot, amelynek karakterisztikus polinomja $(1-{\lambda})(2-{\lambda})(3-{\lambda})$.
 
   \tcblower
@@ -875,7 +876,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={8/3. -R-}]
+  \begin{tcolorbox}[title={8/3. {\symrook}}]
     Írjunk föl egy olyan nem diagonalizálható mátrixot, melynek karakterisztikus polinomja ${\lambda}2$.
 
   \tcblower
@@ -888,7 +889,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={8/4. -Q-}]
+  \begin{tcolorbox}[title={8/4. {\symqueen}}]
     Az $A =  \in \mathbb{R}^{2 x 2}$ mátrix nem diagonalizálható $\mathbb{R}$ fölött. Mik $c$ lehetséges értékei?
 
 
@@ -902,7 +903,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={8/5. -Q-}]
+  \begin{tcolorbox}[title={8/5. {\symqueen}}]
     Milyen $c \in \mathbb{R}$ valós értékekre lesz az 1 2 0 $c \in \mathbb{R}^{2 x 2}$ mátrix diagonalizálható?
 
   \tcblower
@@ -915,7 +916,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={8/6. -Q-}]
+  \begin{tcolorbox}[title={8/6. {\symqueen}}]
      Az $A =a b c d \in \mathbb{R}^{2 x 2}$ mátrixra . Mennyi az $a + 1 b c d + 1$ mátrix determinánsa? $det a + 1 b c$ 
 
   \tcblower
@@ -928,7 +929,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={8/6. -Q-}]
+  \begin{tcolorbox}[title={8/6. {\symqueen}}]
      Egy mátrix valós sajátértékeit a karakterisztikus polinom valós gyökei adják: a főátló minden eleméből levonunk ${\lambda}$-t és kiszámítjuk a determinánst. Felső háromszögmátrix, speciálisan diagonális mátrix esetén a sajátértékek a főátlóból leolvashatók. A sajátvektorokat minden egyes sajátértékhez egy-egy lineáris egyenletrendszer megoldásával kaphatjuk meg. A diagonalizálhatóság feltétele az, hogy legyen „elegendő” sajátvektor, azaz a tér dimenziószámával megegyező mennyiségű lineárisan független sajátvektor. A harmadik feladat mátrixa esetében ez nem teljesül, mert a sajátvektorokr 0T alakúak, ahol r $6= 0$ (azaz a 0-hoz tartozó sajátaltér egydimenziós). Gyakran használt elégséges feltétel, hogy egy nxn-es mátrix diagonalizálható $\mathbb{R}$ fölött, ha n különböző valós sajátértéke van. A negyedik feladat mátrixának karakterisztikus polinomja ${\lambda}2$-c. Ennek c > 0-ra két különböző valós gyöke van, tehát ilyenkor a mátrix diagonalizálható; $c < 0$-ra nincs valós gyök, ezért $\mathbb{R}$ fölött nem diagonalizálhatjuk a mátrixot; végül c = 0-ra a megoldást a harmadik feladat adja. Hasonló érvelés adható az ötödik feladatnál is. A hatodik feladat feltétele azt mutatja, hogy a -1 sajátértéke a mátrixnak, ha tehát -1-et levonunk a főátló minden eleméből, épp az $A-(-1)I2$ mátrixot kapjuk, aminek a determinánsa 0, hiszen -1 gyöke a karakterisztikus polinomnak.
 
   \end{tcolorbox}
@@ -944,7 +945,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={9/1. -N-}]
+  \begin{tcolorbox}[title={9/1. {\symknight}}]
     Mi a kétdimenziós valós sík, azaz $\mathbb{R}^2$ origó körüli $+90$ fokos forgatásának mátrixa az i és j bázisban?
 
   \tcblower
@@ -957,7 +958,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={9/2. -R-}]
+  \begin{tcolorbox}[title={9/2. {\symrook}}]
     Mi a háromdimenziós valós tér, azaz $\mathbb{R}^3$ x-y-síkra való tükrözésének a mátrixa az $j,k,i$ bázisban? (Itt a bázisvektorok sorrendje a megszokottól eltérő.)
 
   \tcblower
@@ -970,7 +971,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={9/3. -N-}]
+  \begin{tcolorbox}[title={9/3. {\symknight}}]
     Mik a kétdimenziós valós sík, azaz $\mathbb{R}^2$ origóra való tükrözésének sajátértékei?
 
   \tcblower
@@ -983,7 +984,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={9/4. -R-}]
+  \begin{tcolorbox}[title={9/4. {\symrook}}]
     Az $\mathbb{R}^2 egy {\varphi}$ lineáris transzformációjára ${\varphi}(i) = 2i és {\varphi}(j) = i + 3j$. Mik ${\varphi}$ sajátértékei? 
     
   \tcblower
@@ -996,7 +997,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={9/4. -R-}]
+  \begin{tcolorbox}[title={9/4. {\symrook}}]
     Minden lineáris transzformációhoz rögzített bázis esetén egyértelműen tartozik egy négyzetes mátrix. Ezt úgy írhatjuk föl, hogy a bázisvektorokat leképezzük a lineáris transzformációval, e képvektorokat felírjuk a megadott bázisban, és az így kapott koordinátavektorokat írjuk a mátrix oszlopaiba. Ha változtatunk a bázison, akkor változhat a mátrix is; ez kiszámítható a bázistranszformáció képletéből $(A' = S-1AS)$. Az ötödik feladatban a képletre nincs szükség: az első bázisvektor, $b_1$ kétszeresének a képe szintén önmaga, azaz $2b_1$, s így az új mátrix első oszlopában az első koordináta $1$, a többi meg $0$. Ugyanakkor a $b_2$ és $b_3$ képében fele annyit kell „vennünk” $2b_1$-ből, mint $b_1$-ből, tehát az első sor második és harmadik eleme a felére csökken. Egy lináris transzformáció sajátértékeit kiszámolhatjuk úgy, hogy felírjuk a mátrixát egy alkalmas bázisban, és ennek vesszük a sajátértékeit. Ez a negyedik (kétlépcsős) feladat: a mátrix a triviális bázisban  $2 1 0 3$ . Néha lehetséges közvetlenül a definíció segítségével is boldogulni: a harmadik feladatban minden vektor az ellentettjébe megy, ezért az egyetlen sajátérték a $-1$. A hatodik és a hetedik feladatban felírhatjuk, hogy ${\varphi}({\lambda}e1 + {\mu}e2) = {\mu}(e1 + e2)$. Ez akkor nulla, azaz ${\lambda}e1 + {\mu}e2$ akkor van a magtérben, ha ${\mu} = 0$. A képtér elemei pedig $e1 + e2$ többszörösei. A nyolcadik feladatban azt is lehet használni, hogy $[{\varphi}(v)]B = [{\varphi}]B[v]B$. Az $M[x y z]T = 0$ egyenlet megoldása: $x$ és $y$ tetszőleges, $z = 0$. A magtér tehát kétdimenziós. Megoldható a feladat a dimenzióösszefüggés segítségével is, amely szerint a magtér dimenziója a mátrix oszlopainak száma mínusz a mátrix rangja. Harmadik megoldásként láthatjuk, hogy két bázisvektor a nullába megy, ezért a magtér legalább kétdimenziós, de háromdimenziós nem lehet, mert a mátrix nem nulla.
 
   \end{tcolorbox}
@@ -1011,7 +1012,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={10/1. -N-}]
+  \begin{tcolorbox}[title={10/1. {\symknight}}]
     Mennyi az$[1 1 1 1]T$ és az $[1 -1 -1 -1]T$ vektorok szöge $\mathbb{R}^4$-ben, a szokásos ha, $bi = aTb$ skaláris szorzatra nézve?
 
   \tcblower
@@ -1025,7 +1026,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={10/2. -R-}]
+  \begin{tcolorbox}[title={10/2. {\symrook}}]
     Az $[1 1 + i i]T \in C3$ vektor ha, $bi = b*a$ mellett merőleges az $[1 1 + i c]T$ vektorra. Határozzuk meg $ \in C$ értékét.
 
 
@@ -1039,7 +1040,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={10/3. -R-}]
+  \begin{tcolorbox}[title={10/3. {\symrook}}]
     Álljon $W az \mathbb{R}^3$ azon vektoraiból, amelyek merőlegesek $a[0 1 1]T$ és $[1 1 0]T$ vektorok mindegyikére. Adjunk meg egy bázist $W$-ben.
 
   \tcblower
@@ -1052,7 +1053,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={10/4. -Q-}]
+  \begin{tcolorbox}[title={10/4. {\symqueen}}]
     Mely $a,b \in \mathbb{R}$ értékekre lesz $|3a + 4b| = 5a_2 + b_2$
 
   \tcblower
@@ -1065,7 +1066,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={10/4. -Q-}]
+  \begin{tcolorbox}[title={10/4. {\symqueen}}]
     A szokásos skaláris szorzatot $\mathbb{R}^n$-ben az ha, $bi = aTb$ összefüggés adja meg; két vektor merőlegessége azt jelenti, hogy a skaláris szorzatuk nulla. $\mathbb{R}^n$-ben a vektorok szögét a $cos{\gamma} =$ ha,$bi kak \cdot kbk$ összefüggéssel definiáljuk, erről szól az első feladat. (A megoldáshoz érdemes átismételni a szögfüggvények értékét a nevezetes szögeken.) A második feladat esetében a skaláris szorzat kiszámításánál vigyázzunk arra, hogy a második tényező komponenseit meg kell konjugálni. A harmadik feladatnál lineáris egyenletrendszert kapunk W elemeinek komponenseire. A negyedik feladat esetében arra kell ráismerni, hogy a feladatbeli egyenlet az u = [3 4]T és a $v = [a b]T$ vektorokra írja föl az $|hu,vi| = kuk \cdot kvk$ összefüggést, ami a Cauchy-egyenlőtlenség alapján akkor és csak akkor teljesülhet, ha $u$ és $v$ párhuzamosak.
   \end{tcolorbox}
 \end{frame}
@@ -1079,7 +1080,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={11/1. -N-}]
+  \begin{tcolorbox}[title={11/1. {\symknight}}]
     Ha [a]i,j,k = [0 1 1]T és a [b]i,j,k = [1 1 0]T, akkor számítsuk ki az a és b vektorok vektoriális szorzatát (koordinátákkal).
 
   \tcblower
@@ -1092,7 +1093,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={11/1. -N-}]
+  \begin{tcolorbox}[title={11/1. {\symknight}}]
     A vektoriális szorzat koordinátáinak kiszámításához érdemes a „determinásos” képletet használni: egy 3 x 3-as determináns első sorába az i, j, k vektorokat írjuk, a másik két sorba pedig a megadott vektorok koordinátáit, majd a determinánst (formálisan) kifejtjük az első sora szerint. Ekkor az i, j, k vektorok egy lineáris kombinációját kapjuk: ez lesz a vektoriális szorzat és így a leggyorsabb megoldani az első feladatot. Ebből a képletből láthatjuk azt is, hogy a vegyes szorzat is egy olyan determináns értéke, amelynek soraiban a három megadott vektor van alkalmas sorrendben. Speciálisan három vektor akkor és csak akkor lineárisan összefüggő, azaz akkor és csak akkor vannak egy síkban, ha a vegyes szorzatuk nulla. Ez kapcsolódik a második és a harmadik feladat (B) részéhez is. Az utolsó három feladatban érdemes a derékszögű koordinátarendszerben a három tengelyirányú egységvektorra, i-re, j-re és k-ra nézni a vektoriális szorzat hatását, ezekkel érdemes kísérletezni az utolsó három feladatban. A második feladat (A) részében könnyű látni, hogy ha a és b nem esnek egy irányba, akkor a x b merőleges lesz az általuk meghatározott síkra, s ekkor c lehet akár a-val is egyenlő, az (a x b) x c vektoriális szorzat nem lesz a nullvektor. A (C) részben ha a és b vagy b és c párhuzamosak, akkor az ő vektoriális szorzatuk 0, és így 0 lesz a teljes vektoriális szorzat is. Ha viszont egyik vektorpár sem párhuzamos, akkor mindkét esetben ugyanazt a síkot feszítik ki (hiszen a,b és c lineárisan összefüggők), és így mindkét vektorpár vektoriális szorzata a síkra merőleges lesz, vagyis ezek párhuzamos vektorok, vektoriális szorzatuk tehát biztosan 0. A (D) esetben pedig pl. $a = c = i$, $b = j$ esetén a szorzat értéke k és -k skaláris szorzata lesz, tehát nem 0. Hasonló okoskodással lehet kielemezni az utolsó két feladatban szereplő állítások igazságértékét is.
   \end{tcolorbox}
 \end{frame}
@@ -1106,7 +1107,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 \end{frame}
 
 \begin{frame}
-  \begin{tcolorbox}[title={12/1. -N-}]
+  \begin{tcolorbox}[title={12/1. {\symknight}}]
      Számítsuk ki az 1 2 2 1 mátrix által meghatározott kvadratikus alak értékét az[1 2]T vektoron.
 
   \tcblower
@@ -1119,7 +1120,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={12/2. -R-}]
+  \begin{tcolorbox}[title={12/2. {\symrook}}]
      Adjunk meg egy $v \in \mathbb{R}^2$ vektort, melyen az $A =  1 2 2 1$  mátrix által meghatározott kvadratikus alak negatív értéket vesz föl.
 
 
@@ -1133,7 +1134,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={12/3. -R-}]
+  \begin{tcolorbox}[title={12/3. {\symrook}}]
      Adjuk meg a   $in \mathbb{R}^3x$3 mátrix által meghatározott bilineáris függvény kvadratikus karakterét (definitségét).
 
 
@@ -1147,7 +1148,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={12/4. -N-}]
+  \begin{tcolorbox}[title={12/4. {\symknight}}]
      Milyen $c \in \mathbb{R}$ valós értékekre lesz az $1 c c c \in \mathbb{R}^{2 x 2}$ mátrix által meghatározott kvadratikus alak pozitív definit?
 
   \tcblower
@@ -1160,7 +1161,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={12/4. -N-}]
+  \begin{tcolorbox}[title={12/4. {\symknight}}]
      Egy szimmetrikus, valós A mátrixhoz tartozó kvadratikus alak $Q(u) = uTAu$. Abban az esetben ha $A =  a b b d$  és $u = [x y]T$, akkor $Q(u) = ax2 + 2bxy + dy2$. A második feladatban tehátolyan $x$ és $y$ számokat kell keresnünk, amelyekre $x2 + 4xy + y2$ negatív. Ha észrevesszük, hogy $x2 + 4xy + y2 = x2 + 4xy + 4y2 -3y2 = (x + 2y)2 -3y2$, akkor már könnyen találunk ilyen értékeket (de az alábbiak szerint a mátrix egyik sajátvektora is megfelelő). A kvadratikus alak jellege (karaktere, definitsége) azt mondja meg, milyen valós értékeket vesz föl a nem nulla vektorokon. Ezt a tulajdonságot le tudjuk olvasni a mátrix sajátértékeiből (amik szimmetrikus mátrix esetén mindig valósak), pontosabban azok előjeléből: $Q(u), u 6= 0$ sajátértékek előjele: jelleg: mindig pozitív mind pozitív pozitív definit mindig negatív mind negatív negatív definit mindig nemnegatív mind nemnegatív pozitív szemidefinit mindig nempozitív mind nempozitív negatív szemidefinit van pozitív is, negatív is van pozitív is, negatív is indefinit Ha $u = ei$ (a triviális bázis i-edik vektora), akkor $Q(u)$ az A mátrix főátlójának i-edik eleme. A harmadik feladatban a második és a harmadik diagonális elem pozitív, illetve negatív, s így kvadratikus alak pozitív és negatív értékeket is fölvesz, tehát biztosan indefinit. Bizonyos esetekben a következő kritérium segítségével is leolvasható a kvadratikus alak jellege. Legyen ${\Delta}0 = 1$ és ${\Delta}k$ a mátrix bal fölső sarkában lévő $k xk$-as részmátrix determinánsa (ez az ún. karakterisztikus sorozat). Pl. a karakterisztikus sorozat pontosan akkor áll csupa pozitív értékből, ha a kvadratikus alakunk pozitív definit. A negyedik feladatnál ezt a feltételt használjuk: az 1x1-es részmátrixhoz tartozó tag pozitív, s a pozitív definitség azzal lesz ekvivalens, hogy a determináns, $c-c2 = c(1-c)$ is pozitív. Ez csak a jelzett intervallumban valósulhat meg.
   \end{tcolorbox}
 \end{frame}
@@ -1175,7 +1176,7 @@ tegyük föl, hogy detA = 5. Mennyi lesz detB?
 
 
 \begin{frame}
-  \begin{tcolorbox}[title={12/4. -N-}]
+  \begin{tcolorbox}[title={12/4. {\symknight}}]
      Az alábbi listában azok a definíciók és állítások, tételek szerepelnek, melyeket a vizsgadolgozat B részében kérdezhetünk. A válaszoknál zárójelben néhol magyarázó megjegyzések is vannak, ezeket nem kell leírni a teljes pontszám eléréséhez.
   \end{tcolorbox}
 \end{frame}
