@@ -1,0 +1,160 @@
+
+\begin{document}
+
+Algo 2
+
+Ajánlott irodalom:
+Algoritmusok, (Rónyai, Szabó, ?)
+
+
+Ismétlés
+Algo1 -> ADT, ADS, etc
+
+Verem
+
+Axiómák
+1. Üres-e(Üres) Igaz
+2. ...
+5. etc
+
+1. ADT
+
+2. ADS
+
+szrekezeti gráf + { műveletek + axiómák } -> ADT
+
+pl (10)->(20)->(30)->(40) lehet pl verem, sor  (attól függ, milyen műveletek )
+
+3. reprezentáci
+(1) tömbös
+(2) pointeres
+
+----
+
+Műveletigények
+
+1. Buborékrendezés
+Alulról felfele a szomzédos elemek cseréjével felbuborékoztatjuk az elemeket
+
+1. elem összehas. Ö(sz) = n - 1
+2. elem n - 2
+3. elem n - 3
+etc
+
+Ö_{sz} = \frac{n(n - 1)}{2} = {\Theta}(n^2) vagy O(N^2)
+
+f: {\mathbb{N}} \rightarrow {R}_0^+
+
+Def:
+O(g) = {f | {\exists}c>0, elég nagy n-re f(n) \leq cg(n) }
+O(g) = {f | {\exists}c>0, elég nagy n-re f(n) < cg(n) }
+{\Omega}(g) = {f | {\exists}c>0, elég nagy n-re f(n) \geq cg(n) }
+{\omega}(g) = {f | {\exists}c>0, elég nagy n-re f(n) > cg(n) }
+
+Összehasonlító rendezések Műveletigénye
+
+(A) alsó becslés:
+
+műv. igény:
+
+ÖH(n) = {\Omega}(n \cdot log(n))
+
+Döntési fa:
+* \forall alg-hoz konstruálható
+* igaz/hamis kérdések
+
+pl.: "A[3] > A[1]^2"
+
+füzet  (1)
+
+n! levél  (n elemet hányféleképp lehet sorbarendezni: n!)
+
+Beszúró rendezés
+
+1 | 2 | 5 | 7 || 4 | 1
+1 | 2 | 5 | 7 || [] | 1
+1 | 2 | 5 | [] | 7 ||1
+1 | 2 | [] | 5 | 7 ||1
+1 | 2 | 4 | 5 | 7 ||1
+
+n*log n es rendezések:
+verseny, kupac, összefésülő, gyors
+
+Verseny rendezés
+
+n = 2^k
+(binfa)
+(általában a tárhely igény miatt nem használják)
+füzet(2)
+
+
+Kupac renndezés
+
+Kupac:
+Def (ADS)
+-Teljes, balra tömörített, bnáris fa.
+-Szülő < Gyerek (kupactulajdonság)
+
+Műveletek (ADT)
+Beszúr, Mintöröl
+
+Füzet (3)
+
+Felszivárog(v)  (logn)
+{
+  ha v > szülő(v1, v2)
+  {
+    csere a kisebbel.
+  }
+}
+
+
+Összefésölő Rendezés
+(Oszdmeg és uralkodj) = rekurzió
+
+Füzet
+
+Műv igény:
+k és l hosszú rendezett tömb esetén k + l - 1
+
+műv igény: n \cdot log(n)
+
+n = 2^k
+
+T(n) = összehasonlítások
+
+T(n) \leq n - 1 + 2T(\frac{n}{2}) \leq n - 1 + 2 (\frac{n}{2} - 1 + 2T(\frac{n}{4})) \leq
+\leq n - 1 + 2(\frac{n}{2}) + 4T(\frac{n}{4}) + ... + 2^{k - 1}(\frac{n}{2^{k - 1}}) + 2^{k - 1} + 2^{k - 1} T(\frac{n}{2^{k-1}}) =
+= k \ cdot n - k = nlogn - log_2n = O(nlog_2n)
+
+
+Gyorsrendezés
+
+Veszünk egy véletlen számon 1 től n ig,
+
+
+
+Műv igény
+
+...
+
+   C(n) = (n - 1) + \frac{2}{n}(C(1) + C(2) + ... + C(n))
+  -C(n - 1) = n - 2 + \frac{2}{n - 1}(c(1)+ ... + C(n - 1))
+  --------------------------------------------------------
+  Rendezés után:
+  \frac{C(n)}{n + 1} = \frac{2(n - 1)}{n(n + 1)} + \frac{c(n - 1)}{n} < \frac{2}{n} + \frac{C(n - 1)}{n} <
+  < \frac{2}{n} + \frac{2}{n-1} + \frac{B(n-2){n-1}} < ...
+  (2 kiemel)
+  ... < 2(\frac{1}{n} + \frac{1}{n-1} + \frac{1}{n-2} + ... + \frac{1}{2} + \frac{1}{1}) ~= 2nlogn = O(n log n)
+
+
+
+
+   
+
+
+
+
+
+
+\end{document}

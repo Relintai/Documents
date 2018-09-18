@@ -1,0 +1,347 @@
+
+1. Valós számok axiómái:
+R \neq \emptyset  (sima R, mert halmaz)
+
+A.
+\exists \theta \epsilon \in R, \forall x, y \in R
+x + y \in R
+xy \in R
+tetszőleges a, b, c \in R esetén:
+1. a + b = b + a
+2. (a + b) + c = a + (b + c), (ab)c = a(bc) etc (6 db)
+
+B.
+Adott R halmazon \leq teljes rendezés (reflexív, tranzitív, antiszimmetrikus) reláció
+
+(teljes rendezés: a \leq b és b \leq a relációk közül az egyik legalább teljesül.)
+
+C.
+a \leq b
+
+(i) a + c \leq b + c
+(ii) c \geq 1 \Rightarrow ac \ leq bc
+a (c \geq 1 nél az 1 az előbbi \theta, egységelem)
+
+D.
+Minden felülről korlátos halmaznak \exists legkisebb felső korlátja
+
+(vesszük a felső korlátok halmazát)
+(írott) K := {(sima) K \in R: x \leq (sima) K (x \in A)}
+
+(legyen) !A \neq \emptyset, felölről korlátos, ha {\exists}M,
+
+a legkisebb felső korlát = sup A (az A halmaz supremuma).
+
+Ehhez hasonlóan:
+
+Minden aluról korlátos halmaznak \exists legnagyobb alsó korlátja.
+Ez az inf A (az A halmaz infinuma).
+
+
+A - D, \RIghtarrow számtest, (\mathbb) Z, R, Q, C, R^n
+
+!A \neq \emptyset felölről korlátos, \forall x \in A: x \leq sup A := \alpha \iff
+\iff \forall \epsilon > 0: "\aplha - \epsilon már nem supremum" azaz \exists y \in A: \alpha > y \geq \alpha - \epsilon
+
+példa:
+
+A:= { -\frac{1}{n}: n \in \mathbb{N}, n \geq 1}
+
+azaz: -1, -1/2, -1/3, -1/4, ....   \leq 0 = sup A
+
+Valüs számok alaptételei:
+
+1. Tétel (1.3.1):
+
+Legyen x, y \in \mathbb{R} x > 0:
+
+\forall y \in \mathbb{R} esetén \exists n \in \mathbb{N}, hogy nx > y
+
+Biz.: (Indirekt)
+
+Tfh.: \exists x, y \in \mathbb{R}, x > 0 és \forall n \in \mathbb{N} nx \leq y
+
+Ekkor létezik a halmaznak legkisebb felső korlátja, legyen ez az \alpha :
+A := { nx : n \in \mathbb{N}}
+\alpha := sup A
+
+ekkor:
+\exists \epsilon > 0 : \exists x \in A, hogy nx = y > \alpha - \epsilon
+
+\epsilon := x \Rightarrow nx > \aplha - x =
+(n + 1)x > \aplha \Rightarrow ELLENTMONDÁS
+
+2. Tétel (Dedekind) (1.3.2)
+
+A, B \neq \emptyset halmazok, \forall a \in A és \forall b \in B esetén:
+a \leq b \Rightarrow \exists \gamma \in \mathbb{R}
+a \leq \gamma \leq b tetszőleges a \in A és b \in B esetén.
+
+Biz.:
+
+(írott) K := { (sima)K \in \mathbb{R}: x \leq (sima) K (x \in A)} (azaz az A halmaz felölről korlátos halmaz.)
+
+min (írott) K = sup A : (legyen sup A = {\gamma}): a \leq \gamma
+viszont a \gamma \leq b, mivel a B (részhalmaza) (írott) K-nak.
+
+3. Tétel (Cantor):
+
+"Bármely egymásba skatulyázott zárt intervallumsorozatnak \exists közös pontja."
+
+Legyenek [a_n, b:n] intervallumok adottak, az [a_{n+1}, b_{n+1}] (részhalmaz =) [a_n, b_n] \Rightarrow
+
+\bigcap_{n = 0}^{+ \infty} [a_n, b_n] \neq \emptyset
+
+Biz.:
+A := {a_n : n \in \mathbb{N}}
+B := {b_n : n \in \mathbb{N}}
+
+Egymásba skatulyázott intervallumok, azaz a_n \leq b_n
+a_l \leq b_m triviális
+
+\Rightarrow Dedekind \Rightarrow \exists \gamma \in \mathbb{R}, hogy \gamma \in \bigcap_{n = 0}^{+ \infty} [a_n, b_n] \neq \emptyset
+
+1.3.6 Tétel (négyzetgyök):
+
+{\exists}! \aphy \in \mathbb{R}, \alpha > 0: \alpha^2 = 2
+
+Biz:
+
+A := { x > 0: x^2 \leq 2 } (A felölről korlátos.)
+
+\forall x \leq 2
+(x \in A)
+
+
+felülről korlátos: (Ha \exists x \in A: x > 2, x \cdot x > 4, x^2 \leq 2 kellene.)
+
+legyen \alphy := sup A.
+
+áll.: {\alpha}^2 = 2 (\alpha \in A)
+
+
+tfh (indirekt):
+{\alpha}^2 \neq 2, {\alpha}^2 < 2, {\alpha}^2 > 2
+
+\exists \epsilon > 0: {\alpha} + {\epsilon} nem a legkisebb felső korlát.
+
+(\aplha + \epsilon)^2 = \alpha^2 + 2\alpha \epsilon + \epsilon^2 < 2 \rightarrow ELLENTMONDÁS
+
+
+Áll.:
+\forall a, b > 0 (a, b) tartalmaz racionális számot:
+
+Biz.:
+vegyük az a számot, hogy b - a.
+b - a biztosan > 0.
+
+Arkhim.:
+\exists n \in \mathbb{N}: n(b - a) > 1
+
+b - a > 1 / n := x   *
+
+
+\exists M \in \mathbb{N}: mx > a
+mx = m / n
+
+!A := { m \in \mathbb{N}: m/n > a }
+
+
+\exists p \in A, p legkisebb: p/n > a
+p-1/n < leq a
+
+p/n = p-1/n + 1/n < p-1/n \leq (= lehúzva) a + *(b - a)
+(* szerint)
+nem teljesülhet az egyenlőség.
+
+
+3. Relációk:
+
+Def (Descarted szorzat):
+(legyen)!A, B \neq \emptyset : A x B
+
+c = { (a, b): a \in A, b \in B }
+(a, b) := { {a}, {a, b}}
+
+Def.:
+
+Az A x B tetszőleges részhalmazát relációnak nevezzük.
+(relációk a függvények általánosításai)
+
+Def.:
+
+!r (részh) A x B reláció
+
+Ért. Tartomány: D_r := {x \in A : \exists y, (x, y) \in r }
+Értékkészlet: R_r := {y \in B : \exists x \in A, (x, y) \in r}
+
+Def.:
+
+Amh. az r (részh) A x B reláció homogén, ha A = B.
+
+Ekkor amh a reláció:
+
+(i) Szimmetrikus: (a, b) \in r \rightarrow (b, a) \in r
+(ii) reflexív: (a, a) \in r
+(iii) tranzitív: (a, b) \in r, és (b, c) \in r \Rightarrow (a, c) \in r
+(iv) Antiszimmetrikus: (a, b) \in r és (b, a) \in r \Rightarrow a = b
+
+(ii) + (i) + (iii) => ekvivalencia reláció.
+(ii)+(iii)+ (iv) => rendezési reláció, teljes, ha (a, b) \in r, ls (a, b) \in r közül legalább az egyik fennáll.
+
+Függvények:
+
+!f (részh) A x B reláció, x \in A
+
+f_x := {y \in B : (x, y) \in f}
+
+x -hez tartozó képtér
+
+def.:
+amh az f reláció függvény, ha
+
+f_x halmaz lgefeljebb egy elemű.
+
+jel.: f \in A \rightarrow B
+
+Def. (Jelölés):
+
+Ha D_f = A, akkor mondhatjuk, hogy f: A \rightarrow B,
+
+
+Def:
+Amh f = g (fv-ek) \iff D_f = D_g (f(x) = g(x))
+
+f: A \rightarrow B -> f (részh) A x B -> (a, b) \in f
+
+(x, y) \in f \iff (x, y) \in g
+
+Def.:
+Amh f injektív, ha x \neq y \in D_f \Rightarrow f(x) \neq f(y)
+relációk nyelvén: (f_x \neq f_y)
+
+(ekvivalens: ha f(x) = f(y) \Rightarrow x = y)
+
+Def.:
+szürjektív
+
+Amh. f szürjektív ("f képtere teljes"), ha R_f = B.
+
+Def.:
+Amh f bijektív, ha f injektív, és szürjektív is.
+
+def.:
+Halmaz képe:
+
+A 'V' halmaz f függvény által létesített képe:
+jel: f(V).  (V (részh) D_f)
+
+f(V) := {y \in R_f : \exists x \in V : f(x) = y }
+
+
+Őskép:
+A 'W' halmaz ősképe f szerint:
+
+f^{-1}(W) = {x \in D_f : \exists y \in W, hogy f(x) = y}
+
+ha egy függvény injektív, akkor lehet az inverzéről beszélni.
+
+
+1. Számtani, mértani közép:
+
+\sqrt{a_1a_2} \leq (a_1 + a_2) / 2
+
+Biz.:
+
+/ *2, ^2
+
+4a_1a_2 \leq (a_1 + a_2)^2 = a_1^2 + a_2^2 + 2a_1a_2
+
+0 \leq a_1^2 + a_2^2 - 2a_1a_2 = (a_1 - a_2)^2
+
+Megj. =-ség csak akko van, ha a_1, és a_2 megegyezik.
+
+Áll.:
+
+!n \in \mathbb{N} adott, ill a_1, a_2, ... a_n \geq 0 \Rightarrow \sqrt{n}{a_1 \cdot a_2 \cdot ,,, \cdot a_n } \leq \frac{a_1 + ... + a_n}{n}
+
+Biz.: (teljes ind)
+n = 2 done
+tfh n-re igaz, belátjuk, hogy 2n-re is igaz.
+
+{a_1 + a_2 + .. + a_n + a_{n + 1} + ... + a_{2n}}/2n \geq \sqrt{2n}{a_1 \cdot ... \cdot a_n \cdot a_{n + 1} \cdot ... \cdot a_{2n}}
+
+a_1 + a_2 + ... + a_n / n + a_{n + 1} + ... + a_{2n} / n \geq 1/2 (\sqrt{n}{a_1 \cdot ... \cdot a_n} (= A) + \sqrt{b}{a_{n + 1} + ... + a_{2n}} (= B))  (aésó \geq felső -> trivi)
+
+A + B / 2 \geq \sqrt{AB}
+
+\Rightarrow  2 hatványokra beláttuk
+
+2^{k - 1}  n < 2^k
+
+A = \frac{a_1 + ... + a_n}{n}
+
+a_1 + ... + a_n = nA
+
+
+
+\frac{a_1 + ... + a_n + A + A + ... + A}{2k}
+
+A = nA + (2^k - n)A /  2^k = \frac{a_1 + ... + a_n + (A + A + ... + A (=2^k - n))}{2k} \geq \sqrt{2^k}{a_1 \cdot ... \cdot a_n \cdot A^{2^k - n}}
+
+A \geq \sqrt{2^k}{a_1 \cdot ... \cdot a_n \cdot A^{2^k - n}}
+
+
+A^{2^k} \geq a_1 \cdot ... \a_n \cdot A^{2^k - n} (egyszerüsít)
+
+(a_1 + ... + a_n  /n )^n = A^n \geq a_1 \cdot ... \cdot a_n
+
+2. Bernoulli egyenlőtlenség:
+(1 + h)^n \geq 1 + nh
+
+Biz: (teljes ind)
+
+h \geq -1
+1. n = 1 re 1 + h \geq 1 + h (igaz)
+n \in \mathbb{N}, n \geq 1
+
+Indukciós feltevés:
+(1 + h)^n \geq 1 + nh
+
+Kellene: (n + 1)-re:
+
+(1 + h)^{n + 1} \geq 1 + (n + 1)h
+
+(1 + h)^{n + 1} = (1 + h)^n \cdot (1 + h) \geq (1 + n^h)(1 + h) =
+1 + nh + h + nh^2 = 1 + (n + 1)h + nh^2 \geq 1 + (n + 1)h
+
+3.
+
+n! \leq (\frac{n + 1}{2})^n
+
+Biz.:
+
+4.
+
+\sum_{k = 1}^n \frac{1}{\sqrt{k}} > 2 \sqrt{n + 1} - 2
+
+Biz.:
+
+5.
+
+Ha a_1, ..., q_n > 0 és \sqrt_{i = 1}^n a_i = 1 \Rightarrow (1 + a_1) \cdot ... \cdot (1 + a_n) \geq 2^n
+
+Biz.:
+
+6.
+
+2 \leq (1 + 1/n)^n < 4
+
+Biz.:
+
+7.
+
+8abc \geq (a + b)(b + c)(a + c) \geq 8/27 (a + b + c)^3
+
+
+(részh = részh = nélkül)
