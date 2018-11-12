@@ -1,0 +1,185 @@
+
+(f o g)(x) = f(g(x))
+
+pl: 
+g(x) = 5x
+f(y) = \sqrt{3}{y}
+
+y -(g)-> 5x -> \sqrt{3}{5x}
+
+konstans sorozat (minden eleme ugyan az)
+
+rekurzív sorozat
+
+x_0 \in \mathbb{R} adott, f fv adott
+
+x_{n + 1} = f(x_n)
+
+f(x) = \frac{x}{2} + \frac{1}{x}
+
+x_{n + 1} = \frac{x_n}{2} + \frac{1}{x_n}
+
+Egy
+-Sorozat növő, ha x_{n + 1} >qeq x_n
+-Korlátos x_n, ha \exists K \in \mathbb{R} : |x_n| \leq K
+-alulról korlátos, ha - || -                : |x_n| \geq K
+\forall n \in \mathbb{N}
+
+Tétel:
+\forall sorozatnak van monoton részsorozata.
+
+Biz:
+Csúcs:
+\forakk k \geq n : x_k \leq x_n
+
+Két eset:
+
+1.
+Végtelen sok csúcs van
+
+1. első: x_{\nu_0}
+\forall k \geq \nu_0 x_k \leq \nu_0
+
+spec: k = \nu_1 := következő csúcs
+x_\nu_1 \leq x_\nu_0, és így tovább
+
+... \leq X_\mu_2 \leq x_\mu_1 \leq x_\mu_0 monoton fogyó sorozat
+
+
+2. eset
+Véges sok csúcs van
+
+!N_0 \in \mathbb{N} az első olyan index, ami már nem csúcs
+
+\nu_0 := N_0
+x_\nu_0 := x_\nu_0 (\nu_1 := ez a k)
+x:\nu_1 := x_kx_\nu_2 :=..
+
+ekkor
+
+\exists k \geq N_0, x_k > x_N_0 
+
+
+pl.:
+
+x_n := (-1)^n 
+
+a sorozat:
+
+-1, 1, -1, 1, -1, 1, -1, 1 ...
+
+attól lessz valami csúcs, hogy az utána jövő bármelyik elem legalább akkora mint ők.
+
+! (i)N \subset \mathbb{N} tetszőleges:
+
+pontosan (i)N elemei csúcsok
+
+x_n = I  1, ha n \in (i)N
+      I  a - \frac{1}{n + 1}, egyébként
+
+1 - \frac{1}{n + 1} < 1
+
+max-ok csúcsok; pl.: monoton fogyó sorozatok
+
+Def konvergencia:
+
+Amh an (x_n) sorozat konvergens és a határértéke \alpha , ha
+\exists \epsilon > 0 : \forall N_0 \in \mathbb{N} köszübindex, hogy \forall n \geq N_0 esetén
+| x_n - \alpha | < \epsilon
+Jel.: lim x_n = \alpha, lim x_n = \alpha, x_n - (n -> + \infty) -> \alpha
+
+Pl.:
+
+x_n := \frac{1}{n}
+x_n -(n->+\infty) 0
+
+Kellene: |x_n - 0|
+
+Tétel:
+Ha x_n konvergens, akkor lim x_n egyértelmű.
+
+Biz.: (ind)
+tfh a ef nem egyértelmű, és 2 külön számra is működik
+
+\exists sorozat, úgy hogy
+\forall \epsilon > 0 \exists N_0 \in \mathbb{N} |x_n - \alpha | < \epsilon
+\forall n \geq N_0
+
+\forall \epsilon > 0 \exists M_0 \in \mathbb{N} |x_n - \beta | < \Äpsilon
+
+Legyen
+(felultilde) N_0 := max \{ N_0, M_0 \}
+
+\epsilon := \frac{|\Beta - \Alpha |}{2}
+
+prec.:
+
+|\alpha - \beta | = | \alpha - x_n - (\beta - x_n)| \leq |\alpha - x_n| + |\Beta - x_n| <
+< \frac{}
+
+kész, mert azt kaptuk, hogy egy szám nagyobb önmagánál
+
+Áll.:
+Ha egy sorozat konvergens \Roghtarrow \forall részsorozata is konvergens (t n.a. a limesz)
+
+Biz.:
+\forall \epsilon > 0 \exists N_0 \in \mathb{N} \forall n \geq N_0
+
+|x_n - \alpha | \epsilon
+
+ha vesszük ennek \forall \nu_n indexsorozatta indexelt részsorozatát, bármelyikre igaz, hogy \nu_n \geq n
+\Rightarrow |x_\nu_k - \Alpha | < \epsilon is igaz (kész)
+
+
+
+Tétel:
+\forall monoton és korlátos sorozat konvergens.
+növő + felülről korlátos \RIghtarrow lim x_n = sup \{ x_n : n \in \mathbb{N} \} = sup R_x
+fogyó + alulról korlátos \Rightarrow lim x_n = inf \{ x_n : n \in \mathbb{N} \} = inf R_x
+
+Biz.:
+
+\Exists \alpha : \forall \epsilon > 0
+\exists N_0 \in \mathbb{N} \foralln \geq N_0 | x_n - \alpha| < \epsilon
+(kellene) \alpha := sup \{ x_n : n \in \mathbb{N} \} = sup H, ahol H := \{ x_n : n \in \mathbb{N} \}
+
+\forall \epsilon > 0: \exists m: \alpha - \epsilon < x_m < \alpha
+
+
+
+Def.:
+Amh az \alpha \in \mathbb{R} r > 0 - sugarú környezetén a K_r(\alpha) := \{ x \in \mathbb{R} : |x - \alpha | < r \}
+
+K_r(\alpha) = (\alpha - r, \alpha + r)
+K_\epsilon(\alpha) = (\alpha - \epsilon, \alpha + \epsilon) = 
+= \{ x \in \mathbb{R} : | x - \alpha | < \epsilon \}
+
+Amh x_n sorozat az \alpha számhoz konvergál, ha \forall > 0, \exists N_0 \in \mathb{N}
+\forall m \geq N_0   x_n \in Kr(\alpha)
+
+Tétel \Forall konergens sorozat korlátos is.
+
+Biz.:
+|x_n . \alpha| < \epsilon  "elég nagy m-re" /\esists N_0 \in \mathbb{N} n \geq N_0/
+
+spec.: \epsilon = 1
+|x_n - \alpha | < 1
+
+Kell.:
+|x_n \leq K  |x_n| = |x_m - \alpha + \alpha| \leq |x_n - \alpha| + |\alpha| < 1 + |\alpha| (elég nagy m-re)
+
+K := max \{ 1 + |\alpha|, |x_0|, |x_1|, ..., |x_N_0| \} (kész)
+
+Tétel.: (Bolzano- Weierstrass)
+\forall korlátos sorozatnak \exists konvergens részorozta.
+
+Biz.:
+\forall sorozatnak van monoton részsorozata.
+\forall korlátos részsorozata is korlátoss. \Rightarrow \exists monoton és korlátos részsorozat \Rightarrow ez konvergens
+
+
+
+
+
+
+

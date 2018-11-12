@@ -1,0 +1,71 @@
+
+
+rownum  sorszám
+
+select rownum, date from dataz;
+
+medusa.inf.elte.hu/oradoc11/index.html
+
+zhn használható
+
+
+left join using:
+a usingos oszlop az elejére rakja, mergelve
+az on os változat belerakja mindkét oszlopot ugyanolyan néven
+
+descartes szorzatnál is doplázódnak a culomnok!
+ 
+group by  having
+
+csak having csak oraclebe megy, de nem jó, mert az egész táblát egy groupnak veszi
+
+natural join: ha nincs közös oszlop, akkor descarter szorzat lesz
+
+natural join egy táblát magával -> minden sor amibe nincs null
+
+
+
+Select:
+
+Select - 1 -- from ---2-- where --3-- group by --4-- having --5-- order by --6--;
+
+1: distinct, unique, *, kifejezéslista
+2: tábla [új név]m tábla[join], allekérdezés
+3: összesítő függvény nem szerepelhet, de lehet like, between, logikai fv, in, all, any, exists
+
+
+A = full
+
+From FUllból select kisebb rész lesz, Group by kisebb rész csoportosítva, having még kisebb adag, order by rendezve
+
+all : unió,metszet,kivonés all változat -> nem hajd végre distinctet
+
+
+rowid oracleben, máshol lehet h oid
+
+char(10) 5 nél szóközökkel van kitöltve
+varcharnál változó
+numeric/decimal, lehet fixed tizedespont
+
+
+create table tnev (
+    mezőnév típus [default tbl][sor megszorítás]
+    ...
+
+), táblamegszorítás, tblmegcsortás;
+
+
+
+sor megszorítások:
+null, not null, unique, primary key, references, check()
+
+null az alap
+
+oszop megszorítások:
+-, -, unique(), primary key(), foreign key(), references(), check()
+
+insert
+
+insert into táblanév[mezőlista] values(kifejezéslista)
+vagy
+insert into táblanév[mezőlista] allekérdezés
